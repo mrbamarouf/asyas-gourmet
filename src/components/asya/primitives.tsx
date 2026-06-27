@@ -171,7 +171,7 @@ function MobileIntroOverlay() {
   const [lockPage, setLockPage] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 720px)");
+    const media = window.matchMedia("(max-width: 767px)");
     if (!media.matches) {
       setShouldRender(false);
       return;
@@ -229,7 +229,7 @@ function MobileIntroOverlay() {
         onEnded={finishIntro}
         onError={finishIntro}
       >
-        <source src={mobileIntroVideo} type="video/mp4" media="(max-width: 720px)" />
+        <source src={mobileIntroVideo} type="video/mp4" media="(max-width: 767px)" />
       </video>
     </div>
   );

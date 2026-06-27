@@ -1476,11 +1476,11 @@ body.asya-desktop-intro-lock {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
   .mobile-intro-overlay {
     position: fixed;
     inset: 0;
-    z-index: 999;
+    z-index: 1000;
     display: block;
     overflow: hidden;
     width: 100vw;
