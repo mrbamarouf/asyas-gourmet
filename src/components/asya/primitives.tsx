@@ -21,7 +21,18 @@ import {
   Wheat,
   X,
 } from "lucide-react";
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import {
+  createContext,
+  memo,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type ReactNode,
+} from "react";
 
 import {
   CATEGORIES,
@@ -197,6 +208,8 @@ export function AsyaIntroOverlay() {
 
 function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const fadeTimerRef = useRef<number | null>(null);
+  const finishedRef = useRef(false);
   const [shouldRender, setShouldRender] = useState(true);
   const [isReady, setIsReady] = useState(false);
   const [isFading, setIsFading] = useState(false);
@@ -213,6 +226,10 @@ function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
     const video = videoRef.current;
     video?.load();
     video?.play().catch(() => undefined);
+
+    return () => {
+      if (fadeTimerRef.current) window.clearTimeout(fadeTimerRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -239,14 +256,16 @@ function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
     };
   }, [lockPage, shouldRender]);
 
-  const finishIntro = () => {
+  const finishIntro = useCallback(() => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
     setIsFading(true);
-    window.setTimeout(() => {
+    fadeTimerRef.current = window.setTimeout(() => {
       setShouldRender(false);
       setLockPage(false);
       onComplete();
     }, 500);
-  };
+  }, [onComplete]);
 
   if (!shouldRender) return null;
 
@@ -277,6 +296,8 @@ function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
 
 function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const fadeTimerRef = useRef<number | null>(null);
+  const finishedRef = useRef(false);
   const [shouldRender, setShouldRender] = useState(true);
   const [isReady, setIsReady] = useState(false);
   const [isFading, setIsFading] = useState(false);
@@ -293,6 +314,10 @@ function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
     const video = videoRef.current;
     video?.load();
     video?.play().catch(() => undefined);
+
+    return () => {
+      if (fadeTimerRef.current) window.clearTimeout(fadeTimerRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -312,14 +337,16 @@ function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
     };
   }, [lockPage, shouldRender]);
 
-  const finishIntro = () => {
+  const finishIntro = useCallback(() => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
     setIsFading(true);
-    window.setTimeout(() => {
+    fadeTimerRef.current = window.setTimeout(() => {
       setShouldRender(false);
       setLockPage(false);
       onComplete();
     }, 500);
-  };
+  }, [onComplete]);
 
   if (!shouldRender) return null;
 
@@ -446,7 +473,7 @@ export function DishImage({
   className?: string;
 }) {
   const { locale } = useI18n();
-  const [loaded, setLoaded] = useState(false);
+  const shellRef = useRef<HTMLSpanElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const src = getDishImage(item);
   const isPlaceholder = src === placeholderImg;
@@ -454,14 +481,27 @@ export function DishImage({
 
   useEffect(() => {
     const image = imageRef.current;
-    setLoaded(Boolean(image?.complete && image.naturalWidth > 0));
+    const shell = shellRef.current;
+    if (!shell) return;
+
+    if (isPlaceholder || (image?.complete && image.naturalWidth > 0)) {
+      shell.dataset.loaded = "true";
+    } else {
+      delete shell.dataset.loaded;
+    }
   }, [src]);
+
+  const markLoaded = useCallback(() => {
+    if (shellRef.current) shellRef.current.dataset.loaded = "true";
+  }, []);
 
   return (
     <span
-      className={`dish-image-shell ${loaded ? "is-loaded" : ""} ${isPlaceholder ? "is-placeholder" : ""} ${className}`}
+      ref={shellRef}
+      className={`dish-image-shell ${isPlaceholder ? "is-placeholder" : ""} ${className}`}
+      data-loaded={isPlaceholder ? "true" : undefined}
     >
-      {!loaded && !isPlaceholder ? <span className="image-skeleton" aria-hidden="true" /> : null}
+      {!isPlaceholder ? <span className="image-skeleton" aria-hidden="true" /> : null}
       {isPlaceholder ? (
         <span className="placeholder-mark" aria-hidden="true">
           <img src={logoImg} alt="" width={78} height={78} />
@@ -476,45 +516,45 @@ export function DishImage({
         decoding="async"
         width={640}
         height={640}
-        onLoad={() => setLoaded(true)}
-        onError={() => setLoaded(true)}
+        sizes={eager ? "(max-width: 767px) 100vw, 42vw" : "(max-width: 767px) 7rem, (max-width: 1120px) 33vw, 24vw"}
+        onLoad={markLoaded}
+        onError={markLoaded}
       />
     </span>
   );
 }
 
-export function MenuCard({
-  item,
-  category,
-  variant = "menu",
-}: {
+interface MenuCardProps {
   item: MenuItem;
   category: MenuCategory;
   variant?: "menu" | "feature" | "wide";
-}) {
+  motionEnabled?: boolean;
+}
+
+export const MenuCard = memo(function MenuCard({
+  item,
+  category,
+  variant = "menu",
+  motionEnabled = true,
+}: MenuCardProps) {
   const { locale } = useI18n();
   const { openItemDetail } = useItemDetail();
   const itemName = localizeMenuText(item.name, locale);
   const categoryName = localizeMenuText(category.name, locale);
   const description = localizeMenuText(item.description, locale);
-
-  return (
-    <motion.article
-      role="button"
-      tabIndex={0}
-      className={`menu-card menu-card-${variant}`}
-      aria-label={itemName}
-      onClick={() => openItemDetail({ item, category })}
-      onKeyDown={(event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          openItemDetail({ item, category });
-        }
-      }}
-      variants={fadeUp}
-      whileHover={{ y: -5, scale: variant === "menu" ? 1.006 : 1.012 }}
-      transition={{ duration: 0.24, ease: "easeOut" }}
-    >
+  const className = `menu-card menu-card-${variant}`;
+  const handleOpen = useCallback(() => openItemDetail({ item, category }), [category, item, openItemDetail]);
+  const handleKeyDown = useCallback(
+    (event: ReactKeyboardEvent<HTMLElement>) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        handleOpen();
+      }
+    },
+    [handleOpen],
+  );
+  const content = (
+    <>
       <DishImage item={item} alt={itemName} className="menu-card-image" />
       <div className="menu-card-copy">
         <div className="menu-card-meta">
@@ -525,9 +565,40 @@ export function MenuCard({
         {description ? <p>{description}</p> : null}
         {item.options?.length ? <MenuOptions item={item} /> : null}
       </div>
+    </>
+  );
+
+  if (!motionEnabled) {
+    return (
+      <article
+        role="button"
+        tabIndex={0}
+        className={className}
+        aria-label={itemName}
+        onClick={handleOpen}
+        onKeyDown={handleKeyDown}
+      >
+        {content}
+      </article>
+    );
+  }
+
+  return (
+    <motion.article
+      role="button"
+      tabIndex={0}
+      className={className}
+      aria-label={itemName}
+      onClick={handleOpen}
+      onKeyDown={handleKeyDown}
+      variants={fadeUp}
+      whileHover={{ y: -5, scale: variant === "menu" ? 1.006 : 1.012 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
+    >
+      {content}
     </motion.article>
   );
-}
+});
 
 function ItemDetailView({
   selection,

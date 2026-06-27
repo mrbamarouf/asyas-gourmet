@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Search, Sparkles, Utensils, X } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 
 import {
   CATEGORIES,
@@ -104,7 +104,8 @@ function MenuHero() {
 
 function MenuExplorer() {
   const { locale, t, tx } = useI18n();
-  const [query, setQuery] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const query = useDebouncedValue(searchInput, 150);
   const [activeGroup, setActiveGroup] = useState<MenuGroupId>(CATEGORY_QUICK_JUMPS[0]?.id ?? CATEGORY_ORDER[0].id);
   const categoryStripRef = useRef<HTMLElement>(null);
   const displayGroups = useMemo<MenuDisplayGroup[]>(() => {
@@ -143,11 +144,20 @@ function MenuExplorer() {
     }).filter((group) => group.sections.length > 0 || group.featuredItems.length > 0);
   }, [query]);
 
-  const canonicalItems = displayGroups.flatMap((group) => group.sections.flatMap((section) => section.items));
-  const totalMatches = uniqueItemCount(canonicalItems);
-  const visibleQuickJumps = CATEGORY_QUICK_JUMPS.filter((group) =>
-    displayGroups.some((displayGroup) => displayGroup.definition.id === group.id),
+  const totalMatches = useMemo(
+    () => uniqueItemCount(displayGroups.flatMap((group) => group.sections.flatMap((section) => section.items))),
+    [displayGroups],
   );
+  const visibleQuickJumps = useMemo(
+    () => CATEGORY_QUICK_JUMPS.filter((group) =>
+      displayGroups.some((displayGroup) => displayGroup.definition.id === group.id),
+    ),
+    [displayGroups],
+  );
+  const handleSearchChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(event.target.value);
+  }, []);
+  const clearSearch = useCallback(() => setSearchInput(""), []);
 
   useEffect(() => {
     if (query.trim()) {
@@ -189,13 +199,13 @@ function MenuExplorer() {
     });
   }, [activeGroup, locale, visibleQuickJumps.length]);
 
-  const scrollToGroup = (groupId: MenuGroupId) => {
-    setQuery("");
+  const scrollToGroup = useCallback((groupId: MenuGroupId) => {
+    setSearchInput("");
     setActiveGroup(groupId);
     window.setTimeout(() => {
       document.getElementById(`group-${groupId}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 40);
-  };
+  }, []);
 
   return (
     <section className="full-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
@@ -204,13 +214,13 @@ function MenuExplorer() {
           <div className="menu-search">
             <Search className="h-4 w-4" />
             <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              value={searchInput}
+              onChange={handleSearchChange}
               placeholder={t("searchPlaceholder")}
               aria-label={t("searchPlaceholder")}
             />
-            {query ? (
-              <button type="button" onClick={() => setQuery("")} aria-label="Clear search">
+            {searchInput ? (
+              <button type="button" onClick={clearSearch} aria-label="Clear search">
                 <X className="h-4 w-4" />
               </button>
             ) : null}
@@ -255,7 +265,7 @@ function MenuExplorer() {
           <div className="empty-state">
             <Sparkles className="h-6 w-6" />
             <p>{t("noResults")}</p>
-            <button type="button" onClick={() => setQuery("")}>
+            <button type="button" onClick={clearSearch}>
               {t("resetFilters")}
             </button>
           </div>
@@ -265,12 +275,23 @@ function MenuExplorer() {
   );
 }
 
+function useDebouncedValue<T>(value: T, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setDebouncedValue(value), delay);
+    return () => window.clearTimeout(timer);
+  }, [delay, value]);
+
+  return debouncedValue;
+}
+
 function QuickJumpIcon({ group }: { group: MenuCategoryGroup }) {
   const category = categoryMap.get(group.categoryIds[0] ?? "");
   return category ? <CategoryGlyph category={category} /> : <Sparkles className="h-4 w-4" />;
 }
 
-function MenuDisplayGroup({ group }: { group: MenuDisplayGroup }) {
+const MenuDisplayGroup = memo(function MenuDisplayGroup({ group }: { group: MenuDisplayGroup }) {
   const { t, tx } = useI18n();
   const itemCount = uniqueItemCount([
     ...group.featuredItems,
@@ -304,7 +325,9 @@ function MenuDisplayGroup({ group }: { group: MenuDisplayGroup }) {
         <div className="menu-group-featured">
           {group.featuredItems.map((item) => {
             const category = categoryMap.get(item.category);
-            return category ? <MenuCard key={item.id} item={item} category={category} variant="feature" /> : null;
+            return category ? (
+              <MenuCard key={item.id} item={item} category={category} variant="feature" motionEnabled={false} />
+            ) : null;
           })}
         </div>
       ) : null}
@@ -318,9 +341,9 @@ function MenuDisplayGroup({ group }: { group: MenuDisplayGroup }) {
       ) : null}
     </motion.section>
   );
-}
+});
 
-function MenuSection({ group }: { group: MenuGroup }) {
+const MenuSection = memo(function MenuSection({ group }: { group: MenuGroup }) {
   const { t, tx } = useI18n();
   const cover = isUsableImageUrl(group.category.cover ?? group.category.sourceImageUrl)
     ? group.category.cover ?? group.category.sourceImageUrl
@@ -351,12 +374,12 @@ function MenuSection({ group }: { group: MenuGroup }) {
 
       <div className="full-menu-grid">
         {group.items.map((item) => (
-          <MenuCard key={item.id} item={item} category={group.category} />
+          <MenuCard key={item.id} item={item} category={group.category} motionEnabled={false} />
         ))}
       </div>
     </motion.section>
   );
-}
+});
 
 function uniqueItemCount(items: MenuItem[]) {
   return new Set(items.map((item) => item.id)).size;

@@ -952,9 +952,14 @@
 }
 
 .dish-image-shell.is-loaded img,
+.dish-image-shell[data-loaded="true"] img,
 .dish-image-shell.is-placeholder img {
   opacity: 1;
   transform: scale(1);
+}
+
+.dish-image-shell[data-loaded="true"] .image-skeleton {
+  display: none;
 }
 
 .image-skeleton {
@@ -5557,6 +5562,49 @@ body {
   .contact-card,
   .dish-image-shell img {
     transition-duration: 1ms;
+  }
+}
+
+/* Performance tune only: keep long menu rendering lighter without changing layout. */
+.full-menu-page .menu-display-group {
+  contain: layout paint;
+}
+
+.full-menu-page .full-menu-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 980px;
+}
+
+.full-menu-page .menu-card {
+  contain: layout paint style;
+}
+
+.full-menu-page .image-skeleton {
+  animation: none;
+  background: linear-gradient(135deg, rgba(242, 236, 227, 0.92), rgba(255, 253, 248, 0.88));
+}
+
+@media (max-width: 767px) {
+  .site-nav-shell,
+  .full-menu-page .site-nav-shell,
+  .site-nav-solid .site-nav-shell,
+  .mobile-bottom-nav,
+  .full-menu-controls,
+  .item-detail-layer {
+    backdrop-filter: none;
+  }
+
+  .menu-card,
+  .compact-dish,
+  .spotlight-dish,
+  .category-pill,
+  .mobile-bottom-nav a,
+  .primary-cta,
+  .secondary-cta,
+  .inline-menu-link,
+  .item-detail-back,
+  .full-menu-page .dish-image-shell img {
+    transition-duration: 180ms;
   }
 }
 
