@@ -31,6 +31,7 @@ import {
 } from "@/data/menu";
 import { I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
+import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
 import mobileIntroVideo from "@/assets/asya-mobile-intro.mp4";
 import logoImg from "@/assets/asyas-logo-transparent.png";
 import placeholderImg from "@/assets/dish-placeholder.jpg";
@@ -106,28 +107,23 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
 }
 
 function DesktopIntroOverlay() {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldRender, setShouldRender] = useState(true);
+  const [isReady, setIsReady] = useState(false);
   const [isFading, setIsFading] = useState(false);
   const [lockPage, setLockPage] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(min-width: 721px)");
+    const media = window.matchMedia("(min-width: 768px)");
     if (!media.matches) {
       setShouldRender(false);
       return;
     }
 
     setLockPage(true);
-    const fadeTimer = window.setTimeout(() => setIsFading(true), 2800);
-    const removeTimer = window.setTimeout(() => {
-      setShouldRender(false);
-      setLockPage(false);
-    }, 3300);
-
-    return () => {
-      window.clearTimeout(fadeTimer);
-      window.clearTimeout(removeTimer);
-    };
+    const video = videoRef.current;
+    video?.load();
+    video?.play().catch(() => undefined);
   }, []);
 
   useEffect(() => {
@@ -154,11 +150,37 @@ function DesktopIntroOverlay() {
     };
   }, [lockPage, shouldRender]);
 
+  const finishIntro = () => {
+    setIsFading(true);
+    window.setTimeout(() => {
+      setShouldRender(false);
+      setLockPage(false);
+    }, 500);
+  };
+
   if (!shouldRender) return null;
 
   return (
-    <div className={`desktop-intro-overlay ${isFading ? "is-fading" : ""}`} aria-hidden="true">
-      <img className="desktop-intro-logo" src={logoImg} alt="" width={220} height={220} />
+    <div
+      className={`desktop-intro-overlay ${isReady ? "is-ready" : ""} ${isFading ? "is-fading" : ""}`}
+      aria-hidden="true"
+    >
+      <video
+        ref={videoRef}
+        className="desktop-intro-video"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        onLoadedData={() => setIsReady(true)}
+        onCanPlay={() => videoRef.current?.play().catch(() => undefined)}
+        onEnded={finishIntro}
+        onError={finishIntro}
+      >
+        <source src={desktopIntroVideo} type="video/mp4" media="(min-width: 768px)" />
+      </video>
     </div>
   );
 }
