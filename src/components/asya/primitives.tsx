@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowUpRight,
   CakeSlice,
@@ -507,6 +507,8 @@ function ItemDetailView({
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const previousScrollYRef = useRef(0);
+  const isMobileSheet = useMediaQuery("(max-width: 767px)");
+  const prefersReducedMotion = useReducedMotion();
   const item = selection?.item;
   const category = selection?.category;
   const labels = {
@@ -574,6 +576,26 @@ function ItemDetailView({
   const isPlaceholder = imageSrc === placeholderImg;
   const itemName = tx(item.name);
   const description = tx(item.description);
+  const dialogMotion = prefersReducedMotion
+    ? {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+        transition: { duration: 0.16, ease: "easeOut" },
+      }
+    : isMobileSheet
+      ? {
+          initial: { opacity: 0, y: 34 },
+          animate: { opacity: 1, y: 0 },
+          exit: { opacity: 0, y: 18 },
+          transition: { duration: 0.26, ease: softEase },
+        }
+      : {
+          initial: { opacity: 0, scale: 0.96, y: 18, filter: "blur(10px)" },
+          animate: { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" },
+          exit: { opacity: 0, scale: 0.98, y: 12, filter: "blur(6px)" },
+          transition: { duration: 0.34, ease: softEase },
+        };
 
   return (
     <motion.div
@@ -581,6 +603,7 @@ function ItemDetailView({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: isMobileSheet ? 0.22 : 0.28, ease: "easeOut" }}
       role="presentation"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
@@ -592,9 +615,8 @@ function ItemDetailView({
         role="dialog"
         aria-modal="true"
         aria-label={itemName}
-        initial={{ opacity: 0, scale: 0.96, y: 18, filter: "blur(10px)" }}
-        animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.34, ease: softEase }}
+        dir={locale === "ar" ? "rtl" : "ltr"}
+        {...dialogMotion}
       >
         <button ref={closeButtonRef} type="button" className="item-detail-close" onClick={onClose} aria-label={labels.close}>
           <X className="h-5 w-5" />
@@ -612,7 +634,7 @@ function ItemDetailView({
             alt={isPlaceholder ? "" : itemName}
             width={920}
             height={920}
-            loading="eager"
+            loading="lazy"
             decoding="async"
           />
         </div>
@@ -648,6 +670,24 @@ function ItemDetailView({
       </motion.div>
     </motion.div>
   );
+}
+
+function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia(query).matches;
+  });
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    const handleChange = () => setMatches(media.matches);
+
+    handleChange();
+    media.addEventListener("change", handleChange);
+    return () => media.removeEventListener("change", handleChange);
+  }, [query]);
+
+  return matches;
 }
 
 export function PriceTag({ item }: { item: MenuItem }) {
