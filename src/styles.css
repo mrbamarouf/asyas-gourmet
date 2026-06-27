@@ -4904,7 +4904,6 @@ body {
 
 /* Organic Mediterranean polish layer. Visual refinement only. */
 :root {
-  --olive-branch-line: none;
   --surface-paper: linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(242, 236, 227, 0.92));
   --surface-olive-wash: radial-gradient(circle at 88% 12%, rgba(104, 115, 84, 0.12), transparent 26rem);
   --surface-gold-wash: radial-gradient(circle at 12% 0%, rgba(200, 155, 106, 0.12), transparent 22rem);
@@ -4924,28 +4923,27 @@ body {
 .asya-site::before,
 .asya-site::after {
   position: fixed;
-  top: clamp(4.5rem, 9vh, 7rem);
-  z-index: 2;
-  width: clamp(19rem, 26vw, 31rem);
-  height: min(82vh, 58rem);
+  top: 140px;
+  z-index: 1;
+  width: clamp(220px, 18vw, 320px);
+  height: clamp(600px, 49vw, 875px);
   pointer-events: none;
   content: "";
-  background-image: url("./assets/olive-branch-side.svg");
+  background-image: url("./assets/olive-decoration.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.085;
+  background-position: right top;
+  background-size: 100% auto;
+  opacity: 0.42;
   mix-blend-mode: multiply;
-  filter: saturate(0.9);
 }
 
 .asya-site::before {
-  left: clamp(-18rem, -16vw, -9rem);
+  left: clamp(-116px, -6vw, -64px);
+  transform: scaleX(-1);
 }
 
 .asya-site::after {
-  right: clamp(-18rem, -16vw, -9rem);
-  transform: scaleX(-1);
+  right: clamp(-116px, -6vw, -64px);
 }
 
 .asya-site > main,
@@ -4985,7 +4983,7 @@ body {
   height: clamp(17rem, 36vw, 30rem);
   pointer-events: none;
   content: "";
-  background-image: var(--olive-branch-line);
+  background-image: none;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -5447,10 +5445,10 @@ body {
 @media (max-width: 900px) {
   .asya-site::before,
   .asya-site::after {
-    top: clamp(5rem, 10vh, 7rem);
-    width: clamp(13rem, 24vw, 18rem);
-    height: min(70vh, 44rem);
-    opacity: 0.055;
+    top: 120px;
+    width: clamp(160px, 24vw, 220px);
+    height: clamp(438px, 66vw, 602px);
+    opacity: 0.28;
   }
 
   .story-section::after,
@@ -5470,7 +5468,19 @@ body {
 @media (max-width: 767px) {
   .asya-site::before,
   .asya-site::after {
-    display: none;
+    display: block;
+    top: 112px;
+    width: clamp(90px, 28vw, 130px);
+    height: clamp(246px, 77vw, 356px);
+    opacity: 0.2;
+  }
+
+  .asya-site::before {
+    left: -72px;
+  }
+
+  .asya-site::after {
+    right: -72px;
   }
 
   .section-wrap,
