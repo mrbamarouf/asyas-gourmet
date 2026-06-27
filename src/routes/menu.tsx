@@ -16,7 +16,7 @@ import {
 import { useI18n } from "@/lib/i18n";
 
 import heroImg from "@/assets/hero-turkish-table.jpg";
-import logoImg from "@/assets/asyas-logo.png";
+import logoImg from "@/assets/asyas-logo-transparent.png";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
@@ -251,4 +251,3 @@ function MenuSection({ group }: { group: MenuGroup }) {
     </motion.section>
   );
 }
-

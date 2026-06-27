@@ -31,7 +31,7 @@ import {
 } from "@/data/menu";
 import { I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
-import logoImg from "@/assets/asyas-logo.png";
+import logoImg from "@/assets/asyas-logo-transparent.png";
 import placeholderImg from "@/assets/dish-placeholder.jpg";
 
 export const softEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -467,4 +467,3 @@ function Footer() {
     </footer>
   );
 }
-

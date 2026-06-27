@@ -30,7 +30,7 @@ import { useI18n } from "@/lib/i18n";
 import bakeryImg from "@/assets/bakery.jpg";
 import heroImg from "@/assets/hero-turkish-table.jpg";
 import interiorImg from "@/assets/interior.jpg";
-import logoImg from "@/assets/asyas-logo.png";
+import logoImg from "@/assets/asyas-logo-transparent.png";
 import teaImg from "@/assets/tea.jpg";
 
 export const Route = createFileRoute("/")({

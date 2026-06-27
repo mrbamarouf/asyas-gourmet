@@ -200,16 +200,18 @@
   flex: 0 0 auto;
   width: 3.15rem;
   height: 3.15rem;
-  border: 1px solid rgba(185, 148, 85, 0.3);
+  border: 1px solid rgba(185, 148, 85, 0.44);
   border-radius: 999px;
-  background: rgba(255, 248, 234, 0.94);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.34);
+  background: rgba(15, 26, 44, 0.5);
+  box-shadow: 0 12px 28px -24px rgba(0, 0, 0, 0.82), inset 0 0 0 1px rgba(185, 148, 85, 0.18);
 }
 
 .nav-logo-frame img {
-  width: 2.38rem;
-  height: 2.38rem;
+  width: 2.56rem;
+  height: 2.56rem;
   object-fit: contain;
+  background: transparent;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.28));
 }
 
 .nav-brand-copy {
@@ -365,9 +367,12 @@
   height: clamp(5.8rem, 14vw, 8.6rem);
   object-fit: contain;
   margin-bottom: 1.2rem;
+  padding: 0.14rem;
+  border: 1px solid rgba(185, 148, 85, 0.44);
   border-radius: 999px;
-  background: rgba(255, 248, 234, 0.88);
-  box-shadow: 0 28px 70px -36px rgba(0, 0, 0, 0.75), inset 0 0 0 1px rgba(185, 148, 85, 0.28);
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.42));
 }
 
 .hero-kicker,
@@ -1322,9 +1327,12 @@
 .footer-brand img {
   width: 5rem;
   height: 5rem;
+  object-fit: contain;
+  border: 1px solid rgba(185, 148, 85, 0.32);
   border-radius: 999px;
-  background: var(--cream);
-  padding: 0.2rem;
+  background: transparent;
+  padding: 0;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.22));
 }
 
 .footer-brand h2 {
@@ -1768,7 +1776,7 @@ body {
 
 .nav-logo-frame {
   border-color: rgba(215, 192, 138, 0.54);
-  background: rgba(247, 243, 234, 0.96);
+  background: rgba(15, 26, 44, 0.82);
 }
 
 .nav-links a:hover,
@@ -1821,8 +1829,8 @@ body {
 .full-menu-hero-content > img {
   width: clamp(5.2rem, 12vw, 7.4rem);
   height: clamp(5.2rem, 12vw, 7.4rem);
-  background: rgba(247, 243, 234, 0.94);
-  box-shadow: 0 8px 18px -12px rgba(0, 0, 0, 0.8);
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-kicker,
