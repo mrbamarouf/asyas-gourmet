@@ -140,6 +140,10 @@ function TopNav({ current }: { current: "home" | "menu" }) {
         </nav>
 
         <div className="nav-actions">
+          <a className={current === "menu" ? "mobile-menu-button is-current" : "mobile-menu-button"} href="/menu">
+            <Utensils className="h-4 w-4" />
+            <span>{t("nav_menu")}</span>
+          </a>
           <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="nav-contact">
             <MessageCircle className="h-4 w-4" />
             <span>{t("nav_contact")}</span>

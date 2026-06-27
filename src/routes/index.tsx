@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, CakeSlice, ChefHat, Coffee, CupSoda, ExternalLink, Sparkles, Wheat } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import {
   CATEGORIES,
@@ -82,9 +83,14 @@ function HomePage() {
 function HomeHero() {
   const { t, tx } = useI18n();
   const reduceMotion = useReducedMotion();
+  const isMobileViewport = useMobileViewport();
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 780], reduceMotion ? [0, 0] : [0, 120]);
-  const heroScale = useTransform(scrollY, [0, 780], reduceMotion ? [1.04, 1.04] : [1.04, 1.14]);
+  const heroY = useTransform(scrollY, [0, 780], reduceMotion || isMobileViewport ? [0, 0] : [0, 120]);
+  const heroScale = useTransform(
+    scrollY,
+    [0, 780],
+    isMobileViewport ? [1, 1] : reduceMotion ? [1.04, 1.04] : [1.04, 1.14],
+  );
 
   return (
     <section id="top" className="home-hero">
@@ -128,6 +134,20 @@ function HomeHero() {
       </motion.div>
     </section>
   );
+}
+
+function useMobileViewport() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 720px)");
+    const update = () => setIsMobile(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  return isMobile;
 }
 
 function StorySection() {
