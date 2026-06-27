@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Search, Sparkles, Utensils, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
   CATEGORIES,
@@ -72,10 +72,10 @@ function FullMenuPage() {
 }
 
 function MenuHero() {
-  const { t, tx } = useI18n();
+  const { locale, t, tx } = useI18n();
 
   return (
-    <section className="full-menu-hero">
+    <section className="full-menu-hero" dir={locale === "ar" ? "rtl" : "ltr"}>
       <img src={heroImg} alt="" width={1920} height={1280} loading="eager" decoding="async" fetchPriority="high" />
       <div className="full-menu-hero-overlay" />
       <motion.div className="full-menu-hero-content" variants={staggerChildren} initial="hidden" animate="visible">
@@ -103,9 +103,10 @@ function MenuHero() {
 }
 
 function MenuExplorer() {
-  const { t, tx } = useI18n();
+  const { locale, t, tx } = useI18n();
   const [query, setQuery] = useState("");
   const [activeGroup, setActiveGroup] = useState<MenuGroupId>(CATEGORY_QUICK_JUMPS[0]?.id ?? CATEGORY_ORDER[0].id);
+  const categoryStripRef = useRef<HTMLElement>(null);
   const displayGroups = useMemo<MenuDisplayGroup[]>(() => {
     const normalizedQuery = query.trim().toLowerCase();
     const matchesQuery = (item: MenuItem, category?: MenuCategory) => {
@@ -178,6 +179,16 @@ function MenuExplorer() {
     return () => observer.disconnect();
   }, [displayGroups, query]);
 
+  useEffect(() => {
+    const strip = categoryStripRef.current;
+    if (!strip) return;
+
+    window.requestAnimationFrame(() => {
+      const activePill = strip.querySelector<HTMLElement>(`[data-group-pill="${activeGroup}"]`);
+      activePill?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+    });
+  }, [activeGroup, locale, visibleQuickJumps.length]);
+
   const scrollToGroup = (groupId: MenuGroupId) => {
     setQuery("");
     setActiveGroup(groupId);
@@ -187,7 +198,7 @@ function MenuExplorer() {
   };
 
   return (
-    <section className="full-menu-explorer">
+    <section className="full-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
       <div className="full-menu-controls">
         <div className="section-wrap controls-wrap">
           <div className="menu-search">
@@ -205,7 +216,12 @@ function MenuExplorer() {
             ) : null}
           </div>
 
-          <nav className="menu-category-strip menu-quick-jump no-scrollbar" aria-label="Menu quick jump">
+          <nav
+            ref={categoryStripRef}
+            className="menu-category-strip menu-quick-jump no-scrollbar"
+            aria-label="Menu quick jump"
+            dir={locale === "ar" ? "rtl" : "ltr"}
+          >
             {visibleQuickJumps.map((group) => (
               <button
                 key={group.id}
@@ -213,6 +229,7 @@ function MenuExplorer() {
                 onClick={() => scrollToGroup(group.id)}
                 className={activeGroup === group.id ? "category-pill is-active" : "category-pill"}
                 aria-pressed={activeGroup === group.id}
+                data-group-pill={group.id}
               >
                 <QuickJumpIcon group={group} />
                 <span>{tx(group.shortName)}</span>

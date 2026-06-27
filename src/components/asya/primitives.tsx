@@ -339,7 +339,7 @@ function TopNav({ current }: { current: "home" | "menu" }) {
           </span>
         </a>
 
-        <nav className="nav-links" aria-label="Primary navigation">
+        <nav className="nav-links" aria-label="Primary navigation" dir={locale === "ar" ? "rtl" : "ltr"}>
           <a className={current === "home" ? "is-current" : ""} href="/">
             <Home className="nav-icon" />
             <span>{t("nav_home")}</span>
@@ -350,16 +350,16 @@ function TopNav({ current }: { current: "home" | "menu" }) {
           </a>
           <a href="/#about">{t("nav_about")}</a>
           <a href="/#visit">{t("nav_visit")}</a>
+          <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+            <MessageCircle className="nav-icon" />
+            <span>{t("nav_contact")}</span>
+          </a>
         </nav>
 
         <div className="nav-actions">
           <a className={current === "menu" ? "mobile-menu-button is-current" : "mobile-menu-button"} href="/menu">
             <Utensils className="h-4 w-4" />
             <span>{t("nav_menu")}</span>
-          </a>
-          <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="nav-contact">
-            <MessageCircle className="h-4 w-4" />
-            <span>{t("nav_contact")}</span>
           </a>
           <button
             type="button"
@@ -815,10 +815,10 @@ function FloatingContact({ current }: { current: "home" | "menu" }) {
 }
 
 function MobileBottomNav({ current }: { current: "home" | "menu" }) {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
 
   return (
-    <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
+    <nav className="mobile-bottom-nav" aria-label="Mobile navigation" dir={locale === "ar" ? "rtl" : "ltr"}>
       <a href="/" className={current === "home" ? "is-active" : ""}>
         <Home className="h-5 w-5" />
         <span>{t("nav_home")}</span>
