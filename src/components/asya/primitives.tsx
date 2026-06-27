@@ -95,12 +95,71 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     <I18nContext.Provider value={value}>
       <div data-locale={locale} className="asya-site">
         <MobileIntroOverlay />
+        <DesktopIntroOverlay />
         <TopNav current={current} />
         {children}
         <Footer />
         <FloatingContact current={current} />
       </div>
     </I18nContext.Provider>
+  );
+}
+
+function DesktopIntroOverlay() {
+  const [shouldRender, setShouldRender] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+  const [lockPage, setLockPage] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 721px)");
+    if (!media.matches) {
+      setShouldRender(false);
+      return;
+    }
+
+    setLockPage(true);
+    const fadeTimer = window.setTimeout(() => setIsFading(true), 2800);
+    const removeTimer = window.setTimeout(() => {
+      setShouldRender(false);
+      setLockPage(false);
+    }, 3300);
+
+    return () => {
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(removeTimer);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!lockPage || !shouldRender) return;
+
+    const preventDefault = (event: Event) => event.preventDefault();
+    const preventScrollKeys = (event: KeyboardEvent) => {
+      if ([" ", "ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End"].includes(event.key)) {
+        event.preventDefault();
+      }
+    };
+    document.documentElement.classList.add("asya-desktop-intro-lock");
+    document.body.classList.add("asya-desktop-intro-lock");
+    window.addEventListener("touchmove", preventDefault, { passive: false });
+    window.addEventListener("wheel", preventDefault, { passive: false });
+    window.addEventListener("keydown", preventScrollKeys);
+
+    return () => {
+      document.documentElement.classList.remove("asya-desktop-intro-lock");
+      document.body.classList.remove("asya-desktop-intro-lock");
+      window.removeEventListener("touchmove", preventDefault);
+      window.removeEventListener("wheel", preventDefault);
+      window.removeEventListener("keydown", preventScrollKeys);
+    };
+  }, [lockPage, shouldRender]);
+
+  if (!shouldRender) return null;
+
+  return (
+    <div className={`desktop-intro-overlay ${isFading ? "is-fading" : ""}`} aria-hidden="true">
+      <img className="desktop-intro-logo" src={logoImg} alt="" width={220} height={220} />
+    </div>
   );
 }
 
