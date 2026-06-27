@@ -591,10 +591,10 @@ function ItemDetailView({
           transition: { duration: 0.26, ease: softEase },
         }
       : {
-          initial: { opacity: 0, scale: 0.96, y: 18, filter: "blur(10px)" },
-          animate: { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" },
-          exit: { opacity: 0, scale: 0.98, y: 12, filter: "blur(6px)" },
-          transition: { duration: 0.34, ease: softEase },
+          initial: { opacity: 0, scale: 0.97, y: 14 },
+          animate: { opacity: 1, scale: 1, y: 0 },
+          exit: { opacity: 0, scale: 0.98, y: 10 },
+          transition: { duration: 0.28, ease: softEase },
         };
 
   return (
@@ -605,8 +605,9 @@ function ItemDetailView({
       exit={{ opacity: 0 }}
       transition={{ duration: isMobileSheet ? 0.22 : 0.28, ease: "easeOut" }}
       role="presentation"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
+      onPointerDown={(event) => {
+        if (typeof window === "undefined") return;
+        if (window.matchMedia("(min-width: 1024px)").matches && event.target === event.currentTarget) onClose();
       }}
     >
       <motion.div
@@ -645,18 +646,20 @@ function ItemDetailView({
             <PriceTag item={item} />
           </div>
           <h2>{itemName}</h2>
-          {description ? (
-            <div className="item-detail-description">
-              <strong>{labels.description}</strong>
-              <p>{description}</p>
-            </div>
-          ) : null}
-          {item.options?.length ? (
-            <div className="item-detail-options">
-              <strong>{labels.options}</strong>
-              <MenuOptions item={item} />
-            </div>
-          ) : null}
+          <div className="item-detail-scroll">
+            {description ? (
+              <div className="item-detail-description">
+                <strong>{labels.description}</strong>
+                <p>{description}</p>
+              </div>
+            ) : null}
+            {item.options?.length ? (
+              <div className="item-detail-options">
+                <strong>{labels.options}</strong>
+                <MenuOptions item={item} />
+              </div>
+            ) : null}
+          </div>
           {current === "menu" ? (
             <button type="button" className="item-detail-back" onClick={onClose}>
               {labels.back}
