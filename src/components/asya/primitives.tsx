@@ -99,6 +99,7 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
         {children}
         <Footer />
         <FloatingContact current={current} />
+        <MobileBottomNav current={current} />
       </div>
     </I18nContext.Provider>
   );
@@ -602,6 +603,31 @@ function FloatingContact({ current }: { current: "home" | "menu" }) {
         <span>{t("instagram")}</span>
       </a>
     </div>
+  );
+}
+
+function MobileBottomNav({ current }: { current: "home" | "menu" }) {
+  const { t } = useI18n();
+
+  return (
+    <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
+      <a href="/" className={current === "home" ? "is-active" : ""}>
+        <Home className="h-5 w-5" />
+        <span>{t("nav_home")}</span>
+      </a>
+      <a href="/menu" className={current === "menu" ? "is-active" : ""}>
+        <Utensils className="h-5 w-5" />
+        <span>{t("nav_menu")}</span>
+      </a>
+      <a href={RESTAURANT.mapsUrl} target="_blank" rel="noopener noreferrer">
+        <MapPin className="h-5 w-5" />
+        <span>{t("directions")}</span>
+      </a>
+      <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
+        <Instagram className="h-5 w-5" />
+        <span>{t("instagram")}</span>
+      </a>
+    </nav>
   );
 }
 
