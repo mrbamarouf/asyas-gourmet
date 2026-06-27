@@ -338,7 +338,7 @@ function MenuSection({ group }: { group: MenuGroup }) {
     >
       <div
         className={cover ? "menu-section-banner has-cover" : "menu-section-banner"}
-        style={cover ? { backgroundImage: `linear-gradient(90deg, rgba(20, 30, 50, 0.82), rgba(20, 30, 50, 0.28)), url(${cover})` } : undefined}
+        style={cover ? { backgroundImage: `linear-gradient(90deg, rgba(79, 90, 62, 0.82), rgba(104, 115, 84, 0.28)), url(${cover})` } : undefined}
       >
         <SectionIntro
           eyebrow={`${group.items.length} ${t("menuCount")}`}
