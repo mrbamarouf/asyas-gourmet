@@ -40,6 +40,30 @@ export interface MenuCategory {
   order?: number;
 }
 
+export type MenuGroupId =
+  | "offers"
+  | "best-sellers"
+  | "breakfast"
+  | "appetizers"
+  | "soups"
+  | "bakery"
+  | "mains"
+  | "grills"
+  | "sides"
+  | "desserts"
+  | "shisha"
+  | "drinks";
+
+export interface MenuCategoryGroup {
+  id: MenuGroupId;
+  name: LocalizedText;
+  shortName: LocalizedText;
+  blurb: LocalizedText;
+  categoryIds: string[];
+  quickJump?: boolean;
+  featuredOnly?: boolean;
+}
+
 export const RESTAURANT = {
   name: { ar: "أسيا جورميه", en: "Asya's Gourmet" },
   kicker: { ar: "مطعم ومخبز تركي", en: "Turkish Restaurant & Bakery" },
@@ -53,6 +77,182 @@ export const RESTAURANT = {
   hours: { ar: "يوميًا، التوقيت يحتاج تأكيد من العميل", en: "Daily, hours to be confirmed" },
   currency: { ar: "ر.س", en: "SAR" },
 };
+
+export const CATEGORY_IDS = {
+  happySpreads: "61e69fe8-3255-49c0-ad94-517a04184cd5",
+  eggs: "e74e388c-048d-47e4-afec-acf25fac4650",
+  tea: "503260fe-058c-4b7a-9dac-6035eb79d781",
+  specialIcedMatchas: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+  ourSignatures: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+  soups: "c0a5b81c-a849-43c6-994d-e4a41c842182",
+  grillCasserole: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+  garden: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+  coffees: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+  greens: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+  tableFlavours: "02eb0962-be35-4701-8641-872802ee6fc7",
+  warmStarts: "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+  icedTeaLemonade: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+  steakhouse: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+  pasta: "884b790b-3b65-46a2-9be5-2ef78ce53146",
+  turkishDrinks: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+  asyaFlavours: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+  softDrinks: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+  coldCoffees: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+  shishaCharming: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+  pide: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+  potatoes: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+  turkishDessert: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+  sweetMemory: "9ab5f294-68cb-470c-a860-d520f5d09f22",
+  signatureShisha: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+  vipShisha: "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
+  pizza: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+  gozlemeBorek: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+  milkshake: "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+} as const;
+
+export const CATEGORY_ORDER: MenuCategoryGroup[] = [
+  {
+    id: "offers",
+    name: { ar: "العروض والبكجات", en: "Offers & Packages" },
+    shortName: { ar: "العروض", en: "Offers" },
+    blurb: {
+      ar: "سفرات وباقات مشاركة تبدأ بها التجربة بوضوح.",
+      en: "Sharing spreads and package-style plates that make the first choice easy.",
+    },
+    categoryIds: [CATEGORY_IDS.happySpreads],
+    quickJump: true,
+  },
+  {
+    id: "best-sellers",
+    name: { ar: "الأكثر طلبًا", en: "Best Sellers" },
+    shortName: { ar: "الأكثر طلبًا", en: "Best Sellers" },
+    blurb: {
+      ar: "اختيارات بارزة من الأصناف المعلّمة داخل بيانات المنيو نفسها.",
+      en: "Highlighted picks using only items already marked in the menu data.",
+    },
+    categoryIds: [],
+    featuredOnly: true,
+  },
+  {
+    id: "breakfast",
+    name: { ar: "الفطور التركي", en: "Turkish Breakfast" },
+    shortName: { ar: "الفطور", en: "Breakfast" },
+    blurb: {
+      ar: "بيض، أجبان، زيتون، وأطباق صباحية تركية للمشاركة.",
+      en: "Eggs, cheeses, olives, and Turkish morning plates for the table.",
+    },
+    categoryIds: [CATEGORY_IDS.eggs, CATEGORY_IDS.asyaFlavours],
+    quickJump: true,
+  },
+  {
+    id: "appetizers",
+    name: { ar: "المقبلات والسلطات", en: "Appetizers & Salads" },
+    shortName: { ar: "المقبلات", en: "Appetizers" },
+    blurb: {
+      ar: "مقبلات باردة ودافئة، سلطات، حمص، ومتبل قبل الأطباق الكبيرة.",
+      en: "Cold and warm starters, salads, hummus, and table meze before the mains.",
+    },
+    categoryIds: [CATEGORY_IDS.greens, CATEGORY_IDS.tableFlavours, CATEGORY_IDS.warmStarts],
+    quickJump: true,
+  },
+  {
+    id: "soups",
+    name: { ar: "الشوربات", en: "Soups" },
+    shortName: { ar: "الشوربات", en: "Soups" },
+    blurb: {
+      ar: "بداية دافئة وخفيفة قبل المائدة.",
+      en: "Warm bowls to start the table gently.",
+    },
+    categoryIds: [CATEGORY_IDS.soups],
+  },
+  {
+    id: "bakery",
+    name: { ar: "المخبوزات والفطائر", en: "Bakery & Pastries" },
+    shortName: { ar: "المخبوزات", en: "Bakery" },
+    blurb: {
+      ar: "بيدا، بيتزا، جوزلمة، بوريك، وخبز تركي دافئ.",
+      en: "Pide, pizza, gozleme, borek, and warm Turkish bread.",
+    },
+    categoryIds: [CATEGORY_IDS.pide, CATEGORY_IDS.pizza, CATEGORY_IDS.gozlemeBorek],
+  },
+  {
+    id: "mains",
+    name: { ar: "الأطباق الرئيسية", en: "Main Dishes" },
+    shortName: { ar: "الرئيسية", en: "Mains" },
+    blurb: {
+      ar: "أطباق مشبعة للغداء والعشاء، من الباستا إلى أطباق اللحم.",
+      en: "Lunch and dinner plates, from pasta to richer meat dishes.",
+    },
+    categoryIds: [CATEGORY_IDS.pasta, CATEGORY_IDS.steakhouse],
+    quickJump: true,
+  },
+  {
+    id: "grills",
+    name: { ar: "المشويات", en: "Grills" },
+    shortName: { ar: "المشويات", en: "Grills" },
+    blurb: {
+      ar: "كباب، شيش، أطباق مشوية، وطواجن تركية ساخنة.",
+      en: "Kebabs, shish, grilled plates, and hot Turkish casseroles.",
+    },
+    categoryIds: [CATEGORY_IDS.grillCasserole],
+    quickJump: true,
+  },
+  {
+    id: "sides",
+    name: { ar: "الجانبيات", en: "Sides" },
+    shortName: { ar: "الجانبيات", en: "Sides" },
+    blurb: {
+      ar: "إضافات بطاطس وأطباق جانبية تكمل الطلب.",
+      en: "Potato sides and small add-ons to complete the order.",
+    },
+    categoryIds: [CATEGORY_IDS.potatoes],
+  },
+  {
+    id: "desserts",
+    name: { ar: "الحلويات", en: "Desserts" },
+    shortName: { ar: "الحلويات", en: "Desserts" },
+    blurb: {
+      ar: "بقلاوة، كنافة، كيك، ولمسات تركية حلوة في نهاية الطلب.",
+      en: "Baklava, kunafa, cakes, and Turkish sweets to finish the meal.",
+    },
+    categoryIds: [CATEGORY_IDS.turkishDessert, CATEGORY_IDS.sweetMemory],
+    quickJump: true,
+  },
+  {
+    id: "shisha",
+    name: { ar: "الشيشة", en: "Shisha" },
+    shortName: { ar: "الشيشة", en: "Shisha" },
+    blurb: {
+      ar: "قسم منفصل للشيشة حتى تبقى المشروبات في نهاية المنيو بوضوح.",
+      en: "A separate shisha section so drinks remain clearly last.",
+    },
+    categoryIds: [CATEGORY_IDS.shishaCharming, CATEGORY_IDS.signatureShisha, CATEGORY_IDS.vipShisha],
+  },
+  {
+    id: "drinks",
+    name: { ar: "المشروبات", en: "Drinks" },
+    shortName: { ar: "المشروبات", en: "Drinks" },
+    blurb: {
+      ar: "شاي، قهوة، عصائر، مشروبات باردة، مياه، ومشروبات غازية.",
+      en: "Tea, coffee, juices, cold drinks, water, and soft drinks.",
+    },
+    categoryIds: [
+      CATEGORY_IDS.tea,
+      CATEGORY_IDS.coffees,
+      CATEGORY_IDS.coldCoffees,
+      CATEGORY_IDS.turkishDrinks,
+      CATEGORY_IDS.garden,
+      CATEGORY_IDS.icedTeaLemonade,
+      CATEGORY_IDS.ourSignatures,
+      CATEGORY_IDS.specialIcedMatchas,
+      CATEGORY_IDS.milkshake,
+      CATEGORY_IDS.softDrinks,
+    ],
+    quickJump: true,
+  },
+];
+
+export const CATEGORY_QUICK_JUMPS = CATEGORY_ORDER.filter((group) => group.quickJump);
 
 const RAW_CATEGORIES = [
   {

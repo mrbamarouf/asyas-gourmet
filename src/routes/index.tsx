@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 
 import {
   CATEGORIES,
+  CATEGORY_ORDER,
   CHEF_PICK_ITEMS,
   ITEMS,
   POPULAR_ITEMS,
   RESTAURANT,
+  type MenuGroupId,
   type MenuCategory,
   type MenuItem,
 } from "@/data/menu";
@@ -70,8 +72,9 @@ function HomePage() {
         <SignatureSection items={homeContent.signature} />
         <BreakfastSection items={homeContent.breakfast} />
         <BakerySection items={homeContent.bakery} />
-        <DrinksSection items={homeContent.drinks} />
+        <MainDishesSection items={homeContent.mains} />
         <DessertsSection items={homeContent.desserts} />
+        <DrinksSection items={homeContent.drinks} />
         <GallerySection items={homeContent.gallery} />
         <VisitIntro />
         <VisitContact />
@@ -294,6 +297,34 @@ function BakerySection({ items }: { items: DishEntry[] }) {
   );
 }
 
+function MainDishesSection({ items }: { items: DishEntry[] }) {
+  const { t } = useI18n();
+
+  return (
+    <motion.section
+      className="mains-section desserts-section"
+      variants={staggerChildren}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-110px" }}
+    >
+      <div className="section-wrap">
+        <SectionIntro
+          eyebrow={t("sec_mains")}
+          title={t("home_mains_title")}
+          body={t("home_mains_body")}
+          icon={<ChefHat className="h-4 w-4" />}
+        />
+        <div className="dessert-grid">
+          {items.slice(0, 6).map((entry) => (
+            <MenuCard key={entry.item.id} item={entry.item} category={entry.category} variant="feature" />
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
 function DrinksSection({ items }: { items: DishEntry[] }) {
   const { t } = useI18n();
 
@@ -449,29 +480,23 @@ function CompactDish({ entry }: { entry: DishEntry }) {
 
 function buildHomeContent() {
   const signature = toEntries(uniqueItems([...CHEF_PICK_ITEMS, ...POPULAR_ITEMS]).slice(0, 6));
-  const breakfast = toEntries(itemsFromCategories(["Happy Spreads", "Eggs"]).slice(0, 6));
-  const bakery = toEntries(
-    uniqueItems([
-      ...ITEMS.filter((item) => item.bakery),
-      ...itemsFromCategories(["Asya's Premium Pides", "Lahmacuns", "Pizza", "Abla's Handmade Gözleme & Börek"]),
-    ]).slice(0, 6),
-  );
+  const breakfast = toEntries(itemsFromMenuGroup("breakfast").slice(0, 6));
+  const bakery = toEntries(uniqueItems([...ITEMS.filter((item) => item.bakery), ...itemsFromMenuGroup("bakery")]).slice(0, 6));
+  const mains = toEntries(itemsFromMenuGroup("mains").slice(0, 6));
+  const desserts = toEntries(itemsFromMenuGroup("desserts").slice(0, 6));
   const drinks = toEntries(
     uniqueItems([
       ...ITEMS.filter((item) => item.turkishDrink),
-      ...itemsFromCategories(["Tea", "World's Coffees", "Turkish Traditional Drinks", "Our Signatures"]),
+      ...itemsFromMenuGroup("drinks"),
     ]).slice(0, 6),
   );
-  const desserts = toEntries(itemsFromCategories(["TURKISH DESSERT", "A Sweet Memory"]).slice(0, 6));
   const gallery = toEntries(uniqueItems([...signature.map((entry) => entry.item), ...desserts.map((entry) => entry.item), ...drinks.map((entry) => entry.item)]).filter(isOfficialImage));
 
-  return { signature, breakfast, bakery, drinks, desserts, gallery };
+  return { signature, breakfast, bakery, mains, desserts, drinks, gallery };
 }
 
-function itemsFromCategories(names: string[]) {
-  const categoryIds = CATEGORIES.filter((category) =>
-    names.some((name) => category.name.en.toLowerCase().includes(name.toLowerCase())),
-  ).map((category) => category.id);
+function itemsFromMenuGroup(groupId: MenuGroupId) {
+  const categoryIds = CATEGORY_ORDER.find((group) => group.id === groupId)?.categoryIds ?? [];
 
   return ITEMS.filter((item) => categoryIds.includes(item.category));
 }

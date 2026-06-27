@@ -3,7 +3,18 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Search, Sparkles, Utensils, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-import { CATEGORIES, ITEMS, RESTAURANT, type MenuCategory, type MenuItem } from "@/data/menu";
+import {
+  CATEGORIES,
+  CATEGORY_ORDER,
+  CATEGORY_QUICK_JUMPS,
+  ITEMS,
+  POPULAR_ITEMS,
+  RESTAURANT,
+  type MenuCategory,
+  type MenuCategoryGroup,
+  type MenuGroupId,
+  type MenuItem,
+} from "@/data/menu";
 import {
   AsyaShell,
   CategoryGlyph,
@@ -40,6 +51,14 @@ interface MenuGroup {
   category: MenuCategory;
   items: MenuItem[];
 }
+
+interface MenuDisplayGroup {
+  definition: MenuCategoryGroup;
+  sections: MenuGroup[];
+  featuredItems: MenuItem[];
+}
+
+const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
 
 function FullMenuPage() {
   return (
@@ -86,46 +105,61 @@ function MenuHero() {
 function MenuExplorer() {
   const { t, tx } = useI18n();
   const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]?.id ?? "");
-  const groups = useMemo<MenuGroup[]>(() => {
+  const [activeGroup, setActiveGroup] = useState<MenuGroupId>(CATEGORY_QUICK_JUMPS[0]?.id ?? CATEGORY_ORDER[0].id);
+  const displayGroups = useMemo<MenuDisplayGroup[]>(() => {
     const normalizedQuery = query.trim().toLowerCase();
+    const matchesQuery = (item: MenuItem, category?: MenuCategory) => {
+      if (!normalizedQuery) return true;
+      const haystack = [
+        item.name.ar,
+        item.name.en,
+        item.description.ar,
+        item.description.en,
+        category?.name.ar,
+        category?.name.en,
+        ...(item.options?.flatMap((option) => [option.name, option.price]) ?? []),
+      ]
+        .join(" ")
+        .toLowerCase();
+      return haystack.includes(normalizedQuery);
+    };
 
-    return CATEGORIES.map((category) => {
-      const items = ITEMS.filter((item) => {
-        if (item.category !== category.id) return false;
-        if (!normalizedQuery) return true;
-        const haystack = [
-          item.name.ar,
-          item.name.en,
-          item.description.ar,
-          item.description.en,
-          category.name.ar,
-          category.name.en,
-          ...(item.options?.flatMap((option) => [option.name, option.price]) ?? []),
-        ]
-          .join(" ")
-          .toLowerCase();
-        return haystack.includes(normalizedQuery);
-      });
+    return CATEGORY_ORDER.map((definition) => {
+      const featuredItems = definition.featuredOnly
+        ? POPULAR_ITEMS.filter((item) => matchesQuery(item, categoryMap.get(item.category))).slice(0, 12)
+        : [];
 
-      return { category, items };
-    }).filter((group) => group.items.length > 0);
+      const sections = definition.categoryIds
+        .map((categoryId) => categoryMap.get(categoryId))
+        .filter((category): category is MenuCategory => Boolean(category))
+        .map((category) => ({
+          category,
+          items: ITEMS.filter((item) => item.category === category.id && matchesQuery(item, category)),
+        }))
+        .filter((group) => group.items.length > 0);
+
+      return { definition, sections, featuredItems };
+    }).filter((group) => group.sections.length > 0 || group.featuredItems.length > 0);
   }, [query]);
 
-  const totalMatches = groups.reduce((total, group) => total + group.items.length, 0);
+  const canonicalItems = displayGroups.flatMap((group) => group.sections.flatMap((section) => section.items));
+  const totalMatches = uniqueItemCount(canonicalItems);
+  const visibleQuickJumps = CATEGORY_QUICK_JUMPS.filter((group) =>
+    displayGroups.some((displayGroup) => displayGroup.definition.id === group.id),
+  );
 
   useEffect(() => {
     if (query.trim()) {
-      setActiveCategory(groups[0]?.category.id ?? "");
+      setActiveGroup(displayGroups[0]?.definition.id ?? CATEGORY_QUICK_JUMPS[0]?.id ?? CATEGORY_ORDER[0].id);
       return;
     }
 
     const visible = new Map<string, number>();
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-section]"));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-group]"));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const id = entry.target.getAttribute("data-menu-section");
+          const id = entry.target.getAttribute("data-menu-group") as MenuGroupId | null;
           if (!id) return;
           if (entry.isIntersecting) {
             visible.set(id, entry.intersectionRatio);
@@ -134,21 +168,21 @@ function MenuExplorer() {
           }
         });
 
-        const next = [...visible.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
-        if (next) setActiveCategory(next);
+        const next = [...visible.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] as MenuGroupId | undefined;
+        if (next) setActiveGroup(next);
       },
       { rootMargin: "-34% 0px -56% 0px", threshold: [0.05, 0.2, 0.5, 0.8] },
     );
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, [groups, query]);
+  }, [displayGroups, query]);
 
-  const scrollToCategory = (categoryId: string) => {
+  const scrollToGroup = (groupId: MenuGroupId) => {
     setQuery("");
-    setActiveCategory(categoryId);
+    setActiveGroup(groupId);
     window.setTimeout(() => {
-      document.getElementById(`section-${categoryId}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById(`group-${groupId}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 40);
   };
 
@@ -171,17 +205,17 @@ function MenuExplorer() {
             ) : null}
           </div>
 
-          <nav className="menu-category-strip no-scrollbar" aria-label="Menu categories">
-            {CATEGORIES.map((category) => (
+          <nav className="menu-category-strip menu-quick-jump no-scrollbar" aria-label="Menu quick jump">
+            {visibleQuickJumps.map((group) => (
               <button
-                key={category.id}
+                key={group.id}
                 type="button"
-                onClick={() => scrollToCategory(category.id)}
-                className={activeCategory === category.id ? "category-pill is-active" : "category-pill"}
-                aria-pressed={activeCategory === category.id}
+                onClick={() => scrollToGroup(group.id)}
+                className={activeGroup === group.id ? "category-pill is-active" : "category-pill"}
+                aria-pressed={activeGroup === group.id}
               >
-                <CategoryGlyph category={category} />
-                <span>{tx(category.name)}</span>
+                <QuickJumpIcon group={group} />
+                <span>{tx(group.shortName)}</span>
               </button>
             ))}
           </nav>
@@ -194,10 +228,10 @@ function MenuExplorer() {
           <span>{CATEGORIES.length} {t("categoryCount")}</span>
         </div>
 
-        {groups.length ? (
-          <div className="full-menu-groups">
-            {groups.map((group) => (
-              <MenuSection key={group.category.id} group={group} />
+        {displayGroups.length ? (
+          <div className="full-menu-groups grouped-menu-groups">
+            {displayGroups.map((group) => (
+              <MenuDisplayGroup key={group.definition.id} group={group} />
             ))}
           </div>
         ) : (
@@ -214,6 +248,61 @@ function MenuExplorer() {
   );
 }
 
+function QuickJumpIcon({ group }: { group: MenuCategoryGroup }) {
+  const category = categoryMap.get(group.categoryIds[0] ?? "");
+  return category ? <CategoryGlyph category={category} /> : <Sparkles className="h-4 w-4" />;
+}
+
+function MenuDisplayGroup({ group }: { group: MenuDisplayGroup }) {
+  const { t, tx } = useI18n();
+  const itemCount = uniqueItemCount([
+    ...group.featuredItems,
+    ...group.sections.flatMap((section) => section.items),
+  ]);
+
+  return (
+    <motion.section
+      id={`group-${group.definition.id}`}
+      data-menu-group={group.definition.id}
+      className={`menu-display-group menu-display-group-${group.definition.id}`}
+      variants={staggerChildren}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-90px" }}
+    >
+      <div className="menu-group-heading">
+        <p className="section-kicker">
+          <QuickJumpIcon group={group.definition} />
+          <span>{tx(group.definition.shortName)}</span>
+        </p>
+        <h2>{tx(group.definition.name)}</h2>
+        <p>{tx(group.definition.blurb)}</p>
+        <div className="menu-group-meta">
+          {group.sections.length ? <span>{group.sections.length} {t("categoryCount")}</span> : null}
+          <span>{itemCount} {t("menuCount")}</span>
+        </div>
+      </div>
+
+      {group.featuredItems.length ? (
+        <div className="menu-group-featured">
+          {group.featuredItems.map((item) => {
+            const category = categoryMap.get(item.category);
+            return category ? <MenuCard key={item.id} item={item} category={category} variant="feature" /> : null;
+          })}
+        </div>
+      ) : null}
+
+      {group.sections.length ? (
+        <div className="menu-group-sections">
+          {group.sections.map((section) => (
+            <MenuSection key={section.category.id} group={section} />
+          ))}
+        </div>
+      ) : null}
+    </motion.section>
+  );
+}
+
 function MenuSection({ group }: { group: MenuGroup }) {
   const { t, tx } = useI18n();
   const cover = isUsableImageUrl(group.category.cover ?? group.category.sourceImageUrl)
@@ -224,7 +313,7 @@ function MenuSection({ group }: { group: MenuGroup }) {
     <motion.section
       id={`section-${group.category.id}`}
       data-menu-section={group.category.id}
-      className="full-menu-section"
+      className="full-menu-section menu-category-section"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -250,4 +339,8 @@ function MenuSection({ group }: { group: MenuGroup }) {
       </div>
     </motion.section>
   );
+}
+
+function uniqueItemCount(items: MenuItem[]) {
+  return new Set(items.map((item) => item.id)).size;
 }

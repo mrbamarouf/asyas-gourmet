@@ -40,6 +40,11 @@ export const UI = {
     ar: "بيدا، جوزلمة، بوريك، وخبز تركي دافئ بطابع المخبز.",
     en: "Pide, gozleme, borek, and warm Turkish bread with bakery character.",
   },
+  home_mains_title: { ar: "أطباق رئيسية", en: "Main Dishes" },
+  home_mains_body: {
+    ar: "أطباق مشبعة للغداء والعشاء، تظهر بعد الفطور والمخبوزات وقبل الحلويات.",
+    en: "Lunch and dinner plates placed after breakfast and bakery, before dessert.",
+  },
   home_drinks_title: { ar: "طقوس القهوة والشاي", en: "Coffee & Tea Ritual" },
   home_drinks_body: {
     ar: "شاي تركي، قهوة، ومشروبات باردة تكمل إيقاع المائدة.",
@@ -59,6 +64,7 @@ export const UI = {
   sec_popular: { ar: "الأكثر طلبًا", en: "Popular" },
   sec_chef: { ar: "اختيارات الشيف", en: "Chef Picks" },
   sec_bakery: { ar: "مخبوزات طازجة", en: "Fresh Bakery" },
+  sec_mains: { ar: "الأطباق الرئيسية", en: "Main Dishes" },
   sec_drinks: { ar: "المشروبات التركية", en: "Turkish Drinks" },
   sec_menu: { ar: "المنيو الكامل", en: "Full Menu" },
   sec_about: { ar: "عن أسيا جورميه", en: "About Asya's Gourmet" },
