@@ -31,6 +31,7 @@ import {
 } from "@/data/menu";
 import { I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
+import mobileIntroVideo from "@/assets/asya-mobile-intro.mp4";
 import logoImg from "@/assets/asyas-logo-transparent.png";
 import placeholderImg from "@/assets/dish-placeholder.jpg";
 
@@ -93,12 +94,85 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   return (
     <I18nContext.Provider value={value}>
       <div data-locale={locale} className="asya-site">
+        <MobileIntroOverlay />
         <TopNav current={current} />
         {children}
         <Footer />
         <FloatingContact current={current} />
       </div>
     </I18nContext.Provider>
+  );
+}
+
+function MobileIntroOverlay() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [shouldRender, setShouldRender] = useState(true);
+  const [isReady, setIsReady] = useState(false);
+  const [isFading, setIsFading] = useState(false);
+  const [lockPage, setLockPage] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 720px)");
+    if (!media.matches) {
+      setShouldRender(false);
+      return;
+    }
+
+    setLockPage(true);
+    const video = videoRef.current;
+    video?.load();
+    video?.play().catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
+    if (!lockPage || !shouldRender) return;
+
+    const preventDefault = (event: Event) => event.preventDefault();
+    document.documentElement.classList.add("asya-mobile-intro-lock");
+    document.body.classList.add("asya-mobile-intro-lock");
+    window.addEventListener("touchmove", preventDefault, { passive: false });
+    window.addEventListener("wheel", preventDefault, { passive: false });
+
+    return () => {
+      document.documentElement.classList.remove("asya-mobile-intro-lock");
+      document.body.classList.remove("asya-mobile-intro-lock");
+      window.removeEventListener("touchmove", preventDefault);
+      window.removeEventListener("wheel", preventDefault);
+    };
+  }, [lockPage, shouldRender]);
+
+  const finishIntro = () => {
+    setIsFading(true);
+    window.setTimeout(() => {
+      setShouldRender(false);
+      setLockPage(false);
+    }, 500);
+  };
+
+  if (!shouldRender) return null;
+
+  return (
+    <div
+      className={`mobile-intro-overlay ${isReady ? "is-ready" : ""} ${isFading ? "is-fading" : ""}`}
+      aria-hidden="true"
+    >
+      <video
+        ref={videoRef}
+        className="mobile-intro-video"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        onLoadedData={() => setIsReady(true)}
+        onCanPlay={() => videoRef.current?.play().catch(() => undefined)}
+        onEnded={finishIntro}
+        onError={finishIntro}
+      >
+        <source src={mobileIntroVideo} type="video/mp4" media="(max-width: 720px)" />
+      </video>
+    </div>
   );
 }
 
