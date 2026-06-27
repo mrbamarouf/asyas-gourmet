@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { AsyaIntroOverlay } from "@/components/asya/primitives";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -121,8 +122,54 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <AsyaIntroOverlay />
+      <InternalLinkNavigationGuard />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
+}
+
+function InternalLinkNavigationGuard() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const anchor = target.closest<HTMLAnchorElement>("a[href]");
+      if (!anchor || anchor.hasAttribute("download")) return;
+      if (anchor.target && anchor.target !== "_self") return;
+
+      const rawHref = anchor.getAttribute("href");
+      if (!rawHref || rawHref.startsWith("#")) return;
+
+      const url = new URL(anchor.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      if (url.pathname !== "/" && url.pathname !== "/menu") return;
+
+      event.preventDefault();
+      void router.navigate({
+        to: url.pathname as "/" | "/menu",
+        hash: url.hash ? url.hash.slice(1) : undefined,
+      });
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [router]);
+
+  return null;
 }

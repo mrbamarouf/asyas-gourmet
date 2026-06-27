@@ -20,7 +20,7 @@ import {
   Utensils,
   Wheat,
 } from "lucide-react";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 import {
   CATEGORIES,
@@ -95,8 +95,6 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   return (
     <I18nContext.Provider value={value}>
       <div data-locale={locale} className="asya-site">
-        <MobileIntroOverlay />
-        <DesktopIntroOverlay />
         <TopNav current={current} />
         {children}
         <Footer />
@@ -106,7 +104,24 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   );
 }
 
-function DesktopIntroOverlay() {
+export function AsyaIntroOverlay() {
+  const [hasPlayedIntroInThisPageLoad, setHasPlayedIntroInThisPageLoad] = useState(false);
+
+  const handleComplete = useCallback(() => {
+    setHasPlayedIntroInThisPageLoad(true);
+  }, []);
+
+  if (hasPlayedIntroInThisPageLoad) return null;
+
+  return (
+    <>
+      <MobileIntroOverlay onComplete={handleComplete} />
+      <DesktopIntroOverlay onComplete={handleComplete} />
+    </>
+  );
+}
+
+function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldRender, setShouldRender] = useState(true);
   const [isReady, setIsReady] = useState(false);
@@ -155,6 +170,7 @@ function DesktopIntroOverlay() {
     window.setTimeout(() => {
       setShouldRender(false);
       setLockPage(false);
+      onComplete();
     }, 500);
   };
 
@@ -185,7 +201,7 @@ function DesktopIntroOverlay() {
   );
 }
 
-function MobileIntroOverlay() {
+function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldRender, setShouldRender] = useState(true);
   const [isReady, setIsReady] = useState(false);
@@ -227,6 +243,7 @@ function MobileIntroOverlay() {
     window.setTimeout(() => {
       setShouldRender(false);
       setLockPage(false);
+      onComplete();
     }, 500);
   };
 
