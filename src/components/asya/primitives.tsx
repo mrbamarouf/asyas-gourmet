@@ -27,6 +27,7 @@ import {
   CATEGORIES,
   RESTAURANT,
   type Locale,
+  type LocalizedText,
   type MenuCategory,
   type MenuItem,
 } from "@/data/menu";
@@ -91,6 +92,38 @@ export function useItemDetail(): ItemDetailContextValue {
     return { openItemDetail: () => undefined };
   }
   return context;
+}
+
+export function localizeMenuText(text: LocalizedText, locale: Locale) {
+  const primary = cleanLocalizedMenuText(text[locale], locale);
+  if (primary) return primary;
+
+  const fallbackLocale: Locale = locale === "ar" ? "en" : "ar";
+  return cleanLocalizedMenuText(text[fallbackLocale], fallbackLocale);
+}
+
+function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
+  if (!value) return "";
+
+  const cleaned = value
+    .replace(/\r\n/g, "\n")
+    .replace(/\s*\d+:T[0-9A-Za-z]+,[\s\S]*$/g, "")
+    .replace(/\s*[$0-9A-Za-z]+:T[0-9A-Za-z]*\s*$/g, "")
+    .trim();
+
+  if (!cleaned || /^\$?[0-9A-Fa-f]{1,8}$/.test(cleaned)) return "";
+  if (locale === "ar") return /[\u0600-\u06FF]/.test(cleaned) ? cleaned : "";
+  return /[A-Za-z]/.test(cleaned) ? cleaned : "";
+}
+
+function localizeOptionName(name: string, locale: Locale) {
+  const labels: Record<string, LocalizedText> = {
+    small: { ar: "صغير", en: "Small" },
+    medium: { ar: "وسط", en: "Medium" },
+    big: { ar: "كبير", en: "Big" },
+  };
+
+  return labels[name.trim().toLowerCase()]?.[locale] ?? name;
 }
 
 export function AsyaShell({ children, current }: AsyaShellProps) {
@@ -459,15 +492,18 @@ export function MenuCard({
   category: MenuCategory;
   variant?: "menu" | "feature" | "wide";
 }) {
-  const { tx } = useI18n();
+  const { locale } = useI18n();
   const { openItemDetail } = useItemDetail();
+  const itemName = localizeMenuText(item.name, locale);
+  const categoryName = localizeMenuText(category.name, locale);
+  const description = localizeMenuText(item.description, locale);
 
   return (
     <motion.article
       role="button"
       tabIndex={0}
       className={`menu-card menu-card-${variant}`}
-      aria-label={tx(item.name)}
+      aria-label={itemName}
       onClick={() => openItemDetail({ item, category })}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -479,14 +515,14 @@ export function MenuCard({
       whileHover={{ y: -5, scale: variant === "menu" ? 1.006 : 1.012 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
     >
-      <DishImage item={item} alt={tx(item.name)} className="menu-card-image" />
+      <DishImage item={item} alt={itemName} className="menu-card-image" />
       <div className="menu-card-copy">
         <div className="menu-card-meta">
-          <span>{tx(category.name)}</span>
+          <span>{categoryName}</span>
           <PriceTag item={item} />
         </div>
-        <h3>{tx(item.name)}</h3>
-        {tx(item.description) ? <p>{tx(item.description)}</p> : null}
+        <h3>{itemName}</h3>
+        {description ? <p>{description}</p> : null}
         {item.options?.length ? <MenuOptions item={item} /> : null}
       </div>
     </motion.article>
@@ -502,7 +538,7 @@ function ItemDetailView({
   current: "home" | "menu";
   onClose: () => void;
 }) {
-  const { locale, tx } = useI18n();
+  const { locale } = useI18n();
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
@@ -574,8 +610,9 @@ function ItemDetailView({
 
   const imageSrc = getDishImage(item);
   const isPlaceholder = imageSrc === placeholderImg;
-  const itemName = tx(item.name);
-  const description = tx(item.description);
+  const itemName = localizeMenuText(item.name, locale);
+  const categoryName = localizeMenuText(category.name, locale);
+  const description = localizeMenuText(item.description, locale);
   const dialogMotion = prefersReducedMotion
     ? {
         initial: { opacity: 0 },
@@ -642,7 +679,7 @@ function ItemDetailView({
 
         <div className="item-detail-copy">
           <div className="item-detail-meta">
-            <span>{labels.category}: {tx(category.name)}</span>
+            <span>{labels.category}: {categoryName}</span>
             <PriceTag item={item} />
           </div>
           <h2>{itemName}</h2>
@@ -706,13 +743,14 @@ export function PriceTag({ item }: { item: MenuItem }) {
 }
 
 function MenuOptions({ item }: { item: MenuItem }) {
-  const { tx } = useI18n();
+  const { locale } = useI18n();
+  const itemName = localizeMenuText(item.name, locale);
 
   return (
-    <div className="menu-options" aria-label={`${tx(item.name)} options`}>
+    <div className="menu-options" aria-label={`${itemName} options`}>
       {item.options?.map((option) => (
         <span key={`${item.id}-${option.name}-${option.price}`}>
-          <strong>{option.name}</strong>
+          <strong>{localizeOptionName(option.name, locale)}</strong>
           <em>{option.price}</em>
         </span>
       ))}

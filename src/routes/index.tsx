@@ -25,6 +25,7 @@ import {
   fadeUp,
   getDishImage,
   isOfficialImage,
+  localizeMenuText,
   softScale,
   staggerChildren,
   useItemDetail,
@@ -449,8 +450,9 @@ function VisitIntro() {
 }
 
 function SpotlightDish({ entry }: { entry: DishEntry }) {
-  const { tx } = useI18n();
+  const { locale, tx } = useI18n();
   const { openItemDetail } = useItemDetail();
+  const description = localizeMenuText(entry.item.description, locale);
 
   return (
     <motion.button
@@ -465,7 +467,7 @@ function SpotlightDish({ entry }: { entry: DishEntry }) {
       <div>
         <span>{tx(entry.category.name)}</span>
         <h3>{tx(entry.item.name)}</h3>
-        {tx(entry.item.description) ? <p>{tx(entry.item.description)}</p> : null}
+        {description ? <p>{description}</p> : null}
         <PriceTag item={entry.item} />
       </div>
     </motion.button>
