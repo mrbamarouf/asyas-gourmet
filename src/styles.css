@@ -4911,45 +4911,60 @@ body {
   --shadow-lifted: 0 8px 8px -7px rgba(46, 43, 39, 0.24), inset 0 1px 0 rgba(255, 253, 248, 0.78);
 }
 
-.asya-site {
+.site-shell {
   position: relative;
+  overflow-x: clip;
   isolation: isolate;
   background:
-    radial-gradient(circle at 8% 10%, rgba(104, 115, 84, 0.075), transparent 22rem),
-    radial-gradient(circle at 92% 24%, rgba(200, 155, 106, 0.08), transparent 24rem),
-    linear-gradient(180deg, var(--color-bg), var(--color-surface));
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8), transparent 45%),
+    #f9f6f0;
 }
 
-.asya-site::before,
-.asya-site::after {
+.site-shell::before,
+.site-shell::after {
   position: fixed;
-  top: 140px;
-  z-index: 1;
-  width: clamp(220px, 18vw, 320px);
-  height: clamp(600px, 49vw, 875px);
+  top: 120px;
+  bottom: 0;
+  z-index: 0;
+  width: 260px;
   pointer-events: none;
   content: "";
   background-image: url("./assets/olive-decoration.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 100% auto;
-  opacity: 0.42;
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 220px auto;
+  opacity: 0.055;
   mix-blend-mode: multiply;
 }
 
-.asya-site::before {
-  left: clamp(-116px, -6vw, -64px);
+.site-shell::before {
+  left: 0;
   transform: scaleX(-1);
 }
 
-.asya-site::after {
-  right: clamp(-116px, -6vw, -64px);
+.site-shell::after {
+  right: 0;
 }
 
-.asya-site > main,
-.asya-site > footer {
+.site-shell > * {
   position: relative;
   z-index: 1;
+}
+
+.site-shell > .site-nav {
+  z-index: 70;
+}
+
+.site-shell > .floating-contact {
+  z-index: 65;
+}
+
+.site-shell > .mobile-bottom-nav {
+  z-index: 80;
+}
+
+.site-shell > .item-detail-layer {
+  z-index: 260;
 }
 
 .story-section,
@@ -5442,15 +5457,16 @@ body {
   }
 }
 
-@media (max-width: 900px) {
-  .asya-site::before,
-  .asya-site::after {
-    top: 120px;
-    width: clamp(160px, 24vw, 220px);
-    height: clamp(438px, 66vw, 602px);
-    opacity: 0.28;
+@media (max-width: 1024px) {
+  .site-shell::before,
+  .site-shell::after {
+    width: 150px;
+    background-size: 140px auto;
+    opacity: 0.04;
   }
+}
 
+@media (max-width: 900px) {
   .story-section::after,
   .signature-section::after,
   .breakfast-section::after,
@@ -5466,21 +5482,11 @@ body {
 }
 
 @media (max-width: 767px) {
-  .asya-site::before,
-  .asya-site::after {
-    display: block;
-    top: 112px;
-    width: clamp(90px, 28vw, 130px);
-    height: clamp(246px, 77vw, 356px);
-    opacity: 0.2;
-  }
-
-  .asya-site::before {
-    left: -72px;
-  }
-
-  .asya-site::after {
-    right: -72px;
+  .site-shell::before,
+  .site-shell::after {
+    width: 80px;
+    background-size: 90px auto;
+    opacity: 0.025;
   }
 
   .section-wrap,

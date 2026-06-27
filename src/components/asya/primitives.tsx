@@ -167,7 +167,7 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   return (
     <I18nContext.Provider value={value}>
       <ItemDetailContext.Provider value={detailValue}>
-        <div data-locale={locale} className="asya-site">
+        <div data-locale={locale} className="asya-site site-shell">
           <TopNav current={current} />
           {children}
           <Footer />
