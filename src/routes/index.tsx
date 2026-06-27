@@ -27,6 +27,7 @@ import {
   isOfficialImage,
   softScale,
   staggerChildren,
+  useItemDetail,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
 
@@ -449,9 +450,17 @@ function VisitIntro() {
 
 function SpotlightDish({ entry }: { entry: DishEntry }) {
   const { tx } = useI18n();
+  const { openItemDetail } = useItemDetail();
 
   return (
-    <motion.a href="/menu" className="spotlight-dish" variants={softScale} whileHover={{ y: -6, scale: 1.012 }}>
+    <motion.button
+      type="button"
+      className="spotlight-dish"
+      aria-label={tx(entry.item.name)}
+      onClick={() => openItemDetail(entry)}
+      variants={softScale}
+      whileHover={{ y: -6, scale: 1.012 }}
+    >
       <DishImage item={entry.item} alt={tx(entry.item.name)} eager className="spotlight-image" />
       <div>
         <span>{tx(entry.category.name)}</span>
@@ -459,22 +468,30 @@ function SpotlightDish({ entry }: { entry: DishEntry }) {
         {tx(entry.item.description) ? <p>{tx(entry.item.description)}</p> : null}
         <PriceTag item={entry.item} />
       </div>
-    </motion.a>
+    </motion.button>
   );
 }
 
 function CompactDish({ entry }: { entry: DishEntry }) {
   const { tx } = useI18n();
+  const { openItemDetail } = useItemDetail();
 
   return (
-    <motion.a href="/menu" className="compact-dish" variants={fadeUp} whileHover={{ y: -4, scale: 1.01 }}>
+    <motion.button
+      type="button"
+      className="compact-dish"
+      aria-label={tx(entry.item.name)}
+      onClick={() => openItemDetail(entry)}
+      variants={fadeUp}
+      whileHover={{ y: -4, scale: 1.01 }}
+    >
       <DishImage item={entry.item} alt={tx(entry.item.name)} className="compact-dish-image" />
       <div>
         <span>{tx(entry.category.name)}</span>
         <strong>{tx(entry.item.name)}</strong>
         <PriceTag item={entry.item} />
       </div>
-    </motion.a>
+    </motion.button>
   );
 }
 

@@ -1,4 +1,4 @@
-import { motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
   ArrowUpRight,
   CakeSlice,
@@ -19,8 +19,9 @@ import {
   Soup,
   Utensils,
   Wheat,
+  X,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 import {
   CATEGORIES,
@@ -73,8 +74,28 @@ interface AsyaShellProps {
   current: "home" | "menu";
 }
 
+interface ItemDetailSelection {
+  item: MenuItem;
+  category: MenuCategory;
+}
+
+interface ItemDetailContextValue {
+  openItemDetail: (selection: ItemDetailSelection) => void;
+}
+
+const ItemDetailContext = createContext<ItemDetailContextValue | null>(null);
+
+export function useItemDetail(): ItemDetailContextValue {
+  const context = useContext(ItemDetailContext);
+  if (!context) {
+    return { openItemDetail: () => undefined };
+  }
+  return context;
+}
+
 export function AsyaShell({ children, current }: AsyaShellProps) {
   const [locale, setLocale] = useState<Locale>("ar");
+  const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
 
   const value = useMemo(
     () => ({
@@ -86,6 +107,13 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     }),
     [locale],
   );
+  const detailValue = useMemo(
+    () => ({
+      openItemDetail: (selection: ItemDetailSelection) => setDetailSelection(selection),
+    }),
+    [],
+  );
+  const closeItemDetail = useCallback(() => setDetailSelection(null), []);
 
   useEffect(() => {
     document.documentElement.lang = locale;
@@ -94,13 +122,25 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
 
   return (
     <I18nContext.Provider value={value}>
-      <div data-locale={locale} className="asya-site">
-        <TopNav current={current} />
-        {children}
-        <Footer />
-        <FloatingContact current={current} />
-        <MobileBottomNav current={current} />
-      </div>
+      <ItemDetailContext.Provider value={detailValue}>
+        <div data-locale={locale} className="asya-site">
+          <TopNav current={current} />
+          {children}
+          <Footer />
+          <FloatingContact current={current} />
+          <MobileBottomNav current={current} />
+          <AnimatePresence>
+            {detailSelection ? (
+              <ItemDetailView
+                key={detailSelection.item.id}
+                selection={detailSelection}
+                current={current}
+                onClose={closeItemDetail}
+              />
+            ) : null}
+          </AnimatePresence>
+        </div>
+      </ItemDetailContext.Provider>
     </I18nContext.Provider>
   );
 }
@@ -420,10 +460,21 @@ export function MenuCard({
   variant?: "menu" | "feature" | "wide";
 }) {
   const { tx } = useI18n();
+  const { openItemDetail } = useItemDetail();
 
   return (
     <motion.article
+      role="button"
+      tabIndex={0}
       className={`menu-card menu-card-${variant}`}
+      aria-label={tx(item.name)}
+      onClick={() => openItemDetail({ item, category })}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openItemDetail({ item, category });
+        }
+      }}
       variants={fadeUp}
       whileHover={{ y: -5, scale: variant === "menu" ? 1.006 : 1.012 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
@@ -439,6 +490,163 @@ export function MenuCard({
         {item.options?.length ? <MenuOptions item={item} /> : null}
       </div>
     </motion.article>
+  );
+}
+
+function ItemDetailView({
+  selection,
+  current,
+  onClose,
+}: {
+  selection: ItemDetailSelection | null;
+  current: "home" | "menu";
+  onClose: () => void;
+}) {
+  const { locale, tx } = useI18n();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const previousScrollYRef = useRef(0);
+  const item = selection?.item;
+  const category = selection?.category;
+  const labels = {
+    close: locale === "ar" ? "إغلاق" : "Close",
+    back: locale === "ar" ? "العودة للمنيو" : "Back to menu",
+    category: locale === "ar" ? "القسم" : "Category",
+    options: locale === "ar" ? "خيارات إضافية" : "Options",
+    description: locale === "ar" ? "الوصف" : "Description",
+    imageComing: locale === "ar" ? "الصورة قريبًا" : "Image Coming Soon",
+  };
+
+  useEffect(() => {
+    if (!selection) return;
+
+    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    previousScrollYRef.current = window.scrollY;
+    document.documentElement.classList.add("asya-item-detail-lock");
+    document.body.classList.add("asya-item-detail-lock");
+    closeButtonRef.current?.focus({ preventScroll: true });
+    window.setTimeout(() => closeButtonRef.current?.focus({ preventScroll: true }), 40);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+
+      const focusable = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => !element.hasAttribute("disabled") && element.offsetParent !== null);
+
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.documentElement.classList.remove("asya-item-detail-lock");
+      document.body.classList.remove("asya-item-detail-lock");
+      window.removeEventListener("keydown", handleKeyDown);
+      previousFocusRef.current?.focus({ preventScroll: true });
+      window.scrollTo({ top: previousScrollYRef.current, behavior: "auto" });
+    };
+  }, [selection, onClose]);
+
+  if (!item || !category) return null;
+
+  const imageSrc = getDishImage(item);
+  const isPlaceholder = imageSrc === placeholderImg;
+  const itemName = tx(item.name);
+  const description = tx(item.description);
+
+  return (
+    <motion.div
+      className="item-detail-layer"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <motion.div
+        ref={dialogRef}
+        className="item-detail-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label={itemName}
+        initial={{ opacity: 0, scale: 0.96, y: 18, filter: "blur(10px)" }}
+        animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.34, ease: softEase }}
+      >
+        <button ref={closeButtonRef} type="button" className="item-detail-close" onClick={onClose} aria-label={labels.close}>
+          <X className="h-5 w-5" />
+        </button>
+
+        <div className={`item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}>
+          {isPlaceholder ? (
+            <span className="item-detail-placeholder" aria-hidden="true">
+              <img src={logoImg} alt="" width={92} height={92} />
+              <small>{labels.imageComing}</small>
+            </span>
+          ) : null}
+          <img
+            src={imageSrc}
+            alt={isPlaceholder ? "" : itemName}
+            width={920}
+            height={920}
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div className="item-detail-copy">
+          <div className="item-detail-meta">
+            <span>{labels.category}: {tx(category.name)}</span>
+            <PriceTag item={item} />
+          </div>
+          <h2>{itemName}</h2>
+          {description ? (
+            <div className="item-detail-description">
+              <strong>{labels.description}</strong>
+              <p>{description}</p>
+            </div>
+          ) : null}
+          {item.options?.length ? (
+            <div className="item-detail-options">
+              <strong>{labels.options}</strong>
+              <MenuOptions item={item} />
+            </div>
+          ) : null}
+          {current === "menu" ? (
+            <button type="button" className="item-detail-back" onClick={onClose}>
+              {labels.back}
+            </button>
+          ) : (
+            <a href="/menu" className="item-detail-back" onClick={onClose}>
+              {labels.back}
+            </a>
+          )}
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
