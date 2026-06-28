@@ -10175,3 +10175,62 @@ h4 {
   background: rgba(255, 253, 248, 0.72) !important;
   filter: drop-shadow(0 10px 16px rgba(31, 38, 28, 0.12)) !important;
 }
+
+/* Balanced gallery endings. A final orphan image expands instead of sitting alone. */
+.photo-strip,
+.gallery-grid {
+  display: grid !important;
+  align-items: stretch !important;
+  grid-auto-flow: row dense !important;
+}
+
+.photo-strip {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: clamp(180px, 18vw, 260px) !important;
+}
+
+.photo-strip > img,
+.gallery-grid > img {
+  width: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.gallery-grid > img {
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+.photo-strip > img:last-child:nth-child(6n + 1),
+.gallery-grid > img:last-child:nth-child(3n + 1) {
+  grid-column: 1 / -1 !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .photo-strip,
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .photo-strip > img:last-child:nth-child(odd),
+  .gallery-grid > img:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .photo-strip,
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .photo-strip > img,
+  .gallery-grid > img {
+    grid-column: auto !important;
+  }
+}
