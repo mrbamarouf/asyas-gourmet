@@ -89,7 +89,7 @@ const MOBILE_LAYOUT_QUERY = "(max-width: 767px)";
 
 function HomePage() {
   const homeContent = useMemo(() => buildHomeContent(), []);
-  const isMobileLayout = useMobileLayout();
+  const shouldRenderGallery = useDesktopGallery();
 
   return (
     <AsyaShell current="home">
@@ -98,28 +98,26 @@ function HomePage() {
         <HomeCategories categories={homeContent.categories} />
         <QualitySection />
         <SignatureSection items={homeContent.signatures} />
-        {isMobileLayout ? null : <PhotoStrip items={homeContent.gallery} />}
+        {shouldRenderGallery ? <PhotoStrip items={homeContent.gallery} /> : null}
         <VisitContact />
       </main>
     </AsyaShell>
   );
 }
 
-function useMobileLayout() {
-  const [isMobileLayout, setIsMobileLayout] = useState(() =>
-    typeof window === "undefined" ? false : window.matchMedia(MOBILE_LAYOUT_QUERY).matches,
-  );
+function useDesktopGallery() {
+  const [shouldRenderGallery, setShouldRenderGallery] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia(MOBILE_LAYOUT_QUERY);
-    const updateLayout = () => setIsMobileLayout(media.matches);
+    const updateLayout = () => setShouldRenderGallery(!media.matches);
 
     updateLayout();
     media.addEventListener("change", updateLayout);
     return () => media.removeEventListener("change", updateLayout);
   }, []);
 
-  return isMobileLayout;
+  return shouldRenderGallery;
 }
 
 function HomeHero() {
