@@ -10787,3 +10787,221 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     transition-duration: 1ms !important;
   }
 }
+
+/* Mobile typography and content alignment pass. */
+@media (max-width: 767px) {
+  .reference-hero-copy,
+  [data-locale="ar"] .reference-hero-copy,
+  .reference-section-heading,
+  .quality-copy,
+  .section-intro,
+  .mobile-menu-heading,
+  .full-menu-page .menu-group-heading,
+  .contact-card,
+  .contact-actions,
+  .footer-premium .footer-brand,
+  .footer-premium .footer-links,
+  .footer-premium .footer-hours,
+  .item-detail-copy.mobile-item-detail-content,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    align-items: center !important;
+    justify-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .reference-kicker,
+  .section-kicker,
+  .reference-section-heading h2,
+  .quality-copy h2,
+  .section-intro h2,
+  .mobile-menu-heading h1,
+  .full-menu-page .menu-group-heading h2,
+  .reference-hero h1,
+  [data-locale="ar"] .reference-hero h1,
+  [data-locale="ar"] .quality-copy h2,
+  [data-locale="ar"] .section-intro h2,
+  [data-locale="ar"] .mobile-menu-heading h1,
+  [data-locale="ar"] .full-menu-page .menu-group-heading h2,
+  .contact-label,
+  .contact-card strong,
+  .footer-premium .footer-brand h2,
+  .footer-premium .footer-hours strong,
+  .item-detail-copy.mobile-item-detail-content h2,
+  [data-locale="ar"] .item-detail-copy.mobile-item-detail-content h2 {
+    width: fit-content !important;
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+  }
+
+  .reference-hero-copy > p:not(.reference-kicker),
+  .reference-section-heading p,
+  .quality-copy p,
+  .section-intro .section-copy,
+  .mobile-menu-heading p,
+  .full-menu-page .menu-group-heading > p:not(.section-kicker),
+  .contact-card strong,
+  .footer-premium .footer-brand p,
+  .footer-premium .footer-hours span,
+  .footer-premium .footer-hours small,
+  .item-detail-description p {
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    color: inherit;
+    line-height: 1.7 !important;
+    text-align: center !important;
+    text-wrap: pretty !important;
+  }
+
+  .reference-kicker {
+    color: var(--gold) !important;
+  }
+
+  .reference-hero-copy {
+    gap: 1rem !important;
+  }
+
+  .reference-hero-copy .primary-cta,
+  .quality-copy .dark-link,
+  .contact-actions a,
+  .item-detail-back {
+    display: inline-flex !important;
+    width: min(100%, 340px) !important;
+    min-height: 48px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.55rem !important;
+    margin-inline: auto !important;
+    border-radius: 6px !important;
+    background: var(--olive) !important;
+    color: #fff8ec !important;
+    padding: 0 1rem !important;
+    font-size: 0.84rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  .quality-copy .dark-link svg,
+  .contact-actions a svg,
+  .item-detail-back svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  .reference-section-heading {
+    display: grid !important;
+    gap: 0.85rem !important;
+  }
+
+  .reference-section-heading .text-link {
+    display: none !important;
+  }
+
+  .quality-copy .section-kicker,
+  .full-menu-page .menu-group-heading .section-kicker {
+    display: inline-flex !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .quality-grid {
+    justify-items: center !important;
+  }
+
+  .quality-copy {
+    gap: 0.7rem !important;
+  }
+
+  .quality-copy p {
+    margin-top: 0 !important;
+  }
+
+  .contact-grid {
+    justify-items: center !important;
+  }
+
+  .contact-card {
+    min-height: 0 !important;
+    gap: 0.55rem !important;
+    padding: 1rem !important;
+  }
+
+  .contact-icon {
+    margin-inline: auto !important;
+  }
+
+  .contact-card > svg {
+    position: static !important;
+    justify-self: center !important;
+    margin-top: 0.1rem !important;
+  }
+
+  .contact-actions {
+    display: grid !important;
+    gap: 0.6rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .menu-card-copy,
+  .full-menu-page .menu-card-copy,
+  .full-menu-explorer[dir="ltr"] .menu-card-copy,
+  [data-locale="ar"] .menu-card-copy {
+    align-content: center !important;
+    align-items: center !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .menu-card-meta,
+  .full-menu-page .menu-card-meta,
+  .full-menu-explorer[dir="ltr"] .menu-card-meta {
+    justify-content: center !important;
+  }
+
+  .menu-card h3,
+  .full-menu-page .menu-card h3,
+  .menu-card p,
+  .full-menu-page .menu-card p {
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .footer-premium[dir="rtl"],
+  .footer-premium[dir="ltr"] {
+    text-align: center !important;
+  }
+
+  .footer-premium .footer-grid {
+    justify-items: center !important;
+    gap: 1.25rem !important;
+  }
+
+  .footer-premium .footer-links {
+    display: grid !important;
+    gap: 0.65rem !important;
+  }
+
+  .footer-premium .footer-links a {
+    width: fit-content !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .mobile-item-detail-content .item-detail-description,
+  .mobile-item-detail-content .item-detail-options,
+  .item-detail-meta {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+}
