@@ -4945,22 +4945,40 @@ body {
   content: "";
   background-image:
     url("/olive-decoration.png"),
-    url("/olive-decoration.png"),
-    radial-gradient(circle at 50% 20%, rgba(104, 115, 84, 0.08), transparent 45%);
+    url("/olive-decoration.png");
   background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat;
+    repeat-y,
+    repeat-y;
   background-position:
-    left -40px center,
-    right -40px center,
-    center;
+    left -46px top -24px,
+    right -46px top 72px;
   background-size:
     260px auto,
-    260px auto,
-    cover;
-  opacity: 0.12;
+    260px auto;
+  opacity: 0.115;
   filter: none;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 9%,
+    transparent 15%,
+    transparent 85%,
+    black 91%,
+    black 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 9%,
+    transparent 15%,
+    transparent 85%,
+    black 91%,
+    black 96%,
+    transparent 100%
+  );
   mix-blend-mode: multiply;
 }
 
@@ -5462,13 +5480,11 @@ body {
 @media (max-width: 1024px) {
   .soft-botanical-bg::before {
     background-position:
-      left -32px center,
-      right -32px center,
-      center;
+      left -38px top -18px,
+      right -38px top 60px;
     background-size:
       180px auto,
-      180px auto,
-      cover;
+      180px auto;
     opacity: 0.06;
   }
 }
