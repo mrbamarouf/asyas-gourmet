@@ -109,10 +109,16 @@ function MenuHero() {
   const { locale, t } = useI18n();
 
   return (
-    <section className="full-menu-hero" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <section className="full-menu-hero">
       <img src={heroImg} alt="" width={1920} height={1280} loading="eager" decoding="async" fetchPriority="high" />
       <div className="full-menu-hero-overlay" />
-      <motion.div className="full-menu-hero-content" variants={staggerChildren} initial="hidden" animate="visible">
+      <motion.div
+        className="full-menu-hero-content"
+        dir={locale === "ar" ? "rtl" : "ltr"}
+        variants={staggerChildren}
+        initial="hidden"
+        animate="visible"
+      >
         <motion.p className="section-kicker" variants={fadeUp}>
           <Utensils className="h-4 w-4" />
           <span>{locale === "ar" ? "فطور تركي أصيل" : "Authentic Turkish Breakfast"}</span>
@@ -220,13 +226,12 @@ function MenuExplorer() {
   }, []);
 
   return (
-    <section className="full-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <section className="full-menu-explorer" data-text-dir={locale === "ar" ? "rtl" : "ltr"}>
       <div id="menu-categories" className="full-menu-controls">
         <div className="section-wrap controls-wrap">
           <nav
             className="menu-category-strip menu-quick-jump no-scrollbar"
             aria-label="Menu quick jump"
-            dir={locale === "ar" ? "rtl" : "ltr"}
           >
             {TOP_LEVEL_MENU_NAV_GROUPS.map(({ group, label }) => (
               <button
