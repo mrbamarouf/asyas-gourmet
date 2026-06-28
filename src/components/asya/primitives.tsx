@@ -440,7 +440,7 @@ function TopNav({ current }: { current: "home" | "menu" }) {
           </span>
         </a>
 
-        <nav className="nav-links" aria-label="Primary navigation">
+        <nav className="nav-links" aria-label="Primary navigation" dir={locale === "ar" ? "rtl" : "ltr"}>
           <a className={current === "home" ? "is-current" : ""} href="/">
             <Home className="nav-icon" />
             <span>{t("nav_home")}</span>
@@ -597,7 +597,7 @@ export const MenuCard = memo(function MenuCard({
   const content = (
     <>
       <DishImage item={item} alt={itemName} className="menu-card-image" />
-      <div className="menu-card-copy" dir={locale === "ar" ? "rtl" : "ltr"}>
+      <div className="menu-card-copy">
         <div className="menu-card-meta">
           <span>{categoryName}</span>
           <PriceTag item={item} />
@@ -768,8 +768,7 @@ function ItemDetailView({
         role="dialog"
         aria-modal="true"
         aria-label={itemName}
-        dir="ltr"
-        data-text-dir={locale === "ar" ? "rtl" : "ltr"}
+        dir={locale === "ar" ? "rtl" : "ltr"}
         {...dialogMotion}
       >
         <button ref={closeButtonRef} type="button" className="item-detail-close" onClick={onClose} aria-label={labels.close}>
@@ -794,7 +793,7 @@ function ItemDetailView({
           />
         </div>
 
-        <div className="item-detail-copy mobile-item-detail-content" dir={locale === "ar" ? "rtl" : "ltr"}>
+        <div className="item-detail-copy mobile-item-detail-content">
           <div className="item-detail-meta">
             <span>{labels.category}: {categoryName}</span>
             <PriceTag item={item} />
@@ -1017,7 +1016,7 @@ function MobileBottomNav({ current }: { current: "home" | "menu" }) {
   const { locale, t } = useI18n();
 
   return (
-    <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
+    <nav className="mobile-bottom-nav" aria-label="Mobile navigation" dir={locale === "ar" ? "rtl" : "ltr"}>
       <a href="/" className={current === "home" ? "is-active" : ""}>
         <Home className="h-5 w-5" />
         <span>{t("nav_home")}</span>
