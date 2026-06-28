@@ -375,20 +375,19 @@ function TopNav({ current }: { current: "home" | "menu" }) {
   const [isMobileNavHidden, setIsMobileNavHidden] = useState(false);
 
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 20);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
-
-  useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 767px)");
     let previousScrollY = window.scrollY;
+    let frame = 0;
 
     const update = () => {
+      setScrolled((current) => {
+        const next = window.scrollY > 20;
+        return current === next ? current : next;
+      });
+
       if (!mobileQuery.matches) {
         previousScrollY = window.scrollY;
-        setIsMobileNavHidden(false);
+        setIsMobileNavHidden((current) => (current ? false : current));
         return;
       }
 
@@ -396,22 +395,30 @@ function TopNav({ current }: { current: "home" | "menu" }) {
       const delta = nextScrollY - previousScrollY;
 
       if (nextScrollY <= 8) {
-        setIsMobileNavHidden(false);
+        setIsMobileNavHidden((current) => (current ? false : current));
       } else if (delta > 12) {
-        setIsMobileNavHidden(true);
+        setIsMobileNavHidden((current) => (current ? current : true));
       } else if (delta < -12) {
-        setIsMobileNavHidden(false);
+        setIsMobileNavHidden((current) => (current ? false : current));
       }
 
       if (Math.abs(delta) > 12) previousScrollY = nextScrollY;
     };
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        update();
+      });
+    };
 
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    mobileQuery.addEventListener("change", update);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    mobileQuery.addEventListener("change", scheduleUpdate);
     return () => {
-      window.removeEventListener("scroll", update);
-      mobileQuery.removeEventListener("change", update);
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      mobileQuery.removeEventListener("change", scheduleUpdate);
     };
   }, []);
 
@@ -598,6 +605,9 @@ export const MenuCard = memo(function MenuCard({
         <h3>{itemName}</h3>
         {description ? <p>{description}</p> : null}
         {item.options?.length ? <MenuOptions item={item} /> : null}
+        <span className="menu-card-more" aria-hidden="true">
+          {locale === "ar" ? "المزيد ←" : "More →"}
+        </span>
       </div>
     </>
   );
