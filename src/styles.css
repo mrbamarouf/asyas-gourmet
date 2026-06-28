@@ -10360,3 +10360,212 @@ h4 {
     justify-content: center !important;
   }
 }
+
+/* Menu layout correction: official categories stay in one scroll row, with grouped sections below. */
+.full-menu-page .full-menu-controls {
+  overflow: hidden !important;
+}
+
+.full-menu-page .controls-wrap {
+  overflow: visible !important;
+  padding-inline: clamp(1rem, 4vw, 2rem) !important;
+}
+
+.full-menu-page .menu-category-strip {
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-auto-flow: unset !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.55rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 44px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 0.35rem 0.15rem 0.55rem !important;
+  scroll-padding-inline: clamp(1rem, 4vw, 2rem) !important;
+  scrollbar-width: none !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-inline: contain !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+.full-menu-page .menu-category-strip::-webkit-scrollbar {
+  display: none !important;
+}
+
+.full-menu-page .menu-category-strip[dir="rtl"] {
+  direction: rtl !important;
+}
+
+.full-menu-page .menu-category-strip[dir="ltr"] {
+  direction: ltr !important;
+}
+
+.full-menu-page .category-pill,
+.full-menu-page .full-menu-controls .category-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: max-content !important;
+  max-width: min(74vw, 20rem) !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 0.95rem !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.full-menu-page .category-pill span {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.full-menu-page .grouped-menu-groups,
+.full-menu-page .full-menu-groups {
+  display: grid !important;
+  gap: clamp(1.75rem, 3vw, 2.75rem) !important;
+}
+
+.full-menu-page .menu-display-group {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  scroll-margin-top: 168px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.full-menu-page .menu-display-group::before,
+.full-menu-page .menu-display-group::after {
+  display: none !important;
+}
+
+.full-menu-page .menu-group-heading {
+  display: grid !important;
+  justify-items: start !important;
+  gap: 0.35rem !important;
+  max-width: 760px !important;
+  margin: 0 0 0.9rem !important;
+  padding: 0 !important;
+  text-align: start !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.full-menu-page .menu-group-heading .section-kicker {
+  display: none !important;
+}
+
+.full-menu-page .menu-group-heading h2,
+.full-menu-page [data-locale="ar"] .menu-group-heading h2 {
+  max-width: none !important;
+  margin: 0 !important;
+  font-size: clamp(1.35rem, 2.1vw, 1.9rem) !important;
+  line-height: 1.22 !important;
+  text-align: inherit !important;
+  text-wrap: balance !important;
+}
+
+.full-menu-page .menu-group-heading > p:not(.section-kicker) {
+  max-width: 54ch !important;
+  margin: 0 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+  text-align: inherit !important;
+}
+
+.full-menu-page .menu-group-meta {
+  margin-top: 0.15rem !important;
+}
+
+.full-menu-page .full-menu-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+@media (max-width: 1120px) {
+  .full-menu-page .full-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .full-menu-page .controls-wrap {
+    width: min(100% - 28px, 100%) !important;
+    padding-inline: 0 !important;
+  }
+
+  .full-menu-page .full-menu-controls {
+    padding-bottom: 0.45rem !important;
+  }
+
+  .full-menu-page .menu-category-strip {
+    min-height: 40px !important;
+    gap: 0.45rem !important;
+    padding: 0.25rem 0 0.45rem !important;
+    scroll-padding-inline: 14px !important;
+  }
+
+  .full-menu-page .category-pill,
+  .full-menu-page .full-menu-controls .category-pill {
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 0 0.82rem !important;
+    font-size: 0.74rem !important;
+  }
+
+  .full-menu-page .grouped-menu-groups,
+  .full-menu-page .full-menu-groups {
+    gap: 1.35rem !important;
+  }
+
+  .full-menu-page .menu-display-group {
+    scroll-margin-top: 130px !important;
+  }
+
+  .full-menu-page .menu-group-heading {
+    display: grid !important;
+    justify-items: center !important;
+    gap: 0.3rem !important;
+    max-width: 340px !important;
+    margin: 0 auto 0.7rem !important;
+    text-align: center !important;
+  }
+
+  .full-menu-page .menu-group-heading h2,
+  .full-menu-page [data-locale="ar"] .menu-group-heading h2 {
+    max-width: 340px !important;
+    font-size: 1.22rem !important;
+    text-align: center !important;
+  }
+
+  .full-menu-page .menu-group-heading > p:not(.section-kicker) {
+    max-width: 340px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+
+  .full-menu-page .menu-group-meta {
+    min-height: 26px !important;
+    padding-inline: 0.7rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  .full-menu-page .full-menu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}

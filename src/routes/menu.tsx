@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles, Utensils } from "lucide-react";
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   CATEGORIES,
@@ -62,6 +62,18 @@ const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = MENU_DISPLAY_GROUPS.ma
   label: group.shortName,
 }));
 
+function getMenuControlsOffset(extra = 16) {
+  const controls = document.querySelector<HTMLElement>(".full-menu-controls");
+  if (!controls) return 132;
+
+  const topValue = Number.parseFloat(window.getComputedStyle(controls).top);
+  const stickyTop = Number.isFinite(topValue) ? topValue : 0;
+  const rect = controls.getBoundingClientRect();
+  const controlsBottom = rect.top <= stickyTop + 1 ? rect.bottom : stickyTop + controls.offsetHeight;
+
+  return controlsBottom + extra;
+}
+
 function FullMenuPage() {
   return (
     <AsyaShell current="menu">
@@ -111,6 +123,7 @@ function MenuHero() {
 
 function MenuExplorer() {
   const { locale, t, tx } = useI18n();
+  const categoryStripRef = useRef<HTMLElement | null>(null);
   const [activeGroup, setActiveGroup] = useState<string>(
     TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers",
   );
@@ -129,11 +142,68 @@ function MenuExplorer() {
     const group = document.getElementById(`group-${groupId}`);
     if (!group) return;
 
-    const controls = document.querySelector<HTMLElement>(".full-menu-controls");
-    const stickyOffset = controls ? controls.offsetHeight + 28 : 120;
+    const stickyOffset = getMenuControlsOffset(14);
     const top = group.getBoundingClientRect().top + window.scrollY - stickyOffset;
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateActiveGroup = () => {
+      frame = 0;
+      const stickyOffset = getMenuControlsOffset(140);
+      const firstGroup = displayGroups[0]?.definition.id;
+      let nextGroup = firstGroup;
+
+      for (const group of displayGroups) {
+        const section = document.getElementById(`group-${group.definition.id}`);
+        if (!section) continue;
+
+        if (section.getBoundingClientRect().top <= stickyOffset) {
+          nextGroup = group.definition.id;
+        } else {
+          break;
+        }
+      }
+
+      if (nextGroup) {
+        setActiveGroup((current) => (current === nextGroup ? current : nextGroup));
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateActiveGroup);
+    };
+
+    updateActiveGroup();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, [displayGroups]);
+
+  useEffect(() => {
+    const strip = categoryStripRef.current;
+    if (!strip) return;
+
+    const activePill = strip.querySelector<HTMLElement>(`[data-group-pill="${activeGroup}"]`);
+    if (!activePill) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    activePill.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  }, [activeGroup]);
 
   return (
     <section className="full-menu-explorer">
@@ -145,22 +215,26 @@ function MenuExplorer() {
       <div id="menu-categories" className="full-menu-controls">
         <div className="section-wrap controls-wrap">
           <nav
+            ref={categoryStripRef}
             className="menu-category-strip menu-quick-jump no-scrollbar"
             aria-label="Menu quick jump"
             dir={locale === "ar" ? "rtl" : "ltr"}
           >
             {TOP_LEVEL_MENU_NAV_GROUPS.map(({ group, label }) => (
-              <button
+              <a
                 key={group.id}
-                type="button"
-                onClick={() => scrollToGroup(group.id)}
+                href={`#group-${group.id}`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToGroup(group.id);
+                }}
                 className={activeGroup === group.id ? "category-pill is-active" : "category-pill"}
-                aria-pressed={activeGroup === group.id}
+                aria-current={activeGroup === group.id ? "true" : undefined}
                 data-group-pill={group.id}
               >
                 <QuickJumpIcon group={group} />
                 <span>{tx(label)}</span>
-              </button>
+              </a>
             ))}
           </nav>
         </div>
