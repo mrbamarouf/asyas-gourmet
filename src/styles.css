@@ -10095,3 +10095,71 @@ h4 {
 .menu-category-strip[dir="ltr"] {
   direction: ltr !important;
 }
+
+.footer-premium {
+  border-top: 1px solid rgba(47, 58, 40, 0.12) !important;
+  background: #F8F3EA !important;
+  color: #1F261C !important;
+}
+
+.footer-premium[dir="rtl"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.footer-premium[dir="ltr"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.footer-premium .footer-grid {
+  direction: inherit !important;
+  align-items: start !important;
+}
+
+.footer-premium .footer-brand,
+.footer-premium .footer-links,
+.footer-premium .footer-hours {
+  min-width: 0 !important;
+  justify-items: start !important;
+  text-align: start !important;
+}
+
+.footer-premium .footer-brand h2,
+.footer-premium .footer-hours strong {
+  color: #1F261C !important;
+}
+
+.footer-premium .footer-brand p,
+.footer-premium .footer-hours span,
+.footer-premium .footer-hours small {
+  color: #6F6B61 !important;
+}
+
+.footer-premium .footer-links a {
+  color: #2F3A28 !important;
+  direction: inherit !important;
+}
+
+.footer-premium .footer-links a span,
+.footer-premium .footer-links a svg {
+  color: inherit !important;
+  stroke: currentColor !important;
+}
+
+.footer-premium .footer-links a:hover {
+  color: #1F261C !important;
+  background: rgba(47, 58, 40, 0.08) !important;
+}
+
+.footer-premium svg {
+  color: #2F3A28 !important;
+  stroke: currentColor !important;
+}
+
+.footer-premium .footer-brand img {
+  opacity: 1 !important;
+  border-color: rgba(47, 58, 40, 0.16) !important;
+  background: rgba(255, 253, 248, 0.72) !important;
+  filter: drop-shadow(0 10px 16px rgba(31, 38, 28, 0.12)) !important;
+}

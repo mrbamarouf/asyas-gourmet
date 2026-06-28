@@ -1117,10 +1117,10 @@ function MobileBottomNav({ current }: { current: "home" | "menu" }) {
 }
 
 function Footer() {
-  const { t, tx } = useI18n();
+  const { locale, t, tx } = useI18n();
 
   return (
-    <footer className="footer-premium">
+    <footer className="footer-premium" dir={locale === "ar" ? "rtl" : "ltr"}>
       <div className="footer-grid">
         <div className="footer-brand">
           <img src={logoImg} alt="Asya's Gourmet" width={80} height={80} />
