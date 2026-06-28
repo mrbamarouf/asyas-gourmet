@@ -1394,20 +1394,18 @@ body.asya-item-detail-lock {
 }
 
 .menu-category-strip {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 100%;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: visible;
   overflow-y: visible;
   padding-block: 0 0.1rem;
   padding-inline: 24px;
-  scroll-padding-inline: 24px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  scrollbar-width: auto;
 }
 
 .no-scrollbar {
@@ -3186,7 +3184,6 @@ body {
     gap: 12px;
     margin-inline: 0;
     padding: 0 24px 0.08rem;
-    scroll-padding-inline: 24px;
   }
 
   .category-pill {
@@ -3582,7 +3579,6 @@ body {
     gap: 12px;
     margin-inline: 0;
     padding: 0 24px 0.08rem;
-    scroll-padding-inline: 24px;
   }
 
   .category-pill {
@@ -3927,20 +3923,16 @@ body {
 }
 
 .menu-category-strip {
+  display: grid;
   align-items: center;
   justify-content: center;
   max-width: 100%;
   box-sizing: border-box;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: visible;
   overflow-y: visible;
   padding-block: 0.1rem 0.18rem;
   padding-inline: 24px;
-  scrollbar-width: none;
-  scroll-padding-inline: 24px;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  -webkit-overflow-scrolling: touch;
+  scrollbar-width: auto;
 }
 
 .menu-category-strip[dir="rtl"] {
@@ -4103,7 +4095,6 @@ body {
     gap: 12px;
     margin-inline: 0;
     padding: 0 24px 0.08rem;
-    scroll-padding-inline: 24px;
   }
 
   .category-pill {
@@ -5886,12 +5877,9 @@ body {
     width: 100%;
     max-width: 100%;
     margin-inline: 0;
-    overflow-x: auto;
+    overflow-x: visible;
     overflow-y: visible;
     padding-inline: 24px;
-    scroll-padding-inline: 24px;
-    overscroll-behavior-inline: contain;
-    -webkit-overflow-scrolling: touch;
   }
 
   .category-pill {
@@ -6756,43 +6744,39 @@ body {
   }
 }
 
-/* Final category navigation guard: first and last pills must never be clipped. */
+/* Final category navigation guard: all category pills must be visible without horizontal scrolling. */
 .full-menu-controls {
   max-width: 100%;
   overflow: visible;
 }
 
 .menu-category-strip {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  justify-content: safe center;
   gap: 12px;
-  flex-wrap: nowrap;
   margin-inline: 0;
-  overflow-x: auto;
+  overflow-x: visible;
   overflow-y: visible;
-  padding-block: 0.1rem 0.18rem;
+  padding-block: 0.12rem 0.18rem;
   padding-inline: 24px;
-  scrollbar-width: none;
-  scroll-padding-inline: 24px;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  -webkit-overflow-scrolling: touch;
+  scrollbar-width: auto;
   mask-image: none;
   -webkit-mask-image: none;
 }
 
-.menu-category-strip::-webkit-scrollbar {
-  display: none;
-}
-
 .category-pill {
-  flex: 0 0 auto;
-  max-width: none;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
   transform: none;
 }
@@ -6804,7 +6788,20 @@ body {
 }
 
 .category-pill span {
-  overflow: visible;
-  text-overflow: clip;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .menu-category-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .menu-category-strip {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
 }
