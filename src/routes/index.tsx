@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, CakeSlice, ChefHat, Coffee, CupSoda, ExternalLink, Sparkles, Wheat } from "lucide-react";
-import { useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 
 import {
   CATEGORIES,
@@ -64,7 +64,7 @@ interface DishEntry {
 const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
 
 function HomePage() {
-  const homeContent = buildHomeContent();
+  const homeContent = useMemo(() => buildHomeContent(), []);
 
   return (
     <AsyaShell current="home">
@@ -449,19 +449,21 @@ function VisitIntro() {
   );
 }
 
-function SpotlightDish({ entry }: { entry: DishEntry }) {
+const SpotlightDish = memo(function SpotlightDish({ entry }: { entry: DishEntry }) {
   const { locale, tx } = useI18n();
   const { openItemDetail } = useItemDetail();
   const description = localizeMenuText(entry.item.description, locale);
+  const handleOpen = useCallback(() => openItemDetail(entry), [entry, openItemDetail]);
 
   return (
     <motion.button
       type="button"
       className="spotlight-dish"
       aria-label={tx(entry.item.name)}
-      onClick={() => openItemDetail(entry)}
+      onClick={handleOpen}
       variants={softScale}
-      whileHover={{ y: -6, scale: 1.012 }}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
     >
       <DishImage item={entry.item} alt={tx(entry.item.name)} eager className="spotlight-image" />
       <div>
@@ -472,20 +474,22 @@ function SpotlightDish({ entry }: { entry: DishEntry }) {
       </div>
     </motion.button>
   );
-}
+});
 
-function CompactDish({ entry }: { entry: DishEntry }) {
+const CompactDish = memo(function CompactDish({ entry }: { entry: DishEntry }) {
   const { tx } = useI18n();
   const { openItemDetail } = useItemDetail();
+  const handleOpen = useCallback(() => openItemDetail(entry), [entry, openItemDetail]);
 
   return (
     <motion.button
       type="button"
       className="compact-dish"
       aria-label={tx(entry.item.name)}
-      onClick={() => openItemDetail(entry)}
+      onClick={handleOpen}
       variants={fadeUp}
-      whileHover={{ y: -4, scale: 1.01 }}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
     >
       <DishImage item={entry.item} alt={tx(entry.item.name)} className="compact-dish-image" />
       <div>
@@ -495,7 +499,7 @@ function CompactDish({ entry }: { entry: DishEntry }) {
       </div>
     </motion.button>
   );
-}
+});
 
 function buildHomeContent() {
   const signature = toEntries(uniqueItems([...CHEF_PICK_ITEMS, ...POPULAR_ITEMS]).slice(0, 6));

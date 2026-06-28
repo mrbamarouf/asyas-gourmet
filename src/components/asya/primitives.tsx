@@ -42,6 +42,7 @@ import {
   type MenuCategory,
   type MenuItem,
 } from "@/data/menu";
+import { BackgroundDecor } from "@/components/asya/BackgroundDecor";
 import { I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
@@ -52,22 +53,20 @@ import placeholderImg from "@/assets/dish-placeholder.jpg";
 export const softEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24, filter: "blur(12px)" },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.72, ease: softEase },
+    transition: { duration: 0.18, ease: softEase },
   },
 };
 
 export const softScale: Variants = {
-  hidden: { opacity: 0, scale: 0.96, filter: "blur(12px)" },
+  hidden: { opacity: 0, scale: 0.985 },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: "blur(0px)",
-    transition: { duration: 0.82, ease: softEase },
+    transition: { duration: 0.18, ease: softEase },
   },
 };
 
@@ -75,8 +74,8 @@ export const staggerChildren: Variants = {
   hidden: {},
   visible: {
     transition: {
-      delayChildren: 0.08,
-      staggerChildren: 0.08,
+      delayChildren: 0.03,
+      staggerChildren: 0.03,
     },
   },
 };
@@ -151,12 +150,8 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     }),
     [locale],
   );
-  const detailValue = useMemo(
-    () => ({
-      openItemDetail: (selection: ItemDetailSelection) => setDetailSelection(selection),
-    }),
-    [],
-  );
+  const openItemDetail = useCallback((selection: ItemDetailSelection) => setDetailSelection(selection), []);
+  const detailValue = useMemo(() => ({ openItemDetail }), [openItemDetail]);
   const closeItemDetail = useCallback(() => setDetailSelection(null), []);
 
   useEffect(() => {
@@ -168,6 +163,7 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     <I18nContext.Provider value={value}>
       <ItemDetailContext.Provider value={detailValue}>
         <div data-locale={locale} className="asya-site site-shell">
+          <BackgroundDecor />
           <TopNav current={current} />
           {children}
           <Footer />
@@ -476,7 +472,7 @@ function TopNav({ current }: { current: "home" | "menu" }) {
   );
 }
 
-export function SectionIntro({
+export const SectionIntro = memo(function SectionIntro({
   eyebrow,
   title,
   body,
@@ -499,9 +495,9 @@ export function SectionIntro({
       {body ? <p className="section-copy">{body}</p> : null}
     </motion.div>
   );
-}
+});
 
-export function DishImage({
+export const DishImage = memo(function DishImage({
   item,
   alt,
   eager = false,
@@ -562,7 +558,7 @@ export function DishImage({
       />
     </span>
   );
-}
+});
 
 interface MenuCardProps {
   item: MenuItem;
@@ -632,8 +628,8 @@ export const MenuCard = memo(function MenuCard({
       onClick={handleOpen}
       onKeyDown={handleKeyDown}
       variants={fadeUp}
-      whileHover={{ y: -5, scale: variant === "menu" ? 1.006 : 1.012 }}
-      transition={{ duration: 0.24, ease: "easeOut" }}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
     >
       {content}
     </motion.article>
@@ -733,16 +729,16 @@ function ItemDetailView({
       }
     : isMobileSheet
       ? {
-          initial: { opacity: 0, y: 34 },
+          initial: { opacity: 0, y: 24 },
           animate: { opacity: 1, y: 0 },
-          exit: { opacity: 0, y: 18 },
-          transition: { duration: 0.26, ease: softEase },
+          exit: { opacity: 0, y: 12 },
+          transition: { duration: 0.18, ease: softEase },
         }
       : {
-          initial: { opacity: 0, scale: 0.97, y: 14 },
-          animate: { opacity: 1, scale: 1, y: 0 },
-          exit: { opacity: 0, scale: 0.98, y: 10 },
-          transition: { duration: 0.28, ease: softEase },
+          initial: { opacity: 0, y: 10 },
+          animate: { opacity: 1, y: 0 },
+          exit: { opacity: 0, y: 8 },
+          transition: { duration: 0.18, ease: softEase },
         };
 
   return (
@@ -751,7 +747,7 @@ function ItemDetailView({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: isMobileSheet ? 0.22 : 0.28, ease: "easeOut" }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
       role="presentation"
       onPointerDown={(event) => {
         if (typeof window === "undefined") return;
@@ -841,7 +837,7 @@ function useMediaQuery(query: string) {
   return matches;
 }
 
-export function PriceTag({ item }: { item: MenuItem }) {
+export const PriceTag = memo(function PriceTag({ item }: { item: MenuItem }) {
   const { locale, tx } = useI18n();
   const price = formatPrice(item.price, locale);
 
@@ -851,9 +847,9 @@ export function PriceTag({ item }: { item: MenuItem }) {
       {!/[A-Za-z\u0600-\u06FF]/.test(price) ? <small>{tx(RESTAURANT.currency)}</small> : null}
     </span>
   );
-}
+});
 
-function MenuOptions({ item }: { item: MenuItem }) {
+const MenuOptions = memo(function MenuOptions({ item }: { item: MenuItem }) {
   const { locale } = useI18n();
   const itemName = localizeMenuText(item.name, locale);
 
@@ -867,9 +863,9 @@ function MenuOptions({ item }: { item: MenuItem }) {
       ))}
     </div>
   );
-}
+});
 
-export function CategoryGlyph({ category }: { category: MenuCategory }) {
+export const CategoryGlyph = memo(function CategoryGlyph({ category }: { category: MenuCategory }) {
   const label = `${category.id} ${category.name.en}`.toLowerCase();
   const Icon =
     /coffee/.test(label)
@@ -891,7 +887,7 @@ export function CategoryGlyph({ category }: { category: MenuCategory }) {
                     : Utensils;
 
   return <Icon className="h-4 w-4" aria-hidden="true" />;
-}
+});
 
 export function categoryById(id: string) {
   return CATEGORIES.find((category) => category.id === id);
@@ -921,7 +917,7 @@ function formatPrice(price: string, locale: Locale) {
   return price;
 }
 
-function ContactCard({
+const ContactCard = memo(function ContactCard({
   icon,
   label,
   value,
@@ -948,7 +944,7 @@ function ContactCard({
   ) : (
     <div className="contact-card">{content}</div>
   );
-}
+});
 
 export function VisitContact() {
   const { t, tx } = useI18n();
