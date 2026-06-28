@@ -67,5728 +67,5494 @@ export const RESTAURANT = {
 };
 
 export const CATEGORY_IDS = {
-  "happySpreads": "61e69fe8-3255-49c0-ad94-517a04184cd5",
-  "eggs": "e74e388c-048d-47e4-afec-acf25fac4650",
-  "flavoursOfAsyaS": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-  "mrPotatoes": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-  "aSweetMemory": "9ab5f294-68cb-470c-a860-d520f5d09f22",
-  "ablaSHandmadeGozlemeAndBorek": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-  "asyaSPremiumPideS": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-  "deliciousSoups": "c0a5b81c-a849-43c6-994d-e4a41c842182",
-  "greensAndFriends": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-  "flavoursOfTheTable": "02eb0962-be35-4701-8641-872802ee6fc7",
-  "warmAndDeliciousStarts": "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
-  "pasta": "884b790b-3b65-46a2-9be5-2ef78ce53146",
-  "pizza": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
-  "grillAndCasserole": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-  "mrToroSteakhouse": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-  "turkishDessert": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-  "worldSCoffees": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-  "tea": "503260fe-058c-4b7a-9dac-6035eb79d781",
-  "coldCoffees": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-  "specialIcedMatchas": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
-  "ourSignatures": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-  "fromOurGarden": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-  "homemadeIceTeasAndLemonades": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-  "turkishTraditionalDrinks": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-  "softDrinks": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-  "milkshake": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
-  "shishaByCharming": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-  "signatureShisha": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-  "vipShisha": "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b"
+  happySpreads: "61e69fe8-3255-49c0-ad94-517a04184cd5",
+  eggs: "e74e388c-048d-47e4-afec-acf25fac4650",
+  flavoursOfAsyaS: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+  mrPotatoes: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+  aSweetMemory: "9ab5f294-68cb-470c-a860-d520f5d09f22",
+  ablaSHandmadeGozlemeAndBorek: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+  asyaSPremiumPideS: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+  deliciousSoups: "c0a5b81c-a849-43c6-994d-e4a41c842182",
+  greensAndFriends: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+  flavoursOfTheTable: "02eb0962-be35-4701-8641-872802ee6fc7",
+  warmAndDeliciousStarts: "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+  pasta: "884b790b-3b65-46a2-9be5-2ef78ce53146",
+  pizza: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+  grillAndCasserole: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+  mrToroSteakhouse: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+  turkishDessert: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+  worldSCoffees: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+  tea: "503260fe-058c-4b7a-9dac-6035eb79d781",
+  coldCoffees: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+  specialIcedMatchas: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+  ourSignatures: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+  fromOurGarden: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+  homemadeIceTeasAndLemonades: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+  turkishTraditionalDrinks: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+  softDrinks: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+  milkshake: "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+  shishaByCharming: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+  signatureShisha: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+  vipShisha: "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
 } as const;
 
 export const CATEGORY_ORDER: MenuCategoryGroup[] = [
   {
-    "id": "happySpreads",
-    "name": {
-      "en": "Happy Spreads",
-      "ar": "تشكيلة السعادة"
+    id: "happySpreads",
+    name: {
+      en: "Happy Spreads",
+      ar: "تشكيلة السعادة",
     },
-    "shortName": {
-      "en": "Happy Spreads",
-      "ar": "تشكيلة السعادة"
+    shortName: {
+      en: "Happy Spreads",
+      ar: "تشكيلة السعادة",
     },
-    "blurb": {
-      "en": "The most colorful and vibrant plates, perfect for conversation and sharing.",
-      "ar": "أطباق نابضة بالألوان والحيوية، مثالية للمشاركة والاستمتاع برفقة الأصدقاء."
+    blurb: {
+      en: "The most colorful and vibrant plates, perfect for conversation and sharing.",
+      ar: "أطباق نابضة بالألوان والحيوية، مثالية للمشاركة والاستمتاع برفقة الأصدقاء.",
     },
-    "categoryIds": [
-      "61e69fe8-3255-49c0-ad94-517a04184cd5"
-    ],
-    "quickJump": true
+    categoryIds: ["61e69fe8-3255-49c0-ad94-517a04184cd5"],
+    quickJump: true,
   },
   {
-    "id": "eggs",
-    "name": {
-      "en": "Eggs",
-      "ar": "بيض"
+    id: "eggs",
+    name: {
+      en: "Eggs",
+      ar: "بيض",
     },
-    "shortName": {
-      "en": "Eggs",
-      "ar": "بيض"
+    shortName: {
+      en: "Eggs",
+      ar: "بيض",
     },
-    "blurb": {
-      "en": "The warm harmony of golden textures and perfectly cooked flavors.",
-      "ar": "التناغم الدافئ بين القوام الذهبي والنكهات المطهوّة بإتقان."
+    blurb: {
+      en: "The warm harmony of golden textures and perfectly cooked flavors.",
+      ar: "التناغم الدافئ بين القوام الذهبي والنكهات المطهوّة بإتقان.",
     },
-    "categoryIds": [
-      "e74e388c-048d-47e4-afec-acf25fac4650"
-    ],
-    "quickJump": true
+    categoryIds: ["e74e388c-048d-47e4-afec-acf25fac4650"],
+    quickJump: true,
   },
   {
-    "id": "flavoursOfAsyaS",
-    "name": {
-      "en": "Flavours of Asya's",
-      "ar": "نكهات آسيا"
+    id: "tea",
+    name: {
+      en: "Teas",
+      ar: "الشاي",
     },
-    "shortName": {
-      "en": "Flavours of Asya's",
-      "ar": "نكهات آسيا"
+    shortName: {
+      en: "Teas",
+      ar: "الشاي",
     },
-    "blurb": {
-      "en": "Asian signature dishes where traditional techniques meet modern aesthetics.",
-      "ar": "أطباق آسيوية مميزة تلتقي فيها التقنيات التقليدية بالجماليات العصرية."
+    blurb: {
+      en: "The clearest and warmest story of tea leaves steeped with patience.",
+      ar: "أصفى وأدفأ حكاية لأوراق الشاي المنقوعة بصبر وعناية",
     },
-    "categoryIds": [
-      "cf0cfebf-b9de-4221-85e6-9513ddd57809"
-    ],
-    "quickJump": true
+    categoryIds: ["503260fe-058c-4b7a-9dac-6035eb79d781"],
+    quickJump: true,
   },
   {
-    "id": "mrPotatoes",
-    "name": {
-      "en": "Mr. Potatoes",
-      "ar": "مستر بطاطس"
+    id: "specialIcedMatchas",
+    name: {
+      en: "Special Iced Matchas",
+      ar: "ماتشا باردة خاصة",
     },
-    "shortName": {
-      "en": "Mr. Potatoes",
-      "ar": "مستر بطاطس"
+    shortName: {
+      en: "Special Iced Matchas",
+      ar: "ماتشا باردة خاصة",
     },
-    "blurb": {
-      "en": "The simplest form of the earth, transformed through culinary craftsmanship.",
-      "ar": "أبسط خيرات الأرض، تتجلى بلمسة من فنون الطهي الإبداعية."
+    blurb: {
+      en: "An ancient and refreshing signature, reinterpreted with modern touches.",
+      ar: "توقيع عريق ومنعش، أُعيد تقديمه بلمسات عصرية.",
     },
-    "categoryIds": [
-      "1290e96c-f491-4a64-8e9e-61f0df6a85c7"
-    ],
-    "quickJump": true
+    categoryIds: ["f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8"],
+    quickJump: true,
   },
   {
-    "id": "aSweetMemory",
-    "name": {
-      "en": "A Sweet Memory",
-      "ar": "ذكريات حلوة"
+    id: "ourSignatures",
+    name: {
+      en: "Our Signatures",
+      ar: "مشروباتنا المميزة",
     },
-    "shortName": {
-      "en": "A Sweet Memory",
-      "ar": "ذكريات حلوة"
+    shortName: {
+      en: "Our Signatures",
+      ar: "مشروباتنا المميزة",
     },
-    "blurb": {
-      "en": "The sweetest form of a legacy; exquisite moments where traditional recipes meet modern and elegant presentations.",
-      "ar": "نهايات حلوة راقية بتوازن متناغم."
+    blurb: {
+      en: "Unique to this place; exceptional flavors with craftsmanship hidden in every detail.",
+      ar: "فريد من نوعه في هذا المكان؛ نكهات استثنائية بحرفية مخفية في كل تفصيلة.",
     },
-    "categoryIds": [
-      "9ab5f294-68cb-470c-a860-d520f5d09f22"
-    ],
-    "quickJump": true
+    categoryIds: ["927fc8d2-117e-44b9-8ab5-08522f536d0f"],
+    quickJump: true,
   },
   {
-    "id": "ablaSHandmadeGozlemeAndBorek",
-    "name": {
-      "en": "Abla's Handmade Gözleme & Börek",
-      "ar": "جوزلمة وبوريك ابلا محضرة يدوياً"
+    id: "deliciousSoups",
+    name: {
+      en: "Delicious Soups",
+      ar: "شوربات لذيذة",
     },
-    "shortName": {
-      "en": "Abla's Handmade Gözleme & Börek",
-      "ar": "جوزلمة وبوريك ابلا محضرة يدوياً"
+    shortName: {
+      en: "Delicious Soups",
+      ar: "شوربات لذيذة",
     },
-    "blurb": {
-      "en": "Made By Love Abla's\nAuthentic Turkish Gözleme & Börek\nHandcrafted dough delicacies, warm and comforting, blending simplicity with true authenticity.",
-      "ar": "بكل حب من مطبخ أبلة غوزليميه وبوريك تركي أصيل. عجينة يدوية فاخرة، دافئة ومريحة، تجمع بين البساطة والأصالة الحقيقية."
+    blurb: {
+      en: "A steaming hot embrace, made from the season's freshest harvests.",
+      ar: "عناق دافئ يتصاعد منه البخار، محضّر من أطيب خيرات الموسم الطازجة.",
     },
-    "categoryIds": [
-      "59ee4ca2-bb09-4a86-981b-fd40460331ea"
-    ],
-    "quickJump": true
+    categoryIds: ["c0a5b81c-a849-43c6-994d-e4a41c842182"],
+    quickJump: true,
   },
   {
-    "id": "asyaSPremiumPideS",
-    "name": {
-      "en": "Asya's Premium Pide's",
-      "ar": "بيدا آسيا البريميوم"
+    id: "grillAndCasserole",
+    name: {
+      en: "Grill & Casserole",
+      ar: "مشويات وطاجن",
     },
-    "shortName": {
-      "en": "Asya's Premium Pide's",
-      "ar": "بيدا آسيا البريميوم"
+    shortName: {
+      en: "Grill & Casserole",
+      ar: "مشويات وطاجن",
     },
-    "blurb": {
-      "en": "The most appetizing balance of crispy edges and rich fillings, shaped by the expertise of Premium Pide.",
-      "ar": "التوازن الأشهى بين الأطراف المقرمشة والحشوات الغنية، بلمسة خبرة بريميوم بيدا."
+    blurb: {
+      en: "Seared flavors and masterpieces cooked over a slow fire.",
+      ar: "نكهات شهية وروائع طهي على نار هادئة",
     },
-    "categoryIds": [
-      "641057a2-0237-4c4b-ab55-bf923ae06cc8"
-    ],
-    "quickJump": true
+    categoryIds: ["a6c1ce59-bed8-4049-b4c5-c1713025ce88"],
+    quickJump: true,
   },
   {
-    "id": "deliciousSoups",
-    "name": {
-      "en": "Delicious Soups",
-      "ar": "شوربات لذيذة"
+    id: "fromOurGarden",
+    name: {
+      en: "From Our Garden",
+      ar: "من حديقتنا",
     },
-    "shortName": {
-      "en": "Delicious Soups",
-      "ar": "شوربات لذيذة"
+    shortName: {
+      en: "From Our Garden",
+      ar: "من حديقتنا",
     },
-    "blurb": {
-      "en": "A steaming hot embrace, made from the season's freshest harvests.",
-      "ar": "عناق دافئ يتصاعد منه البخار، محضّر من أطيب خيرات الموسم الطازجة."
+    blurb: {
+      en: "From the heart of nature to your plate; in its freshest and simplest form.",
+      ar: "من قلب الطبيعة إلى طبقك؛ بأطزج وأبسط صورة.",
     },
-    "categoryIds": [
-      "c0a5b81c-a849-43c6-994d-e4a41c842182"
-    ],
-    "quickJump": true
+    categoryIds: ["5c90c4d7-8c7b-4c07-86c0-531eea82ef0a"],
+    quickJump: true,
   },
   {
-    "id": "greensAndFriends",
-    "name": {
-      "en": "Greens & Friends",
-      "ar": "الخضار واصدقائها"
+    id: "worldSCoffees",
+    name: {
+      en: "World's Coffees",
+      ar: "عالم القهوة",
     },
-    "shortName": {
-      "en": "Greens & Friends",
-      "ar": "الخضار واصدقائها"
+    shortName: {
+      en: "World's Coffees",
+      ar: "عالم القهوة",
     },
-    "blurb": {
-      "en": "The aesthetic meeting of the earth's freshest gifts and vibrant colors on the plate.",
-      "ar": "لقاء جمالي بين أطيب هدايا الأرض وألوان نابضة بالحياة على الطبق."
+    blurb: {
+      en: "Exotic blends telling the story of a different continent with every sip.",
+      ar: "مزيج استوائي يروي حكاية قارة مختلفة مع كل رشفة",
     },
-    "categoryIds": [
-      "81d3c1d4-b82c-4ea3-8a9d-881977f47761"
-    ],
-    "quickJump": true
+    categoryIds: ["8fc09a90-b4db-4681-8506-f430b7c1360d"],
+    quickJump: true,
   },
   {
-    "id": "flavoursOfTheTable",
-    "name": {
-      "en": "Flavours of the Table",
-      "ar": "نكهات المائدة"
+    id: "greensAndFriends",
+    name: {
+      en: "Greens & Friends",
+      ar: "الخضار واصدقائها",
     },
-    "shortName": {
-      "en": "Flavours of the Table",
-      "ar": "نكهات المائدة"
+    shortName: {
+      en: "Greens & Friends",
+      ar: "الخضار واصدقائها",
     },
-    "blurb": {
-      "en": "The moment where fresh, flavorful touches meet perfect harmony at the table.",
-      "ar": "اللحظة التي تلتقي فيها اللمسات الطازجة والنكهات المميزة في تناغم مثالي على المائدة."
+    blurb: {
+      en: "The aesthetic meeting of the earth's freshest gifts and vibrant colors on the plate.",
+      ar: "لقاء جمالي بين أطيب هدايا الأرض وألوان نابضة بالحياة على الطبق.",
     },
-    "categoryIds": [
-      "02eb0962-be35-4701-8641-872802ee6fc7"
-    ],
-    "quickJump": true
+    categoryIds: ["81d3c1d4-b82c-4ea3-8a9d-881977f47761"],
+    quickJump: true,
   },
   {
-    "id": "warmAndDeliciousStarts",
-    "name": {
-      "en": "Warm & Delicious Starts",
-      "ar": "لنبدأ بدفء"
+    id: "flavoursOfTheTable",
+    name: {
+      en: "Flavours of the Table",
+      ar: "نكهات المائدة",
     },
-    "shortName": {
-      "en": "Warm & Delicious Starts",
-      "ar": "لنبدأ بدفء"
+    shortName: {
+      en: "Flavours of the Table",
+      ar: "نكهات المائدة",
     },
-    "blurb": {
-      "en": "The first warm greeting, an appetizing curiosity.",
-      "ar": "بداية ناعمة تفتح الحواس"
+    blurb: {
+      en: "The moment where fresh, flavorful touches meet perfect harmony at the table.",
+      ar: "اللحظة التي تلتقي فيها اللمسات الطازجة والنكهات المميزة في تناغم مثالي على المائدة.",
     },
-    "categoryIds": [
-      "f3eb9103-7c6f-42d9-8305-bf75c336de6c"
-    ],
-    "quickJump": true
+    categoryIds: ["02eb0962-be35-4701-8641-872802ee6fc7"],
+    quickJump: true,
   },
   {
-    "id": "pasta",
-    "name": {
-      "en": "Pasta",
-      "ar": "الباستا"
+    id: "warmAndDeliciousStarts",
+    name: {
+      en: "Warm & Delicious Starts",
+      ar: "لنبدأ بدفء",
     },
-    "shortName": {
-      "en": "Pasta",
-      "ar": "الباستا"
+    shortName: {
+      en: "Warm & Delicious Starts",
+      ar: "لنبدأ بدفء",
     },
-    "blurb": {
-      "en": "The most elegant form of dough, the deepest harmony of sauce.",
-      "ar": "هندسة الحبوب. وأناقة الطعم."
+    blurb: {
+      en: "The first warm greeting, an appetizing curiosity.",
+      ar: "بداية ناعمة تفتح الحواس",
     },
-    "categoryIds": [
-      "884b790b-3b65-46a2-9be5-2ef78ce53146"
-    ],
-    "quickJump": true
+    categoryIds: ["f3eb9103-7c6f-42d9-8305-bf75c336de6c"],
+    quickJump: true,
   },
   {
-    "id": "pizza",
-    "name": {
-      "en": "Pizza",
-      "ar": "بيتزا"
+    id: "homemadeIceTeasAndLemonades",
+    name: {
+      en: "Homemade Ice Teas & Lemonades",
+      ar: "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا",
     },
-    "shortName": {
-      "en": "Pizza",
-      "ar": "بيتزا"
+    shortName: {
+      en: "Homemade Ice Teas & Lemonades",
+      ar: "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا",
     },
-    "blurb": {
-      "en": "Freshly baked with rich flavors and perfectly melted cheese, this pizza delivers a warm and satisfying taste in every slice.",
-      "ar": "مخبوزة طازجة بنكهات غنية وجبن ذائب تماماً، تقدم هذه البيتزا طعماً دافئاً ومرضياً في كل شريحة."
+    blurb: {
+      en: "Handcrafted fresh recipes for a natural, refreshing break.",
+      ar: "وصفات طازجة محضّرة يدوياً لاستراحة طبيعية ومنعشة.",
     },
-    "categoryIds": [
-      "ab88f484-c88f-49fb-905f-d13cbb35dc76"
-    ],
-    "quickJump": true
+    categoryIds: ["99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9"],
+    quickJump: true,
   },
   {
-    "id": "grillAndCasserole",
-    "name": {
-      "en": "Grill & Casserole",
-      "ar": "مشويات وطاجن"
+    id: "mrToroSteakhouse",
+    name: {
+      en: "MR.TORO STEAKHOUSE",
+      ar: "مستر تورو ستيك هاوس",
     },
-    "shortName": {
-      "en": "Grill & Casserole",
-      "ar": "مشويات وطاجن"
+    shortName: {
+      en: "MR.TORO STEAKHOUSE",
+      ar: "مستر تورو ستيك هاوس",
     },
-    "blurb": {
-      "en": "Seared flavors and masterpieces cooked over a slow fire.",
-      "ar": "نكهات شهية وروائع طهي على نار هادئة"
+    blurb: {
+      en: "A patient journey where time is the key ingredient to deep flavor.",
+      ar: "رحلة صبر يكون فيها الوقت هو المكوّن السري للنكهة العميقة.",
     },
-    "categoryIds": [
-      "a6c1ce59-bed8-4049-b4c5-c1713025ce88"
-    ],
-    "quickJump": true
+    categoryIds: ["4f5c2778-d74e-424a-bedb-81f78f3c68a3"],
+    quickJump: true,
   },
   {
-    "id": "mrToroSteakhouse",
-    "name": {
-      "en": "MR.TORO STEAKHOUSE",
-      "ar": "مستر تورو ستيك هاوس"
+    id: "pasta",
+    name: {
+      en: "Pastas",
+      ar: "الباستا",
     },
-    "shortName": {
-      "en": "MR.TORO STEAKHOUSE",
-      "ar": "مستر تورو ستيك هاوس"
+    shortName: {
+      en: "Pastas",
+      ar: "الباستا",
     },
-    "blurb": {
-      "en": "A patient journey where time is the key ingredient to deep flavor.",
-      "ar": "رحلة صبر يكون فيها الوقت هو المكوّن السري للنكهة العميقة."
+    blurb: {
+      en: "The most elegant form of dough, the deepest harmony of sauce.",
+      ar: "هندسة الحبوب… وأناقة الطعم.",
     },
-    "categoryIds": [
-      "4f5c2778-d74e-424a-bedb-81f78f3c68a3"
-    ],
-    "quickJump": true
+    categoryIds: ["884b790b-3b65-46a2-9be5-2ef78ce53146"],
+    quickJump: true,
   },
   {
-    "id": "turkishDessert",
-    "name": {
-      "en": "TURKISH DESSERT",
-      "ar": "حلويات تركية"
+    id: "turkishTraditionalDrinks",
+    name: {
+      en: "Turkish Traditional Drinks",
+      ar: "مشروبات تركية تقليدية",
     },
-    "shortName": {
-      "en": "TURKISH DESSERT",
-      "ar": "حلويات تركية"
+    shortName: {
+      en: "Turkish Traditional Drinks",
+      ar: "مشروبات تركية تقليدية",
     },
-    "blurb": {
-      "en": "A traditional Turkish dessert crafted with rich flavors and delicate sweetness, offering a warm and satisfying taste experience.",
-      "ar": "حلوى تركية تقليدية مُعدة بنكهات غنية وحلاوة رقيقة، تمنحك تجربة تذوق دافئة وممتعة."
+    blurb: {
+      en: "Timeless heritage crafted through ancient Anatolian recipes.",
+      ar: "تراث خالد يُصاغ من وصفات الأناضول العريقة.",
     },
-    "categoryIds": [
-      "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d"
-    ],
-    "quickJump": true
+    categoryIds: ["11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa"],
+    quickJump: true,
   },
   {
-    "id": "worldSCoffees",
-    "name": {
-      "en": "World's Coffees",
-      "ar": "عالم القهوة"
+    id: "flavoursOfAsyaS",
+    name: {
+      en: "Flavours of Asya's",
+      ar: "نكهات آسيا",
     },
-    "shortName": {
-      "en": "World's Coffees",
-      "ar": "عالم القهوة"
+    shortName: {
+      en: "Flavours of Asya's",
+      ar: "نكهات آسيا",
     },
-    "blurb": {
-      "en": "Exotic blends telling the story of a different continent with every sip.",
-      "ar": "مزيج استوائي يروي حكاية قارة مختلفة مع كل رشفة"
+    blurb: {
+      en: "Asian signature dishes where traditional techniques meet modern aesthetics.",
+      ar: "أطباق آسيوية مميزة تلتقي فيها التقنيات التقليدية بالجماليات العصرية.",
     },
-    "categoryIds": [
-      "8fc09a90-b4db-4681-8506-f430b7c1360d"
-    ],
-    "quickJump": true
+    categoryIds: ["cf0cfebf-b9de-4221-85e6-9513ddd57809"],
+    quickJump: true,
   },
   {
-    "id": "tea",
-    "name": {
-      "en": "Tea",
-      "ar": "الشاي"
+    id: "softDrinks",
+    name: {
+      en: "Soft Drinks",
+      ar: "مشروبات غازية",
     },
-    "shortName": {
-      "en": "Tea",
-      "ar": "الشاي"
+    shortName: {
+      en: "Soft Drinks",
+      ar: "مشروبات غازية",
     },
-    "blurb": {
-      "en": "The clearest and warmest story of tea leaves steeped with patience.",
-      "ar": "أصفى وأدفأ حكاية لأوراق الشاي المنقوعة بصبر وعناية"
+    blurb: {
+      en: "Icy refreshment meets exquisite flavors to cleanse your palate.",
+      ar: "انتعاش مثلج يلتقي بنكهات رائعة لتنقية ذوقك وتجديد حواسك",
     },
-    "categoryIds": [
-      "503260fe-058c-4b7a-9dac-6035eb79d781"
-    ],
-    "quickJump": true
+    categoryIds: ["cafb1cd7-1c37-430f-80a6-48cd5f213c4a"],
+    quickJump: true,
   },
   {
-    "id": "coldCoffees",
-    "name": {
-      "en": "Cold Coffees",
-      "ar": "القهوة الباردة"
+    id: "coldCoffees",
+    name: {
+      en: "Cold Coffees",
+      ar: "القهوة الباردة",
     },
-    "shortName": {
-      "en": "Cold Coffees",
-      "ar": "القهوة الباردة"
+    shortName: {
+      en: "Cold Coffees",
+      ar: "القهوة الباردة",
     },
-    "blurb": {
-      "en": "Modern recipes meet icy textures for the ultimate fresh balance.",
-      "ar": "وصفات عصرية تلتقي بقوام مثلج لتحقيق التوازن المنعش المثالي."
+    blurb: {
+      en: "Modern recipes meet icy textures for the ultimate fresh balance.",
+      ar: "وصفات عصرية تلتقي بقوام مثلج لتحقيق التوازن المنعش المثالي.",
     },
-    "categoryIds": [
-      "05d02beb-e1f6-4908-9b12-e2b69b1fafc1"
-    ],
-    "quickJump": true
+    categoryIds: ["05d02beb-e1f6-4908-9b12-e2b69b1fafc1"],
+    quickJump: true,
   },
   {
-    "id": "specialIcedMatchas",
-    "name": {
-      "en": "Special Iced Matchas",
-      "ar": "ماتشا باردة خاصة"
+    id: "shishaByCharming",
+    name: {
+      en: "Shisha By Charming",
+      ar: "شيشة باي تشارمينج",
     },
-    "shortName": {
-      "en": "Special Iced Matchas",
-      "ar": "ماتشا باردة خاصة"
+    shortName: {
+      en: "Shisha By Charming",
+      ar: "شيشة باي تشارمينج",
     },
-    "blurb": {
-      "en": "An ancient and refreshing signature, reinterpreted with modern touches.",
-      "ar": "توقيع عريق ومنعش، أُعيد تقديمه بلمسات عصرية."
+    blurb: {
+      en: "",
+      ar: "",
     },
-    "categoryIds": [
-      "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8"
-    ],
-    "quickJump": true
+    categoryIds: ["2fa8427f-a3a4-4c67-a566-4a97f3764092"],
+    quickJump: true,
   },
   {
-    "id": "ourSignatures",
-    "name": {
-      "en": "Our Signatures",
-      "ar": "مشروباتنا المميزة"
+    id: "asyaSPremiumPideS",
+    name: {
+      en: "Asya's Premium Pides",
+      ar: "بيدا آسيا البريميوم",
     },
-    "shortName": {
-      "en": "Our Signatures",
-      "ar": "مشروباتنا المميزة"
+    shortName: {
+      en: "Asya's Premium Pides",
+      ar: "بيدا آسيا البريميوم",
     },
-    "blurb": {
-      "en": "Unique to this place; exceptional flavors with craftsmanship hidden in every detail.",
-      "ar": "فريد من نوعه في هذا المكان؛ نكهات استثنائية بحرفية مخفية في كل تفصيلة."
+    blurb: {
+      en: "The most appetizing balance of crispy edges and rich fillings, shaped by the expertise of Premium Pide.",
+      ar: "التوازن الأشهى بين الأطراف المقرمشة والحشوات الغنية، بلمسة خبرة بريميوم بيدا.",
     },
-    "categoryIds": [
-      "927fc8d2-117e-44b9-8ab5-08522f536d0f"
-    ],
-    "quickJump": true
+    categoryIds: ["641057a2-0237-4c4b-ab55-bf923ae06cc8"],
+    quickJump: true,
   },
   {
-    "id": "fromOurGarden",
-    "name": {
-      "en": "From Our Garden",
-      "ar": "من حديقتنا"
+    id: "mrPotatoes",
+    name: {
+      en: "Mr. Potatoes",
+      ar: "مستر بطاطس",
     },
-    "shortName": {
-      "en": "From Our Garden",
-      "ar": "من حديقتنا"
+    shortName: {
+      en: "Mr. Potatoes",
+      ar: "مستر بطاطس",
     },
-    "blurb": {
-      "en": "From the heart of nature to your plate; in its freshest and simplest form.",
-      "ar": "من قلب الطبيعة إلى طبقك؛ بأطزج وأبسط صورة."
+    blurb: {
+      en: "The simplest form of the earth, transformed through culinary craftsmanship.",
+      ar: "أبسط خيرات الأرض، تتجلى بلمسة من فنون الطهي الإبداعية..",
     },
-    "categoryIds": [
-      "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a"
-    ],
-    "quickJump": true
+    categoryIds: ["1290e96c-f491-4a64-8e9e-61f0df6a85c7"],
+    quickJump: true,
   },
   {
-    "id": "homemadeIceTeasAndLemonades",
-    "name": {
-      "en": "Homemade Ice Teas & Lemonades",
-      "ar": "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا"
+    id: "turkishDessert",
+    name: {
+      en: "TURKISH DESSERT",
+      ar: "حلويات تركية",
     },
-    "shortName": {
-      "en": "Homemade Ice Teas & Lemonades",
-      "ar": "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا"
+    shortName: {
+      en: "TURKISH DESSERT",
+      ar: "حلويات تركية",
     },
-    "blurb": {
-      "en": "Handcrafted fresh recipes for a natural, refreshing break.",
-      "ar": "وصفات طازجة محضّرة يدوياً لاستراحة طبيعية ومنعشة."
+    blurb: {
+      en: "A traditional Turkish dessert crafted with rich flavors and delicate sweetness, offering a warm and satisfying taste experience.",
+      ar: "حلوى تركية تقليدية مُعدة بنكهات غنية وحلاوة رقيقة، تمنحك تجربة تذوق دافئة وممتعة.",
     },
-    "categoryIds": [
-      "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9"
-    ],
-    "quickJump": true
+    categoryIds: ["8c4ad6c8-a1ea-446d-9f0e-3900fd39609d"],
+    quickJump: true,
   },
   {
-    "id": "turkishTraditionalDrinks",
-    "name": {
-      "en": "Turkish Traditional Drinks",
-      "ar": "مشروبات تركية تقليدية"
+    id: "aSweetMemory",
+    name: {
+      en: "A Sweet Memory",
+      ar: "ذكريات حلوة",
     },
-    "shortName": {
-      "en": "Turkish Traditional Drinks",
-      "ar": "مشروبات تركية تقليدية"
+    shortName: {
+      en: "A Sweet Memory",
+      ar: "ذكريات حلوة",
     },
-    "blurb": {
-      "en": "Timeless heritage crafted through ancient Anatolian recipes.",
-      "ar": "تراث خالد يُصاغ من وصفات الأناضول العريقة."
+    blurb: {
+      en: "The sweetest form of a legacy; exquisite moments where traditional recipes meet modern and elegant presentations.",
+      ar: "نهايات حلوة راقية بتوازن متناغم…",
     },
-    "categoryIds": [
-      "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa"
-    ],
-    "quickJump": true
+    categoryIds: ["9ab5f294-68cb-470c-a860-d520f5d09f22"],
+    quickJump: true,
   },
   {
-    "id": "softDrinks",
-    "name": {
-      "en": "Soft Drinks",
-      "ar": "مشروبات غازية"
+    id: "signatureShisha",
+    name: {
+      en: "SIGNATURE SHISHA",
+      ar: "سيجنتشر شيشة",
     },
-    "shortName": {
-      "en": "Soft Drinks",
-      "ar": "مشروبات غازية"
+    shortName: {
+      en: "SIGNATURE SHISHA",
+      ar: "سيجنتشر شيشة",
     },
-    "blurb": {
-      "en": "Icy refreshment meets exquisite flavors to cleanse your palate.",
-      "ar": "انتعاش مثلج يلتقي بنكهات رائعة لتنقية ذوقك وتجديد حواسك"
+    blurb: {
+      en: "",
+      ar: "",
     },
-    "categoryIds": [
-      "cafb1cd7-1c37-430f-80a6-48cd5f213c4a"
-    ],
-    "quickJump": true
+    categoryIds: ["7d087dc8-d4fa-4eb3-a017-f8a203431d2c"],
+    quickJump: true,
   },
   {
-    "id": "milkshake",
-    "name": {
-      "en": "Milkshake",
-      "ar": "ميلك شيك"
+    id: "vipShisha",
+    name: {
+      en: "VIP SHISHA",
+      ar: "شيشة في آي بي",
     },
-    "shortName": {
-      "en": "Milkshake",
-      "ar": "ميلك شيك"
+    shortName: {
+      en: "VIP SHISHA",
+      ar: "شيشة في آي بي",
     },
-    "blurb": {
-      "en": "Smooth, creamy, and perfectly blended, this milkshake offers a rich and refreshing flavor in every sip.",
-      "ar": "قوام ناعم وكريمي ومخفوق بعناية، يقدم هذا الميلك شيك نكهة غنية ومنعشة في كل رشفة."
+    blurb: {
+      en: "",
+      ar: "",
     },
-    "categoryIds": [
-      "634c84dd-5cf6-4e20-8270-3e2fbd61e850"
-    ],
-    "quickJump": true
+    categoryIds: ["73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b"],
+    quickJump: true,
   },
   {
-    "id": "shishaByCharming",
-    "name": {
-      "en": "Shisha By Charming",
-      "ar": "شيشة باي تشارمينج"
+    id: "pizza",
+    name: {
+      en: "Pizza",
+      ar: "بيتزا",
     },
-    "shortName": {
-      "en": "Shisha By Charming",
-      "ar": "شيشة باي تشارمينج"
+    shortName: {
+      en: "Pizza",
+      ar: "بيتزا",
     },
-    "blurb": {
-      "en": "",
-      "ar": ""
+    blurb: {
+      en: "Freshly baked with rich flavors and perfectly melted cheese, this pizza delivers a warm and satisfying taste in every slice.",
+      ar: "مخبوزة طازجة بنكهات غنية وجبن ذائب تماماً، تقدم هذه البيتزا طعماً دافئاً ومرضياً في كل شريحة.",
     },
-    "categoryIds": [
-      "2fa8427f-a3a4-4c67-a566-4a97f3764092"
-    ],
-    "quickJump": true
+    categoryIds: ["ab88f484-c88f-49fb-905f-d13cbb35dc76"],
+    quickJump: true,
   },
   {
-    "id": "signatureShisha",
-    "name": {
-      "en": "SIGNATURE SHISHA",
-      "ar": "سيجنتشر شيشة"
+    id: "ablaSHandmadeGozlemeAndBorek",
+    name: {
+      en: "Abla's Handmade Gözleme & Börek",
+      ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
     },
-    "shortName": {
-      "en": "SIGNATURE SHISHA",
-      "ar": "سيجنتشر شيشة"
+    shortName: {
+      en: "Abla's Handmade Gözleme & Börek",
+      ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
     },
-    "blurb": {
-      "en": "",
-      "ar": ""
+    blurb: {
+      en: "*Made By Love Abla's* Authentic Turkish Gözleme & Börek Handcrafted dough delicacies, warm and comforting, blending simplicity with true authenticity.",
+      ar: "*بكل حب من مطبخ أبلة* غوزليميه وبوريك تركي أصيل. عجينة يدوية فاخرة، دافئة ومريحة، تجمع بين البساطة والأصالة الحقيقية.",
     },
-    "categoryIds": [
-      "7d087dc8-d4fa-4eb3-a017-f8a203431d2c"
-    ],
-    "quickJump": true
+    categoryIds: ["59ee4ca2-bb09-4a86-981b-fd40460331ea"],
+    quickJump: true,
   },
   {
-    "id": "vipShisha",
-    "name": {
-      "en": "VIP SHISHA",
-      "ar": "شيشة في آي بي"
+    id: "milkshake",
+    name: {
+      en: "Milkshake",
+      ar: "ميلك شيك",
     },
-    "shortName": {
-      "en": "VIP SHISHA",
-      "ar": "شيشة في آي بي"
+    shortName: {
+      en: "Milkshake",
+      ar: "ميلك شيك",
     },
-    "blurb": {
-      "en": "",
-      "ar": ""
+    blurb: {
+      en: "Smooth, creamy, and perfectly blended, this milkshake offers a rich and refreshing flavor in every sip.",
+      ar: "قوام ناعم وكريمي ومخفوق بعناية، يقدم هذا الميلك شيك نكهة غنية ومنعشة في كل رشفة.",
     },
-    "categoryIds": [
-      "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b"
-    ],
-    "quickJump": true
-  }
+    categoryIds: ["634c84dd-5cf6-4e20-8270-3e2fbd61e850"],
+    quickJump: true,
+  },
 ];
 
 export const CATEGORY_QUICK_JUMPS = CATEGORY_ORDER.filter((group) => group.quickJump);
 
 const RAW_CATEGORIES = [
   {
-    "id": "61e69fe8-3255-49c0-ad94-517a04184cd5",
-    "name": {
-      "en": "Happy Spreads",
-      "ar": "تشكيلة السعادة"
+    id: "61e69fe8-3255-49c0-ad94-517a04184cd5",
+    name: {
+      en: "Happy Spreads",
+      ar: "تشكيلة السعادة",
     },
-    "blurb": {
-      "en": "The most colorful and vibrant plates, perfect for conversation and sharing.",
-      "ar": "أطباق نابضة بالألوان والحيوية، مثالية للمشاركة والاستمتاع برفقة الأصدقاء."
+    blurb: {
+      en: "The most colorful and vibrant plates, perfect for conversation and sharing.",
+      ar: "أطباق نابضة بالألوان والحيوية، مثالية للمشاركة والاستمتاع برفقة الأصدقاء.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH51zRy6UlpkpvTYd/content-0VH51zRy6UlpkpvTYd.jpg",
-    "order": 1
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH51zRy6UlpkpvTYd/playlist.m3u8",
+    order: 1,
   },
   {
-    "id": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Eggs",
-      "ar": "بيض"
+    id: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Eggs",
+      ar: "بيض",
     },
-    "blurb": {
-      "en": "The warm harmony of golden textures and perfectly cooked flavors.",
-      "ar": "التناغم الدافئ بين القوام الذهبي والنكهات المطهوّة بإتقان."
+    blurb: {
+      en: "The warm harmony of golden textures and perfectly cooked flavors.",
+      ar: "التناغم الدافئ بين القوام الذهبي والنكهات المطهوّة بإتقان.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzl4YTCqnL1kN3J9.webp",
-    "order": 2
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzl4YTCqnL1kN3J9.webp",
+    order: 2,
   },
   {
-    "id": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Flavours of Asya's",
-      "ar": "نكهات آسيا"
+    id: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Teas",
+      ar: "الشاي",
     },
-    "blurb": {
-      "en": "Asian signature dishes where traditional techniques meet modern aesthetics.",
-      "ar": "أطباق آسيوية مميزة تلتقي فيها التقنيات التقليدية بالجماليات العصرية."
+    blurb: {
+      en: "The clearest and warmest story of tea leaves steeped with patience.",
+      ar: "أصفى وأدفأ حكاية لأوراق الشاي المنقوعة بصبر وعناية",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzl8yFW84vqnGcgE.webp",
-    "order": 3
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/asyas/images/category-0VGwEw2pxU2CP4BXN0.webp",
+    order: 3,
   },
   {
-    "id": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Mr. Potatoes",
-      "ar": "مستر بطاطس"
+    id: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+    name: {
+      en: "Special Iced Matchas",
+      ar: "ماتشا باردة خاصة",
     },
-    "blurb": {
-      "en": "The simplest form of the earth, transformed through culinary craftsmanship.",
-      "ar": "أبسط خيرات الأرض، تتجلى بلمسة من فنون الطهي الإبداعية."
+    blurb: {
+      en: "An ancient and refreshing signature, reinterpreted with modern touches.",
+      ar: "توقيع عريق ومنعش، أُعيد تقديمه بلمسات عصرية.",
     },
-    "order": 4
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmkXfm6fQwhK7M7.webp",
+    order: 4,
   },
   {
-    "id": "9ab5f294-68cb-470c-a860-d520f5d09f22",
-    "name": {
-      "en": "A Sweet Memory",
-      "ar": "ذكريات حلوة"
+    id: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Our Signatures",
+      ar: "مشروباتنا المميزة",
     },
-    "blurb": {
-      "en": "The sweetest form of a legacy; exquisite moments where traditional recipes meet modern and elegant presentations.",
-      "ar": "نهايات حلوة راقية بتوازن متناغم."
+    blurb: {
+      en: "Unique to this place; exceptional flavors with craftsmanship hidden in every detail.",
+      ar: "فريد من نوعه في هذا المكان؛ نكهات استثنائية بحرفية مخفية في كل تفصيلة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlJDHf4DfQ4HrdF.webp",
-    "order": 5
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/stock/videos/general-0VFlGUVtRN54ACYVKD/playlist.m3u8",
+    order: 5,
   },
   {
-    "id": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "Abla's Handmade Gözleme & Börek",
-      "ar": "جوزلمة وبوريك ابلا محضرة يدوياً"
+    id: "c0a5b81c-a849-43c6-994d-e4a41c842182",
+    name: {
+      en: "Delicious Soups",
+      ar: "شوربات لذيذة",
     },
-    "blurb": {
-      "en": "Made By Love Abla's\nAuthentic Turkish Gözleme & Börek\nHandcrafted dough delicacies, warm and comforting, blending simplicity with true authenticity.",
-      "ar": "بكل حب من مطبخ أبلة غوزليميه وبوريك تركي أصيل. عجينة يدوية فاخرة، دافئة ومريحة، تجمع بين البساطة والأصالة الحقيقية."
+    blurb: {
+      en: "A steaming hot embrace, made from the season's freshest harvests.",
+      ar: "عناق دافئ يتصاعد منه البخار، محضّر من أطيب خيرات الموسم الطازجة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlNiY6ApZgBb2f3.webp",
-    "order": 6
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlWH9TXCYt8gxMU.webp",
+    order: 6,
   },
   {
-    "id": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Asya's Premium Pide's",
-      "ar": "بيدا آسيا البريميوم"
+    id: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Grill & Casserole",
+      ar: "مشويات وطاجن",
     },
-    "blurb": {
-      "en": "The most appetizing balance of crispy edges and rich fillings, shaped by the expertise of Premium Pide.",
-      "ar": "التوازن الأشهى بين الأطراف المقرمشة والحشوات الغنية، بلمسة خبرة بريميوم بيدا."
+    blurb: {
+      en: "Seared flavors and masterpieces cooked over a slow fire.",
+      ar: "نكهات شهية وروائع طهي على نار هادئة",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlRkpuhVkw0PLVB.webp",
-    "order": 7
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH52pXuOifJlz3tyf/playlist.m3u8",
+    order: 7,
   },
   {
-    "id": "c0a5b81c-a849-43c6-994d-e4a41c842182",
-    "name": {
-      "en": "Delicious Soups",
-      "ar": "شوربات لذيذة"
+    id: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "From Our Garden",
+      ar: "من حديقتنا",
     },
-    "blurb": {
-      "en": "A steaming hot embrace, made from the season's freshest harvests.",
-      "ar": "عناق دافئ يتصاعد منه البخار، محضّر من أطيب خيرات الموسم الطازجة."
+    blurb: {
+      en: "From the heart of nature to your plate; in its freshest and simplest form.",
+      ar: "من قلب الطبيعة إلى طبقك؛ بأطزج وأبسط صورة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlWH9TXCYt8gxMU.webp",
-    "order": 8
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznXOqSUyqIcVdlq.webp",
+    order: 8,
   },
   {
-    "id": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-    "name": {
-      "en": "Greens & Friends",
-      "ar": "الخضار واصدقائها"
+    id: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "World's Coffees",
+      ar: "عالم القهوة",
     },
-    "blurb": {
-      "en": "The aesthetic meeting of the earth's freshest gifts and vibrant colors on the plate.",
-      "ar": "لقاء جمالي بين أطيب هدايا الأرض وألوان نابضة بالحياة على الطبق."
+    blurb: {
+      en: "Exotic blends telling the story of a different continent with every sip.",
+      ar: "مزيج استوائي يروي حكاية قارة مختلفة مع كل رشفة",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlxdDnm8e0mXObA.webp",
-    "order": 9
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmT82FAtflqxabn.webp",
+    order: 9,
   },
   {
-    "id": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Flavours of the Table",
-      "ar": "نكهات المائدة"
+    id: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    name: {
+      en: "Greens & Friends",
+      ar: "الخضار واصدقائها",
     },
-    "blurb": {
-      "en": "The moment where fresh, flavorful touches meet perfect harmony at the table.",
-      "ar": "اللحظة التي تلتقي فيها اللمسات الطازجة والنكهات المميزة في تناغم مثالي على المائدة."
+    blurb: {
+      en: "The aesthetic meeting of the earth's freshest gifts and vibrant colors on the plate.",
+      ar: "لقاء جمالي بين أطيب هدايا الأرض وألوان نابضة بالحياة على الطبق.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzm8pP5JPShpldVq.webp",
-    "order": 10
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlxdDnm8e0mXObA.webp",
+    order: 10,
   },
   {
-    "id": "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
-    "name": {
-      "en": "Warm & Delicious Starts",
-      "ar": "لنبدأ بدفء"
+    id: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Flavours of the Table",
+      ar: "نكهات المائدة",
     },
-    "blurb": {
-      "en": "The first warm greeting, an appetizing curiosity.",
-      "ar": "بداية ناعمة تفتح الحواس"
+    blurb: {
+      en: "The moment where fresh, flavorful touches meet perfect harmony at the table.",
+      ar: "اللحظة التي تلتقي فيها اللمسات الطازجة والنكهات المميزة في تناغم مثالي على المائدة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmDR8OPcXNTf7K3.webp",
-    "order": 11
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzm8pP5JPShpldVq.webp",
+    order: 11,
   },
   {
-    "id": "884b790b-3b65-46a2-9be5-2ef78ce53146",
-    "name": {
-      "en": "Pasta",
-      "ar": "الباستا"
+    id: "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+    name: {
+      en: "Warm & Delicious Starts",
+      ar: "لنبدأ بدفء",
     },
-    "blurb": {
-      "en": "The most elegant form of dough, the deepest harmony of sauce.",
-      "ar": "هندسة الحبوب. وأناقة الطعم."
+    blurb: {
+      en: "The first warm greeting, an appetizing curiosity.",
+      ar: "بداية ناعمة تفتح الحواس",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmMAzEps7QK5JSp.webp",
-    "order": 12
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmDR8OPcXNTf7K3.webp",
+    order: 12,
   },
   {
-    "id": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
-    "name": {
-      "en": "Pizza",
-      "ar": "بيتزا"
+    id: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Homemade Ice Teas & Lemonades",
+      ar: "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا",
     },
-    "blurb": {
-      "en": "Freshly baked with rich flavors and perfectly melted cheese, this pizza delivers a warm and satisfying taste in every slice.",
-      "ar": "مخبوزة طازجة بنكهات غنية وجبن ذائب تماماً، تقدم هذه البيتزا طعماً دافئاً ومرضياً في كل شريحة."
+    blurb: {
+      en: "Handcrafted fresh recipes for a natural, refreshing break.",
+      ar: "وصفات طازجة محضّرة يدوياً لاستراحة طبيعية ومنعشة.",
     },
-    "order": 13
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznqtUHCEnFnisSz.webp",
+    order: 13,
   },
   {
-    "id": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Grill & Casserole",
-      "ar": "مشويات وطاجن"
+    id: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "MR.TORO STEAKHOUSE",
+      ar: "مستر تورو ستيك هاوس",
     },
-    "blurb": {
-      "en": "Seared flavors and masterpieces cooked over a slow fire.",
-      "ar": "نكهات شهية وروائع طهي على نار هادئة"
+    blurb: {
+      en: "A patient journey where time is the key ingredient to deep flavor.",
+      ar: "رحلة صبر يكون فيها الوقت هو المكوّن السري للنكهة العميقة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH52pXuOifJlz3tyf/content-0VH52pXuOifJlz3tyf.jpg",
-    "order": 14
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH3fxd63D5HTsn1B6/playlist.m3u8",
+    order: 14,
   },
   {
-    "id": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "MR.TORO STEAKHOUSE",
-      "ar": "مستر تورو ستيك هاوس"
+    id: "884b790b-3b65-46a2-9be5-2ef78ce53146",
+    name: {
+      en: "Pastas",
+      ar: "الباستا",
     },
-    "blurb": {
-      "en": "A patient journey where time is the key ingredient to deep flavor.",
-      "ar": "رحلة صبر يكون فيها الوقت هو المكوّن السري للنكهة العميقة."
+    blurb: {
+      en: "The most elegant form of dough, the deepest harmony of sauce.",
+      ar: "هندسة الحبوب… وأناقة الطعم.",
     },
-    "order": 15
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmMAzEps7QK5JSp.webp",
+    order: 15,
   },
   {
-    "id": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "TURKISH DESSERT",
-      "ar": "حلويات تركية"
+    id: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+    name: {
+      en: "Turkish Traditional Drinks",
+      ar: "مشروبات تركية تقليدية",
     },
-    "blurb": {
-      "en": "A traditional Turkish dessert crafted with rich flavors and delicate sweetness, offering a warm and satisfying taste experience.",
-      "ar": "حلوى تركية تقليدية مُعدة بنكهات غنية وحلاوة رقيقة، تمنحك تجربة تذوق دافئة وممتعة."
+    blurb: {
+      en: "Timeless heritage crafted through ancient Anatolian recipes.",
+      ar: "تراث خالد يُصاغ من وصفات الأناضول العريقة.",
     },
-    "order": 16
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznIXXZKLXVbfXy0.webp",
+    order: 16,
   },
   {
-    "id": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "World's Coffees",
-      "ar": "عالم القهوة"
+    id: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Flavours of Asya's",
+      ar: "نكهات آسيا",
     },
-    "blurb": {
-      "en": "Exotic blends telling the story of a different continent with every sip.",
-      "ar": "مزيج استوائي يروي حكاية قارة مختلفة مع كل رشفة"
+    blurb: {
+      en: "Asian signature dishes where traditional techniques meet modern aesthetics.",
+      ar: "أطباق آسيوية مميزة تلتقي فيها التقنيات التقليدية بالجماليات العصرية.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmT82FAtflqxabn.webp",
-    "order": 17
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzl8yFW84vqnGcgE.webp",
+    order: 17,
   },
   {
-    "id": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Tea",
-      "ar": "الشاي"
+    id: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Soft Drinks",
+      ar: "مشروبات غازية",
     },
-    "blurb": {
-      "en": "The clearest and warmest story of tea leaves steeped with patience.",
-      "ar": "أصفى وأدفأ حكاية لأوراق الشاي المنقوعة بصبر وعناية"
+    blurb: {
+      en: "Icy refreshment meets exquisite flavors to cleanse your palate.",
+      ar: "انتعاش مثلج يلتقي بنكهات رائعة لتنقية ذوقك وتجديد حواسك",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VGwEw2pxU2CP4BXN0.webp",
-    "order": 18
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH53Ifiyz3sbeVqgj/playlist.m3u8",
+    order: 18,
   },
   {
-    "id": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Cold Coffees",
-      "ar": "القهوة الباردة"
+    id: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Cold Coffees",
+      ar: "القهوة الباردة",
     },
-    "blurb": {
-      "en": "Modern recipes meet icy textures for the ultimate fresh balance.",
-      "ar": "وصفات عصرية تلتقي بقوام مثلج لتحقيق التوازن المنعش المثالي."
+    blurb: {
+      en: "Modern recipes meet icy textures for the ultimate fresh balance.",
+      ar: "وصفات عصرية تلتقي بقوام مثلج لتحقيق التوازن المنعش المثالي.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/ss/images/general-0VDfIEsXlHAloRwCT8.webp",
-    "order": 19
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/ss/images/general-0VDfIEsXlHAloRwCT8.webp",
+    order: 19,
   },
   {
-    "id": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
-    "name": {
-      "en": "Special Iced Matchas",
-      "ar": "ماتشا باردة خاصة"
+    id: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "Shisha By Charming",
+      ar: "شيشة باي تشارمينج",
     },
-    "blurb": {
-      "en": "An ancient and refreshing signature, reinterpreted with modern touches.",
-      "ar": "توقيع عريق ومنعش، أُعيد تقديمه بلمسات عصرية."
+    blurb: {
+      en: "",
+      ar: "",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmkXfm6fQwhK7M7.webp",
-    "order": 20
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/asyas/videos/content-0VH4ArJFbaproMZ59T/playlist.m3u8",
+    order: 20,
   },
   {
-    "id": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Our Signatures",
-      "ar": "مشروباتنا المميزة"
+    id: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Asya's Premium Pides",
+      ar: "بيدا آسيا البريميوم",
     },
-    "blurb": {
-      "en": "Unique to this place; exceptional flavors with craftsmanship hidden in every detail.",
-      "ar": "فريد من نوعه في هذا المكان؛ نكهات استثنائية بحرفية مخفية في كل تفصيلة."
+    blurb: {
+      en: "The most appetizing balance of crispy edges and rich fillings, shaped by the expertise of Premium Pide.",
+      ar: "التوازن الأشهى بين الأطراف المقرمشة والحشوات الغنية، بلمسة خبرة بريميوم بيدا.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/stock/videos/general-0VFlGUVtRN54ACYVKD/general-0VFlGUVtRN54ACYVKD.jpg",
-    "order": 21
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlRkpuhVkw0PLVB.webp",
+    order: 21,
   },
   {
-    "id": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "From Our Garden",
-      "ar": "من حديقتنا"
+    id: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Mr. Potatoes",
+      ar: "مستر بطاطس",
     },
-    "blurb": {
-      "en": "From the heart of nature to your plate; in its freshest and simplest form.",
-      "ar": "من قلب الطبيعة إلى طبقك؛ بأطزج وأبسط صورة."
+    blurb: {
+      en: "The simplest form of the earth, transformed through culinary craftsmanship.",
+      ar: "أبسط خيرات الأرض، تتجلى بلمسة من فنون الطهي الإبداعية..",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznXOqSUyqIcVdlq.webp",
-    "order": 22
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH54d47camz2V57Fr/playlist.m3u8",
+    order: 22,
   },
   {
-    "id": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Homemade Ice Teas & Lemonades",
-      "ar": "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا"
+    id: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "TURKISH DESSERT",
+      ar: "حلويات تركية",
     },
-    "blurb": {
-      "en": "Handcrafted fresh recipes for a natural, refreshing break.",
-      "ar": "وصفات طازجة محضّرة يدوياً لاستراحة طبيعية ومنعشة."
+    blurb: {
+      en: "A traditional Turkish dessert crafted with rich flavors and delicate sweetness, offering a warm and satisfying taste experience.",
+      ar: "حلوى تركية تقليدية مُعدة بنكهات غنية وحلاوة رقيقة، تمنحك تجربة تذوق دافئة وممتعة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznqtUHCEnFnisSz.webp",
-    "order": 23
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/asyas/videos/content-0VH43LqwS6uOFmSqVP/playlist.m3u8",
+    order: 23,
   },
   {
-    "id": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-    "name": {
-      "en": "Turkish Traditional Drinks",
-      "ar": "مشروبات تركية تقليدية"
+    id: "9ab5f294-68cb-470c-a860-d520f5d09f22",
+    name: {
+      en: "A Sweet Memory",
+      ar: "ذكريات حلوة",
     },
-    "blurb": {
-      "en": "Timeless heritage crafted through ancient Anatolian recipes.",
-      "ar": "تراث خالد يُصاغ من وصفات الأناضول العريقة."
+    blurb: {
+      en: "The sweetest form of a legacy; exquisite moments where traditional recipes meet modern and elegant presentations.",
+      ar: "نهايات حلوة راقية بتوازن متناغم…",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznIXXZKLXVbfXy0.webp",
-    "order": 24
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlJDHf4DfQ4HrdF.webp",
+    order: 24,
   },
   {
-    "id": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Soft Drinks",
-      "ar": "مشروبات غازية"
+    id: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "SIGNATURE SHISHA",
+      ar: "سيجنتشر شيشة",
     },
-    "blurb": {
-      "en": "Icy refreshment meets exquisite flavors to cleanse your palate.",
-      "ar": "انتعاش مثلج يلتقي بنكهات رائعة لتنقية ذوقك وتجديد حواسك"
+    blurb: {
+      en: "",
+      ar: "",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH53Ifiyz3sbeVqgj/content-0VH53Ifiyz3sbeVqgj.jpg",
-    "order": 25
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4Sau0jbHE6csJ4B.webp",
+    order: 25,
   },
   {
-    "id": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
-    "name": {
-      "en": "Milkshake",
-      "ar": "ميلك شيك"
+    id: "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
+    name: {
+      en: "VIP SHISHA",
+      ar: "شيشة في آي بي",
     },
-    "blurb": {
-      "en": "Smooth, creamy, and perfectly blended, this milkshake offers a rich and refreshing flavor in every sip.",
-      "ar": "قوام ناعم وكريمي ومخفوق بعناية، يقدم هذا الميلك شيك نكهة غنية ومنعشة في كل رشفة."
+    blurb: {
+      en: "",
+      ar: "",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VKAvv7jNedmSs3GfU.webp",
-    "order": 26
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4V9NOSR44DyE7KF.webp",
+    order: 26,
   },
   {
-    "id": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "Shisha By Charming",
-      "ar": "شيشة باي تشارمينج"
+    id: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+    name: {
+      en: "Pizza",
+      ar: "بيتزا",
     },
-    "blurb": {
-      "en": "",
-      "ar": ""
+    blurb: {
+      en: "Freshly baked with rich flavors and perfectly melted cheese, this pizza delivers a warm and satisfying taste in every slice.",
+      ar: "مخبوزة طازجة بنكهات غنية وجبن ذائب تماماً، تقدم هذه البيتزا طعماً دافئاً ومرضياً في كل شريحة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/videos/content-0VH4ArJFbaproMZ59T/content-0VH4ArJFbaproMZ59T.jpg",
-    "order": 27
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH52RRfNdX15XOjS9/playlist.m3u8",
+    order: 27,
   },
   {
-    "id": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "SIGNATURE SHISHA",
-      "ar": "سيجنتشر شيشة"
+    id: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "Abla's Handmade Gözleme & Börek",
+      ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
     },
-    "blurb": {
-      "en": "",
-      "ar": ""
+    blurb: {
+      en: "*Made By Love Abla's* Authentic Turkish Gözleme & Börek Handcrafted dough delicacies, warm and comforting, blending simplicity with true authenticity.",
+      ar: "*بكل حب من مطبخ أبلة* غوزليميه وبوريك تركي أصيل. عجينة يدوية فاخرة، دافئة ومريحة، تجمع بين البساطة والأصالة الحقيقية.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4Sau0jbHE6csJ4B.webp",
-    "order": 28
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlNiY6ApZgBb2f3.webp",
+    order: 28,
   },
   {
-    "id": "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
-    "name": {
-      "en": "VIP SHISHA",
-      "ar": "شيشة في آي بي"
+    id: "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+    name: {
+      en: "Milkshake",
+      ar: "ميلك شيك",
     },
-    "blurb": {
-      "en": "",
-      "ar": ""
+    blurb: {
+      en: "Smooth, creamy, and perfectly blended, this milkshake offers a rich and refreshing flavor in every sip.",
+      ar: "قوام ناعم وكريمي ومخفوق بعناية، يقدم هذا الميلك شيك نكهة غنية ومنعشة في كل رشفة.",
     },
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4V9NOSR44DyE7KF.webp",
-    "order": 29
-  }
+    sourceImageUrl:
+      "https://cdn.thefoost.com/tenants/asyas/images/category-0VKAvv7jNedmSs3GfU.webp",
+    order: 29,
+  },
 ] satisfies Array<Omit<MenuCategory, "cover">>;
 
 const RAW_ITEMS = [
   {
-    "id": "e3c89499-bf61-4a1e-9191-3445228a9ee2",
-    "category": "61e69fe8-3255-49c0-ad94-517a04184cd5",
-    "name": {
-      "en": "Hosgeldin Jeddah",
-      "ar": "أهلاً وسهلاً جدة"
-    },
-    "description": {
-      "en": "Start your day not just with breakfast, but with a carefully crafted experience.\nThis special table from Asya's kitchen is designed to give you an energetic, joyful, and generous morning. Your table begins with a rich and fresh selection.\nA mixed cheese plate paired with seasonal fruits brings together the authentic flavors of Turkish cuisine, while labneh with zaatar and the distinctive taste of surk cheese add a unique depth to the experience.\nAlongside, a selection of green and black olives completes this natural and balanced start. The journey continues with traditional flavors.\nThe perfect harmony of tahini and molasses blends beautifully with butter and honey, while traditional helva leaves a sweet signature on your table. Warm touches bring comfort to your breakfast.\nFreshly prepared soft scrambled eggs add warmth and satisfaction to the experience. When it's time for a sweet pause.\nFig, apricot, and strawberry jams add color and natural sweetness, offering a delightful moment in every bite. This rich experience is accompanied by.\nA fresh and warm bread basket,\nAnd perfectly completed with the elegant touch of traditional Turkish tea",
-      "ar": "ابدأ يومك ليس فقط بوجبة إفطار، بل بتجربة مُعدّة بعناية فائقة. هذه المائدة المميزة من مطبخ آسيا صُمّمت لتمنحك صباحاً مفعماً بالطاقة والبهجة. تبدأ مائدتك بتشكيلة غنية وطازجة. طبق أجبان متنوعة مقترن بفواكه الموسم يجمع بين النكهات الأصيلة للمطبخ التركي، بينما تضيف اللبنة بالزعتر والمذاق المميز لجبنة سورك عمقاً فريداً للتجربة. إلى جانب ذلك، تشكيلة من الزيتون الأخضر والأسود تُكمل هذه البداية الطبيعية والمتوازنة. تستمر الرحلة مع النكهات التقليدية. التناغم المثالي بين الطحينة والدبس يمتزج بجمال مع الزبدة والعسل، فيما تترك الحلاوة التقليدية بصمة حلوة على مائدتك. لمسات دافئة تضيف الراحة على إفطارك. بيض مخفوق طري محضّر طازجاً يضيف الدفء والرضا إلى التجربة. وعندما يحين وقت استراحة حلوة. تضيف مربيات التين والمشمش والفراولة الألوان والحلاوة الطبيعية، لتقدم لحظة ممتعة في كل قضمة. هذه التجربة الغنية يرافقها. سلة خبز طازج ودافئ، وتكتمل بشكل مثالي مع اللمسة الأنيقة للشاي التركي التقليدي"
-    },
-    "price": "216",
-    "priceValue": 216,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3BHgDi00M7OSBm1.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "502b7bd2-2ad7-4a03-9d96-30fb92d74098",
-    "category": "61e69fe8-3255-49c0-ad94-517a04184cd5",
-    "name": {
-      "en": "Moda Nişantaşı",
-      "ar": "موضة نيشانتاشي"
-    },
-    "description": {
-      "en": "Start your day not just with breakfast, but with a unique experience where rich flavors and cultures come together. The Moda Nişantaşı breakfast blends traditional Turkish touches with modern presentations, offering you an energetic and joyful start to your day.Your table begins with freshness and variety.A carefully selected cheese plate is served alongside fresh tomatoes and cucumbers, balanced with a seasonal fruit platter.\nA selection of olives, labneh with zaatar, and the distinctive flavor of surk cheese add a Mediterranean depth and character to the experience.\nThe journey continues with warm and traditional flavors.\nPerfectly prepared menemen takes its place as a breakfast essential, while crispy potatoes add a satisfying crunch.\nAlongside, muhammara, hummus, and foul bring the richness of Middle Eastern cuisine to your table.\nSweet and balanced touches complete the experience.\nThe harmony of tahini and molasses pairs beautifully with butter and honey, while strawberry and apricot jams offer natural sweetness in every bite.\nNutella adds a modern twist, and traditional helva finishes the table with a classic touch.\nThis delightful experience is accompanied by.A warm and fresh bread basket.\nAnd completed with a traditional teapot, turning your breakfast into a long and enjoyable ritual\nMODA NİŞANTAŞI is not just a breakfast,\nit is a table where natural flavors, care and Istanbul's diverse culinary heritage come tog ether in every bite.",
-      "ar": "ابدأ يومك ليس فقط بوجبة فطور، بل بتجربة فريدة تلتقي فيها النكهات الغنية والثقافات المتنوعة. يمزج إفطار موضة نيشانتاشي بين اللمسات التركية التقليدية والتقديم العصري، ليمنحك بداية يوم مفعمة بالطاقة والبهجة. تبدأ مائدتك بالطزاجة والتنوع. يُقدَّم طبق أجبان مختار بعناية إلى جانب الطماطم والخيار الطازج، متوازنًا مع طبق من الفواكه الموسمية. تشكيلة من الزيتون واللبنة بالزعتر والنكهة المميزة لجبنة سورك تضيف عمقًا وطابعًا متوسطيًا على التجربة. تستمر الرحلة مع نكهات دافئة وتقليدية. شكشوكة تركية المُحضَّرة بإتقان يحتل مكانتها كطبق أساسي من اطباق الفطور، بينما تضيف البطاطا المقرمشة لمسة من القرمشة الشهية. إلى جانب ذلك، تُثري المحمرة والحمص والفول مائدتك بغنى المطبخ الشرقي. لمسات حلوة ومتوازنة تُكمل التجربة. يتناغم الطحينة مع الدبس بشكل رائع مع الزبدة والعسل، فيما يمنحك مربى الفراولة والمشمش حلاوة طبيعية في كل قضمة. تضيف النوتيلا لمسة عصرية، بينما تختتم الحلاوة التقليدية المائدة بطابع كلاسيكي أصيل. تُرافق هذه التجربة الشهية. سلة خبز طازجة ودافئة، وتكتمل بإبريق شاي تقليدي يحوّل إفطارك إلى طقس طويل وممتع. موضة نيشانتاشي ليست مجرد وجبة فطور, بل هي مائدة تجتمع فيها النكهات الطبيعية والعناية وتراث إسطنبول الغني والمتنوع في كل لقمة."
-    },
-    "price": "282",
-    "priceValue": 282,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3jJrppnmzT7LdZZ.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "33c12c3e-1de8-4d9a-833c-9770603f05aa",
-    "category": "61e69fe8-3255-49c0-ad94-517a04184cd5",
-    "name": {
-      "en": "Elvan Abla Breakfast",
-      "ar": "فطور إلفان أبلا"
-    },
-    "description": {
-      "en": "Start your day not just with breakfast, but with a table that feels like home. The Elvan Abla Breakfast is inspired by traditional family mornings, where abundance, warmth, and sharing come together to create generous meal. Your table begins with a rich and generous selection. A carefully prepared cheese platter served with seasonal fruits and warm fresh bread sets the tone, accompanied by fresh tomatoes and a variety of classic breakfast essentials. Green and black olives, labneh with zaatar, and the bold flavor of surk cheese bring depth and authenticity to every bite. The experience continues with warm and comforting dishes. Traditional menemen, cooked to perfection, adds a homemade touch, while the mixed frying platter,featuring falafel, sigara rolls, sausages, crispy potatoes, and vegetables,creates a vibrant and satisfying centerpiece. A variety of authentic flavors enrich the table. Hummus and muhammara bring the essence of Middle Eastern cuisine, complemented by olive oil with zaatar and pomegranate molasses for a refined, tangy finish. Sweet moments complete the journey. The harmony of tahini and molasses pairs beautifully with butter and honey, while fig, date, and apricot jams offer natural sweetness in every bite. Nutella adds a modern twist, and traditional helva delivers a timeless, comforting finish. This generous breakfast experience is designed for sharing, bringing people together around one table. A celebration of flavor, tradition, and togetherness.",
-      "ar": "ابدأ يومك ليس فقط بوجبة فطور، بل بمائدة تشعرك بدفء البيت. فطور إلفان أبلا مستوحى من صباحيات العائلة التقليدية، حيث تجتمع الوفرة والدفء والمشاركة لتخلق وجبة غنية. تبدأ مائدتك بتشكيلة غنية ولذيذة. طبق أجبان مُعدّ بعناية يُقدَّم مع فواكه موسمية وخبز طازج ساخن يضبط إيقاع المائدة، يرافقه طماطم طازجة ومجموعة متنوعة من أساسيات الفطور الكلاسيكية. الزيتون الأخضر والأسود، واللبنة بالزعتر، والنكهة الجريئة لجبنة سورك تضيف عمقاً وأصالة على كل لقمة. تستمر التجربة مع أطباق دافئة ومريحة. شكشوكة تركية التقليدية المطهو بإتقان يضيف لمسة منزلية، بينما يُشكّل طبق المقالي المشكّلة, الذي يضم الفلافل، ولفائف الجبن المقرمشة، والسجق، والبطاطا المقرمشة، والخضروات, قطعة ايقونية نابضة بالحياة ومُشبعة. تنوّع من النكهات الأصيلة يُثري المائدة. الحمص والمحمّرة يحملان جوهر المطبخ الشرقي، يُكمّلهما زيت الزيتون بالزعتر ودبس الرمان لنهاية راقية ومنعشة. لحظات حلوة تُكمل الرحلة. تناغم الطحينة والدبس يتآلف بجمال مع الزبدة والعسل، بينما تُقدّم مربيات التين والتمر والمشمش حلاوة طبيعية في كل لقمة. النوتيلا تضيف لمسة عصرية، والحلاوة التقليدية تمنحك نهاية دافئة. تجربة الفطور السخية هذه مصمّمة للمشاركة، تجمع الناس حول مائدة واحدة. احتفاء بالنكهة والتقاليد والعمل المنزلي."
-    },
-    "price": "369",
-    "priceValue": 369,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3AJwtQkZah04EjT.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "1ae0277d-4110-4b2b-ad0f-ebf2c6bbeaeb",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Istanbul Menemen",
-      "ar": "شكشوكة إسطنبول"
-    },
-    "description": {
-      "en": "A traditional Istanbul-style menemen prepared with the natural flavors of tomatoes and peppers, gently cooked with fresh eggs to create a warm and comforting dish. Served with creamy labneh on the side, along with crispy crouton bread and fresh parsley for a balanced finish. Familiar, warm and full of comfort in every bite.",
-      "ar": "طبق مينمين تقليدي على طراز إسطنبول، يُحضر بالنكهات الطبيعية للطماطم والفلفل، ويُطهى ببطء مع البيض الطازج ليقدم طبقاً دافئاً ومريحاً. يُقدم مع اللبنة الكريمية إلى جانبه، بالإضافة إلى خبز الكروتون المقرمش والبقدونس الطازج لضمان توازن مثالي. مذاق مألوف، دافئ، ومليء بالراحة في كل لقمة."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzapIYpULfuK01MM.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "5e586ecb-4451-4e10-852d-96ec5a32f46e",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Istanbul Menemen With Kashar Cheese",
-      "ar": "شكشوكة إسطنبول بجبنة القشقوان"
-    },
-    "description": {
-      "en": "A richer version of the classic Istanbul menemen, enhanced with melted kashar cheese. The harmony of tomatoes, peppers and eggs meets the smooth, stretchy texture of cheese, creating a more indulgent experience. Served with labneh on the side, crispy bread and fresh herbs. A comforting dish made for sharing.",
-      "ar": "إصدار أغنى من طبق المينمين الإسطنبولي الكلاسيكي، معزز بجبنة القشقوان الذائبة. يتناغم مزيج الطماطم والفلفل والبيض مع ملمس الجبن الناعم والمطاطي، مما يمنحكم تجربة غنية بالمذاق. يُقدم مع اللبنة الجانبية، والخبز المقرمش، والأعشاب الطازجة. طبق دافئ ومثالي للمشاركة."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzeBFfNzau1O8Ie2.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "755a894d-bcec-4035-9aac-a5a4575a4670",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Hunkar Yumurtasi (Cilbir)",
-      "ar": "بيض هنكار (تشيلبير)"
-    },
-    "description": {
-      "en": "A refined take on a traditional favorite, featuring soft eggs served over garlicky yogurt, finished with warm melted butter. Balanced, delicate and rich in flavor, this dish is complemented with crispy crouton bread for added texture. Elegant, balanced and timeless.",
-      "ar": "طبق مميز بلمسة عصرية على وصفة تقليدية محبوبة، يتضمن بيضاً طرياً يُقدَّم فوق لبن بنكهة الثوم، ويُزيَّن بالزبدة الدافئة الذائبة. متوازن النكهات، رقيق وغني بالطعم، يُقدَّم مع خبز الكروتون المقرمش لإضافة قوام مميز. أنيق، متوازن وأصيل."
-    },
-    "price": "46",
-    "priceValue": 46,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzWRAN0mTKf89Vpm.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "1bdacdb7-3add-4dad-bc1e-1bcc8b60a715",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Potato & Eggs",
-      "ar": "بطاطس وبيض"
-    },
-    "description": {
-      "en": "Golden potatoes lightly sautéed in butter, combined with eggs to create a hearty and satisfying dish. Served with labneh on the side, and enhanced with cumin and chili flakes for a warm, flavorful finish. Accompanied by crispy bread.\nA comforting and fulfilling start to the day.",
-      "ar": "بطاطا ذهبية مقلية بخفة في الزبدة، ممزوجة مع البيض لتقديم طبق شهي ومشبع. تُقدّم مع اللبنة على الجانب، ومُعزّزة بالكمون ورقائق الفلفل الحار لنكهة دافئة ومميزة. مصحوبة بخبز مقرمش. بداية مريحة ومُرضية ليومك."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzh7xZ5PCXe5wdjM.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "bef4cfaf-a1da-4d59-a2e0-f53a99d3cf2f",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Eggs With Nişantaşı Simit",
-      "ar": "بيض مع سميت نيشانتاشي"
-    },
-    "description": {
-      "en": "A playful and satisfying dish featuring two pieces of Karaköy-style simit, one filled with tomato sauce, the other with eggs. At the center of the pan, a base of warm tomato sauce is topped with gently cooked eggs and finished with fresh arugula. Layered, vibrant and full of character in every bite.",
-      "ar": "طبق ممتع ومشبع يتكون من قطعتين من سميت كاراكوي الشهير؛ إحداهما محشوة بصلصة الطماطم الغنية، والأخرى بالبيض. يتوسط المقلاة قاعدة من صلصة الطماطم الدافئة يعلوها بيض مطهو بعناية مع لمسة من جرجير الطازج. طبق غني بالطبقات، مفعم بالحيوية والنكهات المميزة في كل قضمة."
-    },
-    "price": "44",
-    "priceValue": 44,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3C0WmZbDKx48Pz7.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "8f0dd89f-a75a-4c8b-a000-c96060303d3e",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Eggs With Homemade Sucuk",
-      "ar": "بيض مع سجق منزلي"
-    },
-    "description": {
-      "en": "A bold breakfast classic where eggs meet homemade sucuk, slowly cooked to release its deep, rich aroma.\nServed with traditional tırnak bread, creating a hearty and satisfying experience.\nStrong, traditional and deeply flavorful.",
-      "ar": "طبق فطور كلاسيكي جريء يجمع بين البيض والسجق المحضّر منزلياً، يُطهى على نار هادئة ليطلق نكهته العميقة ورائحته الغنية. يُقدَّم مع خبز تيرناك التقليدي، ليمنحك تجربة شهية ومُشبعة. نكهة قوية، أصالة تقليدية، وطعم عميق لا يُقاوم."
-    },
-    "price": "46",
-    "priceValue": 46,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzhYUrNMTf8xtwdo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "38ec170c-750b-4fe4-a167-4cd1778648bc",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Sunny Sideup",
-      "ar": "بيض عيون"
-    },
-    "description": {
-      "en": "Soft and creamy scrambled eggs prepared with butter, offering a light yet satisfying start to the day. Served with labneh to bring a smooth and balanced finish. Comforting, smooth and easy to enjoy.",
-      "ar": "بيض طازج مطهو بعناية فائقة وبدرجة حرارة متوازنة للحفاظ على صفار ذهبي غني وقوام ناعم. يُقدم ببساطة لإبراز نقاء وجودة المكونات، مما يمنحكم تجربة إفطار كلاسيكية بلمسة أنيقة."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ASrtJaioENXbX2.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "97c60f8a-309e-46fb-b100-da93a603410d",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Farm Style Scrambel",
-      "ar": "بيض مخفوق على طريقة المزرعة"
-    },
-    "description": {
-      "en": "Soft and creamy scrambled eggs prepared with butter, offering a light yet satisfying start to the day. Served with labneh to bring a smooth and balanced finish. Comforting, smooth and easy to enjoy.",
-      "ar": "بيض مخفوق طري وكريمي محضّر بالزبدة، يمنحك بداية خفيفة ومُشبعة ليومك. يُقدّم مع اللبنة لإضفاء لمسة ناعمة ومتوازنة. طبق مريح، ناعم القوام وسهل الاستمتاع به."
-    },
-    "price": "36",
-    "priceValue": 36,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzjauiAzzo4AieVr.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "7f704c10-78c1-4697-90d0-162cd7ce1cdb",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Boild Eggs",
-      "ar": "بيض مسلوق"
-    },
-    "description": {
-      "en": "A simple and wholesome option, where boiled eggs are complemented with butter and a blend of aromatic spices including cumin, chili flakes and thyme. Served with crispy croutons and labneh for a balanced experience. Light, clean and gently flavorful.",
-      "ar": "خيار بسيط وصحي، حيث يُقدَّم البيض المسلوق مع الزبدة ومزيج من التوابل العطرية بما فيها الكمون ورقائق الفلفل الحار والزعتر. يُقدَّم مع قطع الخبز المحمّص المقرمشة واللبنة لتجربة متوازنة. خفيف، نقي وغني بنكهة لطيفة."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfx4WOqPU8qTxnH.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 9
-  },
-  {
-    "id": "a71b8968-9fff-47e1-8c1d-f74f500aa3c1",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Boild Eggs With Cheddar",
-      "ar": "بيض مسلوق مع شيدر"
-    },
-    "description": {
-      "en": "A comforting and layered dish where boiled eggs are brought together with butter and gently infused with cumin, chili flakes and thyme. Enriched with melted cheddar, milk and a touch of cream, creating a smooth and satisfying texture. Served with crispy croutons on the side. Simple at first, yet deeply rich and fulfilling.",
-      "ar": "طبق مريح ومتعدد الطبقات يُحضَّر من البيض المسلوق مع الزبدة ويُنكَّه برفق بالكمون ورقائق الفلفل الحار والزعتر. يُثرى بجبنة الشيدر الذائبة والحليب ولمسة من الكريمة، مما يمنحه قواماً ناعماً ومُشبعاً. يُقدَّم مع قطع الخبز المحمّص المقرمشة على الجانب. بسيط في مظهره، لكنه غني ومُرضٍ في كل قضمة."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzWDovV85ZRfB50X.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 10
-  },
-  {
-    "id": "d6451bec-6280-4ed1-b438-53d41f63b4f1",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Plain Omelette",
-      "ar": "أومليت سادة"
-    },
-    "description": {
-      "en": "A light and delicate omelette prepared with eggs and butter, paired with fresh cherry tomatoes and a touch of arugula. Served with crispy croutons for a clean and balanced experience. Minimal, fresh and effortlessly enjoyable.",
-      "ar": "أومليت خفيف ورقيق محضّر من البيض والزبدة، مقدّم مع حبات طماطم كرزية طازجة ولمسة من الجرجير. يُقدّم مع قطع الخبز المحمّص المقرمشة لتجربة متوازنة ونقية. بسيط، طازج وممتع بكل سهولة."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzdLcjUt8mQBiVF7.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 11
-  },
-  {
-    "id": "774cacb7-7b1b-4fe8-9389-caa3444926f9",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Vegetable Omelette",
-      "ar": "أومليت الخضار"
-    },
-    "description": {
-      "en": "A vibrant omelette filled with fresh vegetables including zucchini, carrots, mushrooms and colorful peppers. Balanced with cherry tomatoes and arugula for a refreshing finish. Light, colorful and full of freshness.",
-      "ar": "أومليت نابض بالحيوية محشو بالخضروات الطازجة بما في ذلك الكوسا والجزر والفطر والفلفل الملون. متوازن مع طماطم الكرز والجرجير لنهاية منعشة. خفيف وملون ومليء بالنضارة."
-    },
-    "price": "34",
-    "priceValue": 34,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbcocv07dogzvB5.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 12
-  },
-  {
-    "id": "c1983103-608f-418e-a037-d79387429663",
-    "category": "e74e388c-048d-47e4-afec-acf25fac4650",
-    "name": {
-      "en": "Cheese Omelette",
-      "ar": "أومليت بالجبن"
-    },
-    "description": {
-      "en": "A comforting classic where melted mozzarella blends smoothly with eggs cooked in butter. Balanced with cherry tomatoes and arugula, and served with crispy croutons on the side. Creamy, satisfying and timeless.",
-      "ar": "طبق كلاسيكي دافئ حيث تمتزج جبنة الموزاريلا الذائبة بنعومة مع البيض المطهو بالزبدة. متوازن مع طماطم الكرز والجرجير، ويُقدّم مع قطع الخبز المحمّص المقرمشة على الجانب. كريمي، مُشبع وبنكهة لا تُقاوم."
-    },
-    "price": "34",
-    "priceValue": 34,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3AcZnddkOjQFuy8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 13
-  },
-  {
-    "id": "daf67786-46b5-445d-973f-cf8748d7e16f",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Anatolia Cheese Selection",
-      "ar": "تشكيلة أجبان أناضولية"
-    },
-    "description": {
-      "en": "Inspired by Istanbul's rich breakfast culture, this carefully curated platter brings together a variety of textures and flavors in perfect harmony. From fresh and delicate lor cheese to creamy white cheese, bold cheddar varieties and traditional braided cheese, each selection offers its own unique character. Black cumin-infused lor and musket cheese add depth and a subtle aromatic touch. This rich selection is complemented with sun-dried figs, dried apricots and fresh grapes, balanced with crunchy walnuts and crispy croutons. Savory biscuits add an extra layer of texture, enhancing the overall experience without overpowering the natural flavors. Finished with a touch of fig on the side, this platter turns into a well-balanced, refined and satisfying tasting experience. Rich, elegant and perfect for sharing.",
-      "ar": "مستوحاة من ثقافة الإفطار العريقة في إسطنبول، تجمع هذه المقبّلات المنسّقة بعناية بين مجموعة متنوعة من القوامات والنكهات في تناغم مثالي. من جبن اللور الطازج والرقيق إلى الجبن الأبيض الكريمي، وأصناف الشيدر الغنية والجبن المجدول التقليدي، يقدّم كل صنف طابعه الفريد. يضيف جبن اللور بحبة البركة وجبن المسكت عمقاً ولمسة عطرية رقيقة. يُكمّل هذا التشكيل الغني بالتين المجفف بالشمس والمشمش المجفف والعنب الطازج، متوازناً مع الجوز المقرمش وقطع الخبز المحمّص. تضيف البسكويت المالح طبقة إضافية من القوام، مما يعزز التجربة الشاملة دون أن يطغى على النكهات الطبيعية. مع لمسة من التين على الجانب، تتحوّل هذه المقبّلات إلى تجربة تذوّق متوازنة وراقية ومُرضية. غنية وأنيقة ومثالية للمشاركة."
-    },
-    "price": "78",
-    "priceValue": 78,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3CK7ZZk3jSiT8IG.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "59bc51ab-231e-44bc-8588-5bfc00ac5eb0",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Clay Pot Halloumi Delight",
-      "ar": "طبق الحلوم بالفخار"
-    },
-    "description": {
-      "en": "Served hot, halloumi cheese is layered over the chef's special tomato sauce, creating a rich and satisfying base. A touch of pesto and fresh mint adds balance and aroma, while crispy croutons complete the dish with texture. Warm, aromatic and deeply satisfying.",
-      "ar": "يُقدَّم ساخناً، حيث يُرتَّب جبن الحلوم فوق صلصة الطماطم المميزة من الشيف، ليُشكّل قاعدة غنية ومُشبعة. تُضفي لمسة من البيستو والنعناع الطازج توازناً ونكهة عطرية، بينما تُكمل قطع الخبز المحمّص المقرمشة الطبق بقوامها المتميز. دافئ، عطري ومُرضٍ بعمق."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzg3J0bMb7UaO2vQ.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "21abfb80-c2e5-413d-9019-5cc3de9121ae",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Greek Halloumi",
-      "ar": "حلومي يوناني"
-    },
-    "description": {
-      "en": "Grilled halloumi meets a fresh and vibrant selection of ingredients. Cherry tomatoes, cucumber, red onion, and a mix of green and black olives are brought together with a hint of lemon for brightness. Light, refreshing and perfectly balanced.",
-      "ar": "جبن الحلوم المشوي يلتقي بتشكيلة طازجة ونابضة بالحياة من المكونات. طماطم كرزية وخيار وبصل أحمر ومزيج من الزيتون الأخضر والأسود، تجتمع معاً بلمسة من الليمون لإضفاء نكهة منعشة. طبق خفيف ومنعش ومتوازن بشكل مثالي."
-    },
-    "price": "46",
-    "priceValue": 46,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfebpApSvfecFGp.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "0e31b410-7a4f-44cc-be7c-6da715660d4f",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "White Cheese Plate",
-      "ar": "طبق جبنة بيضاء"
-    },
-    "description": {
-      "en": "A simple yet elegant combination highlighting the richness of white cheese. Paired with strawberry jam for a gentle contrast, and served with aromatic za'atar and crispy croutons for added texture. Classic, balanced and quietly indulgent.",
-      "ar": "مزيج بسيط وأنيق يُبرز غنى الجبنة البيضاء، يُقدَّم مع مربى الفراولة لتباين لطيف في النكهات، إلى جانب الزعتر العطري وقطع الخبز المحمّص المقرمشة لإضافة ملمس مميز. طبق كلاسيكي متوازن ومترف بهدوء."
-    },
-    "price": "36",
-    "priceValue": 36,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzVtOQHcjai9W74S.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "9feba6b0-1a71-49f8-a312-7740b923b8f1",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Olive Plate",
-      "ar": "طبق الزيتون"
-    },
-    "description": {
-      "en": "A Mediterranean-inspired selection where green and black olives are paired with fresh herbs and seasonal touches. Cherry tomatoes and Mediterranean greens are brought together with a drizzle of olive oil, enhanced with thyme, chili flakes and a hint of chili pepper. Served with crispy croutons. Fresh, aromatic and full of Mediterranean character.",
-      "ar": "تشكيلة مستوحاة من المطبخ المتوسطي حيث يجتمع الزيتون الأخضر والأسود مع الأعشاب الطازجة ولمسات موسمية. تُمزج حبات الطماطم الكرزية مع الخضراوات المتوسطية ورشة من زيت الزيتون، معززة بالزعتر ورقائق الفلفل الحار ولمسة من الفلفل الحريف. تُقدّم مع قطع الخبز المحمّص المقرمشة. طبق طازج وعطري ومفعم بطابع البحر الأبيض المتوسط."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGza8DMX2yCOwfxKT.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "bd920d50-f921-46e5-844f-84d6eb6dcf74",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Farm's Plate",
-      "ar": "طبق المزرعة"
-    },
-    "description": {
-      "en": "A refreshing combination of garden-fresh vegetables. Crisp lettuce, arugula and parsley are balanced with cucumber, tomatoes, baby radish and colorful peppers. Finished with a touch of lemon for brightness. Light, fresh and naturally vibrant.",
-      "ar": "مزيج منعش من الخضروات الطازجة من الحديقة. خس مقرمش وجرجير وبقدونس متوازنة مع الخيار والطماطم والفجل الصغير والفلفل الملون. مع لمسة من الليمون لإضفاء الإشراق. خفيفة وطازجة ونابضة بالحيوية بشكل طبيعي."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3CybMhbnGLXCxwP.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "7e0f5506-f996-4586-a42a-b1b522dfbc43",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "95 Foul",
-      "ar": "95 فول"
-    },
-    "description": {
-      "en": "A beloved Middle Eastern classic. Slow-cooked fava beans are combined with tomatoes, onions and gill, enriched with tahini and olive oil for a rich and satisfying flavor. Hearty, rich and full of character.",
-      "ar": "طبق كلاسيكي محبوب من الشرق الاوسط. فول مطهو ببطء ممزوج مع الطماطم والبصل والثوم, غني بالطحينة وزيت الزيتون لنكهة دسمة ومرضية.\nوجبة مشبعة, غنية, ومليئة بالنكهات الاصيلة."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfTquQGsuPcygn8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "a1cf8693-8514-4542-a2b9-e3fd13f86f95",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Falafel Bites",
-      "ar": "قطع الفلافل"
-    },
-    "description": {
-      "en": "A smooth layer of hummus topped with crispy-on-the-outside, soft-on-the-inside falafel. Balanced with cherry tomatoes, pickled cucumber and baby arugula, enhanced with tahini sauce and a light touch of mayonnaise. Finished with pomegranate seeds and a drizzle of olive oil. Crispy, balanced and full of flavor in every bite.",
-      "ar": "طبقة ناعمة من الحمص تعلوها أقراص الفلافل المقرمشة من الخارج والطرية من الداخل. متوازنة مع الطماطم الكرزية والخيار المخلل وأوراق الجرجير الصغيرة، معززة بصلصة الطحينة ولمسة خفيفة من المايونيز. مزيّنة بحبات الرمان ورذاذ من زيت الزيتون. مقرمشة، متوازنة ومليئة بالنكهة في كل قضمة."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzchAMXG9BGwGkrC.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "2e68a5de-d7cc-4572-a661-2d967173ca8a",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Mediterranean Olive Salad",
-      "ar": "سلطة الزيتون المتوسطية"
-    },
-    "description": {
-      "en": "A vibrant Mediterranean-inspired dish where green and black olives meet fresh greens and colorful peppers. Pomegranate seeds add a subtle sweetness while lemon and olive oil bring brightness and freshness to the plate. Fresh, vibrant and full of Mediterranean character.",
-      "ar": "طبق نابض بالحياة مستوحى من المطبخ المتوسطي، حيث يلتقي الزيتون الأخضر والأسود مع الخضراوات الطازجة والفلفل الملوّن. تضيف حبّات الرمان لمسة من الحلاوة الرقيقة، بينما يمنح الليمون وزيت الزيتون إشراقة ونضارة مميزة للطبق. طازج، نابض بالحياة وغني بطابع البحر الأبيض المتوسط."
-    },
-    "price": "36",
-    "priceValue": 36,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3DZWggBpOtGmcAk.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 9
-  },
-  {
-    "id": "fb3c796f-b84e-469b-96ec-01b9b6f01018",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Crispy Cheese Rolls",
-      "ar": "لفائف الجبن المقرمشة"
-    },
-    "description": {
-      "en": "Golden-fried, crispy on the outside and soft on the inside, these traditional sigara borek rolls offer a comforting bite in every piece. Served with lettuce, pomegranate and lemon. Crispy, light and a timeless classic.",
-      "ar": "مقلية حتى تكتسب لونًا ذهبيًا، مقرمشة من الخارج وناعمة من الداخل، هذه الرولات التقليدية (لفائف الجبن المقرمشة) تمنح لقمة دافئة ومريحة في كل قطعة.\nتُقدَّم مع الخس، حبّات الرمان وشرائح الليمون.\nمقرمشة، خفيفة، وكلاسيكية لا تفقد رونقها."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzjEYVBPvpZDUHc7.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 10
-  },
-  {
-    "id": "67056900-8679-442d-8181-6e283fad3fa1",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Chef's Signature Pan",
-      "ar": "طبق الشيف المميز"
-    },
-    "description": {
-      "en": "A house-special pan dish crafted with bold Mediterranean character and carefully layered flavors. Served hot and aromatic, it delivers a rich, satisfying finish that showcases the chef's signature style.",
-      "ar": "طبق مقلاة مميز من المنزل، مُعدّ بطابع متوسطي جريء ونكهات متناسقة بعناية طبقة فوق طبقة. يُقدَّم ساخناً وبرائحة شهية، ليمنحك تجربة غنية ومُرضية تعكس أسلوب الشيف المميز."
-    },
-    "price": "52",
-    "priceValue": 52,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VImmn7NjoLusBnLs7.webp",
-    "popular": false,
-    "chef": false,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 11
-  },
-  {
-    "id": "69d587e8-6014-44f4-9fa2-2de58deff91b",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Simit",
-      "ar": "سميت"
-    },
-    "description": {
-      "en": "Freshly baked and coated with golden sesame, this traditional simit delivers a warm, crisp, and satisfying taste in every bite.",
-      "ar": "مخبوز طازجاً ومغطى بالسمسم الذهبي، يقدم هذا السميت التقليدي مذاقاً دافئاً ومقرمشاً وشهياً في كل قضمة."
-    },
-    "price": "7",
-    "priceValue": 7,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLiGIecxYTMHP4Wr.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 12
-  },
-  {
-    "id": "fe2a23e7-beae-402a-a6b7-93a5c2c8983d",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Simit With Cheese",
-      "ar": "سميت بالجبنة"
-    },
-    "description": {
-      "en": "Freshly baked and filled with rich cheese, this golden sesame simit delivers a warm, crisp, and satisfying bite.",
-      "ar": "مخبوز طازجاً ومحشو بالجبنة الغنية، يقدم سميد السمسم الذهبي هذا قرمشة دافئة ومذاقاً مشبعاً في كل قضمة."
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLiZ1QGpPOkxC4jy.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 13
-  },
-  {
-    "id": "c5a25fe4-fdc1-4848-be25-91d0141999b2",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Honey",
-      "ar": "عسل"
-    },
-    "description": {
-      "en": "A carefully selected honey platter served with rich natural flavors, offering a smooth, sweet, and satisfying experience.",
-      "ar": "طبق عسل مختار بعناية يُقدم مع نكهات طبيعية غنية، يمنحكم تجربة سلسة وحلوة المذاق تمنح الشعور بالرضا."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLivKWrVeWEOawqV.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 14
-  },
-  {
-    "id": "47dbca7a-682e-443c-99bc-01dd2bb4adfc",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Turkish Kaymak",
-      "ar": "قشطة تركية (كايمك)"
-    },
-    "description": {
-      "en": "Rich and creamy Turkish kaymak, delicately served for a smooth, authentic, and satisfying traditional taste.",
-      "ar": "قشطة القيمر التركية الغنية والقوام الكريمي، تُقدم بعناية لتمنحكم مذاقاً تقليدياً ناعماً وأصيلاً يرضي تطلعاتكم."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLjEm3ZdmKnrPMY0.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 15
-  },
-  {
-    "id": "004e2b9d-6aef-476a-bed8-e854eeaba257",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Sucuk",
-      "ar": "سجق"
-    },
-    "description": {
-      "en": "Perfectly fried and richly seasoned, this traditional sucuk offers a bold, savory, and satisfying flavor in every bite.",
-      "ar": "سجق تقليدي مقلي بإتقان ومتبل بنكهات غنية، يقدم طعماً قوياً وشهياً يمنحك الرضا التام في كل قضمة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGqkEHb8ebXXBXGX.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 16
-  },
-  {
-    "id": "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef",
-    "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
-    "name": {
-      "en": "Labneh",
-      "ar": "لبنة"
-    },
-    "description": {
-      "en": "Creamy labneh delicately served with fresh flavors, offering a smooth and refreshing traditional taste.",
-      "ar": "لبنة كريمية تقدم بعناية مع نكهات طازجة، تمنحكم طعماً تقليدياً ناعماً ومنعشاً."
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGjwzgFRiuTLxWEI.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 17
-  },
-  {
-    "id": "223a7d36-eb74-4e6b-a01c-b7ff0b0c696b",
-    "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Abla Potatoes",
-      "ar": "بطاطس أبلا"
-    },
-    "description": {
-      "en": "Prepared in-house with care, these golden, crispy potatoes are seasoned with aromatic herbs including za'atar, mint and thyme. A simple yet flavorful dish that highlights the warmth of homemade cooking. Freshly made, crispy and full of comforting flavor.",
-      "ar": "محضّرة بعناية في مطبخنا، هذه البطاطا الذهبية المقرمشة متبّلة بأعشاب عطرية تشمل الزعتر والنعناع والزعتر البري. طبق بسيط غني بالنكهة يعكس دفء الطبخ المنزلي. طازجة التحضير، مقرمشة ومليئة بالنكهة المريحة."
-    },
-    "price": "36",
-    "priceValue": 36,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTvZzGXqrIloxsj.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "e406d9c9-0993-4a1c-875a-dfda98e2fadb",
-    "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Mersin Style Potatoes",
-      "ar": "بطاطس على طريقة مرسين"
-    },
-    "description": {
-      "en": "A bold and flavorful twist inspired by Mersin cuisine.\nCrispy potatoes tossed with garlic, fresh parsley, and rich sauces, finished with a spicy touch for added depth.\nBold, savory, and full of flavor",
-      "ar": "لمسة جريئة وغنية بالنكهات مستوحاة من مطبخ مرسين. بطاطس مقرمشة مغطاة بالثوم والبقدونس الطازج والصلصات الغنية، مع لمسة حارة تمنحها عمقاً إضافياً. طبق جريء، لذيذ، ومفعم بالنكهات."
-    },
-    "price": "34",
-    "priceValue": 34,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzdDsUFfBdcACmv8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "1f431c8a-b272-4a9f-8377-758fd9a0781d",
-    "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Volcano Potatoes",
-      "ar": "بطاطس حارة"
-    },
-    "description": {
-      "en": "Crispy potatoes infused with chili, balanced with lemon and fresh parsley.\nServed with a light tomato sauce that enhances the overall flavor.\nSpicy and refresh",
-      "ar": "بطاطس مقرمشة متبلة بالفلفل الحار، متوازنة مع الليمون والبقدونس الطازج. تُقدم مع صلصة طماطم خفيفة تعزز النكهة الغنية. طبق حار ومنعش."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Dv5EpJm919rkff.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "6377546c-aff4-488d-ac30-ad27245054db",
-    "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Mr. French Fries",
-      "ar": "مستر فرنش فرايز"
-    },
-    "description": {
-      "en": "Classic crispy fries served with ketchup and mayonnaise, finished with a touch of Cajun spices for a bold twist. Classic, crispy with a modern kick.",
-      "ar": "بطاطس مقلية مقرمشة كلاسيكية تُقدَّم مع الكاتشب والمايونيز، وتُختتم بلمسة من بهارات الكاجون لإضافة طابع جريء.\nكلاسيكية، مقرمشة، بلمسة عصرية مميزة."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2ISqLC7597Hx3vl.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "3178ac05-fef6-43ce-a897-ea01df50a79f",
-    "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Potato Croquettes",
-      "ar": "كروكيت البطاطس"
-    },
-    "description": {
-      "en": "Crispy on the outside and soft on the inside,\na satisfying bite in every piece.\nThese golden croquettes are served with ketchup and mayonnaise for a classic pairing.\nCrispy, comforting, and perfect anytime",
-      "ar": "مقرمشة من الخارج وهشة من الداخل، تمنحك مذاقاً رائعاً في كل قضمة. تُقدم كروكيت البطاطس الذهبية مع الكاتشب والمايونيز لتجربة كلاسيكية متكاملة. وجبة مقرمشة، دافئة، ومثالية في أي وقت."
-    },
-    "price": "37",
-    "priceValue": 37,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgSidsLiVI3nNEV.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "6fde2138-e768-45e9-a3f0-86db68dc66bb",
-    "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
-    "name": {
-      "en": "Potato Salad",
-      "ar": "سلطة البطاطس"
-    },
-    "description": {
-      "en": "A fresh and well-balanced combination of boiled potatoes and eggs, mixed with tomatoes, onions and fresh herbs. Enhanced with mint, chili flakes and cumin, then finished with pomegranate molasses and olive oil for a rich and slightly tangy flavor. Refreshing, aromatic and full of character.",
-      "ar": "تشكيلة طازجة ومتوازنة من البطاطس المسلوقة والبيض، ممزوجة مع الطماطم والبصل والأعشاب الطازجة.\nتُعزَّز بالنعناع ورقائق الفلفل الحار والكمون، وتُختتم بدبس الرمان وزيت الزيتون لنكهة غنية ولمسة حامضية خفيفة."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3E5Fa1Q2fns06Mf.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "e8b45db5-b42f-4122-8dfc-59d19bc88045",
-    "category": "9ab5f294-68cb-470c-a860-d520f5d09f22",
-    "name": {
-      "en": "Honey & Cream",
-      "ar": "عسل وقشطة"
-    },
-    "description": {
-      "en": "A truly indulgent traditional pairing. Rich clotted cream is served alongside both honeycomb and strained honey, offering layers of natural sweetness and texture in every bite. Accompanied by freshly baked bazlama bread for a warm and satisfying experience. Creamy, rich and irresistibly authentic.",
-      "ar": "مزيج تقليدي فاخر يمنحك تجربة غنية لا تُقاوم.\nتُقدَّم القشطة الغنية إلى جانب قرص العسل والعسل المصفّى، لتمنحك طبقات من الحلاوة الطبيعية وقوامًا متنوعًا في كل لقمة.\nويُرافقها خبز البازلاما الطازج ليمنحك تجربة دافئة ومشبعة.\nكريمي، غني، وأصيل لا يُقاوم."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLjlnoSPeiIpzq1Y.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "3a13ab9e-66b3-45db-9442-606f00cb5a54",
-    "category": "9ab5f294-68cb-470c-a860-d520f5d09f22",
-    "name": {
-      "en": "Grandma Jam Plate",
-      "ar": "طبق مربى الستات"
-    },
-    "description": {
-      "en": "A delightful spread crafted with homemade touches. A selection of homemade apricot, fig, strawberry and mulberry jams, perfectly paired with tahini and molasses for added depth. Served with butter and crispy bread elements, alongside a mix bread basket and a touch of Nutella for a modern twist. Generous, indulgent and perfect for sharing.",
-      "ar": "تشكيلة لذيذة بلمسات منزلية.\nمجموعة من مربى المشمش، التين، الفراولة والتوت المُحضّرة منزليًا، تتناغم مع الطحينة والدبس لتمنح عمقًا غنيًا في النكهة.\nتُقدَّم مع الزبدة وعناصر خبز مقرمشة، إلى جانب سلة خبز متنوعة ولمسة من النوتيلا لإضافة عصرية.\nمتنوع، غني، ومثالي للمشاركة."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3EdJPRrJW3zF6PS.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "34cf0c11-521a-4390-b42a-48b070e22cc2",
-    "category": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "Handmade Potato Gozleme",
-      "ar": "جوزلمة البطاطس المنزلية"
-    },
-    "description": {
-      "en": "Prepared daily by skilled hands, this traditional gozleme is filled with a simple yet comforting potato mixture. Thinly rolled dough is cooked on a hot griddle and served warm. Homemade, warm and comforting.",
-      "ar": "تُحضَّر يوميًا بأيادٍ ماهرة، حيث تأتي هذه الجوزلمة التقليدية بحشوة بطاطس بسيطة ومريحة في نكهتها.\nيُفرد العجين برقة ويُطهى على صاج ساخن، ثم يُقدَّم دافئًا ليمنحك تجربة أصيلة ومشبعة.\nمنزلي، دافئ، ومريح."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzX9j3yiKa36AnLB.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "93db7fe1-0187-437c-9b85-f9704ec58e20",
-    "category": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "Handmade Cheese Gozleme",
-      "ar": "جوزلمة الجبن المنزلية"
-    },
-    "description": {
-      "en": "Freshly prepared with thin handmade dough and filled with melting cheese, this gozleme is cooked on a hot griddle and served straight from the pan. Soft, cheesy and freshly made.",
-      "ar": "تُحضَّر طازجة بعجين منزلي رقيق، ومحشوة بجبن ذائب غني، ثم تُطهى على صاج ساخن وتُقدَّم مباشرة لتمنحك أفضل طعم طازج.\nطرية، غنية بالجبن، وطازجة يوميًا."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3EwK19tQZyF3p9I.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb",
-    "category": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "Handmade Spinach Gozleme",
-      "ar": "جوزلمة السبانخ المنزلية"
-    },
-    "description": {
-      "en": "A lighter and more refreshing option, filled with fresh spinach and prepared with handmade dough. Cooked on a hot griddle for a perfectly balanced texture. Light, fresh and authentic.",
-      "ar": "خيار أخف وأكثر انتعاشًا، محشو بالسبانخ الطازجة ومحضّر بعجين منزلي.\nيُطهى على صاج ساخن ليمنح توازنًا مثاليًا في القوام.\nخفيف، طازج، ومتوازن."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgIKzkwEwsidIIg.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "7704310c-87e1-4d73-a503-a9f32854973c",
-    "category": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "Su Böreği",
-      "ar": "سو بوريك"
-    },
-    "description": {
-      "en": "A traditional favorite prepared with layers of handmade dough, offering a soft texture and rich filling. Carefully baked and served warm for a comforting experience.",
-      "ar": "طبق تقليدي مفضل يُحضَّر بطبقات من العجين المنزلي، ليمنح قوامًا طريًا وحشوة غنية.\nيُخبز بعناية ويُقدَّم دافئًا ليمنح تجربة مريحة ومشبعة.\nطري، غني، وتقليدي أصيل."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3FBBhRlOG4KBM2H.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "aa0cfbca-91ae-4fb7-97ef-4fc420523a51",
-    "category": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "HATAY KATIKLI BREAD",
-      "ar": "خبز كاتيكلي هاتاي بالفلفل"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH55N40NFQfqsvXCN.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "0a20ce3f-736d-4b27-bdcc-5aa86dcafad6",
-    "category": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
-    "name": {
-      "en": "TANDIR EKMEĞİ",
-      "ar": "خبز التندر"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "15",
-    "priceValue": 15,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH55qOYROeHlaUqZw.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "cf8b74da-b6fe-40f1-9a00-639a4de60168",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Akawi Pide",
-      "ar": "بيدا عكاوي"
-    },
-    "description": {
-      "en": "Freshly baked pide dough topped with a blend of melted mozzarella and authentic Akawi cheese, finished with sesame and black cumin seeds. Rich, salty and perfectly balanced.",
-      "ar": "عجينة بيده طازجة تُخبز يوميًا، مغطاة بمزيج من جبنة الموزاريلا الذائبة وجبنة العكاوي الأصيلة، ومزيّنة بالسمسم وحبة البركة.\nغنية، متوازنة، ومشبعة بالنكهة."
-    },
-    "price": "46",
-    "priceValue": 46,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTT9tP5oAPQO92h.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "d44063ac-c32b-457a-b474-ced546d36818",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Kashkaval Pide",
-      "ar": "بيدا بجبنة الكشكفال"
-    },
-    "description": {
-      "en": "Traditional pide dough topped with melted Kashkaval cheese, sprinkled with sesame and black cumin seeds for extra aroma. Simple, cheesy and satisfying.",
-      "ar": "عجينة بيده تقليدية تُخبز بعناية، مغطاة بجبنة القشقوان الذائبة، ومزيّنة بالسمسم وحبة البركة لتعزيز النكهة.\nبسيطة، غنية بالجبن، ومشبعة."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGze4PtUbK3PGYLvc.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "ead80465-de52-4268-ad38-30e2db704684",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Labne Zahter Pide",
-      "ar": "بيدا لبنة وزعتر"
-    },
-    "description": {
-      "en": "Soft pide dough layered with creamy labneh, aromatic za'atar, mozzarella cheese and finished with sesame seeds. Creamy, herbal and full of flavor.",
-      "ar": "عجينة بيدا طرية تُغطّى بطبقة من اللبنة الكريمية، مع الزعتر العطري وجبنة الموزاريلا، وتُختتم بلمسة من السمسم.\nكريمية، عشبية، وغنية بالنكهة."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzcpImaufFgEJVPz.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "6969f27d-684c-4725-9257-5e69733bc382",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Zahtar Pide",
-      "ar": "بيدا زعتر"
-    },
-    "description": {
-      "en": "A traditional favorite topped with aromatic za'atar over freshly baked pide dough. Light, fragrant and authentic.",
-      "ar": "طبق تقليدي محبوب، يُحضَّر بعجينة بيدا طازجة ويُغطّى بزعتر عطري غني.\nخفيف، بنكهة مميزة، وأصيل."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzcRmf2XS2uCxAmx.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "1e6a71bd-c035-4e38-a510-413af41596e3",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Labne Pide",
-      "ar": "بيدا لبنة"
-    },
-    "description": {
-      "en": "Freshly baked pide topped with creamy labneh and melted mozzarella, finished with sesame and black cumin seeds. Soft, creamy and comforting.",
-      "ar": "عجينة بيدا طازجة تُخبز يوميًا، مغطاة بلبنة كريمية وجبنة موزاريلا ذائبة، ومزيّنة بالسمسم وحبة البركة.\nناعمة، كريمية، ومريحة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Fra9bUKTXwzJK9.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "7244ddca-2718-40e0-90bf-287718182154",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Iskender Pide",
-      "ar": "بيدا إسكندر"
-    },
-    "description": {
-      "en": "Freshly baked pide dough topped with tender Iskender-style beef and melted mozzarella, finished with sesame and black cumin seeds. Rich, juicy and deeply satisfying.",
-      "ar": "عجينة بيدا طازجة تُخبز يوميًا، مغطاة بلحم بقري طري على طريقة إسكندر مع جبنة موزاريلا ذائبة، ومزيّنة بالسمسم وحبة البركة.\nغنية، عصارية، ومشبعة بعمق."
-    },
-    "price": "55",
-    "priceValue": 55,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3IWjh9Rq86rXNH4.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "8507dfb1-80d8-4294-a8a6-0efa00e89e86",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Lahmacun",
-      "ar": "لحم بعجين"
-    },
-    "description": {
-      "en": "Thin, crispy dough topped with a flavorful minced meat mixture, served with fresh parsley and lemon on the side. Light, fresh and full of flavor.",
-      "ar": "عجينة رقيقة ومقرمشة تُغطّى بخليط لحم مفروم غني بالنكهة، وتُقدَّم مع بقدونس طازج وشرائح ليمون.\nخفيفة، منعشة، ومليئة بالنكهة."
-    },
-    "price": "55",
-    "priceValue": 55,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzctJIU4Ldd0ym3y.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "345500b8-328d-4a72-9269-93c25bf75c1e",
-    "category": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
-    "name": {
-      "en": "Antep Lahmacun",
-      "ar": "لحم بعجين على طريقة عنتاب"
-    },
-    "description": {
-      "en": "A bold and spiced version of the classic, topped with rich minced meat mixture and served with parsley, lemon, pomegranate molasses, grilled eggplant and chili peppers on the side. Spicy, vibrant and authentically Antep.",
-      "ar": "نسخة جريئة وحارة من الكلاسيكي، تُغطّى بخليط لحم مفروم غني، وتُقدَّم مع البقدونس، الليمون، دبس الرمان، الباذنجان المشوي والفلفل الحار.\nحار، غني بالحيوية، وبنكهة عنتاب الأصيلة."
-    },
-    "price": "62",
-    "priceValue": 62,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3FuVu493PGIw1bf.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "770b1ff2-0aef-4f23-8378-ebe37681a842",
-    "category": "c0a5b81c-a849-43c6-994d-e4a41c842182",
-    "name": {
-      "en": "Lentil Soup",
-      "ar": "شوربة العدس"
-    },
-    "description": {
-      "en": "A timeless classic, slowly cooked with care using fresh vegetables and traditional methods. Prepared with the warmth of home and served with croutons and lemon. Comforting, hearty and made with a mother's touch.",
-      "ar": "طبق كلاسيكي يُحضَّر ببطء بعناية باستخدام خضروات طازجة وأساليب تقليدية. يُقدَّم بدفء المنزل مع خبز محمّص وشرائح ليمون."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzaxEIaiyCUkDyRI.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "6e5d42ab-cdfc-45c8-968c-e0c660f048ae",
-    "category": "c0a5b81c-a849-43c6-994d-e4a41c842182",
-    "name": {
-      "en": "Creamy Chicken Soup",
-      "ar": "شوربة الدجاج بالكريمة"
-    },
-    "description": {
-      "en": "Tender chicken breast gently cooked with cream and butter, finished with a hint of mint. Prepared with the same care and warmth as a homemade recipe. Rich, smooth and soul-warming.",
-      "ar": "صدر دجاج طري يُطهى بلطف مع الكريمة والزبدة، ويُختتم بلمسة خفيفة من النعناع. تُحضَّر بعناية ودفء يشبه الوصفات المنزلية.\nغنية، ناعمة، وتبعث على الدفء."
-    },
-    "price": "36",
-    "priceValue": 36,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzY1E24MtjZe5ryd.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "b0a22f0e-f19c-4985-8311-0badb4f2a692",
-    "category": "c0a5b81c-a849-43c6-994d-e4a41c842182",
-    "name": {
-      "en": "Vegetable Soup",
-      "ar": "شوربة الخضار"
-    },
-    "description": {
-      "en": "A nourishing blend of fresh vegetables, slowly simmered to bring out natural flavors. Served with croutons and lemon for a balanced touch. Light, wholesome and made with care.",
-      "ar": "مزيج غني من الخضروات الطازجة يُطهى على مهل لإبراز نكهاتها الطبيعية، ويُقدَّم مع خبز محمّص وشرائح ليمون لتوازن مثالي.\nخفيفة، صحية، ومحضّرة بعناية."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbVCOBlLNuM45pC.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "ab194150-c362-49bc-8e2e-505915940ea4",
-    "category": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-    "name": {
-      "en": "Tabbouleh Salad",
-      "ar": "سلطة التبولة"
-    },
-    "description": {
-      "en": "Finely chopped fresh parsley blended with juicy tomatoes and fine bulgur. Balanced with pomegranate seeds, fresh lemon juice and extra virgin olive oil for a vibrant finish- Fresh, zesty and irresistibly light.",
-      "ar": "بقدونس طازج مفروم ناعم يُمزج مع طماطم عصيّة وبرغل ناعم، ويُتوازن مع حبّات الرمان، عصير الليمون الطازج وزيت الزيتون البكر الممتاز، لختام منعش ومشرق.\nطازجة، منعشة، وخفيفة لا تُقاوم."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2KFwQiInrbakRhL.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "0991b4d5-5f1b-44e6-8e91-e91959db281b",
-    "category": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-    "name": {
-      "en": "Gavurdagi Salad",
-      "ar": "سلطة جافورداغي"
-    },
-    "description": {
-      "en": "Finely chopped tomatoes, cucumbers and colorful peppers mixed with crushed walnuts.\nLayered with pomegranate molasses, fresh lemon juice, olive oil and a touch of sumac for depth. Bold, rich and full of character.",
-      "ar": "طماطم وخيار وفلفل ملوّن مفرومة ناعم تُخلط مع الجوز المجروش، وتُتبّل بدبس الرمان، عصير الليمون الطازج، زيت الزيتون ولمسة من السماق لتعزيز العمق.\nجريئة، غنية"
-    },
-    "price": "46",
-    "priceValue": 46,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Gax2ZZVh4Rqmt6.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "15420618-d1b3-4364-aff0-dd2102f944e3",
-    "category": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-    "name": {
-      "en": "Fattoush Salad",
-      "ar": "سلطة الفتوش"
-    },
-    "description": {
-      "en": "A refreshing mix of crisp lettuce, tomatoes, cucumber and radish. Finished with pomegranate seeds, pomegranate molasses, lemon and crunchy toasted bread pieces. Crispy, tangy and refreshingly vibrant.",
-      "ar": "مزيج منعش من الخس المقرمش، الطماطم، الخيار والفجل، يُختتم بحبّات الرمان، دبس الرمان، عصير الليمون وقطع الخبز المحمّص المقرمشة.\nمقرمشة، منعشة، ومليئة بالحيوية."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzaHOHUZ6ke0o0Bn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "0ad35147-8d8d-49c5-a25c-f574b7e07145",
-    "category": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-    "name": {
-      "en": "Ege Breeze Salad",
-      "ar": "سلطة نسيم إيجه"
-    },
-    "description": {
-      "en": "Fresh cucumber, cherry tomatoes, red onion and baby arugula. Topped with soft white cheese, extra virgin olive oil and a delicate balsamic glaze. Light, elegant and irresistibly fresh.",
-      "ar": "خيار طازج، طماطم كرزية، بصل أحمر وجرجير صغير، تُزيَّن بجبنة بيضاء طرية، وزيت زيتون بكر ممتاز ولمسة خفيفة من صلصة البلسميك.\nخفيفة، أنيقة، ومنعشة بشكل لا يُقاوم."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3G6RjhjwcnNRAbd.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "44ee2cb1-0808-4e9e-982d-66f24c1d45e9",
-    "category": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
-    "name": {
-      "en": "Ceaser Chicken Salad",
-      "ar": "سلطة سيزر بالدجاج"
-    },
-    "description": {
-      "en": "Crisp lettuce topped with tender chicken, parmesan, and creamy Caesar dressing for a fresh and satisfying flavor",
-      "ar": "خس طازج يعلوه دجاج طري وجبنة بارميزان مع صلصة السيزر الغنية بالقوام الكريمي لمذاق طازج ومُشبع."
-    },
-    "price": "57",
-    "priceValue": 57,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLk7HYrrvg4KL2oM.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "7f21d1d1-00f8-4273-8fc0-beff636a2ddb",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Mix Meze For 2",
-      "ar": "تشكيلة مقبلات مشكلة لشخصين"
-    },
-    "description": {
-      "en": "A curated selection of our signature cold mezes, crafted with care and designed for sharing. Muhammara, hummus, mutabel, baba ghanoush and homemade pickles come together in a rich and vibrant experience. Perfect for sharing, impossible to resist.",
-      "ar": "مجموعة مختارة بعناية من مقبلاتنا الباردة المميزة، مُحضّرة بإتقان ومصممة للمشاركة.\nتجتمع المحمرة، الحمص، المتبل، بابا غنوج والمخللات المنزلية في تجربة غنية ومليئة بالنكهات.\nمثالية للمشاركة. ولا تُقاوَم."
-    },
-    "price": "78",
-    "priceValue": 78,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIMFQv7Y4pXRW0Rzy.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "0d0da313-976b-4f5b-97ae-ac4c151f55df",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Golden Hummus",
-      "ar": "حمص الشيف الذهبي"
-    },
-    "description": {
-      "en": "Creamy hummus made from perfectly cooked chickpeas, blended into a silky texture and finished with olive oil, sumac and dried mint. Smooth, rich and irresistibly velvety.",
-      "ar": "حمص كريمي يُحضّر من حمص مطهو بإتقان، يُمزج ليمنح قوامًا ناعمًا حريريًا، ويُزيّن بزيت الزيتون، السماق والنعناع المجفف.\nناعم، غني. وحريري لا يُقاوَم."
-    },
-    "price": "34",
-    "priceValue": 34,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzc3ZnSOfoOwEXil.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "f683bf36-cbc3-4c46-9c45-cfb6e32a13af",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Muhammara",
-      "ar": "المحمّرة"
-    },
-    "description": {
-      "en": "A vibrant red pepper and walnut mezze, finished with a glossy drizzle of pomegranate molasses and olive oil. Rich, smoky, and slightly sweet-spicy, it is perfect for scooping with warm flatbread.",
-      "ar": "مزيج جريء غني بزيت الزيتون، الجوز ودبس الرمان، بنكهة عميقة وعطرية متوازنة.\nمكثفة، غنية بالجوز."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2UpRVJQGyANBWne.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Babaghannoush",
-      "ar": "باباغنوج"
-    },
-    "description": {
-      "en": "Smoky roasted eggplant combined with olive oil, fresh herbs and pomegranate molasses, creating a smooth and flavorful dip. Smoky, soft and deeply satisfying.",
-      "ar": "باذنجان مشوي بنكهة مدخنة، يُمزج مع زيت الزيتون، الأعشاب الطازجة ودبس الرمان ليمنح قوامًا ناعمًا ونكهة غنية.\nمدخن، ناعم. ومُرضٍ بعمق."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzUaUPxmKv1cNvR1.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Mutabbal",
-      "ar": "متبل"
-    },
-    "description": {
-      "en": "A delicate mix of roasted eggplant enhanced with pomegranate seeds, sumac, olive oil and mint. Light, aromatic and refined.",
-      "ar": "مزيج ناعم من الباذنجان المشوي، يُعزَّز بحبوب الرمان، السماق، زيت الزيتون والنعناع.\nخفيف، متوازن. وغني بالنكهة."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2IDs7PhOYLOruFo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "54633c97-9b3d-44ce-a902-01f1430c260e",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Stuffed Grape Leaves",
-      "ar": "ورق عنب محشي"
-    },
-    "description": {
-      "en": "Carefully rolled vine leaves with a light, balanced filling, served with yogurt, lemon, and aromatic spices.\nElegant, balanced. in every bite.",
-      "ar": "ورق عنب ملفوف بعناية بحشوة خفيفة ومتوازنة، يُقدم مع الزبادي والليمون والتوابل العطرية. ملمس أنيق وطعم متوازن. في كل قضمة."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzdpl287rxVlpqW8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "a1ada07c-b494-4161-88bb-014150f8aa3e",
-    "category": "02eb0962-be35-4701-8641-872802ee6fc7",
-    "name": {
-      "en": "Homemade Pickles",
-      "ar": "مخللات معدة منزليا"
-    },
-    "description": {
-      "en": "Traditionally prepared using natural methods, delivering a crisp texture and a vibrant, tangy kick to your table. Crunchy, zesty and refreshing.",
-      "ar": "مُحضّرة بالطريقة التقليدية وبمكونات طبيعية، لتقدّم قوامًا مقرمشًا ونكهة منعشة وحامضة تُثري مائدتك.\nمقرمشة، منعشة. ومليئة بالحيوية."
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3I0hMI2xLdIHm2G.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "3262e454-3663-494e-8101-84075fd63442",
-    "category": "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
-    "name": {
-      "en": "Abla's Handmade Manti",
-      "ar": "مانتي أبلا اليدوي"
-    },
-    "description": {
-      "en": "Traditional Turkish dumplings prepared by Gülseren with hand-rolled dough and a rich minced meat filling, each piece carefully folded one by one. Served with yogurt, labneh, warm tomato sauce and melted butter, finished with chili flakes and dried mint.",
-      "ar": "فطائر تركية تقليدية تُحضّره ابلا بعجينة تُفرد يدويًا وحشوة غنية من اللحم المفروم، حيث تُطوى كل قطعة بعناية فائقة واحدة تلو الأخرى.\nيُقدَّم مع الزبادي، اللبنة، صلصة الطماطم الدافئة والزبدة المذابة، ويُختتم برقائق الفلفل والنعناع المجفف.\nصُنع بحرفية. وغني بالتفاصيل في كل لقمة."
-    },
-    "price": "58",
-    "priceValue": 58,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzahj6eFBQJTzMLx.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
-    "category": "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
-    "name": {
-      "en": "Kubba",
-      "ar": "كبة"
-    },
-    "description": {
-      "en": "Finely shaped bulgur shell, filled with a rich minced meat mixture and enriched with meat on the outside, carefully handcrafted using traditional techniques. Served with yogurt and pomegranate molasses for a perfectly balanced finish. Deeply rich, handcrafted and truly traditional.",
-      "ar": "غلاف من البرغل مُشكّل بعناية، محشو بخليط غني من اللحم المفروم ومُعزّز بطبقة لحم من الخارج، يُحضّر يدويًا وفق الأساليب التقليدية.\nيُقدَّم مع الزبادي ودبس الرمان لتوازن مثالي في النكهة.\nغنية بعمق. مصنوعة بحرفية وأصالة حقيقية."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgXHMY56Tflqaac.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "8712070b-6f24-4f60-bbc4-50d45db96a8f",
-    "category": "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
-    "name": {
-      "en": "Classic Hummus With Meat",
-      "ar": "حمص كلاسيكي باللحمة"
-    },
-    "description": {
-      "en": "Creamy hummus topped with tender beef tenderloin, fresh parsley, and a touch of sumac for a rich and satisfying flavor.",
-      "ar": "حمص كريمي مغطى بقطع لحم بقر تندرلوين طرية، بقدونس طازج، ولمسة من السماق لنكهة غنية ومشبعة."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3I5sj0OrFN80rXh.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a",
-    "category": "884b790b-3b65-46a2-9be5-2ef78ce53146",
-    "name": {
-      "en": "Fettuccine Alfredo",
-      "ar": "فيتوتشيني ألفريدو"
-    },
-    "description": {
-      "en": "Freshly handmade fettuccine, crafted in-house for a silky texture. Prepared with butter, cream, full-fat milk, fresh mushrooms, tender chicken breast, garlic, pesto and finished with Parmesan cheese. Creamy, rich and perfectly indulgent.",
-      "ar": "مكرونة فيتوتشيني طازجة تُحضَّر يدويًا داخل مطبخنا، بقوام ناعم وحريري.\nتُعدّ بالزبدة، الكريمة، الحليب كامل الدسم، فطر طازج، صدر دجاج طري، ثوم، بيستو، وتُختَم بجبن البارميزان.\nكريمية، غنية. وفاخرة في كل لقمة."
-    },
-    "price": "69",
-    "priceValue": 69,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfOeOv9TIQxv6Oq.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "e59d9cc5-d30d-4254-b4d5-8b499eec2af8",
-    "category": "884b790b-3b65-46a2-9be5-2ef78ce53146",
-    "name": {
-      "en": "Penne Arrabiata",
-      "ar": "بيني أرابياتا"
-    },
-    "description": {
-      "en": "Fresh penne pasta, prepared daily in our kitchen to deliver a rich and authentic flavor experience.\nTossed with tender chicken pieces, fresh cherry tomatoes, black olives, rich tomato sauce, a touch of butter, aromatic garlic, and signature pesto, then finished with grated Parmesan cheese. Bold in flavor, vibrant in color. a dish that captures the true spirit of Mediterranean cuisine in every bite.",
-      "ar": "باستا بيني طازجة، تُحضر يومياً في مطبخنا لتقدم تجربة غنية بالنكهة الأصيلة. تُقلب مع قطع الدجاج الطرية، طماطم كرزية طازجة، زيتون أسود، صلصة طماطم غنية، لمسة من الزبدة، الثوم العطري، وصلصة البيستو الخاصة بنا، ثم تُزين بجبنة البارميزان المبشورة. طبق غني بالنكهات وألوان مفعمة بالحيوية. يجسد الروح الحقيقية لمطبخ البحر الأبيض المتوسط في كل قضمة."
-    },
-    "price": "64",
-    "priceValue": 64,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzUJ7xuW3cSyVMTe.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "cbefd6a5-095a-4a11-88fa-3a647822c28e",
-    "category": "884b790b-3b65-46a2-9be5-2ef78ce53146",
-    "name": {
-      "en": "Spaghetti Bolognese",
-      "ar": "سباغيتي بولونيز"
-    },
-    "description": {
-      "en": "Freshly handmade spaghetti, prepared daily in-house. Served with rich Napoli tomato sauce, slow-cooked Bolognese meat sauce, butter, garlic, pesto and finished with Parmesan cheese. A classic Italian favorite with deep, comforting flavors.",
-      "ar": "سباغيتي طازجة تُحضَّر يوميًا داخل مطبخنا، بقوام مثالي ولمسة منزلية أصيلة.\nتُقدَّم مع صلصة نابولي الغنية، وصوص بولونيز باللحم المطهو ببطء، مع الزبدة، الثوم، البيستو، وتُختَم بجبن البارميزان.\nكلاسيكية إيطالية بعمق نكهة دافئ. وتجربة مريحة لا تُقاوَم."
-    },
-    "price": "65",
-    "priceValue": 65,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzaUba6mQWPqgaAi.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "c6e8da58-5274-42e3-9cfd-b2dda9ec1b57",
-    "category": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
-    "name": {
-      "en": "Margarita",
-      "ar": "مارغريتا"
-    },
-    "description": {
-      "en": "Fresh tomato sauce, melted mozzarella, and aromatic basil come together for a classic and perfectly balanced Margherita pizza.",
-      "ar": "صلصة طماطم طازجة، جبنة موزاريلا ذائبة، وريحان عطري يجتمعون معاً لتقديم بيتزا مارغريتا كلاسيكية ومتوازنة المذاق بشكل مثالي."
-    },
-    "price": "52",
-    "priceValue": 52,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH41A8eBPb0MdWoF5.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
-    "category": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
-    "name": {
-      "en": "Vegetarian Pizza",
-      "ar": "بيتزا خضروات"
-    },
-    "description": {
-      "en": "Loaded with fresh vegetables, rich tomato sauce, and melted cheese, this vegetarian pizza delivers a vibrant and satisfying flavor.",
-      "ar": "هذه البيتزا النباتية غنية بالخضروات الطازجة، وصلصة الطماطم الغنية، والجبنة الذائبة، مما يمنحكم نكهة حيوية ومشبعة."
-    },
-    "price": "55",
-    "priceValue": 55,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH41KIF0SkmkjOSOY.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "6a4e2138-f0c4-4256-9cea-15d934a870d4",
-    "category": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
-    "name": {
-      "en": "Pepperoni Pizza",
-      "ar": "بيتزا بيبيروني"
-    },
-    "description": {
-      "en": "Topped with spicy pepperoni, rich tomato sauce, and melted cheese, this pizza delivers a bold and satisfying flavor in every slice.",
-      "ar": "تُغطى هذه البيتزا بقطع الببروني الحارة، وصلصة الطماطم الغنية، والجبنة الذائبة، لتقدم لك نكهة قوية ومشبعة في كل قطعة."
-    },
-    "price": "65",
-    "priceValue": 65,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH41T3uEvUkcqezgT.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "be6b7932-2712-42e0-8f48-a6b4a7528b80",
-    "category": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
-    "name": {
-      "en": "Chicken Pizza",
-      "ar": "بيتزا الدجاج"
-    },
-    "description": {
-      "en": "Tender chicken layered with rich tomato sauce and melted cheese, creating a warm and satisfying pizza experience.",
-      "ar": "قطع دجاج طرية مغطاة بصلصة طماطم غنية وجبنة ذائبة، تمنحكم تجربة بيتزا دافئة وشهية."
-    },
-    "price": "58",
-    "priceValue": 58,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJbXcLVXl0WBFrKlm.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": true,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "8654a6b2-3bcf-436f-8342-9f2cc02ce739",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Mixed Grill For Two",
-      "ar": "مشاوي مشكلة لشخصين"
-    },
-    "description": {
-      "en": "A selection of the most iconic flavors of Turkish cuisine, brought together with the refined touch of our masters. Carefully grilled over fire and served hot for a rich and satisfying experience.\nIncludes:\n200 g Adana kebab, 200 g chicken kebab, 200 g lamb cubes, 200 g chicken shish\nServed with grilled tomatoes, chili peppers, red onion, lavash bread, bulgur pilaf, lemon, mayonnaise and spicy mayonnaise.\nAuthentic, generous and crafted to share.",
-      "ar": "مجموعة مختارة من أشهر نكهات المطبخ التركي، تجتمع معاً بلمسة رفيعة من خبرائنا. مشوية بعناية على اللهب وتقدم ساخنة لتجربة غنية ومرضية. تتكون من: ٢٠٠ جم كباب أضنة، ٢٠٠ جم كباب دجاج، ٢٠٠ جم أوصال لحم ضأن، ٢٠٠ جم شيش طاووق. تقدم مع الطماطم المشوية، الفلفل الحار، البصل الأحمر، خبز اللواش، برغل بلاف، ليمون، مايونيز ومايونيز حار. طبق أصيل، سخي، ومعد ببراعة للمشاركة."
-    },
-    "price": "222",
-    "priceValue": 222,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbIVnJgBEng4vEl.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "adcb8284-7343-44da-a287-e1582946148f",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Mix Grill For 1",
-      "ar": "مشاوي مشكلة لشخص واحد"
-    },
-    "description": {
-      "en": "A curated selection of Turkish classics, brought together with the refined touch of our masters. Charcoal-grilled and prepared as a personalized experience, offering a perfectly balanced and satisfying plate.\nIncludes:\n100 g Adana kebab, 100 g chicken kebab, 100 g lamb cubes, 100 g chicken shish\nServed with grilled tomatoes, chili peppers, red onion, lavash bread, bulgur pilaf, lemon, mayonnaise and spicy mayonnaise.\nCrafted just for you, rich and perfectly satisfying.",
-      "ar": "تشكيلة مختارة من كلاسيكيات المطبخ التركي، تُقدَّم بلمسة احترافية تعكس خبرة أمهر الطهاة.\nمشوية على الفحم ومُحضَّرة كتجربة خاصة لك، لتمنحك طبقًا متوازنًا ومُرضيًا بكل تفاصيله.\nتتضمن:\n100 جم كباب أضنة\n100 جم كباب دجاج\n100 جم مكعبات لحم غنم\n100 جم شيش دجاج\nتُقدَّم مع طماطم مشوية، فلفل حار، بصل أحمر، خبز لافاش، أرز برغل، ليمون، مايونيز ومايونيز حار.\nمصممة خصيصًا لك. غنية ومشبعة بكل تفاصيلها."
-    },
-    "price": "114",
-    "priceValue": 114,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzb4M3yGkZXcFvJy.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "6e4faf94-cfa4-438e-986b-05fd8f06d265",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Iskender",
-      "ar": "إسكندر"
-    },
-    "description": {
-      "en": "A true Bursa classic prepared with 180 g of tender sliced beef, served over warm pide bread. Topped with rich tomato sauce and finished with natural melted butter, accompanied by yogurt and grilled vegetables. Authentic, buttery and deeply satisfying.",
-      "ar": "طبق أصيل من مدينة بورصة، يُحضَّر بـ 180 جم من شرائح اللحم الطرية، ويُقدَّم فوق خبز البيده الدافئ.\nيُزيَّن بصلصة الطماطم الغنية، ويُختَم بلمسة من الزبدة الطبيعية الذائبة، ويُقدَّم مع الزبادي وخضار مشوية.\nأصيل، غني بالزبدة. ومشبِع بكل تفاصيله."
-    },
-    "price": "72",
-    "priceValue": 72,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3IgBaDO8HSJZHvb.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Adana Kebab",
-      "ar": "كباب أضنة"
-    },
-    "description": {
-      "en": "A true icon of Turkish cuisine, made from 200 g of perfectly seasoned minced meat and grilled over open charcoal fire. Served with onion salad, grilled chili pepper, tomatoes, lemon, lavash bread, bulgur pilaf and a selection of sauces. Smoky, juicy and full of bold Anatolian flavors.",
-      "ar": "أحد أشهر رموز المطبخ التركي، يُحضَّر من 200 جم من اللحم المفروم المتبّل بإتقان، ويُشوى على الفحم المكشوف ليُبرز نكهاته الأصيلة.\nيُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، خبز لافاش، أرز برغل وتشكيلة من الصلصات.\nمدخّن، طري. ومليء بنكهات الأناضول الجريئة."
-    },
-    "price": "66",
-    "priceValue": 66,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTIjya8nJWElpUB.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "833c826b-ce1d-40aa-b7c5-e93e52f5b21f",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Asya's Beyti",
-      "ar": "بيتي آسيا"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "72",
-    "priceValue": 72,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIwH3sgD8tYWnvWQu.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "7c604238-7a07-4168-b234-9bb1b536d202",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Beef Shish",
-      "ar": "اوصال لحم"
-    },
-    "description": {
-      "en": "200 g of tender, marinated beef cubes grilled over charcoal to lock in their natural juices. Served with onion salad, grilled chili pepper, tomatoes, lemon, lavash bread, bulgur pilaf and sauces. Rich, succulent and irresistibly satisfying.",
-      "ar": "200 جم من مكعبات اللحم البقري الطرية والمتبّلة، تُشوى على الفحم لتحافظ على عصارتها الطبيعية.\nتُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، خبز لافاش، أرز برغل وتشكيلة من الصلصات.\nغني، طري. ولا يُقاوَم في كل لقمة."
-    },
-    "price": "68",
-    "priceValue": 68,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3IrNyf5iy3ttNw6.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "11128019-e4f1-4d2d-9665-4a8731a68b77",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Chicken Shish",
-      "ar": "شيش طاوق"
-    },
-    "description": {
-      "en": "300 g of tender chicken pieces, marinated with the chef's special blend of spices and grilled over open charcoal fire. Served with onion salad, grilled chili pepper, tomatoes, lemon, mayonnaise, lavash bread and bulgur pilaf. Juicy, smoky and perfectly balanced in flavor.",
-      "ar": "300 جم من قطع الدجاج الطرية، متبّلة بتوليفة الشيف الخاصة من التوابل، ومشوية على الفحم المكشوف لتعزيز نكهتها الأصيلة.\nتُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، مايونيز، خبز لافاش وأرز برغل.\nطري، مدخّن. ومتوازن النكهة بإتقان."
-    },
-    "price": "64",
-    "priceValue": 64,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbqi6PwQLFlLx5j.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "bdc9b239-c9dc-4a89-a739-895007f8133e",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Chicken Kebab",
-      "ar": "كباب دجاج"
-    },
-    "description": {
-      "en": "200 g of finely seasoned chicken, prepared with a signature spice mix and cooked over charcoal for a rich, authentic taste. Served with onion salad, grilled chili pepper, tomatoes, lemon, mayonnaise, lavash bread and bulgur pilaf. Juicy, flavorful and a crowd favorite.",
-      "ar": "200 جم من الدجاج المتبّل بعناية، يُحضَّر بتوليفة توابل خاصة ويُشوى على الفحم ليمنح نكهة أصيلة وغنية.\nيُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، مايونيز، خبز لافاش وأرز برغل.\nخفيف، غني بالنكهة. ومصمّم ليرضي كل الأذواق."
-    },
-    "price": "62",
-    "priceValue": 62,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzYCmkzWoFSbf6Ag.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 9
-  },
-  {
-    "id": "ca861007-b4dc-49d1-8dc8-15d28a283f4e",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Cherry Kebab",
-      "ar": "كباب الكرز"
-    },
-    "description": {
-      "en": "A bold fusion of flavors. 200 g of Adana kebab, grilled over open charcoal fire and paired with a rich, slightly sweet cherry sauce. Finished with crushed Antep pistachios and served on crispy puff pastry for a unique texture and presentation. A perfect balance of smoky, savory and subtly sweet notes.",
-      "ar": "تناغم جريء بين النكهات. 200 جم من كباب أضنة المشوي على الفحم، يُقدَّم مع صلصة كرز غنية بلمسة حلاوة خفيفة.\nيُزيَّن بالفستق الحلبي المجروش، ويُقدَّم على طبقة مقرمشة من العجين، ليمنح قوامًا مميزًا وتقديمًا فريدًا.\nتوازن مثالي بين المدخّن، المالح. ولمسة حلاوة أنيقة."
-    },
-    "price": "65",
-    "priceValue": 65,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgNJ8JzkobfGPlJ.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 10
-  },
-  {
-    "id": "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Ali Nazik",
-      "ar": "علي نازك"
-    },
-    "description": {
-      "en": "200 g of tender beef cubes served over a silky roasted eggplant base, blended with yogurt for a creamy, smoky depth. Topped with sautéed vegetables and served with tırnak bread. A refined Anatolian classic, rich, comforting and full of flavor.",
-      "ar": "200 جم من مكعبات اللحم الطرية، تُقدَّم فوق طبقة حريرية من الباذنجان المشوي، ممزوجة بالزبادي لتمنح قوامًا كريميًا ونكهة مدخّنة عميقة.\nتُزيَّن بخضار سوتيه، وتُقدَّم مع خبز طرناق التقليدي.\nطبق أناضولي أصيل بلمسة راقية. غني، دافئ ومليء بالنكهة."
-    },
-    "price": "64",
-    "priceValue": 64,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTZdCGNki1RIEj5.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 11
-  },
-  {
-    "id": "f3370cb5-676e-4238-b7c8-c56cdce9d257",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Beef Casserole",
-      "ar": "طاجن لحم بقري"
-    },
-    "description": {
-      "en": "200 g of premium beef, slow-cooked to perfection in a traditional clay pot (güveç), infused with rich tomato and pepper sauces. Finished in the oven to develop deep, layered flavors and served with freshly baked dough bread. Deep, velvety and intensely aromatic.",
-      "ar": "200 جم من اللحم البقري الفاخر، يُطهى ببطء حتى الكمال في قدر فخاري تقليدي (غوفيتش)، مُشبّع بصلصات الطماطم والفلفل الغنية.\nيُستكمل طهيه في الفرن ليُطوّر نكهات عميقة ومتدرجة، ويُقدَّم مع خبز عجين طازج مخبوز حديثًا.\nغني، دافئ. ومليء بعمق النكهة في كل لقمة."
-    },
-    "price": "67",
-    "priceValue": 67,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3J9ug96WFAsqZ2s.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 12
-  },
-  {
-    "id": "1e52139d-46ca-4414-a1f6-88a288dfe687",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Chicken Casserole",
-      "ar": "طاجن الدجاج"
-    },
-    "description": {
-      "en": "200 g of tender chicken, delicately slow-cooked in a traditional clay pot with a refined blend of tomato and pepper sauces. Oven-finished and served with freshly baked dough bread for a warm, comforting experience. Elegant, balanced and irresistibly comforting.",
-      "ar": "200 جم من الدجاج الطري، يُطهى ببطء بعناية في قدر فخاري تقليدي، مع مزيج متوازن من صلصات الطماطم والفلفل.\nيُستكمل في الفرن ويُقدَّم مع خبز عجين طازج، ليمنح تجربة دافئة ومريحة.\nأنيق، متوازن. ومفعم بالراحة في كل لقمة."
-    },
-    "price": "65",
-    "priceValue": 65,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3JHCKqAuDxcSsFj.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 13
-  },
-  {
-    "id": "1bd4f7c9-64d0-4de3-99b3-beeac63155c7",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Rice",
-      "ar": "أرز"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLkrFFRfcj8nPY8t.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 14
-  },
-  {
-    "id": "7bef4760-3f1f-45d1-bae6-a2a2b844c61f",
-    "category": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
-    "name": {
-      "en": "Bulgur",
-      "ar": "برغل"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLl0W8HwrcNXAIrn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 15
-  },
-  {
-    "id": "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Lokum Tenderloin",
-      "ar": "لوكوم تندرلوين"
-    },
-    "description": {
-      "en": "250 gr of premium tenderloin, known for its melt-in-your-mouth tenderness, expertly seared to enhance its natural flavor. Served with silky mashed potatoes and seasonal sautéed vegetables for a refined balance. Seasoned and finished with sea salt to highlight its rich and natural flavor.",
-      "ar": "250 جم من التندرلوين الفاخر، معروف بقوامه الطري الذي يذوب في الفم، يُشوَّح بإتقان لإبراز نكهته الطبيعية الغنية.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، لتوازن راقٍ في الطعم والقوام.\nيُتَبَّل ويُختَم بلمسة من ملح البحر لإبراز عمق نكهته الطبيعية.\nطريّ للغاية. وغنيّ بكل تفاصيله."
-    },
-    "price": "179",
-    "priceValue": 179,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOF8dBxWzXrX1Uh3.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "896932b6-dc0c-4ab5-913e-6ba142bfc030",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Enterecote",
-      "ar": "أنتركوت"
-    },
-    "description": {
-      "en": "300g of premium ribeye, expertly grilled to enhance its rich marbling and deep, natural flavor. Served with silky mushed potatoes and seasonal sautéed vegetables for a perfectly balanced plate. Seasoned and finished with sea salt to highlight its rich and natural flavor. Juicy, bold and intensely flavorful.",
-      "ar": "300 جم من ريب آي فاخر، يُشوى بإتقان لإبراز تداخل الدهون الغني ونكهته الطبيعية العميقة.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، لطبق متوازن بكل تفاصيله.\nيُتَبَّل ويُختَم بملح البحر ليُبرز غناه الطبيعي.\nعصاري، جريء. ومكثّف النكهة."
-    },
-    "price": "225",
-    "priceValue": 225,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOFUL1Z8maXD6CZs.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "8801bdf8-aa38-4221-830b-e7f004ebd117",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "New York Steak",
-      "ar": "نيويورك ستيك"
-    },
-    "description": {
-      "en": "300g of premium New York steak, expertly grilled to bring out its bold, beefy flavor and firm, juicy texture. Served with silky mashed potatoes and seasonal sautéed vegetables, finished with a delicate touch of sea salt to enhance its natural flavors.",
-      "ar": "300 جم من ستيك نيويورك الفاخر، يُشوى بإتقان لإبراز نكهته اللحمية الجريئة وقوامه المتماسك والعصاري.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، ويُختَم بلمسة خفيفة من ملح البحر لتعزيز نكهاته الطبيعية.\nقوي، عصاري. ومليء بالطابع التقليدي"
-    },
-    "price": "209",
-    "priceValue": 209,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOHUuq5XQoxBCO9q.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "a968deb8-026a-48b3-adba-240b92980d01",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Dallas Steak",
-      "ar": "دالاس ستيك"
-    },
-    "description": {
-      "en": "400g Dry Aged Dallas Steak (Ribeye), carefully matured through a dry aging process to enhance its depth of flavor and rich aroma, is expertly grilled to perfection. Served with silky mashed potatoes and seasonal vegetables for a balanced and refined experience. Finished with sea salt to highlight its natural and robust character. Juicy, bold, and intensely flavorful.",
-      "ar": "ستيك دالاس (ريب آي) معتق جافاً بوزن ٤٠٠ جم، تم تعتيقه بعناية من خلال عملية التعتيق الجاف لتعزيز عمق النكهة والرائحة الغنية، ويُشوى بمهارة حتى الكمال. يُقدم مع هريس البطاطس الناعم والخضروات الموسمية لتجربة متوازنة وراقية. يُرش بملح البحر لإبراز طابعه الطبيعي والقوي. طبق غني بالعصارة، جريء، ومكثف النكهة."
-    },
-    "price": "275",
-    "priceValue": 275,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOFmnZQuI4Dp02Pi.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "bff7822d-ed45-48d6-bdee-524040ba5ee5",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Beef Shashlik W Cheddar",
-      "ar": "شاشليك لحم بالجبن الشيدر"
-    },
-    "description": {
-      "en": "300 g of premium marinated tenderloin beef, carefully skewered and grilled over open-charcoal fire to lock in its natural juices and deep flavor.\nServed with silky mashed potatoes and seasonal sautéed vegetables, finished with a delicate touch of sea salt to enhance its richness. Juicy, smoky and full of bold character.",
-      "ar": "300 جم من تندرلوين اللحم البقري المتبّل، يُحضَّر بعناية على أسياخ ويُشوى على الفحم ليحافظ على عصارته ونكهته العميقة.\nيُغطّى بطبقة غنية من جبن الشيدر المذاب بانسيابية، ليضيف قوامًا كريميًا ونكهة أكثر عمقًا ودفئًا.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، ويُختَم بلمسة رقيقة من ملح البحر لتعزيز غناه.\nعصاري، مدخّن. يتكامل مع شيدر ذائب يرفع التجربة إلى مستوى آخر."
-    },
-    "price": "190",
-    "priceValue": 190,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIP3KFPzYY5wUiWun.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
-  },
-  {
-    "id": "49bcee08-afe0-4bb9-8220-b3d9088cd35b",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Lamb Chops",
-      "ar": "ريش لحم الغنم"
-    },
-    "description": {
-      "en": "Perfectly selected 400 g of tender lamb chops, grilled over charcoal to enhance their natural flavor. Served with baby potatoes, fresh corn, butter, rosemary and parsley, creating a rich and aromatic experience.\nJuicy, smoky and intensely flavorful.",
-      "ar": "400 جم من ريش الغنم الطرية المختارة بعناية، تُشوى على الفحم لتعزيز نكهتها الطبيعية الغنية.\nتُقدَّم مع بطاطس صغيرة، ذرة طازجة، زبدة، إكليل الجبل والبقدونس، لتمنح تجربة عطرية غنية ومتكاملة.\nطرية، مدخّنة. ومليئة بالنكهة في كل لقمة."
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VISMBx7PTXZUYNEaY.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 6
-  },
-  {
-    "id": "863eb485-f580-4975-81ac-bf2467106519",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Meatball With Cheese",
-      "ar": "كفتة اللحم بالجبن"
-    },
-    "description": {
-      "en": "300 g of homemade kofte, filled with melted cheese and carefully shaped into 3 pieces.\nGrilled to perfection and served with crispy French fries and the chef's special sauce. Juicy, cheesy and irresistibly satisfying.",
-      "ar": "300 جم من الكفتة المحضّرة منزليًا، محشوة بجبن مذاب، ومشكّلة بعناية إلى 3 قطع.\nتُشوى بإتقان وتُقدَّم مع بطاطس مقلية مقرمشة وصلصة الشيف الخاصة.\nعصارية، غنية بالجبن. ولا تُقاوَم في كل لقمة."
-    },
-    "price": "68",
-    "priceValue": 68,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3KnHf4ctXqjXkYI.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 7
-  },
-  {
-    "id": "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63",
-    "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
-    "name": {
-      "en": "Butcher Meatball",
-      "ar": "كفتة اللحم على طريقة الجزار"
-    },
-    "description": {
-      "en": "250 g of traditional butcher-style meatballs, prepared from carefully selected beef and served as 4\npieces.\nServed with crispy French fries and the chef's special sauce for a rich and satisfying experience. Juicy, flavorful and crafted with a traditional touch.",
-      "ar": "٢٥٠ غرام من كرات اللحم التقليدية على طريقة القصاب، مُحضرة من لحم البقر المختار بعناية وتُقدم في ٤ قطع. تُقدم مع البطاطس المقلية المقرمشة وصلصة الشيف الخاصة لتجربة غنية ومشبوعة. تتميز بكونها طرية، غنية بالنكهات، ومصنوعة بلمسة تقليدية أصيلة."
-    },
-    "price": "62",
-    "priceValue": 62,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3KjfttLcQ6WdVWa.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 8
-  },
-  {
-    "id": "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "Turkish Baklava",
-      "ar": "بقلاوة تركية"
-    },
-    "description": {
-      "en": "Layers of crispy Turkish baklava served with traditional mastic ice cream, creating a rich and authentic Turkish dessert experience.",
-      "ar": "طبقات من البقلاوة التركية المقرمشة تُقدم مع آيس كريم المستكة التقليدي، لتمنحكم تجربة تحلية تركية غنية وأصيلة."
-    },
-    "price": "52",
-    "priceValue": 52,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLmLFpbhE5m4uly5.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "744474c5-cf88-4c22-bf13-6e05e38ff5c6",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "Cold Baklava With milk",
-      "ar": "بقلاوة بالحليب"
-    },
-    "description": {
-      "en": "Delicately layered cold baklava infused with milk, offering a light, smooth, and perfectly balanced sweet flavor.",
-      "ar": "بقلاوة باردة مكونة من طبقات رقيقة غنية بالحليب، تتميز بمذاق حلو خفيف وناعم ومتوازن تماماً."
-    },
-    "price": "54",
-    "priceValue": 54,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGk63W6Tv33Xyltv.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "d318e053-27c9-4e44-bf49-e8ad6cd7e4b1",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "Traliçe",
-      "ar": "تريليتشا"
-    },
-    "description": {
-      "en": "Soft milk cake infused with vanilla and finished with rich caramel sauce for a smooth and indulgent dessert experience.",
-      "ar": "كيكة الحليب الطرية بنكهة الفانيليا، مغطاة بصوص الكراميل الغني لتجربة تحلية ناعمة وفاخرة."
-    },
-    "price": "49",
-    "priceValue": 49,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH46LawRkqmA3xWrf.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "a8328686-ad57-4c46-87d2-8ff5da769a72",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "Turkish Künefe",
-      "ar": "كنافة تركية"
-    },
-    "description": {
-      "en": "Crispy golden Turkish künefe filled with melted cheese, served with traditional ice cream and crushed pistachios for a rich Turkish dessert experience.",
-      "ar": "كنافة تركية ذهبية مقرمشة محشوة بالجبنة الذائبة، تقدم مع الآيس كريم التقليدي والفستق الحلبي المطحون لتجربة تحلية تركية غنية."
-    },
-    "price": "54",
-    "priceValue": 54,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH46lMTCnDoK3KVN0.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "0e418830-7764-4a44-8ba1-06b596506892",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "San Sebastian",
-      "ar": "سان سيباستيان"
-    },
-    "description": {
-      "en": "Creamy San Sebastian cheesecake with a perfectly caramelized top, served with rich chocolate sauce for an indulgent dessert experience.",
-      "ar": "تشيز كيك سان سيباستيان غنية بالقوام الكريمي مع طبقة علوية مكرملة ومخبوزة بإتقان، تُقدم مع صوص الشوكولاتة الفاخر لتجربة تحلية استثنائية."
-    },
-    "price": "57",
-    "priceValue": 57,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH479AXIrq4DSG51y.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "92180575-7126-4df5-b347-0e2a2adab25f",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "Crunch Cake",
-      "ar": "كيكة كرانش"
-    },
-    "description": {
-      "en": "Rich chocolate crunch cake layered with smooth texture and deep cocoa flavor for a perfectly indulgent dessert experience.",
-      "ar": "كيكة الشوكولاتة الغنية والمقرمشة، مكونة من طبقات ناعمة الملمس ونكهة الكاكاو العميقة، لتمنحكم تجربة تحلية فاخرة ومثالية."
-    },
-    "price": "50",
-    "priceValue": 50,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLmafLWU70SDE5G8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "c8c42df3-a6cf-4e2d-b900-0005fc67e07a",
-    "category": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
-    "name": {
-      "en": "FRUIT PLATE",
-      "ar": "طبق فواكه"
-    },
-    "description": {
-      "en": "A colorful selection of fresh seasonal fruits, carefully served for a refreshing and naturally sweet experience.",
-      "ar": "تشكيلة ملونة من الفواكه الموسمية الطازجة، تُقدم بعناية لتجربة منعشة وحلوة المذاق بطبيعتها."
-    },
-    "price": "78",
-    "priceValue": 78,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH56aNHvA01xR4OIo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "b2c06ac0-7dca-4369-9e91-db4e960db825",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Turkish Coffee",
-      "ar": "قهوة تركية"
-    },
-    "description": {
-      "en": "Finely ground Turkish coffee, slow brewed for a rich, bold and authentic taste.",
-      "ar": "قهوة تركية مطحونة ناعمًا، تُحضَّر على مهل لتمنح نكهة غنية، جريئة وأصيلة."
-    },
-    "price": "22",
-    "priceValue": 22,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3MbwEvWF7m0fYVO.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "3a44684c-967f-47b5-a501-92d7ada96863",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Turkish Coffee With Milk",
-      "ar": "قهوة تركية بالحليب"
-    },
-    "description": {
-      "en": "A smooth blend of Turkish coffee and milk, creamy, rich and delicately balanced.",
-      "ar": "مزيج ناعم من القهوة التركية والحليب، كريمي، غني ومتوازن بانسيابية."
-    },
-    "price": "26",
-    "priceValue": 26,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3MgV6XEbDDTW73R.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "c1747927-94a7-4ed1-8fcb-6017955a0acf",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Double Turkish Coffee",
-      "ar": "قهوة تركية دبل"
-    },
-    "description": {
-      "en": "Double brewed Turkish coffee, extra bold, intense and full-bodied.",
-      "ar": "تحضير مزدوج لقهوة تركية أكثر كثافة. جريئة، مركّزة وممتلئة القوام."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3MjjNW1nnWdDqq9.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "de24fecc-4ce3-484f-a34e-3a7d41b29137",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Mastica Turkish Coffee",
-      "ar": "قهوة تركية بالمستكة"
-    },
-    "description": {
-      "en": "Turkish coffee infused with mastic, aromatic, unique and elegantly smooth.",
-      "ar": "قهوة تركية مُعطّرة بالمستكة، بنكهة فريدة وعطرية ولمسة ناعمة أنيقة."
-    },
-    "price": "24",
-    "priceValue": 24,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Mnx4WM5Y1PzXjX.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "7f479cdd-149f-4726-a80b-c2da5ee42b84",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Double Espresso",
-      "ar": "دبل إسبريسو"
-    },
-    "description": {
-      "en": "Double shot espresso, bold, intense and full of character.",
-      "ar": "جرعتان من الإسبريسو. قوية، مركّزة ومليئة بالشخصية."
-    },
-    "price": "20",
-    "priceValue": 20,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NBALV0hNe6P5SD.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
-  },
-  {
-    "id": "0ca1bcce-95a9-49bc-aa58-d862993d421e",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Americano",
-      "ar": "أمريكانو"
-    },
-    "description": {
-      "en": "Smooth espresso diluted with hot water, light, clean and easy to drink.",
-      "ar": "إسبريسو مُخفف بالماء الساخن. خفيف، نقي وسهل الشرب."
-    },
-    "price": "22",
-    "priceValue": 22,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NE1iiVjqtP2AQC.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 6
-  },
-  {
-    "id": "82ffd6fb-2f07-4e5e-896c-e9d915c85c46",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Macchiato",
-      "ar": "ماكياتو"
-    },
-    "description": {
-      "en": "Espresso topped with a touch of milk, bold yet smooth with a creamy finish.",
-      "ar": "إسبريسو مع لمسة من الحليب. جريء بنعومة، بختام كريمي متوازن."
-    },
-    "price": "23",
-    "priceValue": 23,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NJD3UbMNSmEhBi.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 7
-  },
-  {
-    "id": "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Cortado",
-      "ar": "كورتادو"
-    },
-    "description": {
-      "en": "Perfect balance of espresso and milk, smooth, rich and velvety.",
-      "ar": "توازن مثالي بين الإسبريسو والحليب. ناعم، غني وحريري القوام."
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzWX1lJNnlOSqpQK.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 8
-  },
-  {
-    "id": "9e35bb29-5813-4308-888b-ac84fe4eadc4",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Cappuccino",
-      "ar": "كابتشينو"
-    },
-    "description": {
-      "en": "Espresso with steamed milk and silky foam, creamy, smooth and comforting.",
-      "ar": "إسبريسو مع حليب مبخّر ورغوة ناعمة. كريمي، متوازن ويمنح إحساسًا دافئًا."
-    },
-    "price": "24",
-    "priceValue": 24,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NQK2OqSWcWiSK9.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 9
-  },
-  {
-    "id": "a96110ce-a0a7-4bac-8db4-4047e2184a61",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Latte",
-      "ar": "لاتيه"
-    },
-    "description": {
-      "en": "Velvety steamed milk layered over rich, full-bodied espresso, smooth, creamy and delicately balanced.",
-      "ar": "حليب مبخّر بقوام مخملي ممزوج بإسبريسو غني. ناعم، كريمي ومتوازن بأناقة."
-    },
-    "price": "24",
-    "priceValue": 24,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NVE9ngQ4tJq6vn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 10
-  },
-  {
-    "id": "3de8bda3-66f6-47d8-805f-22eaa5f5564d",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Flat White",
-      "ar": "فلات وايت"
-    },
-    "description": {
-      "en": "Double shot espresso with silky microfoam, intense, velvety and perfectly textured.",
-      "ar": "جرعتان من الإسبريسو مع ميكروفوم حريري. مكثّف، ناعم ومتوازن القوام بإتقان."
-    },
-    "price": "27",
-    "priceValue": 27,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NZ9Ks9VtxivlcL.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 11
-  },
-  {
-    "id": "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "White Chocolate Mocha",
-      "ar": "موكا الشوكولاتة البيضاء"
-    },
-    "description": {
-      "en": "Premium white chocolate blended with espresso and silky milk, creamy, indulgent and luxuriously smooth.",
-      "ar": "شوكولاتة بيضاء فاخرة ممزوجة بالإسبريسو وحليب ناعم. كريمي، فاخر وناعم بانسيابية."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Ne8jffYdLNRGpE.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 12
-  },
-  {
-    "id": "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Mocha",
-      "ar": "موكا"
-    },
-    "description": {
-      "en": "Rich dark chocolate fused with bold espresso and steamed milk, deep, smooth and intensely satisfying.",
-      "ar": "شوكولاتة داكنة غنية تمتزج مع إسبريسو جريء وحليب مبخّر. عميق، ناعم ومُرضٍ بكل تفاصيله."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NiKXSdGRQwuTmC.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 13
-  },
-  {
-    "id": "12cefb17-9ba3-44b6-b531-a8d296246b86",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Hot Chocolate",
-      "ar": "شوكولاتة ساخنة"
-    },
-    "description": {
-      "en": "Melted premium chocolate with creamy milk and soft marshmallow, thick, rich and irresistibly comforting.",
-      "ar": "شوكولاتة فاخرة مذابة مع حليب كريمي ومارشميلو ناعم. كثيفة، غنية ودافئة بشكل لا يُقاوَم."
-    },
-    "price": "27",
-    "priceValue": 27,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NrCVcWbmznDLpv.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 14
-  },
-  {
-    "id": "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Spanish Latte",
-      "ar": "سبانيش لاتيه"
-    },
-    "description": {
-      "en": "Smooth espresso with creamy milk and caramelized sweetened milk, rich, silky and perfectly indulgent.",
-      "ar": "إسبريسو ناعم مع حليب كريمي وحليب مُحلى بنكهة الكراميل. غني، حريري وفاخر."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NvcQvppwpto8ve.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 15
-  },
-  {
-    "id": "a55cdfa6-fee8-46c1-a474-c5ab8922066c",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Hot Drip Coffee V60",
-      "ar": "قهوة مقطرة ساخنة"
-    },
-    "description": {
-      "en": "Single origin coffee, carefully brewed to highlight its natural aroma, clean, bright and refined.",
-      "ar": "قهوة من مصدر واحد تُحضَّر بعناية لإبراز عطرها الطبيعي. نقية، مشرقة ومتوازنة بأناقة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3O0EjidOUrXHz0L.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 16
-  },
-  {
-    "id": "6d6b0894-1f35-4df2-a180-d4b563db3102",
-    "category": "8fc09a90-b4db-4681-8506-f430b7c1360d",
-    "name": {
-      "en": "Saudi Coffee (Small Pot/Medium Pot)",
-      "ar": "قهوة سعودية (دلة صغيرة)"
-    },
-    "description": {
-      "en": "Authentic Saudi coffee infused with aromatic spices, light-bodied, fragrant and traditionally served with dates. Aromatic Saudi coffee with delicate spice notes, smooth, elegant and perfect for sharing.",
-      "ar": "قهوة سعودية أصيلة تُحضَّر بعناية، بنكهة عطرية متوازنة ولمسة ضيافة تقليدية دافئة.\nالأحجام:\nدلة متوسطة (52)\nتُقدَّم مع التمر لإكمال تجربة الضيافة السعودية الأصيلة."
-    },
-    "price": "38",
-    "priceValue": 38,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3P5ZHH67mysETiz.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 17
-  },
-  {
-    "id": "32fe0693-6fa1-4b2e-b5bf-4d86d4286ebc",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Turkish Tea (Glass)",
-      "ar": "شاي تركي (كوب)"
-    },
-    "description": {
-      "en": "Freshly brewed Turkish black tea, strong, clear and perfectly balanced. Traditional Turkish tea, slowly brewed for a rich aroma and smooth taste. Classic Turkish tea, deep in flavor, smooth and ideal for sharing. Authentic Turkish tea, full-bodied, rich and perfect for long conversations.",
-      "ar": "شاي تركي أسود طازج التحضير، قوي وصافٍ ومتوازن بشكل مثالي. شاي تركي تقليدي، يُحضّر ببطء للحصول على رائحة غنية ومذاق ناعم. شاي تركي كلاسيكي، عميق النكهة وناعم ومثالي للمشاركة. شاي تركي أصيل، غني القوام، ثري المذاق ومثالي للسهرات الطويلة."
-    },
-    "price": "12",
-    "priceValue": 12,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PRX2nJFWVjg5yg.webp",
-    "options": [
+    id: "e3c89499-bf61-4a1e-9191-3445228a9ee2",
+    category: "61e69fe8-3255-49c0-ad94-517a04184cd5",
+    name: {
+      en: "Hosgeldin Jeddah",
+      ar: "أهلاً وسهلاً جدة",
+    },
+    description: {
+      en: "$40",
+      ar: "ابدأ يومك ليس فقط بوجبة إفطار، بل بتجربة مُعدّة بعناية فائقة… هذه المائدة المميزة من مطبخ آسيا صُمّمت لتمنحك صباحاً مفعماً بالطاقة والبهجة ولا يُنسى. تبدأ مائدتك بتشكيلة غنية وطازجة… طبق أجبان متنوعة مقترن بفواكه الموسم يجمع بين النكهات الأصيلة للمطبخ التركي، بينما تضيف اللبنة بالزعتر والمذاق المميز لجبنة سورك عمقاً فريداً للتجربة. إلى جانب ذلك، تشكيلة من الزيتون الأخضر والأسود تُكمل هذه البداية الطبيعية والمتوازنة. تستمر الرحلة مع النكهات التقليدية… التناغم المثالي بين الطحينة والدبس يمتزج بجمال مع الزبدة والعسل، فيما تترك الحلاوة التقليدية بصمة حلوة على مائدتك. لمسات دافئة تضيف الراحة على إفطارك… بيض مخفوق طري محضّر طازجاً يضيف الدفء والرضا إلى التجربة. وعندما يحين وقت استراحة حلوة… تضيف مربيات التين والمشمش والفراولة الألوان والحلاوة الطبيعية، لتقدم لحظة ممتعة في كل قضمة. هذه التجربة الغنية يرافقها… سلة خبز طازج ودافئ، وتكتمل بشكل مثالي مع اللمسة الأنيقة للشاي التركي التقليدي",
+    },
+    price: "216",
+    priceValue: 216,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3BHgDi00M7OSBm1.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "502b7bd2-2ad7-4a03-9d96-30fb92d74098",
+    category: "61e69fe8-3255-49c0-ad94-517a04184cd5",
+    name: {
+      en: "Moda Nişantaşı",
+      ar: "موضة نيشانتاشي",
+    },
+    description: {
+      en: "$3b",
+      ar: "$3d",
+    },
+    price: "282",
+    priceValue: 282,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3jJrppnmzT7LdZZ.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "33c12c3e-1de8-4d9a-833c-9770603f05aa",
+    category: "61e69fe8-3255-49c0-ad94-517a04184cd5",
+    name: {
+      en: "Elvan Abla Breakfast",
+      ar: "فطور إلفان أبلا",
+    },
+    description: {
+      en: "$37",
+      ar: "$39",
+    },
+    price: "369",
+    priceValue: 369,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3AJwtQkZah04EjT.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "1ae0277d-4110-4b2b-ad0f-ebf2c6bbeaeb",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Istanbul Menemen",
+      ar: "شكشوكة إسطنبول",
+    },
+    description: {
+      en: "A traditional Istanbul-style menemen prepared with the natural flavors of tomatoes and peppers, gently cooked with fresh eggs to create a warm and comforting dish. Served with creamy labneh on the side, along with crispy crouton bread and fresh parsley for a balanced finish. Familiar, warm and full of comfort in every bite...",
+      ar: "طبق مينمين تقليدي على طراز إسطنبول، يُحضر بالنكهات الطبيعية للطماطم والفلفل، ويُطهى ببطء مع البيض الطازج ليقدم طبقاً دافئاً ومريحاً. يُقدم مع اللبنة الكريمية إلى جانبه، بالإضافة إلى خبز الكروتون المقرمش والبقدونس الطازج لضمان توازن مثالي. مذاق مألوف، دافئ، ومليء بالراحة في كل لقمة...",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzapIYpULfuK01MM.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "5e586ecb-4451-4e10-852d-96ec5a32f46e",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Istanbul Menemen With Kashar Cheese",
+      ar: "شكشوكة إسطنبول بجبنة القشقوان",
+    },
+    description: {
+      en: "A richer version of the classic Istanbul menemen, enhanced with melted kashar cheese. The harmony of tomatoes, peppers and eggs meets the smooth, stretchy texture of cheese, creating a more indulgent experience. Served with labneh on the side, crispy bread and fresh herbs. A comforting dish made for sharing.",
+      ar: "إصدار أغنى من طبق المينمين الإسطنبولي الكلاسيكي، معزز بجبنة القشقوان الذائبة. يتناغم مزيج الطماطم والفلفل والبيض مع ملمس الجبن الناعم والمطاطي، مما يمنحكم تجربة غنية بالمذاق. يُقدم مع اللبنة الجانبية، والخبز المقرمش، والأعشاب الطازجة. طبق دافئ ومثالي للمشاركة.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzeBFfNzau1O8Ie2.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "755a894d-bcec-4035-9aac-a5a4575a4670",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Hunkar Yumurtasi (Cilbir)",
+      ar: "بيض هنكار (تشيلبير)",
+    },
+    description: {
+      en: "A refined take on a traditional favorite, featuring soft eggs served over garlicky yogurt, finished with warm melted butter. Balanced, delicate and rich in flavor, this dish is complemented with crispy crouton bread for added texture. Elegant, balanced and timeless.",
+      ar: "طبق مميز بلمسة عصرية على وصفة تقليدية محبوبة، يتضمن بيضاً طرياً يُقدَّم فوق لبن بنكهة الثوم، ويُزيَّن بالزبدة الدافئة الذائبة. متوازن النكهات، رقيق وغني بالطعم، يُقدَّم مع خبز الكروتون المقرمش لإضافة قوام مميز. أنيق، متوازن وأصيل.",
+    },
+    price: "46",
+    priceValue: 46,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzWRAN0mTKf89Vpm.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "1bdacdb7-3add-4dad-bc1e-1bcc8b60a715",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Potato & Eggs",
+      ar: "بطاطس وبيض",
+    },
+    description: {
+      en: "Golden potatoes lightly sautéed in butter, combined with eggs to create a hearty and satisfying dish. Served with labneh on the side, and enhanced with cumin and chili flakes for a warm, flavorful finish. Accompanied by crispy bread. A comforting and fulfilling start to the day.",
+      ar: "بطاطا ذهبية مقلية بخفة في الزبدة، ممزوجة مع البيض لتقديم طبق شهي ومشبع. تُقدّم مع اللبنة على الجانب، ومُعزّزة بالكمون ورقائق الفلفل الحار لنكهة دافئة ومميزة. مصحوبة بخبز مقرمش. بداية مريحة ومُرضية ليومك.",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzh7xZ5PCXe5wdjM.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "bef4cfaf-a1da-4d59-a2e0-f53a99d3cf2f",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Eggs With Nişantaşı Simit",
+      ar: "بيض مع سميت نيشانتاشي",
+    },
+    description: {
+      en: "A playful and satisfying dish featuring two pieces of Karaköy-style simit — one filled with tomato sauce, the other with eggs. At the center of the pan, a base of warm tomato sauce is topped with gently cooked eggs and finished with fresh arugula. Layered, vibrant and full of character in every bite.",
+      ar: "طبق ممتع ومشبع يتكون من قطعتين من سميت كاراكوي الشهير؛ إحداهما محشوة بصلصة الطماطم الغنية، والأخرى بالبيض. يتوسط المقلاة قاعدة من صلصة الطماطم الدافئة يعلوها بيض مطهو بعناية مع لمسة من جرجير الطازج. طبق غني بالطبقات، مفعم بالحيوية والنكهات المميزة في كل قضمة.",
+    },
+    price: "44",
+    priceValue: 44,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3C0WmZbDKx48Pz7.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "8f0dd89f-a75a-4c8b-a000-c96060303d3e",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Eggs With Homemade Sucuk",
+      ar: "بيض مع سجق منزلي",
+    },
+    description: {
+      en: "A bold breakfast classic where eggs meet homemade sucuk, slowly cooked to release its deep, rich aroma. Served with traditional tırnak bread, creating a hearty and satisfying experience. Strong, traditional and deeply flavorful.",
+      ar: "طبق فطور كلاسيكي جريء يجمع بين البيض والسجق المحضّر منزلياً، يُطهى على نار هادئة ليطلق نكهته العميقة ورائحته الغنية. يُقدَّم مع خبز تيرناك التقليدي، ليمنحك تجربة شهية ومُشبعة. نكهة قوية، أصالة تقليدية، وطعم عميق لا يُقاوم.",
+    },
+    price: "46",
+    priceValue: 46,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzhYUrNMTf8xtwdo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "38ec170c-750b-4fe4-a167-4cd1778648bc",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Sunny Side Up",
+      ar: "بيض عيون",
+    },
+    description: {
+      en: "Soft and creamy scrambled eggs prepared with butter, offering a light yet satisfying start to the day. Served with labneh to bring a smooth and balanced finish. Comforting, smooth and easy to enjoy.",
+      ar: "بيض طازج مطهو بعناية فائقة وبدرجة حرارة متوازنة للحفاظ على صفار ذهبي غني وقوام ناعم. يُقدم ببساطة لإبراز نقاء وجودة المكونات، مما يمنحكم تجربة إفطار كلاسيكية بلمسة أنيقة.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ASrtJaioENXbX2.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "97c60f8a-309e-46fb-b100-da93a603410d",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Farm Style Scramble",
+      ar: "بيض مخفوق على طريقة المزرعة",
+    },
+    description: {
+      en: "Soft and creamy scrambled eggs prepared with butter, offering a light yet satisfying start to the day. Served with labneh to bring a smooth and balanced finish. Comforting, smooth and easy to enjoy.",
+      ar: "بيض مخفوق طري وكريمي محضّر بالزبدة، يمنحك بداية خفيفة ومُشبعة ليومك. يُقدّم مع اللبنة لإضفاء لمسة ناعمة ومتوازنة. طبق مريح، ناعم القوام وسهل الاستمتاع به.",
+    },
+    price: "36",
+    priceValue: 36,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzjauiAzzo4AieVr.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "7f704c10-78c1-4697-90d0-162cd7ce1cdb",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Boiled Eggs",
+      ar: "بيض مسلوق",
+    },
+    description: {
+      en: "A simple and wholesome option, where boiled eggs are complemented with butter and a blend of aromatic spices including cumin, chili flakes and thyme. Served with crispy croutons and labneh for a balanced experience. Light, clean and gently flavorful.",
+      ar: "خيار بسيط وصحي، حيث يُقدَّم البيض المسلوق مع الزبدة ومزيج من التوابل العطرية بما فيها الكمون ورقائق الفلفل الحار والزعتر. يُقدَّم مع قطع الخبز المحمّص المقرمشة واللبنة لتجربة متوازنة. خفيف، نقي وغني بنكهة لطيفة.",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfx4WOqPU8qTxnH.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 9,
+  },
+  {
+    id: "a71b8968-9fff-47e1-8c1d-f74f500aa3c1",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Boiled Eggs With Cheddar",
+      ar: "بيض مسلوق مع شيدر",
+    },
+    description: {
+      en: "A comforting and layered dish where boiled eggs are brought together with butter and gently infused with cumin, chili flakes and thyme. Enriched with melted cheddar, milk and a touch of cream, creating a smooth and satisfying texture. Served with crispy croutons on the side. Simple at first, yet deeply rich and fulfilling.",
+      ar: "طبق مريح ومتعدد الطبقات يُحضَّر من البيض المسلوق مع الزبدة ويُنكَّه برفق بالكمون ورقائق الفلفل الحار والزعتر. يُثرى بجبنة الشيدر الذائبة والحليب ولمسة من الكريمة، مما يمنحه قواماً ناعماً ومُشبعاً. يُقدَّم مع قطع الخبز المحمّص المقرمشة على الجانب. بسيط في مظهره، لكنه غني ومُرضٍ في كل قضمة.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzWDovV85ZRfB50X.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 10,
+  },
+  {
+    id: "d6451bec-6280-4ed1-b438-53d41f63b4f1",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Plain Omelette",
+      ar: "أومليت سادة",
+    },
+    description: {
+      en: "A light and delicate omelette prepared with eggs and butter, paired with fresh cherry tomatoes and a touch of arugula. Served with crispy croutons for a clean and balanced experience. Minimal, fresh and effortlessly enjoyable.",
+      ar: "أومليت خفيف ورقيق محضّر من البيض والزبدة، مقدّم مع حبات طماطم كرزية طازجة ولمسة من الجرجير. يُقدّم مع قطع الخبز المحمّص المقرمشة لتجربة متوازنة ونقية. بسيط، طازج وممتع بكل سهولة.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzdLcjUt8mQBiVF7.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 11,
+  },
+  {
+    id: "774cacb7-7b1b-4fe8-9389-caa3444926f9",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Vegetable Omelette",
+      ar: "أومليت الخضار",
+    },
+    description: {
+      en: "A vibrant omelette filled with fresh vegetables including zucchini, carrots, mushrooms and colorful peppers. Balanced with cherry tomatoes and arugula for a refreshing finish. Light, colorful and full of freshness.",
+      ar: "أومليت نابض بالحيوية محشو بالخضروات الطازجة بما في ذلك الكوسا والجزر والفطر والفلفل الملون. متوازن مع طماطم الكرز والجرجير لنهاية منعشة. خفيف وملون ومليء بالنضارة.",
+    },
+    price: "34",
+    priceValue: 34,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbcocv07dogzvB5.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 12,
+  },
+  {
+    id: "c1983103-608f-418e-a037-d79387429663",
+    category: "e74e388c-048d-47e4-afec-acf25fac4650",
+    name: {
+      en: "Cheese Omelette",
+      ar: "أومليت بالجبن",
+    },
+    description: {
+      en: "A comforting classic where melted mozzarella blends smoothly with eggs cooked in butter. Balanced with cherry tomatoes and arugula, and served with crispy croutons on the side. Creamy, satisfying and timeless.",
+      ar: "طبق كلاسيكي دافئ حيث تمتزج جبنة الموزاريلا الذائبة بنعومة مع البيض المطهو بالزبدة. متوازن مع طماطم الكرز والجرجير، ويُقدّم مع قطع الخبز المحمّص المقرمشة على الجانب. كريمي، مُشبع وبنكهة لا تُقاوم.",
+    },
+    price: "34",
+    priceValue: 34,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3AcZnddkOjQFuy8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 13,
+  },
+  {
+    id: "32fe0693-6fa1-4b2e-b5bf-4d86d4286ebc",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Turkish Tea (Glass)",
+      ar: "شاي تركي (كوب)",
+    },
+    description: {
+      en: "Freshly brewed Turkish black tea, strong, clear and perfectly balanced. Traditional Turkish tea, slowly brewed for a rich aroma and smooth taste. Classic Turkish tea, deep in flavor, smooth and ideal for sharing. Authentic Turkish tea, full-bodied, rich and perfect for long conversations.",
+      ar: "شاي تركي أسود طازج التحضير، قوي وصافٍ ومتوازن بشكل مثالي. شاي تركي تقليدي، يُحضّر ببطء للحصول على رائحة غنية ومذاق ناعم. شاي تركي كلاسيكي، عميق النكهة وناعم ومثالي للمشاركة. شاي تركي أصيل، غني القوام، ثري المذاق ومثالي للسهرات الطويلة.",
+    },
+    price: "12",
+    priceValue: 12,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PRX2nJFWVjg5yg.webp",
+    options: [
       {
-        "name": "Small",
-        "price": "45",
-        "pricingType": "variation",
-        "order": 0
+        name: "Small",
+        price: "45",
+        pricingType: "variation",
+        order: 0,
       },
       {
-        "name": "Medium",
-        "price": "52",
-        "pricingType": "variation",
-        "order": 1
+        name: "Medium",
+        price: "52",
+        pricingType: "variation",
+        order: 1,
       },
       {
-        "name": "Big",
-        "price": "64",
-        "pricingType": "variation",
-        "order": 2
-      }
+        name: "Big",
+        price: "64",
+        pricingType: "variation",
+        order: 2,
+      },
     ],
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
   },
   {
-    "id": "8d7b9a9c-9f0f-44d2-bd06-3b5a69272490",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Green Tea",
-      "ar": "شاي أخضر"
+    id: "8d7b9a9c-9f0f-44d2-bd06-3b5a69272490",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Green Tea",
+      ar: "شاي أخضر",
     },
-    "description": {
-      "en": "Delicate green tea infused with fresh mint and lemon, light, clean and naturally refreshing.",
-      "ar": "شاي أخضر ناعم مُنقوع مع النعناع الطازج والليمون. خفيف، نقي ومنعش بطبيعته."
+    description: {
+      en: "Delicate green tea infused with fresh mint and lemon, light, clean and naturally refreshing.",
+      ar: "شاي أخضر ناعم مُنقوع مع النعناع الطازج والليمون… خفيف، نقي ومنعش بطبيعته.",
     },
-    "price": "20",
-    "priceValue": 20,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PE6NZSZ1HvFCiY.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
+    price: "20",
+    priceValue: 20,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PE6NZSZ1HvFCiY.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
   },
   {
-    "id": "66cb2cd2-cb25-4a93-a532-0cf338f7d9d5",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Winter Tea",
-      "ar": "شاي الشتاء"
+    id: "66cb2cd2-cb25-4a93-a532-0cf338f7d9d5",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Winter Tea",
+      ar: "شاي الشتاء",
     },
-    "description": {
-      "en": "A warming herbal blend with mint and citrus notes, soothing, aromatic and comforting.",
-      "ar": "مزيج عشبي دافئ بلمسات من النعناع والحمضيات. مهدّئ، عطري ويمنح إحساسًا بالراحة."
+    description: {
+      en: "A warming herbal blend with mint and citrus notes, soothing, aromatic and comforting.",
+      ar: "مزيج عشبي دافئ بلمسات من النعناع والحمضيات… مهدّئ، عطري ويمنح إحساسًا بالراحة.",
     },
-    "price": "20",
-    "priceValue": 20,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PISqOy5FttGzve.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
+    price: "20",
+    priceValue: 20,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PISqOy5FttGzve.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
   },
   {
-    "id": "73af14bc-7343-4743-bcb1-776629f14d1b",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Karak Tea (Serve For 2)",
-      "ar": "شاي كرك (يُقدَّم لشخصين)"
+    id: "73af14bc-7343-4743-bcb1-776629f14d1b",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Karak Tea (Serve For 2)",
+      ar: "شاي كرك (يُقدَّم لشخصين)",
     },
-    "description": {
-      "en": "Rich karak tea brewed with spices and milk, bold, creamy and deeply aromatic.",
-      "ar": "شاي كرك غني يُحضَّر مع التوابل والحليب. جريء، كريمي وعطري بعمق."
+    description: {
+      en: "Rich karak tea brewed with spices and milk, bold, creamy and deeply aromatic.",
+      ar: "شاي كرك غني يُحضَّر مع التوابل والحليب… جريء، كريمي وعطري بعمق.",
     },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PMeD7bjVo7gQFn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PMeD7bjVo7gQFn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
   },
   {
-    "id": "8987cc38-505b-48e4-a821-c534ab5fbaac",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Turkish Tea With Milk",
-      "ar": "شاي تركي بالحليب"
+    id: "8987cc38-505b-48e4-a821-c534ab5fbaac",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Turkish Tea With Milk",
+      ar: "شاي تركي بالحليب",
     },
-    "description": {
-      "en": "Black tea blended with milk, smooth, creamy and comforting.",
-      "ar": "شاي أسود ممزوج بالحليب. ناعم، كريمي ومريح."
+    description: {
+      en: "Black tea blended with milk, smooth, creamy and comforting.",
+      ar: "شاي أسود ممزوج بالحليب… ناعم، كريمي ومريح.",
     },
-    "price": "14",
-    "priceValue": 14,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PW78zb5ZdbLLbi.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
+    price: "14",
+    priceValue: 14,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PW78zb5ZdbLLbi.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
   },
   {
-    "id": "6fe7bb5f-5342-49cb-9bbb-6d4a746ccd37",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Turkish Tea (Small Pot)",
-      "ar": "شاي تركي (إبريق صغير)"
+    id: "6fe7bb5f-5342-49cb-9bbb-6d4a746ccd37",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Turkish Tea (Small Pot)",
+      ar: "شاي تركي (إبريق صغير)",
     },
-    "description": {
-      "en": "Medium Pot(52)",
-      "ar": "قدر متوسط (٥٢) - حجم مثالي للمشاركة، يقدم لكم نكهاتنا الأصيلة في وعاء متوسط الحجم يكفي لجميع أفراد العائلة."
+    description: {
+      en: "A generous serving of our signature dish, perfectly portioned for sharing or for those with a hearty appetite. This medium-sized pot is crafted to deliver a satisfying and flavorful dining experience.",
+      ar: "قدر متوسط (٥٢) - حجم مثالي للمشاركة، يقدم لكم نكهاتنا الأصيلة في وعاء متوسط الحجم يكفي لجميع أفراد العائلة.",
     },
-    "price": "45",
-    "priceValue": 45,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH5iQrY0vAugj0iiH.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 6
+    price: "45",
+    priceValue: 45,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH5iQrY0vAugj0iiH.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 6,
   },
   {
-    "id": "aac2d932-f051-472d-8951-d9f400dc4f07",
-    "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
-    "name": {
-      "en": "Moroccan Tea (Small Pot)",
-      "ar": "شاي مغربي (إبريق صغير)"
+    id: "aac2d932-f051-472d-8951-d9f400dc4f07",
+    category: "503260fe-058c-4b7a-9dac-6035eb79d781",
+    name: {
+      en: "Moroccan Tea (Small Pot)",
+      ar: "شاي مغربي (إبريق صغير)",
     },
-    "description": {
-      "en": "Moroccan green tea with fresh mint, aromatic, light and refreshingly sweet. Aromatic Moroccan tea with mint, smooth, vibrant and perfectly balanced. Traditional Moroccan mint tea, rich in aroma, smooth and ideal for sharing.",
-      "ar": "شاي مغربي منعش بالنعناع. تجربة عطرية متوازنة."
+    description: {
+      en: "Moroccan green tea with fresh mint, aromatic, light and refreshingly sweet. Aromatic Moroccan tea with mint, smooth, vibrant and perfectly balanced. Traditional Moroccan mint tea, rich in aroma, smooth and ideal for sharing.",
+      ar: "شاي مغربي منعش بالنعناع… تجربة عطرية متوازنة.",
     },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PaLXSpjQ3hHWZT.webp",
-    "options": [
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PaLXSpjQ3hHWZT.webp",
+    options: [
       {
-        "name": "Medium",
-        "price": "45",
-        "pricingType": "variation",
-        "order": 0
+        name: "Medium",
+        price: "45",
+        pricingType: "variation",
+        order: 0,
       },
       {
-        "name": "Big",
-        "price": "52",
-        "pricingType": "variation",
-        "order": 1
-      }
+        name: "Big",
+        price: "52",
+        pricingType: "variation",
+        order: 1,
+      },
     ],
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 7
-  },
-  {
-    "id": "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Ice Spanish Latte",
-      "ar": "سبانيش لاتيه بارد"
-    },
-    "description": {
-      "en": "Chilled espresso with silky milk and caramelized sweetened milk, smooth, creamy and perfectly indulgent.",
-      "ar": "إسبريسو بارد ممزوج بحليب ناعم وحليب مُحلى بلمسة كراميل، قوام كريمي غني وتجربة مُدلّلة بكل تفاصيلها."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QWB9Z1lyYTIFkG.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "e2e1b3c0-e51f-4cba-a60f-91f017976eb5",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Affogato",
-      "ar": "أفوغاتو"
-    },
-    "description": {
-      "en": "Hot espresso poured over creamy ice cream, rich, velvety and beautifully indulgent.",
-      "ar": "إسبريسو ساخن يُسكب فوق آيس كريم كريمي، تجربة غنية ومخملية بنهاية ساحرة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QhjQ1fnXhHwhys.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "7df74560-803f-4170-9d26-8d254be2e1ac",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Ice Latte",
-      "ar": "لاتيه بارد"
-    },
-    "description": {
-      "en": "Chilled espresso with smooth milk, light, creamy and refreshingly balanced.",
-      "ar": "إسبريسو بارد مع حليب ناعم، خفيف وكريمي بتوازن منعش."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QlonMPQGldqh2Y.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "29ac4114-6af6-441f-b56b-d0ac4d34d758",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Ice White Chocolate Mocha",
-      "ar": "موكا الشوكولاتة البيضاء الباردة"
-    },
-    "description": {
-      "en": "Premium white chocolate blended with espresso and cold milk, creamy, smooth and luxuriously sweet.",
-      "ar": "شوكولاتة بيضاء فاخرة ممزوجة بالإسبريسو والحليب البارد، قوام كريمي ونكهة حلوة راقية."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Qsh7Q7xSh4Ua1l.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "fca2bd66-4d04-4631-8636-0186f5040191",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Ice Americano",
-      "ar": "أمريكانو بارد"
-    },
-    "description": {
-      "en": "Chilled espresso with water, clean, crisp and refreshingly bold.",
-      "ar": "إسبريسو بارد مع الماء، نقي، منعش وبنكهة قوية متوازنة."
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QxBWQSWjTPZ9yV.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
-  },
-  {
-    "id": "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Ice Mocha",
-      "ar": "موكا باردة"
-    },
-    "description": {
-      "en": "Rich dark chocolate blended with espresso and cold milk, smooth, deep and indulgent.",
-      "ar": "شوكولاتة داكنة غنية ممزوجة بالإسبريسو والحليب البارد، ناعمة وعميقة بنكهة مُدلّلة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3R2B1ZtFGqPRRjv.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 6
-  },
-  {
-    "id": "5303aeee-379d-423a-b655-7a2ce5a53340",
-    "category": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
-    "name": {
-      "en": "Ice Drip Coffee",
-      "ar": "قهوة درِيب الباردة"
-    },
-    "description": {
-      "en": "Cold brewed single origin coffee, smooth, aromatic and naturally refreshing.",
-      "ar": "قهوة مختصة من مصدر واحد تُحضَّر بالاستخلاص البارد، ناعمة، عطرية ومنعشة بطبيعتها."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3R6tTn3pB9bMmlk.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 7
-  },
-  {
-    "id": "371e252f-2196-441e-b21c-f46c97ae2f6c",
-    "category": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
-    "name": {
-      "en": "Classic Matcha",
-      "ar": "ماتشا كلاسيك"
-    },
-    "description": {
-      "en": "Ceremonial grade Japanese matcha, stone-ground and carefully whisked, blended with chilled milk for a smooth, refined and naturally energizing experience.",
-      "ar": "ماتشا يابانية فاخرة بدرجة احتفالية، مطحونة على الحجر ومخلوطة بعناية، تُقدَّم مع حليب بارد لتجربة ناعمة ومتوازنة."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzmw18Sjw5pG3WeR.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "8e16cdbe-12a4-466c-bd64-74cad966ea0f",
-    "category": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
-    "name": {
-      "en": "Strawberry Matcha",
-      "ar": "ماتشا بالفراولة"
-    },
-    "description": {
-      "en": "Ceremonial Japanese matcha layered with sweet strawberry puree and milk, vibrant, smooth and perfectly balanced.",
-      "ar": "ماتشا يابانية بطبقات مع بوريه الفراولة الحلوة والحليب، نكهة حيوية وناعمة بتوازن مثالي."
-    },
-    "price": "34",
-    "priceValue": 34,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Se8bTTYIZBsf5I.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "e6cde5c2-a54d-444d-9bad-996ec74bcbc1",
-    "category": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
-    "name": {
-      "en": "Mango Matcha",
-      "ar": "ماتشا بالمانجو"
-    },
-    "description": {
-      "en": "Premium Japanese matcha with tropical mango puree and milk, creamy, refreshing and naturally uplifting.",
-      "ar": "ماتشا يابانية فاخرة ممزوجة ببوريه المانجو الاستوائي والحليب، كريمية ومنعشة بلمسة طبيعية مشرقة."
-    },
-    "price": "34",
-    "priceValue": 34,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ShxaRKEL6k1is9.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "e4270077-07cf-457f-af05-0a84fd75a929",
-    "category": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
-    "name": {
-      "en": "Spanish Matcha",
-      "ar": "ماتشا سبانيش"
-    },
-    "description": {
-      "en": "Japanese matcha blended with milk and caramelized sweetened milk, smooth, creamy and delicately indulgent.",
-      "ar": "ماتشا يابانية ممزوجة بالحليب وحليب مُحلى بلمسة كراميل، ناعمة وكريمية بتجربة فاخرة."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SmMuGzM9NktMof.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "4e6ad732-3641-436b-803f-2a957c2416a8",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Strawberry Mojito",
-      "ar": "موهيتو الفراولة"
-    },
-    "description": {
-      "en": "Sweet strawberries with fresh mint and lime, bright, juicy and refreshingly smooth.",
-      "ar": "انتعاش الفراولة الحلوة مع النعناع الطازج والليمون، نكهة مشرقة ومنعشة بنعومة متوازنة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SrzxjFWUdIDEjr.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "f5811822-3742-48c0-98f6-fb27bdcf2c49",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Passion Fruit Mojito",
-      "ar": "موهيتو باشن فروت"
-    },
-    "description": {
-      "en": "Exotic passion fruit with mint and fresh lime, tangy, vibrant and sparkling fresh.",
-      "ar": "فاكهة الباشن الاستوائية مع النعناع والليمون، حيوية، منعشة ولمسة فوار نابضة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SwPMCpm670FKhT.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "07de0c88-200d-4732-929e-e8c98a0faedd",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Mojito Classic",
-      "ar": "موهيتو كلاسيك"
-    },
-    "description": {
-      "en": "Fresh mint and zesty lime, blended with sparkling notes for an ultra-refreshing, crisp and cooling experience.",
-      "ar": "نعناع طازج مع ليمون منعش ولمسة فوار، تجربة باردة ونقية بانتعاش لا يُقاوم."
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3T2GpuMjDLj87Bm.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "8dc252c0-789f-4024-9414-67faa20f33d8",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Mixberry Mojito",
-      "ar": "موهيتو مشكل التوت"
-    },
-    "description": {
-      "en": "A burst of juicy berries with fresh mint and zesty lime, blended into a crisp, refreshing and irresistibly vibrant mix.",
-      "ar": "مزيج غني من التوت مع النعناع والليمون، منعش، متوازن ونابض بالحيوية."
-    },
-    "price": "37",
-    "priceValue": 37,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3T6q6I32GFBkdPS.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "5a793827-e29d-4e79-9ed9-1db35563c95a",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Mojito Peach",
-      "ar": "موهيتو الخوخ"
-    },
-    "description": {
-      "en": "Juicy peach with fresh mint and lime, light, refreshing and delicately sweet.",
-      "ar": "خوخ عصيري مع النعناع والليمون، خفيف ومنعش بحلاوة ناعمة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3TAvkG6N7eyGidi.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "b9b94ca2-d99d-4891-baeb-85b708e7ce08",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Strawberry Dream",
-      "ar": "ستروبيري دريم"
-    },
-    "description": {
-      "en": "Sweet strawberry blended with orange and citrus notes, light, refreshing and delightfully smooth.",
-      "ar": "مزيج الفراولة الحلوة مع لمسات الحمضيات، خفيف ومنعش بنعومة حالمة."
-    },
-    "price": "37",
-    "priceValue": 37,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3TEdDbqSkrTDOob.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "a65088c9-ee60-43df-be57-1e77c7380923",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Asya'S Special",
-      "ar": "اسياس سبيشل"
-    },
-    "description": {
-      "en": "A bold mix of berries with citrus and energy boost, vibrant, juicy and full of life.",
-      "ar": "خليط جريء من التوت والحمضيات مع دفعة طاقة، حيوي، منعش ومليء بالحياة."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Tbg9vBqCrlYPRO.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Possion-Mango Frozen",
-      "ar": "باشن فروت-مانجو فروزن"
-    },
-    "description": {
-      "en": "A refreshing tropical blend of passion fruit & mango, naturally sweetened and perfectly balanced.",
-      "ar": "مزيج استوائي منعش من الباشن فروت والمانجو، متوازن بطبيعته وحلاوته."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XVlFchpIivCYDT.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "68863cd6-578d-4aeb-ad70-21c0c7933f59",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Pina Colada",
-      "ar": "بينا كولادا"
-    },
-    "description": {
-      "en": "Silky coconut and ripe pineapple, smooth, creamy and beautifully tropical.",
-      "ar": "جوز الهند الناعم مع الأناناس الناضج، كريمي ومنعش بلمسة استوائية فاخرة."
-    },
-    "price": "42",
-    "priceValue": 42,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3UEocXmt5TXX93T.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 9
-  },
-  {
-    "id": "dd30a93f-661c-4099-90c4-74dc9f31a3a3",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Peppermint Sour",
-      "ar": "بيبّرمينت ساور"
-    },
-    "description": {
-      "en": "Cooling peppermint blended with zesty lime and green apple, crisp, vibrant and irresistibly refreshing.",
-      "ar": "انتعاش النعناع مع الليمون والتفاح الأخضر، نكهة منعشة ونابضة بالحيوية."
-    },
-    "price": "37",
-    "priceValue": 37,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3UXm0ykYjJP1NV9.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 11
-  },
-  {
-    "id": "b9f7a814-3f1c-4396-955d-26175d652889",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Tiki Taka Tropical",
-      "ar": "تيكي تاكا تروبيكال"
-    },
-    "description": {
-      "en": "A creamy tropical blend of strawberry, banana, red apple, mango, guava, and milk, delivering a smooth and refreshing flavor.",
-      "ar": "مزيج استوائي كريمي من الفراولة، والموز، والتفاح الأحمر، والمانجو، والجوافة، والحليب، يمنحك طعماً ناعماً ومنعشاً."
-    },
-    "price": "45",
-    "priceValue": 45,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBQu3tliLqkBPaoV.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 12
-  },
-  {
-    "id": "ccab3e35-9daa-4895-bfb8-083b852d37da",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Champions Blend",
-      "ar": "مزيج الأبطال"
-    },
-    "description": {
-      "en": "A rich and nourishing blend of avocado, banana, milk, almonds, and dates, crafted for a smooth and satisfying taste.",
-      "ar": "مزيج غني ومغذي من الأفوكادو، والموز، والحليب، واللوز، والتمور، صُنع بعناية لتقديم طعم سلس وممتع."
-    },
-    "price": "45",
-    "priceValue": 45,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBR16aLwwkBr7DOn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 13
-  },
-  {
-    "id": "e1f43ab0-a152-4e61-af64-53a67f92eae7",
-    "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
-    "name": {
-      "en": "Offside Melon",
-      "ar": "أوفسايد ميلون"
-    },
-    "description": {
-      "en": "A refreshing mix of cantaloupe, black grapes, mango, strawberry, peach, and pomegranate, bursting with vibrant and naturally sweet flavors.",
-      "ar": "مزيج منعش من الكنتالوب، والعنب الأسود، والمانجو، والفراولة، والخوخ، والرمان، ينبض بنكهات حيوية وحلوة طبيعياً."
-    },
-    "price": "45",
-    "priceValue": 45,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBQkn9NfQBIs2UWF.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 14
-  },
-  {
-    "id": "bf59e9ab-86f6-4478-8732-79acec15bcbc",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Mango Juice",
-      "ar": "عصير المانجو"
-    },
-    "description": {
-      "en": "Sun-ripened mango blended to a smooth, rich and naturally sweet tropical finish.",
-      "ar": "مانجو ناضجة تحت أشعة الشمس، تُحضَّر بقوام ناعم وغني.\nنكهة استوائية طبيعية بلمسة فاخرة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3VxpXef2QoeHndo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "38f4ff6d-c5df-4fb3-be4a-59aa8bf74d58",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Strawberry Juice",
-      "ar": "عصير الفراولة"
-    },
-    "description": {
-      "en": "Handpicked strawberries, rich, juicy and naturally sweet with a refreshing finish.",
-      "ar": "فراولة مختارة بعناية، غنية بالعصارة والحلاوة.\nانتعاش متوازن بنهاية ناعمة ولطيفة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfEJtJl9Q3qKz20.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "bde937b8-d111-42b3-89e6-7822ee0c18b7",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Pineapple Juice",
-      "ar": "عصير الأناناس"
-    },
-    "description": {
-      "en": "Ripe, juicy pineapple, sweet, vibrant and bursting with tropical freshness.",
-      "ar": "أناناس طازج بطعم حلو ومنعش.\nنكهة استوائية نابضة بالحياة في كل رشفة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzU8wDaKf6twI0Mp.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "138f5af0-856f-440b-87d8-e1408d9e39c1",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Apple Juice",
-      "ar": "عصير التفاح الأخضر"
-    },
-    "description": {
-      "en": "Premium green apple from select orchards, crisp, juicy and refreshingly light finish.",
-      "ar": "تفاح أخضر فاخر من مزارع مختارة.\nمقرمش، منعش وخفيف بنقاء طبيعي."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3W3xqBK78dBwdb1.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "4898647d-c2c9-4dd0-866a-6b44a619e786",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Energizer",
-      "ar": "إنرجايزر"
-    },
-    "description": {
-      "en": "Creamy banana, ripe strawberries and fresh orange juice, smooth, vibrant and bursting with energy.",
-      "ar": "مزيج غني من الموز الكريمي، الفراولة وعصير البرتقال الطازج.\nطاقة طبيعية بطعم ناعم ومنعش."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3W76LyiHTCe0fHr.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Fresh Mix",
-      "ar": "عصير ميكس طازج"
-    },
-    "description": {
-      "en": "Sun-kissed orange, crisp green apple and fresh carrot, juicy, vibrant and naturally energizing.",
-      "ar": "برتقال طازج مع تفاح أخضر وجزر.\nمزيج حيوي غني بالانتعاش والطاقة."
-    },
-    "price": "40",
-    "priceValue": 40,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3WA0PzNn4XUIPmD.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Orange Juice",
-      "ar": "عصير البرتقال"
-    },
-    "description": {
-      "en": "Freshly squeezed sun-ripened oranges, bursting with juicy sweetness and vibrant freshness.",
-      "ar": "برتقال طازج معصور يوميًا.\nحلاوة طبيعية وانتعاش نابض بالحيوية."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3WD4JFMAMFeb4yp.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "b436140c-47e7-4ec4-9695-c1e821d4723f",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Carrot Juice",
-      "ar": "عصير الجزر"
-    },
-    "description": {
-      "en": "Naturally sweet carrots, freshly pressed for a smooth, rich and revitalizing taste.",
-      "ar": "جزر طازج يُعصر بعناية ليمنحك طعمًا غنيًا ومتوازنًا.\nصحي، ناعم ومليء بالحيوية."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLoEGeAVKUqkWURH.webp",
-    "popular": false,
-    "chef": false,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "61fc7728-4ccf-4745-a8af-9bc19f408038",
-    "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
-    "name": {
-      "en": "Pomegranate Juice",
-      "ar": "عصير الرمان"
-    },
-    "description": {
-      "en": "Freshly pressed pomegranate, rich, vibrant and naturally tangy with a refreshing finish.",
-      "ar": "رمان طازج بنكهة غنية ولمسة حامضية خفيفة.\nمنعش، عميق، ومميز في كل رشفة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3WG4jxqfiB6yxUg.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 9
-  },
-  {
-    "id": "6bc0f672-b25d-41cb-9bc3-a64e65307cda",
-    "category": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Peach Ice Tea",
-      "ar": "شاي الخوخ المثلج"
-    },
-    "description": {
-      "en": "Sun-ripened peach with cold brewed tea and mint, delicate, refreshing and naturally smooth.",
-      "ar": "خوخ ناضج تحت الشمس يُمزج مع شاي بارد بالنعناع.\nناعم، منعش، ومتوازن برقة."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Xd5Ub2UUE8qkuE.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "1cb9d1b5-6d8f-493f-be1b-e57d084f065d",
-    "category": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Hibiscus Raspberry Ice Tea",
-      "ar": "شاي الكركديه بالتوت المثلج"
-    },
-    "description": {
-      "en": "Lush raspberry and blueberry with aromatic hibiscus, tangy, vibrant and irresistibly refreshing.",
-      "ar": "مزيج غني من التوت مع نفحات الكركديه العطرية.\nحامضي خفيف، نابض بالحيوية ومنعش بكل رشفة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XhREICymmtydxt.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "8fb5c495-bced-405e-8abe-40938f6a2be0",
-    "category": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Lemon Ice Tea",
-      "ar": "شاي الليمون المثلج"
-    },
-    "description": {
-      "en": "Freshly brewed tea infused with natural lemon flavor, served chilled over ice.",
-      "ar": "شاي طازج مُحضّر بعناية، مع لمسة ليمون طبيعية.\nيُقدَّم بارداً ليمنحك انتعاشاً صافياً."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XlKM6jHNQKIuTq.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "37eceeb2-a6ef-475e-b5a2-1024ae622a41",
-    "category": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Turkish Lemonade",
-      "ar": "ليمونادة تركية"
-    },
-    "description": {
-      "en": "Handcrafted with fresh lemon and mint, clean, refreshing and perfectly balanced.",
-      "ar": "وصفة محضّرة بحرفية من الليمون الطازج والنعناع.\nنظيفة، منعشة، ومتوازنة بإتقان."
-    },
-    "price": "30",
-    "priceValue": 30,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XpzCqS7OvTDuGF.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "f445e501-a9f9-411f-a223-371b0daeb695",
-    "category": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Lemon Mint Juice",
-      "ar": "عصير الليمون بالنعناع"
-    },
-    "description": {
-      "en": "Zesty sun-ripened lemon with crisp garden mint, refreshing, vibrant and perfectly balanced.",
-      "ar": "ليمون طازج بنكهته المنعشة مع نعناع أخضر.\nحيوي، منعش، ومثالي لأيام الصيف."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XuexYAMuMa7zbi.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
-  },
-  {
-    "id": "b1268bb2-150f-4ca7-afb5-f2fa21507da5",
-    "category": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
-    "name": {
-      "en": "Mixberry Lemonade",
-      "ar": "ليمونادة التوت المشكّل"
-    },
-    "description": {
-      "en": "Our signature Turkish lemonadei crafted with house-made recipe, blended with fresh mixed berries for a vibrant twist. Refreshing, fruit and perfectly balanced between sweet and citrus notes.",
-      "ar": "ليمونادة تركية بوصفة منزلية، ممزوجة بتوت طازج.\nلمسة فاكهية غنية، منعشة ومليئة بالحياة."
-    },
-    "price": "37",
-    "priceValue": 37,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Y63SF65aysApbo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 6
-  },
-  {
-    "id": "408eba99-a9c8-4630-9c76-c17c552941a7",
-    "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-    "name": {
-      "en": "Ayran",
-      "ar": "عيران"
-    },
-    "description": {
-      "en": "Traditional Turkish yogurt drink, perfectly balanced, creamy, refreshing and lightly salted.",
-      "ar": "مشروب تركي تقليدي من الزبادي.\nمتوازن، كريمي، منعش بلمسة ملوحة خفيفة."
-    },
-    "price": "20",
-    "priceValue": 20,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YBDbaOONYskzGn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "c3d5aaa1-b279-47a7-b745-dbf27c322d41",
-    "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-    "name": {
-      "en": "Ayran W Mint",
-      "ar": "عيران بالنعناع"
-    },
-    "description": {
-      "en": "Classic ayran with fresh mint, cooling, aromatic and extra refreshing.",
-      "ar": "العيران الكلاسيكي مع نعناع طازج.\nبارد، عطري، وانتعاش مضاعف."
-    },
-    "price": "22",
-    "priceValue": 22,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YGFD9gwe1xLo93.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "dddaadc3-9bae-40fb-b7fd-54adcaa41017",
-    "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-    "name": {
-      "en": "Ayran W Basil",
-      "ar": "عيران بالريحان"
-    },
-    "description": {
-      "en": "A refreshing twist of ayran with fresh basil, light, herbal and uniquely smooth.",
-      "ar": "لمسة مختلفة من العيران مع ريحان طازج.\nخفيف، عشبي، وانسيابي بنعومة فريدة."
-    },
-    "price": "23",
-    "priceValue": 23,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YJNZXK1Dpooas6.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "a1f1dab3-f336-4ab4-ad82-8122687ec772",
-    "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-    "name": {
-      "en": "Ayran W Soda",
-      "ar": "عيران بالصودا"
-    },
-    "description": {
-      "en": "Ayran lifted with sparkling mineral water, light, airy and ultra refreshing.",
-      "ar": "عيران بنكهة متجددة مع مياه فوّارة.\nخفيف، هوائي، وانتعاش يدوم."
-    },
-    "price": "24",
-    "priceValue": 24,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YN6xeevuohKYcP.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "3139c3c3-4c00-4286-b4f1-01dab882d635",
-    "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
-    "name": {
-      "en": "Ayran W Cucumber",
-      "ar": "عيران بالخيار"
-    },
-    "description": {
-      "en": "Ayran with fresh cucumber, crisp, cooling and perfectly refreshing.",
-      "ar": "عيران مع خيار طازج.\nمنعش، بارد، ومثالي لأيام الصيف."
-    },
-    "price": "24",
-    "priceValue": 24,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YQckSqRvD2mFT1.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
-  },
-  {
-    "id": "7c20069b-3e20-4edb-b3bf-75bf82b44cdd",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Churchill",
-      "ar": "مشروب تشرشل"
-    },
-    "description": {
-      "en": "A chilled, refreshing soft drink with a crisp finish. Perfect for cooling down and pairing with any meal.",
-      "ar": "مشروب بارد جريء ومنعش يُقدَّم مثلّجًا.\nفقاعاته الحيوية ونكهته المنعشة تجعله رفيقًا مثاليًا لكل وجبة."
-    },
-    "price": "25",
-    "priceValue": 25,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YUxVEZB0VbNBCG.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "10669c1f-596c-4f5f-80a5-d05811ffd71a",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Redbull",
-      "ar": "ريدبول"
-    },
-    "description": {
-      "en": "A cold energy drink with a bold, fizzy kick. Ideal for a quick boost with a sharp, sweet taste.",
-      "ar": "مشروب طاقة بارد بنكهة قوية ومنعشة.\nيمنحك دفعة سريعة وانتعاشًا مليئًا بالحيوية"
-    },
-    "price": "32",
-    "priceValue": 32,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YYBm9n9SaitzNV.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "ab4ff496-559f-4c8d-8052-a20b900ffeb0",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Turkish Sparkling Water",
-      "ar": "مياه غازية تركية"
-    },
-    "description": {
-      "en": "Crisp sparkling water with lively bubbles and a clean finish. A refreshing fizzy alternative to sweet soft drinks.",
-      "ar": "مياه غازية منعشة بفقاعات حيوية ومذاق نقي صافٍ.."
-    },
-    "price": "10",
-    "priceValue": 10,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YlebZuKknTXYU8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "dda18a8d-c5a7-4211-bbda-1992f6154416",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Water",
-      "ar": "مياه"
-    },
-    "description": {
-      "en": "Pure, chilled water served to refresh and cleanse the palate. A clean and light choice for any time of day. BIG WATER (16)",
-      "ar": "مياه نقية تُقدَّم باردة.\nانتعاش بسيط وصافٍ يوازن النكهات برقة."
-    },
-    "price": "Small (8)/ Big (16)",
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLpQ7aieT7PcnRg8.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 4
-  },
-  {
-    "id": "bc3a5e92-6036-4c1f-9e7b-2bc06d5d2143",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Sparkling Water",
-      "ar": "مياه فوارة"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "Small (8)/ Big (16)",
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLpg53WIxMButtqQ.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 5
-  },
-  {
-    "id": "94cec6c5-0caa-43c1-a8fb-653b82a88309",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Coca-cola",
-      "ar": "كوكا كولا"
-    },
-    "description": {
-      "en": "Classic cola served cold with bold caramel notes and lively fizz. A familiar, satisfying sip that complements savory food.",
-      "ar": "فقاعات منعشة ولمسة كراميل متوازنة، مثالية مع الأطباق المالحة."
-    },
-    "price": "10",
-    "priceValue": 10,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Z5hQ4932kli9Os.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 6
-  },
-  {
-    "id": "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Fanta",
-      "ar": "فانتا"
-    },
-    "description": {
-      "en": "A bright and fruity carbonated drink with a sweet, playful flavor. Served chilled for a refreshing and bubbly experience.",
-      "ar": "مشروب غازي بنكهة برتقال.\nمنعش، مليء بالحيوية، ويضيف لمسة ممتعة لكل لحظة."
-    },
-    "price": "10",
-    "priceValue": 10,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ZBGgYfHWiN4B7t.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 7
-  },
-  {
-    "id": "04e64d7b-d691-48ee-9b7a-a2f978c3e09e",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Beer",
-      "ar": "بيرة"
-    },
-    "description": {
-      "en": "A cold beer with a smooth body and a crisp, refreshing finish. Great for pairing with grilled food and savory bites.",
-      "ar": "مشروب بارد بلون ذهبي ورغوة ناعمة.\nنكهة متوازنة بلمسة مرارة خفيفة، مع قوام غني ومنعش"
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGMS6T66GTmcNd59.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 8
-  },
-  {
-    "id": "528fb6cd-81b9-4b9d-b9da-30edcdb77afd",
-    "category": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
-    "name": {
-      "en": "Sprite",
-      "ar": "سبرايت"
-    },
-    "description": {
-      "en": "A lemon-lime soda with a crisp sparkle and clean citrus lift. Served cold for a light and refreshing taste.",
-      "ar": "مشروب ليمون ولايم منعش.\nخفيف، فوّار، ويمنحك إحساسًا نظيفًا ومروّيًا"
-    },
-    "price": "10",
-    "priceValue": 10,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ZFkM2MMGYmlvwr.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 9
-  },
-  {
-    "id": "9f623f75-c40d-47fd-8c3f-eebdab56fa9a",
-    "category": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
-    "name": {
-      "en": "Chocolate MilkShake",
-      "ar": "ميلك شيك شوكولاتة"
-    },
-    "description": {
-      "en": "Velvety smooth and richly blended, this chocolate milkshake delivers the perfect balance of creamy texture and deep chocolate flavor.",
-      "ar": "مخفوق حليب بالشوكولاتة غني وناعم الملمس، يمنحك توازناً مثالياً بين القوام الكريمي ونكهة الشوكولاتة الداكنة والعميقة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBJvncU3jVQQbf9d.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 1
-  },
-  {
-    "id": "dddfd6aa-96f8-4067-b566-8509c8c74636",
-    "category": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
-    "name": {
-      "en": "Strawberry MilkShake",
-      "ar": "ميلك شيك فراولة"
-    },
-    "description": {
-      "en": "Fresh strawberries blended into a creamy, refreshing milkshake, offering a smooth and delightfully sweet flavor in every sip.",
-      "ar": "فراولة طازجة ممزوجة في ميلك شيك كريمي ومنعش، تمنحك طعماً ناعماً وحلاوة رائعة في كل رشفة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBK5rWQHimKw8P4n.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 2
-  },
-  {
-    "id": "728a1cd6-4c57-4509-ab09-aafc279d3947",
-    "category": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
-    "name": {
-      "en": "Banana MilkShake",
-      "ar": "ميلك شيك موز"
-    },
-    "description": {
-      "en": "Creamy banana milkshake blended to perfection, delivering a smooth, naturally sweet, and refreshing taste in every sip.",
-      "ar": "ميلك شيك الموز الكريمي المخفوق بعناية، يمنحكم مذاقاً ناعماً وحلواً بشكل طبيعي ومنعشاً في كل رشفة."
-    },
-    "price": "35",
-    "priceValue": 35,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBKElxeJmPJjahMn.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": true,
-    "order": 3
-  },
-  {
-    "id": "77a04025-581e-410b-b70b-bb2c4de5a648",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "DOUBLE APPLE Fakher",
-      "ar": "تفاحتين فاخر"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4HIrDpCjlmrC0eo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "66543356-1b79-497f-ab11-9fe41362d9c3",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "DOUBLE APPLE NAKHLA",
-      "ar": "تفاحتين نخلة"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4Hz95PbtbaAh3Q0.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "4bc33733-c8cf-48a5-8ff7-f2ccdfd7cadf",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "DOUBLE APPLE MİX",
-      "ar": "مزيج التفاحتين المضاعف"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4IMEKD47aHj4yhP.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "35a25c13-d0b9-46e7-a712-630cf9928e0d",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "GRAPE",
-      "ar": "عنب"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4IXOhzgHVdG2yOM.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "e26bbf68-0d59-44de-b1b2-c447761acf20",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "GRAPE BERRY",
-      "ar": "توت العنب"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4IgdWB3o5RrK0vm.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "72cd40c5-5475-4d48-9e56-4d0ea5510c60",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "GRAPE MİNT",
-      "ar": "عنب نعناع"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4Iwowqzri1FQBhg.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "2b92aa34-e5aa-4a63-971f-a18a610c746c",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "MINT",
-      "ar": "نعناع"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JBSNoLolMPRDOQ.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 7
-  },
-  {
-    "id": "726653ff-c498-403e-bc48-8c4100ed7efd",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "BLUE BERRY",
-      "ar": "التوت الأزرق"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JMqZRB3Txemvg7.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 8
-  },
-  {
-    "id": "7f1899d8-36b3-4250-9d32-7a1d0bd6f6d6",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "LEMON MİNT",
-      "ar": "ليمون بالنعناع"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JXOOhC7XVEd7sF.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 9
-  },
-  {
-    "id": "7375d7eb-72c4-40cc-99b5-b8ae81403424",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "GUM",
-      "ar": "علكة"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4Jhh3x3lRCnpNan.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 10
-  },
-  {
-    "id": "975f95ee-5971-4e1b-9c0b-f0c4d484aa1a",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "WATERMELON",
-      "ar": "بطيخ"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JwQVBEHwf5HoNe.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 11
-  },
-  {
-    "id": "3b1c0c76-0809-4459-92cf-adff4d03dff8",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "LOVE 66",
-      "ar": "حب 66"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4KSkuZTV3rF2lts.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 13
-  },
-  {
-    "id": "86820d79-cb6d-4bca-8e52-c539bd47d7a9",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "PEACH",
-      "ar": "خوخ"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4KgXABHythhCSeo.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 14
-  },
-  {
-    "id": "7b6de15e-fa0e-4c9e-909d-f7432a09fdf4",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "ORANGE MINT",
-      "ar": "برتقال بالنعناع"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4L2J2xxWxZY4Jfw.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 15
-  },
-  {
-    "id": "6565c206-6158-4af0-a778-591bafdef0b0",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "GUM MINT",
-      "ar": "علكة بالنعناع"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4LEb7Qs1aGsCDww.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 16
-  },
-  {
-    "id": "00eeda4e-667c-45ac-8eea-dc5d2b5341a0",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "MASTICA",
-      "ar": "مستكة"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4LS4cc3dcfK6X39.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 17
-  },
-  {
-    "id": "ade9d7d4-01d5-4d52-9d1d-89e189d3fc70",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "GUM CINNAMON",
-      "ar": "علكة بالقرفة"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4LsxmRhsulXbOOX.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 18
-  },
-  {
-    "id": "25fedaab-c4ad-4005-9ce9-c5f5c6eb51a5",
-    "category": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
-    "name": {
-      "en": "RUBY CRUSH",
-      "ar": "روبي كراش"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "99",
-    "priceValue": 99,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4M7uc2H12g28wo7.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 19
-  },
-  {
-    "id": "a103a19f-8c77-4c08-a9bf-e89a175412f3",
-    "category": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "BY CHARMING SPECIAL",
-      "ar": "باي جارمنج سبيشيال"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TFQ2lFPsD5BbG7.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "fea3edb5-2fb2-4898-973e-79dffee34090",
-    "category": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "DUBAİ",
-      "ar": "دبي"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TQvgiawUw6q3FJ.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  },
-  {
-    "id": "83979ed6-5b12-4aca-8a70-3f44ed9c61f5",
-    "category": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "NOL GRADUS",
-      "ar": "نول جرادوس"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TZOJ5EIUHonNxk.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 3
-  },
-  {
-    "id": "aa2525eb-504a-4257-abbc-60a182e8e790",
-    "category": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "MARBELLA",
-      "ar": "ماربيا"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TpF9KPnRd9Qgzs.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 4
-  },
-  {
-    "id": "3e08c664-b982-41e3-b325-ab68a12f01b5",
-    "category": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "HATTRICK",
-      "ar": "هاتريك"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TzLgLKbb9Iavnh.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 5
-  },
-  {
-    "id": "defa0901-7a2a-467e-ba6a-af3e38979e22",
-    "category": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
-    "name": {
-      "en": "LAST PUFF",
-      "ar": "لاست بوف"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "109",
-    "priceValue": 109,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4UBL5rS9Og4DKfz.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 6
-  },
-  {
-    "id": "db22797e-d091-466c-9684-128d3f23dec1",
-    "category": "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
-    "name": {
-      "en": "KOKAYA",
-      "ar": "كوكايا"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "129",
-    "priceValue": 129,
-    "currency": "SAR",
-    "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4VTuHlClbFtcDXp.webp",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 1
-  },
-  {
-    "id": "7920a33a-ab56-49af-8a0b-1528186ae540",
-    "category": "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
-    "name": {
-      "en": "ANIMA",
-      "ar": "أنيما"
-    },
-    "description": {
-      "en": "",
-      "ar": ""
-    },
-    "price": "129",
-    "priceValue": 129,
-    "currency": "SAR",
-    "popular": true,
-    "chef": true,
-    "bakery": false,
-    "turkishDrink": false,
-    "order": 2
-  }
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 7,
+  },
+  {
+    id: "371e252f-2196-441e-b21c-f46c97ae2f6c",
+    category: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+    name: {
+      en: "Classic Matcha",
+      ar: "ماتشا كلاسيك",
+    },
+    description: {
+      en: "Ceremonial grade Japanese matcha, stone-ground and carefully whisked, blended with chilled milk for a smooth, refined and naturally energizing experience.",
+      ar: "ماتشا يابانية فاخرة بدرجة احتفالية، مطحونة على الحجر ومخلوطة بعناية، تُقدَّم مع حليب بارد لتجربة ناعمة ومتوازنة.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzmw18Sjw5pG3WeR.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "8e16cdbe-12a4-466c-bd64-74cad966ea0f",
+    category: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+    name: {
+      en: "Strawberry Matcha",
+      ar: "ماتشا بالفراولة",
+    },
+    description: {
+      en: "Ceremonial Japanese matcha layered with sweet strawberry puree and milk, vibrant, smooth and perfectly balanced.",
+      ar: "ماتشا يابانية بطبقات مع بوريه الفراولة الحلوة والحليب، نكهة حيوية وناعمة بتوازن مثالي.",
+    },
+    price: "34",
+    priceValue: 34,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Se8bTTYIZBsf5I.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "e6cde5c2-a54d-444d-9bad-996ec74bcbc1",
+    category: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+    name: {
+      en: "Mango Matcha",
+      ar: "ماتشا بالمانجو",
+    },
+    description: {
+      en: "Premium Japanese matcha with tropical mango puree and milk, creamy, refreshing and naturally uplifting.",
+      ar: "ماتشا يابانية فاخرة ممزوجة ببوريه المانجو الاستوائي والحليب، كريمية ومنعشة بلمسة طبيعية مشرقة.",
+    },
+    price: "34",
+    priceValue: 34,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ShxaRKEL6k1is9.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "e4270077-07cf-457f-af05-0a84fd75a929",
+    category: "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+    name: {
+      en: "Spanish Matchia",
+      ar: "ماتشا سبانيش",
+    },
+    description: {
+      en: "Japanese matcha blended with milk and caramelized sweetened milk, smooth, creamy and delicately indulgent.",
+      ar: "ماتشا يابانية ممزوجة بالحليب وحليب مُحلى بلمسة كراميل، ناعمة وكريمية بتجربة فاخرة.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SmMuGzM9NktMof.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "4e6ad732-3641-436b-803f-2a957c2416a8",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Strawberry Mojito",
+      ar: "موهيتو الفراولة",
+    },
+    description: {
+      en: "Sweet strawberries with fresh mint and lime, bright, juicy and refreshingly smooth.",
+      ar: "انتعاش الفراولة الحلوة مع النعناع الطازج والليمون، نكهة مشرقة ومنعشة بنعومة متوازنة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SrzxjFWUdIDEjr.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "f5811822-3742-48c0-98f6-fb27bdcf2c49",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Passion Fruit Mojito",
+      ar: "موهيتو باشن فروت",
+    },
+    description: {
+      en: "Exotic passion fruit with mint and fresh lime, tangy, vibrant and sparkling fresh.",
+      ar: "فاكهة الباشن الاستوائية مع النعناع والليمون، حيوية، منعشة ولمسة فوار نابضة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SwPMCpm670FKhT.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "07de0c88-200d-4732-929e-e8c98a0faedd",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Mojito Classic",
+      ar: "موهيتو كلاسيك",
+    },
+    description: {
+      en: "Fresh mint and zesty lime, blended with sparkling notes for an ultra-refreshing, crisp and cooling experience.",
+      ar: "نعناع طازج مع ليمون منعش ولمسة فوار، تجربة باردة ونقية بانتعاش لا يُقاوم.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3T2GpuMjDLj87Bm.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "8dc252c0-789f-4024-9414-67faa20f33d8",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Mixberry Mojito",
+      ar: "موهيتو مشكل التوت",
+    },
+    description: {
+      en: "A burst of juicy berries with fresh mint and zesty lime, blended into a crisp, refreshing and irresistibly vibrant mix.",
+      ar: "مزيج غني من التوت مع النعناع والليمون، منعش، متوازن ونابض بالحيوية.",
+    },
+    price: "37",
+    priceValue: 37,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3T6q6I32GFBkdPS.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "5a793827-e29d-4e79-9ed9-1db35563c95a",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Mojito Peach",
+      ar: "موهيتو الخوخ",
+    },
+    description: {
+      en: "Juicy peach with fresh mint and lime, light, refreshing and delicately sweet.",
+      ar: "خوخ عصيري مع النعناع والليمون، خفيف ومنعش بحلاوة ناعمة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3TAvkG6N7eyGidi.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "b9b94ca2-d99d-4891-baeb-85b708e7ce08",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Strawberry Dream",
+      ar: "ستروبيري دريم",
+    },
+    description: {
+      en: "Sweet strawberry blended with orange and citrus notes, light, refreshing and delightfully smooth.",
+      ar: "مزيج الفراولة الحلوة مع لمسات الحمضيات، خفيف ومنعش بنعومة حالمة.",
+    },
+    price: "37",
+    priceValue: 37,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3TEdDbqSkrTDOob.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "a65088c9-ee60-43df-be57-1e77c7380923",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Asya's Special",
+      ar: "اسياس سبيشل",
+    },
+    description: {
+      en: "A bold mix of berries with citrus and energy boost, vibrant, juicy and full of life.",
+      ar: "خليط جريء من التوت والحمضيات مع دفعة طاقة، حيوي، منعش ومليء بالحياة.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Tbg9vBqCrlYPRO.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Passion-Mango Frozen",
+      ar: "باشن فروت-مانجو فروزن",
+    },
+    description: {
+      en: "A refreshing tropical blend of passion fruit & mango, naturally sweetened and perfectly balanced.",
+      ar: "مزيج استوائي منعش من الباشن فروت والمانجو، متوازن بطبيعته وحلاوته.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XVlFchpIivCYDT.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "68863cd6-578d-4aeb-ad70-21c0c7933f59",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Pina Colada",
+      ar: "بينا كولادا",
+    },
+    description: {
+      en: "Silky coconut and ripe pineapple, smooth, creamy and beautifully tropical.",
+      ar: "جوز الهند الناعم مع الأناناس الناضج، كريمي ومنعش بلمسة استوائية فاخرة.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3UEocXmt5TXX93T.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 9,
+  },
+  {
+    id: "dd30a93f-661c-4099-90c4-74dc9f31a3a3",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Peppermint Sour",
+      ar: "بيبّرمينت ساور",
+    },
+    description: {
+      en: "Cooling peppermint blended with zesty lime and green apple, crisp, vibrant and irresistibly refreshing.",
+      ar: "انتعاش النعناع مع الليمون والتفاح الأخضر، نكهة منعشة ونابضة بالحيوية.",
+    },
+    price: "37",
+    priceValue: 37,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3UXm0ykYjJP1NV9.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 11,
+  },
+  {
+    id: "b9f7a814-3f1c-4396-955d-26175d652889",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Tiki Taka Tropical",
+      ar: "تيكي تاكا تروبيكال",
+    },
+    description: {
+      en: "A creamy tropical blend of strawberry, banana, red apple, mango, guava, and milk, delivering a smooth and refreshing flavor.",
+      ar: "مزيج استوائي كريمي من الفراولة، والموز، والتفاح الأحمر، والمانجو، والجوافة، والحليب، يمنحك طعماً ناعماً ومنعشاً.",
+    },
+    price: "45",
+    priceValue: 45,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBQu3tliLqkBPaoV.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 12,
+  },
+  {
+    id: "ccab3e35-9daa-4895-bfb8-083b852d37da",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Champions Blend",
+      ar: "مزيج الأبطال",
+    },
+    description: {
+      en: "A rich and nourishing blend of avocado, banana, milk, almonds, and dates, crafted for a smooth and satisfying taste.",
+      ar: "مزيج غني ومغذي من الأفوكادو، والموز، والحليب، واللوز، والتمور، صُنع بعناية لتقديم طعم سلس وممتع.",
+    },
+    price: "45",
+    priceValue: 45,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBR16aLwwkBr7DOn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 13,
+  },
+  {
+    id: "e1f43ab0-a152-4e61-af64-53a67f92eae7",
+    category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+    name: {
+      en: "Offside Melon",
+      ar: "أوفسايد ميلون",
+    },
+    description: {
+      en: "A refreshing mix of cantaloupe, black grapes, mango, strawberry, peach, and pomegranate, bursting with vibrant and naturally sweet flavors.",
+      ar: "مزيج منعش من الكنتالوب، والعنب الأسود، والمانجو، والفراولة، والخوخ، والرمان، ينبض بنكهات حيوية وحلوة طبيعياً.",
+    },
+    price: "45",
+    priceValue: 45,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBQkn9NfQBIs2UWF.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 14,
+  },
+  {
+    id: "770b1ff2-0aef-4f23-8378-ebe37681a842",
+    category: "c0a5b81c-a849-43c6-994d-e4a41c842182",
+    name: {
+      en: "Lentil Soup",
+      ar: "شوربة العدس",
+    },
+    description: {
+      en: "A timeless classic, slowly cooked with care using fresh vegetables and traditional methods. Prepared with the warmth of home and served with croutons and lemon. Comforting, hearty and made with a mother's touch.",
+      ar: "طبق كلاسيكي  يُحضَّر ببطء بعناية باستخدام خضروات طازجة وأساليب تقليدية. يُقدَّم بدفء المنزل مع خبز محمّص وشرائح ليمون.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzaxEIaiyCUkDyRI.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "6e5d42ab-cdfc-45c8-968c-e0c660f048ae",
+    category: "c0a5b81c-a849-43c6-994d-e4a41c842182",
+    name: {
+      en: "Creamy Chicken Soup",
+      ar: "شوربة الدجاج بالكريمة",
+    },
+    description: {
+      en: "Tender chicken breast gently cooked with cream and butter, finished with a hint of mint. Prepared with the same care and warmth as a homemade recipe. Rich, smooth and soul-warming.",
+      ar: "صدر دجاج طري يُطهى بلطف مع الكريمة والزبدة، ويُختتم بلمسة خفيفة من النعناع. تُحضَّر بعناية ودفء يشبه الوصفات المنزلية.\nغنية، ناعمة، وتبعث على الدفء.",
+    },
+    price: "36",
+    priceValue: 36,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzY1E24MtjZe5ryd.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "b0a22f0e-f19c-4985-8311-0badb4f2a692",
+    category: "c0a5b81c-a849-43c6-994d-e4a41c842182",
+    name: {
+      en: "Vegetable Soup",
+      ar: "شوربة الخضار",
+    },
+    description: {
+      en: "A nourishing blend of fresh vegetables, slowly simmered to bring out natural flavors. Served with croutons and lemon for a balanced touch. Light, wholesome and made with care.",
+      ar: "مزيج غني من الخضروات الطازجة يُطهى على مهل لإبراز نكهاتها الطبيعية، ويُقدَّم مع خبز محمّص وشرائح ليمون لتوازن مثالي.\nخفيفة، صحية، ومحضّرة بعناية.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbVCOBlLNuM45pC.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "8654a6b2-3bcf-436f-8342-9f2cc02ce739",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Mixed Grill For Two",
+      ar: "مشاوي مشكلة لشخصين",
+    },
+    description: {
+      en: "A selection of the most iconic flavors of Turkish cuisine, brought together with the refined touch of our masters... Carefully grilled over fire and served hot for a rich and satisfying experience. Includes: 200 g Adana kebab, 200 g chicken kebab, 200 g lamb cubes, 200 g chicken shish Served with grilled tomatoes, chili peppers, red onion, lavash bread, bulgur pilaf, lemon, mayonnaise and spicy mayonnaise. Authentic, generous and crafted to share.",
+      ar: "مجموعة مختارة من أشهر نكهات المطبخ التركي، تجتمع معاً بلمسة رفيعة من خبرائنا... مشوية بعناية على اللهب وتقدم ساخنة لتجربة غنية ومرضية. تتكون من: ٢٠٠ جم كباب أضنة، ٢٠٠ جم كباب دجاج، ٢٠٠ جم أوصال لحم ضأن، ٢٠٠ جم شيش طاووق. تقدم مع الطماطم المشوية، الفلفل الحار، البصل الأحمر، خبز اللواش، برغل بلاف، ليمون، مايونيز ومايونيز حار. طبق أصيل، سخي، ومعد ببراعة للمشاركة.",
+    },
+    price: "222",
+    priceValue: 222,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbIVnJgBEng4vEl.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "adcb8284-7343-44da-a287-e1582946148f",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Mix Grill For 1",
+      ar: "مشاوي مشكلة لشخص واحد",
+    },
+    description: {
+      en: "A curated selection of Turkish classics, brought together with the refined touch of our masters... Charcoal-grilled and prepared as a personalized experience, offering a perfectly balanced and satisfying plate. Includes: 100 g Adana kebab, 100 g chicken kebab, 100 g lamb cubes, 100 g chicken shish. Served with grilled tomatoes, chili peppers, red onion, lavash bread, bulgur pilaf, lemon, mayonnaise and spicy mayonnaise. Crafted just for you, rich and perfectly satisfying.",
+      ar: "تشكيلة مختارة من كلاسيكيات المطبخ التركي، تُقدَّم بلمسة احترافية تعكس خبرة أمهر الطهاة.\nمشوية على الفحم ومُحضَّرة كتجربة خاصة لك، لتمنحك طبقًا متوازنًا ومُرضيًا بكل تفاصيله.\nتتضمن:\n100 جم كباب أضنة\n100 جم كباب دجاج\n100 جم مكعبات لحم غنم\n100 جم شيش دجاج\nتُقدَّم مع طماطم مشوية، فلفل حار، بصل أحمر، خبز لافاش، أرز برغل، ليمون، مايونيز ومايونيز حار.\nمصممة خصيصًا لك… غنية ومشبعة بكل تفاصيلها.",
+    },
+    price: "114",
+    priceValue: 114,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzb4M3yGkZXcFvJy.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "6e4faf94-cfa4-438e-986b-05fd8f06d265",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Iskender",
+      ar: "إسكندر",
+    },
+    description: {
+      en: "A true Bursa classic prepared with 180 g of tender sliced beef, served over warm pide bread. Topped with rich tomato sauce and finished with natural melted butter, accompanied by yogurt and grilled vegetables. Authentic, buttery and deeply satisfying.",
+      ar: "طبق أصيل من مدينة بورصة، يُحضَّر بـ 180 جم من شرائح اللحم الطرية، ويُقدَّم فوق خبز البيده الدافئ…\nيُزيَّن بصلصة الطماطم الغنية، ويُختَم بلمسة من الزبدة الطبيعية الذائبة، ويُقدَّم مع الزبادي وخضار مشوية.\nأصيل، غني بالزبدة… ومشبِع بكل تفاصيله.",
+    },
+    price: "72",
+    priceValue: 72,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3IgBaDO8HSJZHvb.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Adana Kebab",
+      ar: "كباب أضنة",
+    },
+    description: {
+      en: "A true icon of Turkish cuisine, made from 200 g of perfectly seasoned minced meat and grilled over open charcoal fire. Served with onion salad, grilled chili pepper, tomatoes, lemon, lavash bread, bulgur pilaf and a selection of sauces. Smoky, juicy and full of bold Anatolian flavors.",
+      ar: "أحد أشهر رموز المطبخ التركي، يُحضَّر من 200 جم من اللحم المفروم المتبّل بإتقان، ويُشوى على الفحم المكشوف ليُبرز نكهاته الأصيلة…\nيُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، خبز لافاش، أرز برغل وتشكيلة من الصلصات.\nمدخّن، طري… ومليء بنكهات الأناضول الجريئة.",
+    },
+    price: "66",
+    priceValue: 66,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTIjya8nJWElpUB.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "833c826b-ce1d-40aa-b7c5-e93e52f5b21f",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Asya's Beyti",
+      ar: "بيتي آسيا",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "72",
+    priceValue: 72,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIwH3sgD8tYWnvWQu.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "7c604238-7a07-4168-b234-9bb1b536d202",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Beef Shish",
+      ar: "اوصال لحم",
+    },
+    description: {
+      en: "200 g of tender, marinated beef cubes grilled over charcoal to lock in their natural juices. Served with onion salad, grilled chili pepper, tomatoes, lemon, lavash bread, bulgur pilaf and sauces. Rich, succulent and irresistibly satisfying.",
+      ar: "200 جم من مكعبات اللحم البقري الطرية والمتبّلة، تُشوى على الفحم لتحافظ على عصارتها الطبيعية…\nتُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، خبز لافاش، أرز برغل وتشكيلة من الصلصات.\nغني، طري… ولا يُقاوَم في كل لقمة.",
+    },
+    price: "68",
+    priceValue: 68,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3IrNyf5iy3ttNw6.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "11128019-e4f1-4d2d-9665-4a8731a68b77",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Chicken Shish",
+      ar: "شيش طاوق",
+    },
+    description: {
+      en: "300 g of tender chicken pieces, marinated with the chef's special blend of spices and grilled over open charcoal fire. Served with onion salad, grilled chili pepper, tomatoes, lemon, mayonnaise, lavash bread and bulgur pilaf. Juicy, smoky and perfectly balanced in flavor.",
+      ar: "300 جم من قطع الدجاج الطرية، متبّلة بتوليفة الشيف الخاصة من التوابل، ومشوية على الفحم المكشوف لتعزيز نكهتها الأصيلة…\nتُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، مايونيز، خبز لافاش وأرز برغل.\nطري، مدخّن… ومتوازن النكهة بإتقان.",
+    },
+    price: "64",
+    priceValue: 64,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzbqi6PwQLFlLx5j.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "bdc9b239-c9dc-4a89-a739-895007f8133e",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Chicken Kebab",
+      ar: "كباب دجاج",
+    },
+    description: {
+      en: "200 g of finely seasoned chicken, prepared with a signature spice mix and cooked over charcoal for a rich, authentic taste. Served with onion salad, grilled chili pepper, tomatoes, lemon, mayonnaise, lavash bread and bulgur pilaf. Juicy, flavorful and a crowd favorite.",
+      ar: "200 جم من الدجاج المتبّل بعناية، يُحضَّر بتوليفة توابل خاصة ويُشوى على الفحم ليمنح نكهة أصيلة وغنية…\nيُقدَّم مع سلطة البصل، فلفل حار مشوي، طماطم، ليمون، مايونيز، خبز لافاش وأرز برغل.\nخفيف، غني بالنكهة… ومصمّم ليرضي كل الأذواق.",
+    },
+    price: "62",
+    priceValue: 62,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzYCmkzWoFSbf6Ag.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 9,
+  },
+  {
+    id: "ca861007-b4dc-49d1-8dc8-15d28a283f4e",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Cherry Kebab",
+      ar: "كباب الكرز",
+    },
+    description: {
+      en: "A bold fusion of flavors… 200 g of Adana kebab, grilled over open charcoal fire and paired with a rich, slightly sweet cherry sauce. Finished with crushed Antep pistachios and served on crispy puff pastry for a unique texture and presentation. A perfect balance of smoky, savory and subtly sweet notes.",
+      ar: "تناغم جريء بين النكهات… 200 جم من كباب أضنة المشوي على الفحم، يُقدَّم مع صلصة كرز غنية بلمسة حلاوة خفيفة.\nيُزيَّن بالفستق الحلبي المجروش، ويُقدَّم على طبقة مقرمشة من العجين، ليمنح قوامًا مميزًا وتقديمًا فريدًا.\nتوازن مثالي بين المدخّن، المالح… ولمسة حلاوة أنيقة.",
+    },
+    price: "65",
+    priceValue: 65,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgNJ8JzkobfGPlJ.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 10,
+  },
+  {
+    id: "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Ali Nazik",
+      ar: "علي نازك",
+    },
+    description: {
+      en: "200 g of tender beef cubes served over a silky roasted eggplant base, blended with yogurt for a creamy, smoky depth… Topped with sautéed vegetables and served with tırnak bread. A refined Anatolian classic, rich, comforting and full of flavor.",
+      ar: "200 جم من مكعبات اللحم الطرية، تُقدَّم فوق طبقة حريرية من الباذنجان المشوي، ممزوجة بالزبادي لتمنح قوامًا كريميًا ونكهة مدخّنة عميقة.\nتُزيَّن بخضار سوتيه، وتُقدَّم مع خبز طرناق التقليدي.\nطبق أناضولي أصيل بلمسة راقية… غني، دافئ ومليء بالنكهة.",
+    },
+    price: "64",
+    priceValue: 64,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTZdCGNki1RIEj5.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 11,
+  },
+  {
+    id: "f3370cb5-676e-4238-b7c8-c56cdce9d257",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Beef Casserole",
+      ar: "طاجن لحم بقري",
+    },
+    description: {
+      en: "200 g of premium beef, slow-cooked to perfection in a traditional clay pot (güveç), infused with rich tomato and pepper sauces… Finished in the oven to develop deep, layered flavors and served with freshly baked dough bread. Deep, velvety and intensely aromatic.",
+      ar: "200 جم من اللحم البقري الفاخر، يُطهى ببطء حتى الكمال في قدر فخاري تقليدي (غوفيتش)، مُشبّع بصلصات الطماطم والفلفل الغنية.\nيُستكمل طهيه في الفرن ليُطوّر نكهات عميقة ومتدرجة، ويُقدَّم مع خبز عجين طازج مخبوز حديثًا.\nغني، دافئ… ومليء بعمق النكهة في كل لقمة.",
+    },
+    price: "67",
+    priceValue: 67,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3J9ug96WFAsqZ2s.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 12,
+  },
+  {
+    id: "1e52139d-46ca-4414-a1f6-88a288dfe687",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Chicken Casserole",
+      ar: "طاجن الدجاج",
+    },
+    description: {
+      en: "200 g of tender chicken, delicately slow-cooked in a traditional clay pot with a refined blend of tomato and pepper sauces. Oven-finished and served with freshly baked dough bread for a warm, comforting experience. Elegant, balanced and irresistibly comforting.",
+      ar: "200 جم من الدجاج الطري، يُطهى ببطء بعناية في قدر فخاري تقليدي، مع مزيج متوازن من صلصات الطماطم والفلفل.\nيُستكمل في الفرن ويُقدَّم مع خبز عجين طازج، ليمنح تجربة دافئة ومريحة.\nأنيق، متوازن… ومفعم بالراحة في كل لقمة.",
+    },
+    price: "65",
+    priceValue: 65,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3JHCKqAuDxcSsFj.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 13,
+  },
+  {
+    id: "1bd4f7c9-64d0-4de3-99b3-beeac63155c7",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Rice",
+      ar: "أرز",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLkrFFRfcj8nPY8t.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 14,
+  },
+  {
+    id: "7bef4760-3f1f-45d1-bae6-a2a2b844c61f",
+    category: "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+    name: {
+      en: "Bulgur",
+      ar: "برغل",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLl0W8HwrcNXAIrn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 15,
+  },
+  {
+    id: "bf59e9ab-86f6-4478-8732-79acec15bcbc",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Mango Juice",
+      ar: "عصير المانجو",
+    },
+    description: {
+      en: "Sun-ripened mango blended to a smooth, rich and naturally sweet tropical finish.",
+      ar: "مانجو ناضجة تحت أشعة الشمس، تُحضَّر بقوام ناعم وغني…\nنكهة استوائية طبيعية بلمسة فاخرة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3VxpXef2QoeHndo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "38f4ff6d-c5df-4fb3-be4a-59aa8bf74d58",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Strawberry Juice",
+      ar: "عصير الفراولة",
+    },
+    description: {
+      en: "Handpicked strawberries, rich, juicy and naturally sweet with a refreshing finish.",
+      ar: "فراولة مختارة بعناية، غنية بالعصارة والحلاوة…\nانتعاش متوازن بنهاية ناعمة ولطيفة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfEJtJl9Q3qKz20.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "bde937b8-d111-42b3-89e6-7822ee0c18b7",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Pineapple Juice",
+      ar: "عصير الأناناس",
+    },
+    description: {
+      en: "Ripe, juicy pineapple, sweet, vibrant and bursting with tropical freshness.",
+      ar: "أناناس طازج بطعم حلو ومنعش…\nنكهة استوائية نابضة بالحياة في كل رشفة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzU8wDaKf6twI0Mp.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "138f5af0-856f-440b-87d8-e1408d9e39c1",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Apple Juice",
+      ar: "عصير التفاح الأخضر",
+    },
+    description: {
+      en: "Premium green apple from select orchards, crisp, juicy and refreshingly light finish.",
+      ar: "تفاح أخضر فاخر من مزارع مختارة…\nمقرمش، منعش وخفيف بنقاء طبيعي.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3W3xqBK78dBwdb1.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "4898647d-c2c9-4dd0-866a-6b44a619e786",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Energizer",
+      ar: "إنرجايزر",
+    },
+    description: {
+      en: "Creamy banana, ripe strawberries and fresh orange juice, smooth, vibrant and bursting with energy.",
+      ar: "مزيج غني من الموز الكريمي، الفراولة وعصير البرتقال الطازج…\nطاقة طبيعية بطعم ناعم ومنعش.",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3W76LyiHTCe0fHr.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Fresh Mix",
+      ar: "عصير ميكس طازج",
+    },
+    description: {
+      en: "Sun-kissed orange, crisp green apple and fresh carrot, juicy, vibrant and naturally energizing.",
+      ar: "برتقال طازج مع تفاح أخضر وجزر…\nمزيج حيوي غني بالانتعاش والطاقة.",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3WA0PzNn4XUIPmD.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Orange Juice",
+      ar: "عصير البرتقال",
+    },
+    description: {
+      en: "Freshly squeezed sun-ripened oranges, bursting with juicy sweetness and vibrant freshness.",
+      ar: "برتقال طازج معصور يوميًا…\nحلاوة طبيعية وانتعاش نابض بالحيوية.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3WD4JFMAMFeb4yp.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "b436140c-47e7-4ec4-9695-c1e821d4723f",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Carrot Juice",
+      ar: "عصير الجزر",
+    },
+    description: {
+      en: "Naturally sweet carrots, freshly pressed for a smooth, rich and revitalizing taste.",
+      ar: "جزر طازج يُعصر بعناية ليمنحك طعمًا غنيًا ومتوازنًا…\nصحي، ناعم ومليء بالحيوية.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLoEGeAVKUqkWURH.webp",
+    popular: false,
+    chef: false,
+    bakery: false,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "61fc7728-4ccf-4745-a8af-9bc19f408038",
+    category: "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+    name: {
+      en: "Pomegranate Juice",
+      ar: "عصير الرمان",
+    },
+    description: {
+      en: "Freshly pressed pomegranate, rich, vibrant and naturally tangy with a refreshing finish.",
+      ar: "رمان طازج بنكهة غنية ولمسة حامضية خفيفة…\nمنعش، عميق، ومميز في كل رشفة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3WG4jxqfiB6yxUg.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 9,
+  },
+  {
+    id: "b2c06ac0-7dca-4369-9e91-db4e960db825",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Turkish Coffee",
+      ar: "قهوة تركية",
+    },
+    description: {
+      en: "Finely ground Turkish coffee, slow brewed for a rich, bold and authentic taste.",
+      ar: "قهوة تركية مطحونة ناعمًا، تُحضَّر على مهل لتمنح نكهة غنية، جريئة وأصيلة.",
+    },
+    price: "22",
+    priceValue: 22,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3MbwEvWF7m0fYVO.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "3a44684c-967f-47b5-a501-92d7ada96863",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Turkish Coffee With Milk",
+      ar: "قهوة تركية بالحليب",
+    },
+    description: {
+      en: "A smooth blend of Turkish coffee and milk, creamy, rich and delicately balanced.",
+      ar: "مزيج ناعم من القهوة التركية والحليب، كريمي، غني ومتوازن بانسيابية.",
+    },
+    price: "26",
+    priceValue: 26,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3MgV6XEbDDTW73R.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "c1747927-94a7-4ed1-8fcb-6017955a0acf",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Double Turkish Coffee",
+      ar: "قهوة تركية دبل",
+    },
+    description: {
+      en: "Double brewed Turkish coffee, extra bold, intense and full-bodied.",
+      ar: "تحضير مزدوج لقهوة تركية أكثر كثافة… جريئة، مركّزة وممتلئة القوام.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3MjjNW1nnWdDqq9.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "de24fecc-4ce3-484f-a34e-3a7d41b29137",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Mastica Turkish Coffee",
+      ar: "قهوة تركية بالمستكة",
+    },
+    description: {
+      en: "Turkish coffee infused with mastic, aromatic, unique and elegantly smooth.",
+      ar: "قهوة تركية مُعطّرة بالمستكة، بنكهة فريدة وعطرية ولمسة ناعمة أنيقة.",
+    },
+    price: "24",
+    priceValue: 24,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Mnx4WM5Y1PzXjX.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "7f479cdd-149f-4726-a80b-c2da5ee42b84",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Double Espresso",
+      ar: "دبل إسبريسو",
+    },
+    description: {
+      en: "Double shot espresso, bold, intense and full of character.",
+      ar: "جرعتان من الإسبريسو… قوية، مركّزة ومليئة بالشخصية.",
+    },
+    price: "20",
+    priceValue: 20,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NBALV0hNe6P5SD.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
+  },
+  {
+    id: "0ca1bcce-95a9-49bc-aa58-d862993d421e",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Americano",
+      ar: "أمريكانو",
+    },
+    description: {
+      en: "Smooth espresso diluted with hot water, light, clean and easy to drink.",
+      ar: "إسبريسو مُخفف بالماء الساخن… خفيف، نقي وسهل الشرب.",
+    },
+    price: "22",
+    priceValue: 22,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NE1iiVjqtP2AQC.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 6,
+  },
+  {
+    id: "82ffd6fb-2f07-4e5e-896c-e9d915c85c46",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Macchiato",
+      ar: "ماكياتو",
+    },
+    description: {
+      en: "Espresso topped with a touch of milk, bold yet smooth with a creamy finish.",
+      ar: "إسبريسو مع لمسة من الحليب… جريء بنعومة، بختام كريمي متوازن.",
+    },
+    price: "23",
+    priceValue: 23,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NJD3UbMNSmEhBi.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 7,
+  },
+  {
+    id: "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Cortado",
+      ar: "كورتادو",
+    },
+    description: {
+      en: "Perfect balance of espresso and milk, smooth, rich and velvety.",
+      ar: "توازن مثالي بين الإسبريسو والحليب… ناعم، غني وحريري القوام.",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzWX1lJNnlOSqpQK.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 8,
+  },
+  {
+    id: "9e35bb29-5813-4308-888b-ac84fe4eadc4",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Cappuccino",
+      ar: "كابتشينو",
+    },
+    description: {
+      en: "Espresso with steamed milk and silky foam, creamy, smooth and comforting.",
+      ar: "إسبريسو مع حليب مبخّر ورغوة ناعمة… كريمي، متوازن ويمنح إحساسًا دافئًا.",
+    },
+    price: "24",
+    priceValue: 24,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NQK2OqSWcWiSK9.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 9,
+  },
+  {
+    id: "a96110ce-a0a7-4bac-8db4-4047e2184a61",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Latte",
+      ar: "لاتيه",
+    },
+    description: {
+      en: "Velvety steamed milk layered over rich, full-bodied espresso, smooth, creamy and delicately balanced.",
+      ar: "حليب مبخّر بقوام مخملي ممزوج بإسبريسو غني… ناعم، كريمي ومتوازن بأناقة.",
+    },
+    price: "24",
+    priceValue: 24,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NVE9ngQ4tJq6vn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 10,
+  },
+  {
+    id: "3de8bda3-66f6-47d8-805f-22eaa5f5564d",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Flat White",
+      ar: "فلات وايت",
+    },
+    description: {
+      en: "Double shot espresso with silky microfoam, intense, velvety and perfectly textured.",
+      ar: "جرعتان من الإسبريسو مع ميكروفوم حريري… مكثّف، ناعم ومتوازن القوام بإتقان.",
+    },
+    price: "27",
+    priceValue: 27,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NZ9Ks9VtxivlcL.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 11,
+  },
+  {
+    id: "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "White Chocolate Mocha",
+      ar: "موكا الشوكولاتة البيضاء",
+    },
+    description: {
+      en: "Premium white chocolate blended with espresso and silky milk, creamy, indulgent and luxuriously smooth.",
+      ar: "شوكولاتة بيضاء فاخرة ممزوجة بالإسبريسو وحليب ناعم… كريمي، فاخر وناعم بانسيابية.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Ne8jffYdLNRGpE.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 12,
+  },
+  {
+    id: "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Mocha",
+      ar: "موكا",
+    },
+    description: {
+      en: "Rich dark chocolate fused with bold espresso and steamed milk, deep, smooth and intensely satisfying.",
+      ar: "شوكولاتة داكنة غنية تمتزج مع إسبريسو جريء وحليب مبخّر… عميق، ناعم ومُرضٍ بكل تفاصيله.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NiKXSdGRQwuTmC.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 13,
+  },
+  {
+    id: "12cefb17-9ba3-44b6-b531-a8d296246b86",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Hot Chocolate",
+      ar: "شوكولاتة ساخنة",
+    },
+    description: {
+      en: "Melted premium chocolate with creamy milk and soft marshmallow, thick, rich and irresistibly comforting.",
+      ar: "شوكولاتة فاخرة مذابة مع حليب كريمي ومارشميلو ناعم… كثيفة، غنية ودافئة بشكل لا يُقاوَم.",
+    },
+    price: "27",
+    priceValue: 27,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NrCVcWbmznDLpv.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 14,
+  },
+  {
+    id: "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Spanish Latte",
+      ar: "سبانيش لاتيه",
+    },
+    description: {
+      en: "Smooth espresso with creamy milk and caramelized sweetened milk, rich, silky and perfectly indulgent.",
+      ar: "إسبريسو ناعم مع حليب كريمي وحليب مُحلى بنكهة الكراميل… غني، حريري وفاخر.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3NvcQvppwpto8ve.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 15,
+  },
+  {
+    id: "a55cdfa6-fee8-46c1-a474-c5ab8922066c",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Hot Drip Coffee V60",
+      ar: "قهوة مقطرة ساخنة V60",
+    },
+    description: {
+      en: "Single origin coffee, carefully brewed to highlight its natural aroma, clean, bright and refined.",
+      ar: "قهوة من مصدر واحد تُحضَّر بعناية لإبراز عطرها الطبيعي… نقية، مشرقة ومتوازنة بأناقة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3O0EjidOUrXHz0L.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 16,
+  },
+  {
+    id: "6d6b0894-1f35-4df2-a180-d4b563db3102",
+    category: "8fc09a90-b4db-4681-8506-f430b7c1360d",
+    name: {
+      en: "Saudi Coffee (Small Pot/Medium Pot)",
+      ar: "قهوة سعودية (دلة صغيرة)",
+    },
+    description: {
+      en: "Authentic Saudi coffee infused with aromatic spices, light-bodied, fragrant and traditionally served with dates. Aromatic Saudi coffee with delicate spice notes, smooth, elegant and perfect for sharing.",
+      ar: "قهوة سعودية أصيلة تُحضَّر بعناية، بنكهة عطرية متوازنة ولمسة ضيافة تقليدية دافئة.\nالأحجام:\nدلة متوسطة (52) \nتُقدَّم مع التمر لإكمال تجربة الضيافة السعودية الأصيلة.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3P5ZHH67mysETiz.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 17,
+  },
+  {
+    id: "ab194150-c362-49bc-8e2e-505915940ea4",
+    category: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    name: {
+      en: "Tabbouleh Salad",
+      ar: "سلطة التبولة",
+    },
+    description: {
+      en: "Finely chopped fresh parsley blended with juicy tomatoes and fine bulgur... Balanced with pomegranate seeds, fresh lemon juice and extra virgin olive oil for a vibrant finish- Fresh, zesty and irresistibly light.",
+      ar: "بقدونس طازج مفروم ناعم يُمزج مع طماطم عصيّة وبرغل ناعم، ويُتوازن مع حبّات الرمان، عصير الليمون الطازج وزيت الزيتون البكر الممتاز، لختام منعش ومشرق.\nطازجة، منعشة، وخفيفة لا تُقاوم.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2KFwQiInrbakRhL.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "0991b4d5-5f1b-44e6-8e91-e91959db281b",
+    category: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    name: {
+      en: "Gavurdagi Salad",
+      ar: "سلطة جافورداغي",
+    },
+    description: {
+      en: "Finely chopped tomatoes, cucumbers and colorful peppers mixed with crushed walnuts. Layered with pomegranate molasses, fresh lemon juice, olive oil and a touch of sumac for depth. Bold, rich and full of character.",
+      ar: "طماطم وخيار وفلفل ملوّن مفرومة ناعم تُخلط مع الجوز المجروش، وتُتبّل بدبس الرمان، عصير الليمون الطازج، زيت الزيتون ولمسة من السماق لتعزيز العمق.\nجريئة، غنية",
+    },
+    price: "46",
+    priceValue: 46,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Gax2ZZVh4Rqmt6.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "15420618-d1b3-4364-aff0-dd2102f944e3",
+    category: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    name: {
+      en: "Fattoush Salad",
+      ar: "سلطة الفتوش",
+    },
+    description: {
+      en: "A refreshing mix of crisp lettuce, tomatoes, cucumber and radish... Finished with pomegranate seeds, pomegranate molasses, lemon and crunchy toasted bread pieces. Crispy, tangy and refreshingly vibrant.",
+      ar: "مزيج منعش من الخس المقرمش، الطماطم، الخيار والفجل، يُختتم بحبّات الرمان، دبس الرمان، عصير الليمون وقطع الخبز المحمّص المقرمشة.\nمقرمشة، منعشة، ومليئة بالحيوية.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzaHOHUZ6ke0o0Bn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "0ad35147-8d8d-49c5-a25c-f574b7e07145",
+    category: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    name: {
+      en: "Ege Breeze Salad",
+      ar: "سلطة نسيم إيجه",
+    },
+    description: {
+      en: "Fresh cucumber, cherry tomatoes, red onion and baby arugula... Topped with soft white cheese, extra virgin olive oil and a delicate balsamic glaze. Light, elegant and irresistibly fresh.",
+      ar: "خيار طازج، طماطم كرزية، بصل أحمر وجرجير صغير، تُزيَّن بجبنة بيضاء طرية، وزيت زيتون بكر ممتاز ولمسة خفيفة من صلصة البلسميك.\nخفيفة، أنيقة، ومنعشة بشكل لا يُقاوم.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3G6RjhjwcnNRAbd.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "44ee2cb1-0808-4e9e-982d-66f24c1d45e9",
+    category: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    name: {
+      en: "Caesar Chicken Salad",
+      ar: "سلطة سيزر بالدجاج",
+    },
+    description: {
+      en: "Crisp lettuce topped with tender chicken, parmesan, and creamy Caesar dressing for a fresh and satisfying flavor",
+      ar: "خس طازج يعلوه دجاج طري وجبنة بارميزان مع صلصة السيزر الغنية بالقوام الكريمي لمذاق طازج ومُشبع.",
+    },
+    price: "57",
+    priceValue: 57,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLk7HYrrvg4KL2oM.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "7f21d1d1-00f8-4273-8fc0-beff636a2ddb",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Mix Meze For 2",
+      ar: "تشكيلة مقبلات مشكلة لشخصين",
+    },
+    description: {
+      en: "A curated selection of our signature cold mezes, crafted with care and designed for sharing. Muhammara, hummus, mutabel, baba ghanoush and homemade pickles come together in a rich and vibrant experience. Perfect for sharing, impossible to resist.",
+      ar: "مجموعة مختارة بعناية من مقبلاتنا الباردة المميزة، مُحضّرة بإتقان ومصممة للمشاركة.\nتجتمع المحمرة، الحمص، المتبل، بابا غنوج والمخللات المنزلية في تجربة غنية ومليئة بالنكهات.\nمثالية للمشاركة… ولا تُقاوَم.",
+    },
+    price: "78",
+    priceValue: 78,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIMFQv7Y4pXRW0Rzy.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "0d0da313-976b-4f5b-97ae-ac4c151f55df",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Golden Hummus",
+      ar: "حمص الشيف الذهبي",
+    },
+    description: {
+      en: "Creamy hummus made from perfectly cooked chickpeas, blended into a silky texture and finished with olive oil, sumac and dried mint. Smooth, rich and irresistibly velvety.",
+      ar: "حمص كريمي يُحضّر من حمص مطهو بإتقان، يُمزج ليمنح قوامًا ناعمًا حريريًا، ويُزيّن بزيت الزيتون، السماق والنعناع المجفف.\nناعم، غني… وحريري لا يُقاوَم.",
+    },
+    price: "34",
+    priceValue: 34,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzc3ZnSOfoOwEXil.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "f683bf36-cbc3-4c46-9c45-cfb6e32a13af",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Muhammara",
+      ar: "المحمّرة",
+    },
+    description: {
+      en: "A vibrant red pepper and walnut mezze, finished with a glossy drizzle of pomegranate molasses and olive oil. Rich, smoky, and slightly sweet-spicy, it is perfect for scooping with warm flatbread.",
+      ar: "مزيج جريء غني بزيت الزيتون، الجوز ودبس الرمان، بنكهة عميقة وعطرية متوازنة.\nمكثفة، غنية بالجوز…",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2UpRVJQGyANBWne.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Babaghannoush",
+      ar: "باباغنوج",
+    },
+    description: {
+      en: "Smoky roasted eggplant combined with olive oil, fresh herbs and pomegranate molasses, creating a smooth and flavorful dip. Smoky, soft and deeply satisfying.",
+      ar: "باذنجان مشوي بنكهة مدخنة، يُمزج مع زيت الزيتون، الأعشاب الطازجة ودبس الرمان ليمنح قوامًا ناعمًا ونكهة غنية.\nمدخن، ناعم… ومُرضٍ بعمق.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzUaUPxmKv1cNvR1.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Mutabbal",
+      ar: "متبل",
+    },
+    description: {
+      en: "A delicate mix of roasted eggplant enhanced with pomegranate seeds, sumac, olive oil and mint. Light, aromatic and refined.",
+      ar: "مزيج ناعم من الباذنجان المشوي، يُعزَّز بحبوب الرمان، السماق، زيت الزيتون والنعناع.\nخفيف، متوازن… وغني بالنكهة.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2IDs7PhOYLOruFo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "54633c97-9b3d-44ce-a902-01f1430c260e",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Stuffed Grape Leaves",
+      ar: "ورق عنب محشي",
+    },
+    description: {
+      en: "Carefully rolled vine leaves with a light, balanced filling, served with yogurt, lemon, and aromatic spices. Elegant, balanced… in every bite.",
+      ar: "ورق عنب ملفوف بعناية بحشوة خفيفة ومتوازنة، يُقدم مع الزبادي والليمون والتوابل العطرية. ملمس أنيق وطعم متوازن... في كل قضمة.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzdpl287rxVlpqW8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "a1ada07c-b494-4161-88bb-014150f8aa3e",
+    category: "02eb0962-be35-4701-8641-872802ee6fc7",
+    name: {
+      en: "Homemade Pickles",
+      ar: "مخللات معدة منزليا",
+    },
+    description: {
+      en: "Traditionally prepared using natural methods, delivering a crisp texture and a vibrant, tangy kick to your table. Crunchy, zesty and refreshing.",
+      ar: "مُحضّرة بالطريقة التقليدية وبمكونات طبيعية، لتقدّم قوامًا مقرمشًا ونكهة منعشة وحامضة تُثري مائدتك.\nمقرمشة، منعشة… ومليئة بالحيوية.",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3I0hMI2xLdIHm2G.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "3262e454-3663-494e-8101-84075fd63442",
+    category: "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+    name: {
+      en: "Abla's Handmade Manti",
+      ar: "مانتي أبلا اليدوي",
+    },
+    description: {
+      en: "Traditional Turkish dumplings prepared by Gülseren with hand-rolled dough and a rich minced meat filling, each piece carefully folded one by one. Served with yogurt, labneh, warm tomato sauce and melted butter, finished with chili flakes and dried mint.",
+      ar: "فطائر تركية تقليدية تُحضّره ابلا بعجينة تُفرد يدويًا وحشوة غنية من اللحم المفروم، حيث تُطوى كل قطعة بعناية فائقة واحدة تلو الأخرى.\nيُقدَّم مع الزبادي، اللبنة، صلصة الطماطم الدافئة والزبدة المذابة، ويُختتم برقائق الفلفل والنعناع المجفف.\nصُنع بحرفية… وغني بالتفاصيل في كل لقمة.",
+    },
+    price: "58",
+    priceValue: 58,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzahj6eFBQJTzMLx.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
+    category: "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+    name: {
+      en: "Kubba",
+      ar: "كبة",
+    },
+    description: {
+      en: "Finely shaped bulgur shell, filled with a rich minced meat mixture and enriched with meat on the outside, carefully handcrafted using traditional techniques. Served with yogurt and pomegranate molasses for a perfectly balanced finish. Deeply rich, handcrafted and truly traditional.",
+      ar: "غلاف من البرغل مُشكّل بعناية، محشو بخليط غني من اللحم المفروم ومُعزّز بطبقة لحم من الخارج، يُحضّر يدويًا وفق الأساليب التقليدية.\nيُقدَّم مع الزبادي ودبس الرمان لتوازن مثالي في النكهة.\nغنية بعمق… مصنوعة بحرفية وأصالة حقيقية.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgXHMY56Tflqaac.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "8712070b-6f24-4f60-bbc4-50d45db96a8f",
+    category: "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+    name: {
+      en: "Classic Hummus With Meat",
+      ar: "حمص كلاسيكي باللحمة",
+    },
+    description: {
+      en: "Creamy hummus topped with tender beef tenderloin, fresh parsley, and a touch of sumac for a rich and satisfying flavor.",
+      ar: "حمص كريمي مغطى بقطع لحم بقر تندرلوين طرية، بقدونس طازج، ولمسة من السماق لنكهة غنية ومشبعة.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3I5sj0OrFN80rXh.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "6bc0f672-b25d-41cb-9bc3-a64e65307cda",
+    category: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Peach Ice Tea",
+      ar: "شاي الخوخ المثلج",
+    },
+    description: {
+      en: "Sun-ripened peach with cold brewed tea and mint, delicate, refreshing and naturally smooth.",
+      ar: "خوخ ناضج تحت الشمس يُمزج مع شاي بارد بالنعناع…\nناعم، منعش، ومتوازن برقة.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Xd5Ub2UUE8qkuE.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "1cb9d1b5-6d8f-493f-be1b-e57d084f065d",
+    category: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Hibiscus Raspberry Ice Tea",
+      ar: "شاي الكركديه بالتوت المثلج",
+    },
+    description: {
+      en: "Lush raspberry and blueberry with aromatic hibiscus, tangy, vibrant and irresistibly refreshing.",
+      ar: "مزيج غني من التوت مع نفحات الكركديه العطرية…\nحامضي خفيف، نابض بالحيوية ومنعش بكل رشفة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XhREICymmtydxt.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "8fb5c495-bced-405e-8abe-40938f6a2be0",
+    category: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Lemon Ice Tea",
+      ar: "شاي الليمون المثلج",
+    },
+    description: {
+      en: "Freshly brewed tea infused with natural lemon flavor, served chilled over ice.",
+      ar: "شاي طازج مُحضّر بعناية، مع لمسة ليمون طبيعية…\nيُقدَّم بارداً ليمنحك انتعاشاً صافياً.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XlKM6jHNQKIuTq.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "37eceeb2-a6ef-475e-b5a2-1024ae622a41",
+    category: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Turkish Lemonade",
+      ar: "ليمونادة تركية",
+    },
+    description: {
+      en: "Handcrafted with fresh lemon and mint, clean, refreshing and perfectly balanced.",
+      ar: "وصفة محضّرة بحرفية من الليمون الطازج والنعناع…\nنظيفة، منعشة، ومتوازنة بإتقان.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XpzCqS7OvTDuGF.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "f445e501-a9f9-411f-a223-371b0daeb695",
+    category: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Lemon Mint Juice",
+      ar: "عصير الليمون بالنعناع",
+    },
+    description: {
+      en: "Zesty sun-ripened lemon with crisp garden mint, refreshing, vibrant and perfectly balanced.",
+      ar: "ليمون طازج بنكهته المنعشة مع نعناع أخضر…\nحيوي، منعش، ومثالي لأيام الصيف.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3XuexYAMuMa7zbi.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
+  },
+  {
+    id: "b1268bb2-150f-4ca7-afb5-f2fa21507da5",
+    category: "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+    name: {
+      en: "Mixberry Lemonade",
+      ar: "ليمونادة التوت المشكّل",
+    },
+    description: {
+      en: "Our signature Turkish lemonade, crafted with a house-made recipe, blended with fresh mixed berries for a vibrant twist. Refreshing, fruity, and perfectly balanced between sweet and citrus notes.",
+      ar: "ليمونادة تركية بوصفة منزلية، ممزوجة بتوت طازج…\nلمسة فاكهية غنية، منعشة ومليئة بالحياة.",
+    },
+    price: "37",
+    priceValue: 37,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Y63SF65aysApbo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 6,
+  },
+  {
+    id: "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Lokum Tenderloin",
+      ar: "لوكوم تندرلوين",
+    },
+    description: {
+      en: "250 gr of premium tenderloin, known for its melt-in-your-mouth tenderness, expertly seared to enhance its natural flavor. Served with silky mashed potatoes and seasonal sautéed vegetables for a refined balance. Seasoned and finished with sea salt to highlight its rich, natural flavor.",
+      ar: "250 جم من التندرلوين الفاخر، معروف بقوامه الطري الذي يذوب في الفم، يُشوَّح بإتقان لإبراز نكهته الطبيعية الغنية.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، لتوازن راقٍ في الطعم والقوام.\nيُتَبَّل ويُختَم بلمسة من ملح البحر لإبراز عمق نكهته الطبيعية.\nطريّ للغاية… وغنيّ بكل تفاصيله.",
+    },
+    price: "179",
+    priceValue: 179,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOF8dBxWzXrX1Uh3.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "896932b6-dc0c-4ab5-913e-6ba142bfc030",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Entrecôte",
+      ar: "أنتركوت",
+    },
+    description: {
+      en: "300g of premium ribeye, expertly grilled to enhance its rich marbling and deep, natural flavor. Served with silky mashed potatoes and seasonal sautéed vegetables for a perfectly balanced plate. Seasoned and finished with sea salt to highlight its rich and natural flavor. Juicy, bold, and intensely flavorful.",
+      ar: "300 جم من ريب آي فاخر، يُشوى بإتقان لإبراز تداخل الدهون الغني ونكهته الطبيعية العميقة.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، لطبق متوازن بكل تفاصيله.\nيُتَبَّل ويُختَم بملح البحر ليُبرز غناه الطبيعي.\nعصاري، جريء… ومكثّف النكهة.",
+    },
+    price: "225",
+    priceValue: 225,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOFUL1Z8maXD6CZs.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "8801bdf8-aa38-4221-830b-e7f004ebd117",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "New York Steak",
+      ar: "نيويورك ستيك",
+    },
+    description: {
+      en: "300g of premium New York steak, expertly grilled to bring out its bold, beefy flavor and firm, juicy texture. Served with silky mashed potatoes and seasonal sautéed vegetables, finished with a delicate touch of sea salt to enhance its natural flavors.",
+      ar: "300 جم من ستيك نيويورك الفاخر، يُشوى بإتقان لإبراز نكهته اللحمية الجريئة وقوامه المتماسك والعصاري…\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، ويُختَم بلمسة خفيفة من ملح البحر لتعزيز نكهاته الطبيعية.\nقوي، عصاري… ومليء بالطابع التقليدي",
+    },
+    price: "209",
+    priceValue: 209,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOHUuq5XQoxBCO9q.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "a968deb8-026a-48b3-adba-240b92980d01",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Dallas Steak",
+      ar: "دالاس ستيك",
+    },
+    description: {
+      en: "400g Dry Aged Dallas Steak (Ribeye), carefully matured through a dry aging process to enhance its depth of flavor and rich aroma, is expertly grilled to perfection. Served with silky mashed potatoes and seasonal vegetables for a balanced and refined experience. Finished with sea salt to highlight its natural and robust character. Juicy, bold, and intensely flavorful.",
+      ar: "ستيك دالاس (ريب آي) معتق جافاً بوزن ٤٠٠ جم، تم تعتيقه بعناية من خلال عملية التعتيق الجاف لتعزيز عمق النكهة والرائحة الغنية، ويُشوى بمهارة حتى الكمال. يُقدم مع هريس البطاطس الناعم والخضروات الموسمية لتجربة متوازنة وراقية. يُرش بملح البحر لإبراز طابعه الطبيعي والقوي. طبق غني بالعصارة، جريء، ومكثف النكهة.",
+    },
+    price: "275",
+    priceValue: 275,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOFmnZQuI4Dp02Pi.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "bff7822d-ed45-48d6-bdee-524040ba5ee5",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Beef Shashlik W Cheddar",
+      ar: "شاشليك لحم بالجبن الشيدر",
+    },
+    description: {
+      en: "300 g of premium marinated tenderloin beef, carefully skewered and grilled over open-charcoal fire to lock in its natural juices and deep flavor. Served with silky mashed potatoes and seasonal sautéed vegetables, finished with a delicate touch of sea salt to enhance its richness. Juicy, smoky and full of bold character.",
+      ar: "300 جم من تندرلوين اللحم البقري المتبّل، يُحضَّر بعناية على أسياخ ويُشوى على الفحم ليحافظ على عصارته ونكهته العميقة…\nيُغطّى بطبقة غنية من جبن الشيدر المذاب بانسيابية، ليضيف قوامًا كريميًا ونكهة أكثر عمقًا ودفئًا.\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، ويُختَم بلمسة رقيقة من ملح البحر لتعزيز غناه.\nعصاري، مدخّن… يتكامل مع شيدر ذائب يرفع التجربة إلى مستوى آخر.",
+    },
+    price: "190",
+    priceValue: 190,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VIP3KFPzYY5wUiWun.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
+  },
+  {
+    id: "49bcee08-afe0-4bb9-8220-b3d9088cd35b",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Lamb Chops",
+      ar: "ريش لحم الغنم",
+    },
+    description: {
+      en: "Perfectly selected 400 g of tender lamb chops, grilled over charcoal to enhance their natural flavor. Served with baby potatoes, fresh corn, butter, rosemary and parsley, creating a rich and aromatic experience. Juicy, smoky and intensely flavorful.",
+      ar: "400 جم من ريش الغنم الطرية المختارة بعناية، تُشوى على الفحم لتعزيز نكهتها الطبيعية الغنية.\nتُقدَّم مع بطاطس صغيرة، ذرة طازجة، زبدة، إكليل الجبل والبقدونس، لتمنح تجربة عطرية غنية ومتكاملة.\nطرية، مدخّنة… ومليئة بالنكهة في كل لقمة.",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VISMBx7PTXZUYNEaY.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 6,
+  },
+  {
+    id: "863eb485-f580-4975-81ac-bf2467106519",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Meatball With Cheese",
+      ar: "كفتة اللحم بالجبن",
+    },
+    description: {
+      en: "300 g of homemade kofte, filled with melted cheese and carefully shaped into 3 pieces… Grilled to perfection and served with crispy French fries and the chef's special sauce. Juicy, cheesy and irresistibly satisfying.",
+      ar: "300 جم من الكفتة المحضّرة منزليًا، محشوة بجبن مذاب، ومشكّلة بعناية إلى 3 قطع…\nتُشوى بإتقان وتُقدَّم مع بطاطس مقلية مقرمشة وصلصة الشيف الخاصة.\nعصارية، غنية بالجبن… ولا تُقاوَم في كل لقمة.",
+    },
+    price: "68",
+    priceValue: 68,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3KnHf4ctXqjXkYI.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 7,
+  },
+  {
+    id: "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63",
+    category: "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+    name: {
+      en: "Butcher Meatball",
+      ar: "كفتة اللحم على طريقة الجزار",
+    },
+    description: {
+      en: "250 g of traditional butcher-style meatballs, prepared from carefully selected beef and served as 4 pieces. Served with crispy French fries and the chef’s special sauce for a rich and satisfying experience. Juicy, flavorful and crafted with a traditional touch.",
+      ar: "٢٥٠ غرام من كرات اللحم التقليدية على طريقة القصاب، مُحضرة من لحم البقر المختار بعناية وتُقدم في ٤ قطع. تُقدم مع البطاطس المقلية المقرمشة وصلصة الشيف الخاصة لتجربة غنية ومشبوعة. تتميز بكونها طرية، غنية بالنكهات، ومصنوعة بلمسة تقليدية أصيلة.",
+    },
+    price: "62",
+    priceValue: 62,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3KjfttLcQ6WdVWa.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 8,
+  },
+  {
+    id: "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a",
+    category: "884b790b-3b65-46a2-9be5-2ef78ce53146",
+    name: {
+      en: "Fettuccine Alfredo",
+      ar: "فيتوتشيني ألفريدو",
+    },
+    description: {
+      en: "Freshly handmade fettuccine, crafted in-house for a silky texture. Prepared with butter, cream, full-fat milk, fresh mushrooms, tender chicken breast, garlic, pesto and finished with Parmesan cheese. Creamy, rich and perfectly indulgent.",
+      ar: "مكرونة فيتوتشيني طازجة تُحضَّر يدويًا داخل مطبخنا، بقوام ناعم وحريري.\nتُعدّ بالزبدة، الكريمة، الحليب كامل الدسم، فطر طازج، صدر دجاج طري، ثوم، بيستو، وتُختَم بجبن البارميزان.\nكريمية، غنية… وفاخرة في كل لقمة.",
+    },
+    price: "69",
+    priceValue: 69,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfOeOv9TIQxv6Oq.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "e59d9cc5-d30d-4254-b4d5-8b499eec2af8",
+    category: "884b790b-3b65-46a2-9be5-2ef78ce53146",
+    name: {
+      en: "Penne Arrabiata",
+      ar: "بيني أرابياتا",
+    },
+    description: {
+      en: "Fresh penne pasta, prepared daily in our kitchen to deliver a rich and authentic flavor experience… Tossed with tender chicken pieces, fresh cherry tomatoes, black olives, rich tomato sauce, a touch of butter, aromatic garlic, and signature pesto, then finished with grated Parmesan cheese. Bold in flavor, vibrant in color… a dish that captures the true spirit of Mediterranean cuisine in every bite.",
+      ar: "باستا بيني طازجة، تُحضر يومياً في مطبخنا لتقدم تجربة غنية بالنكهة الأصيلة... تُقلب مع قطع الدجاج الطرية، طماطم كرزية طازجة، زيتون أسود، صلصة طماطم غنية، لمسة من الزبدة، الثوم العطري، وصلصة البيستو الخاصة بنا، ثم تُزين بجبنة البارميزان المبشورة. طبق غني بالنكهات وألوان مفعمة بالحيوية... يجسد الروح الحقيقية لمطبخ البحر الأبيض المتوسط في كل قضمة.",
+    },
+    price: "64",
+    priceValue: 64,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzUJ7xuW3cSyVMTe.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "cbefd6a5-095a-4a11-88fa-3a647822c28e",
+    category: "884b790b-3b65-46a2-9be5-2ef78ce53146",
+    name: {
+      en: "Spaghetti Bolognese",
+      ar: "سباغيتي بولونيز",
+    },
+    description: {
+      en: "Freshly handmade spaghetti, prepared daily in-house. Served with rich Napoli tomato sauce, slow-cooked Bolognese meat sauce, butter, garlic, pesto and finished with Parmesan cheese. A classic Italian favorite with deep, comforting flavors.",
+      ar: "سباغيتي طازجة تُحضَّر يوميًا داخل مطبخنا، بقوام مثالي ولمسة منزلية أصيلة…\nتُقدَّم مع صلصة نابولي الغنية، وصوص بولونيز باللحم المطهو ببطء، مع الزبدة، الثوم، البيستو، وتُختَم بجبن البارميزان.\nكلاسيكية إيطالية بعمق نكهة دافئ… وتجربة مريحة لا تُقاوَم.",
+    },
+    price: "65",
+    priceValue: 65,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzaUba6mQWPqgaAi.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "408eba99-a9c8-4630-9c76-c17c552941a7",
+    category: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+    name: {
+      en: "Ayran",
+      ar: "عيران",
+    },
+    description: {
+      en: "Traditional Turkish yogurt drink, perfectly balanced, creamy, refreshing and lightly salted.",
+      ar: "مشروب تركي تقليدي من الزبادي…\nمتوازن، كريمي، منعش بلمسة ملوحة خفيفة.",
+    },
+    price: "20",
+    priceValue: 20,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YBDbaOONYskzGn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "c3d5aaa1-b279-47a7-b745-dbf27c322d41",
+    category: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+    name: {
+      en: "Ayran With Mint",
+      ar: "عيران بالنعناع",
+    },
+    description: {
+      en: "Classic ayran with fresh mint, cooling, aromatic and extra refreshing.",
+      ar: "العيران الكلاسيكي مع نعناع طازج…\nبارد، عطري، وانتعاش مضاعف.",
+    },
+    price: "22",
+    priceValue: 22,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YGFD9gwe1xLo93.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "dddaadc3-9bae-40fb-b7fd-54adcaa41017",
+    category: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+    name: {
+      en: "Ayran W Basil",
+      ar: "عيران بالريحان",
+    },
+    description: {
+      en: "A refreshing twist of ayran with fresh basil, light, herbal and uniquely smooth.",
+      ar: "لمسة مختلفة من العيران مع ريحان طازج…\nخفيف، عشبي، وانسيابي بنعومة فريدة.",
+    },
+    price: "23",
+    priceValue: 23,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YJNZXK1Dpooas6.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "a1f1dab3-f336-4ab4-ad82-8122687ec772",
+    category: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+    name: {
+      en: "Ayran W Soda",
+      ar: "عيران بالصودا",
+    },
+    description: {
+      en: "Ayran lifted with sparkling mineral water, light, airy and ultra refreshing.",
+      ar: "عيران بنكهة متجددة مع مياه فوّارة…\nخفيف، هوائي، وانتعاش يدوم.",
+    },
+    price: "24",
+    priceValue: 24,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YN6xeevuohKYcP.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "3139c3c3-4c00-4286-b4f1-01dab882d635",
+    category: "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+    name: {
+      en: "Ayran With Cucumber",
+      ar: "عيران بالخيار",
+    },
+    description: {
+      en: "Ayran with fresh cucumber, crisp, cooling and perfectly refreshing.",
+      ar: "عيران مع خيار طازج…\nمنعش، بارد، ومثالي لأيام الصيف.",
+    },
+    price: "24",
+    priceValue: 24,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YQckSqRvD2mFT1.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
+  },
+  {
+    id: "daf67786-46b5-445d-973f-cf8748d7e16f",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Anatolia Cheese Selection",
+      ar: "تشكيلة أجبان أناضولية",
+    },
+    description: {
+      en: "Inspired by Istanbul's rich breakfast culture, this carefully curated platter brings together a variety of textures and flavors in perfect harmony. From fresh and delicate lor cheese to creamy white cheese, bold cheddar varieties and traditional braided cheese, each selection offers its own unique character. Black cumin-infused lor and musket cheese add depth and a subtle aromatic touch. This rich selection is complemented with sun-dried figs, dried apricots and fresh grapes, balanced with crunchy walnuts and crispy croutons. Savory biscuits add an extra layer of texture, enhancing the overall experience without overpowering the natural flavors. Finished with a touch of fig on the side, this platter turns into a well-balanced, refined and satisfying tasting experience. Rich, elegant and perfect for sharing.",
+      ar: "مستوحاة من ثقافة الإفطار العريقة في إسطنبول، تجمع هذه المقبّلات المنسّقة بعناية بين مجموعة متنوعة من القوامات والنكهات في تناغم مثالي. من جبن اللور الطازج والرقيق إلى الجبن الأبيض الكريمي، وأصناف الشيدر الغنية والجبن المجدول التقليدي، يقدّم كل صنف طابعه الفريد. يضيف جبن اللور بحبة البركة وجبن المسكت عمقاً ولمسة عطرية رقيقة. يُكمّل هذا التشكيل الغني بالتين المجفف بالشمس والمشمش المجفف والعنب الطازج، متوازناً مع الجوز المقرمش وقطع الخبز المحمّص. تضيف البسكويت المالح طبقة إضافية من القوام، مما يعزز التجربة الشاملة دون أن يطغى على النكهات الطبيعية. مع لمسة من التين على الجانب، تتحوّل هذه المقبّلات إلى تجربة تذوّق متوازنة وراقية ومُرضية. غنية وأنيقة ومثالية للمشاركة.",
+    },
+    price: "78",
+    priceValue: 78,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3CK7ZZk3jSiT8IG.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "59bc51ab-231e-44bc-8588-5bfc00ac5eb0",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Clay Pot Halloumi Delight",
+      ar: "طبق الحلوم بالفخار",
+    },
+    description: {
+      en: "Served hot, halloumi cheese is layered over the chef's special tomato sauce, creating a rich and satisfying base. A touch of pesto and fresh mint adds balance and aroma, while crispy croutons complete the dish with texture. Warm, aromatic and deeply satisfying.",
+      ar: "يُقدَّم ساخناً، حيث يُرتَّب جبن الحلوم فوق صلصة الطماطم المميزة من الشيف، ليُشكّل قاعدة غنية ومُشبعة. تُضفي لمسة من البيستو والنعناع الطازج توازناً ونكهة عطرية، بينما تُكمل قطع الخبز المحمّص المقرمشة الطبق بقوامها المتميز. دافئ، عطري ومُرضٍ بعمق.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzg3J0bMb7UaO2vQ.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "21abfb80-c2e5-413d-9019-5cc3de9121ae",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Greek Halloumi",
+      ar: "حلومي يوناني",
+    },
+    description: {
+      en: "Grilled halloumi meets a fresh and vibrant selection of ingredients. Cherry tomatoes, cucumber, red onion, and a mix of green and black olives are brought together with a hint of lemon for brightness. Light, refreshing and perfectly balanced.",
+      ar: "جبن الحلوم المشوي يلتقي بتشكيلة طازجة ونابضة بالحياة من المكونات. طماطم كرزية وخيار وبصل أحمر ومزيج من الزيتون الأخضر والأسود، تجتمع معاً بلمسة من الليمون لإضفاء نكهة منعشة. طبق خفيف ومنعش ومتوازن بشكل مثالي.",
+    },
+    price: "46",
+    priceValue: 46,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfebpApSvfecFGp.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "0e31b410-7a4f-44cc-be7c-6da715660d4f",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "White Cheese Plate",
+      ar: "طبق جبنة بيضاء",
+    },
+    description: {
+      en: "A simple yet elegant combination highlighting the richness of white cheese. Paired with strawberry jam for a gentle contrast, and served with aromatic za'atar and crispy croutons for added texture. Classic, balanced and quietly indulgent.",
+      ar: "مزيج بسيط وأنيق يُبرز غنى الجبنة البيضاء، يُقدَّم مع مربى الفراولة لتباين لطيف في النكهات، إلى جانب الزعتر العطري وقطع الخبز المحمّص المقرمشة لإضافة ملمس مميز. طبق كلاسيكي متوازن ومترف بهدوء.",
+    },
+    price: "36",
+    priceValue: 36,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzVtOQHcjai9W74S.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "9feba6b0-1a71-49f8-a312-7740b923b8f1",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Olive Plate",
+      ar: "طبق الزيتون",
+    },
+    description: {
+      en: "A Mediterranean-inspired selection where green and black olives are paired with fresh herbs and seasonal touches. Cherry tomatoes and Mediterranean greens are brought together with a drizzle of olive oil, enhanced with thyme, chili flakes and a hint of chili pepper. Served with crispy croutons. Fresh, aromatic and full of Mediterranean character.",
+      ar: "تشكيلة مستوحاة من المطبخ المتوسطي حيث يجتمع الزيتون الأخضر والأسود مع الأعشاب الطازجة ولمسات موسمية. تُمزج حبات الطماطم الكرزية مع الخضراوات المتوسطية ورشة من زيت الزيتون، معززة بالزعتر ورقائق الفلفل الحار ولمسة من الفلفل الحريف. تُقدّم مع قطع الخبز المحمّص المقرمشة. طبق طازج وعطري ومفعم بطابع البحر الأبيض المتوسط.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGza8DMX2yCOwfxKT.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "bd920d50-f921-46e5-844f-84d6eb6dcf74",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Farm's Plate",
+      ar: "طبق المزرعة",
+    },
+    description: {
+      en: "A refreshing combination of garden-fresh vegetables... Crisp lettuce, arugula and parsley are balanced with cucumber, tomatoes, baby radish and colorful peppers. Finished with a touch of lemon for brightness. Light, fresh and naturally vibrant.",
+      ar: "مزيج منعش من الخضروات الطازجة من الحديقة... خس مقرمش وجرجير وبقدونس متوازنة مع الخيار والطماطم والفجل الصغير والفلفل الملون. مع لمسة من الليمون لإضفاء الإشراق. خفيفة وطازجة ونابضة بالحيوية بشكل طبيعي.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3CybMhbnGLXCxwP.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "7e0f5506-f996-4586-a42a-b1b522dfbc43",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "95 Fava Beans",
+      ar: "95 فول",
+    },
+    description: {
+      en: "A beloved Middle Eastern classic... Slow-cooked fava beans are combined with tomatoes, onions and gill, enriched with tahini and olive oil for a rich and satisfying flavor. Hearty, rich and full of character.",
+      ar: "طبق كلاسيكي محبوب من الشرق الاوسط... فول مطهو ببطء ممزوج مع الطماطم والبصل والثوم, غني بالطحينة وزيت الزيتون لنكهة دسمة ومرضية. \nوجبة مشبعة, غنية, ومليئة بالنكهات الاصيلة.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzfTquQGsuPcygn8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "a1cf8693-8514-4542-a2b9-e3fd13f86f95",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Falafel Bites",
+      ar: "قطع الفلافل",
+    },
+    description: {
+      en: "A smooth layer of hummus topped with crispy-on-the-outside, soft-on-the-inside falafel. Balanced with cherry tomatoes, pickled cucumber and baby arugula, enhanced with tahini sauce and a light touch of mayonnaise. Finished with pomegranate seeds and a drizzle of olive oil. Crispy, balanced and full of flavor in every bite.",
+      ar: "طبقة ناعمة من الحمص تعلوها أقراص الفلافل المقرمشة من الخارج والطرية من الداخل. متوازنة مع الطماطم الكرزية والخيار المخلل وأوراق الجرجير الصغيرة، معززة بصلصة الطحينة ولمسة خفيفة من المايونيز. مزيّنة بحبات الرمان ورذاذ من زيت الزيتون. مقرمشة، متوازنة ومليئة بالنكهة في كل قضمة.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzchAMXG9BGwGkrC.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "2e68a5de-d7cc-4572-a661-2d967173ca8a",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Mediterranean Olive Salad",
+      ar: "سلطة الزيتون المتوسطية",
+    },
+    description: {
+      en: "A vibrant Mediterranean-inspired dish where green and black olives meet fresh greens and colorful peppers. Pomegranate seeds add a subtle sweetness while lemon and olive oil bring brightness and freshness to the plate. Fresh, vibrant and full of Mediterranean character.",
+      ar: "طبق نابض بالحياة مستوحى من المطبخ المتوسطي، حيث يلتقي الزيتون الأخضر والأسود مع الخضراوات الطازجة والفلفل الملوّن. تضيف حبّات الرمان لمسة من الحلاوة الرقيقة، بينما يمنح الليمون وزيت الزيتون إشراقة ونضارة مميزة للطبق. طازج، نابض بالحياة وغني بطابع البحر الأبيض المتوسط.",
+    },
+    price: "36",
+    priceValue: 36,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3DZWggBpOtGmcAk.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 9,
+  },
+  {
+    id: "fb3c796f-b84e-469b-96ec-01b9b6f01018",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Crispy Cheese Rolls",
+      ar: "لفائف الجبن المقرمشة",
+    },
+    description: {
+      en: "Golden-fried, crispy on the outside and soft on the inside, these traditional sigara börek rolls offer a comforting bite in every piece. Served with lettuce, pomegranate and lemon. Crispy, light and a timeless classic.",
+      ar: "مقلية حتى تكتسب لونًا ذهبيًا، مقرمشة من الخارج وناعمة من الداخل، هذه الرولات التقليدية (لفائف الجبن المقرمشة) تمنح لقمة دافئة ومريحة في كل قطعة.\nتُقدَّم مع الخس، حبّات الرمان وشرائح الليمون.\nمقرمشة، خفيفة، وكلاسيكية لا تفقد رونقها.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzjEYVBPvpZDUHc7.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 10,
+  },
+  {
+    id: "67056900-8679-442d-8181-6e283fad3fa1",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Chef's Signature Pan",
+      ar: "طبق الشيف المميز",
+    },
+    description: {
+      en: "A house-special pan dish crafted with bold Mediterranean character and carefully layered flavors. Served hot and aromatic, it delivers a rich, satisfying finish that showcases the chef's signature style.",
+      ar: "طبق مقلاة مميز من المنزل، مُعدّ بطابع متوسطي جريء ونكهات متناسقة بعناية طبقة فوق طبقة. يُقدَّم ساخناً وبرائحة شهية، ليمنحك تجربة غنية ومُرضية تعكس أسلوب الشيف المميز.",
+    },
+    price: "52",
+    priceValue: 52,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VImmn7NjoLusBnLs7.webp",
+    popular: false,
+    chef: false,
+    bakery: false,
+    turkishDrink: false,
+    order: 11,
+  },
+  {
+    id: "69d587e8-6014-44f4-9fa2-2de58deff91b",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Simit",
+      ar: "سميت",
+    },
+    description: {
+      en: "Freshly baked and coated with golden sesame, this traditional simit delivers a warm, crisp, and satisfying taste in every bite.",
+      ar: "مخبوز طازجاً ومغطى بالسمسم الذهبي، يقدم هذا السميت التقليدي مذاقاً دافئاً ومقرمشاً وشهياً في كل قضمة.",
+    },
+    price: "7",
+    priceValue: 7,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLiGIecxYTMHP4Wr.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 12,
+  },
+  {
+    id: "fe2a23e7-beae-402a-a6b7-93a5c2c8983d",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Simit With Cheese",
+      ar: "سميت بالجبنة",
+    },
+    description: {
+      en: "Freshly baked and filled with rich cheese, this golden sesame simit delivers a warm, crisp, and satisfying bite.",
+      ar: "مخبوز طازجاً ومحشو بالجبنة الغنية، يقدم سميد السمسم الذهبي هذا قرمشة دافئة ومذاقاً مشبعاً في كل قضمة.",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLiZ1QGpPOkxC4jy.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 13,
+  },
+  {
+    id: "c5a25fe4-fdc1-4848-be25-91d0141999b2",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Honey",
+      ar: "عسل",
+    },
+    description: {
+      en: "A carefully selected honey platter served with rich natural flavors, offering a smooth, sweet, and satisfying experience.",
+      ar: "طبق عسل مختار بعناية يُقدم مع نكهات طبيعية غنية، يمنحكم تجربة سلسة وحلوة المذاق تمنح الشعور بالرضا.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLivKWrVeWEOawqV.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 14,
+  },
+  {
+    id: "47dbca7a-682e-443c-99bc-01dd2bb4adfc",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Turkish Kaymak",
+      ar: "قشطة تركية (كايمك)",
+    },
+    description: {
+      en: "Rich and creamy Turkish kaymak, delicately served for a smooth, authentic, and satisfying traditional taste.",
+      ar: "قشطة القيمر التركية الغنية والقوام الكريمي، تُقدم بعناية لتمنحكم مذاقاً تقليدياً ناعماً وأصيلاً يرضي تطلعاتكم.",
+    },
+    price: "30",
+    priceValue: 30,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLjEm3ZdmKnrPMY0.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 15,
+  },
+  {
+    id: "004e2b9d-6aef-476a-bed8-e854eeaba257",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Sucuk",
+      ar: "سجق",
+    },
+    description: {
+      en: "Perfectly fried and richly seasoned, this traditional sucuk offers a bold, savory, and satisfying flavor in every bite.",
+      ar: "سجق تقليدي مقلي بإتقان ومتبل بنكهات غنية، يقدم طعماً قوياً وشهياً يمنحك الرضا التام في كل قضمة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGqkEHb8ebXXBXGX.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 16,
+  },
+  {
+    id: "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef",
+    category: "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    name: {
+      en: "Labneh",
+      ar: "لبنة",
+    },
+    description: {
+      en: "Creamy labneh delicately served with fresh flavors, offering a smooth and refreshing traditional taste.",
+      ar: "لبنة كريمية تقدم بعناية مع نكهات طازجة، تمنحكم طعماً تقليدياً ناعماً ومنعشاً.",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGjwzgFRiuTLxWEI.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 17,
+  },
+  {
+    id: "7c20069b-3e20-4edb-b3bf-75bf82b44cdd",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Churchill",
+      ar: "مشروب تشرشل",
+    },
+    description: {
+      en: "A chilled, refreshing soft drink with a crisp finish. Perfect for cooling down and pairing with any meal.",
+      ar: "مشروب بارد جريء ومنعش يُقدَّم مثلّجًا…\nفقاعاته الحيوية ونكهته المنعشة تجعله رفيقًا مثاليًا لكل وجبة.",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YUxVEZB0VbNBCG.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "10669c1f-596c-4f5f-80a5-d05811ffd71a",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Redbull",
+      ar: "ريدبول",
+    },
+    description: {
+      en: "A cold energy drink with a bold, fizzy kick. Ideal for a quick boost with a sharp, sweet taste.",
+      ar: "مشروب طاقة بارد بنكهة قوية ومنعشة…\nيمنحك دفعة سريعة وانتعاشًا مليئًا بالحيوية",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YYBm9n9SaitzNV.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "ab4ff496-559f-4c8d-8052-a20b900ffeb0",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Turkish Sparkling Water",
+      ar: "مياه غازية تركية",
+    },
+    description: {
+      en: "Crisp sparkling water with lively bubbles and a clean finish. A refreshing fizzy alternative to sweet soft drinks.",
+      ar: "مياه غازية منعشة بفقاعات حيوية ومذاق نقي صافٍ. .",
+    },
+    price: "10",
+    priceValue: 10,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YlebZuKknTXYU8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "dda18a8d-c5a7-4211-bbda-1992f6154416",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Water",
+      ar: "مياه",
+    },
+    description: {
+      en: "Pure, chilled water served to refresh and cleanse the palate. A clean and light choice for any time of day.",
+      ar: "مياه نقية تُقدَّم باردة…\nانتعاش بسيط وصافٍ يوازن النكهات برقة.",
+    },
+    price: "Small (8)/ Big (16)",
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLpQ7aieT7PcnRg8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "bc3a5e92-6036-4c1f-9e7b-2bc06d5d2143",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Sparkling Water",
+      ar: "مياه فوارة",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "Small (8)/ Big (16)",
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLpg53WIxMButtqQ.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
+  },
+  {
+    id: "94cec6c5-0caa-43c1-a8fb-653b82a88309",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Coca-Cola",
+      ar: "كوكا كولا",
+    },
+    description: {
+      en: "Classic cola served cold with bold caramel notes and lively fizz. A familiar, satisfying sip that complements savory food.",
+      ar: "فقاعات منعشة ولمسة كراميل متوازنة، مثالية مع الأطباق المالحة.",
+    },
+    price: "10",
+    priceValue: 10,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Z5hQ4932kli9Os.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 6,
+  },
+  {
+    id: "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Fanta",
+      ar: "فانتا",
+    },
+    description: {
+      en: "A bright and fruity carbonated drink with a sweet, playful flavor. Served chilled for a refreshing and bubbly experience.",
+      ar: "مشروب غازي بنكهة برتقال…\nمنعش، مليء بالحيوية، ويضيف لمسة ممتعة لكل لحظة.",
+    },
+    price: "10",
+    priceValue: 10,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ZBGgYfHWiN4B7t.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 7,
+  },
+  {
+    id: "04e64d7b-d691-48ee-9b7a-a2f978c3e09e",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Beer",
+      ar: "بيرة",
+    },
+    description: {
+      en: "A cold beer with a smooth body and a crisp, refreshing finish. Great for pairing with grilled food and savory bites.",
+      ar: "مشروب بارد بلون ذهبي ورغوة ناعمة…\nنكهة متوازنة بلمسة مرارة خفيفة، مع قوام غني ومنعش",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGMS6T66GTmcNd59.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 8,
+  },
+  {
+    id: "528fb6cd-81b9-4b9d-b9da-30edcdb77afd",
+    category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+    name: {
+      en: "Sprite",
+      ar: "سبرايت",
+    },
+    description: {
+      en: "A lemon-lime soda with a crisp sparkle and clean citrus lift. Served cold for a light and refreshing taste.",
+      ar: "مشروب ليمون ولايم منعش…\nخفيف، فوّار، ويمنحك إحساسًا نظيفًا ومروّيًا",
+    },
+    price: "10",
+    priceValue: 10,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3ZFkM2MMGYmlvwr.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 9,
+  },
+  {
+    id: "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Ice Spanish Latte",
+      ar: "سبانيش لاتيه بارد",
+    },
+    description: {
+      en: "Chilled espresso with silky milk and caramelized sweetened milk, smooth, creamy and perfectly indulgent.",
+      ar: "إسبريسو بارد ممزوج بحليب ناعم وحليب مُحلى بلمسة كراميل، قوام كريمي غني وتجربة مُدلّلة بكل تفاصيلها.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QWB9Z1lyYTIFkG.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "e2e1b3c0-e51f-4cba-a60f-91f017976eb5",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Affogato",
+      ar: "أفوغاتو",
+    },
+    description: {
+      en: "Hot espresso poured over creamy ice cream, rich, velvety and beautifully indulgent.",
+      ar: "إسبريسو ساخن يُسكب فوق آيس كريم كريمي، تجربة غنية ومخملية بنهاية ساحرة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QhjQ1fnXhHwhys.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "7df74560-803f-4170-9d26-8d254be2e1ac",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Ice Latte",
+      ar: "لاتيه بارد",
+    },
+    description: {
+      en: "Chilled espresso with smooth milk, light, creamy and refreshingly balanced.",
+      ar: "إسبريسو بارد مع حليب ناعم، خفيف وكريمي بتوازن منعش.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QlonMPQGldqh2Y.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
+  {
+    id: "29ac4114-6af6-441f-b56b-d0ac4d34d758",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Ice White Chocolate Mocha",
+      ar: "موكا الشوكولاتة البيضاء الباردة",
+    },
+    description: {
+      en: "Premium white chocolate blended with espresso and cold milk, creamy, smooth and luxuriously sweet.",
+      ar: "شوكولاتة بيضاء فاخرة ممزوجة بالإسبريسو والحليب البارد، قوام كريمي ونكهة حلوة راقية.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Qsh7Q7xSh4Ua1l.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 4,
+  },
+  {
+    id: "fca2bd66-4d04-4631-8636-0186f5040191",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Ice Americano",
+      ar: "أمريكانو بارد",
+    },
+    description: {
+      en: "Chilled espresso with water, clean, crisp and refreshingly bold.",
+      ar: "إسبريسو بارد مع الماء، نقي، منعش وبنكهة قوية متوازنة.",
+    },
+    price: "25",
+    priceValue: 25,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3QxBWQSWjTPZ9yV.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 5,
+  },
+  {
+    id: "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Ice Mocha",
+      ar: "موكا باردة",
+    },
+    description: {
+      en: "Rich dark chocolate blended with espresso and cold milk, smooth, deep and indulgent.",
+      ar: "شوكولاتة داكنة غنية ممزوجة بالإسبريسو والحليب البارد، ناعمة وعميقة بنكهة مُدلّلة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3R2B1ZtFGqPRRjv.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 6,
+  },
+  {
+    id: "5303aeee-379d-423a-b655-7a2ce5a53340",
+    category: "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+    name: {
+      en: "Ice Drip Coffee",
+      ar: "قهوة درِيب الباردة",
+    },
+    description: {
+      en: "Cold brewed single origin coffee, smooth, aromatic and naturally refreshing.",
+      ar: "قهوة مختصة من مصدر واحد تُحضَّر بالاستخلاص البارد، ناعمة، عطرية ومنعشة بطبيعتها.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3R6tTn3pB9bMmlk.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 7,
+  },
+  {
+    id: "77a04025-581e-410b-b70b-bb2c4de5a648",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "DOUBLE APPLE Fakher",
+      ar: "تفاحتين فاخر",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4HIrDpCjlmrC0eo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "66543356-1b79-497f-ab11-9fe41362d9c3",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "DOUBLE APPLE NAKHLA",
+      ar: "تفاحتين نخلة",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4Hz95PbtbaAh3Q0.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "4bc33733-c8cf-48a5-8ff7-f2ccdfd7cadf",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "DOUBLE APPLE MIX",
+      ar: "مزيج التفاحتين المضاعف",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4IMEKD47aHj4yhP.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "35a25c13-d0b9-46e7-a712-630cf9928e0d",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "GRAPE",
+      ar: "عنب",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4IXOhzgHVdG2yOM.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "e26bbf68-0d59-44de-b1b2-c447761acf20",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "GRAPE BERRY",
+      ar: "توت العنب",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4IgdWB3o5RrK0vm.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "72cd40c5-5475-4d48-9e56-4d0ea5510c60",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "GRAPE MINT",
+      ar: "عنب نعناع",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4Iwowqzri1FQBhg.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "2b92aa34-e5aa-4a63-971f-a18a610c746c",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "MINT",
+      ar: "نعناع",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JBSNoLolMPRDOQ.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "726653ff-c498-403e-bc48-8c4100ed7efd",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "BLUE BERRY",
+      ar: "التوت الأزرق",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JMqZRB3Txemvg7.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "7f1899d8-36b3-4250-9d32-7a1d0bd6f6d6",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "LEMON MINT",
+      ar: "ليمون بالنعناع",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JXOOhC7XVEd7sF.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 9,
+  },
+  {
+    id: "7375d7eb-72c4-40cc-99b5-b8ae81403424",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "CHEWING GUM",
+      ar: "علكة",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4Jhh3x3lRCnpNan.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 10,
+  },
+  {
+    id: "975f95ee-5971-4e1b-9c0b-f0c4d484aa1a",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "WATERMELON",
+      ar: "بطيخ",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4JwQVBEHwf5HoNe.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 11,
+  },
+  {
+    id: "3b1c0c76-0809-4459-92cf-adff4d03dff8",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "LOVE 66",
+      ar: "حب 66",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4KSkuZTV3rF2lts.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 13,
+  },
+  {
+    id: "86820d79-cb6d-4bca-8e52-c539bd47d7a9",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "PEACH",
+      ar: "خوخ",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4KgXABHythhCSeo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 14,
+  },
+  {
+    id: "7b6de15e-fa0e-4c9e-909d-f7432a09fdf4",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "ORANGE MINT",
+      ar: "برتقال بالنعناع",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4L2J2xxWxZY4Jfw.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 15,
+  },
+  {
+    id: "6565c206-6158-4af0-a778-591bafdef0b0",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "GUM MINT",
+      ar: "علكة بالنعناع",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4LEb7Qs1aGsCDww.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 16,
+  },
+  {
+    id: "00eeda4e-667c-45ac-8eea-dc5d2b5341a0",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "MASTICA",
+      ar: "مستكة",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4LS4cc3dcfK6X39.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 17,
+  },
+  {
+    id: "ade9d7d4-01d5-4d52-9d1d-89e189d3fc70",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "CINNAMON GUM",
+      ar: "علكة بالقرفة",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4LsxmRhsulXbOOX.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 18,
+  },
+  {
+    id: "25fedaab-c4ad-4005-9ce9-c5f5c6eb51a5",
+    category: "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+    name: {
+      en: "RUBY CRUSH",
+      ar: "روبي كراش",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "99",
+    priceValue: 99,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4M7uc2H12g28wo7.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 19,
+  },
+  {
+    id: "cf8b74da-b6fe-40f1-9a00-639a4de60168",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Akawi Pide",
+      ar: "بيدا عكاوي",
+    },
+    description: {
+      en: "Freshly baked pide dough topped with a blend of melted mozzarella and authentic Akawi cheese, finished with sesame and black cumin seeds. Rich, salty and perfectly balanced.",
+      ar: "عجينة بيده طازجة تُخبز يوميًا، مغطاة بمزيج من جبنة الموزاريلا الذائبة وجبنة العكاوي الأصيلة، ومزيّنة بالسمسم وحبة البركة.\nغنية، متوازنة، ومشبعة بالنكهة.",
+    },
+    price: "46",
+    priceValue: 46,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTT9tP5oAPQO92h.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "d44063ac-c32b-457a-b474-ced546d36818",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Kashkaval Pide",
+      ar: "بيدا بجبنة الكشكفال",
+    },
+    description: {
+      en: "Traditional pide dough topped with melted Kashkaval cheese, sprinkled with sesame and black cumin seeds for extra aroma. Simple, cheesy and satisfying.",
+      ar: "عجينة بيده تقليدية تُخبز بعناية، مغطاة بجبنة القشقوان الذائبة، ومزيّنة بالسمسم وحبة البركة لتعزيز النكهة.\nبسيطة، غنية بالجبن، ومشبعة.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGze4PtUbK3PGYLvc.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "ead80465-de52-4268-ad38-30e2db704684",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Labne Zahter Pide",
+      ar: "بيدا لبنة وزعتر",
+    },
+    description: {
+      en: "Soft pide dough layered with creamy labneh, aromatic za'atar, mozzarella cheese and finished with sesame seeds. Creamy, herbal and full of flavor.",
+      ar: "عجينة بيدا طرية تُغطّى بطبقة من اللبنة الكريمية، مع الزعتر العطري وجبنة الموزاريلا، وتُختتم بلمسة من السمسم.\nكريمية، عشبية، وغنية بالنكهة.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzcpImaufFgEJVPz.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "6969f27d-684c-4725-9257-5e69733bc382",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Zahtar Pide",
+      ar: "بيدا زعتر",
+    },
+    description: {
+      en: "A traditional favorite topped with aromatic za'atar over freshly baked pide dough. Light, fragrant and authentic.",
+      ar: "طبق تقليدي محبوب، يُحضَّر بعجينة بيدا طازجة ويُغطّى بزعتر عطري غني.\nخفيف، بنكهة مميزة، وأصيل.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzcRmf2XS2uCxAmx.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "1e6a71bd-c035-4e38-a510-413af41596e3",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Labne Pide",
+      ar: "بيدا لبنة",
+    },
+    description: {
+      en: "Freshly baked pide topped with creamy labneh and melted mozzarella, finished with sesame and black cumin seeds. Soft, creamy and comforting.",
+      ar: "عجينة بيدا طازجة تُخبز يوميًا، مغطاة بلبنة كريمية وجبنة موزاريلا ذائبة، ومزيّنة بالسمسم وحبة البركة.\nناعمة، كريمية، ومريحة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Fra9bUKTXwzJK9.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "7244ddca-2718-40e0-90bf-287718182154",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Iskender Pide",
+      ar: "بيدا إسكندر",
+    },
+    description: {
+      en: "Freshly baked pide dough topped with tender Iskender-style beef and melted mozzarella, finished with sesame and black cumin seeds. Rich, juicy and deeply satisfying.",
+      ar: "عجينة بيدا طازجة تُخبز يوميًا، مغطاة بلحم بقري طري على طريقة إسكندر مع جبنة موزاريلا ذائبة، ومزيّنة بالسمسم وحبة البركة.\nغنية، عصارية، ومشبعة بعمق.",
+    },
+    price: "55",
+    priceValue: 55,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3IWjh9Rq86rXNH4.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "8507dfb1-80d8-4294-a8a6-0efa00e89e86",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Lahmacun",
+      ar: "لحم بعجين",
+    },
+    description: {
+      en: "Thin, crispy dough topped with a flavorful minced meat mixture, served with fresh parsley and lemon on the side. Light, fresh and full of flavor.",
+      ar: "عجينة رقيقة ومقرمشة تُغطّى بخليط لحم مفروم غني بالنكهة، وتُقدَّم مع بقدونس طازج وشرائح ليمون.\nخفيفة، منعشة، ومليئة بالنكهة.",
+    },
+    price: "55",
+    priceValue: 55,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzctJIU4Ldd0ym3y.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "345500b8-328d-4a72-9269-93c25bf75c1e",
+    category: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    name: {
+      en: "Antep Lahmacun",
+      ar: "لحم بعجين على طريقة عنتاب",
+    },
+    description: {
+      en: "A bold and spiced version of the classic, topped with rich minced meat mixture and served with parsley, lemon, pomegranate molasses, grilled eggplant and chili peppers on the side. Spicy, vibrant and authentically Antep.",
+      ar: "نسخة جريئة وحارة من الكلاسيكي، تُغطّى بخليط لحم مفروم غني، وتُقدَّم مع البقدونس، الليمون، دبس الرمان، الباذنجان المشوي والفلفل الحار.\nحار، غني بالحيوية، وبنكهة عنتاب الأصيلة.",
+    },
+    price: "62",
+    priceValue: 62,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3FuVu493PGIw1bf.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 8,
+  },
+  {
+    id: "223a7d36-eb74-4e6b-a01c-b7ff0b0c696b",
+    category: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Abla Potatoes",
+      ar: "بطاطس أبلا",
+    },
+    description: {
+      en: "Prepared in-house with care, these golden, crispy potatoes are seasoned with aromatic herbs including za'atar, mint and thyme. A simple yet flavorful dish that highlights the warmth of homemade cooking. Freshly made, crispy and full of comforting flavor.",
+      ar: "محضّرة بعناية في مطبخنا، هذه البطاطا الذهبية المقرمشة متبّلة بأعشاب عطرية تشمل الزعتر والنعناع والزعتر البري. طبق بسيط غني بالنكهة يعكس دفء الطبخ المنزلي. طازجة التحضير، مقرمشة ومليئة بالنكهة المريحة.",
+    },
+    price: "36",
+    priceValue: 36,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzTvZzGXqrIloxsj.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "e406d9c9-0993-4a1c-875a-dfda98e2fadb",
+    category: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Mersin Style Potatoes",
+      ar: "بطاطس على طريقة مرسين",
+    },
+    description: {
+      en: "A bold and flavorful twist inspired by Mersin cuisine… Crispy potatoes tossed with garlic, fresh parsley, and rich sauces, finished with a spicy touch for added depth. Bold, savory, and full of flavor.",
+      ar: "لمسة جريئة وغنية بالنكهات مستوحاة من مطبخ مرسين... بطاطس مقرمشة مغطاة بالثوم والبقدونس الطازج والصلصات الغنية، مع لمسة حارة تمنحها عمقاً إضافياً. طبق جريء، لذيذ، ومفعم بالنكهات.",
+    },
+    price: "34",
+    priceValue: 34,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzdDsUFfBdcACmv8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "1f431c8a-b272-4a9f-8377-758fd9a0781d",
+    category: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Volcano Potatoes",
+      ar: "بطاطس حارة",
+    },
+    description: {
+      en: "Crispy potatoes infused with chili, balanced with lemon and fresh parsley. Served with a light tomato sauce that enhances the overall flavor. Spicy and refreshing.",
+      ar: "بطاطس مقرمشة متبلة بالفلفل الحار، متوازنة مع الليمون والبقدونس الطازج. تُقدم مع صلصة طماطم خفيفة تعزز النكهة الغنية. طبق حار ومنعش.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3Dv5EpJm919rkff.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "6377546c-aff4-488d-ac30-ad27245054db",
+    category: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Mr. French Fries",
+      ar: "مستر فرنش فرايز",
+    },
+    description: {
+      en: "Classic crispy fries served with ketchup and mayonnaise, finished with a touch of Cajun spices for a bold twist. Classic, crispy with a modern kick.",
+      ar: "بطاطس مقلية مقرمشة كلاسيكية تُقدَّم مع الكاتشب والمايونيز، وتُختتم بلمسة من بهارات الكاجون لإضافة طابع جريء.\nكلاسيكية، مقرمشة، بلمسة عصرية مميزة.",
+    },
+    price: "32",
+    priceValue: 32,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH2ISqLC7597Hx3vl.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "3178ac05-fef6-43ce-a897-ea01df50a79f",
+    category: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Potato Croquettes",
+      ar: "كروكيت البطاطس",
+    },
+    description: {
+      en: "Crispy on the outside and soft on the inside, a satisfying bite in every piece. These golden croquettes are served with ketchup and mayonnaise for a classic pairing. Crispy, comforting, and perfect anytime",
+      ar: "مقرمشة من الخارج وهشة من الداخل، تمنحك مذاقاً رائعاً في كل قضمة. تُقدم كروكيت البطاطس الذهبية مع الكاتشب والمايونيز لتجربة كلاسيكية متكاملة. وجبة مقرمشة، دافئة، ومثالية في أي وقت.",
+    },
+    price: "37",
+    priceValue: 37,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgSidsLiVI3nNEV.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "6fde2138-e768-45e9-a3f0-86db68dc66bb",
+    category: "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    name: {
+      en: "Potato Salad",
+      ar: "سلطة البطاطس",
+    },
+    description: {
+      en: "A fresh and well-balanced combination of boiled potatoes and eggs, mixed with tomatoes, onions and fresh herbs. Enhanced with mint, chili flakes and cumin, then finished with pomegranate molasses and olive oil for a rich and slightly tangy flavor. Refreshing, aromatic and full of character.",
+      ar: "تشكيلة طازجة ومتوازنة من البطاطس المسلوقة والبيض، ممزوجة مع الطماطم والبصل والأعشاب الطازجة.\nتُعزَّز بالنعناع ورقائق الفلفل الحار والكمون، وتُختتم بدبس الرمان وزيت الزيتون لنكهة غنية ولمسة حامضية خفيفة.",
+    },
+    price: "38",
+    priceValue: 38,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3E5Fa1Q2fns06Mf.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "Turkish Baklava",
+      ar: "بقلاوة تركية",
+    },
+    description: {
+      en: "Layers of crispy Turkish baklava served with traditional mastic ice cream, creating a rich and authentic Turkish dessert experience.",
+      ar: "طبقات من البقلاوة التركية المقرمشة تُقدم مع آيس كريم المستكة التقليدي، لتمنحكم تجربة تحلية تركية غنية وأصيلة.",
+    },
+    price: "52",
+    priceValue: 52,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLmLFpbhE5m4uly5.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "744474c5-cf88-4c22-bf13-6e05e38ff5c6",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "Cold Baklava with Milk",
+      ar: "بقلاوة بالحليب",
+    },
+    description: {
+      en: "Delicately layered cold baklava infused with milk, offering a light, smooth, and perfectly balanced sweet flavor.",
+      ar: "بقلاوة باردة مكونة من طبقات رقيقة غنية بالحليب، تتميز بمذاق حلو خفيف وناعم ومتوازن تماماً.",
+    },
+    price: "54",
+    priceValue: 54,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKGk63W6Tv33Xyltv.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "d318e053-27c9-4e44-bf49-e8ad6cd7e4b1",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "Trilece",
+      ar: "تريليتشا",
+    },
+    description: {
+      en: "Soft milk cake infused with vanilla and finished with rich caramel sauce for a smooth and indulgent dessert experience.",
+      ar: "كيكة الحليب الطرية بنكهة الفانيليا، مغطاة بصوص الكراميل الغني لتجربة تحلية ناعمة وفاخرة.",
+    },
+    price: "49",
+    priceValue: 49,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH46LawRkqmA3xWrf.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "a8328686-ad57-4c46-87d2-8ff5da769a72",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "Turkish Künefe",
+      ar: "كنافة تركية",
+    },
+    description: {
+      en: "Crispy golden Turkish künefe filled with melted cheese, served with traditional ice cream and crushed pistachios for a rich Turkish dessert experience.",
+      ar: "كنافة تركية ذهبية مقرمشة محشوة بالجبنة الذائبة، تقدم مع الآيس كريم التقليدي والفستق الحلبي المطحون لتجربة تحلية تركية غنية.",
+    },
+    price: "54",
+    priceValue: 54,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH46lMTCnDoK3KVN0.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "0e418830-7764-4a44-8ba1-06b596506892",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "San Sebastian",
+      ar: "سان سيباستيان",
+    },
+    description: {
+      en: "Creamy San Sebastian cheesecake with a perfectly caramelized top, served with rich chocolate sauce for an indulgent dessert experience.",
+      ar: "تشيز كيك سان سيباستيان غنية بالقوام الكريمي مع طبقة علوية مكرملة ومخبوزة بإتقان، تُقدم مع صوص الشوكولاتة الفاخر لتجربة تحلية استثنائية.",
+    },
+    price: "57",
+    priceValue: 57,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH479AXIrq4DSG51y.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "92180575-7126-4df5-b347-0e2a2adab25f",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "Crunch Cake",
+      ar: "كيكة كرانش",
+    },
+    description: {
+      en: "Rich chocolate crunch cake layered with smooth texture and deep cocoa flavor for a perfectly indulgent dessert experience.",
+      ar: "كيكة الشوكولاتة الغنية والمقرمشة، مكونة من طبقات ناعمة الملمس ونكهة الكاكاو العميقة، لتمنحكم تجربة تحلية فاخرة ومثالية.",
+    },
+    price: "50",
+    priceValue: 50,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLmafLWU70SDE5G8.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "c8c42df3-a6cf-4e2d-b900-0005fc67e07a",
+    category: "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+    name: {
+      en: "FRUIT PLATE",
+      ar: "طبق فواكه",
+    },
+    description: {
+      en: "A colorful selection of fresh seasonal fruits, carefully served for a refreshing and naturally sweet experience.",
+      ar: "تشكيلة ملونة من الفواكه الموسمية الطازجة، تُقدم بعناية لتجربة منعشة وحلوة المذاق بطبيعتها.",
+    },
+    price: "78",
+    priceValue: 78,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH56aNHvA01xR4OIo.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 7,
+  },
+  {
+    id: "e8b45db5-b42f-4122-8dfc-59d19bc88045",
+    category: "9ab5f294-68cb-470c-a860-d520f5d09f22",
+    name: {
+      en: "Honey & Cream Ritual",
+      ar: "عسل وقشطة",
+    },
+    description: {
+      en: "A truly indulgent traditional pairing… Rich clotted cream is served alongside both honeycomb and strained honey, offering layers of natural sweetness and texture in every bite. Accompanied by freshly baked bazlama bread for a warm and satisfying experience. Creamy, rich and irresistibly authentic.",
+      ar: "مزيج تقليدي فاخر يمنحك تجربة غنية لا تُقاوم…\nتُقدَّم القشطة الغنية إلى جانب قرص العسل والعسل المصفّى، لتمنحك طبقات من الحلاوة الطبيعية وقوامًا متنوعًا في كل لقمة.\nويُرافقها خبز البازلاما الطازج ليمنحك تجربة دافئة ومشبعة.\nكريمي، غني، وأصيل لا يُقاوم.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJLjlnoSPeiIpzq1Y.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "3a13ab9e-66b3-45db-9442-606f00cb5a54",
+    category: "9ab5f294-68cb-470c-a860-d520f5d09f22",
+    name: {
+      en: "Grandma Jam Plate",
+      ar: "طبق مربى الستات",
+    },
+    description: {
+      en: "A delightful spread crafted with homemade touches… A selection of homemade apricot, fig, strawberry and mulberry jams, perfectly paired with tahini and molasses for added depth. Served with butter and crispy bread elements, alongside a mixed bread basket and a touch of Nutella for a modern twist. Generous, indulgent and perfect for sharing.",
+      ar: "تشكيلة لذيذة بلمسات منزلية…\nمجموعة من مربى المشمش، التين، الفراولة والتوت المُحضّرة منزليًا، تتناغم مع الطحينة والدبس لتمنح عمقًا غنيًا في النكهة.\nتُقدَّم مع الزبدة وعناصر خبز مقرمشة، إلى جانب سلة خبز متنوعة ولمسة من النوتيلا لإضافة عصرية.\nمتنوع، غني، ومثالي للمشاركة.",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3EdJPRrJW3zF6PS.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "a103a19f-8c77-4c08-a9bf-e89a175412f3",
+    category: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "BY CHARMING SPECIAL",
+      ar: "باي جارمنج سبيشيال",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TFQ2lFPsD5BbG7.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "fea3edb5-2fb2-4898-973e-79dffee34090",
+    category: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "DUBAI",
+      ar: "دبي",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TQvgiawUw6q3FJ.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "83979ed6-5b12-4aca-8a70-3f44ed9c61f5",
+    category: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "NOL GRADUS",
+      ar: "نول جرادوس",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TZOJ5EIUHonNxk.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "aa2525eb-504a-4257-abbc-60a182e8e790",
+    category: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "MARBELLA",
+      ar: "ماربيا",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TpF9KPnRd9Qgzs.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "3e08c664-b982-41e3-b325-ab68a12f01b5",
+    category: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "HATTRICK",
+      ar: "هاتريك",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4TzLgLKbb9Iavnh.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "defa0901-7a2a-467e-ba6a-af3e38979e22",
+    category: "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+    name: {
+      en: "LAST PUFF",
+      ar: "لاست بوف",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "109",
+    priceValue: 109,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4UBL5rS9Og4DKfz.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "db22797e-d091-466c-9684-128d3f23dec1",
+    category: "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
+    name: {
+      en: "KOKAYA",
+      ar: "كوكايا",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "129",
+    priceValue: 129,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH4VTuHlClbFtcDXp.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "7920a33a-ab56-49af-8a0b-1528186ae540",
+    category: "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
+    name: {
+      en: "ANIMA",
+      ar: "أنيما",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "129",
+    priceValue: 129,
+    currency: "SAR",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "c6e8da58-5274-42e3-9cfd-b2dda9ec1b57",
+    category: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+    name: {
+      en: "Margarita",
+      ar: "مارغريتا",
+    },
+    description: {
+      en: "Fresh tomato sauce, melted mozzarella, and aromatic basil come together for a classic and perfectly balanced Margherita pizza.",
+      ar: "صلصة طماطم طازجة، جبنة موزاريلا ذائبة، وريحان عطري يجتمعون معاً لتقديم بيتزا مارغريتا كلاسيكية ومتوازنة المذاق بشكل مثالي.",
+    },
+    price: "52",
+    priceValue: 52,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH41A8eBPb0MdWoF5.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
+    category: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+    name: {
+      en: "Vegetarian Pizza",
+      ar: "بيتزا خضروات",
+    },
+    description: {
+      en: "Loaded with fresh vegetables, rich tomato sauce, and melted cheese, this vegetarian pizza delivers a vibrant and satisfying flavor.",
+      ar: "هذه البيتزا النباتية غنية بالخضروات الطازجة، وصلصة الطماطم الغنية، والجبنة الذائبة، مما يمنحكم نكهة حيوية ومشبعة.",
+    },
+    price: "55",
+    priceValue: 55,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH41KIF0SkmkjOSOY.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "6a4e2138-f0c4-4256-9cea-15d934a870d4",
+    category: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+    name: {
+      en: "Pepperoni Pizza",
+      ar: "بيتزا بيبيروني",
+    },
+    description: {
+      en: "Topped with spicy pepperoni, rich tomato sauce, and melted cheese, this pizza delivers a bold and satisfying flavor in every slice.",
+      ar: "تُغطى هذه البيتزا بقطع الببروني الحارة، وصلصة الطماطم الغنية، والجبنة الذائبة، لتقدم لك نكهة قوية ومشبعة في كل قطعة.",
+    },
+    price: "65",
+    priceValue: 65,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH41T3uEvUkcqezgT.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "be6b7932-2712-42e0-8f48-a6b4a7528b80",
+    category: "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+    name: {
+      en: "Chicken Pizza",
+      ar: "بيتزا الدجاج",
+    },
+    description: {
+      en: "Tender chicken layered with rich tomato sauce and melted cheese, creating a warm and satisfying pizza experience.",
+      ar: "قطع دجاج طرية مغطاة بصلصة طماطم غنية وجبنة ذائبة، تمنحكم تجربة بيتزا دافئة وشهية.",
+    },
+    price: "58",
+    priceValue: 58,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VJbXcLVXl0WBFrKlm.webp",
+    popular: true,
+    chef: true,
+    bakery: true,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "34cf0c11-521a-4390-b42a-48b070e22cc2",
+    category: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "Handmade Potato Gozleme",
+      ar: "جوزلمة البطاطس المنزلية",
+    },
+    description: {
+      en: "Prepared daily by skilled hands, this traditional gozleme is filled with a simple yet comforting potato mixture. Thinly rolled dough is cooked on a hot griddle and served warm. Homemade, warm and comforting.",
+      ar: "تُحضَّر يوميًا بأيادٍ ماهرة، حيث تأتي هذه الجوزلمة التقليدية بحشوة بطاطس بسيطة ومريحة في نكهتها.\nيُفرد العجين برقة ويُطهى على صاج ساخن، ثم يُقدَّم دافئًا ليمنحك تجربة أصيلة ومشبعة.\nمنزلي، دافئ، ومريح.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzX9j3yiKa36AnLB.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 1,
+  },
+  {
+    id: "93db7fe1-0187-437c-9b85-f9704ec58e20",
+    category: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "Handmade Cheese Gozleme",
+      ar: "جوزلمة الجبن المنزلية",
+    },
+    description: {
+      en: "Freshly prepared with thin handmade dough and filled with melting cheese, this gozleme is cooked on a hot griddle and served straight from the pan. Soft, cheesy and freshly made.",
+      ar: "تُحضَّر طازجة بعجين منزلي رقيق، ومحشوة بجبن ذائب غني، ثم تُطهى على صاج ساخن وتُقدَّم مباشرة لتمنحك أفضل طعم طازج.\nطرية، غنية بالجبن، وطازجة يوميًا.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3EwK19tQZyF3p9I.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 2,
+  },
+  {
+    id: "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb",
+    category: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "Handmade Spinach Gozleme",
+      ar: "جوزلمة السبانخ المنزلية",
+    },
+    description: {
+      en: "A lighter and more refreshing option, filled with fresh spinach and prepared with handmade dough. Cooked on a hot griddle for a perfectly balanced texture. Light, fresh and authentic.",
+      ar: "خيار أخف وأكثر انتعاشًا، محشو بالسبانخ الطازجة ومحضّر بعجين منزلي.\nيُطهى على صاج ساخن ليمنح توازنًا مثاليًا في القوام.\nخفيف، طازج، ومتوازن.",
+    },
+    price: "42",
+    priceValue: 42,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzgIKzkwEwsidIIg.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 3,
+  },
+  {
+    id: "7704310c-87e1-4d73-a503-a9f32854973c",
+    category: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "Su Böreği",
+      ar: "سو بوريك (Su Böreği)",
+    },
+    description: {
+      en: "A traditional favorite prepared with layers of handmade dough, offering a soft texture and rich filling. Carefully baked and served warm for a comforting experience.",
+      ar: "طبق تقليدي مفضل يُحضَّر بطبقات من العجين المنزلي، ليمنح قوامًا طريًا وحشوة غنية.\nيُخبز بعناية ويُقدَّم دافئًا ليمنح تجربة مريحة ومشبعة.\nطري، غني، وتقليدي أصيل.",
+    },
+    price: "40",
+    priceValue: 40,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3FBBhRlOG4KBM2H.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 4,
+  },
+  {
+    id: "aa0cfbca-91ae-4fb7-97ef-4fc420523a51",
+    category: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "HATAY KATIKLI BREAD",
+      ar: "خبز كاتيكلي هاتاي بالفلفل",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH55N40NFQfqsvXCN.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 5,
+  },
+  {
+    id: "0a20ce3f-736d-4b27-bdcc-5aa86dcafad6",
+    category: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    name: {
+      en: "TANDOOR BREAD",
+      ar: "خبز التندر",
+    },
+    description: {
+      en: "",
+      ar: "",
+    },
+    price: "15",
+    priceValue: 15,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VH55qOYROeHlaUqZw.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: false,
+    order: 6,
+  },
+  {
+    id: "9f623f75-c40d-47fd-8c3f-eebdab56fa9a",
+    category: "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+    name: {
+      en: "Chocolate Milkshake",
+      ar: "ميلك شيك شوكولاتة",
+    },
+    description: {
+      en: "Velvety smooth and richly blended, this chocolate milkshake delivers the perfect balance of creamy texture and deep chocolate flavor.",
+      ar: "مخفوق حليب بالشوكولاتة غني وناعم الملمس، يمنحك توازناً مثالياً بين القوام الكريمي ونكهة الشوكولاتة الداكنة والعميقة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBJvncU3jVQQbf9d.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 1,
+  },
+  {
+    id: "dddfd6aa-96f8-4067-b566-8509c8c74636",
+    category: "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+    name: {
+      en: "Strawberry Milkshake",
+      ar: "ميلك شيك فراولة",
+    },
+    description: {
+      en: "Fresh strawberries blended into a creamy, refreshing milkshake, offering a smooth and delightfully sweet flavor in every sip.",
+      ar: "فراولة طازجة ممزوجة في ميلك شيك كريمي ومنعش، تمنحك طعماً ناعماً وحلاوة رائعة في كل رشفة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBK5rWQHimKw8P4n.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 2,
+  },
+  {
+    id: "728a1cd6-4c57-4509-ab09-aafc279d3947",
+    category: "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+    name: {
+      en: "Banana Milkshake",
+      ar: "ميلك شيك موز",
+    },
+    description: {
+      en: "Creamy banana milkshake blended to perfection, delivering a smooth, naturally sweet, and refreshing taste in every sip.",
+      ar: "ميلك شيك الموز الكريمي المخفوق بعناية، يمنحكم مذاقاً ناعماً وحلواً بشكل طبيعي ومنعشاً في كل رشفة.",
+    },
+    price: "35",
+    priceValue: 35,
+    currency: "SAR",
+    sourceImageUrl: "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBKElxeJmPJjahMn.webp",
+    popular: true,
+    chef: true,
+    bakery: false,
+    turkishDrink: true,
+    order: 3,
+  },
 ] satisfies MenuItem[];
-
-const CATEGORY_DISPLAY_COPY: Record<string, { name: LocalizedText; blurb: LocalizedText }> = {
-  [CATEGORY_IDS.happySpreads]: {
-    name: { ar: "موائد الفطور", en: "Breakfast Spreads" },
-    blurb: {
-      ar: "أجبان، زيتون، بيض، خبز وشاي على مائدة صباحية للمشاركة.",
-      en: "Cheese, olives, eggs, bread, and tea served as a sharing breakfast.",
-    },
-  },
-  [CATEGORY_IDS.eggs]: {
-    name: { ar: "أطباق البيض", en: "Egg Dishes" },
-    blurb: {
-      ar: "بيض بالمقلاة مع الطماطم، الفلفل، الجبن، السجق أو الزبدة.",
-      en: "Skillet eggs with tomato, pepper, cheese, sucuk, or butter.",
-    },
-  },
-  [CATEGORY_IDS.flavoursOfAsyaS]: {
-    name: { ar: "مقبلات أسيا", en: "Asya's Starters" },
-    blurb: {
-      ar: "أجبان، زيتون، حمص، فلافل وأطباق صغيرة تبدأ بها المائدة.",
-      en: "Cheese, olives, hummus, falafel, and small plates to start the table.",
-    },
-  },
-  [CATEGORY_IDS.mrPotatoes]: {
-    name: { ar: "البطاطس", en: "Potatoes" },
-    blurb: {
-      ar: "بطاطس مقلية، متبلة أو محشوة بصلصات وأعشاب.",
-      en: "Fried, seasoned, and dressed potatoes with sauces and herbs.",
-    },
-  },
-  [CATEGORY_IDS.aSweetMemory]: {
-    name: { ar: "حلويات مختارة", en: "Selected Sweets" },
-    blurb: {
-      ar: "فواكه، قشطة، عسل وقطع حلوة خفيفة بعد الفطور.",
-      en: "Fruit, cream, honey, and light sweets after breakfast.",
-    },
-  },
-  [CATEGORY_IDS.ablaSHandmadeGozlemeAndBorek]: {
-    name: { ar: "جوزلمة وبوريك", en: "Gozleme & Borek" },
-    blurb: {
-      ar: "عجين رقيق يحشى ويطهى على الصاج أو يخبز بطبقات طرية.",
-      en: "Thin dough filled and cooked on the griddle or baked in soft layers.",
-    },
-  },
-  [CATEGORY_IDS.asyaSPremiumPideS]: {
-    name: { ar: "بيدا أسيا", en: "Asya's Pide" },
-    blurb: {
-      ar: "عجين بيدا تركي يخبز بحشوات الجبن، اللحم أو الخضار.",
-      en: "Turkish pide baked with cheese, meat, or vegetable fillings.",
-    },
-  },
-  [CATEGORY_IDS.deliciousSoups]: {
-    name: { ar: "الشوربات", en: "Soups" },
-    blurb: {
-      ar: "شوربات دافئة من العدس، الدجاج أو الخضار.",
-      en: "Warm lentil, chicken, and vegetable soups.",
-    },
-  },
-  [CATEGORY_IDS.greensAndFriends]: {
-    name: { ar: "السلطات", en: "Salads" },
-    blurb: {
-      ar: "خضار طازجة، أعشاب، رمان وصلصات خفيفة.",
-      en: "Fresh vegetables, herbs, pomegranate, and light dressings.",
-    },
-  },
-  [CATEGORY_IDS.flavoursOfTheTable]: {
-    name: { ar: "المزات الباردة", en: "Cold Meze" },
-    blurb: {
-      ar: "حمص، محمرة، متبل، بابا غنوج ومخللات للمشاركة.",
-      en: "Hummus, muhammara, mutabel, baba ghanoush, and pickles for sharing.",
-    },
-  },
-  [CATEGORY_IDS.warmAndDeliciousStarts]: {
-    name: { ar: "المقبلات الساخنة", en: "Hot Starters" },
-    blurb: {
-      ar: "مانتي، كبة، حمص باللحم ولقيمات دافئة من المطبخ.",
-      en: "Manti, kibbeh, hummus with meat, and warm bites from the kitchen.",
-    },
-  },
-  [CATEGORY_IDS.pasta]: {
-    name: { ar: "الباستا", en: "Pasta" },
-    blurb: {
-      ar: "باستا طازجة مع صلصات الطماطم، الكريمة، الجبن أو اللحم.",
-      en: "Fresh pasta with tomato, cream, cheese, or meat sauces.",
-    },
-  },
-  [CATEGORY_IDS.pizza]: {
-    name: { ar: "البيتزا", en: "Pizza" },
-    blurb: {
-      ar: "عجين مخبوز مع صلصة الطماطم، الجبن وحشوات غنية.",
-      en: "Baked dough with tomato sauce, cheese, and generous toppings.",
-    },
-  },
-  [CATEGORY_IDS.grillAndCasserole]: {
-    name: { ar: "المشويات والطواجن", en: "Grills & Casseroles" },
-    blurb: {
-      ar: "كباب، شيش، طواجن فخارية وقطع لحم تشوى على الفحم.",
-      en: "Kebabs, shish, clay casseroles, and charcoal-grilled cuts.",
-    },
-  },
-  [CATEGORY_IDS.mrToroSteakhouse]: {
-    name: { ar: "الستيك", en: "Steaks" },
-    blurb: {
-      ar: "قطع لحم مختارة تشوى وتقدم مع الخضار أو البطاطس.",
-      en: "Selected cuts grilled and served with vegetables or potatoes.",
-    },
-  },
-  [CATEGORY_IDS.turkishDessert]: {
-    name: { ar: "حلويات تركية", en: "Turkish Desserts" },
-    blurb: {
-      ar: "بقلاوة، كنافة، تريليتشا وتشيز كيك بنكهات غنية.",
-      en: "Baklava, kunefe, trilece, and cheesecake with rich flavors.",
-    },
-  },
-  [CATEGORY_IDS.worldSCoffees]: {
-    name: { ar: "القهوة", en: "Coffee" },
-    blurb: {
-      ar: "قهوة سوداء، إسبريسو ومشروبات حليب تحضر ساخنة.",
-      en: "Black coffee, espresso, and milk drinks served hot.",
-    },
-  },
-  [CATEGORY_IDS.tea]: {
-    name: { ar: "الشاي", en: "Tea" },
-    blurb: {
-      ar: "شاي تركي، مغربي، أخضر أو منقوع بالأعشاب.",
-      en: "Turkish, Moroccan, green, and herbal teas.",
-    },
-  },
-  [CATEGORY_IDS.coldCoffees]: {
-    name: { ar: "القهوة الباردة", en: "Cold Coffee" },
-    blurb: {
-      ar: "إسبريسو وحليب بارد مع الكراميل، الشوكولاتة أو الثلج.",
-      en: "Espresso and chilled milk with caramel, chocolate, or ice.",
-    },
-  },
-  [CATEGORY_IDS.specialIcedMatchas]: {
-    name: { ar: "الماتشا الباردة", en: "Iced Matcha" },
-    blurb: {
-      ar: "ماتشا يابانية مخفوقة مع الحليب ونكهات باردة.",
-      en: "Japanese matcha whisked with milk and chilled flavors.",
-    },
-  },
-  [CATEGORY_IDS.ourSignatures]: {
-    name: { ar: "مشروبات أسيا", en: "Asya's Drinks" },
-    blurb: {
-      ar: "مشروبات باردة من الفاكهة، القهوة أو النكهات الخاصة.",
-      en: "Cold drinks with fruit, coffee, or house flavors.",
-    },
-  },
-  [CATEGORY_IDS.fromOurGarden]: {
-    name: { ar: "العصائر", en: "Fresh Juices" },
-    blurb: {
-      ar: "عصائر فاكهة طازجة تقدم باردة.",
-      en: "Fresh fruit juices served chilled.",
-    },
-  },
-  [CATEGORY_IDS.homemadeIceTeasAndLemonades]: {
-    name: { ar: "الشاي المثلج والليمونادة", en: "Iced Tea & Lemonade" },
-    blurb: {
-      ar: "شاي بارد وليمونادة بنكهات الفاكهة والنعناع.",
-      en: "Iced tea and lemonade with fruit and mint.",
-    },
-  },
-  [CATEGORY_IDS.turkishTraditionalDrinks]: {
-    name: { ar: "مشروبات تركية", en: "Turkish Drinks" },
-    blurb: {
-      ar: "عيران، شلغم ومشروبات تركية تقدم باردة.",
-      en: "Ayran, salgam, and Turkish drinks served chilled.",
-    },
-  },
-  [CATEGORY_IDS.softDrinks]: {
-    name: { ar: "المشروبات الغازية", en: "Soft Drinks" },
-    blurb: {
-      ar: "مشروبات غازية ومياه باردة مع الوجبة.",
-      en: "Soft drinks and chilled water with the meal.",
-    },
-  },
-  [CATEGORY_IDS.milkshake]: {
-    name: { ar: "ميلك شيك", en: "Milkshakes" },
-    blurb: {
-      ar: "حليب مخفوق مع الشوكولاتة، الفراولة أو الموز.",
-      en: "Milk blended with chocolate, strawberry, or banana.",
-    },
-  },
-  [CATEGORY_IDS.shishaByCharming]: {
-    name: { ar: "المعسلات", en: "Shisha" },
-    blurb: {
-      ar: "نكهات معسل كلاسيكية تقدم حسب الطلب.",
-      en: "Classic shisha flavors prepared to order.",
-    },
-  },
-  [CATEGORY_IDS.signatureShisha]: {
-    name: { ar: "معسلات خاصة", en: "Signature Shisha" },
-    blurb: {
-      ar: "خلطات معسل خاصة بنكهات فاكهية وعطرية.",
-      en: "Signature shisha blends with fruit and aromatic flavors.",
-    },
-  },
-  [CATEGORY_IDS.vipShisha]: {
-    name: { ar: "معسلات فاخرة", en: "VIP Shisha" },
-    blurb: {
-      ar: "معسلات مختارة تقدم بنكهات أعمق وتحضير خاص.",
-      en: "Selected shisha blends with deeper flavors and special preparation.",
-    },
-  },
-};
 
 export const CATEGORIES: MenuCategory[] = RAW_CATEGORIES.map((category) => ({
   ...category,
-  name: CATEGORY_DISPLAY_COPY[category.id]?.name ?? category.name,
-  blurb: CATEGORY_DISPLAY_COPY[category.id]?.blurb ?? category.blurb,
   cover: category.sourceImageUrl ?? placeholderImg,
 }));
 
