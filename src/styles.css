@@ -6036,3 +6036,181 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+/* Mobile-only polish: centered editorial copy and scroll-aware top bar. */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  .asya-site.site-shell {
+    overflow: visible;
+  }
+
+  .site-shell > .site-nav,
+  .site-nav {
+    position: fixed;
+    transform: translateY(0) !important;
+    transition: transform 220ms ease, background-color 220ms ease;
+    will-change: transform;
+  }
+
+  .site-shell > .mobile-bottom-nav,
+  .mobile-bottom-nav {
+    position: fixed;
+  }
+
+  .site-shell > .item-detail-layer,
+  .item-detail-layer {
+    position: fixed;
+  }
+
+  .site-nav.site-nav-mobile-hidden {
+    transform: translateY(-110%) !important;
+  }
+
+  .full-menu-explorer {
+    overflow: visible;
+  }
+
+  .full-menu-controls {
+    position: sticky;
+    top: 0;
+    transition: padding-top 220ms ease, background-color 220ms ease;
+  }
+
+  body.asya-mobile-nav-hidden .full-menu-controls {
+    padding-top: calc(max(0.42rem, env(safe-area-inset-top)) + 0.46rem);
+  }
+
+  body.asya-mobile-nav-hidden .menu-display-group,
+  body.asya-mobile-nav-hidden .full-menu-section {
+    scroll-margin-top: 5.2rem;
+  }
+
+  .story-section,
+  .signature-section,
+  .breakfast-section,
+  .bakery-section,
+  .desserts-section,
+  .gallery-section,
+  .visit-section,
+  .drinks-section {
+    padding-block: clamp(2.6rem, 9vw, 3.75rem);
+  }
+
+  .section-intro,
+  .story-copy,
+  .drinks-copy,
+  .breakfast-banner > div,
+  .pre-visit {
+    text-align: center;
+  }
+
+  .section-intro {
+    width: min(100%, 340px);
+    max-width: 340px;
+    margin-inline: auto;
+    padding-inline: 0;
+    align-items: center;
+  }
+
+  .section-kicker,
+  .section-intro h2,
+  .section-intro .section-copy,
+  .story-notes,
+  .story-notes a,
+  .inline-menu-link,
+  .pre-visit span,
+  .pre-visit a {
+    margin-inline: auto;
+  }
+
+  .section-kicker {
+    justify-content: center;
+    max-width: min(100%, 340px);
+    text-align: center;
+    line-height: 1.45;
+  }
+
+  .section-intro h2,
+  [data-locale="ar"] .section-intro h2 {
+    max-width: min(100%, 340px);
+    text-align: center;
+    line-height: 1.16;
+    text-wrap: balance;
+  }
+
+  .section-intro .section-copy,
+  .story-notes,
+  .pre-visit span {
+    max-width: min(100%, 340px);
+    text-align: center;
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  .story-copy {
+    display: grid;
+    justify-items: center;
+    gap: 1.05rem;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(1.1rem, 5vw, 1.5rem);
+  }
+
+  .story-notes {
+    width: min(100%, 340px);
+    align-items: center;
+  }
+
+  .story-notes a,
+  .inline-menu-link,
+  .pre-visit a {
+    justify-content: center;
+    width: fit-content;
+    max-width: min(100%, 340px);
+    text-align: center;
+  }
+
+  .breakfast-banner > div,
+  .drinks-copy {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    padding-inline: clamp(1.15rem, 5vw, 1.5rem);
+  }
+
+  .breakfast-banner {
+    gap: 1rem;
+  }
+
+  .bakery-grid,
+  .drinks-layout {
+    gap: 1.25rem;
+  }
+
+  .signature-layout,
+  .breakfast-list,
+  .bakery-card-grid,
+  .dessert-grid,
+  .drinks-grid,
+  .gallery-grid {
+    margin-top: 1.25rem;
+  }
+
+  .story-media,
+  .bakery-photo,
+  .drinks-copy img {
+    margin-bottom: 0;
+  }
+
+  .pre-visit {
+    display: grid;
+    justify-items: center;
+    gap: 0.8rem;
+    padding-inline: clamp(1.1rem, 5vw, 1.5rem);
+    margin-block: 0.4rem 1.1rem;
+  }
+}

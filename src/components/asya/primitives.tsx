@@ -378,6 +378,7 @@ function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
 function TopNav({ current }: { current: "home" | "menu" }) {
   const { locale, setLocale, t, tx } = useI18n();
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileNavHidden, setIsMobileNavHidden] = useState(false);
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 20);
@@ -386,8 +387,47 @@ function TopNav({ current }: { current: "home" | "menu" }) {
     return () => window.removeEventListener("scroll", update);
   }, []);
 
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    let previousScrollY = window.scrollY;
+
+    const update = () => {
+      if (!mobileQuery.matches) {
+        previousScrollY = window.scrollY;
+        setIsMobileNavHidden(false);
+        return;
+      }
+
+      const nextScrollY = window.scrollY;
+      const delta = nextScrollY - previousScrollY;
+
+      if (nextScrollY <= 8) {
+        setIsMobileNavHidden(false);
+      } else if (delta > 12) {
+        setIsMobileNavHidden(true);
+      } else if (delta < -12) {
+        setIsMobileNavHidden(false);
+      }
+
+      if (Math.abs(delta) > 12) previousScrollY = nextScrollY;
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    mobileQuery.addEventListener("change", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      mobileQuery.removeEventListener("change", update);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("asya-mobile-nav-hidden", isMobileNavHidden);
+    return () => document.body.classList.remove("asya-mobile-nav-hidden");
+  }, [isMobileNavHidden]);
+
   return (
-    <header className={`site-nav ${scrolled ? "site-nav-solid" : ""}`}>
+    <header className={`site-nav ${scrolled ? "site-nav-solid" : ""} ${isMobileNavHidden ? "site-nav-mobile-hidden" : ""}`}>
       <div className="site-nav-shell">
         <a href={current === "home" ? "#top" : "/"} className="nav-brand" aria-label="Asya's Gourmet">
           <span className="nav-logo-frame">
