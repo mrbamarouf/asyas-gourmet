@@ -19,7 +19,6 @@ import {
   RESTAURANT,
   type MenuCategory,
   type MenuCategoryGroup,
-  type MenuGroupId,
   type MenuItem,
 } from "@/data/menu";
 import {
@@ -29,6 +28,7 @@ import {
   PriceTag,
   VisitContact,
   categoryById,
+  compactOfficialDescription,
   getDishImage,
   isOfficialImage,
   localizeMenuDescription,
@@ -79,91 +79,10 @@ interface HomeCategory {
   image: string;
 }
 
-const FINAL_GROUP_IDS = [
-  "offers",
-  "breakfast",
-  "appetizers",
-  "mains",
-  "grills",
-  "desserts",
-  "drinks",
-] as const satisfies readonly MenuGroupId[];
-
-type FinalGroupId = (typeof FINAL_GROUP_IDS)[number];
-
-const FINAL_GROUP_COPY: Record<
-  FinalGroupId,
-  Pick<MenuCategoryGroup, "name" | "shortName" | "blurb">
-> = {
-  offers: {
-    name: { ar: "العروض", en: "Offers" },
-    shortName: { ar: "العروض", en: "Offers" },
-    blurb: { ar: "سفرات مشاركة للعائلة والأصدقاء.", en: "Sharing spreads for family and friends." },
-  },
-  breakfast: {
-    name: { ar: "الفطور", en: "Breakfast" },
-    shortName: { ar: "الفطور", en: "Breakfast" },
-    blurb: { ar: "أطباق صباحية ومخبوزات تركية.", en: "Morning plates and Turkish bakery." },
-  },
-  appetizers: {
-    name: { ar: "المقبلات", en: "Appetizers" },
-    shortName: { ar: "المقبلات", en: "Appetizers" },
-    blurb: { ar: "سلطات، شوربات، وجانبيات.", en: "Salads, soups, and sides." },
-  },
-  mains: {
-    name: { ar: "الرئيسية", en: "Main Courses" },
-    shortName: { ar: "الرئيسية", en: "Main Courses" },
-    blurb: { ar: "أطباق غداء وعشاء غنية.", en: "Generous lunch and dinner plates." },
-  },
-  grills: {
-    name: { ar: "المشويات", en: "Grills" },
-    shortName: { ar: "المشويات", en: "Grills" },
-    blurb: { ar: "كباب، شيش، وطواجن ساخنة.", en: "Kebabs, shish, and hot casseroles." },
-  },
-  desserts: {
-    name: { ar: "الحلويات", en: "Desserts" },
-    shortName: { ar: "الحلويات", en: "Desserts" },
-    blurb: { ar: "حلويات تركية وخيارات حلوة.", en: "Turkish sweets and dessert plates." },
-  },
-  drinks: {
-    name: { ar: "المشروبات", en: "Drinks" },
-    shortName: { ar: "المشروبات", en: "Drinks" },
-    blurb: {
-      ar: "شاي، قهوة، عصائر، ومشروبات باردة.",
-      en: "Tea, coffee, juices, and cold drinks.",
-    },
-  },
-};
-
-const FINAL_GROUP_MERGES: Record<FinalGroupId, MenuGroupId[]> = {
-  offers: ["offers"],
-  breakfast: ["breakfast", "bakery"],
-  appetizers: ["appetizers", "soups", "sides"],
-  mains: ["mains"],
-  grills: ["grills"],
-  desserts: ["desserts"],
-  drinks: ["drinks", "shisha"],
-};
-
-const FINAL_MENU_GROUPS = FINAL_GROUP_IDS.reduce<MenuCategoryGroup[]>((groups, id) => {
-  const source = CATEGORY_ORDER.find((group) => group.id === id);
-  const copy = FINAL_GROUP_COPY[id];
-  if (!source) return groups;
-
-  const categoryIds = FINAL_GROUP_MERGES[id].flatMap(
-    (groupId) => CATEGORY_ORDER.find((group) => group.id === groupId)?.categoryIds ?? [],
-  );
-
-  groups.push({
-    ...source,
-    ...copy,
-    categoryIds,
-    quickJump: true,
-    featuredOnly: false,
-  });
-
-  return groups;
-}, []);
+const itemCategoryIds = new Set(ITEMS.map((item) => item.category));
+const HOME_MENU_GROUPS = CATEGORY_ORDER.filter((group) =>
+  group.categoryIds.some((categoryId) => itemCategoryIds.has(categoryId)),
+);
 
 const categoryMap = new Map<string, MenuCategory>();
 
@@ -190,13 +109,13 @@ function HomeHero() {
     locale === "ar"
       ? [
           { value: `${ITEMS.length}+`, label: "صنف حقيقي" },
-          { value: "7", label: "مجموعات منيو" },
+          { value: `${HOME_MENU_GROUPS.length}`, label: "أقسام المنيو" },
           { value: `${POPULAR_ITEMS.length}+`, label: "اختيارات بارزة" },
           { value: "رسمي", label: "مصدر مطابق" },
         ]
       : [
           { value: `${ITEMS.length}+`, label: "Real dishes" },
-          { value: "7", label: "Menu groups" },
+          { value: `${HOME_MENU_GROUPS.length}`, label: "Menu sections" },
           { value: `${POPULAR_ITEMS.length}+`, label: "Highlighted picks" },
           { value: "Official", label: "Menu source" },
         ];
@@ -399,7 +318,10 @@ function PhotoStrip({ items }: { items: DishEntry[] }) {
 const SpotlightDish = memo(function SpotlightDish({ entry }: { entry: DishEntry }) {
   const { locale, tx } = useI18n();
   const { openItemDetail } = useItemDetail();
-  const description = localizeMenuDescription(entry.item, entry.category, locale);
+  const description = compactOfficialDescription(
+    localizeMenuDescription(entry.item, entry.category, locale),
+    locale,
+  );
   const handleOpen = useCallback(() => openItemDetail(entry), [entry, openItemDetail]);
 
   return (
@@ -423,7 +345,7 @@ const SpotlightDish = memo(function SpotlightDish({ entry }: { entry: DishEntry 
 function buildHomeContent(): HomeContent {
   hydrateCategoryMap();
 
-  const categories = FINAL_MENU_GROUPS.map((group) => ({
+  const categories = HOME_MENU_GROUPS.map((group) => ({
     group,
     image: imageForGroup(group),
   }));
@@ -432,8 +354,7 @@ function buildHomeContent(): HomeContent {
   const gallery = toEntries(
     uniqueItems([
       ...signatures.map((entry) => entry.item),
-      ...itemsFromGroup("desserts"),
-      ...itemsFromGroup("drinks"),
+      ...ITEMS.filter(isOfficialImage),
     ]).filter(isOfficialImage),
   );
 
@@ -458,11 +379,6 @@ function imageForGroup(group: MenuCategoryGroup) {
     .map((id) => categoryById(id))
     .find((candidate) => candidate?.cover || candidate?.sourceImageUrl);
   return category?.cover ?? category?.sourceImageUrl ?? heroImg;
-}
-
-function itemsFromGroup(groupId: MenuGroupId) {
-  const categoryIds = FINAL_MENU_GROUPS.find((group) => group.id === groupId)?.categoryIds ?? [];
-  return ITEMS.filter((item) => categoryIds.includes(item.category));
 }
 
 function uniqueItems(items: MenuItem[]) {

@@ -77,8 +77,8 @@ export const UI = {
   sec_visit: { ar: "الزيارة والتواصل", en: "Visit & Contact" },
   full_menu_title: { ar: "المنيو", en: "Our Menu" },
   full_menu_body: {
-    ar: "كل أصناف أسيا جورميه مرتبة في سبع مجموعات واضحة وسهلة التصفح.",
-    en: "Every Asya's Gourmet item organized into seven clear menu groups.",
+    ar: "كل أصناف أسيا جورميه مرتبة حسب أقسام المنيو الرسمية كما تظهر في مصدر فوست.",
+    en: "Every Asya's Gourmet item is organized by the official Foost menu sections.",
   },
   menu_page_eyebrow: { ar: "منيو أسيا الرسمي", en: "Official Asya's Menu" },
 

@@ -9,7 +9,6 @@ import {
   ITEMS,
   type MenuCategory,
   type MenuCategoryGroup,
-  type MenuGroupId,
   type MenuItem,
 } from "@/data/menu";
 import {
@@ -48,115 +47,17 @@ interface MenuDisplayGroupData {
 }
 
 const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
-const TOP_LEVEL_MENU_NAV_IDS = [
-  "offers",
-  "breakfast",
-  "appetizers",
-  "mains",
-  "grills",
-  "desserts",
-  "drinks",
-] as const satisfies readonly MenuGroupId[];
-
-type FinalMenuGroupId = (typeof TOP_LEVEL_MENU_NAV_IDS)[number];
+const itemCategoryIds = new Set(ITEMS.map((item) => item.category));
+const OFFICIAL_MENU_GROUPS = CATEGORY_ORDER.filter((group) =>
+  group.categoryIds.some((categoryId) => itemCategoryIds.has(categoryId)),
+);
 
 interface TopLevelMenuNavEntry {
   group: MenuCategoryGroup;
   label: MenuCategoryGroup["shortName"];
 }
 
-const FINAL_MENU_GROUP_COPY: Record<
-  FinalMenuGroupId,
-  Pick<MenuCategoryGroup, "name" | "shortName" | "blurb">
-> = {
-  offers: {
-    name: { ar: "العروض", en: "Offers" },
-    shortName: { ar: "العروض", en: "Offers" },
-    blurb: {
-      ar: "سفرات وباقات مشاركة للعائلة والأصدقاء.",
-      en: "Sharing spreads and packages for family and friends.",
-    },
-  },
-  breakfast: {
-    name: { ar: "الفطور", en: "Breakfast" },
-    shortName: { ar: "الفطور", en: "Breakfast" },
-    blurb: {
-      ar: "بيض، أطباق صباحية، ومخبوزات تركية دافئة.",
-      en: "Eggs, morning plates, and warm Turkish bakery choices.",
-    },
-  },
-  appetizers: {
-    name: { ar: "المقبلات", en: "Appetizers" },
-    shortName: { ar: "المقبلات", en: "Appetizers" },
-    blurb: {
-      ar: "سلطات، مقبلات، شوربات، وأطباق جانبية قبل الطبق الرئيسي.",
-      en: "Salads, starters, soups, and sides before the main plate.",
-    },
-  },
-  mains: {
-    name: { ar: "الرئيسية", en: "Main Courses" },
-    shortName: { ar: "الرئيسية", en: "Main Courses" },
-    blurb: {
-      ar: "أطباق غداء وعشاء تركية وغنية.",
-      en: "Generous Turkish lunch and dinner plates.",
-    },
-  },
-  grills: {
-    name: { ar: "المشويات", en: "Grills" },
-    shortName: { ar: "المشويات", en: "Grills" },
-    blurb: {
-      ar: "كباب، شيش، أطباق مشوية، وطواجن ساخنة.",
-      en: "Kebabs, shish, grilled plates, and hot casseroles.",
-    },
-  },
-  desserts: {
-    name: { ar: "الحلويات", en: "Desserts" },
-    shortName: { ar: "الحلويات", en: "Desserts" },
-    blurb: {
-      ar: "بقلاوة، كنافة، كيك، وحلويات تركية.",
-      en: "Baklava, kunafa, cakes, and Turkish sweets.",
-    },
-  },
-  drinks: {
-    name: { ar: "المشروبات", en: "Drinks" },
-    shortName: { ar: "المشروبات", en: "Drinks" },
-    blurb: {
-      ar: "شاي، قهوة، عصائر، مشروبات باردة، وخيارات الشيشة.",
-      en: "Tea, coffee, juices, cold drinks, and shisha options.",
-    },
-  },
-};
-
-const FINAL_MENU_GROUP_MERGES: Record<FinalMenuGroupId, MenuGroupId[]> = {
-  offers: ["offers"],
-  breakfast: ["breakfast", "bakery"],
-  appetizers: ["appetizers", "soups", "sides"],
-  mains: ["mains"],
-  grills: ["grills"],
-  desserts: ["desserts"],
-  drinks: ["drinks", "shisha"],
-};
-
-const FINAL_MENU_GROUPS = TOP_LEVEL_MENU_NAV_IDS.reduce<MenuCategoryGroup[]>((entries, id) => {
-  const sourceGroup = CATEGORY_ORDER.find((candidate) => candidate.id === id);
-  const copy = FINAL_MENU_GROUP_COPY[id];
-  if (!sourceGroup || !copy) return entries;
-
-  const categoryIds = FINAL_MENU_GROUP_MERGES[id].flatMap(
-    (groupId) => CATEGORY_ORDER.find((candidate) => candidate.id === groupId)?.categoryIds ?? [],
-  );
-
-  entries.push({
-    ...sourceGroup,
-    ...copy,
-    categoryIds,
-    quickJump: true,
-    featuredOnly: false,
-  });
-  return entries;
-}, []);
-
-const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = FINAL_MENU_GROUPS.map((group) => ({
+const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = OFFICIAL_MENU_GROUPS.map((group) => ({
   group,
   label: group.shortName,
 }));
@@ -210,11 +111,11 @@ function MenuHero() {
 
 function MenuExplorer() {
   const { t, tx } = useI18n();
-  const [activeGroup, setActiveGroup] = useState<FinalMenuGroupId>(
+  const [activeGroup, setActiveGroup] = useState<string>(
     TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers",
   );
   const displayGroups = useMemo<MenuDisplayGroupData[]>(() => {
-    return FINAL_MENU_GROUPS.map((definition) => {
+    return OFFICIAL_MENU_GROUPS.map((definition) => {
       const items = uniqueItems(
         ITEMS.filter((item) => definition.categoryIds.includes(item.category)),
       );
@@ -223,7 +124,7 @@ function MenuExplorer() {
     }).filter((group) => group.items.length > 0);
   }, []);
 
-  const scrollToGroup = useCallback((groupId: FinalMenuGroupId) => {
+  const scrollToGroup = useCallback((groupId: string) => {
     setActiveGroup((current) => (current === groupId ? current : groupId));
     const group = document.getElementById(`group-${groupId}`);
     if (!group) return;

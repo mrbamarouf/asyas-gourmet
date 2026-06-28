@@ -107,16 +107,11 @@ export function localizeMenuText(text: LocalizedText, locale: Locale) {
   return cleanLocalizedMenuText(text[locale], locale);
 }
 
-export function localizeMenuDescription(item: MenuItem, category: MenuCategory, locale: Locale) {
-  const itemName = localizeMenuText(item.name, locale);
-  const raw = cleanDescriptionCopy(
+export function localizeMenuDescription(item: MenuItem, _category: MenuCategory, locale: Locale) {
+  return cleanDescriptionCopy(
     cleanLocalizedMenuText(item.description[locale], locale),
     locale,
   );
-  const concise = selectDishSentence(raw, locale);
-
-  if (concise) return concise;
-  return fallbackDishDescription(itemName, category.name.en, locale);
 }
 
 function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
@@ -163,104 +158,17 @@ function cleanDescriptionCopy(value: string, locale: Locale) {
         .trim();
 }
 
-function selectDishSentence(value: string, locale: Locale) {
+export function compactOfficialDescription(value: string, locale: Locale) {
   if (!value) return "";
 
-  const foodWords =
-    locale === "ar"
-      ? /(بيض|جبن|أجبان|زيتون|خبز|بيدا|جوزلمة|بوريك|بيتزا|لحم|دجاج|كباب|شيش|مشوي|طاجن|أرز|برغل|بطاطس|شوربة|عدس|خضار|سلطة|حمص|متبل|طماطم|زبادي|كريمة|زبدة|عسل|فستق|بقلاوة|كنافة|كيك|شاي|قهوة|عصير|ليمون|نعناع|حليب|شوكولاتة|فراولة|موز|مياه|شيشة|عنب|تفاح|توت|برتقال|خوخ)/
-      : /(egg|cheese|olive|bread|pide|gozleme|borek|pizza|lamb|beef|meat|chicken|kebab|shish|grill|casserole|rice|bulgur|potato|soup|lentil|vegetable|salad|hummus|mutabbal|tomato|yogurt|cream|butter|honey|pistachio|baklava|kunafa|cake|tea|coffee|juice|lemon|mint|milk|chocolate|strawberry|banana|water|shisha|grape|apple|berry|orange|peach)/i;
-  const filler =
-    locale === "ar"
-      ? /(ابدأ يومك|تجربة|رحلة|لا تنسى|لا تُنسى|مصممة|مفعمة|فريدة|كل لحظة|كل لقمة|كل رشفة|بعناية فائقة|تمنحك|يشعرك)/
-      : /(start your day|experience|journey|unforgettable|designed|crafted|every bite|every sip|delivers|perfect|delightfully|signature on your table)/i;
-  const sentenceEnd = locale === "ar" ? /[.!؟]/ : /[.!?]/;
-  const parts = value
-    .split(sentenceEnd)
-    .map((part) => part.trim())
-    .filter(Boolean);
-  const specific = parts.find((part) => foodWords.test(part) && !filler.test(part)) ?? "";
-  const selected = specific || parts.find((part) => foodWords.test(part)) || "";
+  const limit = locale === "ar" ? 170 : 185;
+  const normalized = value.replace(/\s+/g, " ").trim();
+  if (normalized.length <= limit) return normalized;
 
-  return compactSentence(selected, locale);
-}
-
-function compactSentence(value: string, locale: Locale) {
-  if (!value) return "";
-
-  const limit = locale === "ar" ? 132 : 126;
-  const words = value.replace(/\s+/g, " ").split(" ").filter(Boolean);
-  let output = "";
-
-  for (const word of words) {
-    const next = output ? `${output} ${word}` : word;
-    if (next.length > limit) break;
-    output = next;
-  }
-
-  if (!output) return "";
-  return output.replace(/[،,;:]$/g, "").trim() + (locale === "ar" ? "." : ".");
-}
-
-function fallbackDishDescription(itemName: string, categoryName: string, locale: Locale) {
-  const name = itemName || (locale === "ar" ? "هذا الصنف" : "This item");
-  const category = categoryName.toLowerCase();
-  const isArabic = locale === "ar";
-
-  if (/happy spreads/.test(category)) {
-    return isArabic
-      ? `${name} سفرة فطور تركية للمشاركة مع أجبان، زيتون، مخبوزات وأطباق ساخنة.`
-      : `${name} is a Turkish breakfast spread for sharing, served with cheeses, olives, bakery items and hot plates.`;
-  }
-  if (/egg|asya's flavours/.test(category)) {
-    return isArabic
-      ? `${name} طبق فطور تركي يقدم ساخنًا مع نكهات صباحية واضحة.`
-      : `${name} is a warm Turkish breakfast plate with clean morning flavors.`;
-  }
-  if (/soup/.test(category)) {
-    return isArabic
-      ? `${name} شوربة ساخنة بقوام متوازن ونكهة هادئة.`
-      : `${name} is a warm soup with a balanced, gentle flavor.`;
-  }
-  if (/grill|casserole|steakhouse/.test(category)) {
-    return isArabic
-      ? `${name} طبق ساخن من اللحم أو الدجاج يقدم مع إضافات تركية مناسبة.`
-      : `${name} is a hot meat or chicken plate served with Turkish-style sides.`;
-  }
-  if (/pasta/.test(category)) {
-    return isArabic
-      ? `${name} طبق باستا غني بصلصة متوازنة وقوام كريمي.`
-      : `${name} is a pasta plate with a balanced sauce and creamy texture.`;
-  }
-  if (/greens|garden|flavours of the table|warm/.test(category)) {
-    return isArabic
-      ? `${name} طبق مقبلات أو سلطة يفتح المائدة بنكهات واضحة.`
-      : `${name} is a starter or salad plate made to open the table with clear flavors.`;
-  }
-  if (/pide|pizza|gözleme|börek|potatoes/.test(category)) {
-    return isArabic
-      ? `${name} مخبوز أو طبق جانبي يقدم دافئًا بقوام مشبع.`
-      : `${name} is a warm bakery or side dish with a satisfying texture.`;
-  }
-  if (/dessert|sweet/.test(category)) {
-    return isArabic
-      ? `${name} حلوى تركية تقدم بنكهة غنية وتوازن لطيف.`
-      : `${name} is a Turkish dessert with rich flavor and a gentle finish.`;
-  }
-  if (/tea|coffee|matcha|drink|lemonade|milkshake|soft/.test(category)) {
-    return isArabic
-      ? `${name} مشروب يقدم بنكهة واضحة وقوام متوازن.`
-      : `${name} is a drink served with a clean flavor and balanced finish.`;
-  }
-  if (/shisha/.test(category)) {
-    return isArabic
-      ? `${name} نكهة شيشة مخصصة لقسم الجلسات.`
-      : `${name} is a shisha flavor from the lounge menu.`;
-  }
-
-  return isArabic
-    ? `${name} صنف من منيو أسيا جورميه.`
-    : `${name} is an item from the Asya's Gourmet menu.`;
+  const clipped = normalized.slice(0, limit);
+  const lastSpace = clipped.lastIndexOf(" ");
+  const excerpt = (lastSpace > 80 ? clipped.slice(0, lastSpace) : clipped).trim();
+  return excerpt.replace(/[،,;:.]$/g, "") + (locale === "ar" ? "." : ".");
 }
 
 function localizeOptionName(name: string, locale: Locale) {
@@ -689,7 +597,10 @@ export const MenuCard = memo(function MenuCard({
   const { openItemDetail } = useItemDetail();
   const itemName = localizeMenuText(item.name, locale);
   const categoryName = localizeMenuText(category.name, locale);
-  const description = localizeMenuDescription(item, category, locale);
+  const description = compactOfficialDescription(
+    localizeMenuDescription(item, category, locale),
+    locale,
+  );
   const className = `menu-card menu-card-${variant}`;
   const handleOpen = useCallback(
     () => openItemDetail({ item, category }),
