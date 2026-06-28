@@ -6,8 +6,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "العروض", en: "Offers" },
     shortName: { ar: "العروض", en: "Offers" },
     blurb: {
-      ar: "تشكيلات مشاركة مميزة من منيو أسيا.",
-      en: "Signature sharing spreads from Asya's menu.",
+      ar: "موائد فطور ومشاركة تجمع الأجبان، الزيتون، البيض، الخبز والشاي.",
+      en: "Breakfast spreads with cheese, olives, eggs, bread, and tea.",
     },
     categoryIds: [CATEGORY_IDS.happySpreads],
     quickJump: true,
@@ -17,8 +17,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "الفطور", en: "Breakfast" },
     shortName: { ar: "الفطور", en: "Breakfast" },
     blurb: {
-      ar: "بيض، بطاطس، وأطباق صباحية تركية.",
-      en: "Eggs, potatoes, and Turkish morning plates.",
+      ar: "بيض بالمقلاة، بطاطس متبلة، وأطباق صباحية تركية.",
+      en: "Skillet eggs, seasoned potatoes, and Turkish morning plates.",
     },
     categoryIds: [
       CATEGORY_IDS.eggs,
@@ -32,8 +32,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "المقبلات", en: "Appetizers" },
     shortName: { ar: "المقبلات", en: "Appetizers" },
     blurb: {
-      ar: "شوربات، سلطات، وأطباق خفيفة للمشاركة.",
-      en: "Soups, salads, and small plates for the table.",
+      ar: "شوربات، سلطات، مزات باردة، وبدايات ساخنة للمشاركة.",
+      en: "Soups, salads, cold meze, and hot starters for sharing.",
     },
     categoryIds: [
       CATEGORY_IDS.deliciousSoups,
@@ -48,8 +48,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "الرئيسية", en: "Main Courses" },
     shortName: { ar: "الرئيسية", en: "Main Courses" },
     blurb: {
-      ar: "معجنات تركية، بيتزا، باستا، وأطباق رئيسية مشبعة.",
-      en: "Turkish breads, pizza, pasta, and satisfying main plates.",
+      ar: "بيدا، جوزلمة، باستا، بيتزا، وستيكات تقدم كطبق رئيسي.",
+      en: "Pide, gozleme, pasta, pizza, and steaks served as main plates.",
     },
     categoryIds: [
       CATEGORY_IDS.ablaSHandmadeGozlemeAndBorek,
@@ -65,8 +65,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "المشويات", en: "Grills" },
     shortName: { ar: "المشويات", en: "Grills" },
     blurb: {
-      ar: "مشويات وطواجن تقدم ساخنة من المطبخ.",
-      en: "Grills and casseroles served hot from the kitchen.",
+      ar: "كباب، شيش، طواجن فخارية، وقطع لحم تشوى على الفحم.",
+      en: "Kebabs, shish, clay casseroles, and charcoal-grilled cuts.",
     },
     categoryIds: [CATEGORY_IDS.grillAndCasserole],
     quickJump: true,
@@ -76,8 +76,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "الحلويات", en: "Desserts" },
     shortName: { ar: "الحلويات", en: "Desserts" },
     blurb: {
-      ar: "حلويات تركية واختيارات حلوة من أسيا.",
-      en: "Turkish sweets and house desserts.",
+      ar: "بقلاوة، كنافة، تريليتشا، فواكه، وقشطة بالعسل.",
+      en: "Baklava, kunefe, trilece, fruit, and cream with honey.",
     },
     categoryIds: [CATEGORY_IDS.aSweetMemory, CATEGORY_IDS.turkishDessert],
     quickJump: true,
@@ -87,8 +87,8 @@ export const REFERENCE_MENU_GROUPS: MenuCategoryGroup[] = [
     name: { ar: "المشروبات", en: "Drinks" },
     shortName: { ar: "المشروبات", en: "Drinks" },
     blurb: {
-      ar: "قهوة، شاي، مشروبات باردة، واختيارات المعسل.",
-      en: "Coffee, tea, cold drinks, and shisha selections.",
+      ar: "قهوة، شاي، عيران، عصائر، موهيتو، ومعسل بنكهات مختارة.",
+      en: "Coffee, tea, ayran, juices, mojitos, and selected shisha flavors.",
     },
     categoryIds: [
       CATEGORY_IDS.worldSCoffees,

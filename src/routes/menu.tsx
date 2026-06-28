@@ -26,14 +26,14 @@ import logoImg from "@/assets/asyas-logo-transparent.png";
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
-      { title: "Asya's Gourmet | Full Menu" },
+      { title: "Asya's Gourmet | Turkish Menu" },
       {
         name: "description",
         content:
-          "The complete Asya's Gourmet menu with official sections, prices, descriptions, and product imagery.",
+          "Browse Asya's Gourmet Turkish breakfast, pide, meze, grills, sweets, coffee, tea, and fresh drinks.",
       },
-      { property: "og:title", content: "Asya's Gourmet | Full Menu" },
-      { property: "og:description", content: "Complete official menu for Asya's Gourmet." },
+      { property: "og:title", content: "Asya's Gourmet | Turkish Menu" },
+      { property: "og:description", content: "Turkish breakfast, bakery, grills, desserts, coffee, tea, and cold drinks." },
       { property: "og:image", content: logoImg },
     ],
     links: [{ rel: "canonical", href: "/menu" }],

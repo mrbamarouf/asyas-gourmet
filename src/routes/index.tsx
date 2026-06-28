@@ -45,16 +45,16 @@ import teaImg from "@/assets/tea.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Asya's Gourmet | Turkish Restaurant Experience" },
+      { title: "Asya's Gourmet | Turkish Restaurant in Jeddah" },
       {
         name: "description",
         content:
-          "Asya's Gourmet restaurant experience with Turkish dishes, fresh bakery, Turkish breakfast, drinks, desserts, and a complete menu.",
+          "Asya's Gourmet serves Turkish breakfast, pide, gozleme, grills, desserts, coffee, tea, and fresh drinks in Jeddah.",
       },
-      { property: "og:title", content: "Asya's Gourmet | Turkish Restaurant Experience" },
+      { property: "og:title", content: "Asya's Gourmet | Turkish Restaurant in Jeddah" },
       {
         property: "og:description",
-        content: "A warm Turkish boutique restaurant experience with a complete QR menu.",
+        content: "Turkish breakfast, bakery, grills, sweets, coffee, and tea from Asya's Gourmet.",
       },
       { property: "og:image", content: logoImg },
     ],
@@ -108,16 +108,16 @@ function HomeHero() {
   const stats =
     locale === "ar"
       ? [
-          { value: `${ITEMS.length}+`, label: "صنف حقيقي" },
-          { value: `${HOME_MENU_GROUPS.length}`, label: "أقسام المنيو" },
-          { value: `${POPULAR_ITEMS.length}+`, label: "اختيارات بارزة" },
-          { value: "رسمي", label: "مصدر مطابق" },
+          { value: `${ITEMS.length}+`, label: "صنف في القائمة" },
+          { value: `${HOME_MENU_GROUPS.length}`, label: "أقسام رئيسية" },
+          { value: `${POPULAR_ITEMS.length}+`, label: "أطباق مختارة" },
+          { value: "يوميًا", label: "تحضير طازج" },
         ]
       : [
-          { value: `${ITEMS.length}+`, label: "Real dishes" },
-          { value: `${HOME_MENU_GROUPS.length}`, label: "Menu sections" },
-          { value: `${POPULAR_ITEMS.length}+`, label: "Highlighted picks" },
-          { value: "Official", label: "Menu source" },
+          { value: `${ITEMS.length}+`, label: "Menu dishes" },
+          { value: `${HOME_MENU_GROUPS.length}`, label: "Main sections" },
+          { value: `${POPULAR_ITEMS.length}+`, label: "House picks" },
+          { value: "Daily", label: "Fresh prep" },
         ];
 
   return (
@@ -197,45 +197,45 @@ function QualitySection() {
   const { locale, t } = useI18n();
   const qualities =
     locale === "ar"
-      ? [
-          {
-            icon: <ChefHat />,
-            title: "وصفات تركية",
-            body: "فطور، مخبوزات، ومشويات بروح المائدة التركية.",
-          },
-          {
-            icon: <Sparkles />,
-            title: "صور واضحة",
-            body: "كل صنف يظهر مع صورته وسعره بدون ازدحام.",
-          },
-          { icon: <Flame />, title: "أطباق ساخنة", body: "مشويات وطواجن ومخبوزات تقدم دافئة." },
-          {
-            icon: <Heart />,
-            title: "ضيافة أسيا",
-            body: "منيو هادئ يساعد الضيف على الاختيار بسرعة.",
-          },
-        ]
-      : [
-          {
-            icon: <ChefHat />,
-            title: "Turkish Recipes",
-            body: "Breakfast, bakery, and grills served with Turkish table character.",
-          },
-          {
-            icon: <Sparkles />,
-            title: "Clear Photos",
-            body: "Each dish keeps its image and price easy to scan.",
-          },
-          {
-            icon: <Flame />,
-            title: "Served Warm",
-            body: "Grills, casseroles, and bakery plates stay at the center.",
-          },
-          {
-            icon: <Heart />,
-            title: "Asya Hospitality",
-            body: "A calm menu that helps guests choose quickly.",
-          },
+	      ? [
+	          {
+	            icon: <ChefHat />,
+	            title: "عجين يومي",
+	            body: "بيدا، جوزلمة، وبوريك تُحضّر من عجين طري وتقدم ساخنة.",
+	          },
+	          {
+	            icon: <Sparkles />,
+	            title: "فطور للمشاركة",
+	            body: "أجبان، زيتون، بيض، مربى، وخبز على مائدة واحدة.",
+	          },
+	          { icon: <Flame />, title: "فحم وطواجن", body: "كباب، شيش، وطواجن فخارية بصلصات الطماطم والفلفل." },
+	          {
+	            icon: <Heart />,
+	            title: "خاتمة حلوة",
+	            body: "بقلاوة، كنافة، قشطة، وشاي تركي بعد الطبق الرئيسي.",
+	          },
+	        ]
+	      : [
+	          {
+	            icon: <ChefHat />,
+	            title: "Daily Dough",
+	            body: "Pide, gozleme, and borek made with soft dough and served hot.",
+	          },
+	          {
+	            icon: <Sparkles />,
+	            title: "Breakfast to Share",
+	            body: "Cheese, olives, eggs, jams, and bread gathered on one table.",
+	          },
+	          {
+	            icon: <Flame />,
+	            title: "Charcoal and Clay",
+	            body: "Kebabs, shish, and clay casseroles with tomato and pepper sauces.",
+	          },
+	          {
+	            icon: <Heart />,
+	            title: "Sweet Finish",
+	            body: "Baklava, kunefe, cream, and Turkish tea after the main plate.",
+	          },
         ];
 
   return (

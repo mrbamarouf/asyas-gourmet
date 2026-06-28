@@ -55,14 +55,14 @@ export interface MenuCategoryGroup {
 export const RESTAURANT = {
   name: { ar: "أسيا جورميه", en: "Asya's Gourmet" },
   kicker: { ar: "مطعم ومخبز تركي", en: "Turkish Restaurant & Bakery" },
-  tagline: { ar: "دفء إسطنبول على مائدة فاخرة", en: "Istanbul Warmth, Served Gourmet" },
+  tagline: { ar: "فطور تركي ومخبوزات ومشويات", en: "Turkish Breakfast, Bakery, and Grills" },
   phone: "+966536251814",
   whatsapp: "+966536251814",
   instagramUrl: "https://www.instagram.com/asyas.gourmet",
   menuSourceUrl: "https://qr.thefoost.com/asyas/category/4f5c2778-d74e-424a-bedb-81f78f3c68a3/",
   mapsUrl: "https://maps.app.goo.gl/QUcPv2DQpb89Wr4fA?g_st=ic",
-  address: { ar: "أسيا جورميه", en: "Asya's Gourmet" },
-  hours: { ar: "يوميًا، التوقيت يحتاج تأكيد من العميل", en: "Daily, hours to be confirmed" },
+  address: { ar: "الموقع على الخريطة", en: "Location on Maps" },
+  hours: { ar: "تواصل معنا لمعرفة ساعات اليوم", en: "Contact us for today's hours" },
   currency: { ar: "ر.س", en: "SAR" },
 };
 
@@ -5579,8 +5579,216 @@ const RAW_ITEMS = [
   }
 ] satisfies MenuItem[];
 
+const CATEGORY_DISPLAY_COPY: Record<string, { name: LocalizedText; blurb: LocalizedText }> = {
+  [CATEGORY_IDS.happySpreads]: {
+    name: { ar: "موائد الفطور", en: "Breakfast Spreads" },
+    blurb: {
+      ar: "أجبان، زيتون، بيض، خبز وشاي على مائدة صباحية للمشاركة.",
+      en: "Cheese, olives, eggs, bread, and tea served as a sharing breakfast.",
+    },
+  },
+  [CATEGORY_IDS.eggs]: {
+    name: { ar: "أطباق البيض", en: "Egg Dishes" },
+    blurb: {
+      ar: "بيض بالمقلاة مع الطماطم، الفلفل، الجبن، السجق أو الزبدة.",
+      en: "Skillet eggs with tomato, pepper, cheese, sucuk, or butter.",
+    },
+  },
+  [CATEGORY_IDS.flavoursOfAsyaS]: {
+    name: { ar: "مقبلات أسيا", en: "Asya's Starters" },
+    blurb: {
+      ar: "أجبان، زيتون، حمص، فلافل وأطباق صغيرة تبدأ بها المائدة.",
+      en: "Cheese, olives, hummus, falafel, and small plates to start the table.",
+    },
+  },
+  [CATEGORY_IDS.mrPotatoes]: {
+    name: { ar: "البطاطس", en: "Potatoes" },
+    blurb: {
+      ar: "بطاطس مقلية، متبلة أو محشوة بصلصات وأعشاب.",
+      en: "Fried, seasoned, and dressed potatoes with sauces and herbs.",
+    },
+  },
+  [CATEGORY_IDS.aSweetMemory]: {
+    name: { ar: "حلويات مختارة", en: "Selected Sweets" },
+    blurb: {
+      ar: "فواكه، قشطة، عسل وقطع حلوة خفيفة بعد الفطور.",
+      en: "Fruit, cream, honey, and light sweets after breakfast.",
+    },
+  },
+  [CATEGORY_IDS.ablaSHandmadeGozlemeAndBorek]: {
+    name: { ar: "جوزلمة وبوريك", en: "Gozleme & Borek" },
+    blurb: {
+      ar: "عجين رقيق يحشى ويطهى على الصاج أو يخبز بطبقات طرية.",
+      en: "Thin dough filled and cooked on the griddle or baked in soft layers.",
+    },
+  },
+  [CATEGORY_IDS.asyaSPremiumPideS]: {
+    name: { ar: "بيدا أسيا", en: "Asya's Pide" },
+    blurb: {
+      ar: "عجين بيدا تركي يخبز بحشوات الجبن، اللحم أو الخضار.",
+      en: "Turkish pide baked with cheese, meat, or vegetable fillings.",
+    },
+  },
+  [CATEGORY_IDS.deliciousSoups]: {
+    name: { ar: "الشوربات", en: "Soups" },
+    blurb: {
+      ar: "شوربات دافئة من العدس، الدجاج أو الخضار.",
+      en: "Warm lentil, chicken, and vegetable soups.",
+    },
+  },
+  [CATEGORY_IDS.greensAndFriends]: {
+    name: { ar: "السلطات", en: "Salads" },
+    blurb: {
+      ar: "خضار طازجة، أعشاب، رمان وصلصات خفيفة.",
+      en: "Fresh vegetables, herbs, pomegranate, and light dressings.",
+    },
+  },
+  [CATEGORY_IDS.flavoursOfTheTable]: {
+    name: { ar: "المزات الباردة", en: "Cold Meze" },
+    blurb: {
+      ar: "حمص، محمرة، متبل، بابا غنوج ومخللات للمشاركة.",
+      en: "Hummus, muhammara, mutabel, baba ghanoush, and pickles for sharing.",
+    },
+  },
+  [CATEGORY_IDS.warmAndDeliciousStarts]: {
+    name: { ar: "المقبلات الساخنة", en: "Hot Starters" },
+    blurb: {
+      ar: "مانتي، كبة، حمص باللحم ولقيمات دافئة من المطبخ.",
+      en: "Manti, kibbeh, hummus with meat, and warm bites from the kitchen.",
+    },
+  },
+  [CATEGORY_IDS.pasta]: {
+    name: { ar: "الباستا", en: "Pasta" },
+    blurb: {
+      ar: "باستا طازجة مع صلصات الطماطم، الكريمة، الجبن أو اللحم.",
+      en: "Fresh pasta with tomato, cream, cheese, or meat sauces.",
+    },
+  },
+  [CATEGORY_IDS.pizza]: {
+    name: { ar: "البيتزا", en: "Pizza" },
+    blurb: {
+      ar: "عجين مخبوز مع صلصة الطماطم، الجبن وحشوات غنية.",
+      en: "Baked dough with tomato sauce, cheese, and generous toppings.",
+    },
+  },
+  [CATEGORY_IDS.grillAndCasserole]: {
+    name: { ar: "المشويات والطواجن", en: "Grills & Casseroles" },
+    blurb: {
+      ar: "كباب، شيش، طواجن فخارية وقطع لحم تشوى على الفحم.",
+      en: "Kebabs, shish, clay casseroles, and charcoal-grilled cuts.",
+    },
+  },
+  [CATEGORY_IDS.mrToroSteakhouse]: {
+    name: { ar: "الستيك", en: "Steaks" },
+    blurb: {
+      ar: "قطع لحم مختارة تشوى وتقدم مع الخضار أو البطاطس.",
+      en: "Selected cuts grilled and served with vegetables or potatoes.",
+    },
+  },
+  [CATEGORY_IDS.turkishDessert]: {
+    name: { ar: "حلويات تركية", en: "Turkish Desserts" },
+    blurb: {
+      ar: "بقلاوة، كنافة، تريليتشا وتشيز كيك بنكهات غنية.",
+      en: "Baklava, kunefe, trilece, and cheesecake with rich flavors.",
+    },
+  },
+  [CATEGORY_IDS.worldSCoffees]: {
+    name: { ar: "القهوة", en: "Coffee" },
+    blurb: {
+      ar: "قهوة سوداء، إسبريسو ومشروبات حليب تحضر ساخنة.",
+      en: "Black coffee, espresso, and milk drinks served hot.",
+    },
+  },
+  [CATEGORY_IDS.tea]: {
+    name: { ar: "الشاي", en: "Tea" },
+    blurb: {
+      ar: "شاي تركي، مغربي، أخضر أو منقوع بالأعشاب.",
+      en: "Turkish, Moroccan, green, and herbal teas.",
+    },
+  },
+  [CATEGORY_IDS.coldCoffees]: {
+    name: { ar: "القهوة الباردة", en: "Cold Coffee" },
+    blurb: {
+      ar: "إسبريسو وحليب بارد مع الكراميل، الشوكولاتة أو الثلج.",
+      en: "Espresso and chilled milk with caramel, chocolate, or ice.",
+    },
+  },
+  [CATEGORY_IDS.specialIcedMatchas]: {
+    name: { ar: "الماتشا الباردة", en: "Iced Matcha" },
+    blurb: {
+      ar: "ماتشا يابانية مخفوقة مع الحليب ونكهات باردة.",
+      en: "Japanese matcha whisked with milk and chilled flavors.",
+    },
+  },
+  [CATEGORY_IDS.ourSignatures]: {
+    name: { ar: "مشروبات أسيا", en: "Asya's Drinks" },
+    blurb: {
+      ar: "مشروبات باردة من الفاكهة، القهوة أو النكهات الخاصة.",
+      en: "Cold drinks with fruit, coffee, or house flavors.",
+    },
+  },
+  [CATEGORY_IDS.fromOurGarden]: {
+    name: { ar: "العصائر", en: "Fresh Juices" },
+    blurb: {
+      ar: "عصائر فاكهة طازجة تقدم باردة.",
+      en: "Fresh fruit juices served chilled.",
+    },
+  },
+  [CATEGORY_IDS.homemadeIceTeasAndLemonades]: {
+    name: { ar: "الشاي المثلج والليمونادة", en: "Iced Tea & Lemonade" },
+    blurb: {
+      ar: "شاي بارد وليمونادة بنكهات الفاكهة والنعناع.",
+      en: "Iced tea and lemonade with fruit and mint.",
+    },
+  },
+  [CATEGORY_IDS.turkishTraditionalDrinks]: {
+    name: { ar: "مشروبات تركية", en: "Turkish Drinks" },
+    blurb: {
+      ar: "عيران، شلغم ومشروبات تركية تقدم باردة.",
+      en: "Ayran, salgam, and Turkish drinks served chilled.",
+    },
+  },
+  [CATEGORY_IDS.softDrinks]: {
+    name: { ar: "المشروبات الغازية", en: "Soft Drinks" },
+    blurb: {
+      ar: "مشروبات غازية ومياه باردة مع الوجبة.",
+      en: "Soft drinks and chilled water with the meal.",
+    },
+  },
+  [CATEGORY_IDS.milkshake]: {
+    name: { ar: "ميلك شيك", en: "Milkshakes" },
+    blurb: {
+      ar: "حليب مخفوق مع الشوكولاتة، الفراولة أو الموز.",
+      en: "Milk blended with chocolate, strawberry, or banana.",
+    },
+  },
+  [CATEGORY_IDS.shishaByCharming]: {
+    name: { ar: "المعسلات", en: "Shisha" },
+    blurb: {
+      ar: "نكهات معسل كلاسيكية تقدم حسب الطلب.",
+      en: "Classic shisha flavors prepared to order.",
+    },
+  },
+  [CATEGORY_IDS.signatureShisha]: {
+    name: { ar: "معسلات خاصة", en: "Signature Shisha" },
+    blurb: {
+      ar: "خلطات معسل خاصة بنكهات فاكهية وعطرية.",
+      en: "Signature shisha blends with fruit and aromatic flavors.",
+    },
+  },
+  [CATEGORY_IDS.vipShisha]: {
+    name: { ar: "معسلات فاخرة", en: "VIP Shisha" },
+    blurb: {
+      ar: "معسلات مختارة تقدم بنكهات أعمق وتحضير خاص.",
+      en: "Selected shisha blends with deeper flavors and special preparation.",
+    },
+  },
+};
+
 export const CATEGORIES: MenuCategory[] = RAW_CATEGORIES.map((category) => ({
   ...category,
+  name: CATEGORY_DISPLAY_COPY[category.id]?.name ?? category.name,
+  blurb: CATEGORY_DISPLAY_COPY[category.id]?.blurb ?? category.blurb,
   cover: category.sourceImageUrl ?? placeholderImg,
 }));
 
