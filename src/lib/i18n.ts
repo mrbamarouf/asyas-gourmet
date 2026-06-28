@@ -100,7 +100,7 @@ export const UI = {
   },
 
   filter_all: { ar: "الكل", en: "All" },
-  menuCount: { ar: "صنف", en: "items" },
+  menuCount: { ar: "أصناف", en: "Items" },
   categoryCount: { ar: "قسم", en: "categories" },
   viewSection: { ar: "استعرض القسم", en: "View section" },
 

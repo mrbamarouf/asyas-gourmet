@@ -281,6 +281,7 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
             {group.items.length} {t("menuCount")}
           </span>
         </div>
+        <span className="menu-group-divider" aria-hidden="true" />
       </div>
 
       <div className="full-menu-grid">
