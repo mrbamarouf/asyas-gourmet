@@ -10005,8 +10005,13 @@ h4 {
     gap: 0.45rem !important;
   }
 
-  .item-detail-meta > span {
+  .item-detail-meta > span:not(.price-tag) {
     display: none !important;
+  }
+
+  .item-detail-meta .price-tag {
+    display: inline-flex !important;
+    margin: 0 auto !important;
   }
 
   .item-detail-copy h2,
