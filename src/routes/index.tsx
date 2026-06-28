@@ -31,7 +31,7 @@ import {
   categoryById,
   getDishImage,
   isOfficialImage,
-  localizeMenuText,
+  localizeMenuDescription,
   useItemDetail,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Asya's Gourmet restaurant experience with signature Turkish dishes, fresh bakery, Turkish breakfast, drinks, desserts, and a complete Foost-matched menu.",
+          "Asya's Gourmet restaurant experience with Turkish dishes, fresh bakery, Turkish breakfast, drinks, desserts, and a complete menu.",
       },
       { property: "og:title", content: "Asya's Gourmet | Turkish Restaurant Experience" },
       {
@@ -98,7 +98,7 @@ const FINAL_GROUP_COPY: Record<
   offers: {
     name: { ar: "العروض", en: "Offers" },
     shortName: { ar: "العروض", en: "Offers" },
-    blurb: { ar: "باقات مشاركة من المنيو الحقيقي.", en: "Sharing packages from the real menu." },
+    blurb: { ar: "سفرات مشاركة للعائلة والأصدقاء.", en: "Sharing spreads for family and friends." },
   },
   breakfast: {
     name: { ar: "الفطور", en: "Breakfast" },
@@ -128,7 +128,10 @@ const FINAL_GROUP_COPY: Record<
   drinks: {
     name: { ar: "المشروبات", en: "Drinks" },
     shortName: { ar: "المشروبات", en: "Drinks" },
-    blurb: { ar: "شاي، قهوة، عصائر، وخيارات باردة.", en: "Tea, coffee, juices, and cold drinks." },
+    blurb: {
+      ar: "شاي، قهوة، عصائر، ومشروبات باردة.",
+      en: "Tea, coffee, juices, and cold drinks.",
+    },
   },
 };
 
@@ -195,7 +198,7 @@ function HomeHero() {
           { value: `${ITEMS.length}+`, label: "Real dishes" },
           { value: "7", label: "Menu groups" },
           { value: `${POPULAR_ITEMS.length}+`, label: "Highlighted picks" },
-          { value: "Foost", label: "Matched source" },
+          { value: "Official", label: "Menu source" },
         ];
 
   return (
@@ -276,31 +279,43 @@ function QualitySection() {
   const qualities =
     locale === "ar"
       ? [
-          { icon: <ChefHat />, title: "وصفات تركية", body: "أطباق مختارة من بيانات المنيو نفسها." },
-          { icon: <Sparkles />, title: "مكونات واضحة", body: "صور وأسعار ظاهرة بدون ازدحام." },
-          { icon: <Flame />, title: "أطباق ساخنة", body: "مشويات وطواجن بروح تركية دافئة." },
-          { icon: <Heart />, title: "ضيافة هادئة", body: "تجربة قراءة فاخرة وسهلة من الجوال." },
+          {
+            icon: <ChefHat />,
+            title: "وصفات تركية",
+            body: "فطور، مخبوزات، ومشويات بروح المائدة التركية.",
+          },
+          {
+            icon: <Sparkles />,
+            title: "صور واضحة",
+            body: "كل صنف يظهر مع صورته وسعره بدون ازدحام.",
+          },
+          { icon: <Flame />, title: "أطباق ساخنة", body: "مشويات وطواجن ومخبوزات تقدم دافئة." },
+          {
+            icon: <Heart />,
+            title: "ضيافة أسيا",
+            body: "منيو هادئ يساعد الضيف على الاختيار بسرعة.",
+          },
         ]
       : [
           {
             icon: <ChefHat />,
             title: "Turkish Recipes",
-            body: "Selections drawn from the same real menu data.",
+            body: "Breakfast, bakery, and grills served with Turkish table character.",
           },
           {
             icon: <Sparkles />,
-            title: "Clear Ingredients",
-            body: "Photos and prices stay visible without clutter.",
+            title: "Clear Photos",
+            body: "Each dish keeps its image and price easy to scan.",
           },
           {
             icon: <Flame />,
-            title: "Warm Plates",
-            body: "Grills and casseroles with a Turkish table feel.",
+            title: "Served Warm",
+            body: "Grills, casseroles, and bakery plates stay at the center.",
           },
           {
             icon: <Heart />,
-            title: "Calm Hospitality",
-            body: "A premium mobile reading experience.",
+            title: "Asya Hospitality",
+            body: "A calm menu that helps guests choose quickly.",
           },
         ];
 
@@ -384,7 +399,7 @@ function PhotoStrip({ items }: { items: DishEntry[] }) {
 const SpotlightDish = memo(function SpotlightDish({ entry }: { entry: DishEntry }) {
   const { locale, tx } = useI18n();
   const { openItemDetail } = useItemDetail();
-  const description = localizeMenuText(entry.item.description, locale);
+  const description = localizeMenuDescription(entry.item, entry.category, locale);
   const handleOpen = useCallback(() => openItemDetail(entry), [entry, openItemDetail]);
 
   return (

@@ -31,10 +31,10 @@ export const Route = createFileRoute("/menu")({
       {
         name: "description",
         content:
-          "The complete Asya's Gourmet menu with all official Foost-matched sections, prices, descriptions, and product imagery.",
+          "The complete Asya's Gourmet menu with official sections, prices, descriptions, and product imagery.",
       },
       { property: "og:title", content: "Asya's Gourmet | Full Menu" },
-      { property: "og:description", content: "Complete Foost-matched menu for Asya's Gourmet." },
+      { property: "og:description", content: "Complete official menu for Asya's Gourmet." },
       { property: "og:image", content: logoImg },
     ],
     links: [{ rel: "canonical", href: "/menu" }],
@@ -73,8 +73,8 @@ const FINAL_MENU_GROUP_COPY: Record<
     name: { ar: "العروض", en: "Offers" },
     shortName: { ar: "العروض", en: "Offers" },
     blurb: {
-      ar: "باقات وسفرات مشاركة من بيانات المنيو الحقيقية.",
-      en: "Sharing spreads and packages from the real menu data.",
+      ar: "سفرات وباقات مشاركة للعائلة والأصدقاء.",
+      en: "Sharing spreads and packages for family and friends.",
     },
   },
   breakfast: {

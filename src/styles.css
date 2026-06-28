@@ -10066,6 +10066,14 @@ h4 {
   }
 }
 
+.menu-card p,
+.full-menu-page .menu-card p {
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
