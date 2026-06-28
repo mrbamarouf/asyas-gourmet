@@ -9,7 +9,7 @@ import {
   Sparkles,
   Utensils,
 } from "lucide-react";
-import { memo, useCallback, useMemo } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 
 import {
   CHEF_PICK_ITEMS,
@@ -85,9 +85,11 @@ const HOME_MENU_GROUPS = REFERENCE_MENU_GROUPS.filter((group) =>
 );
 
 const categoryMap = new Map<string, MenuCategory>();
+const MOBILE_LAYOUT_QUERY = "(max-width: 767px)";
 
 function HomePage() {
   const homeContent = useMemo(() => buildHomeContent(), []);
+  const isMobileLayout = useMobileLayout();
 
   return (
     <AsyaShell current="home">
@@ -96,11 +98,28 @@ function HomePage() {
         <HomeCategories categories={homeContent.categories} />
         <QualitySection />
         <SignatureSection items={homeContent.signatures} />
-        <PhotoStrip items={homeContent.gallery} />
+        {isMobileLayout ? null : <PhotoStrip items={homeContent.gallery} />}
         <VisitContact />
       </main>
     </AsyaShell>
   );
+}
+
+function useMobileLayout() {
+  const [isMobileLayout, setIsMobileLayout] = useState(() =>
+    typeof window === "undefined" ? false : window.matchMedia(MOBILE_LAYOUT_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia(MOBILE_LAYOUT_QUERY);
+    const updateLayout = () => setIsMobileLayout(media.matches);
+
+    updateLayout();
+    media.addEventListener("change", updateLayout);
+    return () => media.removeEventListener("change", updateLayout);
+  }, []);
+
+  return isMobileLayout;
 }
 
 function HomeHero() {
