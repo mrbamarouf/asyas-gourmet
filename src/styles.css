@@ -10176,7 +10176,7 @@ h4 {
   filter: drop-shadow(0 10px 16px rgba(31, 38, 28, 0.12)) !important;
 }
 
-/* Balanced gallery endings. A final orphan image expands instead of sitting alone. */
+/* Balanced gallery endings. A final orphan image is removed instead of becoming a banner. */
 .photo-strip,
 .gallery-grid {
   display: grid !important;
@@ -10208,7 +10208,7 @@ h4 {
 
 .photo-strip > img:last-child:nth-child(6n + 1),
 .gallery-grid > img:last-child:nth-child(3n + 1) {
-  grid-column: 1 / -1 !important;
+  display: none !important;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -10219,7 +10219,7 @@ h4 {
 
   .photo-strip > img:last-child:nth-child(odd),
   .gallery-grid > img:last-child:nth-child(odd) {
-    grid-column: 1 / -1 !important;
+    display: none !important;
   }
 }
 

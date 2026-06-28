@@ -291,7 +291,7 @@ function PhotoStrip({ items }: { items: DishEntry[] }) {
     { src: bakeryImg, alt: t("home_bakery_title") },
     { src: teaImg, alt: t("home_drinks_title") },
     ...items
-      .slice(0, 4)
+      .slice(0, 3)
       .map((entry) => ({ src: getDishImage(entry.item), alt: tx(entry.item.name) })),
   ];
 
