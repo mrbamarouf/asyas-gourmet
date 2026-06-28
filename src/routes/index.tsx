@@ -242,12 +242,9 @@ function QualitySection() {
     <section id="about" className="quality-section">
       <div className="section-wrap quality-grid">
         <div className="quality-copy">
-          <h2>{t("home_quality_title")}</h2>
-          <p>{t("home_quality_body")}</p>
-          <a href="/menu" className="dark-link">
-            <span>{t("exploreFullMenu")}</span>
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <p className="section-kicker">{t("home_story")}</p>
+          <h2>{t("home_story_title")}</h2>
+          <p>{t("home_story_body")}</p>
         </div>
         <div className="quality-list">
           {qualities.map((item) => (

@@ -10234,3 +10234,129 @@ h4 {
     grid-column: auto !important;
   }
 }
+
+/* Mobile content cleanup: no repeated text links, centered readable sections, and clear bottom-nav space. */
+@media (max-width: 767px) {
+  .site-shell {
+    padding-bottom: calc(108px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .reference-section,
+  .quality-section,
+  .reference-featured,
+  .visit-section,
+  .footer-premium {
+    padding-block: clamp(2.35rem, 8vw, 3rem) !important;
+  }
+
+  .reference-section-heading,
+  .quality-copy,
+  .section-intro,
+  .mobile-menu-heading,
+  .menu-section-banner .section-intro,
+  .footer-brand,
+  .footer-hours {
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .reference-section-heading,
+  .quality-copy,
+  .section-intro {
+    gap: 0.6rem !important;
+  }
+
+  .reference-section-heading h2,
+  .quality-copy h2,
+  .section-intro h2,
+  .mobile-menu-heading h1,
+  .menu-group-heading h2,
+  [data-locale="ar"] .reference-section-heading h2,
+  [data-locale="ar"] .quality-copy h2,
+  [data-locale="ar"] .section-intro h2,
+  [data-locale="ar"] .mobile-menu-heading h1,
+  [data-locale="ar"] .menu-group-heading h2 {
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+  }
+
+  .reference-hero-copy > p:not(.reference-kicker),
+  .reference-section-heading p,
+  .quality-copy p:not(.section-kicker),
+  .section-intro .section-copy,
+  .section-intro > p:not(.section-kicker),
+  .mobile-menu-heading p,
+  .menu-group-heading > p:not(.section-kicker),
+  .item-detail-description p,
+  .footer-brand p,
+  .footer-hours strong,
+  .footer-hours small {
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    line-height: 1.7 !important;
+    text-align: center !important;
+    text-wrap: pretty !important;
+  }
+
+  .reference-kicker,
+  .reference-section .section-kicker,
+  .reference-section-heading .section-kicker,
+  .visit-section .section-kicker,
+  .mobile-menu-heading .section-kicker {
+    color: #2F3A28 !important;
+  }
+
+  .quality-copy .section-kicker {
+    color: #F8F3EA !important;
+    font-size: 0.86rem !important;
+    font-weight: 900 !important;
+  }
+
+  .reference-section-heading .text-link,
+  .quality-copy .dark-link,
+  .story-notes a,
+  .inline-menu-link {
+    display: none !important;
+  }
+
+  .quality-grid,
+  .quality-copy {
+    grid-template-columns: 1fr !important;
+  }
+
+  .quality-list {
+    display: none !important;
+  }
+
+  .photo-strip {
+    padding-bottom: 0 !important;
+  }
+
+  .full-menu-page,
+  .full-menu-wrap,
+  .visit-section,
+  .footer-premium {
+    padding-bottom: calc(112px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .footer-premium .footer-grid {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .footer-premium .footer-brand,
+  .footer-premium .footer-links,
+  .footer-premium .footer-hours {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .footer-premium .footer-links a {
+    justify-content: center !important;
+  }
+}

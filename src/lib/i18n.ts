@@ -19,11 +19,11 @@ export const UI = {
   contactUs: { ar: "تواصل مع المطعم", en: "Contact the Restaurant" },
   viewSource: { ar: "فتح القائمة الرقمية", en: "Open Digital Menu" },
 
-  home_story: { ar: "أسيا", en: "Asya" },
-  home_story_title: { ar: "مائدة تبدأ بالخبز والشاي", en: "A Table That Begins With Bread and Tea" },
+  home_story: { ar: "الحكاية", en: "Story" },
+  home_story_title: { ar: "قصة من القلب", en: "A Story From the Heart" },
   home_story_body: {
-    ar: "في أسيا جورميه تبدأ الضيافة بخبز يخرج من الفرن، شاي تركي، وأطباق صالحة للمشاركة.",
-    en: "At Asya's Gourmet, hospitality starts with bread from the oven, Turkish tea, and plates made for sharing.",
+    ar: "نخبز عجيننا يوميًا، ونقدّم فطورًا تركيًا ومشويات وحلويات تصل إلى المائدة كما نحب أن نستقبل ضيوفنا.",
+    en: "We bake our dough daily and serve Turkish breakfasts, charcoal grills, and sweets with the warmth we bring to every table.",
   },
   home_signature_title: { ar: "أطباق يطلبها ضيوفنا", en: "Guest Favorites" },
   home_signature_body: {
@@ -112,10 +112,10 @@ export const UI = {
     ar: "كل طبق مكتوب بما يهم الضيف: المكونات، طريقة التحضير، والنكهة على المائدة.",
     en: "Every dish is written around what matters: ingredients, preparation, and flavor at the table.",
   },
-  visit_title: { ar: "زر أسيا جورميه", en: "Visit Asya's Gourmet" },
+  visit_title: { ar: "الحجز والموقع", en: "Reservations and Location" },
   visit_body: {
-    ar: "تواصل معنا للحجز أو لمعرفة موقع المطعم وساعات العمل.",
-    en: "Contact us for reservations, directions, and today's hours.",
+    ar: "للحجز أو معرفة الموقع وساعات العمل، تواصل معنا مباشرة.",
+    en: "For reservations, directions, or hours, contact us directly.",
   },
 
   call: { ar: "اتصال", en: "Call" },
