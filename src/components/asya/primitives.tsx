@@ -50,6 +50,7 @@ import logoImg from "@/assets/asyas-logo-transparent.png";
 import placeholderImg from "@/assets/dish-placeholder.jpg";
 
 export const softEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const LOCALE_STORAGE_KEY = "asyas-locale";
 
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 10 },
@@ -482,10 +483,18 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
   useScrollChromeVisibility();
 
+  useEffect(() => {
+    const storedLocale = readStoredLocale();
+    if (storedLocale) setLocale(storedLocale);
+  }, []);
+
   const value = useMemo(
     () => ({
       locale,
-      setLocale,
+      setLocale: (nextLocale: Locale) => {
+        setLocale(nextLocale);
+        writeStoredLocale(nextLocale);
+      },
       t: (key: UIKey) => UI[key][locale],
       tx: (obj: Record<Locale, string>) => obj[locale],
       dir: "ltr" as const,
@@ -527,6 +536,18 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
       </ItemDetailContext.Provider>
     </I18nContext.Provider>
   );
+}
+
+function readStoredLocale(): Locale | null {
+  if (typeof window === "undefined") return null;
+
+  const storedLocale = window.localStorage.getItem(LOCALE_STORAGE_KEY);
+  return storedLocale === "ar" || storedLocale === "en" ? storedLocale : null;
+}
+
+function writeStoredLocale(locale: Locale) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
 }
 
 function useScrollChromeVisibility() {
@@ -1274,7 +1295,7 @@ const MenuOptions = memo(function MenuOptions({ item }: { item: MenuItem }) {
       {item.options?.map((option) => (
         <span key={`${item.id}-${option.name}-${option.price}`}>
           <strong>{localizeOptionName(option.name, locale)}</strong>
-          <em>{option.price}</em>
+          <em>{formatPrice(option.price, locale)}</em>
         </span>
       ))}
     </div>
