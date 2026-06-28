@@ -5,12 +5,12 @@ import { memo, useCallback, useMemo, useState } from "react";
 
 import {
   CATEGORIES,
-  CATEGORY_ORDER,
   ITEMS,
   type MenuCategory,
   type MenuCategoryGroup,
   type MenuItem,
 } from "@/data/menu";
+import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
 import {
   AsyaShell,
   CategoryGlyph,
@@ -48,7 +48,7 @@ interface MenuDisplayGroupData {
 
 const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
 const itemCategoryIds = new Set(ITEMS.map((item) => item.category));
-const OFFICIAL_MENU_GROUPS = CATEGORY_ORDER.filter((group) =>
+const MENU_DISPLAY_GROUPS = REFERENCE_MENU_GROUPS.filter((group) =>
   group.categoryIds.some((categoryId) => itemCategoryIds.has(categoryId)),
 );
 
@@ -57,7 +57,7 @@ interface TopLevelMenuNavEntry {
   label: MenuCategoryGroup["shortName"];
 }
 
-const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = OFFICIAL_MENU_GROUPS.map((group) => ({
+const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = MENU_DISPLAY_GROUPS.map((group) => ({
   group,
   label: group.shortName,
 }));
@@ -110,12 +110,12 @@ function MenuHero() {
 }
 
 function MenuExplorer() {
-  const { t, tx } = useI18n();
+  const { locale, t, tx } = useI18n();
   const [activeGroup, setActiveGroup] = useState<string>(
     TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers",
   );
   const displayGroups = useMemo<MenuDisplayGroupData[]>(() => {
-    return OFFICIAL_MENU_GROUPS.map((definition) => {
+    return MENU_DISPLAY_GROUPS.map((definition) => {
       const items = uniqueItems(
         ITEMS.filter((item) => definition.categoryIds.includes(item.category)),
       );
@@ -147,6 +147,7 @@ function MenuExplorer() {
           <nav
             className="menu-category-strip menu-quick-jump no-scrollbar"
             aria-label="Menu quick jump"
+            dir={locale === "ar" ? "rtl" : "ltr"}
           >
             {TOP_LEVEL_MENU_NAV_GROUPS.map(({ group, label }) => (
               <button

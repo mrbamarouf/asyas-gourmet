@@ -12,7 +12,6 @@ import {
 import { memo, useCallback, useMemo } from "react";
 
 import {
-  CATEGORY_ORDER,
   CHEF_PICK_ITEMS,
   ITEMS,
   POPULAR_ITEMS,
@@ -21,6 +20,7 @@ import {
   type MenuCategoryGroup,
   type MenuItem,
 } from "@/data/menu";
+import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
 import {
   AsyaShell,
   DishImage,
@@ -80,7 +80,7 @@ interface HomeCategory {
 }
 
 const itemCategoryIds = new Set(ITEMS.map((item) => item.category));
-const HOME_MENU_GROUPS = CATEGORY_ORDER.filter((group) =>
+const HOME_MENU_GROUPS = REFERENCE_MENU_GROUPS.filter((group) =>
   group.categoryIds.some((categoryId) => itemCategoryIds.has(categoryId)),
 );
 
@@ -363,7 +363,7 @@ function buildHomeContent(): HomeContent {
 
 function hydrateCategoryMap() {
   if (categoryMap.size) return;
-  CATEGORY_ORDER.flatMap((group) => group.categoryIds).forEach((categoryId) => {
+  REFERENCE_MENU_GROUPS.flatMap((group) => group.categoryIds).forEach((categoryId) => {
     const category = categoryById(categoryId);
     if (category) categoryMap.set(categoryId, category);
   });

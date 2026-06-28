@@ -10083,3 +10083,15 @@ h4 {
     animation-duration: 1ms !important;
   }
 }
+
+.nav-links[dir="rtl"],
+.mobile-bottom-nav[dir="rtl"],
+.menu-category-strip[dir="rtl"] {
+  direction: rtl !important;
+}
+
+.nav-links[dir="ltr"],
+.mobile-bottom-nav[dir="ltr"],
+.menu-category-strip[dir="ltr"] {
+  direction: ltr !important;
+}

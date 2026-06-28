@@ -438,7 +438,11 @@ function TopNav({ current }: { current: "home" | "menu" }) {
           </span>
         </a>
 
-        <nav className="nav-links" aria-label="Primary navigation">
+        <nav
+          className="nav-links"
+          aria-label="Primary navigation"
+          dir={locale === "ar" ? "rtl" : "ltr"}
+        >
           <a className={current === "home" ? "is-current" : ""} href="/">
             <Home className="nav-icon" />
             <span>{t("nav_home")}</span>
@@ -1084,10 +1088,14 @@ function FloatingContact({ current }: { current: "home" | "menu" }) {
 }
 
 function MobileBottomNav({ current }: { current: "home" | "menu" }) {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
 
   return (
-    <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
+    <nav
+      className="mobile-bottom-nav"
+      aria-label="Mobile navigation"
+      dir={locale === "ar" ? "rtl" : "ltr"}
+    >
       <a href="/" className={current === "home" ? "is-active" : ""}>
         <Home className="h-5 w-5" />
         <span>{t("nav_home")}</span>

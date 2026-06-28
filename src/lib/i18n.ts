@@ -4,7 +4,7 @@ import type { Locale } from "@/data/menu";
 export const UI = {
   nav_home: { ar: "الرئيسية", en: "Home" },
   nav_menu: { ar: "المنيو", en: "Menu" },
-  nav_about: { ar: "عن أسيا", en: "About" },
+  nav_about: { ar: "عن أسيا", en: "About Asya" },
   nav_visit: { ar: "الزيارة", en: "Visit" },
   nav_contact: { ar: "تواصل", en: "Contact" },
 
@@ -77,8 +77,8 @@ export const UI = {
   sec_visit: { ar: "الزيارة والتواصل", en: "Visit & Contact" },
   full_menu_title: { ar: "المنيو", en: "Our Menu" },
   full_menu_body: {
-    ar: "كل أصناف أسيا جورميه مرتبة حسب أقسام المنيو الرسمية كما تظهر في مصدر فوست.",
-    en: "Every Asya's Gourmet item is organized by the official Foost menu sections.",
+    ar: "كل أصناف أسيا جورميه مرتبة في أقسام واضحة مع الأسعار والأوصاف الرسمية.",
+    en: "Every Asya's Gourmet item is arranged in clear sections with official prices and descriptions.",
   },
   menu_page_eyebrow: { ar: "منيو أسيا الرسمي", en: "Official Asya's Menu" },
 
