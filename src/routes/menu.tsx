@@ -6,7 +6,6 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState, type ChangeEve
 import {
   CATEGORIES,
   CATEGORY_ORDER,
-  CATEGORY_QUICK_JUMPS,
   ITEMS,
   POPULAR_ITEMS,
   RESTAURANT,
@@ -59,6 +58,23 @@ interface MenuDisplayGroup {
 }
 
 const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
+const TOP_LEVEL_MENU_NAV_IDS: MenuGroupId[] = [
+  "offers",
+  "breakfast",
+  "appetizers",
+  "mains",
+  "grills",
+  "desserts",
+  "drinks",
+];
+const TOP_LEVEL_MENU_NAV_GROUPS = TOP_LEVEL_MENU_NAV_IDS.map((id) =>
+  CATEGORY_ORDER.find((group) => group.id === id),
+).filter((group): group is MenuCategoryGroup => Boolean(group));
+const TOP_LEVEL_MENU_NAV_ID_SET = new Set<MenuGroupId>(TOP_LEVEL_MENU_NAV_IDS);
+
+function isTopLevelMenuGroupId(id: string | null): id is MenuGroupId {
+  return Boolean(id && TOP_LEVEL_MENU_NAV_ID_SET.has(id as MenuGroupId));
+}
 
 function FullMenuPage() {
   return (
@@ -106,8 +122,8 @@ function MenuExplorer() {
   const { locale, t, tx } = useI18n();
   const [searchInput, setSearchInput] = useState("");
   const query = useDebouncedValue(searchInput, 150);
-  const [activeGroup, setActiveGroup] = useState<MenuGroupId>(CATEGORY_QUICK_JUMPS[0]?.id ?? CATEGORY_ORDER[0].id);
-  const categoryStripRef = useRef<HTMLElement>(null);
+  const [activeGroup, setActiveGroup] = useState<MenuGroupId>(TOP_LEVEL_MENU_NAV_GROUPS[0]?.id ?? "offers");
+  const isProgrammaticScrollRef = useRef(false);
   const displayGroups = useMemo<MenuDisplayGroup[]>(() => {
     const normalizedQuery = query.trim().toLowerCase();
     const matchesQuery = (item: MenuItem, category?: MenuCategory) => {
@@ -148,12 +164,6 @@ function MenuExplorer() {
     () => uniqueItemCount(displayGroups.flatMap((group) => group.sections.flatMap((section) => section.items))),
     [displayGroups],
   );
-  const visibleQuickJumps = useMemo(
-    () => CATEGORY_QUICK_JUMPS.filter((group) =>
-      displayGroups.some((displayGroup) => displayGroup.definition.id === group.id),
-    ),
-    [displayGroups],
-  );
   const handleSearchChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchInput(event.target.value);
   }, []);
@@ -161,17 +171,24 @@ function MenuExplorer() {
 
   useEffect(() => {
     if (query.trim()) {
-      setActiveGroup(displayGroups[0]?.definition.id ?? CATEGORY_QUICK_JUMPS[0]?.id ?? CATEGORY_ORDER[0].id);
+      const firstVisibleTopLevelGroup = displayGroups.find((group) =>
+        TOP_LEVEL_MENU_NAV_ID_SET.has(group.definition.id),
+      )?.definition.id;
+      setActiveGroup(firstVisibleTopLevelGroup ?? TOP_LEVEL_MENU_NAV_GROUPS[0]?.id ?? "offers");
       return;
     }
 
-    const visible = new Map<string, number>();
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-group]"));
+    const visible = new Map<MenuGroupId, number>();
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-group]")).filter((section) =>
+      isTopLevelMenuGroupId(section.getAttribute("data-menu-group")),
+    );
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isProgrammaticScrollRef.current) return;
+
         entries.forEach((entry) => {
-          const id = entry.target.getAttribute("data-menu-group") as MenuGroupId | null;
-          if (!id) return;
+          const id = entry.target.getAttribute("data-menu-group");
+          if (!isTopLevelMenuGroupId(id)) return;
           if (entry.isIntersecting) {
             visible.set(id, entry.intersectionRatio);
           } else {
@@ -189,22 +206,44 @@ function MenuExplorer() {
     return () => observer.disconnect();
   }, [displayGroups, query]);
 
-  useEffect(() => {
-    const strip = categoryStripRef.current;
-    if (!strip) return;
-
-    window.requestAnimationFrame(() => {
-      const activePill = strip.querySelector<HTMLElement>(`[data-group-pill="${activeGroup}"]`);
-      activePill?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
-    });
-  }, [activeGroup, locale, visibleQuickJumps.length]);
-
   const scrollToGroup = useCallback((groupId: MenuGroupId) => {
     setSearchInput("");
     setActiveGroup(groupId);
-    window.setTimeout(() => {
-      document.getElementById(`group-${groupId}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 40);
+    const scrollToFirstSection = (attempt = 0) => {
+      const group = document.getElementById(`group-${groupId}`);
+      const target = group?.querySelector<HTMLElement>("[data-menu-section]") ?? group;
+
+      if (target) {
+        isProgrammaticScrollRef.current = true;
+        const scrollTargetIntoPlace = (behavior: ScrollBehavior) => {
+          const currentGroup = document.getElementById(`group-${groupId}`);
+          const currentTarget = currentGroup?.querySelector<HTMLElement>("[data-menu-section]") ?? currentGroup;
+          if (!currentTarget) return;
+
+          const controls = document.querySelector<HTMLElement>(".full-menu-controls");
+          const stickyOffset = controls ? Math.min(Math.max(controls.offsetHeight, 96), 180) : 120;
+          const top = currentTarget.getBoundingClientRect().top + window.scrollY - stickyOffset - 16;
+          window.scrollTo({ top: Math.max(0, top), behavior });
+        };
+
+        scrollTargetIntoPlace("smooth");
+        window.setTimeout(() => scrollTargetIntoPlace("smooth"), 550);
+        window.setTimeout(() => scrollTargetIntoPlace("auto"), 1250);
+        window.setTimeout(() => scrollTargetIntoPlace("auto"), 1900);
+        window.setTimeout(() => {
+          scrollTargetIntoPlace("auto");
+          setActiveGroup(groupId);
+          isProgrammaticScrollRef.current = false;
+        }, 2200);
+        return;
+      }
+
+      if (attempt < 10) {
+        window.setTimeout(() => scrollToFirstSection(attempt + 1), 50);
+      }
+    };
+
+    window.setTimeout(() => scrollToFirstSection(), 40);
   }, []);
 
   return (
@@ -227,12 +266,11 @@ function MenuExplorer() {
           </div>
 
           <nav
-            ref={categoryStripRef}
             className="menu-category-strip menu-quick-jump no-scrollbar"
             aria-label="Menu quick jump"
             dir={locale === "ar" ? "rtl" : "ltr"}
           >
-            {visibleQuickJumps.map((group) => (
+            {TOP_LEVEL_MENU_NAV_GROUPS.map((group) => (
               <button
                 key={group.id}
                 type="button"
