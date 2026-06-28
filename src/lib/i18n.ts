@@ -8,10 +8,10 @@ export const UI = {
   nav_visit: { ar: "الزيارة", en: "Visit" },
   nav_contact: { ar: "تواصل", en: "Contact" },
 
-  hero_title: { ar: "دفء إسطنبول على مائدة فاخرة", en: "Istanbul warmth, served at your table" },
+  hero_title: { ar: "مذاق المطبخ التركي الأصيل", en: "A Taste of Authentic Turkish Cuisine" },
   hero_sub: {
-    ar: "فطور تركي غني، مخبوزات دافئة، مشويات، وحلويات تُقدّم بروح ضيافة هادئة وفاخرة.",
-    en: "Generous Turkish breakfasts, warm bakery, grills, desserts, and calm hospitality with a gourmet touch.",
+    ar: "تجربة طعام راقية تجمع فطورًا تركيًا غنيًا، مخبوزات دافئة، مشويات، وحلويات بروح ضيافة هادئة.",
+    en: "A refined dining experience with Turkish breakfasts, warm bakery, grills, desserts, and calm hospitality.",
   },
   hero_note: { ar: "تجربة مصممة للجوال من أول لمسة.", en: "Designed for mobile-first discovery." },
   exploreMenu: { ar: "استكشف المنيو", en: "Explore Menu" },
@@ -60,6 +60,12 @@ export const UI = {
     ar: "ضوء دافئ، أطباق خزفية، خبز طازج، وشاي تركي في حضور هادئ.",
     en: "Warm light, ceramic plates, fresh bread, and Turkish tea in a calm setting.",
   },
+  home_menu_preview_title: { ar: "استكشف المنيو", en: "Explore Our Menu" },
+  home_quality_title: { ar: "جودة يمكنك تذوقها", en: "Quality You Can Taste" },
+  home_quality_body: {
+    ar: "نجمع وصفات تركية أصيلة، مكونات واضحة، وصورًا قوية لتبقى تجربة قراءة المنيو سريعة وفاخرة.",
+    en: "Authentic Turkish recipes, clear ingredients, and strong food photography make the menu quick to scan and refined to browse.",
+  },
 
   sec_popular: { ar: "الأكثر طلبًا", en: "Popular" },
   sec_chef: { ar: "اختيارات الشيف", en: "Chef Picks" },
@@ -69,12 +75,12 @@ export const UI = {
   sec_menu: { ar: "المنيو الكامل", en: "Full Menu" },
   sec_about: { ar: "عن أسيا جورميه", en: "About Asya's Gourmet" },
   sec_visit: { ar: "الزيارة والتواصل", en: "Visit & Contact" },
-  full_menu_title: { ar: "المنيو الكامل", en: "Full Menu" },
+  full_menu_title: { ar: "المنيو", en: "Our Menu" },
   full_menu_body: {
-    ar: "كل أقسام وأصناف أسيا جورميه كما تظهر في مصدر Foost الرسمي، مع بحث سريع وتنقل ثابت بين الأقسام.",
-    en: "Every Asya's Gourmet section and item as listed in the official Foost source, with fast search and sticky category navigation.",
+    ar: "كل أصناف أسيا جورميه كما تظهر في المصدر الرسمي، مرتبة في سبع مجموعات واضحة وسهلة التصفح.",
+    en: "Every Asya's Gourmet item as listed in the official Foost source, organized into seven clear browsing groups.",
   },
-  menu_page_eyebrow: { ar: "مطابق لمصدر Foost", en: "Foost-matched menu" },
+  menu_page_eyebrow: { ar: "منيو مطابق للمصدر الرسمي", en: "Foost-matched menu" },
 
   popular_body: {
     ar: "اختيارات بارزة من بيانات المنيو الحالية، مناسبة للبداية السريعة.",
@@ -93,14 +99,10 @@ export const UI = {
     en: "Turkish tea, coffee, and cold drinks to complete the table.",
   },
 
-  searchPlaceholder: { ar: "ابحث بالاسم أو الوصف", en: "Search by dish or description" },
   filter_all: { ar: "الكل", en: "All" },
   menuCount: { ar: "صنف", en: "items" },
   categoryCount: { ar: "قسم", en: "categories" },
-  noResults: { ar: "لا توجد نتائج مطابقة", en: "No matching items" },
-  resetFilters: { ar: "إظهار كل المنيو", en: "Show full menu" },
   viewSection: { ar: "استعرض القسم", en: "View section" },
-  matchingResults: { ar: "نتيجة", en: "results" },
 
   about_p1: {
     ar: "أسيا جورميه يجمع روح المائدة التركية مع تفاصيل هادئة وفاخرة: فطور للمشاركة، مخبوزات دافئة، أطباق مشوية، ومشروبات تركية تُقدّم بتوازن وكرم.",
@@ -126,7 +128,10 @@ export const UI = {
   source: { ar: "مصدر المنيو", en: "Foost" },
 
   footer_rights: { ar: "جميع الحقوق محفوظة", en: "All rights reserved" },
-  footer_tagline: { ar: "مائدة تركية دافئة، ومنيو رسمي مطابق لمصدر Foost.", en: "A warm Turkish table with a Foost-matched official menu." },
+  footer_tagline: {
+    ar: "مائدة تركية دافئة، ومنيو رسمي مطابق للمصدر.",
+    en: "A warm Turkish table with a Foost-matched official menu.",
+  },
 } as const;
 
 export type UIKey = keyof typeof UI;

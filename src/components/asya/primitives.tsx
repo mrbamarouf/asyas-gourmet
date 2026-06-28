@@ -104,11 +104,7 @@ export function useItemDetail(): ItemDetailContextValue {
 }
 
 export function localizeMenuText(text: LocalizedText, locale: Locale) {
-  const primary = cleanLocalizedMenuText(text[locale], locale);
-  if (primary) return primary;
-
-  const fallbackLocale: Locale = locale === "ar" ? "en" : "ar";
-  return cleanLocalizedMenuText(text[fallbackLocale], fallbackLocale);
+  return cleanLocalizedMenuText(text[locale], locale);
 }
 
 function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
@@ -121,7 +117,16 @@ function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
     .trim();
 
   if (!cleaned || /^\$?[0-9A-Fa-f]{1,8}$/.test(cleaned)) return "";
-  if (locale === "ar") return /[\u0600-\u06FF]/.test(cleaned) ? cleaned : "";
+  if (locale === "ar") {
+    const arabicOnly = cleaned
+      .replace(/\s*\([^)]*[\p{Script=Latin}][^)]*\)/gu, "")
+      .replace(/[\p{Script=Latin}][\p{Script=Latin}\p{Number}\s.'’&+-]*/gu, "")
+      .replace(/\s{2,}/g, " ")
+      .replace(/\s+([،.])/g, "$1")
+      .trim();
+
+    return /[\u0600-\u06FF]/.test(arabicOnly) ? arabicOnly : "";
+  }
   return /[A-Za-z]/.test(cleaned) ? cleaned : "";
 }
 
@@ -149,7 +154,10 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     }),
     [locale],
   );
-  const openItemDetail = useCallback((selection: ItemDetailSelection) => setDetailSelection(selection), []);
+  const openItemDetail = useCallback(
+    (selection: ItemDetailSelection) => setDetailSelection(selection),
+    [],
+  );
   const detailValue = useMemo(() => ({ openItemDetail }), [openItemDetail]);
   const closeItemDetail = useCallback(() => setDetailSelection(null), []);
 
@@ -371,66 +379,15 @@ function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
 
 function TopNav({ current }: { current: "home" | "menu" }) {
   const { locale, setLocale, t, tx } = useI18n();
-  const [scrolled, setScrolled] = useState(false);
-  const [isMobileNavHidden, setIsMobileNavHidden] = useState(false);
-
-  useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
-    let previousScrollY = window.scrollY;
-    let frame = 0;
-
-    const update = () => {
-      setScrolled((current) => {
-        const next = window.scrollY > 20;
-        return current === next ? current : next;
-      });
-
-      if (!mobileQuery.matches) {
-        previousScrollY = window.scrollY;
-        setIsMobileNavHidden((current) => (current ? false : current));
-        return;
-      }
-
-      const nextScrollY = window.scrollY;
-      const delta = nextScrollY - previousScrollY;
-
-      if (nextScrollY <= 8) {
-        setIsMobileNavHidden((current) => (current ? false : current));
-      } else if (delta > 12) {
-        setIsMobileNavHidden((current) => (current ? current : true));
-      } else if (delta < -12) {
-        setIsMobileNavHidden((current) => (current ? false : current));
-      }
-
-      if (Math.abs(delta) > 12) previousScrollY = nextScrollY;
-    };
-    const scheduleUpdate = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        update();
-      });
-    };
-
-    update();
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    mobileQuery.addEventListener("change", scheduleUpdate);
-    return () => {
-      if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", scheduleUpdate);
-      mobileQuery.removeEventListener("change", scheduleUpdate);
-    };
-  }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle("asya-mobile-nav-hidden", isMobileNavHidden);
-    return () => document.body.classList.remove("asya-mobile-nav-hidden");
-  }, [isMobileNavHidden]);
 
   return (
-    <header className={`site-nav ${scrolled ? "site-nav-solid" : ""} ${isMobileNavHidden ? "site-nav-mobile-hidden" : ""}`}>
+    <header className="site-nav site-nav-solid">
       <div className="site-nav-shell">
-        <a href={current === "home" ? "#top" : "/"} className="nav-brand" aria-label="Asya's Gourmet">
+        <a
+          href={current === "home" ? "#top" : "/"}
+          className="nav-brand"
+          aria-label="Asya's Gourmet"
+        >
           <span className="nav-logo-frame">
             <img src={logoImg} alt="Asya's Gourmet" width={42} height={42} />
           </span>
@@ -440,7 +397,7 @@ function TopNav({ current }: { current: "home" | "menu" }) {
           </span>
         </a>
 
-        <nav className="nav-links" aria-label="Primary navigation" dir={locale === "ar" ? "rtl" : "ltr"}>
+        <nav className="nav-links" aria-label="Primary navigation">
           <a className={current === "home" ? "is-current" : ""} href="/">
             <Home className="nav-icon" />
             <span>{t("nav_home")}</span>
@@ -458,7 +415,10 @@ function TopNav({ current }: { current: "home" | "menu" }) {
         </nav>
 
         <div className="nav-actions">
-          <a className={current === "menu" ? "mobile-menu-button is-current" : "mobile-menu-button"} href="/menu">
+          <a
+            className={current === "menu" ? "mobile-menu-button is-current" : "mobile-menu-button"}
+            href="/menu"
+          >
             <Utensils className="h-4 w-4" />
             <span>{t("nav_menu")}</span>
           </a>
@@ -516,9 +476,14 @@ export const DishImage = memo(function DishImage({
   const { locale } = useI18n();
   const shellRef = useRef<HTMLSpanElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const src = getDishImage(item);
+  const sourceSrc = getDishImage(item);
+  const [src, setSrc] = useState(sourceSrc);
   const isPlaceholder = src === placeholderImg;
   const placeholderText = locale === "ar" ? "الصورة قريبًا" : "Image Coming Soon";
+
+  useEffect(() => {
+    setSrc(sourceSrc);
+  }, [sourceSrc]);
 
   useEffect(() => {
     const image = imageRef.current;
@@ -535,6 +500,11 @@ export const DishImage = memo(function DishImage({
   const markLoaded = useCallback(() => {
     if (shellRef.current) shellRef.current.dataset.loaded = "true";
   }, []);
+
+  const handleImageError = useCallback(() => {
+    setSrc(placeholderImg);
+    markLoaded();
+  }, [markLoaded]);
 
   return (
     <span
@@ -557,9 +527,13 @@ export const DishImage = memo(function DishImage({
         decoding="async"
         width={640}
         height={640}
-        sizes={eager ? "(max-width: 767px) 100vw, 42vw" : "(max-width: 767px) 7rem, (max-width: 1120px) 33vw, 24vw"}
+        sizes={
+          eager
+            ? "(max-width: 767px) 100vw, 42vw"
+            : "(max-width: 767px) 7rem, (max-width: 1120px) 33vw, 24vw"
+        }
         onLoad={markLoaded}
-        onError={markLoaded}
+        onError={handleImageError}
       />
     </span>
   );
@@ -584,7 +558,10 @@ export const MenuCard = memo(function MenuCard({
   const categoryName = localizeMenuText(category.name, locale);
   const description = localizeMenuText(item.description, locale);
   const className = `menu-card menu-card-${variant}`;
-  const handleOpen = useCallback(() => openItemDetail({ item, category }), [category, item, openItemDetail]);
+  const handleOpen = useCallback(
+    () => openItemDetail({ item, category }),
+    [category, item, openItemDetail],
+  );
   const handleKeyDown = useCallback(
     (event: ReactKeyboardEvent<HTMLElement>) => {
       if (event.key === "Enter" || event.key === " ") {
@@ -674,7 +651,8 @@ function ItemDetailView({
   useEffect(() => {
     if (!selection) return;
 
-    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    previousFocusRef.current =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
     previousScrollYRef.current = window.scrollY;
     document.documentElement.classList.add("asya-item-detail-lock");
     document.body.classList.add("asya-item-detail-lock");
@@ -759,7 +737,11 @@ function ItemDetailView({
       role="presentation"
       onPointerDown={(event) => {
         if (typeof window === "undefined") return;
-        if (window.matchMedia("(min-width: 1024px)").matches && event.target === event.currentTarget) onClose();
+        if (
+          window.matchMedia("(min-width: 1024px)").matches &&
+          event.target === event.currentTarget
+        )
+          onClose();
       }}
     >
       <motion.div
@@ -768,14 +750,22 @@ function ItemDetailView({
         role="dialog"
         aria-modal="true"
         aria-label={itemName}
-        dir={locale === "ar" ? "rtl" : "ltr"}
+        dir="ltr"
         {...dialogMotion}
       >
-        <button ref={closeButtonRef} type="button" className="item-detail-close" onClick={onClose} aria-label={labels.close}>
+        <button
+          ref={closeButtonRef}
+          type="button"
+          className="item-detail-close"
+          onClick={onClose}
+          aria-label={labels.close}
+        >
           <X className="h-5 w-5" />
         </button>
 
-        <div className={`item-detail-media mobile-item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}>
+        <div
+          className={`item-detail-media mobile-item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}
+        >
           {isPlaceholder ? (
             <span className="item-detail-placeholder" aria-hidden="true">
               <img src={logoImg} alt="" width={92} height={92} />
@@ -790,12 +780,17 @@ function ItemDetailView({
             height={920}
             loading="lazy"
             decoding="async"
+            onError={(event) => {
+              event.currentTarget.src = placeholderImg;
+            }}
           />
         </div>
 
         <div className="item-detail-copy mobile-item-detail-content">
           <div className="item-detail-meta">
-            <span>{labels.category}: {categoryName}</span>
+            <span>
+              {labels.category}: {categoryName}
+            </span>
             <PriceTag item={item} />
           </div>
           <h2>{itemName}</h2>
@@ -877,24 +872,23 @@ const MenuOptions = memo(function MenuOptions({ item }: { item: MenuItem }) {
 
 export const CategoryGlyph = memo(function CategoryGlyph({ category }: { category: MenuCategory }) {
   const label = `${category.id} ${category.name.en}`.toLowerCase();
-  const Icon =
-    /coffee/.test(label)
-      ? Coffee
-      : /tea|drink|juice|beverage|lemonade|matcha/.test(label)
-        ? CupSoda
-        : /dessert|sweet|baklava|cake|kunafa|rice pudding/.test(label)
-          ? CakeSlice
-          : /soup/.test(label)
-            ? Soup
-            : /grill|casserole|kebab|meat|chicken|beef|lamb/.test(label)
-              ? Flame
-              : /salad|garden|greens|olive|friends/.test(label)
-                ? Leaf
-                : /bread|bakery|pastry|pide|borek|simit|lahmacun|pie|pizza|gozleme/.test(label)
-                  ? Wheat
-                  : /signature|chef/.test(label)
-                    ? ChefHat
-                    : Utensils;
+  const Icon = /coffee/.test(label)
+    ? Coffee
+    : /tea|drink|juice|beverage|lemonade|matcha/.test(label)
+      ? CupSoda
+      : /dessert|sweet|baklava|cake|kunafa|rice pudding/.test(label)
+        ? CakeSlice
+        : /soup/.test(label)
+          ? Soup
+          : /grill|casserole|kebab|meat|chicken|beef|lamb/.test(label)
+            ? Flame
+            : /salad|garden|greens|olive|friends/.test(label)
+              ? Leaf
+              : /bread|bakery|pastry|pide|borek|simit|lahmacun|pie|pizza|gozleme/.test(label)
+                ? Wheat
+                : /signature|chef/.test(label)
+                  ? ChefHat
+                  : Utensils;
 
   return <Icon className="h-4 w-4" aria-hidden="true" />;
 });
@@ -948,7 +942,12 @@ const ContactCard = memo(function ContactCard({
   );
 
   return href ? (
-    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="contact-card">
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel="noopener noreferrer"
+      className="contact-card"
+    >
       {content}
     </a>
   ) : (
@@ -970,9 +969,24 @@ export function VisitContact() {
         />
 
         <div id="contact" className="contact-grid">
-          <ContactCard icon={<MessageCircle />} label={t("whatsapp")} value={RESTAURANT.whatsapp} href={whatsappHref()} />
-          <ContactCard icon={<Instagram />} label={t("instagram")} value="@asyas.gourmet" href={RESTAURANT.instagramUrl} />
-          <ContactCard icon={<MapPin />} label={t("address")} value={tx(RESTAURANT.address)} href={RESTAURANT.mapsUrl} />
+          <ContactCard
+            icon={<MessageCircle />}
+            label={t("whatsapp")}
+            value={RESTAURANT.whatsapp}
+            href={whatsappHref()}
+          />
+          <ContactCard
+            icon={<Instagram />}
+            label={t("instagram")}
+            value="@asyas.gourmet"
+            href={RESTAURANT.instagramUrl}
+          />
+          <ContactCard
+            icon={<MapPin />}
+            label={t("address")}
+            value={tx(RESTAURANT.address)}
+            href={RESTAURANT.mapsUrl}
+          />
           <ContactCard icon={<Clock />} label={t("hours")} value={tx(RESTAURANT.hours)} />
         </div>
 
@@ -996,15 +1010,28 @@ function FloatingContact({ current }: { current: "home" | "menu" }) {
 
   return (
     <div className="floating-contact">
-      <a href={current === "home" ? "/menu" : "#menu-top"} className="floating-link floating-link-menu">
+      <a
+        href={current === "home" ? "/menu" : "#menu-top"}
+        className="floating-link floating-link-menu"
+      >
         <Utensils className="h-4 w-4" />
         <span>{current === "home" ? t("exploreFullMenu") : t("nav_menu")}</span>
       </a>
-      <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="floating-link floating-link-main">
+      <a
+        href={whatsappHref()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-link floating-link-main"
+      >
         <MessageCircle className="h-5 w-5" />
         <span>{t("order")}</span>
       </a>
-      <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer" className="floating-link floating-link-menu">
+      <a
+        href={RESTAURANT.instagramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-link floating-link-menu"
+      >
         <Instagram className="h-4 w-4" />
         <span>{t("instagram")}</span>
       </a>
@@ -1013,10 +1040,10 @@ function FloatingContact({ current }: { current: "home" | "menu" }) {
 }
 
 function MobileBottomNav({ current }: { current: "home" | "menu" }) {
-  const { locale, t } = useI18n();
+  const { t } = useI18n();
 
   return (
-    <nav className="mobile-bottom-nav" aria-label="Mobile navigation" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
       <a href="/" className={current === "home" ? "is-active" : ""}>
         <Home className="h-5 w-5" />
         <span>{t("nav_home")}</span>

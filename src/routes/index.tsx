@@ -1,17 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, CakeSlice, ChefHat, Coffee, CupSoda, ExternalLink, Sparkles, Wheat } from "lucide-react";
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  ArrowUpRight,
+  CakeSlice,
+  ChefHat,
+  Coffee,
+  Flame,
+  Heart,
+  Sparkles,
+  Utensils,
+} from "lucide-react";
+import { memo, useCallback, useMemo } from "react";
 
 import {
-  CATEGORIES,
   CATEGORY_ORDER,
   CHEF_PICK_ITEMS,
   ITEMS,
   POPULAR_ITEMS,
   RESTAURANT,
-  type MenuGroupId,
   type MenuCategory,
+  type MenuCategoryGroup,
+  type MenuGroupId,
   type MenuItem,
 } from "@/data/menu";
 import {
@@ -19,15 +27,11 @@ import {
   DishImage,
   MenuCard,
   PriceTag,
-  SectionIntro,
   VisitContact,
   categoryById,
-  fadeUp,
   getDishImage,
   isOfficialImage,
   localizeMenuText,
-  softScale,
-  staggerChildren,
   useItemDetail,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
@@ -48,7 +52,10 @@ export const Route = createFileRoute("/")({
           "Asya's Gourmet restaurant experience with signature Turkish dishes, fresh bakery, Turkish breakfast, drinks, desserts, and a complete Foost-matched menu.",
       },
       { property: "og:title", content: "Asya's Gourmet | Turkish Restaurant Experience" },
-      { property: "og:description", content: "A warm Turkish boutique restaurant experience with a complete QR menu." },
+      {
+        property: "og:description",
+        content: "A warm Turkish boutique restaurant experience with a complete QR menu.",
+      },
       { property: "og:image", content: logoImg },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -61,7 +68,101 @@ interface DishEntry {
   category: MenuCategory;
 }
 
-const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
+interface HomeContent {
+  categories: HomeCategory[];
+  signatures: DishEntry[];
+  gallery: DishEntry[];
+}
+
+interface HomeCategory {
+  group: MenuCategoryGroup;
+  image: string;
+}
+
+const FINAL_GROUP_IDS = [
+  "offers",
+  "breakfast",
+  "appetizers",
+  "mains",
+  "grills",
+  "desserts",
+  "drinks",
+] as const satisfies readonly MenuGroupId[];
+
+type FinalGroupId = (typeof FINAL_GROUP_IDS)[number];
+
+const FINAL_GROUP_COPY: Record<
+  FinalGroupId,
+  Pick<MenuCategoryGroup, "name" | "shortName" | "blurb">
+> = {
+  offers: {
+    name: { ar: "العروض", en: "Offers" },
+    shortName: { ar: "العروض", en: "Offers" },
+    blurb: { ar: "باقات مشاركة من المنيو الحقيقي.", en: "Sharing packages from the real menu." },
+  },
+  breakfast: {
+    name: { ar: "الفطور", en: "Breakfast" },
+    shortName: { ar: "الفطور", en: "Breakfast" },
+    blurb: { ar: "أطباق صباحية ومخبوزات تركية.", en: "Morning plates and Turkish bakery." },
+  },
+  appetizers: {
+    name: { ar: "المقبلات", en: "Appetizers" },
+    shortName: { ar: "المقبلات", en: "Appetizers" },
+    blurb: { ar: "سلطات، شوربات، وجانبيات.", en: "Salads, soups, and sides." },
+  },
+  mains: {
+    name: { ar: "الرئيسية", en: "Main Courses" },
+    shortName: { ar: "الرئيسية", en: "Main Courses" },
+    blurb: { ar: "أطباق غداء وعشاء غنية.", en: "Generous lunch and dinner plates." },
+  },
+  grills: {
+    name: { ar: "المشويات", en: "Grills" },
+    shortName: { ar: "المشويات", en: "Grills" },
+    blurb: { ar: "كباب، شيش، وطواجن ساخنة.", en: "Kebabs, shish, and hot casseroles." },
+  },
+  desserts: {
+    name: { ar: "الحلويات", en: "Desserts" },
+    shortName: { ar: "الحلويات", en: "Desserts" },
+    blurb: { ar: "حلويات تركية وخيارات حلوة.", en: "Turkish sweets and dessert plates." },
+  },
+  drinks: {
+    name: { ar: "المشروبات", en: "Drinks" },
+    shortName: { ar: "المشروبات", en: "Drinks" },
+    blurb: { ar: "شاي، قهوة، عصائر، وخيارات باردة.", en: "Tea, coffee, juices, and cold drinks." },
+  },
+};
+
+const FINAL_GROUP_MERGES: Record<FinalGroupId, MenuGroupId[]> = {
+  offers: ["offers"],
+  breakfast: ["breakfast", "bakery"],
+  appetizers: ["appetizers", "soups", "sides"],
+  mains: ["mains"],
+  grills: ["grills"],
+  desserts: ["desserts"],
+  drinks: ["drinks", "shisha"],
+};
+
+const FINAL_MENU_GROUPS = FINAL_GROUP_IDS.reduce<MenuCategoryGroup[]>((groups, id) => {
+  const source = CATEGORY_ORDER.find((group) => group.id === id);
+  const copy = FINAL_GROUP_COPY[id];
+  if (!source) return groups;
+
+  const categoryIds = FINAL_GROUP_MERGES[id].flatMap(
+    (groupId) => CATEGORY_ORDER.find((group) => group.id === groupId)?.categoryIds ?? [],
+  );
+
+  groups.push({
+    ...source,
+    ...copy,
+    categoryIds,
+    quickJump: true,
+    featuredOnly: false,
+  });
+
+  return groups;
+}, []);
+
+const categoryMap = new Map<string, MenuCategory>();
 
 function HomePage() {
   const homeContent = useMemo(() => buildHomeContent(), []);
@@ -70,15 +171,10 @@ function HomePage() {
     <AsyaShell current="home">
       <main>
         <HomeHero />
-        <StorySection />
-        <SignatureSection items={homeContent.signature} />
-        <BreakfastSection items={homeContent.breakfast} />
-        <BakerySection items={homeContent.bakery} />
-        <MainDishesSection items={homeContent.mains} />
-        <DessertsSection items={homeContent.desserts} />
-        <DrinksSection items={homeContent.drinks} />
-        <GallerySection items={homeContent.gallery} />
-        <VisitIntro />
+        <HomeCategories categories={homeContent.categories} />
+        <QualitySection />
+        <SignatureSection items={homeContent.signatures} />
+        <PhotoStrip items={homeContent.gallery} />
         <VisitContact />
       </main>
     </AsyaShell>
@@ -86,366 +182,202 @@ function HomePage() {
 }
 
 function HomeHero() {
-  const { t, tx } = useI18n();
-  const reduceMotion = useReducedMotion();
-  const isMobileViewport = useMobileViewport();
-  const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 780], reduceMotion || isMobileViewport ? [0, 0] : [0, 120]);
-  const heroScale = useTransform(
-    scrollY,
-    [0, 780],
-    isMobileViewport ? [1, 1] : reduceMotion ? [1.04, 1.04] : [1.04, 1.14],
-  );
+  const { locale, t, tx } = useI18n();
+  const stats =
+    locale === "ar"
+      ? [
+          { value: `${ITEMS.length}+`, label: "صنف حقيقي" },
+          { value: "7", label: "مجموعات منيو" },
+          { value: `${POPULAR_ITEMS.length}+`, label: "اختيارات بارزة" },
+          { value: "رسمي", label: "مصدر مطابق" },
+        ]
+      : [
+          { value: `${ITEMS.length}+`, label: "Real dishes" },
+          { value: "7", label: "Menu groups" },
+          { value: `${POPULAR_ITEMS.length}+`, label: "Highlighted picks" },
+          { value: "Foost", label: "Matched source" },
+        ];
 
   return (
-    <section id="top" className="home-hero">
-      <motion.img
-        src={heroImg}
-        alt=""
-        className="home-hero-image"
-        style={{ y: heroY, scale: heroScale }}
-        width={1920}
-        height={1280}
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
-      />
-      <div className="home-hero-overlay" />
-      <div className="home-hero-vignette" />
-
-      <motion.div className="home-hero-content" variants={staggerChildren} initial="hidden" animate="visible">
-        <motion.img className="home-hero-logo" src={logoImg} alt="Asya's Gourmet" width={140} height={140} variants={softScale} />
-        <motion.p className="hero-kicker" variants={fadeUp}>
-          {tx(RESTAURANT.kicker)}
-        </motion.p>
-        <motion.h1 variants={fadeUp}>{t("hero_title")}</motion.h1>
-        <motion.p className="home-hero-sub" variants={fadeUp}>
-          {t("hero_sub")}
-        </motion.p>
-        <motion.div className="home-hero-actions" variants={fadeUp}>
-          <a href="/menu" className="primary-cta">
-            {t("exploreMenu")}
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-          <a href="#visit" className="secondary-cta">
-            {t("contactUs")}
-          </a>
-        </motion.div>
-        <motion.div className="hero-meta" variants={fadeUp} aria-label="Menu summary">
-          <span>{CATEGORIES.length} {t("categoryCount")}</span>
-          <span>{ITEMS.length} {t("menuCount")}</span>
-          <span>{t("hero_note")}</span>
-        </motion.div>
-      </motion.div>
+    <section id="top" className="reference-hero">
+      <div className="reference-hero-copy">
+        <p className="reference-kicker">{tx(RESTAURANT.kicker)}</p>
+        <h1>{t("hero_title")}</h1>
+        <p>{t("hero_sub")}</p>
+        <a href="/menu" className="primary-cta">
+          <span>{t("exploreMenu")}</span>
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      </div>
+      <div className="reference-hero-media">
+        <img
+          src={heroImg}
+          alt={t("hero_title")}
+          width={1600}
+          height={1067}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+      </div>
+      <dl className="reference-stats" aria-label={t("hero_note")}>
+        {stats.map((stat) => (
+          <div key={stat.label}>
+            <dt>{stat.value}</dt>
+            <dd>{stat.label}</dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }
 
-function useMobileViewport() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 720px)");
-    const update = () => setIsMobile(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
-
-  return isMobile;
-}
-
-function StorySection() {
-  const { t, tx } = useI18n();
+function HomeCategories({ categories }: { categories: HomeCategory[] }) {
+  const { t } = useI18n();
 
   return (
-    <motion.section
-      id="about"
-      className="story-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-120px" }}
-    >
-      <div className="section-wrap story-grid">
-        <motion.div className="story-media" variants={softScale}>
-          <img src={interiorImg} alt={t("home_story_title")} width={1600} height={1104} loading="lazy" decoding="async" />
-          <img src={bakeryImg} alt={t("home_bakery_title")} width={900} height={1100} loading="lazy" decoding="async" />
-          <img src={teaImg} alt={t("home_drinks_title")} width={900} height={1100} loading="lazy" decoding="async" />
-        </motion.div>
-        <div className="story-copy">
-          <SectionIntro
-            eyebrow={t("home_story")}
-            title={t("home_story_title")}
-            body={t("home_story_body")}
-            icon={<Sparkles className="h-4 w-4" />}
-          />
-          <motion.div className="story-notes" variants={fadeUp}>
-            <span>{tx(RESTAURANT.name)}</span>
-            <strong>{tx(RESTAURANT.kicker)}</strong>
-            <a href="/menu">
-              {t("exploreFullMenu")}
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </motion.div>
+    <section id="menu-preview" className="reference-section">
+      <div className="section-wrap reference-section-heading">
+        <h2>{t("home_menu_preview_title")}</h2>
+        <a href="/menu" className="text-link">
+          <span>{t("exploreFullMenu")}</span>
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      </div>
+      <div className="section-wrap reference-category-grid">
+        {categories.map((category) => (
+          <HomeCategoryCard key={category.group.id} category={category} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const HomeCategoryCard = memo(function HomeCategoryCard({ category }: { category: HomeCategory }) {
+  const { tx } = useI18n();
+
+  return (
+    <a href={`/menu#group-${category.group.id}`} className="reference-category-card">
+      <span>{tx(category.group.shortName)}</span>
+      <img
+        src={category.image}
+        alt={tx(category.group.name)}
+        width={360}
+        height={260}
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+  );
+});
+
+function QualitySection() {
+  const { locale, t } = useI18n();
+  const qualities =
+    locale === "ar"
+      ? [
+          { icon: <ChefHat />, title: "وصفات تركية", body: "أطباق مختارة من بيانات المنيو نفسها." },
+          { icon: <Sparkles />, title: "مكونات واضحة", body: "صور وأسعار ظاهرة بدون ازدحام." },
+          { icon: <Flame />, title: "أطباق ساخنة", body: "مشويات وطواجن بروح تركية دافئة." },
+          { icon: <Heart />, title: "ضيافة هادئة", body: "تجربة قراءة فاخرة وسهلة من الجوال." },
+        ]
+      : [
+          {
+            icon: <ChefHat />,
+            title: "Turkish Recipes",
+            body: "Selections drawn from the same real menu data.",
+          },
+          {
+            icon: <Sparkles />,
+            title: "Clear Ingredients",
+            body: "Photos and prices stay visible without clutter.",
+          },
+          {
+            icon: <Flame />,
+            title: "Warm Plates",
+            body: "Grills and casseroles with a Turkish table feel.",
+          },
+          {
+            icon: <Heart />,
+            title: "Calm Hospitality",
+            body: "A premium mobile reading experience.",
+          },
+        ];
+
+  return (
+    <section id="about" className="quality-section">
+      <div className="section-wrap quality-grid">
+        <div className="quality-copy">
+          <h2>{t("home_quality_title")}</h2>
+          <p>{t("home_quality_body")}</p>
+          <a href="/menu" className="dark-link">
+            <span>{t("exploreFullMenu")}</span>
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+        <div className="quality-list">
+          {qualities.map((item) => (
+            <article key={item.title}>
+              <span aria-hidden="true">{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
 function SignatureSection({ items }: { items: DishEntry[] }) {
   const { t } = useI18n();
-  const [lead, ...rest] = items;
 
   return (
-    <motion.section
-      className="signature-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap">
-        <SectionIntro
-          eyebrow={t("sec_chef")}
-          title={t("home_signature_title")}
-          body={t("home_signature_body")}
-          icon={<ChefHat className="h-4 w-4" />}
-          tone="light"
-        />
-        <div className="signature-layout">
-          {lead ? <SpotlightDish entry={lead} /> : null}
-          <div className="signature-side-grid">
-            {rest.slice(0, 5).map((entry) => (
-              <CompactDish key={entry.item.id} entry={entry} />
-            ))}
-          </div>
-        </div>
+    <section className="reference-section reference-featured">
+      <div className="section-wrap reference-section-heading">
+        <h2>{t("home_signature_title")}</h2>
+        <p>{t("home_signature_body")}</p>
       </div>
-    </motion.section>
-  );
-}
-
-function BreakfastSection({ items }: { items: DishEntry[] }) {
-  const { t } = useI18n();
-
-  return (
-    <motion.section
-      className="breakfast-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap">
-        <div className="breakfast-banner">
-          <img src={heroImg} alt="" loading="lazy" decoding="async" width={1600} height={1067} />
-          <div>
-            <SectionIntro
-              eyebrow={t("home_breakfast_title")}
-              title={t("home_breakfast_title")}
-              body={t("home_breakfast_body")}
-              icon={<Sparkles className="h-4 w-4" />}
-              tone="light"
-            />
-            <a href="/menu" className="inline-menu-link">
-              {t("exploreFullMenu")}
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-
-        <div className="breakfast-list">
-          {items.slice(0, 6).map((entry) => (
-            <MenuCard key={entry.item.id} item={entry.item} category={entry.category} variant="wide" />
-          ))}
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
-function BakerySection({ items }: { items: DishEntry[] }) {
-  const { t } = useI18n();
-
-  return (
-    <motion.section
-      className="bakery-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap bakery-grid">
-        <motion.div className="bakery-photo" variants={softScale}>
-          <img src={bakeryImg} alt={t("home_bakery_title")} width={1100} height={1250} loading="lazy" decoding="async" />
-        </motion.div>
-        <div>
-          <SectionIntro
-            eyebrow={t("sec_bakery")}
-            title={t("home_bakery_title")}
-            body={t("home_bakery_body")}
-            icon={<Wheat className="h-4 w-4" />}
+      <div className="section-wrap reference-feature-grid">
+        {items.slice(0, 6).map((entry) => (
+          <MenuCard
+            key={entry.item.id}
+            item={entry.item}
+            category={entry.category}
+            variant="feature"
+            motionEnabled={false}
           />
-          <div className="bakery-card-grid">
-            {items.slice(0, 6).map((entry) => (
-              <CompactDish key={entry.item.id} entry={entry} />
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-    </motion.section>
+    </section>
   );
 }
 
-function MainDishesSection({ items }: { items: DishEntry[] }) {
-  const { t } = useI18n();
-
-  return (
-    <motion.section
-      className="mains-section desserts-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap">
-        <SectionIntro
-          eyebrow={t("sec_mains")}
-          title={t("home_mains_title")}
-          body={t("home_mains_body")}
-          icon={<ChefHat className="h-4 w-4" />}
-        />
-        <div className="dessert-grid">
-          {items.slice(0, 6).map((entry) => (
-            <MenuCard key={entry.item.id} item={entry.item} category={entry.category} variant="feature" />
-          ))}
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
-function DrinksSection({ items }: { items: DishEntry[] }) {
-  const { t } = useI18n();
-
-  return (
-    <motion.section
-      className="drinks-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap drinks-layout">
-        <div className="drinks-copy">
-          <SectionIntro
-            eyebrow={t("sec_drinks")}
-            title={t("home_drinks_title")}
-            body={t("home_drinks_body")}
-            icon={<CupSoda className="h-4 w-4" />}
-            tone="light"
-          />
-          <img src={teaImg} alt={t("home_drinks_title")} width={1300} height={866} loading="lazy" decoding="async" />
-        </div>
-        <div className="drinks-grid">
-          {items.slice(0, 6).map((entry) => (
-            <MenuCard key={entry.item.id} item={entry.item} category={entry.category} variant="feature" />
-          ))}
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
-function DessertsSection({ items }: { items: DishEntry[] }) {
-  const { t } = useI18n();
-
-  return (
-    <motion.section
-      className="desserts-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap">
-        <SectionIntro
-          eyebrow={t("home_desserts_title")}
-          title={t("home_desserts_title")}
-          body={t("home_desserts_body")}
-          icon={<CakeSlice className="h-4 w-4" />}
-        />
-        <div className="dessert-grid">
-          {items.slice(0, 6).map((entry) => (
-            <MenuCard key={entry.item.id} item={entry.item} category={entry.category} variant="feature" />
-          ))}
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
-function GallerySection({ items }: { items: DishEntry[] }) {
+function PhotoStrip({ items }: { items: DishEntry[] }) {
   const { t, tx } = useI18n();
+  const photos = [
+    { src: interiorImg, alt: t("home_gallery_title") },
+    { src: bakeryImg, alt: t("home_bakery_title") },
+    { src: teaImg, alt: t("home_drinks_title") },
+    ...items
+      .slice(0, 4)
+      .map((entry) => ({ src: getDishImage(entry.item), alt: tx(entry.item.name) })),
+  ];
 
   return (
-    <motion.section
-      className="gallery-section soft-botanical-bg"
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="section-wrap">
-        <SectionIntro
-          eyebrow={t("home_gallery_title")}
-          title={t("home_gallery_title")}
-          body={t("home_gallery_body")}
-          icon={<Coffee className="h-4 w-4" />}
-          tone="light"
+    <section className="photo-strip" aria-label={t("home_gallery_title")}>
+      {photos.map((photo, index) => (
+        <img
+          key={`${photo.src}-${index}`}
+          src={photo.src}
+          alt={photo.alt}
+          width={520}
+          height={420}
+          loading="lazy"
+          decoding="async"
         />
-        <div className="gallery-grid">
-          <motion.img src={interiorImg} alt={t("home_gallery_title")} width={900} height={620} loading="lazy" decoding="async" variants={softScale} />
-          <motion.img src={bakeryImg} alt={t("home_bakery_title")} width={620} height={720} loading="lazy" decoding="async" variants={softScale} />
-          <motion.img src={teaImg} alt={t("home_drinks_title")} width={780} height={520} loading="lazy" decoding="async" variants={softScale} />
-          {items.slice(0, 3).map((entry) => (
-            <motion.img
-              key={entry.item.id}
-              src={getDishImage(entry.item)}
-              alt={tx(entry.item.name)}
-              width={640}
-              height={640}
-              loading="lazy"
-              decoding="async"
-              variants={softScale}
-            />
-          ))}
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
-function VisitIntro() {
-  const { t } = useI18n();
-
-  return (
-    <motion.div
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-110px" }}
-    >
-      <div className="pre-visit section-wrap">
-        <span>{t("exploreFullMenu")}</span>
-        <a href="/menu">
-          {t("viewSource")}
-          <ExternalLink className="h-4 w-4" />
-        </a>
-      </div>
-    </motion.div>
+      ))}
+    </section>
   );
 }
 
@@ -456,14 +388,11 @@ const SpotlightDish = memo(function SpotlightDish({ entry }: { entry: DishEntry 
   const handleOpen = useCallback(() => openItemDetail(entry), [entry, openItemDetail]);
 
   return (
-    <motion.button
+    <button
       type="button"
       className="spotlight-dish"
       aria-label={tx(entry.item.name)}
       onClick={handleOpen}
-      variants={softScale}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.18, ease: "easeOut" }}
     >
       <DishImage item={entry.item} alt={tx(entry.item.name)} eager className="spotlight-image" />
       <div>
@@ -472,55 +401,52 @@ const SpotlightDish = memo(function SpotlightDish({ entry }: { entry: DishEntry 
         {description ? <p>{description}</p> : null}
         <PriceTag item={entry.item} />
       </div>
-    </motion.button>
+    </button>
   );
 });
 
-const CompactDish = memo(function CompactDish({ entry }: { entry: DishEntry }) {
-  const { tx } = useI18n();
-  const { openItemDetail } = useItemDetail();
-  const handleOpen = useCallback(() => openItemDetail(entry), [entry, openItemDetail]);
+function buildHomeContent(): HomeContent {
+  hydrateCategoryMap();
 
-  return (
-    <motion.button
-      type="button"
-      className="compact-dish"
-      aria-label={tx(entry.item.name)}
-      onClick={handleOpen}
-      variants={fadeUp}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.18, ease: "easeOut" }}
-    >
-      <DishImage item={entry.item} alt={tx(entry.item.name)} className="compact-dish-image" />
-      <div>
-        <span>{tx(entry.category.name)}</span>
-        <strong>{tx(entry.item.name)}</strong>
-        <PriceTag item={entry.item} />
-      </div>
-    </motion.button>
-  );
-});
+  const categories = FINAL_MENU_GROUPS.map((group) => ({
+    group,
+    image: imageForGroup(group),
+  }));
 
-function buildHomeContent() {
-  const signature = toEntries(uniqueItems([...CHEF_PICK_ITEMS, ...POPULAR_ITEMS]).slice(0, 6));
-  const breakfast = toEntries(itemsFromMenuGroup("breakfast").slice(0, 6));
-  const bakery = toEntries(uniqueItems([...ITEMS.filter((item) => item.bakery), ...itemsFromMenuGroup("bakery")]).slice(0, 6));
-  const mains = toEntries(itemsFromMenuGroup("mains").slice(0, 6));
-  const desserts = toEntries(itemsFromMenuGroup("desserts").slice(0, 6));
-  const drinks = toEntries(
+  const signatures = toEntries(uniqueItems([...CHEF_PICK_ITEMS, ...POPULAR_ITEMS]).slice(0, 6));
+  const gallery = toEntries(
     uniqueItems([
-      ...ITEMS.filter((item) => item.turkishDrink),
-      ...itemsFromMenuGroup("drinks"),
-    ]).slice(0, 6),
+      ...signatures.map((entry) => entry.item),
+      ...itemsFromGroup("desserts"),
+      ...itemsFromGroup("drinks"),
+    ]).filter(isOfficialImage),
   );
-  const gallery = toEntries(uniqueItems([...signature.map((entry) => entry.item), ...desserts.map((entry) => entry.item), ...drinks.map((entry) => entry.item)]).filter(isOfficialImage));
 
-  return { signature, breakfast, bakery, mains, desserts, drinks, gallery };
+  return { categories, signatures, gallery };
 }
 
-function itemsFromMenuGroup(groupId: MenuGroupId) {
-  const categoryIds = CATEGORY_ORDER.find((group) => group.id === groupId)?.categoryIds ?? [];
+function hydrateCategoryMap() {
+  if (categoryMap.size) return;
+  CATEGORY_ORDER.flatMap((group) => group.categoryIds).forEach((categoryId) => {
+    const category = categoryById(categoryId);
+    if (category) categoryMap.set(categoryId, category);
+  });
+}
 
+function imageForGroup(group: MenuCategoryGroup) {
+  const item = ITEMS.find(
+    (candidate) => group.categoryIds.includes(candidate.category) && isOfficialImage(candidate),
+  );
+  if (item) return getDishImage(item);
+
+  const category = group.categoryIds
+    .map((id) => categoryById(id))
+    .find((candidate) => candidate?.cover || candidate?.sourceImageUrl);
+  return category?.cover ?? category?.sourceImageUrl ?? heroImg;
+}
+
+function itemsFromGroup(groupId: MenuGroupId) {
+  const categoryIds = FINAL_MENU_GROUPS.find((group) => group.id === groupId)?.categoryIds ?? [];
   return ITEMS.filter((item) => categoryIds.includes(item.category));
 }
 
@@ -535,6 +461,6 @@ function uniqueItems(items: MenuItem[]) {
 
 function toEntries(items: MenuItem[]): DishEntry[] {
   return items
-    .map((item) => ({ item, category: categoryById(item.category) ?? categoryMap.get(item.category) }))
+    .map((item) => ({ item, category: categoryById(item.category) }))
     .filter((entry): entry is DishEntry => Boolean(entry.category));
 }

@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles, Utensils } from "lucide-react";
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 
 import {
   CATEGORIES,
   CATEGORY_ORDER,
   ITEMS,
-  POPULAR_ITEMS,
-  RESTAURANT,
   type MenuCategory,
   type MenuCategoryGroup,
   type MenuGroupId,
@@ -18,9 +16,7 @@ import {
   AsyaShell,
   CategoryGlyph,
   MenuCard,
-  SectionIntro,
   fadeUp,
-  isUsableImageUrl,
   staggerChildren,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
@@ -46,19 +42,13 @@ export const Route = createFileRoute("/menu")({
   component: FullMenuPage,
 });
 
-interface MenuGroup {
-  category: MenuCategory;
+interface MenuDisplayGroupData {
+  definition: MenuCategoryGroup;
   items: MenuItem[];
 }
 
-interface MenuDisplayGroup {
-  definition: MenuCategoryGroup;
-  sections: MenuGroup[];
-  featuredItems: MenuItem[];
-}
-
 const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
-const TOP_LEVEL_MENU_NAV_IDS: MenuGroupId[] = [
+const TOP_LEVEL_MENU_NAV_IDS = [
   "offers",
   "breakfast",
   "appetizers",
@@ -66,33 +56,110 @@ const TOP_LEVEL_MENU_NAV_IDS: MenuGroupId[] = [
   "grills",
   "desserts",
   "drinks",
-];
+] as const satisfies readonly MenuGroupId[];
+
+type FinalMenuGroupId = (typeof TOP_LEVEL_MENU_NAV_IDS)[number];
+
 interface TopLevelMenuNavEntry {
   group: MenuCategoryGroup;
   label: MenuCategoryGroup["shortName"];
 }
 
-const TOP_LEVEL_MENU_NAV_LABELS: Partial<Record<MenuGroupId, MenuCategoryGroup["shortName"]>> = {
-  offers: { ar: "العروض", en: "Offers" },
-  breakfast: { ar: "الفطور", en: "Breakfast" },
-  appetizers: { ar: "المقبلات", en: "Appetizers" },
-  mains: { ar: "الرئيسية", en: "Main Courses" },
-  grills: { ar: "المشويات", en: "Grills" },
-  desserts: { ar: "الحلويات", en: "Desserts" },
-  drinks: { ar: "المشروبات", en: "Drinks" },
+const FINAL_MENU_GROUP_COPY: Record<
+  FinalMenuGroupId,
+  Pick<MenuCategoryGroup, "name" | "shortName" | "blurb">
+> = {
+  offers: {
+    name: { ar: "العروض", en: "Offers" },
+    shortName: { ar: "العروض", en: "Offers" },
+    blurb: {
+      ar: "باقات وسفرات مشاركة من بيانات المنيو الحقيقية.",
+      en: "Sharing spreads and packages from the real menu data.",
+    },
+  },
+  breakfast: {
+    name: { ar: "الفطور", en: "Breakfast" },
+    shortName: { ar: "الفطور", en: "Breakfast" },
+    blurb: {
+      ar: "بيض، أطباق صباحية، ومخبوزات تركية دافئة.",
+      en: "Eggs, morning plates, and warm Turkish bakery choices.",
+    },
+  },
+  appetizers: {
+    name: { ar: "المقبلات", en: "Appetizers" },
+    shortName: { ar: "المقبلات", en: "Appetizers" },
+    blurb: {
+      ar: "سلطات، مقبلات، شوربات، وأطباق جانبية قبل الطبق الرئيسي.",
+      en: "Salads, starters, soups, and sides before the main plate.",
+    },
+  },
+  mains: {
+    name: { ar: "الرئيسية", en: "Main Courses" },
+    shortName: { ar: "الرئيسية", en: "Main Courses" },
+    blurb: {
+      ar: "أطباق غداء وعشاء تركية وغنية.",
+      en: "Generous Turkish lunch and dinner plates.",
+    },
+  },
+  grills: {
+    name: { ar: "المشويات", en: "Grills" },
+    shortName: { ar: "المشويات", en: "Grills" },
+    blurb: {
+      ar: "كباب، شيش، أطباق مشوية، وطواجن ساخنة.",
+      en: "Kebabs, shish, grilled plates, and hot casseroles.",
+    },
+  },
+  desserts: {
+    name: { ar: "الحلويات", en: "Desserts" },
+    shortName: { ar: "الحلويات", en: "Desserts" },
+    blurb: {
+      ar: "بقلاوة، كنافة، كيك، وحلويات تركية.",
+      en: "Baklava, kunafa, cakes, and Turkish sweets.",
+    },
+  },
+  drinks: {
+    name: { ar: "المشروبات", en: "Drinks" },
+    shortName: { ar: "المشروبات", en: "Drinks" },
+    blurb: {
+      ar: "شاي، قهوة، عصائر، مشروبات باردة، وخيارات الشيشة.",
+      en: "Tea, coffee, juices, cold drinks, and shisha options.",
+    },
+  },
 };
 
-const TOP_LEVEL_MENU_NAV_GROUPS = TOP_LEVEL_MENU_NAV_IDS.reduce<TopLevelMenuNavEntry[]>((entries, id) => {
-  const group = CATEGORY_ORDER.find((candidate) => candidate.id === id);
-  const label = TOP_LEVEL_MENU_NAV_LABELS[id];
-  if (group && label) entries.push({ group, label });
+const FINAL_MENU_GROUP_MERGES: Record<FinalMenuGroupId, MenuGroupId[]> = {
+  offers: ["offers"],
+  breakfast: ["breakfast", "bakery"],
+  appetizers: ["appetizers", "soups", "sides"],
+  mains: ["mains"],
+  grills: ["grills"],
+  desserts: ["desserts"],
+  drinks: ["drinks", "shisha"],
+};
+
+const FINAL_MENU_GROUPS = TOP_LEVEL_MENU_NAV_IDS.reduce<MenuCategoryGroup[]>((entries, id) => {
+  const sourceGroup = CATEGORY_ORDER.find((candidate) => candidate.id === id);
+  const copy = FINAL_MENU_GROUP_COPY[id];
+  if (!sourceGroup || !copy) return entries;
+
+  const categoryIds = FINAL_MENU_GROUP_MERGES[id].flatMap(
+    (groupId) => CATEGORY_ORDER.find((candidate) => candidate.id === groupId)?.categoryIds ?? [],
+  );
+
+  entries.push({
+    ...sourceGroup,
+    ...copy,
+    categoryIds,
+    quickJump: true,
+    featuredOnly: false,
+  });
   return entries;
 }, []);
-const TOP_LEVEL_MENU_NAV_ID_SET = new Set<MenuGroupId>(TOP_LEVEL_MENU_NAV_IDS);
 
-function isTopLevelMenuGroupId(id: string | null): id is MenuGroupId {
-  return Boolean(id && TOP_LEVEL_MENU_NAV_ID_SET.has(id as MenuGroupId));
-}
+const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = FINAL_MENU_GROUPS.map((group) => ({
+  group,
+  label: group.shortName,
+}));
 
 function FullMenuPage() {
   return (
@@ -106,19 +173,32 @@ function FullMenuPage() {
 }
 
 function MenuHero() {
-  const { locale, t } = useI18n();
+  const { t } = useI18n();
 
   return (
-    <section className="full-menu-hero" dir={locale === "ar" ? "rtl" : "ltr"}>
-      <img src={heroImg} alt="" width={1920} height={1280} loading="eager" decoding="async" fetchPriority="high" />
+    <section className="full-menu-hero">
+      <img
+        src={heroImg}
+        alt=""
+        width={1920}
+        height={1280}
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+      />
       <div className="full-menu-hero-overlay" />
-      <motion.div className="full-menu-hero-content" variants={staggerChildren} initial="hidden" animate="visible">
+      <motion.div
+        className="full-menu-hero-content"
+        variants={staggerChildren}
+        initial="hidden"
+        animate="visible"
+      >
         <motion.p className="section-kicker" variants={fadeUp}>
           <Utensils className="h-4 w-4" />
-          <span>{locale === "ar" ? "فطور تركي أصيل" : "Authentic Turkish Breakfast"}</span>
+          <span>{t("menu_page_eyebrow")}</span>
         </motion.p>
-        <motion.h1 variants={fadeUp}>{t("home_breakfast_title")}</motion.h1>
-        <motion.p variants={fadeUp}>{t("home_breakfast_body")}</motion.p>
+        <motion.h1 variants={fadeUp}>{t("full_menu_title")}</motion.h1>
+        <motion.p variants={fadeUp}>{t("full_menu_body")}</motion.p>
         <motion.a href="#menu-categories" className="menu-hero-cta" variants={fadeUp}>
           {t("exploreFullMenu")}
           <ArrowUpRight className="h-4 w-4" />
@@ -129,104 +209,43 @@ function MenuHero() {
 }
 
 function MenuExplorer() {
-  const { locale, tx } = useI18n();
-  const [activeGroup, setActiveGroup] = useState<MenuGroupId>(TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers");
-  const isProgrammaticScrollRef = useRef(false);
-  const displayGroups = useMemo<MenuDisplayGroup[]>(() => {
-    return CATEGORY_ORDER.map((definition) => {
-      const featuredItems = definition.featuredOnly
-        ? POPULAR_ITEMS.slice(0, 12)
-        : [];
+  const { t, tx } = useI18n();
+  const [activeGroup, setActiveGroup] = useState<FinalMenuGroupId>(
+    TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers",
+  );
+  const displayGroups = useMemo<MenuDisplayGroupData[]>(() => {
+    return FINAL_MENU_GROUPS.map((definition) => {
+      const items = uniqueItems(
+        ITEMS.filter((item) => definition.categoryIds.includes(item.category)),
+      );
 
-      const sections = definition.categoryIds
-        .map((categoryId) => categoryMap.get(categoryId))
-        .filter((category): category is MenuCategory => Boolean(category))
-        .map((category) => ({
-          category,
-          items: ITEMS.filter((item) => item.category === category.id),
-        }))
-        .filter((group) => group.items.length > 0);
-
-      return { definition, sections, featuredItems };
-    }).filter((group) => group.sections.length > 0 || group.featuredItems.length > 0);
+      return { definition, items };
+    }).filter((group) => group.items.length > 0);
   }, []);
 
-  useEffect(() => {
-    const visible = new Map<MenuGroupId, number>();
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-menu-group]")).filter((section) =>
-      isTopLevelMenuGroupId(section.getAttribute("data-menu-group")),
-    );
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isProgrammaticScrollRef.current) return;
-
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute("data-menu-group");
-          if (!isTopLevelMenuGroupId(id)) return;
-          if (entry.isIntersecting) {
-            visible.set(id, entry.intersectionRatio);
-          } else {
-            visible.delete(id);
-          }
-        });
-
-        const next = [...visible.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] as MenuGroupId | undefined;
-        if (next) setActiveGroup((current) => (current === next ? current : next));
-      },
-      { rootMargin: "-34% 0px -56% 0px", threshold: [0.05, 0.2, 0.5, 0.8] },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [displayGroups]);
-
-  const scrollToGroup = useCallback((groupId: MenuGroupId) => {
+  const scrollToGroup = useCallback((groupId: FinalMenuGroupId) => {
     setActiveGroup((current) => (current === groupId ? current : groupId));
-    const scrollToFirstSection = (attempt = 0) => {
-      const group = document.getElementById(`group-${groupId}`);
-      const target = group?.querySelector<HTMLElement>("[data-menu-section]") ?? group;
+    const group = document.getElementById(`group-${groupId}`);
+    if (!group) return;
 
-      if (target) {
-        isProgrammaticScrollRef.current = true;
-        const scrollTargetIntoPlace = (behavior: ScrollBehavior) => {
-          const currentGroup = document.getElementById(`group-${groupId}`);
-          const currentTarget = currentGroup?.querySelector<HTMLElement>("[data-menu-section]") ?? currentGroup;
-          if (!currentTarget) return;
-
-          const controls = document.querySelector<HTMLElement>(".full-menu-controls");
-          const stickyOffset = controls ? Math.min(Math.max(controls.offsetHeight, 96), 180) : 120;
-          const top = currentTarget.getBoundingClientRect().top + window.scrollY - stickyOffset - 16;
-          window.scrollTo({ top: Math.max(0, top), behavior });
-        };
-
-        scrollTargetIntoPlace("smooth");
-        window.setTimeout(() => scrollTargetIntoPlace("smooth"), 550);
-        window.setTimeout(() => scrollTargetIntoPlace("auto"), 1250);
-        window.setTimeout(() => scrollTargetIntoPlace("auto"), 1900);
-        window.setTimeout(() => {
-          scrollTargetIntoPlace("auto");
-          setActiveGroup(groupId);
-          isProgrammaticScrollRef.current = false;
-        }, 2200);
-        return;
-      }
-
-      if (attempt < 10) {
-        window.setTimeout(() => scrollToFirstSection(attempt + 1), 50);
-      }
-    };
-
-    window.setTimeout(() => scrollToFirstSection(), 40);
+    const controls = document.querySelector<HTMLElement>(".full-menu-controls");
+    const stickyOffset = controls ? controls.offsetHeight + 28 : 120;
+    const top = group.getBoundingClientRect().top + window.scrollY - stickyOffset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   }, []);
 
   return (
-    <section className="full-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <section className="full-menu-explorer">
+      <div className="mobile-menu-heading">
+        <h1>{t("full_menu_title")}</h1>
+        <p>{t("full_menu_body")}</p>
+      </div>
+
       <div id="menu-categories" className="full-menu-controls">
         <div className="section-wrap controls-wrap">
           <nav
             className="menu-category-strip menu-quick-jump no-scrollbar"
             aria-label="Menu quick jump"
-            dir={locale === "ar" ? "rtl" : "ltr"}
           >
             {TOP_LEVEL_MENU_NAV_GROUPS.map(({ group, label }) => (
               <button
@@ -261,12 +280,12 @@ function QuickJumpIcon({ group }: { group: MenuCategoryGroup }) {
   return category ? <CategoryGlyph category={category} /> : <Sparkles className="h-4 w-4" />;
 }
 
-const MenuDisplayGroup = memo(function MenuDisplayGroup({ group }: { group: MenuDisplayGroup }) {
+const MenuDisplayGroup = memo(function MenuDisplayGroup({
+  group,
+}: {
+  group: MenuDisplayGroupData;
+}) {
   const { t, tx } = useI18n();
-  const itemCount = uniqueItemCount([
-    ...group.featuredItems,
-    ...group.sections.flatMap((section) => section.items),
-  ]);
 
   return (
     <section
@@ -282,67 +301,29 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({ group }: { group: Menu
         <h2>{tx(group.definition.name)}</h2>
         <p>{tx(group.definition.blurb)}</p>
         <div className="menu-group-meta">
-          {group.sections.length ? <span>{group.sections.length} {t("categoryCount")}</span> : null}
-          <span>{itemCount} {t("menuCount")}</span>
+          <span>
+            {group.items.length} {t("menuCount")}
+          </span>
         </div>
-      </div>
-
-      {group.featuredItems.length ? (
-        <div className="menu-group-featured">
-          {group.featuredItems.map((item) => {
-            const category = categoryMap.get(item.category);
-            return category ? (
-              <MenuCard key={item.id} item={item} category={category} variant="feature" motionEnabled={false} />
-            ) : null;
-          })}
-        </div>
-      ) : null}
-
-      {group.sections.length ? (
-        <div className="menu-group-sections">
-          {group.sections.map((section) => (
-            <MenuSection key={section.category.id} group={section} />
-          ))}
-        </div>
-      ) : null}
-    </section>
-  );
-});
-
-const MenuSection = memo(function MenuSection({ group }: { group: MenuGroup }) {
-  const { t, tx } = useI18n();
-  const cover = isUsableImageUrl(group.category.cover ?? group.category.sourceImageUrl)
-    ? group.category.cover ?? group.category.sourceImageUrl
-    : undefined;
-
-  return (
-    <section
-      id={`section-${group.category.id}`}
-      data-menu-section={group.category.id}
-      className="full-menu-section menu-category-section soft-botanical-bg"
-    >
-      <div
-        className={cover ? "menu-section-banner has-cover" : "menu-section-banner"}
-        style={cover ? { backgroundImage: `linear-gradient(90deg, rgba(79, 90, 62, 0.82), rgba(104, 115, 84, 0.28)), url(${cover})` } : undefined}
-      >
-        <SectionIntro
-          eyebrow={`${group.items.length} ${t("menuCount")}`}
-          title={tx(group.category.name)}
-          body={group.category.blurb ? tx(group.category.blurb) : undefined}
-          icon={<CategoryGlyph category={group.category} />}
-          tone="light"
-        />
       </div>
 
       <div className="full-menu-grid">
-        {group.items.map((item) => (
-          <MenuCard key={item.id} item={item} category={group.category} motionEnabled={false} />
-        ))}
+        {group.items.map((item) => {
+          const category = categoryMap.get(item.category);
+          return category ? (
+            <MenuCard key={item.id} item={item} category={category} motionEnabled={false} />
+          ) : null;
+        })}
       </div>
     </section>
   );
 });
 
-function uniqueItemCount(items: MenuItem[]) {
-  return new Set(items.map((item) => item.id)).size;
+function uniqueItems(items: MenuItem[]) {
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    if (seen.has(item.id)) return false;
+    seen.add(item.id);
+    return true;
+  });
 }
