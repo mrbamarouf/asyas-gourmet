@@ -42,7 +42,7 @@ import {
   type MenuCategory,
   type MenuItem,
 } from "@/data/menu";
-import { I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
+import { formatVisibleText, I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
 import mobileIntroVideo from "@/assets/asya-mobile-intro.mp4";
@@ -197,7 +197,8 @@ export function localizeMenuText(text: LocalizedText, locale: Locale) {
 }
 
 export function localizeMenuItemName(item: MenuItem, locale: Locale) {
-  return ITEM_NAME_DISPLAY_COPY[item.id]?.[locale] ?? localizeMenuText(item.name, locale);
+  const override = ITEM_NAME_DISPLAY_COPY[item.id]?.[locale];
+  return override ? formatVisibleText(override, locale) : localizeMenuText(item.name, locale);
 }
 
 export function localizeMenuDescription(item: MenuItem, category: MenuCategory, locale: Locale) {
@@ -219,12 +220,15 @@ function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
 
   if (!cleaned || /^\$?[0-9A-Fa-f]{1,8}$/.test(cleaned)) return "";
   if (locale === "ar") {
-    const arabicOnly = cleaned
-      .replace(/\s*\([^)]*[\p{Script=Latin}][^)]*\)/gu, "")
-      .replace(/[\p{Script=Latin}][\p{Script=Latin}\p{Number}\s.'’&+-]*/gu, "")
-      .replace(/\s{2,}/g, " ")
-      .replace(/\s+([،.])/g, "$1")
-      .trim();
+    const arabicOnly = formatVisibleText(
+      cleaned
+        .replace(/\s*\([^)]*[\p{Script=Latin}][^)]*\)/gu, "")
+        .replace(/[\p{Script=Latin}][\p{Script=Latin}\p{Number}\s.'’&+-]*/gu, "")
+        .replace(/\s{2,}/g, " ")
+        .replace(/\s+([،.])/g, "$1")
+        .trim(),
+      locale,
+    );
 
     return /[\u0600-\u06FF]/.test(arabicOnly) ? arabicOnly : "";
   }
@@ -234,23 +238,25 @@ function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
 function cleanDescriptionCopy(value: string, locale: Locale) {
   if (!value) return "";
 
-  const withoutSeparators = value
-    .replace(/[—_|]/g, locale === "ar" ? "،" : ",")
+  if (locale === "ar") {
+    return formatVisibleText(
+      value
+        .replace(/[A-Za-z]+/g, "")
+        .replace(/\s{2,}/g, " ")
+        .trim(),
+      locale,
+    );
+  }
+
+  return value
+    .replace(/[—_|]/g, ",")
     .replace(/::/g, ":")
     .replace(/…/g, ".")
     .replace(/\.{2,}/g, ".")
     .replace(/\s+/g, " ")
+    .replace(/[\u0600-\u06FF]+/g, "")
+    .replace(/\s{2,}/g, " ")
     .trim();
-
-  return locale === "ar"
-    ? withoutSeparators
-        .replace(/[A-Za-z]+/g, "")
-        .replace(/\s{2,}/g, " ")
-        .trim()
-    : withoutSeparators
-        .replace(/[\u0600-\u06FF]+/g, "")
-        .replace(/\s{2,}/g, " ")
-        .trim();
 }
 
 function polishMenuDescription(
@@ -260,7 +266,7 @@ function polishMenuDescription(
   locale: Locale,
 ) {
   const override = DESCRIPTION_DISPLAY_COPY[item.id]?.[locale];
-  if (override) return override;
+  if (override) return formatVisibleText(override, locale);
 
   const itemName = localizeMenuItemName(item, locale);
   const categoryName = cleanLocalizedMenuText(category.name[locale], locale);
@@ -286,47 +292,50 @@ function polishMenuDescription(
 }
 
 function stripMenuFiller(value: string, locale: Locale) {
-  let text = value.replace(/\s+/g, " ").trim();
+  let text = formatVisibleText(value.replace(/\s+/g, " ").trim(), locale);
   if (!text) return "";
 
   if (locale === "ar") {
-    return text
-      .replace(/ابدأ يومك[^.]*\./g, "")
-      .replace(/هذه المائدة[^.]*\./g, "")
-      .replace(/مستوحاة من[^.]*\./g, "")
-      .replace(/بعناية فائقة/g, "")
-      .replace(/بعناية/g, "")
-      .replace(/مثالي(?:ة|ًا|ا)?/g, "متوازن")
-      .replace(/نابضة بالحياة/g, "طازجة")
-      .replace(/نابض بالحياة/g, "طازج")
-      .replace(/نابضة بالحيوية/g, "غنية بالخضار")
-      .replace(/نابض بالحيوية/g, "غني بالخضار")
-      .replace(/مليء بالحيوية/g, "منعش")
-      .replace(/مليئة بالحيوية/g, "منعشة")
-      .replace(/لمسة ممتعة/g, "لمسة منعشة")
-      .replace(/مصدر واحد/g, "منشأ واحد")
-      .replace(/أفضل طعم/g, "طعم طازج")
-      .replace(/تجربة إفطار كلاسيكية/g, "فطورًا كلاسيكيًا")
-      .replace(/تجربة تحلية/g, "تحلية")
-      .replace(/تجربة إفطار/g, "فطورًا")
-      .replace(/تجربة غنية/g, "نكهة غنية")
-      .replace(/تجربة شهية/g, "مائدة شهية")
-      .replace(/للتجربة/g, "للنكهة")
-      .replace(/لتجربة/g, "لنكهة")
-      .replace(/مفعم(?:ة)?[^.،]*/g, "")
-      .replace(/لا تُقاوم|لا تقاوم/g, "غنية")
-      .replace(/تجربة/g, "نكهة")
-      .replace(/رحلة/g, "مائدة")
-      .replace(/لحظة/g, "لقمة")
-      .replace(/الألوان/g, "المكونات")
-      .replace(/ممتعة/g, "شهية")
-      .replace(/ممتع/g, "غني")
-      .replace(/طازجة وطازجة/g, "طازجة")
-      .replace(/متوازنً بين/g, "متوازن بين")
-      .replace(/الشرق الاوسط/g, "الشرق الأوسط")
-      .replace(/\s+([،.])/g, "$1")
-      .replace(/\s{2,}/g, " ")
-      .trim();
+    return formatVisibleText(
+      text
+        .replace(/ابدأ يومك[^.]*\./g, "")
+        .replace(/هذه المائدة[^.]*\./g, "")
+        .replace(/مستوحاة من[^.]*\./g, "")
+        .replace(/بعناية فائقة/g, "")
+        .replace(/بعناية/g, "")
+        .replace(/مثالي(?:ة|ًا|ا)?/g, "متوازن")
+        .replace(/نابضة بالحياة/g, "طازجة")
+        .replace(/نابض بالحياة/g, "طازج")
+        .replace(/نابضة بالحيوية/g, "غنية بالخضار")
+        .replace(/نابض بالحيوية/g, "غني بالخضار")
+        .replace(/مليء بالحيوية/g, "منعش")
+        .replace(/مليئة بالحيوية/g, "منعشة")
+        .replace(/لمسة ممتعة/g, "لمسة منعشة")
+        .replace(/مصدر واحد/g, "منشأ واحد")
+        .replace(/أفضل طعم/g, "طعم طازج")
+        .replace(/تجربة إفطار كلاسيكية/g, "فطورًا كلاسيكيًا")
+        .replace(/تجربة تحلية/g, "تحلية")
+        .replace(/تجربة إفطار/g, "فطورًا")
+        .replace(/تجربة غنية/g, "نكهة غنية")
+        .replace(/تجربة شهية/g, "مائدة شهية")
+        .replace(/للتجربة/g, "للنكهة")
+        .replace(/لتجربة/g, "لنكهة")
+        .replace(/مفعم(?:ة)?[^.،]*/g, "")
+        .replace(/لا تُقاوم|لا تقاوم/g, "غنية")
+        .replace(/تجربة/g, "نكهة")
+        .replace(/رحلة/g, "مائدة")
+        .replace(/لحظة/g, "لقمة")
+        .replace(/الألوان/g, "المكونات")
+        .replace(/ممتعة/g, "شهية")
+        .replace(/ممتع/g, "غني")
+        .replace(/طازجة وطازجة/g, "طازجة")
+        .replace(/متوازنً بين/g, "متوازن بين")
+        .replace(/الشرق الاوسط/g, "الشرق الأوسط")
+        .replace(/\s+([،.])/g, "$1")
+        .replace(/\s{2,}/g, " ")
+        .trim(),
+      locale,
+    );
   }
 
   return text
@@ -423,12 +432,12 @@ export function compactOfficialDescription(value: string, locale: Locale) {
   if (!value) return "";
 
   const limit = locale === "ar" ? 170 : 185;
-  const normalized = value.replace(/\s+/g, " ").trim();
+  const normalized = formatVisibleText(value, locale).replace(/\s+/g, " ").trim();
   return clipDescription(normalized, locale, limit);
 }
 
 function clipDescription(value: string, locale: Locale, limit: number) {
-  const normalized = value.replace(/\.{2,}/g, ".").replace(/\s+/g, " ").trim();
+  const normalized = formatVisibleText(value, locale).replace(/\.{2,}/g, ".").replace(/\s+/g, " ").trim();
   if (!normalized) return "";
   if (normalized.length <= limit) return normalized.replace(/[،,;:]$/g, "") + ending(locale, normalized);
 
@@ -458,6 +467,7 @@ function clipDescription(value: string, locale: Locale, limit: number) {
 function tidyExcerptEnd(value: string, locale: Locale) {
   if (locale === "ar") {
     return value
+      .replace(/\s*\([^)]*[\p{Script=Latin}][^)]*\)/gu, "")
       .replace(/\s+(بينما|حيث|مما|والتي|والذي|التي|الذي|مع|ثم|كما|لإضافة|لإضفاء|لتقديم|لنكهة|ليمنحك|ليمنحكم|على الجانب)$/u, "")
       .replace(/\s+و$/u, "")
       .trim();
@@ -475,7 +485,7 @@ function localizeOptionName(name: string, locale: Locale) {
     big: { ar: "كبير", en: "Big" },
   };
 
-  return labels[name.trim().toLowerCase()]?.[locale] ?? name;
+  return formatVisibleText(labels[name.trim().toLowerCase()]?.[locale] ?? name, locale);
 }
 
 export function AsyaShell({ children, current }: AsyaShellProps) {
@@ -495,8 +505,8 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
         setLocale(nextLocale);
         writeStoredLocale(nextLocale);
       },
-      t: (key: UIKey) => UI[key][locale],
-      tx: (obj: Record<Locale, string>) => obj[locale],
+      t: (key: UIKey) => formatVisibleText(UI[key][locale], locale),
+      tx: (obj: Record<Locale, string>) => formatVisibleText(obj[locale], locale),
       dir: "ltr" as const,
     }),
     [locale],

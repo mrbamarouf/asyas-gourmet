@@ -136,6 +136,33 @@ export const UI = {
 
 export type UIKey = keyof typeof UI;
 
+export function formatVisibleText(value: string, locale: Locale) {
+  return locale === "ar" ? normalizeArabicTypography(value) : value;
+}
+
+export function normalizeArabicTypography(value: string) {
+  if (!value || !/[\u0600-\u06FF]/u.test(value)) return value;
+
+  return value
+    .replace(/\r\n/g, "\n")
+    .replace(/\*/g, "")
+    .replace(/\s*\n+\s*/g, " ")
+    .replace(/\.{3,}|…/g, "،")
+    .replace(/[—–]/g, "،")
+    .replace(/\s+-\s+/g, "، ")
+    .replace(/[_|]/g, " ")
+    .replace(/::+/g, ":")
+    .replace(/,/g, "،")
+    .replace(/\s+([،.؟!:؛])/g, "$1")
+    .replace(/([،:؛؟!])\s*/g, "$1 ")
+    .replace(/،\s*[.،]+/g, ".")
+    .replace(/\.\s*[.،]+/g, ".")
+    .replace(/([؟!])\s*[؟!]+/g, "$1")
+    .replace(/([،:؛])\s*$/g, ".")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 interface I18nCtx {
   locale: Locale;
   setLocale: (l: Locale) => void;
@@ -147,8 +174,8 @@ interface I18nCtx {
 export const I18nContext = createContext<I18nCtx>({
   locale: "ar",
   setLocale: () => {},
-  t: (key) => UI[key].ar,
-  tx: (obj) => obj.ar,
+  t: (key) => formatVisibleText(UI[key].ar, "ar"),
+  tx: (obj) => formatVisibleText(obj.ar, "ar"),
   dir: "ltr",
 });
 
