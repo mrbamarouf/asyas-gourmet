@@ -198,6 +198,27 @@ function MenuExplorer() {
     if (!activePill) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      const stripRect = strip.getBoundingClientRect();
+      const pillRect = activePill.getBoundingClientRect();
+      const edgePadding = 16;
+      let delta = 0;
+
+      if (pillRect.left < stripRect.left + edgePadding) {
+        delta = pillRect.left - stripRect.left - edgePadding;
+      } else if (pillRect.right > stripRect.right - edgePadding) {
+        delta = pillRect.right - stripRect.right + edgePadding;
+      }
+
+      if (Math.abs(delta) > 1) {
+        strip.scrollBy({
+          left: delta,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      }
+      return;
+    }
+
     activePill.scrollIntoView({
       block: "nearest",
       inline: "nearest",

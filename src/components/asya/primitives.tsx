@@ -567,7 +567,8 @@ function useScrollChromeVisibility() {
     const minDelta = 0.5;
     const hideAfter = 120;
     const hideIntent = 14;
-    const showIntent = -10;
+    const desktopShowIntent = -10;
+    const mobileShowIntent = -96;
     const topThreshold = 12;
     let previousY = Math.max(0, window.scrollY);
     let scrollIntent = 0;
@@ -594,6 +595,9 @@ function useScrollChromeVisibility() {
           setHidden(true);
         }
       } else if (delta < -minDelta) {
+        const showIntent = window.matchMedia("(max-width: 767px)").matches
+          ? mobileShowIntent
+          : desktopShowIntent;
         scrollIntent = scrollIntent > 0 ? delta : scrollIntent + delta;
         if (scrollIntent < showIntent) {
           setHidden(false);
