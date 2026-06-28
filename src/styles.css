@@ -10662,3 +10662,128 @@ h4 {
     padding: 0 !important;
   }
 }
+
+/* Scroll behavior and menu gap fix: one chrome model for nav + category chips. */
+:root {
+  --scroll-chrome-nav-top: 18px;
+  --scroll-chrome-nav-height: 76px;
+  --scroll-chrome-gap: 8px;
+  --scroll-chrome-clearance: calc(
+    var(--scroll-chrome-nav-top) + var(--scroll-chrome-nav-height) + var(--scroll-chrome-gap)
+  );
+  --scroll-chrome-hidden-y: calc(
+    -1 * (var(--scroll-chrome-nav-top) + var(--scroll-chrome-nav-height) + 24px)
+  );
+  --scroll-chrome-transform: translate3d(0, 0, 0);
+  --menu-controls-top: var(--scroll-chrome-clearance);
+  --menu-controls-max-height: 76px;
+  --menu-controls-pad-bottom: 0.65rem;
+  --menu-controls-opacity: 1;
+  --menu-controls-y: 0px;
+  --menu-section-scroll-margin: calc(var(--scroll-chrome-clearance) + 92px);
+}
+
+body.asya-scroll-chrome-hidden {
+  --scroll-chrome-transform: translate3d(0, var(--scroll-chrome-hidden-y), 0);
+  --menu-controls-top: 0px;
+  --menu-controls-max-height: 0px;
+  --menu-controls-pad-bottom: 0px;
+  --menu-controls-opacity: 0;
+  --menu-controls-y: -12px;
+  --menu-section-scroll-margin: 32px;
+}
+
+.site-shell > .site-nav,
+.site-nav {
+  transform: var(--scroll-chrome-transform) !important;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: transform;
+}
+
+.full-menu-page {
+  padding-top: var(--scroll-chrome-clearance) !important;
+}
+
+.full-menu-page .full-menu-explorer {
+  margin-top: clamp(0.9rem, 2vw, 1.25rem) !important;
+}
+
+.full-menu-page .full-menu-controls {
+  position: sticky !important;
+  top: var(--menu-controls-top) !important;
+  z-index: 80 !important;
+  max-height: var(--menu-controls-max-height) !important;
+  overflow: hidden !important;
+  opacity: var(--menu-controls-opacity) !important;
+  padding-top: 0 !important;
+  padding-bottom: var(--menu-controls-pad-bottom) !important;
+  transform: translate3d(0, var(--menu-controls-y), 0) !important;
+  transition:
+    top 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    max-height 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    padding-bottom 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 140ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: transform, max-height;
+}
+
+body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
+  pointer-events: none !important;
+}
+
+.full-menu-page .controls-wrap {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.full-menu-page .menu-category-strip {
+  min-height: 42px !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.3rem !important;
+}
+
+.full-menu-page .full-menu-wrap {
+  padding-top: 0 !important;
+}
+
+.full-menu-page .menu-display-group,
+.full-menu-page .full-menu-section {
+  scroll-margin-top: var(--menu-section-scroll-margin) !important;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --scroll-chrome-nav-top: 12px;
+    --scroll-chrome-nav-height: 60px;
+    --scroll-chrome-gap: 8px;
+    --menu-controls-max-height: 54px;
+    --menu-controls-pad-bottom: 0.35rem;
+    --menu-section-scroll-margin: calc(var(--scroll-chrome-clearance) + 66px);
+  }
+
+  .full-menu-page {
+    padding-top: var(--scroll-chrome-clearance) !important;
+  }
+
+  .full-menu-page .full-menu-explorer {
+    margin-top: 0 !important;
+  }
+
+  .mobile-menu-heading {
+    margin-bottom: 0.45rem !important;
+  }
+
+  .full-menu-page .menu-category-strip {
+    min-height: 40px !important;
+    padding-top: 0.18rem !important;
+    padding-bottom: 0.22rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-shell > .site-nav,
+  .site-nav,
+  .full-menu-page .full-menu-controls {
+    transition-duration: 1ms !important;
+  }
+}

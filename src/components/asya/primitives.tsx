@@ -480,6 +480,7 @@ function localizeOptionName(name: string, locale: Locale) {
 export function AsyaShell({ children, current }: AsyaShellProps) {
   const [locale, setLocale] = useState<Locale>("ar");
   const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
+  useScrollChromeVisibility();
 
   const value = useMemo(
     () => ({
@@ -526,6 +527,69 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
       </ItemDetailContext.Provider>
     </I18nContext.Provider>
   );
+}
+
+function useScrollChromeVisibility() {
+  useEffect(() => {
+    const hiddenClass = "asya-scroll-chrome-hidden";
+    const topClass = "asya-scroll-at-top";
+    const minDelta = 0.5;
+    const hideAfter = 120;
+    const hideIntent = 14;
+    const showIntent = -10;
+    const topThreshold = 12;
+    let previousY = Math.max(0, window.scrollY);
+    let scrollIntent = 0;
+    let frame = 0;
+
+    const setHidden = (hidden: boolean) => {
+      document.body.classList.toggle(hiddenClass, hidden);
+    };
+
+    const update = () => {
+      frame = 0;
+      const currentY = Math.max(0, window.scrollY);
+      const delta = currentY - previousY;
+      const isAtTop = currentY <= topThreshold;
+
+      document.body.classList.toggle(topClass, isAtTop);
+
+      if (isAtTop) {
+        scrollIntent = 0;
+        setHidden(false);
+      } else if (delta > minDelta) {
+        scrollIntent = scrollIntent < 0 ? delta : scrollIntent + delta;
+        if (currentY > hideAfter && scrollIntent > hideIntent) {
+          setHidden(true);
+        }
+      } else if (delta < -minDelta) {
+        scrollIntent = scrollIntent > 0 ? delta : scrollIntent + delta;
+        if (scrollIntent < showIntent) {
+          setHidden(false);
+        }
+      }
+
+      previousY = currentY;
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("pageshow", scheduleUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      document.body.classList.remove(hiddenClass, topClass);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("pageshow", scheduleUpdate);
+    };
+  }, []);
 }
 
 export function AsyaIntroOverlay() {
