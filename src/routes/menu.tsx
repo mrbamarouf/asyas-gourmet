@@ -208,7 +208,7 @@ function MenuExplorer() {
   }, []);
 
   return (
-    <section className="full-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <section className="full-menu-explorer soft-botanical-bg" dir={locale === "ar" ? "rtl" : "ltr"}>
       <div className="full-menu-controls">
         <div className="section-wrap controls-wrap">
           <div className="menu-search">

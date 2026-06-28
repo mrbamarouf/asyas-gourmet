@@ -161,7 +161,7 @@ function StorySection() {
   return (
     <motion.section
       id="about"
-      className="story-section"
+      className="story-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -200,7 +200,7 @@ function SignatureSection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="signature-section"
+      className="signature-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -232,7 +232,7 @@ function BreakfastSection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="breakfast-section"
+      className="breakfast-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -271,7 +271,7 @@ function BakerySection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="bakery-section"
+      className="bakery-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -304,7 +304,7 @@ function MainDishesSection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="mains-section desserts-section"
+      className="mains-section desserts-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -332,7 +332,7 @@ function DrinksSection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="drinks-section"
+      className="drinks-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -364,7 +364,7 @@ function DessertsSection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="desserts-section"
+      className="desserts-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
@@ -392,7 +392,7 @@ function GallerySection({ items }: { items: DishEntry[] }) {
 
   return (
     <motion.section
-      className="gallery-section"
+      className="gallery-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"

@@ -42,7 +42,6 @@ import {
   type MenuCategory,
   type MenuItem,
 } from "@/data/menu";
-import { BackgroundDecor } from "@/components/asya/BackgroundDecor";
 import { I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
@@ -163,7 +162,6 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     <I18nContext.Provider value={value}>
       <ItemDetailContext.Provider value={detailValue}>
         <div data-locale={locale} className="asya-site site-shell">
-          <BackgroundDecor />
           <TopNav current={current} />
           {children}
           <Footer />
@@ -950,7 +948,7 @@ export function VisitContact() {
   const { t, tx } = useI18n();
 
   return (
-    <section id="visit" className="visit-section">
+    <section id="visit" className="visit-section soft-botanical-bg">
       <div className="section-wrap">
         <SectionIntro
           eyebrow={t("sec_visit")}
