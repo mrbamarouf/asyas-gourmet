@@ -98,6 +98,125 @@ export const CATEGORY_IDS = {
   vipShisha: "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
 } as const;
 
+const CATEGORY_DESCRIPTIONS = {
+  happySpreads: {
+    en: "Turkish breakfast spreads with cheeses, eggs, jams, fresh bread, and tea for a generous morning table.",
+    ar: "تشكيلات فطور تركية تجمع الأجبان والبيض والمربيات والخبز والشاي لمائدة صباحية غنية.",
+  },
+  eggs: {
+    en: "Turkish egg dishes, from menemen and omelettes to sucuk, potatoes, and warm breakfast pans.",
+    ar: "أطباق بيض تركية متنوعة، من المينمين والأومليت إلى السجق والبطاطس المحضرة صباحًا.",
+  },
+  flavoursOfAsyaS: {
+    en: "Breakfast sides with cheeses, olives, foul, falafel, simit, honey, kaymak, and labneh.",
+    ar: "أصناف جانبية للفطور تضم الأجبان والزيتون والفول والفلافل والسميت والقشطة واللبنة.",
+  },
+  mrPotatoes: {
+    en: "Crispy potato dishes, from herb potatoes and fries to croquettes, volcano potatoes, and potato salad.",
+    ar: "أطباق بطاطس مقرمشة تشمل البطاطس بالأعشاب والبطاطس الحارة والكروكيت والسلطة.",
+  },
+  aSweetMemory: {
+    en: "Sweet breakfast pairings with honey, kaymak, homemade jams, tahini, molasses, and fresh bread.",
+    ar: "إضافات فطور حلوة تجمع العسل والقشطة والمربيات المنزلية والطحينة والدبس مع الخبز.",
+  },
+  ablaSHandmadeGozlemeAndBorek: {
+    en: "Handmade Turkish gozleme, borek, Hatay bread, and tandir bread prepared with fresh dough.",
+    ar: "جوزلمة وبوريك تركي وخبز هاتاي وتندور محضرة بعجين طازج ومخبوزة ساخنة.",
+  },
+  asyaSPremiumPideS: {
+    en: "Fresh Turkish pide and lahmacun baked with cheese, labneh, zaatar, Akawi, Kashkaval, or meat.",
+    ar: "بيدا ولحم بعجين تركية مخبوزة بالجبن واللبنة والزعتر والعكاوي والكشكوان واللحم.",
+  },
+  deliciousSoups: {
+    en: "Warm lentil, creamy chicken, and vegetable soups served with croutons and lemon.",
+    ar: "شوربات العدس والدجاج الكريمية والخضار، تقدم دافئة مع الخبز المحمص والليمون.",
+  },
+  greensAndFriends: {
+    en: "Fresh salads with parsley, bulgur, tomatoes, walnuts, pomegranate, toasted bread, or grilled chicken.",
+    ar: "سلطات طازجة بالبقدونس والبرغل والطماطم والجوز والرمان والخبز المحمص أو الدجاج.",
+  },
+  flavoursOfTheTable: {
+    en: "Cold meze plates with hummus, muhammara, baba ghanoush, mutabbal, grape leaves, and pickles.",
+    ar: "مقبلات باردة تضم الحمص والمحمرة وبابا غنوج والمتبل وورق العنب والمخللات.",
+  },
+  warmAndDeliciousStarts: {
+    en: "Warm starters with handmade manti, kibbeh, and hummus topped with tender meat.",
+    ar: "مقبلات ساخنة تشمل المنتو التركي والكبة والحمص باللحم الطري.",
+  },
+  pasta: {
+    en: "Fresh pasta dishes with Alfredo cream, arrabbiata tomato sauce, or slow-cooked Bolognese.",
+    ar: "باستا طازجة بصلصات ألفريدو الكريمية وأرابياتا الطماطم وبولونيز اللحم.",
+  },
+  pizza: {
+    en: "Oven-baked pizzas with tomato sauce, mozzarella, vegetables, pepperoni, or chicken.",
+    ar: "بيتزا مخبوزة بصلصة الطماطم والموزاريلا والخضار والبيبروني أو الدجاج.",
+  },
+  grillAndCasserole: {
+    en: "Charcoal grills, kebabs, shish, casseroles, rice, and bulgur served with Turkish sides.",
+    ar: "مشويات على الفحم وكباب وشيش وطواجن، تقدم مع الأرز والبرغل والإضافات التركية.",
+  },
+  mrToroSteakhouse: {
+    en: "Steaks, lamb chops, shashlik, and meatballs prepared with rich sauces and classic sides.",
+    ar: "ستيك وشرائح لحم وريش غنم وشاشليك وكفتة، تقدم مع الصلصات والإضافات الكلاسيكية.",
+  },
+  turkishDessert: {
+    en: "Turkish sweets with baklava, kunefe, trilece, San Sebastian cheesecake, cream, and fruit.",
+    ar: "حلويات تركية تضم البقلاوة والكنافة والتريليتشا وسان سيباستيان والقشطة والفواكه.",
+  },
+  worldSCoffees: {
+    en: "Turkish coffee, espresso drinks, lattes, mochas, hot chocolate, drip coffee, and Saudi coffee.",
+    ar: "قهوة تركية ومشروبات إسبريسو ولاتيه وموكا وشوكولاتة ساخنة وقهوة سعودية.",
+  },
+  tea: {
+    en: "Turkish tea, green tea, winter tea, karak, milk tea, and Moroccan mint tea.",
+    ar: "شاي تركي وأخضر وشتوي وكرك وشاي بالحليب وشاي مغربي بالنعناع.",
+  },
+  coldCoffees: {
+    en: "Iced coffees with Spanish latte, affogato, iced latte, iced mocha, Americano, and cold drip.",
+    ar: "قهوة باردة تشمل سبانيش لاتيه وأفوغاتو ولاتيه وموكا وأمريكانو وقهوة مقطرة.",
+  },
+  specialIcedMatchas: {
+    en: "Iced matcha drinks prepared classic or blended with strawberry, mango, or Spanish latte style.",
+    ar: "مشروبات ماتشا باردة تقدم كلاسيكية أو ممزوجة بالفراولة أو المانجو أو الحليب المحلى.",
+  },
+  ourSignatures: {
+    en: "House cold drinks with mojitos, berry blends, tropical frozen drinks, and citrus refreshers.",
+    ar: "مشروبات باردة مميزة تضم الموهيتو ومزيج التوت والمشروبات الاستوائية والحمضيات.",
+  },
+  fromOurGarden: {
+    en: "Fresh juices with mango, strawberry, pineapple, green apple, carrot, pomegranate, and mixed fruit.",
+    ar: "عصائر طازجة من المانجو والفراولة والأناناس والتفاح الأخضر والجزر والرمان والفواكه المشكلة.",
+  },
+  homemadeIceTeasAndLemonades: {
+    en: "Homemade iced teas and lemonades with peach, hibiscus berry, mint lemon, and mixed berries.",
+    ar: "شاي مثلج وليمونادة منزلية بنكهات الخوخ والكركديه والتوت والنعناع والليمون.",
+  },
+  turkishTraditionalDrinks: {
+    en: "Traditional Turkish ayran served plain or with mint, basil, soda, or cucumber.",
+    ar: "عيران تركي تقليدي يقدم سادة أو بالنعناع أو الريحان أو الصودا أو الخيار.",
+  },
+  softDrinks: {
+    en: "Chilled soft drinks, sparkling water, still water, energy drinks, malt drink, and citrus soda.",
+    ar: "مشروبات غازية باردة ومياه عادية وفوارة ومشروبات طاقة وشعير وصودا حمضية.",
+  },
+  milkshake: {
+    en: "Creamy milkshakes blended with chocolate, strawberry, or banana.",
+    ar: "ميلك شيك كريمي بنكهات الشوكولاتة والفراولة والموز.",
+  },
+  shishaByCharming: {
+    en: "Classic shisha flavors including double apple, grape, mint, berry, watermelon, peach, and gum.",
+    ar: "نكهات شيشة كلاسيكية تشمل التفاحتين والعنب والنعناع والتوت والبطيخ والخوخ والعلكة.",
+  },
+  signatureShisha: {
+    en: "Signature shisha blends with selected house flavors such as Dubai, Marbella, Hattrick, and Last Puff.",
+    ar: "خلطات شيشة مميزة بنكهات مختارة مثل دبي وماربيا وهاتريك ولاست بوف.",
+  },
+  vipShisha: {
+    en: "Kokaya and Anima VIP shisha selections prepared with richer blends and special service.",
+    ar: "اختيارات كوكايا وأنيما للشيشة بخلطات أغنى وتقديم خاص.",
+  },
+} satisfies Record<keyof typeof CATEGORY_IDS, LocalizedText>;
+
 export const CATEGORY_ORDER: MenuCategoryGroup[] = [
   {
     id: "happySpreads",
@@ -109,10 +228,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Happy Spreads",
       ar: "تشكيلة السعادة",
     },
-    blurb: {
-      en: "The most colorful and vibrant plates, perfect for conversation and sharing.",
-      ar: "أطباق نابضة بالألوان والحيوية، مثالية للمشاركة والاستمتاع برفقة الأصدقاء.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.happySpreads,
     categoryIds: ["61e69fe8-3255-49c0-ad94-517a04184cd5"],
     quickJump: true,
   },
@@ -126,10 +242,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Eggs",
       ar: "بيض",
     },
-    blurb: {
-      en: "The warm harmony of golden textures and perfectly cooked flavors.",
-      ar: "التناغم الدافئ بين القوام الذهبي والنكهات المطهوّة بإتقان.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.eggs,
     categoryIds: ["e74e388c-048d-47e4-afec-acf25fac4650"],
     quickJump: true,
   },
@@ -143,10 +256,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Flavours of Asya's",
       ar: "نكهات آسيا",
     },
-    blurb: {
-      en: "Asian signature dishes where traditional techniques meet modern aesthetics.",
-      ar: "أطباق آسيوية مميزة تلتقي فيها التقنيات التقليدية بالجماليات العصرية.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.flavoursOfAsyaS,
     categoryIds: ["cf0cfebf-b9de-4221-85e6-9513ddd57809"],
     quickJump: true,
   },
@@ -160,10 +270,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Mr. Potatoes",
       ar: "مستر بطاطس",
     },
-    blurb: {
-      en: "The simplest form of the earth, transformed through culinary craftsmanship..",
-      ar: "أبسط خيرات الأرض، تتجلى بلمسة من فنون الطهي الإبداعية..",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.mrPotatoes,
     categoryIds: ["1290e96c-f491-4a64-8e9e-61f0df6a85c7"],
     quickJump: true,
   },
@@ -177,10 +284,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "A Sweet Memory",
       ar: "ذكريات حلوة",
     },
-    blurb: {
-      en: "The sweetest form of a legacy; exquisite moments where traditional recipes meet modern and elegant presentations.",
-      ar: "نهايات حلوة راقية بتوازن متناغم…",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.aSweetMemory,
     categoryIds: ["9ab5f294-68cb-470c-a860-d520f5d09f22"],
     quickJump: true,
   },
@@ -194,10 +298,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Abla's Handmade Gözleme & Börek",
       ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
     },
-    blurb: {
-      en: "*Made By Love Abla's* \nAuthentic Turkish Gözleme & Börek\nHandcrafted dough delicacies, warm and comforting, blending simplicity with true authenticity.",
-      ar: "*بكل حب من مطبخ أبلة* غوزليميه وبوريك تركي أصيل. عجينة يدوية فاخرة، دافئة ومريحة، تجمع بين البساطة والأصالة الحقيقية.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.ablaSHandmadeGozlemeAndBorek,
     categoryIds: ["59ee4ca2-bb09-4a86-981b-fd40460331ea"],
     quickJump: true,
   },
@@ -211,10 +312,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Asya's Premium Pide's",
       ar: "بيدا آسيا البريميوم",
     },
-    blurb: {
-      en: "The most appetizing balance of crispy edges and rich fillings, shaped by the expertise of Premium Pide.",
-      ar: "التوازن الأشهى بين الأطراف المقرمشة والحشوات الغنية، بلمسة خبرة بريميوم بيدا.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.asyaSPremiumPideS,
     categoryIds: ["641057a2-0237-4c4b-ab55-bf923ae06cc8"],
     quickJump: true,
   },
@@ -228,10 +326,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Delicious Soups",
       ar: "شوربات لذيذة",
     },
-    blurb: {
-      en: "A steaming hot embrace, made from the season’s freshest harvests.",
-      ar: "عناق دافئ يتصاعد منه البخار، محضّر من أطيب خيرات الموسم الطازجة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.deliciousSoups,
     categoryIds: ["c0a5b81c-a849-43c6-994d-e4a41c842182"],
     quickJump: true,
   },
@@ -245,10 +340,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Greens & Friends",
       ar: "الخضار واصدقائها",
     },
-    blurb: {
-      en: "The aesthetic meeting of the earth’s freshest gifts and vibrant colors on the plate.",
-      ar: "لقاء جمالي بين أطيب هدايا الأرض وألوان نابضة بالحياة على الطبق.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.greensAndFriends,
     categoryIds: ["81d3c1d4-b82c-4ea3-8a9d-881977f47761"],
     quickJump: true,
   },
@@ -262,10 +354,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Flavours of the Table",
       ar: "نكهات المائدة",
     },
-    blurb: {
-      en: "The moment where fresh, flavorful touches meet perfect harmony at the table.",
-      ar: "اللحظة التي تلتقي فيها اللمسات الطازجة والنكهات المميزة في تناغم مثالي على المائدة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.flavoursOfTheTable,
     categoryIds: ["02eb0962-be35-4701-8641-872802ee6fc7"],
     quickJump: true,
   },
@@ -279,10 +368,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Warm & Delicious Starts",
       ar: "لنبدأ بدفء",
     },
-    blurb: {
-      en: "The first warm greeting, an appetizing curiosity.",
-      ar: "بداية ناعمة تفتح الحواس",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.warmAndDeliciousStarts,
     categoryIds: ["f3eb9103-7c6f-42d9-8305-bf75c336de6c"],
     quickJump: true,
   },
@@ -296,10 +382,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Pasta",
       ar: "الباستا",
     },
-    blurb: {
-      en: "The most elegant form of dough, the deepest harmony of sauce.",
-      ar: "هندسة الحبوب… وأناقة الطعم.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.pasta,
     categoryIds: ["884b790b-3b65-46a2-9be5-2ef78ce53146"],
     quickJump: true,
   },
@@ -313,10 +396,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Pizza",
       ar: "بيتزا",
     },
-    blurb: {
-      en: "Freshly baked with rich flavors and perfectly melted cheese, this pizza delivers a warm and satisfying taste in every slice.",
-      ar: "مخبوزة طازجة بنكهات غنية وجبن ذائب تماماً، تقدم هذه البيتزا طعماً دافئاً ومرضياً في كل شريحة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.pizza,
     categoryIds: ["ab88f484-c88f-49fb-905f-d13cbb35dc76"],
     quickJump: true,
   },
@@ -330,10 +410,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Grill & Casserole",
       ar: "مشويات وطاجن",
     },
-    blurb: {
-      en: "Seared flavors and masterpieces cooked over a slow fire.",
-      ar: "نكهات شهية وروائع طهي على نار هادئة",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.grillAndCasserole,
     categoryIds: ["a6c1ce59-bed8-4049-b4c5-c1713025ce88"],
     quickJump: true,
   },
@@ -347,10 +424,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "MR.TORO STEAKHOUSE",
       ar: "مستر تورو ستيك هاوس",
     },
-    blurb: {
-      en: "A patient journey where time is the key ingredient to deep flavor.",
-      ar: "رحلة صبر يكون فيها الوقت هو المكوّن السري للنكهة العميقة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.mrToroSteakhouse,
     categoryIds: ["4f5c2778-d74e-424a-bedb-81f78f3c68a3"],
     quickJump: true,
   },
@@ -364,10 +438,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "TURKISH DESSERT",
       ar: "حلويات تركية",
     },
-    blurb: {
-      en: "A traditional Turkish dessert crafted with rich flavors and delicate sweetness, offering a warm and satisfying taste experience.",
-      ar: "حلوى تركية تقليدية مُعدة بنكهات غنية وحلاوة رقيقة، تمنحك تجربة تذوق دافئة وممتعة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.turkishDessert,
     categoryIds: ["8c4ad6c8-a1ea-446d-9f0e-3900fd39609d"],
     quickJump: true,
   },
@@ -381,10 +452,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "World's Coffees",
       ar: "عالم القهوة",
     },
-    blurb: {
-      en: "Exotic blends telling the story of a different continent with every sip.",
-      ar: "مزيج استوائي يروي حكاية قارة مختلفة مع كل رشفة",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.worldSCoffees,
     categoryIds: ["8fc09a90-b4db-4681-8506-f430b7c1360d"],
     quickJump: true,
   },
@@ -398,10 +466,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Tea",
       ar: "الشاي",
     },
-    blurb: {
-      en: "The clearest and warmest story of tea leaves steeped with patience.",
-      ar: "أصفى وأدفأ حكاية لأوراق الشاي المنقوعة بصبر وعناية",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.tea,
     categoryIds: ["503260fe-058c-4b7a-9dac-6035eb79d781"],
     quickJump: true,
   },
@@ -415,10 +480,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Cold Coffees",
       ar: "القهوة الباردة",
     },
-    blurb: {
-      en: "Modern recipes meet icy textures for the ultimate fresh balance.",
-      ar: "وصفات عصرية تلتقي بقوام مثلج لتحقيق التوازن المنعش المثالي.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.coldCoffees,
     categoryIds: ["05d02beb-e1f6-4908-9b12-e2b69b1fafc1"],
     quickJump: true,
   },
@@ -432,10 +494,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Special Iced Matchas",
       ar: "ماتشا باردة خاصة",
     },
-    blurb: {
-      en: "An ancient and refreshing signature, reinterpreted with modern touches.",
-      ar: "توقيع عريق ومنعش، أُعيد تقديمه بلمسات عصرية.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.specialIcedMatchas,
     categoryIds: ["f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8"],
     quickJump: true,
   },
@@ -449,10 +508,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Our Signatures",
       ar: "مشروباتنا المميزة",
     },
-    blurb: {
-      en: "Unique to this place; exceptional flavors with craftsmanship hidden in every detail.",
-      ar: "فريد من نوعه في هذا المكان؛ نكهات استثنائية بحرفية مخفية في كل تفصيلة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.ourSignatures,
     categoryIds: ["927fc8d2-117e-44b9-8ab5-08522f536d0f"],
     quickJump: true,
   },
@@ -466,10 +522,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "From Our Garden",
       ar: "من حديقتنا",
     },
-    blurb: {
-      en: "From the heart of nature to your plate; in its freshest and simplest form.",
-      ar: "من قلب الطبيعة إلى طبقك؛ بأطزج وأبسط صورة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.fromOurGarden,
     categoryIds: ["5c90c4d7-8c7b-4c07-86c0-531eea82ef0a"],
     quickJump: true,
   },
@@ -483,10 +536,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Homemade Ice Teas & Lemonades",
       ar: "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا",
     },
-    blurb: {
-      en: "Handcrafted fresh recipes for a natural, refreshing break.",
-      ar: "وصفات طازجة محضّرة يدوياً لاستراحة طبيعية ومنعشة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.homemadeIceTeasAndLemonades,
     categoryIds: ["99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9"],
     quickJump: true,
   },
@@ -500,10 +550,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Turkish Traditional Drinks",
       ar: "مشروبات تركية تقليدية",
     },
-    blurb: {
-      en: "Timeless heritage crafted through ancient Anatolian recipes.",
-      ar: "تراث خالد يُصاغ من وصفات الأناضول العريقة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.turkishTraditionalDrinks,
     categoryIds: ["11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa"],
     quickJump: true,
   },
@@ -517,10 +564,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Soft Drinks",
       ar: "مشروبات غازية",
     },
-    blurb: {
-      en: "Icy refreshment meets exquisite flavors to cleanse your palate.",
-      ar: "انتعاش مثلج يلتقي بنكهات رائعة لتنقية ذوقك وتجديد حواسك",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.softDrinks,
     categoryIds: ["cafb1cd7-1c37-430f-80a6-48cd5f213c4a"],
     quickJump: true,
   },
@@ -534,10 +578,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Milkshake",
       ar: "ميلك شيك",
     },
-    blurb: {
-      en: "Smooth, creamy, and perfectly blended, this milkshake offers a rich and refreshing flavor in every sip.",
-      ar: "قوام ناعم وكريمي ومخفوق بعناية، يقدم هذا الميلك شيك نكهة غنية ومنعشة في كل رشفة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.milkshake,
     categoryIds: ["634c84dd-5cf6-4e20-8270-3e2fbd61e850"],
     quickJump: true,
   },
@@ -551,10 +592,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "Shisha By Charming",
       ar: "شيشة باي تشارمينج",
     },
-    blurb: {
-      en: "",
-      ar: "",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.shishaByCharming,
     categoryIds: ["2fa8427f-a3a4-4c67-a566-4a97f3764092"],
     quickJump: true,
   },
@@ -568,10 +606,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "SIGNATURE SHISHA",
       ar: "سيجنتشر شيشة",
     },
-    blurb: {
-      en: "",
-      ar: "",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.signatureShisha,
     categoryIds: ["7d087dc8-d4fa-4eb3-a017-f8a203431d2c"],
     quickJump: true,
   },
@@ -585,10 +620,7 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
       en: "VIP SHISHA",
       ar: "شيشة في آي بي",
     },
-    blurb: {
-      en: "",
-      ar: "",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.vipShisha,
     categoryIds: ["73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b"],
     quickJump: true,
   },
@@ -603,10 +635,7 @@ const RAW_CATEGORIES = [
       en: "Happy Spreads",
       ar: "تشكيلة السعادة",
     },
-    blurb: {
-      en: "The most colorful and vibrant plates, perfect for conversation and sharing.",
-      ar: "أطباق نابضة بالألوان والحيوية، مثالية للمشاركة والاستمتاع برفقة الأصدقاء.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.happySpreads,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH51zRy6UlpkpvTYd/playlist.m3u8",
     order: 1,
@@ -617,10 +646,7 @@ const RAW_CATEGORIES = [
       en: "Eggs",
       ar: "بيض",
     },
-    blurb: {
-      en: "The warm harmony of golden textures and perfectly cooked flavors.",
-      ar: "التناغم الدافئ بين القوام الذهبي والنكهات المطهوّة بإتقان.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.eggs,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzl4YTCqnL1kN3J9.webp",
     order: 2,
@@ -631,10 +657,7 @@ const RAW_CATEGORIES = [
       en: "Flavours of Asya's",
       ar: "نكهات آسيا",
     },
-    blurb: {
-      en: "Asian signature dishes where traditional techniques meet modern aesthetics.",
-      ar: "أطباق آسيوية مميزة تلتقي فيها التقنيات التقليدية بالجماليات العصرية.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.flavoursOfAsyaS,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzl8yFW84vqnGcgE.webp",
     order: 3,
@@ -645,10 +668,7 @@ const RAW_CATEGORIES = [
       en: "Mr. Potatoes",
       ar: "مستر بطاطس",
     },
-    blurb: {
-      en: "The simplest form of the earth, transformed through culinary craftsmanship..",
-      ar: "أبسط خيرات الأرض، تتجلى بلمسة من فنون الطهي الإبداعية..",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.mrPotatoes,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH54d47camz2V57Fr/playlist.m3u8",
     order: 4,
@@ -659,10 +679,7 @@ const RAW_CATEGORIES = [
       en: "A Sweet Memory",
       ar: "ذكريات حلوة",
     },
-    blurb: {
-      en: "The sweetest form of a legacy; exquisite moments where traditional recipes meet modern and elegant presentations.",
-      ar: "نهايات حلوة راقية بتوازن متناغم…",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.aSweetMemory,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlJDHf4DfQ4HrdF.webp",
     order: 5,
@@ -673,10 +690,7 @@ const RAW_CATEGORIES = [
       en: "Abla's Handmade Gözleme & Börek",
       ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
     },
-    blurb: {
-      en: "*Made By Love Abla's* \nAuthentic Turkish Gözleme & Börek\nHandcrafted dough delicacies, warm and comforting, blending simplicity with true authenticity.",
-      ar: "*بكل حب من مطبخ أبلة* غوزليميه وبوريك تركي أصيل. عجينة يدوية فاخرة، دافئة ومريحة، تجمع بين البساطة والأصالة الحقيقية.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.ablaSHandmadeGozlemeAndBorek,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlNiY6ApZgBb2f3.webp",
     order: 6,
@@ -687,10 +701,7 @@ const RAW_CATEGORIES = [
       en: "Asya's Premium Pide's",
       ar: "بيدا آسيا البريميوم",
     },
-    blurb: {
-      en: "The most appetizing balance of crispy edges and rich fillings, shaped by the expertise of Premium Pide.",
-      ar: "التوازن الأشهى بين الأطراف المقرمشة والحشوات الغنية، بلمسة خبرة بريميوم بيدا.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.asyaSPremiumPideS,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlRkpuhVkw0PLVB.webp",
     order: 7,
@@ -701,10 +712,7 @@ const RAW_CATEGORIES = [
       en: "Delicious Soups",
       ar: "شوربات لذيذة",
     },
-    blurb: {
-      en: "A steaming hot embrace, made from the season’s freshest harvests.",
-      ar: "عناق دافئ يتصاعد منه البخار، محضّر من أطيب خيرات الموسم الطازجة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.deliciousSoups,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlWH9TXCYt8gxMU.webp",
     order: 8,
@@ -715,10 +723,7 @@ const RAW_CATEGORIES = [
       en: "Greens & Friends",
       ar: "الخضار واصدقائها",
     },
-    blurb: {
-      en: "The aesthetic meeting of the earth’s freshest gifts and vibrant colors on the plate.",
-      ar: "لقاء جمالي بين أطيب هدايا الأرض وألوان نابضة بالحياة على الطبق.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.greensAndFriends,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlxdDnm8e0mXObA.webp",
     order: 9,
@@ -729,10 +734,7 @@ const RAW_CATEGORIES = [
       en: "Flavours of the Table",
       ar: "نكهات المائدة",
     },
-    blurb: {
-      en: "The moment where fresh, flavorful touches meet perfect harmony at the table.",
-      ar: "اللحظة التي تلتقي فيها اللمسات الطازجة والنكهات المميزة في تناغم مثالي على المائدة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.flavoursOfTheTable,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzm8pP5JPShpldVq.webp",
     order: 10,
@@ -743,10 +745,7 @@ const RAW_CATEGORIES = [
       en: "Warm & Delicious Starts",
       ar: "لنبدأ بدفء",
     },
-    blurb: {
-      en: "The first warm greeting, an appetizing curiosity.",
-      ar: "بداية ناعمة تفتح الحواس",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.warmAndDeliciousStarts,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmDR8OPcXNTf7K3.webp",
     order: 11,
@@ -757,10 +756,7 @@ const RAW_CATEGORIES = [
       en: "Pasta",
       ar: "الباستا",
     },
-    blurb: {
-      en: "The most elegant form of dough, the deepest harmony of sauce.",
-      ar: "هندسة الحبوب… وأناقة الطعم.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.pasta,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmMAzEps7QK5JSp.webp",
     order: 12,
@@ -771,10 +767,7 @@ const RAW_CATEGORIES = [
       en: "Pizza",
       ar: "بيتزا",
     },
-    blurb: {
-      en: "Freshly baked with rich flavors and perfectly melted cheese, this pizza delivers a warm and satisfying taste in every slice.",
-      ar: "مخبوزة طازجة بنكهات غنية وجبن ذائب تماماً، تقدم هذه البيتزا طعماً دافئاً ومرضياً في كل شريحة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.pizza,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH52RRfNdX15XOjS9/playlist.m3u8",
     order: 13,
@@ -785,10 +778,7 @@ const RAW_CATEGORIES = [
       en: "Grill & Casserole",
       ar: "مشويات وطاجن",
     },
-    blurb: {
-      en: "Seared flavors and masterpieces cooked over a slow fire.",
-      ar: "نكهات شهية وروائع طهي على نار هادئة",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.grillAndCasserole,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH52pXuOifJlz3tyf/playlist.m3u8",
     order: 14,
@@ -799,10 +789,7 @@ const RAW_CATEGORIES = [
       en: "MR.TORO STEAKHOUSE",
       ar: "مستر تورو ستيك هاوس",
     },
-    blurb: {
-      en: "A patient journey where time is the key ingredient to deep flavor.",
-      ar: "رحلة صبر يكون فيها الوقت هو المكوّن السري للنكهة العميقة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.mrToroSteakhouse,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH3fxd63D5HTsn1B6/playlist.m3u8",
     order: 15,
@@ -813,10 +800,7 @@ const RAW_CATEGORIES = [
       en: "TURKISH DESSERT",
       ar: "حلويات تركية",
     },
-    blurb: {
-      en: "A traditional Turkish dessert crafted with rich flavors and delicate sweetness, offering a warm and satisfying taste experience.",
-      ar: "حلوى تركية تقليدية مُعدة بنكهات غنية وحلاوة رقيقة، تمنحك تجربة تذوق دافئة وممتعة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.turkishDessert,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/asyas/videos/content-0VH43LqwS6uOFmSqVP/playlist.m3u8",
     order: 16,
@@ -827,10 +811,7 @@ const RAW_CATEGORIES = [
       en: "World's Coffees",
       ar: "عالم القهوة",
     },
-    blurb: {
-      en: "Exotic blends telling the story of a different continent with every sip.",
-      ar: "مزيج استوائي يروي حكاية قارة مختلفة مع كل رشفة",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.worldSCoffees,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmT82FAtflqxabn.webp",
     order: 17,
@@ -841,10 +822,7 @@ const RAW_CATEGORIES = [
       en: "Tea",
       ar: "الشاي",
     },
-    blurb: {
-      en: "The clearest and warmest story of tea leaves steeped with patience.",
-      ar: "أصفى وأدفأ حكاية لأوراق الشاي المنقوعة بصبر وعناية",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.tea,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/asyas/images/category-0VGwEw2pxU2CP4BXN0.webp",
     order: 18,
@@ -855,10 +833,7 @@ const RAW_CATEGORIES = [
       en: "Cold Coffees",
       ar: "القهوة الباردة",
     },
-    blurb: {
-      en: "Modern recipes meet icy textures for the ultimate fresh balance.",
-      ar: "وصفات عصرية تلتقي بقوام مثلج لتحقيق التوازن المنعش المثالي.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.coldCoffees,
     sourceImageUrl: "https://cdn.thefoost.com/tenants/ss/images/general-0VDfIEsXlHAloRwCT8.webp",
     order: 19,
   },
@@ -868,10 +843,7 @@ const RAW_CATEGORIES = [
       en: "Special Iced Matchas",
       ar: "ماتشا باردة خاصة",
     },
-    blurb: {
-      en: "An ancient and refreshing signature, reinterpreted with modern touches.",
-      ar: "توقيع عريق ومنعش، أُعيد تقديمه بلمسات عصرية.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.specialIcedMatchas,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmkXfm6fQwhK7M7.webp",
     order: 20,
@@ -882,10 +854,7 @@ const RAW_CATEGORIES = [
       en: "Our Signatures",
       ar: "مشروباتنا المميزة",
     },
-    blurb: {
-      en: "Unique to this place; exceptional flavors with craftsmanship hidden in every detail.",
-      ar: "فريد من نوعه في هذا المكان؛ نكهات استثنائية بحرفية مخفية في كل تفصيلة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.ourSignatures,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/stock/videos/general-0VFlGUVtRN54ACYVKD/playlist.m3u8",
     order: 21,
@@ -896,10 +865,7 @@ const RAW_CATEGORIES = [
       en: "From Our Garden",
       ar: "من حديقتنا",
     },
-    blurb: {
-      en: "From the heart of nature to your plate; in its freshest and simplest form.",
-      ar: "من قلب الطبيعة إلى طبقك؛ بأطزج وأبسط صورة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.fromOurGarden,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznXOqSUyqIcVdlq.webp",
     order: 22,
@@ -910,10 +876,7 @@ const RAW_CATEGORIES = [
       en: "Homemade Ice Teas & Lemonades",
       ar: "شاي مثلج وعصائر ليمون طازجة محضّرة يوميًا",
     },
-    blurb: {
-      en: "Handcrafted fresh recipes for a natural, refreshing break.",
-      ar: "وصفات طازجة محضّرة يدوياً لاستراحة طبيعية ومنعشة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.homemadeIceTeasAndLemonades,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznqtUHCEnFnisSz.webp",
     order: 23,
@@ -924,10 +887,7 @@ const RAW_CATEGORIES = [
       en: "Turkish Traditional Drinks",
       ar: "مشروبات تركية تقليدية",
     },
-    blurb: {
-      en: "Timeless heritage crafted through ancient Anatolian recipes.",
-      ar: "تراث خالد يُصاغ من وصفات الأناضول العريقة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.turkishTraditionalDrinks,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznIXXZKLXVbfXy0.webp",
     order: 24,
@@ -938,10 +898,7 @@ const RAW_CATEGORIES = [
       en: "Soft Drinks",
       ar: "مشروبات غازية",
     },
-    blurb: {
-      en: "Icy refreshment meets exquisite flavors to cleanse your palate.",
-      ar: "انتعاش مثلج يلتقي بنكهات رائعة لتنقية ذوقك وتجديد حواسك",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.softDrinks,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH53Ifiyz3sbeVqgj/playlist.m3u8",
     order: 25,
@@ -952,10 +909,7 @@ const RAW_CATEGORIES = [
       en: "Milkshake",
       ar: "ميلك شيك",
     },
-    blurb: {
-      en: "Smooth, creamy, and perfectly blended, this milkshake offers a rich and refreshing flavor in every sip.",
-      ar: "قوام ناعم وكريمي ومخفوق بعناية، يقدم هذا الميلك شيك نكهة غنية ومنعشة في كل رشفة.",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.milkshake,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/asyas/images/category-0VKAvv7jNedmSs3GfU.webp",
     order: 26,
@@ -966,10 +920,7 @@ const RAW_CATEGORIES = [
       en: "Shisha By Charming",
       ar: "شيشة باي تشارمينج",
     },
-    blurb: {
-      en: "",
-      ar: "",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.shishaByCharming,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/asyas/videos/content-0VH4ArJFbaproMZ59T/playlist.m3u8",
     order: 27,
@@ -980,10 +931,7 @@ const RAW_CATEGORIES = [
       en: "SIGNATURE SHISHA",
       ar: "سيجنتشر شيشة",
     },
-    blurb: {
-      en: "",
-      ar: "",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.signatureShisha,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4Sau0jbHE6csJ4B.webp",
     order: 28,
@@ -994,10 +942,7 @@ const RAW_CATEGORIES = [
       en: "VIP SHISHA",
       ar: "شيشة في آي بي",
     },
-    blurb: {
-      en: "",
-      ar: "",
-    },
+    blurb: CATEGORY_DESCRIPTIONS.vipShisha,
     sourceImageUrl:
       "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4V9NOSR44DyE7KF.webp",
     order: 29,
