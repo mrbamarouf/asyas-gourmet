@@ -8485,3 +8485,92 @@ body {
     line-height: 1.78 !important;
   }
 }
+
+/* Urgent live fix: mobile item detail must scroll naturally without clipping. */
+@media (max-width: 767px) {
+  .item-detail-dialog {
+    display: block !important;
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    height: 92dvh !important;
+    max-height: 92dvh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding-bottom: calc(120px + env(safe-area-inset-bottom)) !important;
+    background: #f9f6f0 !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-item-detail-media,
+  .item-detail-media.mobile-item-detail-media {
+    overflow: visible !important;
+  }
+
+  .mobile-item-detail-image,
+  .item-detail-media > img.mobile-item-detail-image,
+  .item-detail-media.is-placeholder > img.mobile-item-detail-image {
+    height: 260px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+  }
+
+  .mobile-item-detail-content,
+  .item-detail-copy.mobile-item-detail-content,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 24px 22px 0 !important;
+    text-align: center !important;
+  }
+
+  .mobile-item-detail-content .item-detail-copy h2,
+  .item-detail-copy.mobile-item-detail-content h2,
+  [data-locale="ar"] .item-detail-copy.mobile-item-detail-content h2 {
+    max-width: 340px !important;
+    margin-inline: auto !important;
+    font-size: clamp(30px, 8vw, 42px) !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+  }
+
+  .mobile-item-detail-content .item-detail-scroll {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .mobile-item-detail-content .item-detail-description,
+  .mobile-item-detail-content .item-detail-options {
+    display: block !important;
+    max-width: 340px !important;
+    margin: 18px auto 0 !important;
+    overflow: visible !important;
+    text-align: center !important;
+  }
+
+  .mobile-item-detail-content .item-detail-description p {
+    display: block !important;
+    max-width: 340px !important;
+    margin: 18px auto 0 !important;
+    overflow: visible !important;
+    color: #6b665e !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    text-align: center !important;
+    -webkit-box-orient: initial !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+
+  .mobile-item-detail-content .item-detail-back,
+  .item-detail-back {
+    position: static !important;
+    z-index: 5 !important;
+    width: min(100%, 340px) !important;
+    margin: 28px auto 0 !important;
+  }
+}
