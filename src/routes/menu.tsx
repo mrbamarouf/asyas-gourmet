@@ -80,6 +80,9 @@ function FullMenuPage() {
       <main id="menu-top" className="full-menu-page">
         <MenuHero />
         <MenuExplorer />
+        <p style={{ padding: "24px", textAlign: "center", color: "#1f261c" }}>
+          BUILD CHECK a49000c4
+        </p>
       </main>
     </AsyaShell>
   );
