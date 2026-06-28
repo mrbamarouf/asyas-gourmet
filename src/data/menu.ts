@@ -101,63 +101,63 @@ export const CATEGORY_IDS = {
 const CATEGORY_DESCRIPTIONS = {
   happySpreads: {
     en: "Turkish breakfast spreads with cheeses, eggs, jams, fresh bread, and tea for a generous morning table.",
-    ar: "تشكيلات فطور تركية متكاملة، تجمع الأجبان والبيض والمربيات والخبز الطازج والشاي.",
+    ar: "تشكيلة فطور تركية متكاملة تضم أجبانًا وبيضًا ومربيات وخبزًا طازجًا وشايًا تركيًا.",
   },
   eggs: {
     en: "Turkish egg dishes, from menemen and omelettes to sucuk, potatoes, and warm breakfast pans.",
-    ar: "أطباق بيض تركية محضرة بطرق متنوعة، من المينمين إلى الأومليت والسجق والبطاطس.",
+    ar: "مجموعة من أطباق البيض التركية، من المينمين إلى الأومليت والسجق والبطاطس.",
   },
   flavoursOfAsyaS: {
     en: "Breakfast sides with cheeses, olives, foul, falafel, simit, honey, kaymak, and labneh.",
-    ar: "أطباق جانبية للفطور التركي، تضم أجبانًا وزيتونًا وفولًا وفلافل وسميت وقشطة ولبنة.",
+    ar: "إضافات فطور تركية من الأجبان والزيتون والفول والفلافل والسميت والقشطة واللبنة.",
   },
   mrPotatoes: {
     en: "Crispy potato dishes, from herb potatoes and fries to croquettes, volcano potatoes, and potato salad.",
-    ar: "بطاطس محضرة بعدة وصفات، مقرمشة أو متبلة أو مقدمة ككروكيت وسلطة خفيفة.",
+    ar: "أطباق بطاطس تركية متنوعة، بين البطاطس المقرمشة والمتبلة والكروكيت وسلطة البطاطس.",
   },
   aSweetMemory: {
     en: "Sweet breakfast pairings with honey, kaymak, homemade jams, tahini, molasses, and fresh bread.",
-    ar: "أطباق فطور حلوة من العسل والقشطة والمربيات المنزلية والطحينة والدبس.",
+    ar: "اختيارات حلوة للفطور من العسل والقشطة والمربيات المنزلية والطحينة والدبس.",
   },
   ablaSHandmadeGozlemeAndBorek: {
     en: "Handmade Turkish gozleme, borek, Hatay bread, and tandir bread prepared with fresh dough.",
-    ar: "مخبوزات تركية يدوية من الجوزلمة والبوريك وخبز هاتاي والتندور، تقدم ساخنة.",
+    ar: "جوزلمة وبوريك ومخبوزات تركية يدوية، تحضر بعجين طازج وتقدم ساخنة.",
   },
   asyaSPremiumPideS: {
     en: "Fresh Turkish pide and lahmacun baked with cheese, labneh, zaatar, Akawi, Kashkaval, or meat.",
-    ar: "بيدا ولحم بعجين تركية من الفرن، بحشوات الجبن واللبنة والزعتر والعكاوي والكشكوان واللحم.",
+    ar: "بيدا ولحم بعجين تركية مخبوزة، بحشوات الجبن واللبنة والزعتر والعكاوي والكشكوان واللحم.",
   },
   deliciousSoups: {
     en: "Warm lentil, creamy chicken, and vegetable soups served with croutons and lemon.",
-    ar: "شوربات دافئة من العدس والدجاج الكريمي والخضار، تقدم مع الخبز المحمص والليمون.",
+    ar: "شوربات تركية دافئة من العدس والدجاج الكريمي والخضار، تقدم مع الليمون والخبز المحمص.",
   },
   greensAndFriends: {
     en: "Fresh salads with parsley, bulgur, tomatoes, walnuts, pomegranate, toasted bread, or grilled chicken.",
-    ar: "سلطات طازجة من الخضار والأعشاب، مع البرغل والجوز والرمان والخبز المحمص أو الدجاج.",
+    ar: "سلطات طازجة بالخضار والأعشاب والبرغل والجوز والرمان، مع خيارات بالدجاج أو الخبز المحمص.",
   },
   flavoursOfTheTable: {
     en: "Cold meze plates with hummus, muhammara, baba ghanoush, mutabbal, grape leaves, and pickles.",
-    ar: "مقبلات باردة للمائدة، من الحمص والمحمرة وبابا غنوج والمتبل إلى ورق العنب والمخللات.",
+    ar: "مقبلات تركية باردة للمائدة، من الحمص والمحمرة وبابا غنوج إلى المتبل وورق العنب.",
   },
   warmAndDeliciousStarts: {
     en: "Warm starters with handmade manti, kibbeh, and hummus topped with tender meat.",
-    ar: "مقبلات ساخنة تبدأ بها المائدة، من المنتو التركي والكبة إلى الحمص باللحم.",
+    ar: "مقبلات ساخنة من المنتو التركي والكبة والحمص باللحم، تقدم كبداية غنية للمائدة.",
   },
   pasta: {
     en: "Fresh pasta dishes with Alfredo cream, arrabbiata tomato sauce, or slow-cooked Bolognese.",
-    ar: "باستا طازجة بصلصات ألفريدو الكريمية وأرابياتا الطماطم وبولونيز اللحم المطهو ببطء.",
+    ar: "باستا بصلصات كريمية أو طماطم مطهوة، مع ألفريدو وأرابياتا وبولونيز اللحم.",
   },
   pizza: {
     en: "Oven-baked pizzas with tomato sauce, mozzarella, vegetables, pepperoni, or chicken.",
-    ar: "بيتزا مخبوزة في الفرن بصلصة الطماطم والموزاريلا والخضار والبيبروني أو الدجاج.",
+    ar: "بيتزا مخبوزة في الفرن بصلصة الطماطم والموزاريلا، مع خيارات الخضار والبيبروني والدجاج.",
   },
   grillAndCasserole: {
     en: "Charcoal grills, kebabs, shish, casseroles, rice, and bulgur served with Turkish sides.",
-    ar: "مشويات على الفحم وكباب وشيش وطواجن تركية، تقدم مع الأرز والبرغل.",
+    ar: "مشويات وطواجن تركية من الفحم، تضم الكباب والشيش وتقدم مع الأرز أو البرغل.",
   },
   mrToroSteakhouse: {
     en: "Steaks, lamb chops, shashlik, and meatballs prepared with rich sauces and classic sides.",
-    ar: "ستيك وشرائح لحم وريش غنم وشاشليك وكفتة، تقدم مع الصلصات والإضافات الكلاسيكية.",
+    ar: "ستيك وشرائح لحم وريش غنم وشاشليك وكفتة، تقدم مع صلصات وإضافات كلاسيكية.",
   },
   turkishDessert: {
     en: "Turkish sweets with baklava, kunefe, trilece, San Sebastian cheesecake, cream, and fruit.",
@@ -165,15 +165,15 @@ const CATEGORY_DESCRIPTIONS = {
   },
   worldSCoffees: {
     en: "Turkish coffee, espresso drinks, lattes, mochas, hot chocolate, drip coffee, and Saudi coffee.",
-    ar: "قهوة تركية وسعودية، مع مشروبات الإسبريسو واللاتيه والموكا والشوكولاتة الساخنة.",
+    ar: "قهوة تركية وسعودية ومشروبات إسبريسو، من اللاتيه والموكا إلى الشوكولاتة الساخنة.",
   },
   tea: {
     en: "Turkish tea, green tea, winter tea, karak, milk tea, and Moroccan mint tea.",
-    ar: "شاي تركي وأخضر وشتوي وكرك، مع شاي بالحليب وشاي مغربي بالنعناع.",
+    ar: "اختيارات شاي تركية وكلاسيكية، تشمل الشاي الأخضر والشتوي والكرك والشاي بالنعناع.",
   },
   coldCoffees: {
     en: "Iced coffees with Spanish latte, affogato, iced latte, iced mocha, Americano, and cold drip.",
-    ar: "قهوة باردة من سبانيش لاتيه وأفوغاتو ولاتيه وموكا وأمريكانو وقهوة مقطرة.",
+    ar: "قهوة باردة محضرة بالإسبريسو أو التقطير، مع سبانيش لاتيه وموكا وأمريكانو.",
   },
   specialIcedMatchas: {
     en: "Iced matcha drinks prepared classic or blended with strawberry, mango, or Spanish latte style.",
@@ -181,7 +181,7 @@ const CATEGORY_DESCRIPTIONS = {
   },
   ourSignatures: {
     en: "House cold drinks with mojitos, berry blends, tropical frozen drinks, and citrus refreshers.",
-    ar: "مشروبات باردة مميزة من الموهيتو ومزيج التوت والمشروبات الاستوائية والحمضيات.",
+    ar: "مشروبات باردة مميزة من الموهيتو والتوت والحمضيات والمزائج الاستوائية.",
   },
   fromOurGarden: {
     en: "Fresh juices with mango, strawberry, pineapple, green apple, carrot, pomegranate, and mixed fruit.",
@@ -193,15 +193,15 @@ const CATEGORY_DESCRIPTIONS = {
   },
   turkishTraditionalDrinks: {
     en: "Traditional Turkish ayran served plain or with mint, basil, soda, or cucumber.",
-    ar: "عيران تركي تقليدي، يقدم سادة أو بالنعناع أو الريحان أو الصودا أو الخيار.",
+    ar: "عيران تركي تقليدي يقدم سادة أو ممزوجًا بالنعناع أو الريحان أو الصودا أو الخيار.",
   },
   softDrinks: {
     en: "Chilled soft drinks, sparkling water, still water, energy drinks, malt drink, and citrus soda.",
-    ar: "مشروبات غازية باردة، مع مياه عادية وفوارة ومشروبات طاقة وشعير وصودا حمضية.",
+    ar: "مشروبات باردة تشمل المياه والمشروبات الغازية والطاقة والشعير والصودا الحمضية.",
   },
   milkshake: {
     en: "Creamy milkshakes blended with chocolate, strawberry, or banana.",
-    ar: "ميلك شيك كريمي مخفوق بنكهات الشوكولاتة والفراولة والموز.",
+    ar: "ميلك شيك كريمي مخفوق بالحليب، بنكهات الشوكولاتة أو الفراولة أو الموز.",
   },
   shishaByCharming: {
     en: "Classic shisha flavors including double apple, grape, mint, berry, watermelon, peach, and gum.",
@@ -213,7 +213,7 @@ const CATEGORY_DESCRIPTIONS = {
   },
   vipShisha: {
     en: "Kokaya and Anima VIP shisha selections prepared with richer blends and special service.",
-    ar: "اختيارات كوكايا وأنيما للشيشة، بخلطات أغنى وتقديم خاص.",
+    ar: "اختيارات شيشة في آي بي من كوكايا وأنيما، بخلطات أغنى وتقديم خاص.",
   },
 } satisfies Record<keyof typeof CATEGORY_IDS, LocalizedText>;
 
