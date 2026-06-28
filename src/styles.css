@@ -4940,22 +4940,27 @@ body {
 .soft-botanical-bg::before {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   content: "";
   background-image:
     url("/olive-decoration.png"),
-    url("/olive-decoration.png");
+    url("/olive-decoration.png"),
+    radial-gradient(circle at 50% 20%, rgba(104, 115, 84, 0.08), transparent 45%);
   background-repeat:
-    repeat-y,
-    repeat-y;
+    no-repeat,
+    no-repeat,
+    no-repeat;
   background-position:
-    left -90px top 40px,
-    right -90px top 120px;
+    left -40px center,
+    right -40px center,
+    center;
   background-size:
-    240px auto,
-    240px auto;
-  opacity: 0.055;
+    260px auto,
+    260px auto,
+    cover;
+  opacity: 0.12;
+  filter: none;
   mix-blend-mode: multiply;
 }
 
@@ -5457,12 +5462,14 @@ body {
 @media (max-width: 1024px) {
   .soft-botanical-bg::before {
     background-position:
-      left -70px top 60px,
-      right -70px top 140px;
+      left -32px center,
+      right -32px center,
+      center;
     background-size:
-      160px auto,
-      160px auto;
-    opacity: 0.04;
+      180px auto,
+      180px auto,
+      cover;
+    opacity: 0.06;
   }
 }
 

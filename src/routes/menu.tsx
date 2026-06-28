@@ -353,7 +353,7 @@ const MenuSection = memo(function MenuSection({ group }: { group: MenuGroup }) {
     <motion.section
       id={`section-${group.category.id}`}
       data-menu-section={group.category.id}
-      className="full-menu-section menu-category-section"
+      className="full-menu-section menu-category-section soft-botanical-bg"
       variants={staggerChildren}
       initial="hidden"
       whileInView="visible"
