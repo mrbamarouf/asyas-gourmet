@@ -109,7 +109,7 @@ const CATEGORY_DESCRIPTIONS = {
   },
   flavoursOfAsyaS: {
     en: "Breakfast sides with cheeses, olives, foul, falafel, simit, honey, kaymak, and labneh.",
-    ar: "أصناف فطور جانبية من الأجبان والزيتون والفول والفلافل والسميت والقشطة واللبنة.",
+    ar: "أطباق جانبية للفطور التركي، تضم أجبانًا وزيتونًا وفولًا وفلافل وسميت وقشطة ولبنة.",
   },
   mrPotatoes: {
     en: "Crispy potato dishes, from herb potatoes and fries to croquettes, volcano potatoes, and potato salad.",
