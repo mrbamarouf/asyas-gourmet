@@ -67,9 +67,27 @@ const TOP_LEVEL_MENU_NAV_IDS: MenuGroupId[] = [
   "desserts",
   "drinks",
 ];
-const TOP_LEVEL_MENU_NAV_GROUPS = TOP_LEVEL_MENU_NAV_IDS.map((id) =>
-  CATEGORY_ORDER.find((group) => group.id === id),
-).filter((group): group is MenuCategoryGroup => Boolean(group));
+interface TopLevelMenuNavEntry {
+  group: MenuCategoryGroup;
+  label: MenuCategoryGroup["shortName"];
+}
+
+const TOP_LEVEL_MENU_NAV_LABELS: Partial<Record<MenuGroupId, MenuCategoryGroup["shortName"]>> = {
+  offers: { ar: "العروض", en: "Offers" },
+  breakfast: { ar: "الفطور", en: "Breakfast" },
+  appetizers: { ar: "المقبلات", en: "Appetizers" },
+  mains: { ar: "الرئيسية", en: "Main Courses" },
+  grills: { ar: "المشويات", en: "Grills" },
+  desserts: { ar: "الحلويات", en: "Desserts" },
+  drinks: { ar: "المشروبات", en: "Drinks" },
+};
+
+const TOP_LEVEL_MENU_NAV_GROUPS = TOP_LEVEL_MENU_NAV_IDS.reduce<TopLevelMenuNavEntry[]>((entries, id) => {
+  const group = CATEGORY_ORDER.find((candidate) => candidate.id === id);
+  const label = TOP_LEVEL_MENU_NAV_LABELS[id];
+  if (group && label) entries.push({ group, label });
+  return entries;
+}, []);
 const TOP_LEVEL_MENU_NAV_ID_SET = new Set<MenuGroupId>(TOP_LEVEL_MENU_NAV_IDS);
 
 function isTopLevelMenuGroupId(id: string | null): id is MenuGroupId {
@@ -122,7 +140,7 @@ function MenuExplorer() {
   const { locale, t, tx } = useI18n();
   const [searchInput, setSearchInput] = useState("");
   const query = useDebouncedValue(searchInput, 150);
-  const [activeGroup, setActiveGroup] = useState<MenuGroupId>(TOP_LEVEL_MENU_NAV_GROUPS[0]?.id ?? "offers");
+  const [activeGroup, setActiveGroup] = useState<MenuGroupId>(TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers");
   const isProgrammaticScrollRef = useRef(false);
   const displayGroups = useMemo<MenuDisplayGroup[]>(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -174,7 +192,7 @@ function MenuExplorer() {
       const firstVisibleTopLevelGroup = displayGroups.find((group) =>
         TOP_LEVEL_MENU_NAV_ID_SET.has(group.definition.id),
       )?.definition.id;
-      setActiveGroup(firstVisibleTopLevelGroup ?? TOP_LEVEL_MENU_NAV_GROUPS[0]?.id ?? "offers");
+      setActiveGroup(firstVisibleTopLevelGroup ?? TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers");
       return;
     }
 
@@ -247,7 +265,7 @@ function MenuExplorer() {
   }, []);
 
   return (
-    <section className="full-menu-explorer soft-botanical-bg" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <section className="full-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
       <div className="full-menu-controls">
         <div className="section-wrap controls-wrap">
           <div className="menu-search">
@@ -270,7 +288,7 @@ function MenuExplorer() {
             aria-label="Menu quick jump"
             dir={locale === "ar" ? "rtl" : "ltr"}
           >
-            {TOP_LEVEL_MENU_NAV_GROUPS.map((group) => (
+            {TOP_LEVEL_MENU_NAV_GROUPS.map(({ group, label }) => (
               <button
                 key={group.id}
                 type="button"
@@ -280,7 +298,7 @@ function MenuExplorer() {
                 data-group-pill={group.id}
               >
                 <QuickJumpIcon group={group} />
-                <span>{tx(group.shortName)}</span>
+                <span>{tx(label)}</span>
               </button>
             ))}
           </nav>

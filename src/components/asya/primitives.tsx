@@ -765,7 +765,7 @@ function ItemDetailView({
           <X className="h-5 w-5" />
         </button>
 
-        <div className={`item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}>
+        <div className={`item-detail-media mobile-item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}>
           {isPlaceholder ? (
             <span className="item-detail-placeholder" aria-hidden="true">
               <img src={logoImg} alt="" width={92} height={92} />
@@ -773,6 +773,7 @@ function ItemDetailView({
             </span>
           ) : null}
           <img
+            className="mobile-item-detail-image"
             src={imageSrc}
             alt={isPlaceholder ? "" : itemName}
             width={920}
@@ -782,12 +783,13 @@ function ItemDetailView({
           />
         </div>
 
-        <div className="item-detail-copy">
+        <div className="item-detail-copy mobile-item-detail-content">
           <div className="item-detail-meta">
             <span>{labels.category}: {categoryName}</span>
             <PriceTag item={item} />
           </div>
           <h2>{itemName}</h2>
+          <span className="item-detail-divider" aria-hidden="true" />
           <div className="item-detail-scroll">
             {description ? (
               <div className="item-detail-description">
