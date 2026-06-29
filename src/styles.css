@@ -12789,3 +12789,131 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     text-align: right !important;
   }
 }
+
+/* Item detail normal-flow bug fix. Scope: item detail only. */
+.item-detail-layer {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item-detail-dialog {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  max-height: min(92dvh, 940px) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  padding: 0 !important;
+  scroll-padding-bottom: 2rem !important;
+}
+
+.item-detail-copy,
+.item-detail-copy.mobile-item-detail-content,
+.item-detail-dialog[dir="rtl"] .item-detail-copy,
+.item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.9rem !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-bottom: calc(2.25rem + env(safe-area-inset-bottom)) !important;
+}
+
+.item-detail-copy h2,
+.item-detail-copy.mobile-item-detail-content h2 {
+  order: 1 !important;
+}
+
+.item-detail-price-row {
+  order: 2 !important;
+  flex: 0 0 auto !important;
+}
+
+.item-detail-flow {
+  order: 3 !important;
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1.15rem !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.item-detail-description {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.7rem !important;
+  margin: 0 0 0.2rem !important;
+  overflow: visible !important;
+}
+
+.item-detail-description p,
+.mobile-item-detail-content .item-detail-description p {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+.item-detail-facts,
+.item-detail-tag-section,
+.item-detail-recommendations {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.item-detail-section-divider {
+  flex: 0 0 auto !important;
+  margin: 0.35rem auto !important;
+}
+
+.item-detail-back,
+.mobile-item-detail-content .item-detail-back {
+  order: 4 !important;
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: auto !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-self: center !important;
+  width: min(100%, 340px) !important;
+  min-height: 48px !important;
+  margin: 0.75rem auto 0 !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+@media (max-width: 767px) {
+  .item-detail-dialog {
+    max-height: 92dvh !important;
+    padding-bottom: 0 !important;
+  }
+
+  .item-detail-copy,
+  .item-detail-copy.mobile-item-detail-content,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+    padding-bottom: calc(2.75rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  .item-detail-flow {
+    gap: 1rem !important;
+  }
+}

@@ -1895,16 +1895,6 @@ function ItemDetailView({
         dir="ltr"
         {...dialogMotion}
       >
-        <button
-          ref={closeButtonRef}
-          type="button"
-          className="item-detail-close"
-          onClick={onClose}
-          aria-label={labels.close}
-        >
-          <X className="h-5 w-5" />
-        </button>
-
         <div
           className={`item-detail-media mobile-item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}
         >
@@ -1929,10 +1919,10 @@ function ItemDetailView({
         </div>
 
         <div className="item-detail-copy mobile-item-detail-content">
+          <h2>{itemName}</h2>
           <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
             <PriceTag item={item} />
           </div>
-          <h2>{itemName}</h2>
           <div className="item-detail-flow">
             {description ? (
               <div className="item-detail-description">
