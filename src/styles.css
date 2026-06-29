@@ -14980,3 +14980,88 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     max-width: min(19ch, 620px);
   }
 }
+
+/* Visit section final stack: atmosphere first, navigation second. */
+.home2026-visit-card {
+  grid-template-columns: 1fr;
+}
+
+.home2026-visit-copy {
+  width: min(100%, 720px);
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+  justify-items: center;
+}
+
+[data-locale="ar"] .home2026-visit-copy {
+  text-align: center;
+  justify-items: center;
+}
+
+.home2026-visit-copy > p,
+.home2026-visit-copy address,
+[data-locale="ar"] .home2026-visit-copy > p,
+[data-locale="ar"] .home2026-visit-copy address {
+  margin-inline: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.home2026-visit-visual {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  min-height: 0;
+  border-inline-start: 0;
+}
+
+.home2026-visit-media {
+  min-height: clamp(280px, 46vw, 520px);
+  border-top: 1px solid rgba(65, 55, 35, 0.12);
+}
+
+.home2026-map {
+  min-height: clamp(220px, 30vw, 360px);
+  border-top: 1px solid rgba(65, 55, 35, 0.12);
+  border-inline-start: 0;
+  background:
+    linear-gradient(120deg, transparent 48%, rgba(123, 116, 94, 0.12) 49%, rgba(123, 116, 94, 0.12) 51%, transparent 52%),
+    linear-gradient(32deg, transparent 46%, rgba(123, 116, 94, 0.1) 47%, rgba(123, 116, 94, 0.1) 50%, transparent 51%),
+    #eadfce;
+}
+
+.home2026-map::after {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 248, 236, 0.42), transparent 15rem),
+    linear-gradient(180deg, rgba(255, 250, 241, 0.18), rgba(47, 58, 40, 0.08));
+}
+
+.home2026-map-road {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 128%;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(111, 107, 97, 0.22);
+  transform-origin: center;
+}
+
+.home2026-map-road.road-one {
+  top: 34%;
+  left: -14%;
+  transform: rotate(17deg);
+}
+
+.home2026-map-road.road-two {
+  top: 58%;
+  left: -12%;
+  transform: rotate(-11deg);
+}
+
+.home2026-map-road.road-three {
+  top: 48%;
+  left: -18%;
+  transform: rotate(55deg);
+}
