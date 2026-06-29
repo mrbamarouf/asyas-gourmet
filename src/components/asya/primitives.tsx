@@ -1170,6 +1170,7 @@ function writeStoredLocale(locale: Locale) {
 function useScrollChromeVisibility() {
   useEffect(() => {
     const hiddenClass = "asya-scroll-chrome-hidden";
+    const dockHiddenClass = "asya-bottom-dock-hidden";
     const topClass = "asya-scroll-at-top";
     const minDelta = 0.5;
     const hideAfter = 120;
@@ -1182,13 +1183,29 @@ function useScrollChromeVisibility() {
     let previousY = Math.max(0, window.scrollY);
     let scrollIntent = 0;
     let frame = 0;
+    let dockIdleTimer = 0;
     let isHidden = document.body.classList.contains(hiddenClass);
+    let isDockHidden = document.body.classList.contains(dockHiddenClass);
     let isAtTopState = document.body.classList.contains(topClass);
 
     const setHidden = (hidden: boolean) => {
       if (isHidden === hidden) return;
       isHidden = hidden;
       document.body.classList.toggle(hiddenClass, hidden);
+    };
+
+    const setDockHidden = (hidden: boolean) => {
+      if (!isMobile) hidden = false;
+      if (isDockHidden === hidden) return;
+      isDockHidden = hidden;
+      document.body.classList.toggle(dockHiddenClass, hidden);
+    };
+
+    const scheduleDockIdleShow = () => {
+      if (dockIdleTimer) window.clearTimeout(dockIdleTimer);
+      dockIdleTimer = window.setTimeout(() => {
+        setDockHidden(false);
+      }, 700);
     };
 
     const setAtTop = (isAtTop: boolean) => {
@@ -1208,19 +1225,23 @@ function useScrollChromeVisibility() {
       if (isAtTop) {
         scrollIntent = 0;
         setHidden(false);
+        setDockHidden(false);
       } else if (delta > minDelta) {
         scrollIntent = scrollIntent < 0 ? delta : scrollIntent + delta;
+        if (isMobile && currentY > hideAfter) setDockHidden(true);
         if (currentY > hideAfter && scrollIntent > hideIntent) {
           setHidden(true);
         }
       } else if (delta < -minDelta) {
         const showIntent = isMobile ? mobileShowIntent : desktopShowIntent;
         scrollIntent = scrollIntent > 0 ? delta : scrollIntent + delta;
+        setDockHidden(false);
         if (scrollIntent < showIntent) {
           setHidden(false);
         }
       }
 
+      if (isMobile && !isAtTop) scheduleDockIdleShow();
       previousY = currentY;
     };
 
@@ -1231,6 +1252,7 @@ function useScrollChromeVisibility() {
 
     const handleMediaChange = (event: MediaQueryListEvent) => {
       isMobile = event.matches;
+      if (!isMobile) setDockHidden(false);
     };
 
     update();
@@ -1241,7 +1263,8 @@ function useScrollChromeVisibility() {
 
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
-      document.body.classList.remove(hiddenClass, topClass);
+      if (dockIdleTimer) window.clearTimeout(dockIdleTimer);
+      document.body.classList.remove(hiddenClass, dockHiddenClass, topClass);
       mobileQuery.removeEventListener("change", handleMediaChange);
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
