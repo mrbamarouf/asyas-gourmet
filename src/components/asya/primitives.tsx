@@ -276,8 +276,8 @@ function polishMenuDescription(
 
   const badSentence =
     locale === "ar"
-      ? /(تجربة|رحلة|لحظة|الجماليات|الجوال|الصور|الأسعار|مصدر|رسمي|واجهة|تصفح|أفضل|واضح|مفعم|نابض|حيوية|ممتعة|لا يقاوم|لا تُقاوم)/
-      : /(experience|journey|moment|aesthetic|website|mobile|image|price|source|official|interface|browse|scan|clear photos|best|vibrant|unforgettable)/i;
+      ? /(تجربة|رحلة|لحظة|الجماليات|الجوال|الصور|الأسعار|مصدر|رسمي|واجهة|تصفح|أفضل|واضح|مفعم|نابض|حيوية|ممتعة|لا يقاوم|لا تُقاوم|إشراق|راحة|مريح|مليء|مليئة|كل لقمة|كل قضمة|بشكل طبيعي)/
+      : /(experience|journey|moment|aesthetic|website|mobile|image|price|source|official|interface|browse|scan|clear photos|best|vibrant|unforgettable|comfort|comfortable|character|in every bite|playful|irresistibly)/i;
 
   const sentences = normalized
     .split(/(?<=[.!؟])\s+/u)
@@ -322,6 +322,17 @@ function stripMenuFiller(value: string, locale: Locale) {
         .replace(/لتجربة/g, "لنكهة")
         .replace(/مفعم(?:ة)?[^.،]*/g, "")
         .replace(/لا تُقاوم|لا تقاوم/g, "غنية")
+        .replace(/في كل لقمة/g, "")
+        .replace(/في كل قضمة/g, "")
+        .replace(/بشكل طبيعي/g, "")
+        .replace(/لإضفاء الإشراق/g, "")
+        .replace(/مليء بالراحة/g, "دافئ")
+        .replace(/مليئة بالنكهات الأصيلة/g, "غنية بالنكهات")
+        .replace(/مليئة بالنكهات/g, "غنية بالنكهات")
+        .replace(/مليء بالنكهات/g, "غني بالنكهات")
+        .replace(/مليئة/g, "غنية")
+        .replace(/مليء/g, "غني")
+        .replace(/ضمان توازن مثالي/g, "توازن")
         .replace(/تجربة/g, "نكهة")
         .replace(/رحلة/g, "مائدة")
         .replace(/لحظة/g, "لقمة")
@@ -351,6 +362,13 @@ function stripMenuFiller(value: string, locale: Locale) {
     .replace(/blended to perfection/gi, "blended with milk")
     .replace(/delightfully sweet/gi, "naturally sweet")
     .replace(/\b(irresistibly|beautifully)\s+/gi, "")
+    .replace(/\bin every bite\b/gi, "")
+    .replace(/\bfull of character\b/gi, "well seasoned")
+    .replace(/\bfull of comfort\b/gi, "warm")
+    .replace(/\bcomforting\b/gi, "warm")
+    .replace(/\bnaturally vibrant\b/gi, "fresh")
+    .replace(/\brefreshingly vibrant\b/gi, "fresh")
+    .replace(/\bintensely flavorful\b/gi, "richly seasoned")
     .replace(/\bgill\b/gi, "garlic")
     .replace(/\bA fresh omelette filled with fresh\b/gi, "A vegetable omelette filled with")
     .replace(/single source/gi, "single-origin")
