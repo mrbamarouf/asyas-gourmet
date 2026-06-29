@@ -13944,18 +13944,39 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 }
 
 .home2026-map {
+  position: relative;
   display: grid;
   min-height: 230px;
   place-items: center;
   padding: 1rem;
+  overflow: hidden;
   border-top: 1px solid rgba(65, 55, 35, 0.12);
-  background:
-    linear-gradient(120deg, transparent 48%, rgba(123, 116, 94, 0.12) 49%, rgba(123, 116, 94, 0.12) 51%, transparent 52%),
-    linear-gradient(32deg, transparent 46%, rgba(123, 116, 94, 0.1) 47%, rgba(123, 116, 94, 0.1) 50%, transparent 51%),
-    #eadfce;
+  background: #1f261c;
   color: #2f3a28;
+  isolation: isolate;
   text-align: center;
   text-decoration: none;
+}
+
+.home2026-map::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(15, 18, 12, 0.08), rgba(15, 18, 12, 0.34)),
+    radial-gradient(circle at 50% 48%, rgba(255, 248, 236, 0.08), transparent 15rem);
+  pointer-events: none;
+}
+
+.home2026-map > img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .home2026-map-road {
@@ -13963,6 +13984,8 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 }
 
 .home2026-map-pin {
+  position: relative;
+  z-index: 2;
   display: grid;
   width: 3.2rem;
   height: 3.2rem;
@@ -13974,6 +13997,8 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 }
 
 .home2026-map strong {
+  position: relative;
+  z-index: 2;
   padding: 0.55rem 0.78rem;
   border-radius: 999px;
   background: rgba(255, 250, 241, 0.92);

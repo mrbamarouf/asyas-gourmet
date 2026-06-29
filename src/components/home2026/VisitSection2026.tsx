@@ -60,9 +60,7 @@ export function VisitSection2026({
             rel="noopener noreferrer"
             aria-label={mapLabel}
           >
-            <span className="home2026-map-road road-one" />
-            <span className="home2026-map-road road-two" />
-            <span className="home2026-map-road road-three" />
+            <img src={image} alt="" width={900} height={900} loading="lazy" decoding="async" aria-hidden="true" />
             <span className="home2026-map-pin">
               <MapPin className="h-5 w-5" aria-hidden="true" />
             </span>
