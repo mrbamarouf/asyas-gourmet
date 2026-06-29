@@ -14977,6 +14977,7 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 
   [data-locale="ar"] .home2026-hero h1 {
     inline-size: min(19ch, 620px);
+    line-height: 1.3;
     max-width: min(19ch, 620px);
   }
 }
