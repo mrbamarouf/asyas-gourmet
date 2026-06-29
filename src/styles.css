@@ -11526,8 +11526,6 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 @media (min-width: 768px) {
   .full-menu-page .menu-display-group {
     contain: layout paint;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 1400px;
   }
 
   .full-menu-page .menu-card {

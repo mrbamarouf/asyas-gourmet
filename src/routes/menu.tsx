@@ -124,9 +124,11 @@ function MenuHero() {
 function MenuExplorer() {
   const { locale, t, tx } = useI18n();
   const categoryStripRef = useRef<HTMLElement | null>(null);
+  const revealActivePillRef = useRef(false);
   const [activeGroup, setActiveGroup] = useState<string>(
     TOP_LEVEL_MENU_NAV_GROUPS[0]?.group.id ?? "offers",
   );
+  const activeGroupRef = useRef(activeGroup);
   const displayGroups = useMemo<MenuDisplayGroupData[]>(() => {
     return MENU_DISPLAY_GROUPS.map((definition) => {
       const items = uniqueItems(
@@ -137,15 +139,22 @@ function MenuExplorer() {
     }).filter((group) => group.items.length > 0);
   }, []);
 
+  const setActiveGroupIfChanged = useCallback((groupId: string | undefined) => {
+    if (!groupId || activeGroupRef.current === groupId) return;
+    activeGroupRef.current = groupId;
+    setActiveGroup(groupId);
+  }, []);
+
   const scrollToGroup = useCallback((groupId: string) => {
-    setActiveGroup((current) => (current === groupId ? current : groupId));
+    revealActivePillRef.current = true;
+    setActiveGroupIfChanged(groupId);
     const group = document.getElementById(`group-${groupId}`);
     if (!group) return;
 
     const stickyOffset = getMenuControlsOffset(14);
     const top = group.getBoundingClientRect().top + window.scrollY - stickyOffset;
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, []);
+  }, [setActiveGroupIfChanged]);
 
   useEffect(() => {
     const sections = displayGroups
@@ -177,9 +186,7 @@ function MenuExplorer() {
         }
       }
 
-      if (nextGroup) {
-        setActiveGroup((current) => (current === nextGroup ? current : nextGroup));
-      }
+      setActiveGroupIfChanged(nextGroup);
     };
 
     const scheduleUpdate = () => {
@@ -233,9 +240,16 @@ function MenuExplorer() {
       window.removeEventListener("resize", refreshMeasurements);
       window.removeEventListener("pageshow", refreshMeasurements);
     };
-  }, [displayGroups]);
+  }, [displayGroups, setActiveGroupIfChanged]);
 
   useEffect(() => {
+    activeGroupRef.current = activeGroup;
+  }, [activeGroup]);
+
+  useEffect(() => {
+    if (!revealActivePillRef.current) return;
+    revealActivePillRef.current = false;
+
     const strip = categoryStripRef.current;
     if (!strip) return;
 
