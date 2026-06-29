@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Heart, Leaf, Sparkles } from "lucide-react";
 
 import {
   CHEF_PICK_ITEMS,
@@ -161,6 +162,17 @@ function Home2026Content() {
         title={copy.galleryTitle}
         photos={content.gallery}
       />
+      <div className="home2026-mobile-trust" aria-label={copy.heroEyebrow}>
+        {[copy.trustRecipes, copy.trustFresh, copy.trustMade].map((label, index) => {
+          const Icon = [Leaf, Sparkles, Heart][index] ?? Sparkles;
+          return (
+            <span key={label}>
+              <Icon className="h-4 w-4" aria-hidden="true" />
+              {label}
+            </span>
+          );
+        })}
+      </div>
       <VisitSection2026
         title={copy.visitTitle}
         body={copy.visitBody}

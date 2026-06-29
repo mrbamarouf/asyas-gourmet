@@ -1,3 +1,5 @@
+import { Play } from "lucide-react";
+
 interface MomentPhoto2026 {
   src: string;
   alt: string;
@@ -20,6 +22,9 @@ export function MomentsGallery2026({ eyebrow, title, photos }: MomentsGallery202
         {photos.map((photo, index) => (
           <figure className="home2026-gallery-card" key={`${photo.src}-${index}`}>
             <img src={photo.src} alt={photo.alt} width={520} height={420} loading="lazy" decoding="async" />
+            <span className="home2026-gallery-play" aria-hidden="true">
+              <Play className="h-4 w-4" fill="currentColor" />
+            </span>
           </figure>
         ))}
       </div>
