@@ -568,7 +568,7 @@ function useScrollChromeVisibility() {
     const hideAfter = 120;
     const hideIntent = 14;
     const desktopShowIntent = -10;
-    const mobileShowIntent = -96;
+    const mobileShowIntent = -18;
     const topThreshold = 12;
     let previousY = Math.max(0, window.scrollY);
     let scrollIntent = 0;
