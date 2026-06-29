@@ -71,7 +71,6 @@ export function CinematicVideo2026({
         ref={videoRef}
         poster={asset.poster}
         muted
-        defaultMuted
         loop
         playsInline
         preload="metadata"
