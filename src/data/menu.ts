@@ -292,11 +292,11 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
     id: "ablaSHandmadeGozlemeAndBorek",
     name: {
       en: "Abla's Handmade Gözleme & Börek",
-      ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
+      ar: "جوزلمة وبوريك أبلا محضّرة يدويًا",
     },
     shortName: {
       en: "Abla's Handmade Gözleme & Börek",
-      ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
+      ar: "جوزلمة وبوريك أبلا محضّرة يدويًا",
     },
     blurb: CATEGORY_DESCRIPTIONS.ablaSHandmadeGozlemeAndBorek,
     categoryIds: ["59ee4ca2-bb09-4a86-981b-fd40460331ea"],
@@ -305,11 +305,11 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
   {
     id: "asyaSPremiumPideS",
     name: {
-      en: "Asya's Premium Pide's",
+      en: "Asya's Premium Pide",
       ar: "بيدا آسيا البريميوم",
     },
     shortName: {
-      en: "Asya's Premium Pide's",
+      en: "Asya's Premium Pide",
       ar: "بيدا آسيا البريميوم",
     },
     blurb: CATEGORY_DESCRIPTIONS.asyaSPremiumPideS,
@@ -334,11 +334,11 @@ export const CATEGORY_ORDER: MenuCategoryGroup[] = [
     id: "greensAndFriends",
     name: {
       en: "Greens & Friends",
-      ar: "الخضار واصدقائها",
+      ar: "الخضار وأصدقاؤها",
     },
     shortName: {
       en: "Greens & Friends",
-      ar: "الخضار واصدقائها",
+      ar: "الخضار وأصدقاؤها",
     },
     blurb: CATEGORY_DESCRIPTIONS.greensAndFriends,
     categoryIds: ["81d3c1d4-b82c-4ea3-8a9d-881977f47761"],
@@ -688,7 +688,7 @@ const RAW_CATEGORIES = [
     id: "59ee4ca2-bb09-4a86-981b-fd40460331ea",
     name: {
       en: "Abla's Handmade Gözleme & Börek",
-      ar: "جوزلمة وبوريك ابلا محضرة يدوياً",
+      ar: "جوزلمة وبوريك أبلا محضّرة يدويًا",
     },
     blurb: CATEGORY_DESCRIPTIONS.ablaSHandmadeGozlemeAndBorek,
     sourceImageUrl:
@@ -698,7 +698,7 @@ const RAW_CATEGORIES = [
   {
     id: "641057a2-0237-4c4b-ab55-bf923ae06cc8",
     name: {
-      en: "Asya's Premium Pide's",
+      en: "Asya's Premium Pide",
       ar: "بيدا آسيا البريميوم",
     },
     blurb: CATEGORY_DESCRIPTIONS.asyaSPremiumPideS,
@@ -721,7 +721,7 @@ const RAW_CATEGORIES = [
     id: "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
     name: {
       en: "Greens & Friends",
-      ar: "الخضار واصدقائها",
+      ar: "الخضار وأصدقاؤها",
     },
     blurb: CATEGORY_DESCRIPTIONS.greensAndFriends,
     sourceImageUrl:
@@ -4138,8 +4138,8 @@ const RAW_ITEMS = [
     id: "a65088c9-ee60-43df-be57-1e77c7380923",
     category: "927fc8d2-117e-44b9-8ab5-08522f536d0f",
     name: {
-      en: "Asya'S Special",
-      ar: "اسياس سبيشل",
+      en: "Asya's Special",
+      ar: "أسيا سبيشل",
     },
     description: {
       en: "A bold mix of berries with citrus and energy boost, vibrant, juicy and full of life.",
@@ -4808,7 +4808,7 @@ const RAW_ITEMS = [
     id: "94cec6c5-0caa-43c1-a8fb-653b82a88309",
     category: "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
     name: {
-      en: "Coca-cola",
+      en: "Coca-Cola",
       ar: "كوكا كولا",
     },
     description: {

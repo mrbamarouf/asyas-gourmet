@@ -117,6 +117,42 @@ const DESCRIPTION_DISPLAY_COPY: Record<string, LocalizedText> = {
     ar: "مشروب شعير بارد بلون ذهبي ورغوة ناعمة، بنكهة مرارة خفيفة وقوام منعش.",
     en: "Chilled malt drink with a golden color, soft foam, light bitterness, and a crisp finish.",
   },
+  "bef4cfaf-a1da-4d59-a2e0-f53a99d3cf2f": {
+    ar: "قطعتان من سميت كاراكوي، إحداهما بصلصة الطماطم والأخرى بالبيض، تقدمان فوق صلصة طماطم دافئة مع جرجير طازج.",
+    en: "Two pieces of Karakoy-style simit, one with tomato sauce and one with eggs, served over warm tomato sauce with fresh arugula.",
+  },
+  "c1983103-608f-418e-a037-d79387429663": {
+    ar: "أومليت بجبنة الموزاريلا المطهوة بالزبدة، يقدم مع طماطم كرزية وجرجير وقطع خبز محمص.",
+    en: "Mozzarella omelette cooked in butter, served with cherry tomatoes, arugula, and crisp croutons.",
+  },
+  "2e68a5de-d7cc-4572-a661-2d967173ca8a": {
+    ar: "زيتون أخضر وأسود مع خضراوات طازجة، فلفل ملوّن، رمان، ليمون وزيت زيتون.",
+    en: "Green and black olives with fresh greens, colored peppers, pomegranate, lemon, and olive oil.",
+  },
+  "67056900-8679-442d-8181-6e283fad3fa1": {
+    ar: "مقلاة ساخنة تضم خضارًا مطهوة مع الصلصة، وتُقدّم برائحة شهية.",
+    en: "A hot Mediterranean-style pan layered with vegetables and sauce, served aromatic and richly seasoned.",
+  },
+  "3a13ab9e-66b3-45db-9442-606f00cb5a54": {
+    ar: "مربيات منزلية من المشمش، التين، الفراولة والتوت، تقدم مع الطحينة والدبس.",
+    en: "Homemade apricot, fig, strawberry, and mulberry jams, served with tahini and molasses.",
+  },
+  "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c": {
+    ar: "برتقال طازج يعصر يوميًا، بطعم حلو وحموضة خفيفة وقوام منعش.",
+    en: "Fresh oranges squeezed daily, with natural sweetness, light acidity, and a refreshing finish.",
+  },
+  "94cec6c5-0caa-43c1-a8fb-653b82a88309": {
+    ar: "مشروب غازي بارد بنكهة كولا ولمسة كراميل خفيفة، يقدّم مع فقاعات منعشة.",
+    en: "Chilled cola with light caramel notes and refreshing fizz.",
+  },
+  "dddfd6aa-96f8-4067-b566-8509c8c74636": {
+    ar: "فراولة طازجة مخفوقة مع الحليب لقوام كريمي وطعم حلو طبيعي.",
+    en: "Fresh strawberries blended with milk for a creamy texture and natural sweetness.",
+  },
+  "728a1cd6-4c57-4509-ab09-aafc279d3947": {
+    ar: "موز طازج مخفوق مع الحليب لقوام كريمي وحلاوة ناعمة.",
+    en: "Fresh banana blended with milk for a creamy texture and soft natural sweetness.",
+  },
 };
 
 const ITEM_NAME_DISPLAY_COPY: Record<string, Partial<LocalizedText>> = {
@@ -266,13 +302,15 @@ function polishMenuDescription(
   locale: Locale,
 ) {
   const override = DESCRIPTION_DISPLAY_COPY[item.id]?.[locale];
-  if (override) return formatVisibleText(override, locale);
+  if (override) return finalizeMenuDescription(formatVisibleText(override, locale), locale);
 
   const itemName = localizeMenuItemName(item, locale);
   const categoryName = cleanLocalizedMenuText(category.name[locale], locale);
   const fallback = fallbackMenuDescription(item, category, locale, itemName, categoryName);
   const normalized = stripMenuFiller(value, locale);
-  if (!normalized || normalized.length < (locale === "ar" ? 18 : 24)) return fallback;
+  if (!normalized || normalized.length < (locale === "ar" ? 18 : 24)) {
+    return finalizeMenuDescription(fallback, locale);
+  }
 
   const badSentence =
     locale === "ar"
@@ -284,11 +322,11 @@ function polishMenuDescription(
     .map((sentence) => sentence.trim())
     .filter((sentence) => sentence.length > 8 && !badSentence.test(sentence));
 
-  if (!sentences.length) return fallback;
+  if (!sentences.length) return finalizeMenuDescription(fallback, locale);
 
   const selected = sentences.slice(0, 2).join(" ").replace(/\s+/g, " ").trim();
   const limit = locale === "ar" ? 220 : 230;
-  return clipDescription(selected, locale, limit);
+  return finalizeMenuDescription(clipDescription(selected, locale, limit), locale);
 }
 
 function stripMenuFiller(value: string, locale: Locale) {
@@ -333,6 +371,32 @@ function stripMenuFiller(value: string, locale: Locale) {
         .replace(/مليئة/g, "غنية")
         .replace(/مليء/g, "غني")
         .replace(/ضمان توازن مثالي/g, "توازن")
+        .replace(/توازناً متوازن بين/g, "توازنًا بين")
+        .replace(/توازن متوازن بين/g, "توازن بين")
+        .replace(/نابضة/g, "طازجة")
+        .replace(/نابض/g, "طازج")
+        .replace(/حيوية/g, "طازجة")
+        .replace(/مليئًا بالحياة|مليئة بالحياة/g, "منعش")
+        .replace(/مُرضية|مُرضٍ|مرضية|مرضٍ|مُرضيًا|مرضياً/g, "غنية")
+        .replace(/مشبوعة/g, "مشبعة")
+        .replace(/مشبوع/g, "مشبع")
+        .replace(/رائعة/g, "طبيعية")
+        .replace(/فاخرة|فاخر/g, "غنية")
+        .replace(/بإتقان/g, "")
+        .replace(/بعمق/g, "")
+        .replace(/بكل تفاصيلها/g, "")
+        .replace(/يمنحك|يمنحكم/g, "يقدم")
+        .replace(/ليمنحك|ليمنحكم/g, "ليقدم")
+        .replace(/لمسة ممتعة/g, "لمسة منعشة")
+        .replace(/إحساسًا نظيفًا ومروّيًا/g, "نكهة حمضية باردة")
+        .replace(/جرجير الطازج/g, "الجرجير الطازج")
+        .replace(/الاصيلة/g, "الأصيلة")
+        .replace(/طازج، طازج/g, "طازج")
+        .replace(/طازجة، طازجة/g, "طازجة")
+        .replace(/غنية، وغنية/g, "غنية")
+        .replace(/غنية وغنية/g, "غنية")
+        .replace(/سميت السمسم/g, "السميت بالسمسم")
+        .replace(/سميد السمسم/g, "السميت بالسمسم")
         .replace(/تجربة/g, "نكهة")
         .replace(/رحلة/g, "مائدة")
         .replace(/لحظة/g, "لقمة")
@@ -361,11 +425,30 @@ function stripMenuFiller(value: string, locale: Locale) {
     .replace(/the perfect balance of/gi, "a balanced mix of")
     .replace(/blended to perfection/gi, "blended with milk")
     .replace(/delightfully sweet/gi, "naturally sweet")
-    .replace(/\b(irresistibly|beautifully)\s+/gi, "")
+    .replace(/\b(irresistibly|beautifully|perfectly|deeply|luxuriously|delightfully)\s+/gi, "")
+    .replace(/\bpremium\s+/gi, "")
+    .replace(/\bceremonial grade\b/gi, "Japanese")
+    .replace(/\bultra-refreshing\b/gi, "cold")
+    .replace(/\bultra refreshing\b/gi, "cold")
+    .replace(/\bindulgent\b/gi, "rich")
+    .replace(/\bsatisfying\b/gi, "hearty")
+    .replace(/\bcomforting\b/gi, "warm")
+    .replace(/\bcomfortable\b/gi, "warm")
+    .replace(/\bplayful\b/gi, "bright")
+    .replace(/\bfull of life\b/gi, "fresh")
+    .replace(/\bbursting with\b/gi, "with")
+    .replace(/\bvibrant\b/gi, "fresh")
+    .replace(/\benergizing\b/gi, "fresh")
+    .replace(/\bideal for\b/gi, "served for")
+    .replace(/\bgreat for\b/gi, "served with")
+    .replace(/\blemonadei\b/gi, "lemonade")
+    .replace(/\bfruit and balanced\b/gi, "fruity and balanced")
+    .replace(/\bfresh freshness\b/gi, "freshness")
+    .replace(/\bA indulgent\b/g, "A rich")
+    .replace(/\bAn hearty\b/g, "A hearty")
     .replace(/\bin every bite\b/gi, "")
     .replace(/\bfull of character\b/gi, "well seasoned")
     .replace(/\bfull of comfort\b/gi, "warm")
-    .replace(/\bcomforting\b/gi, "warm")
     .replace(/\bnaturally vibrant\b/gi, "fresh")
     .replace(/\brefreshingly vibrant\b/gi, "fresh")
     .replace(/\bintensely flavorful\b/gi, "richly seasoned")
@@ -414,7 +497,7 @@ function fallbackMenuDescription(
     if (/tea/i.test(englishCategory + englishName)) {
       return `${itemName} يُحضّر من أوراق الشاي ويُقدّم ساخنًا أو باردًا حسب الصنف.`;
     }
-    if (/drink|juice|mojito|lemonade|ayran|soft/i.test(englishCategory + englishName)) {
+    if (/drink|juice|mojito|lemonade|ayran|soft|signature|garden|milkshake|matcha/i.test(englishCategory + englishName)) {
       return `${itemName} مشروب بارد بنكهة متوازنة، يُقدّم منعشًا مع الوجبة.`;
     }
     return `${itemName} من قسم ${categoryName}، يُحضّر في مطبخ أسيا ويُقدّم على المائدة.`;
@@ -436,10 +519,75 @@ function fallbackMenuDescription(
   if (/tea/i.test(englishCategory + englishName)) {
     return `${itemName} brewed with tea leaves and served hot or chilled according to the recipe.`;
   }
-  if (/drink|juice|mojito|lemonade|ayran|soft/i.test(englishCategory + englishName)) {
+  if (/drink|juice|mojito|lemonade|ayran|soft|signature|garden|milkshake|matcha/i.test(englishCategory + englishName)) {
     return `${itemName} served chilled with a balanced, refreshing flavor.`;
   }
   return `${itemName} from the ${categoryName} selection, prepared in Asya's kitchen and served at the table.`;
+}
+
+function finalizeMenuDescription(value: string, locale: Locale) {
+  if (!value) return "";
+
+  const normalized = formatVisibleText(value, locale)
+    .replace(/[—_|]/g, locale === "ar" ? " " : ",")
+    .replace(/…|\.{2,}/g, locale === "ar" ? "،" : ".")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (locale === "ar") {
+    return normalized
+      .replace(/يمنحك|يمنحكم/g, "يقدم")
+      .replace(/ليمنحك|ليمنحكم/g, "ليقدم")
+      .replace(/مُرضية|مُرضٍ|مرضية|مرضٍ|مُرضيًا|مرضياً/g, "غنية")
+      .replace(/مشبوعة/g, "مشبعة")
+      .replace(/مشبوع/g, "مشبع")
+      .replace(/توازناً متوازن بين/g, "توازنًا بين")
+      .replace(/توازن متوازن بين/g, "توازن بين")
+      .replace(/غنية غنية/g, "غنية")
+      .replace(/غنية، وغنية/g, "غنية")
+      .replace(/طازج، طازج/g, "طازج")
+      .replace(/طازجة، طازجة/g, "طازجة")
+      .replace(/انتعاش غني بالخضار/g, "انتعاش طبيعي")
+      .replace(/نكهة مُدلّلة/g, "نكهة كريمية")
+      .replace(/تجربة مُدلّلة/g, "نكهة كريمية")
+      .replace(/لا يُقاوَم|لا تُقاوَم|لا يقاوم|لا تُقاوم/g, "غني")
+      .replace(/فاخرة|فاخر/g, "غنية")
+      .replace(/رائعة/g, "طبيعية")
+      .replace(/بإتقان|بعمق|بشكل طبيعي|بكل تفاصيلها/g, "")
+      .replace(/حيوية/g, "طازجة")
+      .replace(/مليئًا بالحياة|مليئة بالحياة/g, "منعش")
+      .replace(/إحساسًا نظيفًا ومروّيًا/g, "نكهة حمضية باردة")
+      .replace(/جرجير الطازج/g, "الجرجير الطازج")
+      .replace(/الاصيلة/g, "الأصيلة")
+      .replace(/نظيفة،/g, "")
+      .replace(/\s+([،.؟!:؛])/g, "$1")
+      .replace(/،\s*[،.]+/g, ".")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+  }
+
+  return normalized
+    .replace(/\b(best|perfect|unforgettable)\b/gi, "")
+    .replace(/\b(irresistibly|beautifully|perfectly|deeply|luxuriously|delightfully)\s+/gi, "")
+    .replace(/\bpremium\s+/gi, "")
+    .replace(/\bindulgent\b/gi, "rich")
+    .replace(/\bsatisfying\b/gi, "hearty")
+    .replace(/\bcomforting|comfortable\b/gi, "warm")
+    .replace(/\bplayful\b/gi, "bright")
+    .replace(/\bvibrant\b/gi, "fresh")
+    .replace(/\bbursting with\b/gi, "with")
+    .replace(/\bultra-refreshing|ultra refreshing\b/gi, "cold")
+    .replace(/\benergizing\b/gi, "fresh")
+    .replace(/\blemonadei\b/gi, "lemonade")
+    .replace(/\bfruit and balanced\b/gi, "fruity and balanced")
+    .replace(/\bfresh freshness\b/gi, "freshness")
+    .replace(/\bA indulgent\b/g, "A rich")
+    .replace(/\bAn hearty\b/g, "A hearty")
+    .replace(/\s+,/g, ",")
+    .replace(/,\s*,+/g, ",")
+    .replace(/\s+\./g, ".")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
 
 function ending(locale: Locale, value: string) {
@@ -450,8 +598,8 @@ export function compactOfficialDescription(value: string, locale: Locale) {
   if (!value) return "";
 
   const limit = locale === "ar" ? 170 : 185;
-  const normalized = formatVisibleText(value, locale).replace(/\s+/g, " ").trim();
-  return clipDescription(normalized, locale, limit);
+  const normalized = finalizeMenuDescription(value, locale).replace(/\s+/g, " ").trim();
+  return finalizeMenuDescription(clipDescription(normalized, locale, limit), locale);
 }
 
 function clipDescription(value: string, locale: Locale, limit: number) {

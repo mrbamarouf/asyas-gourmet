@@ -109,8 +109,8 @@ export const UI = {
     en: "Asya's Gourmet serves a Turkish table that begins with breakfast and bakery, then moves into grills, casseroles, sweets, and coffee.",
   },
   about_p2: {
-    ar: "كل طبق مكتوب بما يهم الضيف: المكونات، طريقة التحضير، والنكهة على المائدة.",
-    en: "Every dish is written around what matters: ingredients, preparation, and flavor at the table.",
+    ar: "نختار مكونات واضحة، ونحضّرها يوميًا لتصل إلى المائدة بطعم تركي متوازن.",
+    en: "We choose clear ingredients and prepare them daily for a balanced Turkish flavor at the table.",
   },
   visit_title: { ar: "الحجز والموقع", en: "Reservations and Location" },
   visit_body: {
