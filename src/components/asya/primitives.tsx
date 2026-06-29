@@ -1732,6 +1732,10 @@ function ItemDetailTagSection({
   );
 }
 
+function ItemDetailSectionDivider() {
+  return <span className="item-detail-section-divider" aria-hidden="true" />;
+}
+
 function ItemDetailView({
   selection,
   current,
@@ -1823,7 +1827,6 @@ function ItemDetailView({
   const imageSrc = getDishImage(item);
   const isPlaceholder = imageSrc === placeholderImg;
   const itemName = localizeMenuItemName(item, locale);
-  const categoryName = localizeMenuText(category.name, locale);
   const description = localizeMenuDescription(item, category, locale);
   const quickFacts = [
     { label: labels.prepTime, value: formatOfficialFact(item.prepTime, "prep", locale) },
@@ -1926,90 +1929,92 @@ function ItemDetailView({
         </div>
 
         <div className="item-detail-copy mobile-item-detail-content">
-          <div className="item-detail-meta">
-            <span>
-              {labels.category}: {categoryName}
-            </span>
+          <h2>{itemName}</h2>
+          <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
             <PriceTag item={item} />
           </div>
-          <h2>{itemName}</h2>
-          <span className="item-detail-divider" aria-hidden="true" />
-          <div className="item-detail-scroll">
+          <div className="item-detail-flow">
             {description ? (
               <div className="item-detail-description">
                 <strong>{labels.description}</strong>
                 <p>{description}</p>
               </div>
             ) : null}
-            {item.options?.length ? (
-              <div className="item-detail-options">
-                <strong>{labels.options}</strong>
-                <MenuOptions item={item} />
-              </div>
-            ) : null}
             {quickFacts.length ? (
-              <section className="item-detail-facts" aria-label={labels.quickFacts}>
-                <h3>{labels.quickFacts}</h3>
-                <div className="item-detail-fact-grid">
-                  {quickFacts.map((fact) => (
-                    <span className="item-detail-fact" key={fact.label}>
-                      <small>{fact.label}</small>
-                      <strong>{fact.value}</strong>
-                    </span>
-                  ))}
-                </div>
-              </section>
+              <>
+                <ItemDetailSectionDivider />
+                <section className="item-detail-facts" aria-label={labels.quickFacts}>
+                  <h3>{labels.quickFacts}</h3>
+                  <div className="item-detail-fact-grid">
+                    {quickFacts.map((fact) => (
+                      <span className="item-detail-fact" key={fact.label}>
+                        <small>{fact.label}</small>
+                        <strong>{fact.value}</strong>
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              </>
             ) : null}
             {item.allergens?.length ? (
-              <ItemDetailTagSection
-                title={labels.allergens}
-                tags={item.allergens}
-                locale={locale}
-                tone="allergen"
-              />
+              <>
+                <ItemDetailSectionDivider />
+                <ItemDetailTagSection
+                  title={labels.allergens}
+                  tags={item.allergens}
+                  locale={locale}
+                  tone="allergen"
+                />
+              </>
             ) : null}
             {item.dietaryLabels?.length ? (
-              <ItemDetailTagSection
-                title={labels.dietary}
-                tags={item.dietaryLabels}
-                locale={locale}
-                tone="dietary"
-              />
+              <>
+                <ItemDetailSectionDivider />
+                <ItemDetailTagSection
+                  title={labels.dietary}
+                  tags={item.dietaryLabels}
+                  locale={locale}
+                  tone="dietary"
+                />
+              </>
             ) : null}
             {recommendationEntries.length ? (
-              <section className="item-detail-recommendations">
-                <h3>{labels.recommendedWith}</h3>
-                <div className="item-recommendation-grid">
-                  {recommendationEntries.map((recommendation) => {
-                    const recommendedName = localizeMenuItemName(recommendation.item, locale);
+              <>
+                <ItemDetailSectionDivider />
+                <section className="item-detail-recommendations">
+                  <h3>{labels.recommendedWith}</h3>
+                  <div className="item-recommendation-grid">
+                    {recommendationEntries.map((recommendation) => {
+                      const recommendedName = localizeMenuItemName(recommendation.item, locale);
 
-                    return (
-                      <button
-                        className="item-recommendation-card"
-                        key={recommendation.item.id}
-                        type="button"
-                        onClick={() =>
-                          openItemDetail({
-                            item: recommendation.item,
-                            category: recommendation.category,
-                          })
-                        }
-                      >
-                        <DishImage
-                          item={recommendation.item}
-                          alt={recommendedName}
-                          className="item-recommendation-image"
-                        />
-                        <span className="item-recommendation-copy">
-                          <strong>{recommendedName}</strong>
-                          <PriceTag item={recommendation.item} />
-                          {recommendation.reason ? <small>{recommendation.reason}</small> : null}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
+                      return (
+                        <button
+                          className="item-recommendation-card"
+                          key={recommendation.item.id}
+                          type="button"
+                          onClick={() =>
+                            openItemDetail({
+                              item: recommendation.item,
+                              category: recommendation.category,
+                            })
+                          }
+                        >
+                          <DishImage
+                            item={recommendation.item}
+                            alt={recommendedName}
+                            className="item-recommendation-image"
+                          />
+                          <span className="item-recommendation-copy">
+                            <strong>{recommendedName}</strong>
+                            <PriceTag item={recommendation.item} />
+                            {recommendation.reason ? <small>{recommendation.reason}</small> : null}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </section>
+              </>
             ) : null}
           </div>
           {current === "menu" ? (

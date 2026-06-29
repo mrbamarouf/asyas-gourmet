@@ -12267,3 +12267,223 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     width: min(100%, 340px);
   }
 }
+
+/* Product detail final layout: image, title, price, description, metadata sections. */
+.item-detail-dialog {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-content: start !important;
+  width: min(640px, calc(100vw - 2rem)) !important;
+  max-width: 640px !important;
+  max-height: min(92dvh, 940px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item-detail-media,
+.item-detail-media.mobile-item-detail-media {
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: clamp(0.9rem, 2vw, 1.25rem) clamp(0.9rem, 2vw, 1.25rem) 0 !important;
+  background: #F8F3EA !important;
+}
+
+.item-detail-media > img,
+.item-detail-media > img.mobile-item-detail-image,
+.item-detail-media.is-placeholder > img.mobile-item-detail-image {
+  width: 100% !important;
+  height: clamp(250px, 38dvh, 420px) !important;
+  max-height: 420px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #F8F3EA !important;
+  transform: none !important;
+  scale: 1 !important;
+  filter: none !important;
+}
+
+.item-detail-copy,
+.item-detail-copy.mobile-item-detail-content,
+.item-detail-dialog[dir="rtl"] .item-detail-copy,
+.item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+  display: grid !important;
+  width: min(100%, 560px) !important;
+  max-width: 560px !important;
+  justify-self: center !important;
+  justify-items: center !important;
+  gap: 0.85rem !important;
+  padding: clamp(1rem, 2.4vw, 1.5rem) clamp(1rem, 3vw, 1.75rem) clamp(1.2rem, 3vw, 1.75rem) !important;
+  overflow: visible !important;
+  text-align: center !important;
+}
+
+.item-detail-copy h2,
+[data-locale="ar"] .item-detail-copy h2,
+.item-detail-copy.mobile-item-detail-content h2,
+[data-locale="ar"] .item-detail-copy.mobile-item-detail-content h2 {
+  width: 100% !important;
+  max-width: 20ch !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  text-align: center !important;
+  text-wrap: balance !important;
+}
+
+.item-detail-price-row {
+  display: flex !important;
+  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+.item-detail-price-row .price-tag {
+  width: auto !important;
+  max-width: 100% !important;
+  justify-content: center !important;
+}
+
+.item-detail-flow {
+  display: grid !important;
+  width: 100% !important;
+  max-width: 560px !important;
+  gap: 1rem !important;
+  overflow: visible !important;
+}
+
+.item-detail-description,
+.item-detail-facts,
+.item-detail-tag-section,
+.item-detail-recommendations {
+  display: grid !important;
+  width: 100% !important;
+  max-width: 560px !important;
+  justify-items: center !important;
+  gap: 0.75rem !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.item-detail-description > strong,
+.item-detail-facts h3,
+.item-detail-tag-section h3,
+.item-detail-recommendations h3 {
+  margin: 0 !important;
+  color: var(--deep-navy) !important;
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+}
+
+.item-detail-description p,
+.mobile-item-detail-content .item-detail-description p {
+  display: block !important;
+  width: 100% !important;
+  max-width: 52ch !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+  color: var(--ink-soft) !important;
+  font-size: clamp(0.92rem, 1.4vw, 1rem) !important;
+  line-height: 1.75 !important;
+  text-align: center !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+.item-detail-section-divider {
+  display: block !important;
+  width: min(100%, 220px) !important;
+  height: 1px !important;
+  justify-self: center !important;
+  margin: 0.2rem auto !important;
+  background: linear-gradient(90deg, transparent, rgba(200, 155, 106, 0.38), transparent) !important;
+}
+
+.item-detail-fact-grid {
+  width: 100% !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.item-detail-tag-list {
+  justify-content: center !important;
+}
+
+.item-recommendation-grid {
+  width: 100% !important;
+  display: grid !important;
+  gap: 0.75rem !important;
+}
+
+.item-recommendation-card {
+  position: static !important;
+  width: 100% !important;
+  grid-template-columns: 84px minmax(0, 1fr) !important;
+  align-items: center !important;
+  text-align: start !important;
+}
+
+.item-detail-back {
+  position: static !important;
+  width: min(100%, 340px) !important;
+  margin: 0.35rem auto 0 !important;
+}
+
+[data-locale="ar"] .item-detail-flow,
+[data-locale="ar"] .item-detail-description,
+[data-locale="ar"] .item-detail-facts,
+[data-locale="ar"] .item-detail-tag-section,
+[data-locale="ar"] .item-detail-recommendations {
+  direction: rtl !important;
+}
+
+@media (max-width: 767px) {
+  .item-detail-dialog {
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    max-height: 92dvh !important;
+    border-radius: 18px 18px 0 0 !important;
+  }
+
+  .item-detail-media > img,
+  .item-detail-media > img.mobile-item-detail-image,
+  .item-detail-media.is-placeholder > img.mobile-item-detail-image {
+    height: min(36dvh, 290px) !important;
+    max-height: 290px !important;
+  }
+
+  .item-detail-copy,
+  .item-detail-copy.mobile-item-detail-content,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    padding: 1rem 0 calc(1.2rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  .item-detail-flow {
+    max-width: 340px !important;
+    gap: 0.95rem !important;
+  }
+
+  .item-detail-fact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .item-recommendation-card {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  .item-recommendation-image {
+    width: 92px !important;
+    height: 92px !important;
+  }
+
+  .item-recommendation-copy {
+    justify-items: center !important;
+    text-align: center !important;
+  }
+}
