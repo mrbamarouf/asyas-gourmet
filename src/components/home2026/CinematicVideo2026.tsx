@@ -22,12 +22,14 @@ export function CinematicVideo2026({
   const videoRef = useRef<HTMLVideoElement>(null);
   const visibleRef = useRef(false);
   const retryRef = useRef<number | null>(null);
+  const retryCountRef = useRef(0);
   const [isLoaded, setIsLoaded] = useState(eager);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     visibleRef.current = false;
+    retryCountRef.current = 0;
     setIsLoaded(eager);
     setIsPlaying(false);
     setHasError(false);
@@ -64,9 +66,23 @@ export function CinematicVideo2026({
       clearRetry();
       video.pause();
     };
+    const pauseCompetingVideos = () => {
+      document.querySelectorAll<HTMLVideoElement>(".home2026-video-frame video").forEach((other) => {
+        if (other !== video) other.pause();
+      });
+    };
+    const queueRetry = (showPoster = true) => {
+      if (showPoster) setIsPlaying(false);
+      clearRetry();
+      if (!visibleRef.current || retryCountRef.current >= 3) return;
+
+      retryCountRef.current += 1;
+      retryRef.current = window.setTimeout(requestPlayback, 900);
+    };
     const requestPlayback = () => {
       if (!visibleRef.current || reducedMotion || hasError) return;
 
+      pauseCompetingVideos();
       video.muted = true;
       video.defaultMuted = true;
       video.controls = false;
@@ -77,11 +93,7 @@ export function CinematicVideo2026({
       const playPromise = video.play();
 
       if (playPromise) {
-        playPromise.catch(() => {
-          setIsPlaying(false);
-          clearRetry();
-          retryRef.current = window.setTimeout(requestPlayback, 900);
-        });
+        playPromise.catch(queueRetry);
       }
     };
 
@@ -103,22 +115,36 @@ export function CinematicVideo2026({
         visibleRef.current = shouldPlay;
 
         if (!shouldPlay || reducedMotion) {
+          retryCountRef.current = 0;
           pauseVideo();
           return;
         }
 
         requestPlayback();
       },
-      { rootMargin: eager ? "96px 0px" : "140px 0px", threshold: [0, 0.12, 0.2, 0.45, 0.7] },
+      { rootMargin: "0px", threshold: [0, 0.12, 0.2, 0.45, 0.7] },
     );
     const handleCanPlay = () => requestPlayback();
-    const handlePlaying = () => setIsPlaying(true);
+    const handlePlaying = () => {
+      retryCountRef.current = 0;
+      setHasError(false);
+      setIsPlaying(true);
+    };
     const handlePause = () => {
-      if (!visibleRef.current) setIsPlaying(false);
+      setIsPlaying(false);
+    };
+    const handleStalledPlayback = () => {
+      if (!visibleRef.current) return;
+      queueRetry(false);
     };
     const handleError = () => {
-      setHasError(true);
+      if (retryCountRef.current < 3) {
+        queueRetry();
+        return;
+      }
+
       setIsPlaying(false);
+      setHasError(true);
       pauseVideo();
     };
     const handleVisibilityChange = () => {
@@ -132,6 +158,8 @@ export function CinematicVideo2026({
     video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("playing", handlePlaying);
     video.addEventListener("pause", handlePause);
+    video.addEventListener("stalled", handleStalledPlayback);
+    video.addEventListener("waiting", handleStalledPlayback);
     video.addEventListener("error", handleError);
     document.addEventListener("visibilitychange", handleVisibilityChange);
     player.observe(shell);
@@ -142,6 +170,8 @@ export function CinematicVideo2026({
       video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("playing", handlePlaying);
       video.removeEventListener("pause", handlePause);
+      video.removeEventListener("stalled", handleStalledPlayback);
+      video.removeEventListener("waiting", handleStalledPlayback);
       video.removeEventListener("error", handleError);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       video.pause();
@@ -165,11 +195,8 @@ export function CinematicVideo2026({
         preload={eager ? "auto" : "metadata"}
         controls={false}
         disablePictureInPicture
-        onLoadedData={() => {
-          if (visibleRef.current) videoRef.current?.play().catch(() => undefined);
-        }}
       >
-        {isLoaded ? <source src={asset.src} /> : null}
+        {isLoaded ? <source src={asset.src} type="video/mp4" /> : null}
       </video>
       <img src={asset.poster} alt={asset.alt} loading={eager ? "eager" : "lazy"} decoding="async" />
     </figure>

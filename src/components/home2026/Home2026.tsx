@@ -224,17 +224,17 @@ function buildHome2026Videos(locale: "ar" | "en") {
   });
 
   return {
-    hero: makeAsset("asya-hero-grill.mov", "asya-hero-grill.png", labels.hero),
-    breakfast: makeAsset("asya-breakfast.mov", "asya-breakfast.png", labels.breakfast),
-    bakery: makeAsset("asya-bakery-pide.mov", "asya-bakery-pide.png", labels.bakery),
+    hero: makeAsset("asya-hero-grill.mp4", "asya-hero-grill.png", labels.hero),
+    breakfast: makeAsset("asya-breakfast.mp4", "asya-breakfast.png", labels.breakfast),
+    bakery: makeAsset("asya-bakery-pide.mp4", "asya-bakery-pide.png", labels.bakery),
     moments: [
-      makeAsset("asya-moment-dining-room.mov", "asya-moment-dining-room.png", labels.diningRoom),
-      makeAsset("asya-moment-interior-lights.mov", "asya-moment-interior-lights.png", labels.interiorLights),
-      makeAsset("asya-moment-doner.mov", "asya-moment-doner.png", labels.doner),
-      makeAsset("asya-moment-craft.mov", "asya-moment-craft.png", labels.craft),
-      makeAsset("asya-moment-chef.mov", "asya-moment-chef.png", labels.chef),
-      makeAsset("asya-moment-team.mov", "asya-moment-team.png", labels.team),
-      makeAsset("asya-moment-lounge.mov", "asya-moment-lounge.png", labels.lounge),
+      makeAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", labels.diningRoom),
+      makeAsset("asya-moment-interior-lights.mp4", "asya-moment-interior-lights.png", labels.interiorLights),
+      makeAsset("asya-moment-doner.mp4", "asya-moment-doner.png", labels.doner),
+      makeAsset("asya-moment-craft.mp4", "asya-moment-craft.png", labels.craft),
+      makeAsset("asya-moment-chef.mp4", "asya-moment-chef.png", labels.chef),
+      makeAsset("asya-moment-team.mp4", "asya-moment-team.png", labels.team),
+      makeAsset("asya-moment-lounge.mp4", "asya-moment-lounge.png", labels.lounge),
     ],
   };
 }
