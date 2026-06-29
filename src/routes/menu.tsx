@@ -78,21 +78,6 @@ function FullMenuPage() {
   return (
     <AsyaShell current="menu">
       <main id="menu-top" className="full-menu-page">
-        <div
-          style={{
-            position: "relative",
-            zIndex: 999,
-            background: "#ff0000",
-            color: "#ffffff",
-            padding: "24px",
-            textAlign: "center",
-            fontSize: "28px",
-            fontWeight: 900,
-            letterSpacing: "0",
-          }}
-        >
-          PREVIEW TEST e88609f
-        </div>
         <MenuHero />
         <MenuExplorer />
       </main>
