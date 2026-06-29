@@ -109,6 +109,22 @@ const DESCRIPTION_DISPLAY_COPY: Record<string, LocalizedText> = {
     ar: "فطور عائلي واسع مع أجبان، فواكه موسمية، خبز طازج، طماطم، زيتون، لبنة، جبنة سورك، مينمين، مقالي مشكلة، حمص، محمرة ومربيات.",
     en: "A generous family breakfast with cheeses, seasonal fruit, fresh bread, tomatoes, olives, labneh, surk cheese, menemen, mixed fried bites, hummus, muhammara, and jams.",
   },
+  "1ae0277d-4110-4b2b-ad0f-ebf2c6bbeaeb": {
+    ar: "مينمين إسطنبولي من البيض والطماطم والفلفل، يطهى ببطء ويقدّم مع لبنة كريمية وخبز محمّص وبقدونس.",
+    en: "Istanbul-style menemen with eggs, tomatoes, and peppers, gently cooked and served with labneh, croutons, and parsley.",
+  },
+  "5e586ecb-4451-4e10-852d-96ec5a32f46e": {
+    ar: "مينمين بالطماطم والفلفل والبيض، يغطّى بجبنة القشقوان الذائبة ويقدّم مع اللبنة والخبز المقرمش.",
+    en: "Menemen with tomatoes, peppers, and eggs, topped with melted kashar cheese and served with labneh and crisp bread.",
+  },
+  "755a894d-bcec-4035-9aac-a5a4575a4670": {
+    ar: "بيض طري فوق لبن بالثوم، يزيّن بزبدة ذائبة دافئة ويقدّم مع خبز محمّص.",
+    en: "Soft eggs served over garlicky yogurt, finished with warm melted butter and crisp croutons.",
+  },
+  "1bdacdb7-3add-4dad-bc1e-1bcc8b60a715": {
+    ar: "بطاطس ذهبية مطهوة بالزبدة مع البيض، تقدم مع لبنة وكمون ورقائق فلفل حار.",
+    en: "Golden potatoes cooked in butter with eggs, served with labneh, cumin, and chili flakes.",
+  },
   "54633c97-9b3d-44ce-a902-01f1430c260e": {
     ar: "ورق عنب ملفوف بحشوة أرز وأعشاب خفيفة، يقدم مع اللبن والليمون والتوابل العطرية.",
     en: "Rolled vine leaves filled with rice and herbs, served with yogurt, lemon, and aromatic spices.",
@@ -152,6 +168,366 @@ const DESCRIPTION_DISPLAY_COPY: Record<string, LocalizedText> = {
   "728a1cd6-4c57-4509-ab09-aafc279d3947": {
     ar: "موز طازج مخفوق مع الحليب لقوام كريمي وحلاوة ناعمة.",
     en: "Fresh banana blended with milk for a creamy texture and soft natural sweetness.",
+  },
+  "8f0dd89f-a75a-4c8b-a000-c96060303d3e": {
+    ar: "بيض مطهو مع سجق منزلي متبّل، يقدّم ساخنًا مع خبز تيرناك التركي.",
+    en: "Eggs cooked with seasoned homemade sucuk, served hot with Turkish tirnak bread.",
+  },
+  "38ec170c-750b-4fe4-a167-4cd1778648bc": {
+    ar: "بيض عيون بصفار طري، يطهى ببساطة ويقدّم مع اللبنة.",
+    en: "Sunny-side eggs with soft yolks, cooked simply and served with labneh.",
+  },
+  "97c60f8a-309e-46fb-b100-da93a603410d": {
+    ar: "بيض مخفوق بالزبدة بقوام كريمي، يقدّم مع اللبنة.",
+    en: "Scrambled eggs cooked with butter for a creamy texture, served with labneh.",
+  },
+  "7f704c10-78c1-4697-90d0-162cd7ce1cdb": {
+    ar: "بيض مسلوق مع زبدة وكمون ورقائق فلفل حار وزعتر، يقدّم مع لبنة وخبز محمّص.",
+    en: "Boiled eggs with butter, cumin, chili flakes, and thyme, served with labneh and crisp croutons.",
+  },
+  "a71b8968-9fff-47e1-8c1d-f74f500aa3c1": {
+    ar: "بيض مسلوق بصلصة من الشيدر والحليب والكريمة، مع كمون ورقائق فلفل حار وخبز محمّص.",
+    en: "Boiled eggs in a cheddar, milk, and cream sauce with cumin, chili flakes, and crisp croutons.",
+  },
+  "d6451bec-6280-4ed1-b438-53d41f63b4f1": {
+    ar: "أومليت بالبيض والزبدة، يقدّم مع طماطم كرزية وجرجير وخبز محمّص.",
+    en: "Omelette with eggs and butter, served with cherry tomatoes, arugula, and crisp croutons.",
+  },
+  "774cacb7-7b1b-4fe8-9389-caa3444926f9": {
+    ar: "أومليت بالخضار يضم الكوسا والجزر والفطر والفلفل الملوّن، ويقدّم مع طماطم كرزية وجرجير.",
+    en: "Vegetable omelette with zucchini, carrots, mushrooms, and colored peppers, served with cherry tomatoes and arugula.",
+  },
+  "daf67786-46b5-445d-973f-cf8748d7e16f": {
+    ar: "تشكيلة أجبان أناضولية تضم لور، جبنة بيضاء، شيدر وجبنًا مجدولًا، مع تين ومشمش وعنب وجوز.",
+    en: "Anatolian cheese selection with lor, white cheese, cheddar, and braided cheese, served with figs, apricots, grapes, and walnuts.",
+  },
+  "59bc51ab-231e-44bc-8588-5bfc00ac5eb0": {
+    ar: "حلوم ساخن في فخار فوق صلصة طماطم، مع بيستو ونعناع وخبز محمّص.",
+    en: "Hot halloumi in a clay pot over tomato sauce, finished with pesto, mint, and crisp croutons.",
+  },
+  "0e31b410-7a4f-44cc-be7c-6da715660d4f": {
+    ar: "جبنة بيضاء تقدم مع مربى الفراولة، زعتر وخبز محمّص.",
+    en: "White cheese served with strawberry jam, zaatar, and crisp croutons.",
+  },
+  "7e0f5506-f996-4586-a42a-b1b522dfbc43": {
+    ar: "فول مطهو ببطء مع الطماطم والبصل والثوم، يخلط بالطحينة وزيت الزيتون.",
+    en: "Slow-cooked fava beans with tomatoes, onions, and garlic, enriched with tahini and olive oil.",
+  },
+  "c5a25fe4-fdc1-4848-be25-91d0141999b2": {
+    ar: "عسل مختار يقدّم بقوام ناعم وحلاوة طبيعية بجانب الفطور.",
+    en: "Selected honey with a smooth texture and natural sweetness, served with breakfast.",
+  },
+  "47dbca7a-682e-443c-99bc-01dd2bb4adfc": {
+    ar: "كايمك تركي كريمي، يقدّم باردًا مع العسل أو الخبز الطازج.",
+    en: "Creamy Turkish kaymak served chilled with honey or fresh bread.",
+  },
+  "004e2b9d-6aef-476a-bed8-e854eeaba257": {
+    ar: "سجق تركي متبّل يقلى حتى يتحمّر ويقدّم ساخنًا.",
+    en: "Seasoned Turkish sucuk, pan-fried until browned and served hot.",
+  },
+  "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef": {
+    ar: "لبنة كريمية بطعم منعش، تقدم مع الفطور والمخبوزات.",
+    en: "Creamy labneh with a tangy finish, served with breakfast and bakery dishes.",
+  },
+  "223a7d36-eb74-4e6b-a01c-b7ff0b0c696b": {
+    ar: "بطاطس ذهبية مقرمشة متبّلة بالزعتر والنعناع، تحضّر في المطبخ وتقدّم ساخنة.",
+    en: "Golden crispy potatoes seasoned with zaatar and mint, prepared in-house and served hot.",
+  },
+  "e406d9c9-0993-4a1c-875a-dfda98e2fadb": {
+    ar: "بطاطس مقرمشة بالثوم والبقدونس وصلصة حارة خفيفة على طريقة مرسين.",
+    en: "Crispy potatoes with garlic, parsley, and a light spicy sauce in the style of Mersin.",
+  },
+  "6377546c-aff4-488d-ac30-ad27245054db": {
+    ar: "بطاطس مقلية مقرمشة تقدم مع الكاتشب والمايونيز ورشة بهارات كاجون.",
+    en: "Crispy fries served with ketchup, mayonnaise, and a touch of Cajun spice.",
+  },
+  "3178ac05-fef6-43ce-a897-ea01df50a79f": {
+    ar: "كروكيت بطاطس ذهبي، مقرمش من الخارج وطري من الداخل، يقدم مع الكاتشب والمايونيز.",
+    en: "Golden potato croquettes, crisp outside and soft inside, served with ketchup and mayonnaise.",
+  },
+  "e8b45db5-b42f-4122-8dfc-59d19bc88045": {
+    ar: "قشطة مع قرص عسل وعسل مصفّى، تقدم مع خبز البازلاما الطازج.",
+    en: "Clotted cream with honeycomb and strained honey, served with fresh bazlama bread.",
+  },
+  "371e252f-2196-441e-b21c-f46c97ae2f6c": {
+    ar: "ماتشا يابانية مخفوقة مع حليب بارد لقوام ناعم ونكهة عشبية متوازنة.",
+    en: "Japanese matcha whisked with chilled milk for a smooth texture and balanced grassy flavor.",
+  },
+  "07de0c88-200d-4732-929e-e8c98a0faedd": {
+    ar: "نعناع طازج مع ليمون وصودا باردة، بنكهة حمضية صافية.",
+    en: "Fresh mint with lime and cold soda, finished with a clean citrus bite.",
+  },
+  "8dc252c0-789f-4024-9414-67faa20f33d8": {
+    ar: "توت مشكّل مع نعناع وليمون وصودا باردة، بطعم فاكهي منعش.",
+    en: "Mixed berries with mint, lime, and cold soda for a bright fruit finish.",
+  },
+  "dd30a93f-661c-4099-90c4-74dc9f31a3a3": {
+    ar: "نعناع بارد مع ليمون وتفاح أخضر، بنكهة حامضية خفيفة.",
+    en: "Cooling peppermint with lime and green apple for a crisp sour finish.",
+  },
+  "bde937b8-d111-42b3-89e6-7822ee0c18b7": {
+    ar: "أناناس ناضج يعصر باردًا، بطعم استوائي حلو وحامض خفيف.",
+    en: "Ripe pineapple pressed cold, with tropical sweetness and light acidity.",
+  },
+  "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac": {
+    ar: "مزيج عصير من البرتقال والتفاح الأخضر والجزر، بطعم حلو ومنعش.",
+    en: "Orange, green apple, and carrot juice blended for a sweet, refreshing finish.",
+  },
+  "1cb9d1b5-6d8f-493f-be1b-e57d084f065d": {
+    ar: "شاي مثلج بالكركديه مع التوت الأحمر والأزرق، بطعم حامضي خفيف.",
+    en: "Iced hibiscus tea with raspberry and blueberry, finished with a light tart note.",
+  },
+  "b1268bb2-150f-4ca7-afb5-f2fa21507da5": {
+    ar: "ليمونادة تركية منزلية ممزوجة بتوت مشكّل، بتوازن بين الحلاوة والحمضيات.",
+    en: "House Turkish lemonade blended with mixed berries, balanced between sweetness and citrus.",
+  },
+  "7c20069b-3e20-4edb-b3bf-75bf82b44cdd": {
+    ar: "مشروب تشرشل بارد وفوّار، يقدم بنكهة حادة ومنعشة.",
+    en: "Chilled Churchill soda with a crisp, fizzy finish.",
+  },
+  "10669c1f-596c-4f5f-80a5-d05811ffd71a": {
+    ar: "مشروب طاقة بارد بطعم حلو وفوّار ولمسة حادة.",
+    en: "Cold energy drink with a sweet, fizzy taste and a sharp finish.",
+  },
+  "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a": {
+    ar: "مشروب غازي بارد بنكهة البرتقال وفقاعات منعشة.",
+    en: "Chilled orange soda with bright citrus flavor and refreshing fizz.",
+  },
+  "21abfb80-c2e5-413d-9019-5cc3de9121ae": {
+    ar: "حلوم مشوي مع طماطم كرزية وخيار وبصل أحمر وزيتون أخضر وأسود، يقدّم بلمسة ليمون.",
+    en: "Grilled halloumi with cherry tomatoes, cucumber, red onion, green and black olives, and a touch of lemon.",
+  },
+  "bd920d50-f921-46e5-844f-84d6eb6dcf74": {
+    ar: "خس وجرجير وبقدونس مع خيار وطماطم وفجل صغير وفلفل ملوّن، يقدّم بلمسة ليمون.",
+    en: "Lettuce, arugula, parsley, cucumber, tomatoes, baby radish, and colored peppers finished with lemon.",
+  },
+  "a1cf8693-8514-4542-a2b9-e3fd13f86f95": {
+    ar: "فلافل مقرمشة فوق طبقة حمص ناعمة، مع طماطم كرزية وخيار مخلل وجرجير وطحينة.",
+    en: "Crisp falafel over smooth hummus, served with cherry tomatoes, pickled cucumber, arugula, and tahini.",
+  },
+  "fb3c796f-b84e-469b-96ec-01b9b6f01018": {
+    ar: "لفائف سيغارا بوريك محشوة بالجبن، مقلية حتى تصبح ذهبية وتقدّم مع خس ورمان وليمون.",
+    en: "Sigara borek rolls filled with cheese, fried until golden, and served with lettuce, pomegranate, and lemon.",
+  },
+  "1f431c8a-b272-4a9f-8377-758fd9a0781d": {
+    ar: "بطاطس مقرمشة بالفلفل الحار والليمون والبقدونس، تقدّم مع صلصة طماطم خفيفة.",
+    en: "Crispy potatoes with chili, lemon, and parsley, served with a light tomato sauce.",
+  },
+  "34cf0c11-521a-4390-b42a-48b070e22cc2": {
+    ar: "جوزلمة بعجين رقيق محشوة بالبطاطس، تطهى على الصاج وتقدّم ساخنة.",
+    en: "Thin gozleme filled with potato, cooked on the griddle and served hot.",
+  },
+  "93db7fe1-0187-437c-9b85-f9704ec58e20": {
+    ar: "جوزلمة بعجين منزلي رقيق محشوة بجبن ذائب، تطهى على الصاج وتقدّم ساخنة.",
+    en: "Handmade gozleme filled with melted cheese, cooked on the griddle and served hot.",
+  },
+  "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb": {
+    ar: "جوزلمة بعجين رقيق محشوة بالسبانخ الطازجة، تطهى على الصاج لقوام طري وخفيف.",
+    en: "Thin gozleme filled with fresh spinach, cooked on the griddle for a soft, light texture.",
+  },
+  "7704310c-87e1-4d73-a503-a9f32854973c": {
+    ar: "سو بوريك بطبقات عجين منزلي وحشوة غنية، يخبز ويقدّم دافئًا.",
+    en: "Su boregi with layered handmade dough and a rich filling, baked and served warm.",
+  },
+  "cf8b74da-b6fe-40f1-9a00-639a4de60168": {
+    ar: "بيدا مخبوزة بجبنة عكاوي وموزاريلا، تزيّن بالسمسم وحبة البركة.",
+    en: "Oven-baked pide with Akawi cheese and mozzarella, finished with sesame and black cumin.",
+  },
+  "d44063ac-c32b-457a-b474-ced546d36818": {
+    ar: "بيدا مخبوزة بجبنة الكشكفال الذائبة، تزيّن بالسمسم وحبة البركة.",
+    en: "Oven-baked pide with melted Kashkaval cheese, sesame, and black cumin.",
+  },
+  "ead80465-de52-4268-ad38-30e2db704684": {
+    ar: "بيدا طرية باللبنة والزعتر والموزاريلا، تكمّل بالسمسم.",
+    en: "Soft pide layered with labneh, zaatar, mozzarella, and sesame.",
+  },
+  "6969f27d-684c-4725-9257-5e69733bc382": {
+    ar: "بيدا مخبوزة بالزعتر العطري وزيت الزيتون، تقدّم ساخنة.",
+    en: "Oven-baked pide topped with aromatic zaatar and olive oil, served hot.",
+  },
+  "1e6a71bd-c035-4e38-a510-413af41596e3": {
+    ar: "بيدا مخبوزة باللبنة والموزاريلا، تزيّن بالسمسم وحبة البركة.",
+    en: "Oven-baked pide with labneh, mozzarella, sesame, and black cumin.",
+  },
+  "7244ddca-2718-40e0-90bf-287718182154": {
+    ar: "بيدا مخبوزة بلحم إسكندر والموزاريلا، مع سمسم وحبة البركة.",
+    en: "Oven-baked pide with Iskender-style beef, mozzarella, sesame, and black cumin.",
+  },
+  "8507dfb1-80d8-4294-a8a6-0efa00e89e86": {
+    ar: "لحم بعجين بعجينة رقيقة ومزيج لحم متبّل، يقدّم مع بقدونس وليمون.",
+    en: "Thin lahmacun topped with seasoned minced meat, served with parsley and lemon.",
+  },
+  "345500b8-328d-4a72-9269-93c25bf75c1e": {
+    ar: "لحم بعجين عنتابي بتتبيلة حارة، يقدّم مع بقدونس وليمون ودبس رمان وباذنجان مشوي.",
+    en: "Antep-style lahmacun with spiced minced meat, parsley, lemon, pomegranate molasses, and grilled eggplant.",
+  },
+  "770b1ff2-0aef-4f23-8378-ebe37681a842": {
+    ar: "شوربة عدس مطهية مع الخضار، تقدّم مع خبز محمّص وليمون.",
+    en: "Lentil soup simmered with vegetables, served with croutons and lemon.",
+  },
+  "6e5d42ab-cdfc-45c8-968c-e0c660f048ae": {
+    ar: "شوربة دجاج بالكريمة والزبدة، تكمّل بلمسة نعناع خفيفة.",
+    en: "Creamy chicken soup with butter, finished with a light touch of mint.",
+  },
+  "b0a22f0e-f19c-4985-8311-0badb4f2a692": {
+    ar: "شوربة خضار مطهية على مهل، تقدّم مع خبز محمّص وليمون.",
+    en: "Vegetable soup slowly simmered and served with croutons and lemon.",
+  },
+  "ab194150-c362-49bc-8e2e-505915940ea4": {
+    ar: "تبولة بالبقدونس والطماطم والبرغل، تخلط مع الرمان والليمون وزيت الزيتون.",
+    en: "Tabbouleh with parsley, tomatoes, bulgur, pomegranate, lemon, and olive oil.",
+  },
+  "0991b4d5-5f1b-44e6-8e91-e91959db281b": {
+    ar: "طماطم وخيار وفلفل مفروم مع جوز مجروش، دبس رمان وليمون وزيت زيتون وسماق.",
+    en: "Chopped tomatoes, cucumber, and peppers with crushed walnuts, pomegranate molasses, lemon, olive oil, and sumac.",
+  },
+  "15420618-d1b3-4364-aff0-dd2102f944e3": {
+    ar: "فتوش بالخس والطماطم والخيار والفجل، مع خبز محمّص ورمان ودبس رمان وليمون.",
+    en: "Fattoush with lettuce, tomatoes, cucumber, radish, toasted bread, pomegranate, molasses, and lemon.",
+  },
+  "0ad35147-8d8d-49c5-a25c-f574b7e07145": {
+    ar: "خيار وطماطم كرزية وبصل أحمر وجرجير صغير، مع جبنة بيضاء وزيت زيتون وبلسميك.",
+    en: "Cucumber, cherry tomatoes, red onion, and baby arugula with white cheese, olive oil, and balsamic glaze.",
+  },
+  "7f21d1d1-00f8-4273-8fc0-beff636a2ddb": {
+    ar: "تشكيلة مقبلات باردة لشخصين تضم المحمرة والحمص والمتبل وبابا غنوج والمخللات المنزلية.",
+    en: "Cold meze for two with muhammara, hummus, mutabbal, baba ghanoush, and house pickles.",
+  },
+  "0d0da313-976b-4f5b-97ae-ac4c151f55df": {
+    ar: "حمص كريمي ناعم يزيّن بزيت الزيتون والسماق والنعناع المجفف.",
+    en: "Creamy hummus finished with olive oil, sumac, and dried mint.",
+  },
+  "f683bf36-cbc3-4c46-9c45-cfb6e32a13af": {
+    ar: "محمّرة بالفلفل الأحمر والجوز، تكمّل بدبس الرمان وزيت الزيتون.",
+    en: "Muhammara with red pepper and walnuts, finished with pomegranate molasses and olive oil.",
+  },
+  "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5": {
+    ar: "باذنجان مشوي مدخّن مع زيت زيتون وأعشاب ودبس رمان.",
+    en: "Smoky roasted eggplant with olive oil, herbs, and pomegranate molasses.",
+  },
+  "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7": {
+    ar: "متبل باذنجان مشوي مع رمان وسماق وزيت زيتون ونعناع.",
+    en: "Roasted eggplant mutabbal with pomegranate, sumac, olive oil, and mint.",
+  },
+  "a1ada07c-b494-4161-88bb-014150f8aa3e": {
+    ar: "مخللات منزلية مقرمشة بنكهة حامضة خفيفة، تقدّم بجانب المقبلات والمشويات.",
+    en: "Crunchy house pickles with a light tang, served with meze and grills.",
+  },
+  "9bdb2b3e-9591-4fd4-8860-a67c47440f04": {
+    ar: "كبة ببرغل ناعم وحشوة لحم مفروم، تقدّم مع اللبن ودبس الرمان.",
+    en: "Kibbeh with a fine bulgur shell and minced meat filling, served with yogurt and pomegranate molasses.",
+  },
+  "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a": {
+    ar: "فيتوتشيني طازجة بصلصة كريمة وزبدة، مع فطر ودجاج وثوم وبيستو وبارميزان.",
+    en: "Fresh fettuccine in a cream and butter sauce with mushrooms, chicken, garlic, pesto, and Parmesan.",
+  },
+  "cbefd6a5-095a-4a11-88fa-3a647822c28e": {
+    ar: "سباغيتي طازجة بصلصة نابولي وبولونيز لحم مطهو ببطء، مع زبدة وثوم وبارميزان.",
+    en: "Fresh spaghetti with Napoli tomato sauce, slow-cooked Bolognese, butter, garlic, and Parmesan.",
+  },
+  "be6b7932-2712-42e0-8f48-a6b4a7528b80": {
+    ar: "بيتزا بالدجاج وصلصة الطماطم والجبنة الذائبة، تخبز وتقدّم ساخنة.",
+    en: "Chicken pizza with tomato sauce and melted cheese, baked and served hot.",
+  },
+  "8654a6b2-3bcf-436f-8342-9f2cc02ce739": {
+    ar: "مشاوي لشخصين تضم كباب أضنة وكباب دجاج وأوصال لحم ضأن وشيش طاووق، تشوى على الفحم.",
+    en: "Mixed grill for two with Adana kebab, chicken kebab, lamb shish, and chicken shish, grilled over charcoal.",
+  },
+  "adcb8284-7343-44da-a287-e1582946148f": {
+    ar: "مشاوي لشخص واحد من الكباب والشيش التركي، تشوى على الفحم وتقدّم مع الإضافات.",
+    en: "Mixed grill for one with Turkish kebab and shish, grilled over charcoal and served with sides.",
+  },
+  "6e4faf94-cfa4-438e-986b-05fd8f06d265": {
+    ar: "شرائح لحم بقري فوق خبز بيدا دافئ، مع صلصة طماطم وزبدة ذائبة ولبن وخضار مشوية.",
+    en: "Sliced beef over warm pide bread with tomato sauce, melted butter, yogurt, and grilled vegetables.",
+  },
+  "7b7c1ef3-04bd-4968-b1eb-2aad83376751": {
+    ar: "كباب أضنة من لحم مفروم متبّل، يشوى على الفحم ويقدّم مع البصل والفلفل والطماطم واللافاش والبرغل.",
+    en: "Adana kebab made with seasoned minced meat, charcoal-grilled and served with onion, peppers, tomatoes, lavash, and bulgur.",
+  },
+  "7c604238-7a07-4168-b234-9bb1b536d202": {
+    ar: "أوصال لحم بقري متبّلة تشوى على الفحم، وتقدّم مع البصل والفلفل والطماطم واللافاش والبرغل.",
+    en: "Marinated beef cubes grilled over charcoal, served with onion, peppers, tomatoes, lavash, and bulgur.",
+  },
+  "11128019-e4f1-4d2d-9665-4a8731a68b77": {
+    ar: "شيش طاووق من قطع دجاج متبّلة، يشوى على الفحم ويقدّم مع اللافاش والبرغل والخضار المشوية.",
+    en: "Chicken shish with marinated chicken pieces, charcoal-grilled and served with lavash, bulgur, and grilled vegetables.",
+  },
+  "bdc9b239-c9dc-4a89-a739-895007f8133e": {
+    ar: "كباب دجاج متبّل بتوابل خاصة، يشوى على الفحم ويقدّم مع اللافاش والبرغل والخضار.",
+    en: "Chicken kebab seasoned with house spices, charcoal-grilled and served with lavash, bulgur, and vegetables.",
+  },
+  "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2": {
+    ar: "مكعبات لحم بقري فوق باذنجان مشوي باللبن، تزيّن بخضار سوتيه وتقدّم مع خبز طرناق.",
+    en: "Beef cubes over roasted eggplant with yogurt, topped with sautéed vegetables and served with tirnak bread.",
+  },
+  "f3370cb5-676e-4238-b7c8-c56cdce9d257": {
+    ar: "طاجن لحم بقري بصلصة الطماطم والفلفل، يطهى في قدر فخاري ويقدّم مع خبز عجين.",
+    en: "Beef casserole cooked in a clay pot with tomato and pepper sauce, served with fresh dough bread.",
+  },
+  "1e52139d-46ca-4414-a1f6-88a288dfe687": {
+    ar: "طاجن دجاج بصلصة الطماطم والفلفل، يطهى في قدر فخاري ويقدّم مع خبز عجين.",
+    en: "Chicken casserole cooked in a clay pot with tomato and pepper sauce, served with fresh dough bread.",
+  },
+  "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86": {
+    ar: "تندرلوين مشوّح يقدّم مع بطاطس مهروسة وخضار سوتيه موسمية.",
+    en: "Seared tenderloin served with mashed potatoes and seasonal sautéed vegetables.",
+  },
+  "896932b6-dc0c-4ab5-913e-6ba142bfc030": {
+    ar: "ريب آي مشوي يقدّم مع بطاطس مهروسة وخضار سوتيه موسمية.",
+    en: "Grilled ribeye served with mashed potatoes and seasonal sautéed vegetables.",
+  },
+  "49bcee08-afe0-4bb9-8220-b3d9088cd35b": {
+    ar: "ريش غنم مشوية على الفحم، تقدم مع بطاطس صغيرة وذرة وزبدة وإكليل الجبل.",
+    en: "Charcoal-grilled lamb chops served with baby potatoes, corn, butter, and rosemary.",
+  },
+  "863eb485-f580-4975-81ac-bf2467106519": {
+    ar: "كفتة منزلية محشوة بالجبن، تشوى وتقدّم مع بطاطس مقلية وصلصة الشيف.",
+    en: "Homemade kofte filled with cheese, grilled and served with fries and chef's sauce.",
+  },
+  "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63": {
+    ar: "كفتة لحم بقري على طريقة الجزار، تقدّم مع بطاطس مقلية وصلصة الشيف.",
+    en: "Butcher-style beef meatballs served with fries and chef's sauce.",
+  },
+  "c8c42df3-a6cf-4e2d-b900-0005fc67e07a": {
+    ar: "تشكيلة فواكه موسمية مقطعة وتقدّم باردة.",
+    en: "Seasonal fruit selection, sliced and served chilled.",
+  },
+  "6d6b0894-1f35-4df2-a180-d4b563db3102": {
+    ar: "قهوة سعودية بتوابل عطرية خفيفة، تقدّم بالدلة مع التمر.",
+    en: "Saudi coffee with light aromatic spices, served in a dallah with dates.",
+  },
+  "32fe0693-6fa1-4b2e-b5bf-4d86d4286ebc": {
+    ar: "شاي تركي أسود يُخمّر ببطء ويقدّم ساخنًا في كوب.",
+    en: "Turkish black tea slowly brewed and served hot by the glass.",
+  },
+  "66cb2cd2-cb25-4a93-a532-0cf338f7d9d5": {
+    ar: "مزيج شاي شتوي بالأعشاب والنعناع والحمضيات، يقدّم ساخنًا.",
+    en: "Winter herbal tea with mint and citrus notes, served hot.",
+  },
+  "8987cc38-505b-48e4-a821-c534ab5fbaac": {
+    ar: "شاي أسود ممزوج بالحليب، يقدّم ساخنًا بقوام كريمي.",
+    en: "Black tea blended with milk and served hot with a creamy body.",
+  },
+  "aac2d932-f051-472d-8951-d9f400dc4f07": {
+    ar: "شاي أخضر مغربي بالنعناع الطازج، يقدّم في إبريق صغير.",
+    en: "Moroccan green tea with fresh mint, served in a small pot.",
+  },
+  "c3d5aaa1-b279-47a7-b745-dbf27c322d41": {
+    ar: "عيران تركي بارد مع نعناع طازج ولمسة ملوحة خفيفة.",
+    en: "Cold Turkish ayran with fresh mint and a light salty finish.",
+  },
+  "ab4ff496-559f-4c8d-8052-a20b900ffeb0": {
+    ar: "مياه غازية تركية باردة بفقاعات واضحة ومذاق نقي.",
+    en: "Chilled Turkish sparkling water with lively bubbles and a clean finish.",
+  },
+  "dda18a8d-c5a7-4211-bbda-1992f6154416": {
+    ar: "مياه باردة تقدّم مع الوجبة.",
+    en: "Chilled water served with the meal.",
+  },
+  "528fb6cd-81b9-4b9d-b9da-30edcdb77afd": {
+    ar: "مشروب ليمون ولايم بارد وفقاعات خفيفة.",
+    en: "Chilled lemon-lime soda with light bubbles.",
   },
 };
 
@@ -314,8 +690,8 @@ function polishMenuDescription(
 
   const badSentence =
     locale === "ar"
-      ? /(تجربة|رحلة|لحظة|الجماليات|الجوال|الصور|الأسعار|مصدر|رسمي|واجهة|تصفح|أفضل|واضح|مفعم|نابض|حيوية|ممتعة|لا يقاوم|لا تُقاوم|إشراق|راحة|مريح|مليء|مليئة|كل لقمة|كل قضمة|بشكل طبيعي)/
-      : /(experience|journey|moment|aesthetic|website|mobile|image|price|source|official|interface|browse|scan|clear photos|best|vibrant|unforgettable|comfort|comfortable|character|in every bite|playful|irresistibly)/i;
+      ? /(الجماليات|الجوال|الصور|الأسعار|مصدر|رسمي|واجهة|تصفح|أفضل تجربة|تجربة لا تنسى)/
+      : /(aesthetic|website|mobile|image|price|source|official|interface|browse|scan|clear photos|best experience|unforgettable experience)/i;
 
   const sentences = normalized
     .split(/(?<=[.!؟])\s+/u)
@@ -344,8 +720,8 @@ function stripMenuFiller(value: string, locale: Locale) {
         .replace(/مثالي(?:ة|ًا|ا)?/g, "متوازن")
         .replace(/نابضة بالحياة/g, "طازجة")
         .replace(/نابض بالحياة/g, "طازج")
-        .replace(/نابضة بالحيوية/g, "غنية بالخضار")
-        .replace(/نابض بالحيوية/g, "غني بالخضار")
+        .replace(/نابضة بالحيوية/g, "منعشة")
+        .replace(/نابض بالحيوية/g, "منعش")
         .replace(/مليء بالحيوية/g, "منعش")
         .replace(/مليئة بالحيوية/g, "منعشة")
         .replace(/لمسة ممتعة/g, "لمسة منعشة")
@@ -371,6 +747,7 @@ function stripMenuFiller(value: string, locale: Locale) {
         .replace(/مليئة/g, "غنية")
         .replace(/مليء/g, "غني")
         .replace(/ضمان توازن مثالي/g, "توازن")
+        .replace(/توازن متوازن/g, "توازن")
         .replace(/توازناً متوازن بين/g, "توازنًا بين")
         .replace(/توازن متوازن بين/g, "توازن بين")
         .replace(/نابضة/g, "طازجة")
@@ -386,13 +763,18 @@ function stripMenuFiller(value: string, locale: Locale) {
         .replace(/بعمق/g, "")
         .replace(/بكل تفاصيلها/g, "")
         .replace(/يمنحك|يمنحكم/g, "يقدم")
+        .replace(/تمنحك|تمنحكم/g, "تقدم")
+        .replace(/يقدمم/g, "يقدّم")
         .replace(/ليمنحك|ليمنحكم/g, "ليقدم")
+        .replace(/يرضي تطلعاتكم/g, "بطعم واضح")
+        .replace(/الرضا التام/g, "نكهة واضحة")
         .replace(/لمسة ممتعة/g, "لمسة منعشة")
         .replace(/إحساسًا نظيفًا ومروّيًا/g, "نكهة حمضية باردة")
         .replace(/جرجير الطازج/g, "الجرجير الطازج")
         .replace(/الاصيلة/g, "الأصيلة")
         .replace(/طازج، طازج/g, "طازج")
         .replace(/طازجة، طازجة/g, "طازجة")
+        .replace(/دافئ، ودافئ/g, "دافئ")
         .replace(/غنية، وغنية/g, "غنية")
         .replace(/غنية وغنية/g, "غنية")
         .replace(/سميت السمسم/g, "السميت بالسمسم")
@@ -446,6 +828,19 @@ function stripMenuFiller(value: string, locale: Locale) {
     .replace(/\bfresh freshness\b/gi, "freshness")
     .replace(/\bA indulgent\b/g, "A rich")
     .replace(/\bAn hearty\b/g, "A hearty")
+    .replace(/\bwarm and warm\b/gi, "warm")
+    .replace(/\bhearty and hearty\b/gi, "hearty")
+    .replace(/\bmore rich\b/gi, "richer")
+    .replace(/\bfresh and naturally fresh\b/gi, "fresh")
+    .replace(/\brefreshing, fresh and refreshing\b/gi, "refreshing")
+    .replace(/\bcrisp, fresh and refreshing\b/gi, "crisp and refreshing")
+    .replace(/\bJapanese Japanese\b/gi, "Japanese")
+    .replace(/\ba familiar, hearty sip\b/gi, "a cold sip")
+    .replace(/\bsweet, hearty flavor\b/gi, "sweet orange flavor")
+    .replace(/\brefreshing and bubbly dish\b/gi, "refreshing fizz")
+    .replace(/\bcold, crisp and cooling dish\b/gi, "cold, crisp drink")
+    .replace(/\bsmooth and hearty taste\b/gi, "smooth, naturally sweet taste")
+    .replace(/\bwith energy\b/gi, "with natural sweetness")
     .replace(/\bin every bite\b/gi, "")
     .replace(/\bfull of character\b/gi, "well seasoned")
     .replace(/\bfull of comfort\b/gi, "warm")
@@ -482,7 +877,7 @@ function fallbackMenuDescription(
 
   if (locale === "ar") {
     if (/shisha/i.test(englishCategory)) {
-      return `معسل ${itemName} بنكهة مركزة ودخان ناعم، يُحضّر للطلب ويُقدّم على الطاولة.`;
+      return shishaDescription(itemName, locale);
     }
     if (/rice/i.test(englishName)) return "أرز أبيض مطهو بالبخار، يُقدّم ساخنًا بجانب المشويات والطواجن.";
     if (/bulgur/i.test(englishName)) return "برغل مطهو بصلصة طماطم خفيفة، يُقدّم دافئًا بجانب المشويات.";
@@ -504,7 +899,7 @@ function fallbackMenuDescription(
   }
 
   if (/shisha/i.test(englishCategory)) {
-    return `${itemName} shisha with a clean aroma and smooth smoke, prepared to order and served at the table.`;
+    return shishaDescription(itemName, locale);
   }
   if (/rice/i.test(englishName)) return "Steamed white rice served hot as a side for grills and casseroles.";
   if (/bulgur/i.test(englishName)) return "Bulgur cooked with light tomato sauce and served warm beside the grills.";
@@ -523,6 +918,48 @@ function fallbackMenuDescription(
     return `${itemName} served chilled with a balanced, refreshing flavor.`;
   }
   return `${itemName} from the ${categoryName} selection, prepared in Asya's kitchen and served at the table.`;
+}
+
+function shishaDescription(itemName: string, locale: Locale) {
+  const label = itemName.toLowerCase();
+
+  if (locale === "ar") {
+    if (/تفاحتين|التفاحتين/.test(itemName)) return `${itemName} بنكهة التفاح واليانسون، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/عنب/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} يمزج حلاوة العنب مع برودة النعناع، ويُقدّم بدخان ناعم.`;
+    if (/عنب/.test(itemName) && /توت/.test(itemName)) return `${itemName} بنكهة العنب والتوت، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/عنب/.test(itemName)) return `${itemName} بنكهة عنب واضحة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/ليمون/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} بنكهة ليمون ونعناع باردة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/برتقال/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} بنكهة برتقال ونعناع، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/علكة/.test(itemName) && /قرفة/.test(itemName)) return `${itemName} يجمع نكهة العلكة مع دفء القرفة، ويُحضّر للطلب.`;
+    if (/علكة/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} بنكهة العلكة والنعناع، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/علكة/.test(itemName)) return `${itemName} بنكهة العلكة الناعمة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/نعناع/.test(itemName)) return `${itemName} بنكهة نعناع باردة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/توت|روبي|بلو|الأزرق/.test(itemName)) return `${itemName} بنكهة توت واضحة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/بطيخ/.test(itemName)) return `${itemName} بنكهة بطيخ خفيفة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/خوخ/.test(itemName)) return `${itemName} بنكهة خوخ ناعمة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/مستكة/.test(itemName)) return `${itemName} بنكهة مستكة عطرية، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/دبي|ماربيا|هاتريك|لاست|كوكايا|أنيما|نول|باي/.test(itemName)) return `${itemName} خلطة خاصة من تشارمينج، تُحضّر للطلب وتُقدّم بدخان ناعم.`;
+    return `${itemName} بنكهة مختارة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+  }
+
+  if (/double apple/.test(label)) return `${itemName} shisha with apple and anise notes, prepared to order with a smooth draw.`;
+  if (/grape mint/.test(label)) return `${itemName} shisha pairs sweet grape with cooling mint, prepared to order.`;
+  if (/grape berry/.test(label)) return `${itemName} shisha blends grape and berry notes, prepared to order and served at the table.`;
+  if (/grape/.test(label)) return `${itemName} shisha with a clear grape flavor, prepared to order with a smooth draw.`;
+  if (/lemon mint/.test(label)) return `${itemName} shisha with lemon and mint notes, prepared to order and served at the table.`;
+  if (/orange mint/.test(label)) return `${itemName} shisha pairs orange with mint, prepared to order with a smooth draw.`;
+  if (/gum cinnamon/.test(label)) return `${itemName} shisha blends soft gum flavor with warm cinnamon, prepared to order.`;
+  if (/gum mint/.test(label)) return `${itemName} shisha pairs gum flavor with mint, prepared to order with a smooth draw.`;
+  if (/gum/.test(label)) return `${itemName} shisha with a soft gum flavor, prepared to order and served at the table.`;
+  if (/mint/.test(label)) return `${itemName} shisha with a cooling mint flavor, prepared to order with a smooth draw.`;
+  if (/blueberry|berry|ruby/.test(label)) return `${itemName} shisha with berry notes, prepared to order and served at the table.`;
+  if (/watermelon/.test(label)) return `${itemName} shisha with a light watermelon flavor, prepared to order with a smooth draw.`;
+  if (/peach/.test(label)) return `${itemName} shisha with a soft peach flavor, prepared to order and served at the table.`;
+  if (/mastic/.test(label)) return `${itemName} shisha with aromatic mastic notes, prepared to order with a smooth draw.`;
+  if (/dubai|marbella|hattrick|last puff|kokaya|anima|nol gradus|charming/.test(label)) {
+    return `${itemName} is a Charming house blend, prepared to order and served with a smooth draw.`;
+  }
+  return `${itemName} shisha with a selected flavor, prepared to order with a smooth draw.`;
 }
 
 function finalizeMenuDescription(value: string, locale: Locale) {

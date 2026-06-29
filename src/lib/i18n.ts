@@ -114,8 +114,8 @@ export const UI = {
   },
   visit_title: { ar: "الحجز والموقع", en: "Reservations and Location" },
   visit_body: {
-    ar: "للحجز أو معرفة الموقع وساعات العمل، تواصل معنا مباشرة.",
-    en: "For reservations, directions, or hours, contact us directly.",
+    ar: "احجز طاولتك، أو اسأل عن الموقع وساعات العمل مباشرة.",
+    en: "Reserve a table, ask for directions, or check today's hours directly with us.",
   },
 
   call: { ar: "اتصال", en: "Call" },
