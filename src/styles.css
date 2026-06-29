@@ -14744,8 +14744,8 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
   inset: 0;
   content: "";
   background:
-    linear-gradient(180deg, rgba(15, 18, 12, 0.22) 0%, rgba(15, 18, 12, 0.06) 36%, rgba(248, 242, 232, 0.9) 78%, #fff8ed 100%),
-    radial-gradient(circle at 50% 24%, rgba(255, 230, 190, 0.16), transparent 20rem);
+    linear-gradient(180deg, rgba(24, 17, 10, 0.2) 0%, rgba(24, 17, 10, 0.4) 35%, rgba(24, 17, 10, 0.6) 100%),
+    radial-gradient(circle at 50% 24%, rgba(160, 101, 38, 0.16), transparent 20rem);
   pointer-events: none;
 }
 
@@ -14800,8 +14800,8 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 
   .home2026-hero-media::after {
     background:
-      linear-gradient(180deg, rgba(15, 18, 12, 0.18) 0%, rgba(15, 18, 12, 0.04) 31%, rgba(248, 242, 232, 0.9) 73%, #fff8ed 100%),
-      radial-gradient(circle at 50% 22%, rgba(255, 230, 190, 0.15), transparent 18rem);
+      linear-gradient(180deg, rgba(24, 17, 10, 0.2) 0%, rgba(24, 17, 10, 0.42) 35%, rgba(24, 17, 10, 0.64) 100%),
+      radial-gradient(circle at 50% 22%, rgba(160, 101, 38, 0.14), transparent 18rem);
   }
 
   .home2026-hero-copy {
@@ -14810,7 +14810,16 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
   }
 
   .home2026-hero .home2026-eyebrow {
-    color: #8a642b;
+    color: #f0c98c;
+  }
+
+  .home2026-hero h1 {
+    color: #fff8ec;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.32);
+  }
+
+  .home2026-hero-copy > p:not(.home2026-eyebrow) {
+    color: rgba(255, 248, 236, 0.9);
   }
 
   .home2026-gallery-card {
@@ -14850,8 +14859,8 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 
   .home2026-hero-media::after {
     background:
-      linear-gradient(90deg, rgba(15, 18, 12, 0.76) 0%, rgba(15, 18, 12, 0.42) 38%, rgba(15, 18, 12, 0.05) 72%),
-      linear-gradient(180deg, rgba(15, 18, 12, 0.08), rgba(15, 18, 12, 0.42));
+      linear-gradient(90deg, rgba(24, 17, 10, 0.78) 0%, rgba(24, 17, 10, 0.52) 38%, rgba(24, 17, 10, 0.16) 72%),
+      linear-gradient(180deg, rgba(24, 17, 10, 0.2) 0%, rgba(24, 17, 10, 0.4) 35%, rgba(24, 17, 10, 0.6) 100%);
   }
 
   .home2026-hero-copy {
