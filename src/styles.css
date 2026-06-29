@@ -15605,6 +15605,64 @@ body.asya-mobile-nav-hidden .full-menu-page .menu-category-strip {
   }
 }
 
+/* Menu category icon layout guard. Icons use normal flow so they never overlap text. */
+.full-menu-page .menu-display-group > .menu-group-heading {
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-items: center !important;
+}
+
+.full-menu-page .menu-display-group > .menu-group-heading .menu-group-icon {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 1 !important;
+  display: grid !important;
+  width: clamp(3rem, 5vw, 4.35rem) !important;
+  height: clamp(3rem, 5vw, 4.35rem) !important;
+  place-items: center !important;
+  margin: 0 auto 0.88rem !important;
+  color: rgba(173, 133, 81, 0.64) !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+.full-menu-page .menu-display-group > .menu-group-heading .menu-group-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  stroke-width: 1.3 !important;
+}
+
+.full-menu-page .menu-display-group > .menu-group-heading .menu-group-icon:empty {
+  display: none !important;
+}
+
+.full-menu-page .menu-display-group > .menu-group-heading .menu-group-meta,
+.full-menu-page .menu-display-group > .menu-group-heading > h2,
+.full-menu-page .menu-display-group > .menu-group-heading > p:not(.section-kicker),
+.full-menu-page .menu-display-group > .menu-group-heading .menu-group-divider {
+  grid-column: 1 !important;
+}
+
+@media (max-width: 767px) {
+  .full-menu-page .menu-display-group > .menu-group-heading .menu-group-icon {
+    width: 2.85rem !important;
+    height: 2.85rem !important;
+    margin-bottom: 0.72rem !important;
+  }
+
+  .full-menu-page .menu-display-group > .menu-group-heading > h2,
+  .full-menu-page [data-locale="ar"] .menu-display-group > .menu-group-heading > h2 {
+    max-width: min(100%, 286px) !important;
+  }
+
+  .full-menu-page .menu-display-group > .menu-group-heading > p:not(.section-kicker) {
+    max-width: min(100%, 302px) !important;
+  }
+}
+
 /* iPad/tablet item detail containment. Desktop and phone layouts stay untouched. */
 @media (min-width: 768px) and (max-width: 1180px) {
   .item-detail-layer {

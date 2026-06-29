@@ -1,5 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  Beef,
+  CakeSlice,
+  Coffee,
+  CookingPot,
+  Croissant,
+  CupSoda,
+  Egg,
+  Flame,
+  GlassWater,
+  HandPlatter,
+  Leaf,
+  Milk,
+  Pizza,
+  Salad,
+  Soup,
+  UtensilsCrossed,
+  Wheat,
+  type LucideIcon,
+} from "lucide-react";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
@@ -12,7 +32,6 @@ import {
 import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
 import {
   AsyaShell,
-  CategoryGlyph,
   MenuCard,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
@@ -58,6 +77,35 @@ const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = MENU_DISPLAY_GROUPS.ma
   group,
   label: group.shortName,
 }));
+
+const MENU_GROUP_ICONS: Partial<Record<string, LucideIcon>> = {
+  happySpreads: HandPlatter,
+  eggs: Egg,
+  flavoursOfAsyaS: UtensilsCrossed,
+  mrPotatoes: CookingPot,
+  aSweetMemory: CakeSlice,
+  ablaSHandmadeGozlemeAndBorek: Croissant,
+  asyaSPremiumPideS: Wheat,
+  deliciousSoups: Soup,
+  greensAndFriends: Salad,
+  flavoursOfTheTable: HandPlatter,
+  warmAndDeliciousStarts: CookingPot,
+  pasta: UtensilsCrossed,
+  pizza: Pizza,
+  grillAndCasserole: Flame,
+  mrToroSteakhouse: Beef,
+  turkishDessert: CakeSlice,
+  worldSCoffees: Coffee,
+  tea: GlassWater,
+  coldCoffees: Coffee,
+  specialIcedMatchas: Milk,
+  ourSignatures: CupSoda,
+  fromOurGarden: Leaf,
+  homemadeIceTeasAndLemonades: CupSoda,
+  turkishTraditionalDrinks: Milk,
+  softDrinks: CupSoda,
+  milkshake: Milk,
+};
 
 function getMenuControlsOffset(extra = 16) {
   const controls = document.querySelector<HTMLElement>(".full-menu-controls");
@@ -339,8 +387,8 @@ function MenuExplorer() {
 }
 
 function QuickJumpIcon({ group }: { group: MenuCategoryGroup }) {
-  const category = categoryMap.get(group.categoryIds[0] ?? "");
-  return category ? <CategoryGlyph category={category} /> : <Sparkles className="h-4 w-4" />;
+  const Icon = MENU_GROUP_ICONS[group.id];
+  return Icon ? <Icon className="h-4 w-4" /> : null;
 }
 
 const MenuDisplayGroup = memo(function MenuDisplayGroup({
@@ -349,6 +397,7 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
   group: MenuDisplayGroupData;
 }) {
   const { t, tx } = useI18n();
+  const Icon = MENU_GROUP_ICONS[group.definition.id];
 
   return (
     <section
@@ -357,9 +406,11 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
       className={`menu-display-group menu-display-group-${group.definition.id}`}
     >
       <div className="menu-group-heading">
-        <span className="menu-group-icon" aria-hidden="true">
-          <QuickJumpIcon group={group.definition} />
-        </span>
+        {Icon ? (
+          <span className="menu-group-icon" aria-hidden="true">
+            <Icon className="h-4 w-4" />
+          </span>
+        ) : null}
         <p className="section-kicker">
           <span>{tx(group.definition.shortName)}</span>
         </p>
