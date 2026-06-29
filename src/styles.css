@@ -15592,3 +15592,142 @@ body.asya-mobile-nav-hidden .full-menu-page .menu-category-strip {
     padding-bottom: 0.35rem !important;
   }
 }
+
+/* iPad/tablet item detail containment. Desktop and phone layouts stay untouched. */
+@media (min-width: 768px) and (max-width: 1180px) {
+  .item-detail-layer {
+    display: grid !important;
+    place-items: center !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    padding: clamp(1.25rem, 3vw, 2rem) !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .item-detail-dialog {
+    display: flex !important;
+    width: min(760px, calc(100vw - 2rem)) !important;
+    max-width: 760px !important;
+    height: auto !important;
+    max-height: calc(100dvh - 2rem) !important;
+    min-height: 0 !important;
+    flex-direction: column !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+    scroll-padding-bottom: 2rem !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .item-detail-media,
+  .item-detail-media.mobile-item-detail-media {
+    display: grid !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    flex: 0 0 auto !important;
+    place-items: center !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    padding: clamp(1rem, 2.4vw, 1.35rem) clamp(1rem, 2.4vw, 1.35rem) 0 !important;
+    background: #F8F3EA !important;
+  }
+
+  .item-detail-media > img,
+  .item-detail-media > img.mobile-item-detail-image,
+  .item-detail-media.is-placeholder > img,
+  .item-detail-media.is-placeholder > img.mobile-item-detail-image {
+    display: block !important;
+    width: 100% !important;
+    height: clamp(300px, 44dvh, 460px) !important;
+    max-width: 100% !important;
+    max-height: 460px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #F8F3EA !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    scale: 1 !important;
+  }
+
+  .item-detail-copy,
+  .item-detail-copy.mobile-item-detail-content,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+    display: flex !important;
+    width: min(100%, 660px) !important;
+    max-width: 660px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    flex: 0 0 auto !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+    align-self: center !important;
+    overflow: visible !important;
+    padding: clamp(1.25rem, 2.6vw, 1.75rem) clamp(1.2rem, 3vw, 2.25rem) clamp(1.7rem, 3vw, 2.35rem) !important;
+    text-align: center !important;
+  }
+
+  .item-detail-copy h2,
+  .item-detail-copy.mobile-item-detail-content h2,
+  [data-locale="ar"] .item-detail-copy h2,
+  [data-locale="ar"] .item-detail-copy.mobile-item-detail-content h2 {
+    max-width: 22ch !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .item-detail-price-row,
+  .item-detail-flow,
+  .item-detail-description,
+  .item-detail-facts,
+  .item-detail-tag-section,
+  .item-detail-recommendations {
+    width: 100% !important;
+    max-width: 620px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .item-detail-flow {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.15rem !important;
+    overflow: visible !important;
+  }
+
+  .item-detail-description p,
+  .mobile-item-detail-content .item-detail-description p {
+    max-width: 54ch !important;
+    overflow: visible !important;
+    text-align: center !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+
+  .item-detail-fact-grid {
+    width: 100% !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .item-recommendation-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+
+  .item-detail-back,
+  .mobile-item-detail-content .item-detail-back {
+    position: static !important;
+    width: min(100%, 340px) !important;
+    margin: 0.8rem auto 0 !important;
+  }
+}
