@@ -357,17 +357,19 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
       className={`menu-display-group menu-display-group-${group.definition.id}`}
     >
       <div className="menu-group-heading">
-        <p className="section-kicker">
+        <span className="menu-group-icon" aria-hidden="true">
           <QuickJumpIcon group={group.definition} />
+        </span>
+        <p className="section-kicker">
           <span>{tx(group.definition.shortName)}</span>
         </p>
-        <h2>{tx(group.definition.name)}</h2>
-        <p>{tx(group.definition.blurb)}</p>
         <div className="menu-group-meta">
           <span>
             {group.items.length} {t("menuCount")}
           </span>
         </div>
+        <h2>{tx(group.definition.name)}</h2>
+        <p>{tx(group.definition.blurb)}</p>
         <span className="menu-group-divider" aria-hidden="true" />
       </div>
 
