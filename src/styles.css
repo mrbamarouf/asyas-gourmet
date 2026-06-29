@@ -14845,6 +14845,10 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     text-align: right;
   }
 
+  [data-locale="ar"] .home2026-hero h1 {
+    max-width: 19ch;
+  }
+
   .home2026-hero h1 {
     color: #fff8ec;
     text-shadow: 0 4px 22px rgba(0, 0, 0, 0.26);
@@ -14928,5 +14932,12 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
   .home2026-map {
     min-height: 360px;
     border-inline-start: 1px solid rgba(65, 55, 35, 0.12);
+  }
+}
+
+@media (min-width: 1100px) {
+  [data-locale="ar"] .home2026-hero h1 {
+    inline-size: min(19ch, 620px);
+    max-width: min(19ch, 620px);
   }
 }
