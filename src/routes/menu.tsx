@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, Utensils } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
@@ -15,8 +14,6 @@ import {
   AsyaShell,
   CategoryGlyph,
   MenuCard,
-  fadeUp,
-  staggerChildren,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
 
@@ -86,37 +83,47 @@ function FullMenuPage() {
 }
 
 function MenuHero() {
-  const { t } = useI18n();
+  const { locale } = useI18n();
+  const copy =
+    locale === "ar"
+      ? {
+          eyebrow: "اختيارات آسيا",
+          title: "المنيو",
+          body: "اكتشف أشهى الأطباق التركية، من الفطور والمقبلات إلى المشويات، الحلويات والمشروبات، مرتبة لتسهّل عليك اختيار ما يناسبك.",
+          cta: "استكشف المنيو",
+          imageAlt: "مائدة تركية من أطباق أسيا جورميه",
+        }
+      : {
+          eyebrow: "Asya’s Selection",
+          title: "Menu",
+          body: "Explore authentic Turkish breakfast, appetizers, grills, desserts and drinks, thoughtfully organized to make choosing easy.",
+          cta: "Explore Menu",
+          imageAlt: "Turkish table dishes from Asya's Gourmet",
+        };
 
   return (
-    <section className="full-menu-hero">
-      <img
-        src={heroImg}
-        alt=""
-        width={1920}
-        height={1280}
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
-      />
-      <div className="full-menu-hero-overlay" />
-      <motion.div
-        className="full-menu-hero-content"
-        variants={staggerChildren}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.p className="section-kicker" variants={fadeUp}>
-          <Utensils className="h-4 w-4" />
-          <span>{t("menu_page_eyebrow")}</span>
-        </motion.p>
-        <motion.h1 variants={fadeUp}>{t("full_menu_title")}</motion.h1>
-        <motion.p variants={fadeUp}>{t("full_menu_body")}</motion.p>
-        <motion.a href="#menu-categories" className="menu-hero-cta" variants={fadeUp}>
-          {t("exploreFullMenu")}
+    <section className="full-menu-hero menu-editorial-hero" aria-labelledby="menu-hero-title">
+      <div className="full-menu-hero-content menu-editorial-hero-copy" dir={locale === "ar" ? "rtl" : "ltr"}>
+        <p className="section-kicker">
+          <span>{copy.eyebrow}</span>
+        </p>
+        <h1 id="menu-hero-title">{copy.title}</h1>
+        <p>{copy.body}</p>
+        <a href="#menu-categories" className="menu-hero-cta">
+          {copy.cta}
           <ArrowUpRight className="h-4 w-4" />
-        </motion.a>
-      </motion.div>
+        </a>
+      </div>
+      <figure className="menu-editorial-hero-media">
+        <img
+          src={heroImg}
+          alt={copy.imageAlt}
+          width={1600}
+          height={1067}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
     </section>
   );
 }
