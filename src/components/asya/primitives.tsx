@@ -36,11 +36,13 @@ import {
 
 import {
   CATEGORIES,
+  ITEMS,
   RESTAURANT,
   type Locale,
   type LocalizedText,
   type MenuCategory,
   type MenuItem,
+  type MenuTag,
 } from "@/data/menu";
 import { formatVisibleText, I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 
@@ -95,6 +97,8 @@ interface ItemDetailContextValue {
 }
 
 const ItemDetailContext = createContext<ItemDetailContextValue | null>(null);
+const MENU_ITEM_BY_ID = new Map(ITEMS.map((item) => [item.id, item]));
+const MENU_CATEGORY_BY_ID = new Map(CATEGORIES.map((category) => [category.id, category]));
 
 const DESCRIPTION_DISPLAY_COPY: Record<string, LocalizedText> = {
   "e3c89499-bf61-4a1e-9191-3445228a9ee2": {
@@ -609,8 +613,7 @@ export function localizeMenuText(text: LocalizedText, locale: Locale) {
 }
 
 export function localizeMenuItemName(item: MenuItem, locale: Locale) {
-  const override = ITEM_NAME_DISPLAY_COPY[item.id]?.[locale];
-  return override ? formatVisibleText(override, locale) : localizeMenuText(item.name, locale);
+  return localizeMenuText(item.name, locale);
 }
 
 export function localizeMenuDescription(item: MenuItem, category: MenuCategory, locale: Locale) {
@@ -677,32 +680,28 @@ function polishMenuDescription(
   category: MenuCategory,
   locale: Locale,
 ) {
-  const override = DESCRIPTION_DISPLAY_COPY[item.id]?.[locale];
-  if (override) return finalizeMenuDescription(formatVisibleText(override, locale), locale);
+  void item;
+  void category;
 
-  const itemName = localizeMenuItemName(item, locale);
-  const categoryName = cleanLocalizedMenuText(category.name[locale], locale);
-  const fallback = fallbackMenuDescription(item, category, locale, itemName, categoryName);
-  const normalized = stripMenuFiller(value, locale);
-  if (!normalized || normalized.length < (locale === "ar" ? 18 : 24)) {
-    return finalizeMenuDescription(fallback, locale);
-  }
+  if (!value) return "";
+  const normalized = formatVisibleText(value, locale)
+    .replace(/[—_|]/g, locale === "ar" ? " " : ",")
+    .replace(/…|\.{2,}/g, ".")
+    .replace(/\s+/g, " ")
+    .trim();
 
-  const badSentence =
-    locale === "ar"
-      ? /(الجماليات|الجوال|الصور|الأسعار|مصدر|رسمي|واجهة|تصفح|أفضل تجربة|تجربة لا تنسى)/
-      : /(aesthetic|website|mobile|image|price|source|official|interface|browse|scan|clear photos|best experience|unforgettable experience)/i;
+  if (!normalized) return "";
 
-  const sentences = normalized
-    .split(/(?<=[.!؟])\s+/u)
-    .map((sentence) => sentence.trim())
-    .filter((sentence) => sentence.length > 8 && !badSentence.test(sentence));
-
-  if (!sentences.length) return finalizeMenuDescription(fallback, locale);
-
-  const selected = sentences.slice(0, 2).join(" ").replace(/\s+/g, " ").trim();
-  const limit = locale === "ar" ? 220 : 230;
-  return finalizeMenuDescription(clipDescription(selected, locale, limit), locale);
+  return locale === "ar"
+    ? normalized
+        .replace(/\s+([،.؟!:؛])/g, "$1")
+        .replace(/،\s*[،.]+/g, ".")
+        .trim()
+    : normalized
+        .replace(/\s+,/g, ",")
+        .replace(/,\s*,+/g, ",")
+        .replace(/\s+\./g, ".")
+        .trim();
 }
 
 function stripMenuFiller(value: string, locale: Locale) {
@@ -1035,8 +1034,13 @@ export function compactOfficialDescription(value: string, locale: Locale) {
   if (!value) return "";
 
   const limit = locale === "ar" ? 170 : 185;
-  const normalized = finalizeMenuDescription(value, locale).replace(/\s+/g, " ").trim();
-  return finalizeMenuDescription(clipDescription(normalized, locale, limit), locale);
+  const normalized = formatVisibleText(value, locale)
+    .replace(/[—_|]/g, locale === "ar" ? " " : ",")
+    .replace(/…|\.{2,}/g, ".")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return clipDescription(normalized, locale, limit);
 }
 
 function clipDescription(value: string, locale: Locale, limit: number) {
@@ -1687,6 +1691,47 @@ export const MenuCard = memo(function MenuCard({
   );
 });
 
+function formatOfficialFact(value: string | undefined, kind: "prep" | "calories" | "weight", locale: Locale) {
+  const trimmed = value?.trim();
+  if (!trimmed) return "";
+
+  if (kind === "prep") return locale === "ar" ? `${trimmed} دقيقة` : `${trimmed} min`;
+  if (kind === "calories") return locale === "ar" ? `${trimmed} سعرة` : `${trimmed} kcal`;
+  return locale === "ar" ? `${trimmed} جم` : `${trimmed} g`;
+}
+
+function localizeTagLabel(tag: MenuTag, locale: Locale) {
+  return cleanLocalizedMenuText(tag.label[locale], locale);
+}
+
+function ItemDetailTagSection({
+  title,
+  tags,
+  locale,
+  tone,
+}: {
+  title: string;
+  tags: MenuTag[];
+  locale: Locale;
+  tone: "allergen" | "dietary";
+}) {
+  const labels = tags.map((tag) => localizeTagLabel(tag, locale)).filter(Boolean);
+  if (!labels.length) return null;
+
+  return (
+    <section className={`item-detail-tag-section item-detail-tag-section-${tone}`}>
+      <h3>{title}</h3>
+      <div className="item-detail-tag-list" dir={locale === "ar" ? "rtl" : "ltr"}>
+        {labels.map((label) => (
+          <span className="item-detail-tag" key={label}>
+            {label}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ItemDetailView({
   selection,
   current,
@@ -1703,6 +1748,7 @@ function ItemDetailView({
   const previousScrollYRef = useRef(0);
   const isMobileSheet = useMediaQuery("(max-width: 767px)");
   const prefersReducedMotion = useReducedMotion();
+  const { openItemDetail } = useItemDetail();
   const item = selection?.item;
   const category = selection?.category;
   const labels = {
@@ -1712,6 +1758,13 @@ function ItemDetailView({
     options: locale === "ar" ? "الاختيارات" : "Choices",
     description: locale === "ar" ? "المكونات والطريقة" : "Ingredients and Preparation",
     imageComing: locale === "ar" ? "من مطبخ أسيا" : "From Asya's Kitchen",
+    quickFacts: locale === "ar" ? "معلومات سريعة" : "Quick Facts",
+    prepTime: locale === "ar" ? "وقت التحضير" : "Prep Time",
+    calories: locale === "ar" ? "السعرات" : "Calories",
+    weight: locale === "ar" ? "الوزن" : "Weight",
+    allergens: locale === "ar" ? "الحساسية" : "Allergens",
+    dietary: locale === "ar" ? "تصنيفات غذائية" : "Dietary Labels",
+    recommendedWith: locale === "ar" ? "يناسب مع" : "Recommended With",
   };
 
   useEffect(() => {
@@ -1772,6 +1825,26 @@ function ItemDetailView({
   const itemName = localizeMenuItemName(item, locale);
   const categoryName = localizeMenuText(category.name, locale);
   const description = localizeMenuDescription(item, category, locale);
+  const quickFacts = [
+    { label: labels.prepTime, value: formatOfficialFact(item.prepTime, "prep", locale) },
+    { label: labels.calories, value: formatOfficialFact(item.calories, "calories", locale) },
+    { label: labels.weight, value: formatOfficialFact(item.weight, "weight", locale) },
+  ].filter((fact) => fact.value);
+  const recommendationEntries = (item.recommendations ?? [])
+    .map((recommendation) => {
+      const recommendedItem = MENU_ITEM_BY_ID.get(recommendation.itemId);
+      const recommendedCategory = recommendedItem
+        ? MENU_CATEGORY_BY_ID.get(recommendedItem.category)
+        : undefined;
+      const reason = recommendation.reason
+        ? cleanLocalizedMenuText(recommendation.reason[locale], locale)
+        : "";
+
+      return recommendedItem && recommendedCategory && recommendedItem.id !== item.id
+        ? { item: recommendedItem, category: recommendedCategory, reason }
+        : null;
+    })
+    .filter(Boolean) as Array<{ item: MenuItem; category: MenuCategory; reason: string }>;
   const dialogMotion = prefersReducedMotion
     ? {
         initial: { opacity: 0 },
@@ -1874,6 +1947,70 @@ function ItemDetailView({
                 <MenuOptions item={item} />
               </div>
             ) : null}
+            {quickFacts.length ? (
+              <section className="item-detail-facts" aria-label={labels.quickFacts}>
+                <h3>{labels.quickFacts}</h3>
+                <div className="item-detail-fact-grid">
+                  {quickFacts.map((fact) => (
+                    <span className="item-detail-fact" key={fact.label}>
+                      <small>{fact.label}</small>
+                      <strong>{fact.value}</strong>
+                    </span>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+            {item.allergens?.length ? (
+              <ItemDetailTagSection
+                title={labels.allergens}
+                tags={item.allergens}
+                locale={locale}
+                tone="allergen"
+              />
+            ) : null}
+            {item.dietaryLabels?.length ? (
+              <ItemDetailTagSection
+                title={labels.dietary}
+                tags={item.dietaryLabels}
+                locale={locale}
+                tone="dietary"
+              />
+            ) : null}
+            {recommendationEntries.length ? (
+              <section className="item-detail-recommendations">
+                <h3>{labels.recommendedWith}</h3>
+                <div className="item-recommendation-grid">
+                  {recommendationEntries.map((recommendation) => {
+                    const recommendedName = localizeMenuItemName(recommendation.item, locale);
+
+                    return (
+                      <button
+                        className="item-recommendation-card"
+                        key={recommendation.item.id}
+                        type="button"
+                        onClick={() =>
+                          openItemDetail({
+                            item: recommendation.item,
+                            category: recommendation.category,
+                          })
+                        }
+                      >
+                        <DishImage
+                          item={recommendation.item}
+                          alt={recommendedName}
+                          className="item-recommendation-image"
+                        />
+                        <span className="item-recommendation-copy">
+                          <strong>{recommendedName}</strong>
+                          <PriceTag item={recommendation.item} />
+                          {recommendation.reason ? <small>{recommendation.reason}</small> : null}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            ) : null}
           </div>
           {current === "menu" ? (
             <button type="button" className="item-detail-back" onClick={onClose}>
@@ -1963,7 +2100,7 @@ export const CategoryGlyph = memo(function CategoryGlyph({ category }: { categor
 });
 
 export function categoryById(id: string) {
-  return CATEGORIES.find((category) => category.id === id);
+  return MENU_CATEGORY_BY_ID.get(id);
 }
 
 export function getDishImage(item: MenuItem) {

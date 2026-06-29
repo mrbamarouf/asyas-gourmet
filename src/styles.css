@@ -32,6 +32,171 @@
   --font-arabic: "Noto Kufi Arabic", "Alegreya Sans", system-ui, sans-serif;
 }
 
+/* Official Foost detail fields. Scoped to the item detail sheet/modal only. */
+.item-detail-facts,
+.item-detail-tag-section,
+.item-detail-recommendations {
+  width: 100%;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--charcoal);
+}
+
+.item-detail-facts h3,
+.item-detail-tag-section h3,
+.item-detail-recommendations h3 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: var(--deep-navy);
+}
+
+.item-detail-fact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.item-detail-fact {
+  min-width: 0;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.7rem 0.65rem;
+  border: 1px solid rgba(200, 155, 106, 0.22);
+  border-radius: 14px;
+  background: rgba(249, 246, 240, 0.68);
+}
+
+.item-detail-fact small {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted-foreground);
+}
+
+.item-detail-fact strong {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--charcoal);
+}
+
+.item-detail-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.item-detail-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(79, 90, 62, 0.16);
+  border-radius: 999px;
+  background: rgba(242, 236, 227, 0.82);
+  color: var(--deep-navy);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.item-recommendation-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.item-recommendation-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem;
+  border: 1px solid rgba(200, 155, 106, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.92);
+  color: var(--charcoal);
+  text-align: start;
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.item-recommendation-card:hover,
+.item-recommendation-card:focus-visible {
+  border-color: rgba(79, 90, 62, 0.36);
+  box-shadow: 0 12px 28px -24px rgba(46, 43, 39, 0.45);
+  transform: translateY(-1px);
+}
+
+.item-recommendation-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+}
+
+.item-recommendation-copy {
+  min-width: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.item-recommendation-copy > strong {
+  color: var(--charcoal);
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.item-recommendation-copy small {
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.item-recommendation-copy .price-tag {
+  width: fit-content;
+}
+
+[data-locale="ar"] .item-detail-facts,
+[data-locale="ar"] .item-detail-tag-section,
+[data-locale="ar"] .item-detail-recommendations,
+[data-locale="ar"] .item-recommendation-card {
+  direction: rtl;
+}
+
+@media (max-width: 767px) {
+  .mobile-item-detail-content .item-detail-facts,
+  .mobile-item-detail-content .item-detail-tag-section,
+  .mobile-item-detail-content .item-detail-recommendations {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .mobile-item-detail-content .item-detail-fact-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-item-detail-content .item-detail-tag-list {
+    justify-content: center;
+  }
+
+  .mobile-item-detail-content .item-recommendation-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .mobile-item-detail-content .item-recommendation-image {
+    width: 92px;
+    height: 92px;
+  }
+
+  .mobile-item-detail-content .item-recommendation-copy {
+    justify-items: center;
+  }
+}
+
 :root {
   --radius: 1rem;
   --background: #F9F6F0;

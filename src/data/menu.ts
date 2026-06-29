@@ -2,6 +2,7 @@
 // Product cards use official Foost item media; missing item images fall back to a labeled placeholder.
 
 import placeholderImg from "@/assets/dish-placeholder.jpg";
+import { OFFICIAL_ITEM_DETAILS } from "./officialFoostDetails";
 
 export type Locale = "ar" | "en";
 export type LocalizedText = Record<Locale, string>;
@@ -11,6 +12,16 @@ export interface MenuOption {
   price: string;
   pricingType?: string;
   order?: number;
+}
+
+export interface MenuTag {
+  key: string;
+  label: LocalizedText;
+}
+
+export interface MenuRecommendation {
+  itemId: string;
+  reason?: LocalizedText;
 }
 
 export interface MenuItem {
@@ -29,6 +40,12 @@ export interface MenuItem {
   bakery?: boolean;
   turkishDrink?: boolean;
   order?: number;
+  prepTime?: string;
+  calories?: string;
+  weight?: string;
+  allergens?: MenuTag[];
+  dietaryLabels?: MenuTag[];
+  recommendations?: MenuRecommendation[];
 }
 
 export interface MenuCategory {
@@ -5505,8 +5522,9 @@ export const CATEGORIES: MenuCategory[] = RAW_CATEGORIES.map((category) => ({
 
 export const ITEMS: MenuItem[] = RAW_ITEMS.map((item) => ({
   ...item,
-  currency: item.currency ?? "SAR",
-  image: item.sourceImageUrl ?? placeholderImg,
+  ...OFFICIAL_ITEM_DETAILS[item.id],
+  currency: OFFICIAL_ITEM_DETAILS[item.id]?.currency ?? item.currency ?? "SAR",
+  image: OFFICIAL_ITEM_DETAILS[item.id]?.image ?? item.sourceImageUrl ?? placeholderImg,
 }));
 
 export const POPULAR_ITEMS = ITEMS.filter((item) => item.popular).slice(0, 12);
