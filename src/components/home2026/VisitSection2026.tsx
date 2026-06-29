@@ -9,6 +9,8 @@ interface VisitSection2026Props {
   call: string;
   mapLabel: string;
   address: string;
+  image: string;
+  imageAlt: string;
 }
 
 export function VisitSection2026({
@@ -18,6 +20,8 @@ export function VisitSection2026({
   call,
   mapLabel,
   address,
+  image,
+  imageAlt,
 }: VisitSection2026Props) {
   return (
     <section id="visit" className="home2026-section home2026-visit" aria-labelledby="home2026-visit-title">
@@ -45,21 +49,26 @@ export function VisitSection2026({
             </a>
           </div>
         </div>
-        <a
-          href={RESTAURANT.mapsUrl}
-          className="home2026-map"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={mapLabel}
-        >
-          <span className="home2026-map-road road-one" />
-          <span className="home2026-map-road road-two" />
-          <span className="home2026-map-road road-three" />
-          <span className="home2026-map-pin">
-            <MapPin className="h-5 w-5" aria-hidden="true" />
-          </span>
-          <strong>{mapLabel}</strong>
-        </a>
+        <div className="home2026-visit-visual">
+          <figure className="home2026-visit-media">
+            <img src={image} alt={imageAlt} width={1200} height={900} loading="lazy" decoding="async" />
+          </figure>
+          <a
+            href={RESTAURANT.mapsUrl}
+            className="home2026-map"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={mapLabel}
+          >
+            <span className="home2026-map-road road-one" />
+            <span className="home2026-map-road road-two" />
+            <span className="home2026-map-road road-three" />
+            <span className="home2026-map-pin">
+              <MapPin className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <strong>{mapLabel}</strong>
+          </a>
+        </div>
       </article>
     </section>
   );

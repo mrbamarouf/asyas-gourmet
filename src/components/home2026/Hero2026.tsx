@@ -2,14 +2,17 @@ import { ArrowUpRight, Heart, Leaf, MapPin, Sparkles } from "lucide-react";
 
 import { RESTAURANT } from "@/data/menu";
 
+import { CinematicVideo2026, type CinematicVideoAsset2026 } from "./CinematicVideo2026";
+
 interface Hero2026Props {
   eyebrow: string;
   title: string;
   subtitle: string;
   cta: string;
   directions: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
+  video?: CinematicVideoAsset2026;
   trust: string[];
 }
 
@@ -21,23 +24,28 @@ export function Hero2026({
   directions,
   image,
   imageAlt,
+  video,
   trust,
 }: Hero2026Props) {
   const icons = [Leaf, Sparkles, Heart];
 
   return (
     <section className="home2026-hero" aria-labelledby="home2026-hero-title">
-      <figure className="home2026-hero-media">
-        <img
-          src={image}
-          alt={imageAlt}
-          width={1600}
-          height={1067}
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-      </figure>
+      {video ? (
+        <CinematicVideo2026 asset={video} className="home2026-hero-media" eager />
+      ) : (
+        <figure className="home2026-hero-media">
+          <img
+            src={image}
+            alt={imageAlt}
+            width={1600}
+            height={1067}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </figure>
+      )}
       <div className="home2026-hero-copy">
         <p className="home2026-eyebrow">{eyebrow}</p>
         <h1 id="home2026-hero-title">{title}</h1>

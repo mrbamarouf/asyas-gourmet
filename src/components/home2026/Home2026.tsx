@@ -3,7 +3,6 @@ import { Heart, Leaf, Sparkles } from "lucide-react";
 
 import {
   CHEF_PICK_ITEMS,
-  ITEMS,
   POPULAR_ITEMS,
   RESTAURANT,
   type MenuCategory,
@@ -12,21 +11,15 @@ import {
 import {
   AsyaShell,
   categoryById,
-  getDishImage,
-  isOfficialImage,
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
 
-import bakeryImg from "@/assets/bakery.jpg";
-import mezzeImg from "@/assets/dish-mezze.jpg";
-import heroImg from "@/assets/hero-turkish-table.jpg";
 import interiorImg from "@/assets/interior.jpg";
-import teaImg from "@/assets/tea.jpg";
 
 import { BakeryFeature2026 } from "./BakeryFeature2026";
 import { BreakfastFeature2026 } from "./BreakfastFeature2026";
+import type { CinematicVideoAsset2026 } from "./CinematicVideo2026";
 import { Hero2026 } from "./Hero2026";
-import { HomeCTA2026 } from "./HomeCTA2026";
 import { MomentsGallery2026 } from "./MomentsGallery2026";
 import { SignatureDishes2026 } from "./SignatureDishes2026";
 import { VisitSection2026 } from "./VisitSection2026";
@@ -34,11 +27,6 @@ import { VisitSection2026 } from "./VisitSection2026";
 export interface HomeDishEntry {
   item: MenuItem;
   category: MenuCategory;
-}
-
-interface HomeMedia {
-  src: string;
-  alt: string;
 }
 
 const HOME2026_COPY = {
@@ -71,6 +59,7 @@ const HOME2026_COPY = {
     visitDirections: "الاتجاهات",
     visitCall: "اتصال",
     visitMap: "موقع أسيا جورميه",
+    visitAlt: "صالة أسيا جورميه",
     finalTitle: "المنيو الكامل",
     finalBody: "اختر طبقك من الفطور التركي، المخبوزات، المشويات، الحلويات والمشروبات.",
     finalCta: "اكتشف المنيو الكامل",
@@ -105,12 +94,16 @@ const HOME2026_COPY = {
     visitDirections: "Directions",
     visitCall: "Call",
     visitMap: "Asya’s Gourmet Location",
+    visitAlt: "Asya's Gourmet dining room",
     finalTitle: "Full Menu",
     finalBody: "Choose from Turkish breakfast, bakery, grills, desserts, and drinks.",
     finalCta: "Explore the Full Menu",
     finalAlt: "Asya's Gourmet dining room",
   },
 } as const;
+
+const videoPath = (file: string) => `/media/home2026/videos/${file}`;
+const posterPath = (file: string) => `/media/home2026/posters/${file}`;
 
 export function Home2026() {
   return (
@@ -123,7 +116,8 @@ export function Home2026() {
 function Home2026Content() {
   const { locale, tx } = useI18n();
   const copy = HOME2026_COPY[locale];
-  const content = useMemo(() => buildHome2026Content(locale, tx), [locale, tx]);
+  const content = useMemo(() => buildHome2026Content(), []);
+  const videos = useMemo(() => buildHome2026Videos(locale), [locale]);
 
   return (
     <main className="home2026-shell">
@@ -133,8 +127,7 @@ function Home2026Content() {
         subtitle={copy.heroSubtitle}
         cta={copy.heroCta}
         directions={copy.heroDirections}
-        image={heroImg}
-        imageAlt={copy.heroAlt}
+        video={videos.hero}
         trust={[copy.trustRecipes, copy.trustFresh, copy.trustMade]}
       />
       <SignatureDishes2026
@@ -147,20 +140,18 @@ function Home2026Content() {
         title={copy.breakfastTitle}
         body={copy.breakfastBody}
         cta={copy.breakfastCta}
-        image={mezzeImg}
-        imageAlt={copy.breakfastAlt}
+        video={videos.breakfast}
       />
       <BakeryFeature2026
         title={copy.bakeryTitle}
         body={copy.bakeryBody}
         cta={copy.bakeryCta}
-        image={bakeryImg}
-        imageAlt={copy.bakeryAlt}
+        video={videos.bakery}
       />
       <MomentsGallery2026
         eyebrow={copy.galleryEyebrow}
         title={copy.galleryTitle}
-        photos={content.gallery}
+        moments={videos.moments}
       />
       <div className="home2026-mobile-trust" aria-label={copy.heroEyebrow}>
         {[copy.trustRecipes, copy.trustFresh, copy.trustMade].map((label, index) => {
@@ -180,32 +171,72 @@ function Home2026Content() {
         call={copy.visitCall}
         mapLabel={copy.visitMap}
         address={tx(RESTAURANT.address)}
-      />
-      <HomeCTA2026
-        title={copy.finalTitle}
-        body={copy.finalBody}
-        cta={copy.finalCta}
         image={interiorImg}
-        imageAlt={copy.finalAlt}
+        imageAlt={copy.visitAlt}
       />
     </main>
   );
 }
 
-function buildHome2026Content(
-  locale: "ar" | "en",
-  tx: (obj: Record<"ar" | "en", string>) => string,
-) {
+function buildHome2026Content() {
   const signatures = toDishEntries(uniqueItems([...CHEF_PICK_ITEMS, ...POPULAR_ITEMS])).slice(0, 4);
-  const galleryItems = toDishEntries(ITEMS.filter(isOfficialImage)).slice(0, 2);
-  const gallery: HomeMedia[] = [
-    { src: interiorImg, alt: HOME2026_COPY[locale].galleryAlt },
-    { src: teaImg, alt: locale === "ar" ? "قهوة تركية من أسيا جورميه" : "Turkish coffee at Asya's Gourmet" },
-    { src: bakeryImg, alt: HOME2026_COPY[locale].bakeryAlt },
-    ...galleryItems.map((entry) => ({ src: getDishImage(entry.item), alt: tx(entry.item.name) })),
-  ].slice(0, 5);
 
-  return { signatures, gallery };
+  return { signatures };
+}
+
+function buildHome2026Videos(locale: "ar" | "en") {
+  const labels = {
+    ar: {
+      hero: "مشهد الشواء في أسيا جورميه",
+      breakfast: "تفاصيل الفطور التركي",
+      bakery: "تحضير البيدا في مخبز أسيا",
+      interiorLights: "أجواء المطعم",
+      doner: "من المطبخ",
+      craft: "حرفة التحضير",
+      team: "فريق أسيا",
+      lounge: "ركن اللاونج",
+      diningRoom: "صالة الضيافة",
+      chef: "لمسة الشيف",
+    },
+    en: {
+      hero: "Asya's grill scene",
+      breakfast: "Turkish breakfast details",
+      bakery: "Pide preparation at Asya's bakery",
+      interiorLights: "Restaurant atmosphere",
+      doner: "From the kitchen",
+      craft: "Craft in preparation",
+      team: "Asya's team",
+      lounge: "Lounge moment",
+      diningRoom: "Dining room",
+      chef: "Chef's touch",
+    },
+  }[locale];
+
+  const makeAsset = (
+    video: string,
+    poster: string,
+    label: string,
+  ): CinematicVideoAsset2026 => ({
+    src: videoPath(video),
+    poster: posterPath(poster),
+    alt: label,
+    label,
+  });
+
+  return {
+    hero: makeAsset("asya-hero-grill.mov", "asya-hero-grill.png", labels.hero),
+    breakfast: makeAsset("asya-breakfast.mov", "asya-breakfast.png", labels.breakfast),
+    bakery: makeAsset("asya-bakery-pide.mov", "asya-bakery-pide.png", labels.bakery),
+    moments: [
+      makeAsset("asya-moment-dining-room.mov", "asya-moment-dining-room.png", labels.diningRoom),
+      makeAsset("asya-moment-interior-lights.mov", "asya-moment-interior-lights.png", labels.interiorLights),
+      makeAsset("asya-moment-doner.mov", "asya-moment-doner.png", labels.doner),
+      makeAsset("asya-moment-craft.mov", "asya-moment-craft.png", labels.craft),
+      makeAsset("asya-moment-chef.mov", "asya-moment-chef.png", labels.chef),
+      makeAsset("asya-moment-team.mov", "asya-moment-team.png", labels.team),
+      makeAsset("asya-moment-lounge.mov", "asya-moment-lounge.png", labels.lounge),
+    ],
+  };
 }
 
 function uniqueItems(items: MenuItem[]) {
