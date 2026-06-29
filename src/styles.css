@@ -12487,3 +12487,305 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     text-align: center !important;
   }
 }
+
+/* Urgent metadata layout guard: mobile menu cards plus item detail sheet. */
+@media (max-width: 767px) {
+  .menu-card,
+  .full-menu-page .menu-card,
+  .full-menu-page .menu-card:nth-child(5n + 1),
+  .full-menu-section:nth-child(3n + 1) .menu-card:first-child,
+  .breakfast-list .menu-card,
+  .dessert-grid .menu-card,
+  .drinks-section .menu-card {
+    display: grid !important;
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    min-height: 124px !important;
+    height: auto !important;
+    overflow: hidden !important;
+    direction: ltr !important;
+  }
+
+  .menu-card-image,
+  .full-menu-page .menu-card-image,
+  .menu-card-feature .menu-card-image,
+  .menu-card-wide .menu-card-image,
+  .full-menu-section:nth-child(3n + 1) .menu-card:first-child .menu-card-image {
+    grid-column: 1 !important;
+    width: 112px !important;
+    min-width: 112px !important;
+    max-width: 112px !important;
+    height: 124px !important;
+    min-height: 124px !important;
+    max-height: 124px !important;
+    overflow: hidden !important;
+  }
+
+  .menu-card-image img,
+  .full-menu-page .dish-image-shell img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .menu-card-copy,
+  .full-menu-page .menu-card-copy,
+  .full-menu-explorer[dir="ltr"] .menu-card-copy,
+  [data-locale="ar"] .menu-card-copy {
+    grid-column: 2 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-content: center !important;
+    justify-items: start !important;
+    gap: 0.35rem !important;
+    overflow: hidden !important;
+    padding: 0.72rem 0.78rem !important;
+    text-align: start !important;
+  }
+
+  [data-locale="ar"] .menu-card-copy {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  .menu-card-meta,
+  .full-menu-page .menu-card-meta,
+  .full-menu-explorer[dir="ltr"] .menu-card-meta {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.35rem !important;
+  }
+
+  .menu-card-meta > span:not(.price-tag) {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .menu-card-meta .price-tag {
+    flex: 0 0 auto !important;
+  }
+
+  .menu-card h3,
+  .full-menu-page .menu-card h3 {
+    display: -webkit-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    color: var(--ink) !important;
+    font-size: 0.98rem !important;
+    line-height: 1.3 !important;
+    text-align: inherit !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+  }
+
+  .menu-card p,
+  .full-menu-page .menu-card p {
+    display: -webkit-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    max-height: calc(2 * 1.45em) !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    color: var(--ink-soft) !important;
+    font-size: 0.76rem !important;
+    line-height: 1.45 !important;
+    text-align: inherit !important;
+    text-overflow: ellipsis !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+  }
+
+  .menu-card-more {
+    display: none !important;
+  }
+}
+
+.item-detail-dialog {
+  isolation: isolate !important;
+}
+
+.item-detail-close {
+  display: none !important;
+}
+
+.item-detail-price-row {
+  order: 1 !important;
+}
+
+.item-detail-copy h2,
+.item-detail-copy.mobile-item-detail-content h2 {
+  order: 2 !important;
+}
+
+.item-detail-flow {
+  order: 3 !important;
+}
+
+.item-detail-back {
+  order: 4 !important;
+}
+
+.item-detail-flow {
+  gap: 1.05rem !important;
+}
+
+.item-detail-description {
+  gap: 0.62rem !important;
+}
+
+.item-detail-description p,
+.mobile-item-detail-content .item-detail-description p {
+  max-width: 54ch !important;
+  overflow: visible !important;
+}
+
+.item-detail-section-divider {
+  margin-block: 0.15rem !important;
+}
+
+.item-detail-fact-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.55rem !important;
+}
+
+.item-detail-fact {
+  min-width: 0 !important;
+  padding: 0.66rem 0.52rem !important;
+  text-align: center !important;
+}
+
+.item-detail-fact small,
+.item-detail-fact strong {
+  overflow-wrap: anywhere !important;
+  text-align: center !important;
+}
+
+.item-detail-tag-list {
+  max-width: 100% !important;
+}
+
+.item-detail-tag {
+  max-width: 100% !important;
+  text-align: center !important;
+  white-space: normal !important;
+}
+
+.item-recommendation-grid {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 0.75rem !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 0.1rem 0 0.35rem !important;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item-recommendation-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.item-recommendation-card {
+  flex: 0 0 min(86%, 340px) !important;
+  min-width: 0 !important;
+  max-width: 340px !important;
+  scroll-snap-align: center;
+}
+
+.item-recommendation-copy small {
+  display: -webkit-box !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+}
+
+@media (max-width: 767px) {
+  .item-detail-copy,
+  .item-detail-copy.mobile-item-detail-content,
+  .item-detail-dialog[dir="rtl"] .item-detail-copy.mobile-item-detail-content {
+    gap: 0.72rem !important;
+  }
+
+  .item-detail-price-row {
+    margin-top: 0 !important;
+  }
+
+  .item-detail-flow {
+    width: min(100%, 340px) !important;
+    gap: 0.9rem !important;
+  }
+
+  .item-detail-description,
+  .item-detail-facts,
+  .item-detail-tag-section,
+  .item-detail-recommendations {
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+  }
+
+  .item-detail-description p,
+  .mobile-item-detail-content .item-detail-description p {
+    max-width: 340px !important;
+  }
+
+  .item-detail-fact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.42rem !important;
+  }
+
+  .item-detail-fact {
+    min-height: 68px !important;
+    align-content: center !important;
+    padding: 0.55rem 0.32rem !important;
+  }
+
+  .item-detail-fact small {
+    font-size: 0.61rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .item-detail-fact strong {
+    font-size: 0.78rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .item-recommendation-card {
+    flex-basis: min(82%, 286px) !important;
+    grid-template-columns: 74px minmax(0, 1fr) !important;
+    justify-items: stretch !important;
+    text-align: start !important;
+  }
+
+  .item-recommendation-image {
+    width: 74px !important;
+    height: 74px !important;
+  }
+
+  .item-recommendation-copy {
+    justify-items: start !important;
+    text-align: start !important;
+  }
+
+  [data-locale="ar"] .item-recommendation-card,
+  [data-locale="ar"] .item-recommendation-copy {
+    text-align: right !important;
+  }
+}

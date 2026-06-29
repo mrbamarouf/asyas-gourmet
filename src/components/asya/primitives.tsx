@@ -1929,10 +1929,10 @@ function ItemDetailView({
         </div>
 
         <div className="item-detail-copy mobile-item-detail-content">
-          <h2>{itemName}</h2>
           <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
             <PriceTag item={item} />
           </div>
+          <h2>{itemName}</h2>
           <div className="item-detail-flow">
             {description ? (
               <div className="item-detail-description">
