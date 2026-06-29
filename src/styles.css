@@ -15533,3 +15533,62 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     width: 150px !important;
   }
 }
+
+/* Menu category chips original position only. */
+.full-menu-page .full-menu-controls,
+.full-menu-page .controls-wrap,
+.full-menu-page .menu-category-strip {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: auto !important;
+  transform: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  will-change: auto !important;
+}
+
+.full-menu-page .full-menu-controls {
+  display: block !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-top: 0 !important;
+  padding-bottom: 0.65rem !important;
+  transition: none !important;
+}
+
+.full-menu-page .menu-category-strip {
+  max-height: none !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  transition: none !important;
+}
+
+body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls,
+body.asya-mobile-nav-hidden .full-menu-page .full-menu-controls {
+  max-height: none !important;
+  padding-bottom: 0.65rem !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.asya-scroll-chrome-hidden .full-menu-page .controls-wrap,
+body.asya-mobile-nav-hidden .full-menu-page .controls-wrap,
+body.asya-scroll-chrome-hidden .full-menu-page .menu-category-strip,
+body.asya-mobile-nav-hidden .full-menu-page .menu-category-strip {
+  max-height: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 767px) {
+  .full-menu-page .full-menu-controls,
+  body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls,
+  body.asya-mobile-nav-hidden .full-menu-page .full-menu-controls {
+    padding-bottom: 0.35rem !important;
+  }
+}
