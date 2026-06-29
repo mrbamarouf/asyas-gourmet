@@ -37,6 +37,7 @@ import {
 import { useI18n } from "@/lib/i18n";
 
 import bakeryImg from "@/assets/bakery.jpg";
+import mezzeImg from "@/assets/dish-mezze.jpg";
 import heroImg from "@/assets/hero-turkish-table.jpg";
 import interiorImg from "@/assets/interior.jpg";
 import logoImg from "@/assets/asyas-logo-transparent.png";
@@ -87,19 +88,88 @@ const HOME_MENU_GROUPS = REFERENCE_MENU_GROUPS.filter((group) =>
 const categoryMap = new Map<string, MenuCategory>();
 const MOBILE_LAYOUT_QUERY = "(max-width: 767px)";
 
+const HOME_PAGE_COPY = {
+  ar: {
+    heroEyebrow: "أسيا جورميه",
+    heroTitle: "فطور ومخبوزات ومشويات تركية",
+    heroBody: "ابدأ بالفطور التركي، ثم اختر من البيدا الساخنة، المشويات، الحلويات والشاي.",
+    heroCta: "استعرض المنيو",
+    heroAlt: "مائدة تركية من أسيا جورميه",
+    signatureLabel: "مختارات مميزة",
+    signatureTitle: "أطباق يطلبها ضيوفنا",
+    signatureBody: "اختيارات من الفطور، المخبوزات والمشويات لمن يريد بداية غنية من منيو أسيا.",
+    breakfastLabel: "الفطور التركي",
+    breakfastTitle: "مائدة صباحية للمشاركة",
+    breakfastBody: "بيض، أجبان، زيتون، لبنة، مربى وخبز تركي ساخن على مائدة واحدة.",
+    breakfastCta: "استعرض الفطور",
+    breakfastAlt: "فطور تركي ومشويات من أسيا جورميه",
+    bakeryLabel: "المخبز",
+    bakeryTitle: "خبز وبيدا من الفرن",
+    bakeryBody: "بيدا، جوزلمة، بوريك وسميت بعجين طري وحشوات تركية تقدم ساخنة.",
+    bakeryCta: "استعرض المخبز",
+    bakeryAlt: "خبز تركي طازج من مخبز أسيا",
+    menuLabel: "المنيو الكامل",
+    menuTitle: "اختر طبقك الآن",
+    menuBody: "الفطور، المقبلات، المشويات، الحلويات والمشروبات في قائمة واحدة واضحة.",
+    menuCta: "استعرض المنيو",
+    menuAlt: "أجواء مطعم أسيا جورميه",
+  },
+  en: {
+    heroEyebrow: "Asya's Gourmet",
+    heroTitle: "Turkish breakfast, bakery, and grills",
+    heroBody: "Start with Turkish breakfast, then choose hot pide, charcoal grills, sweets, and tea.",
+    heroCta: "View Menu",
+    heroAlt: "A Turkish table from Asya's Gourmet",
+    signatureLabel: "Signature Dishes",
+    signatureTitle: "Guest Favorites",
+    signatureBody: "Favorites from breakfast, bakery, and charcoal grills for a generous first order.",
+    breakfastLabel: "Turkish Breakfast",
+    breakfastTitle: "A generous morning table",
+    breakfastBody: "Eggs, cheeses, olives, labneh, jams, and hot Turkish bread served for sharing.",
+    breakfastCta: "Explore Breakfast",
+    breakfastAlt: "Turkish breakfast and grills from Asya's Gourmet",
+    bakeryLabel: "Bakery",
+    bakeryTitle: "Hot bread and pide",
+    bakeryBody: "Pide, gozleme, borek, and simit with soft dough, Turkish fillings, and a hot finish.",
+    bakeryCta: "Explore Bakery",
+    bakeryAlt: "Fresh Turkish bread from Asya's bakery",
+    menuLabel: "Full Menu",
+    menuTitle: "Choose your table",
+    menuBody: "Breakfast, appetizers, grills, desserts, and drinks are organized in one clear menu.",
+    menuCta: "View Menu",
+    menuAlt: "Asya's Gourmet dining room",
+  },
+} as const;
+
 function HomePage() {
   const homeContent = useMemo(() => buildHomeContent(), []);
-  const shouldRenderGallery = useDesktopGallery();
 
   return (
     <AsyaShell current="home">
-      <main>
+      <main className="home-premium-page">
         <HomeHero />
-        <HomeCategories categories={homeContent.categories} />
-        <QualitySection />
         <SignatureSection items={homeContent.signatures} />
-        {shouldRenderGallery ? <PhotoStrip items={homeContent.gallery} /> : null}
+        <HomeEditorialFeature
+          labelKey="breakfastLabel"
+          titleKey="breakfastTitle"
+          bodyKey="breakfastBody"
+          ctaKey="breakfastCta"
+          altKey="breakfastAlt"
+          image={mezzeImg}
+          imagePosition="center"
+        />
+        <HomeEditorialFeature
+          labelKey="bakeryLabel"
+          titleKey="bakeryTitle"
+          bodyKey="bakeryBody"
+          ctaKey="bakeryCta"
+          altKey="bakeryAlt"
+          image={bakeryImg}
+          imagePosition="center"
+          reverse
+        />
         <VisitContact />
+        <HomeMenuCta />
       </main>
     </AsyaShell>
   );
@@ -121,37 +191,15 @@ function useDesktopGallery() {
 }
 
 function HomeHero() {
-  const { locale, t, tx } = useI18n();
-  const stats =
-    locale === "ar"
-      ? [
-          { value: `${ITEMS.length}+`, label: "صنف في القائمة" },
-          { value: `${HOME_MENU_GROUPS.length}`, label: "أقسام رئيسية" },
-          { value: `${POPULAR_ITEMS.length}+`, label: "أطباق مختارة" },
-          { value: "يوميًا", label: "تحضير طازج" },
-        ]
-      : [
-          { value: `${ITEMS.length}+`, label: "Menu dishes" },
-          { value: `${HOME_MENU_GROUPS.length}`, label: "Main sections" },
-          { value: `${POPULAR_ITEMS.length}+`, label: "House picks" },
-          { value: "Daily", label: "Fresh prep" },
-        ];
+  const { locale } = useI18n();
+  const copy = HOME_PAGE_COPY[locale];
 
   return (
-    <section id="top" className="reference-hero">
-      <div className="reference-hero-copy">
-        <p className="reference-kicker">{tx(RESTAURANT.kicker)}</p>
-        <h1>{t("hero_title")}</h1>
-        <p>{t("hero_sub")}</p>
-        <a href="/menu" className="primary-cta">
-          <span>{t("exploreMenu")}</span>
-          <ArrowUpRight className="h-4 w-4" />
-        </a>
-      </div>
-      <div className="reference-hero-media">
+    <section id="top" className="home-premium-hero" aria-labelledby="home-hero-title">
+      <div className="home-premium-hero-media">
         <img
           src={heroImg}
-          alt={t("hero_title")}
+          alt={copy.heroAlt}
           width={1600}
           height={1067}
           loading="eager"
@@ -159,14 +207,15 @@ function HomeHero() {
           fetchPriority="high"
         />
       </div>
-      <dl className="reference-stats" aria-label={t("hero_note")}>
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <dt>{stat.value}</dt>
-            <dd>{stat.label}</dd>
-          </div>
-        ))}
-      </dl>
+      <div className="home-premium-hero-copy">
+        <p className="home-premium-eyebrow">{copy.heroEyebrow}</p>
+        <h1 id="home-hero-title">{copy.heroTitle}</h1>
+        <p>{copy.heroBody}</p>
+        <a href="/menu" className="primary-cta home-premium-cta">
+          <span>{copy.heroCta}</span>
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      </div>
     </section>
   );
 }
@@ -278,13 +327,15 @@ function QualitySection() {
 }
 
 function SignatureSection({ items }: { items: DishEntry[] }) {
-  const { t } = useI18n();
+  const { locale } = useI18n();
+  const copy = HOME_PAGE_COPY[locale];
 
   return (
-    <section className="reference-section reference-featured">
-      <div className="section-wrap reference-section-heading">
-        <h2>{t("home_signature_title")}</h2>
-        <p>{t("home_signature_body")}</p>
+    <section className="home-premium-section home-signature-section">
+      <div className="section-wrap home-section-heading">
+        <p className="home-premium-eyebrow">{copy.signatureLabel}</p>
+        <h2>{copy.signatureTitle}</h2>
+        <p>{copy.signatureBody}</p>
       </div>
       <div className="section-wrap reference-feature-grid">
         {items.slice(0, 6).map((entry) => (
@@ -296,6 +347,78 @@ function SignatureSection({ items }: { items: DishEntry[] }) {
             motionEnabled={false}
           />
         ))}
+      </div>
+    </section>
+  );
+}
+
+type HomeCopyKey = keyof (typeof HOME_PAGE_COPY)["en"];
+
+function HomeEditorialFeature({
+  labelKey,
+  titleKey,
+  bodyKey,
+  ctaKey,
+  altKey,
+  image,
+  imagePosition = "center",
+  reverse = false,
+}: {
+  labelKey: HomeCopyKey;
+  titleKey: HomeCopyKey;
+  bodyKey: HomeCopyKey;
+  ctaKey: HomeCopyKey;
+  altKey: HomeCopyKey;
+  image: string;
+  imagePosition?: string;
+  reverse?: boolean;
+}) {
+  const { locale } = useI18n();
+  const copy = HOME_PAGE_COPY[locale];
+
+  return (
+    <section className={`home-premium-section home-editorial ${reverse ? "is-reverse" : ""}`}>
+      <div className="section-wrap home-editorial-grid">
+        <figure className="home-editorial-media">
+          <img
+            src={image}
+            alt={copy[altKey]}
+            width={1400}
+            height={980}
+            loading="lazy"
+            decoding="async"
+            style={{ objectPosition: imagePosition }}
+          />
+        </figure>
+        <div className="home-editorial-copy">
+          <p className="home-premium-eyebrow">{copy[labelKey]}</p>
+          <h2>{copy[titleKey]}</h2>
+          <p>{copy[bodyKey]}</p>
+          <a href="/menu" className="primary-cta home-premium-cta">
+            <span>{copy[ctaKey]}</span>
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeMenuCta() {
+  const { locale } = useI18n();
+  const copy = HOME_PAGE_COPY[locale];
+
+  return (
+    <section className="home-menu-cta-section" aria-labelledby="home-menu-cta-title">
+      <img src={interiorImg} alt={copy.menuAlt} width={1400} height={960} loading="lazy" decoding="async" />
+      <div className="home-menu-cta-copy">
+        <p className="home-premium-eyebrow">{copy.menuLabel}</p>
+        <h2 id="home-menu-cta-title">{copy.menuTitle}</h2>
+        <p>{copy.menuBody}</p>
+        <a href="/menu" className="primary-cta home-premium-cta">
+          <span>{copy.menuCta}</span>
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
       </div>
     </section>
   );
