@@ -25,6 +25,9 @@ export function VisitSection2026({
 }: VisitSection2026Props) {
   return (
     <section id="visit" className="home2026-section home2026-visit" aria-labelledby="home2026-visit-title">
+      <figure className="home2026-visit-media home2026-visit-image-card">
+        <img src={image} alt={imageAlt} width={1200} height={900} loading="lazy" decoding="async" />
+      </figure>
       <article className="home2026-visit-card home2026-visit-intro-card">
         <div className="home2026-visit-copy">
           <h2 id="home2026-visit-title">{title}</h2>
@@ -50,9 +53,6 @@ export function VisitSection2026({
           </div>
         </div>
       </article>
-      <figure className="home2026-visit-media home2026-visit-image-card">
-        <img src={image} alt={imageAlt} width={1200} height={900} loading="lazy" decoding="async" />
-      </figure>
       <a
         href={RESTAURANT.mapsUrl}
         className="home2026-map home2026-map-card"

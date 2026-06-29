@@ -15164,3 +15164,162 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     min-height: 240px;
   }
 }
+
+/* Final Visit and footer polish. */
+.home2026-shell {
+  padding-bottom: clamp(1rem, 3vw, 1.6rem) !important;
+}
+
+.home2026-visit {
+  gap: clamp(1.15rem, 2.6vw, 1.85rem);
+}
+
+.home2026-visit-image-card {
+  min-height: clamp(360px, 52vw, 640px);
+}
+
+.home2026-visit-intro-card {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(166, 123, 61, 0.08), transparent 18rem),
+    linear-gradient(135deg, rgba(255, 250, 241, 0.98), rgba(243, 228, 207, 0.88)),
+    #fff8ec;
+}
+
+.home2026-map.home2026-map-card {
+  min-height: clamp(280px, 32vw, 420px);
+}
+
+.footer-premium {
+  padding: clamp(2.6rem, 5vw, 4.2rem) 0 !important;
+  border-top: 1px solid rgba(47, 58, 40, 0.12) !important;
+  background: #f8f3ea !important;
+  color: #1f261c !important;
+}
+
+.footer-premium[dir="rtl"],
+.footer-premium[dir="ltr"] {
+  text-align: center !important;
+}
+
+.footer-premium .footer-grid {
+  display: grid !important;
+  width: min(100% - 2rem, 820px) !important;
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  gap: 1rem !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+.footer-premium .footer-brand {
+  display: grid !important;
+  width: min(100%, 420px) !important;
+  justify-items: center !important;
+  gap: 0.65rem !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+.footer-premium .footer-brand img {
+  width: clamp(4rem, 7vw, 5rem) !important;
+  height: clamp(4rem, 7vw, 5rem) !important;
+  border-color: rgba(47, 58, 40, 0.14) !important;
+  background: rgba(255, 253, 248, 0.76) !important;
+  filter: drop-shadow(0 10px 16px rgba(31, 38, 28, 0.1)) !important;
+}
+
+.footer-premium .footer-brand h2 {
+  margin: 0 !important;
+  color: #1f261c !important;
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem) !important;
+  line-height: 1.2 !important;
+}
+
+.footer-premium .footer-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  gap: 0.65rem !important;
+  width: min(100%, 560px) !important;
+  margin-inline: auto !important;
+}
+
+.footer-premium .footer-links a {
+  display: inline-flex !important;
+  min-height: 2.65rem !important;
+  width: auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  margin: 0 !important;
+  padding: 0.7rem 0.95rem !important;
+  border: 1px solid rgba(47, 58, 40, 0.14) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 253, 248, 0.62) !important;
+  color: #2f3a28 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+
+.footer-premium .footer-links a:hover {
+  background: rgba(47, 58, 40, 0.08) !important;
+  color: #1f261c !important;
+}
+
+.footer-premium .footer-copy {
+  display: block !important;
+  width: min(100%, 520px) !important;
+  margin: 0 auto !important;
+  color: #6f6b61 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 767px) {
+  .home2026-visit {
+    gap: 0.95rem;
+    padding-bottom: 0 !important;
+  }
+
+  .home2026-shell {
+    padding-bottom: 0.9rem !important;
+  }
+
+  .site-shell > main.home2026-shell {
+    padding-bottom: 0.9rem !important;
+  }
+
+  .home2026-visit-image-card {
+    min-height: clamp(340px, 96vw, 470px);
+  }
+
+  .home2026-visit-intro-card .home2026-visit-copy {
+    padding: 1.75rem 1rem 1.9rem;
+  }
+
+  .home2026-map.home2026-map-card {
+    min-height: 260px;
+  }
+
+  .footer-premium {
+    padding-top: 2.35rem !important;
+    padding-bottom: calc(var(--mobile-bottom-nav-offset, 5.35rem) + 1.2rem) !important;
+  }
+
+  .footer-premium .footer-grid {
+    width: min(100% - 2rem, 340px) !important;
+    gap: 0.8rem !important;
+  }
+
+  .footer-premium .footer-links {
+    gap: 0.5rem !important;
+  }
+
+  .footer-premium .footer-links a {
+    min-height: 2.55rem !important;
+    padding: 0.68rem 0.82rem !important;
+  }
+}

@@ -2294,6 +2294,7 @@ function MobileBottomNav({ current }: { current: "home" | "menu" }) {
 
 function Footer() {
   const { locale, t, tx } = useI18n();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer-premium" dir={locale === "ar" ? "rtl" : "ltr"}>
@@ -2301,10 +2302,9 @@ function Footer() {
         <div className="footer-brand">
           <img src={logoImg} alt="Asya's Gourmet" width={80} height={80} />
           <h2>{tx(RESTAURANT.name)}</h2>
-          <p>{t("footer_tagline")}</p>
         </div>
 
-        <div className="footer-links">
+        <nav className="footer-links" aria-label={locale === "ar" ? "روابط أسيا جورميه" : "Asya's Gourmet links"}>
           <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
             <Instagram className="h-4 w-4" />
             <span>{t("instagram")}</span>
@@ -2317,15 +2317,11 @@ function Footer() {
             <MapPin className="h-4 w-4" />
             <span>{t("directions")}</span>
           </a>
-        </div>
+        </nav>
 
-        <div className="footer-hours">
-          <span>{t("hours")}</span>
-          <strong>{tx(RESTAURANT.hours)}</strong>
-          <small>
-            © {new Date().getFullYear()} {tx(RESTAURANT.name)}. {t("footer_rights")}
-          </small>
-        </div>
+        <small className="footer-copy">
+          © {currentYear} {tx(RESTAURANT.name)}. {t("footer_rights")}
+        </small>
       </div>
     </footer>
   );
