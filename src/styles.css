@@ -14732,10 +14732,22 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 
 .home2026-video-frame video {
   z-index: 1;
+  opacity: 1;
 }
 
 .home2026-video-frame > img {
-  z-index: 0;
+  z-index: 2;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.home2026-video-frame[data-video-state="playing"] > img {
+  opacity: 0;
+}
+
+.home2026-video-frame[data-video-state="poster"] video {
+  opacity: 0;
 }
 
 .home2026-hero-media::after {
