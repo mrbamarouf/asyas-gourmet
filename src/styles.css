@@ -14608,15 +14608,20 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 
   .mobile-bottom-nav {
     position: fixed !important;
+    top: auto !important;
     right: auto !important;
-    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
     left: 50% !important;
     z-index: 115 !important;
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    width: min(90vw, 430px) !important;
+    box-sizing: border-box !important;
+    width: min(92vw, 430px) !important;
+    max-width: 430px !important;
     height: 64px !important;
     min-height: 64px !important;
+    max-height: 64px !important;
+    margin: 0 !important;
     padding: 5px 6px !important;
     border: 1px solid rgba(63, 55, 39, 0.1) !important;
     border-radius: 26px !important;
@@ -14624,11 +14629,17 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     box-shadow:
       0 18px 44px rgba(35, 31, 23, 0.18),
       0 2px 10px rgba(35, 31, 23, 0.06) !important;
-    backdrop-filter: blur(16px) saturate(1.06) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(1.06) !important;
+    backdrop-filter: blur(10px) saturate(1.04) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(1.04) !important;
+    contain: layout paint style !important;
+    isolation: isolate !important;
     opacity: 1 !important;
+    overflow: hidden !important;
     pointer-events: auto !important;
-    transform: translateX(-50%) !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+    transform: translate3d(-50%, 0, 0) !important;
     transition:
       transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
       opacity 180ms ease !important;
@@ -14638,13 +14649,13 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
   body.asya-bottom-dock-hidden .mobile-bottom-nav {
     opacity: 0 !important;
     pointer-events: none !important;
-    transform: translate(-50%, calc(100% + 1.25rem)) !important;
+    transform: translate3d(-50%, calc(100% + 1.5rem), 0) !important;
   }
 
   body.asya-item-detail-lock .mobile-bottom-nav {
     opacity: 0 !important;
     pointer-events: none !important;
-    transform: translate(-50%, calc(100% + 1.25rem)) !important;
+    transform: translate3d(-50%, calc(100% + 1.5rem), 0) !important;
   }
 
   .mobile-bottom-nav a {

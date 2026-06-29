@@ -33,6 +33,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 
 import {
   CATEGORIES,
@@ -1202,6 +1203,7 @@ function useScrollChromeVisibility() {
     };
 
     const scheduleDockIdleShow = () => {
+      if (!isMobile || !isDockHidden) return;
       if (dockIdleTimer) window.clearTimeout(dockIdleTimer);
       dockIdleTimer = window.setTimeout(() => {
         setDockHidden(false);
@@ -2265,8 +2267,13 @@ function FloatingContact({ current }: { current: "home" | "menu" }) {
 
 function MobileBottomNav({ current }: { current: "home" | "menu" }) {
   const { locale, t } = useI18n();
+  const [isMounted, setIsMounted] = useState(false);
 
-  return (
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const dock = (
     <nav
       className="mobile-bottom-nav"
       aria-label="Mobile navigation"
@@ -2290,6 +2297,10 @@ function MobileBottomNav({ current }: { current: "home" | "menu" }) {
       </a>
     </nav>
   );
+
+  if (!isMounted || typeof document === "undefined") return null;
+
+  return createPortal(dock, document.body);
 }
 
 function Footer() {
