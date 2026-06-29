@@ -14970,6 +14970,11 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
 }
 
 @media (min-width: 1100px) {
+  [data-locale="ar"] .home2026-hero-copy {
+    inline-size: min(790px, 100%);
+    max-width: 790px;
+  }
+
   [data-locale="ar"] .home2026-hero h1 {
     inline-size: min(19ch, 620px);
     max-width: min(19ch, 620px);
