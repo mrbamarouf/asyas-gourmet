@@ -23,15 +23,18 @@ export function CinematicVideo2026({
   const visibleRef = useRef(false);
   const retryRef = useRef<number | null>(null);
   const retryCountRef = useRef(0);
+  const hasErrorRef = useRef(false);
+  const playFrameRef = useRef<number | null>(null);
   const [isLoaded, setIsLoaded] = useState(eager);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPoster, setShowPoster] = useState(true);
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     visibleRef.current = false;
     retryCountRef.current = 0;
+    hasErrorRef.current = false;
     setIsLoaded(eager);
-    setIsPlaying(false);
+    setShowPoster(true);
     setHasError(false);
   }, [asset.src, eager]);
 
@@ -43,7 +46,7 @@ export function CinematicVideo2026({
       ([entry]) => {
         if (entry?.isIntersecting) setIsLoaded(true);
       },
-      { rootMargin: "560px 0px", threshold: 0.01 },
+      { rootMargin: "1400px 900px", threshold: 0.01 },
     );
 
     loader.observe(shell);
@@ -55,6 +58,7 @@ export function CinematicVideo2026({
     const video = videoRef.current;
     if (!shell || !video || !isLoaded) return;
 
+    let disposed = false;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const clearRetry = () => {
       if (retryRef.current !== null) {
@@ -62,55 +66,64 @@ export function CinematicVideo2026({
         retryRef.current = null;
       }
     };
+    const clearPlayFrame = () => {
+      if (playFrameRef.current !== null) {
+        window.cancelAnimationFrame(playFrameRef.current);
+        playFrameRef.current = null;
+      }
+    };
     const pauseVideo = () => {
       clearRetry();
+      clearPlayFrame();
       video.pause();
     };
-    const pauseCompetingVideos = () => {
-      document.querySelectorAll<HTMLVideoElement>(".home2026-video-frame video").forEach((other) => {
-        if (other !== video) other.pause();
-      });
-    };
-    const queueRetry = (showPoster = true) => {
-      if (showPoster) setIsPlaying(false);
-      clearRetry();
-      if (!visibleRef.current || retryCountRef.current >= 3) return;
-
-      retryCountRef.current += 1;
-      retryRef.current = window.setTimeout(requestPlayback, 900);
-    };
-    const requestPlayback = () => {
-      if (!visibleRef.current || reducedMotion || hasError) return;
-
-      pauseCompetingVideos();
+    const primeVideo = () => {
       video.muted = true;
       video.defaultMuted = true;
       video.controls = false;
+      video.loop = true;
       video.playsInline = true;
+      video.preload = "auto";
+      video.setAttribute("muted", "");
       video.setAttribute("playsinline", "");
       video.setAttribute("webkit-playsinline", "");
+    };
+    const queueRetry = (reload = false) => {
+      clearRetry();
+      clearPlayFrame();
+      if (disposed || !visibleRef.current || retryCountRef.current >= 5) return;
 
-      const playPromise = video.play();
+      retryCountRef.current += 1;
+      retryRef.current = window.setTimeout(() => {
+        if (reload && video.readyState < 2) video.load();
+        requestPlayback();
+      }, 450);
+    };
+    const requestPlayback = () => {
+      if (disposed || !visibleRef.current || document.hidden || reducedMotion || hasErrorRef.current) return;
 
-      if (playPromise) {
-        playPromise.catch(queueRetry);
-      }
+      primeVideo();
+      clearPlayFrame();
+      playFrameRef.current = window.requestAnimationFrame(() => {
+        playFrameRef.current = null;
+        if (disposed || !visibleRef.current || document.hidden || hasErrorRef.current) return;
+
+        const playPromise = video.play();
+
+        if (playPromise) {
+          playPromise.catch(() => queueRetry(false));
+        }
+      });
     };
 
-    video.muted = true;
-    video.defaultMuted = true;
-    video.controls = false;
-    video.playsInline = true;
-    video.preload = eager ? "auto" : "metadata";
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
+    primeVideo();
     video.load();
 
     const player = new IntersectionObserver(
       ([entry]) => {
         const shouldPlay =
           Boolean(entry?.isIntersecting) &&
-          (entry?.intersectionRatio ?? 0) >= (eager ? 0.12 : 0.2);
+          (entry?.intersectionRatio ?? 0) >= 0.01;
 
         visibleRef.current = shouldPlay;
 
@@ -122,29 +135,37 @@ export function CinematicVideo2026({
 
         requestPlayback();
       },
-      { rootMargin: "0px", threshold: [0, 0.12, 0.2, 0.45, 0.7] },
+      { rootMargin: "260px 120px", threshold: [0, 0.01, 0.12, 0.25, 0.5, 0.75] },
     );
     const handleCanPlay = () => requestPlayback();
+    const handleLoadedData = () => {
+      if (visibleRef.current) requestPlayback();
+    };
     const handlePlaying = () => {
+      hasErrorRef.current = false;
       retryCountRef.current = 0;
+      clearRetry();
       setHasError(false);
-      setIsPlaying(true);
+      setShowPoster(false);
     };
     const handlePause = () => {
-      setIsPlaying(false);
+      if (visibleRef.current && !document.hidden && !reducedMotion && !video.ended) {
+        queueRetry(false);
+      }
     };
     const handleStalledPlayback = () => {
       if (!visibleRef.current) return;
       queueRetry(false);
     };
     const handleError = () => {
-      if (retryCountRef.current < 3) {
-        queueRetry();
+      if (retryCountRef.current < 5) {
+        queueRetry(true);
         return;
       }
 
-      setIsPlaying(false);
+      hasErrorRef.current = true;
       setHasError(true);
+      setShowPoster(true);
       pauseVideo();
     };
     const handleVisibilityChange = () => {
@@ -156,6 +177,7 @@ export function CinematicVideo2026({
     };
 
     video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("loadeddata", handleLoadedData);
     video.addEventListener("playing", handlePlaying);
     video.addEventListener("pause", handlePause);
     video.addEventListener("stalled", handleStalledPlayback);
@@ -165,9 +187,12 @@ export function CinematicVideo2026({
     player.observe(shell);
 
     return () => {
+      disposed = true;
       clearRetry();
+      clearPlayFrame();
       player.disconnect();
       video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("loadeddata", handleLoadedData);
       video.removeEventListener("playing", handlePlaying);
       video.removeEventListener("pause", handlePause);
       video.removeEventListener("stalled", handleStalledPlayback);
@@ -176,14 +201,14 @@ export function CinematicVideo2026({
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       video.pause();
     };
-  }, [isLoaded, asset.src, eager, hasError]);
+  }, [isLoaded, asset.src, eager]);
 
   return (
     <figure
       ref={shellRef}
       className={`home2026-video-frame ${className}`.trim()}
       aria-label={asset.label}
-      data-video-state={isPlaying && !hasError ? "playing" : "poster"}
+      data-video-state={!showPoster && !hasError ? "playing" : "poster"}
     >
       <video
         ref={videoRef}
@@ -192,7 +217,7 @@ export function CinematicVideo2026({
         muted
         loop
         playsInline
-        preload={eager ? "auto" : "metadata"}
+        preload="auto"
         controls={false}
         disablePictureInPicture
       >
