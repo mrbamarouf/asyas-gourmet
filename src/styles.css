@@ -15026,43 +15026,87 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
   min-height: clamp(220px, 30vw, 360px);
   border-top: 1px solid rgba(65, 55, 35, 0.12);
   border-inline-start: 0;
+  border-radius: 0 0 18px 18px;
   background:
-    linear-gradient(120deg, transparent 48%, rgba(123, 116, 94, 0.12) 49%, rgba(123, 116, 94, 0.12) 51%, transparent 52%),
-    linear-gradient(32deg, transparent 46%, rgba(123, 116, 94, 0.1) 47%, rgba(123, 116, 94, 0.1) 50%, transparent 51%),
-    #eadfce;
+    radial-gradient(circle at 68% 38%, rgba(93, 101, 48, 0.12), transparent 8rem),
+    radial-gradient(circle at 28% 70%, rgba(166, 123, 61, 0.12), transparent 9rem),
+    linear-gradient(90deg, rgba(111, 107, 97, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(111, 107, 97, 0.07) 1px, transparent 1px),
+    #efe3d0;
+  background-size: auto, auto, 74px 74px, 74px 74px, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 250, 241, 0.72),
+    inset 0 -18px 38px rgba(47, 58, 40, 0.06);
+}
+
+.home2026-map::before {
+  position: absolute;
+  z-index: 0;
+  inset: 1rem;
+  content: "";
+  border-radius: 18px;
+  background:
+    linear-gradient(118deg, transparent 0 22%, rgba(255, 250, 241, 0.58) 22% 24%, transparent 24% 100%),
+    linear-gradient(28deg, transparent 0 42%, rgba(255, 250, 241, 0.5) 42% 44%, transparent 44% 100%),
+    repeating-linear-gradient(152deg, transparent 0 38px, rgba(111, 107, 97, 0.13) 39px 41px, transparent 42px 78px);
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .home2026-map::after {
   background:
-    radial-gradient(circle at 50% 48%, rgba(255, 248, 236, 0.42), transparent 15rem),
-    linear-gradient(180deg, rgba(255, 250, 241, 0.18), rgba(47, 58, 40, 0.08));
+    radial-gradient(circle at 50% 46%, rgba(255, 250, 241, 0.42), transparent 12rem),
+    linear-gradient(180deg, rgba(255, 250, 241, 0.08), rgba(47, 58, 40, 0.1));
 }
 
 .home2026-map-road {
   position: absolute;
   z-index: 1;
   display: block;
-  width: 128%;
-  height: 2px;
+  width: 134%;
+  height: 9px;
   border-radius: 999px;
-  background: rgba(111, 107, 97, 0.22);
+  background: rgba(255, 250, 241, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(111, 107, 97, 0.12),
+    0 8px 18px rgba(65, 55, 35, 0.08);
   transform-origin: center;
 }
 
 .home2026-map-road.road-one {
-  top: 34%;
-  left: -14%;
-  transform: rotate(17deg);
+  top: 30%;
+  left: -16%;
+  transform: rotate(13deg);
 }
 
 .home2026-map-road.road-two {
-  top: 58%;
+  top: 62%;
   left: -12%;
-  transform: rotate(-11deg);
+  transform: rotate(-9deg);
 }
 
 .home2026-map-road.road-three {
-  top: 48%;
-  left: -18%;
-  transform: rotate(55deg);
+  top: 45%;
+  left: -20%;
+  width: 124%;
+  height: 7px;
+  transform: rotate(52deg);
+}
+
+.home2026-map-pin {
+  width: 3.55rem;
+  height: 3.55rem;
+  background: #4f5b32;
+  box-shadow:
+    0 0 0 10px rgba(79, 91, 50, 0.12),
+    0 18px 34px rgba(47, 58, 40, 0.24);
+}
+
+.home2026-map strong {
+  margin-top: 0.85rem;
+  padding: 0.68rem 0.92rem;
+  border: 1px solid rgba(65, 55, 35, 0.1);
+  background: rgba(255, 250, 241, 0.96);
+  box-shadow: 0 10px 24px rgba(35, 31, 23, 0.1);
+  font-size: 0.9rem;
 }
