@@ -25,7 +25,7 @@ export function VisitSection2026({
 }: VisitSection2026Props) {
   return (
     <section id="visit" className="home2026-section home2026-visit" aria-labelledby="home2026-visit-title">
-      <article className="home2026-visit-card">
+      <article className="home2026-visit-card home2026-visit-intro-card">
         <div className="home2026-visit-copy">
           <h2 id="home2026-visit-title">{title}</h2>
           <p>{body}</p>
@@ -49,27 +49,25 @@ export function VisitSection2026({
             </a>
           </div>
         </div>
-        <div className="home2026-visit-visual">
-          <figure className="home2026-visit-media">
-            <img src={image} alt={imageAlt} width={1200} height={900} loading="lazy" decoding="async" />
-          </figure>
-          <a
-            href={RESTAURANT.mapsUrl}
-            className="home2026-map"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={mapLabel}
-          >
-            <span className="home2026-map-road road-one" />
-            <span className="home2026-map-road road-two" />
-            <span className="home2026-map-road road-three" />
-            <span className="home2026-map-pin">
-              <MapPin className="h-5 w-5" aria-hidden="true" />
-            </span>
-            <strong>{mapLabel}</strong>
-          </a>
-        </div>
       </article>
+      <figure className="home2026-visit-media home2026-visit-image-card">
+        <img src={image} alt={imageAlt} width={1200} height={900} loading="lazy" decoding="async" />
+      </figure>
+      <a
+        href={RESTAURANT.mapsUrl}
+        className="home2026-map home2026-map-card"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={mapLabel}
+      >
+        <span className="home2026-map-road road-one" />
+        <span className="home2026-map-road road-two" />
+        <span className="home2026-map-road road-three" />
+        <span className="home2026-map-pin">
+          <MapPin className="h-5 w-5" aria-hidden="true" />
+        </span>
+        <strong>{mapLabel}</strong>
+      </a>
     </section>
   );
 }
