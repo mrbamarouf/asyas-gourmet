@@ -11484,3 +11484,48 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
     z-index: 120 !important;
   }
 }
+
+/* Final production fixes: Arabic text direction and desktop menu performance. */
+[data-locale="ar"] :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  .section-copy,
+  .reference-kicker,
+  .section-kicker > span,
+  .nav-links a > span,
+  .nav-actions a > span,
+  .nav-actions button > span,
+  .category-pill > span,
+  .menu-card-meta > span,
+  .menu-card h3,
+  .menu-card p,
+  .menu-card-more,
+  .menu-group-meta span,
+  .spotlight-dish h3,
+  .spotlight-dish p,
+  .spotlight-dish > div > span,
+  .item-detail-meta > span,
+  .item-detail-description strong,
+  .item-detail-description p,
+  .item-detail-options strong,
+  .item-detail-back,
+  .footer-premium h2,
+  .footer-premium p,
+  .footer-premium small,
+  .footer-premium .footer-links span,
+  .mobile-bottom-nav span,
+  .floating-contact span
+) {
+  direction: rtl !important;
+  unicode-bidi: plaintext;
+}
+
+@media (min-width: 768px) {
+  .full-menu-page .menu-display-group,
+  .full-menu-page .menu-card {
+    contain: layout paint;
+  }
+}

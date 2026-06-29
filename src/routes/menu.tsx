@@ -148,20 +148,26 @@ function MenuExplorer() {
   }, []);
 
   useEffect(() => {
+    const sections = displayGroups
+      .map((group) => ({
+        id: group.definition.id,
+        node: document.getElementById(`group-${group.definition.id}`),
+      }))
+      .filter((entry): entry is { id: string; node: HTMLElement } => Boolean(entry.node));
+    if (!sections.length) return;
+
     let frame = 0;
+    let stickyOffset = getMenuControlsOffset(140);
 
     const updateActiveGroup = () => {
       frame = 0;
-      const stickyOffset = getMenuControlsOffset(140);
-      const firstGroup = displayGroups[0]?.definition.id;
+      const threshold = window.scrollY + stickyOffset;
+      const firstGroup = sections[0]?.id;
       let nextGroup = firstGroup;
 
-      for (const group of displayGroups) {
-        const section = document.getElementById(`group-${group.definition.id}`);
-        if (!section) continue;
-
-        if (section.getBoundingClientRect().top <= stickyOffset) {
-          nextGroup = group.definition.id;
+      for (const section of sections) {
+        if (section.node.offsetTop <= threshold) {
+          nextGroup = section.id;
         } else {
           break;
         }
@@ -177,16 +183,23 @@ function MenuExplorer() {
       frame = window.requestAnimationFrame(updateActiveGroup);
     };
 
+    const refreshMeasurements = () => {
+      stickyOffset = getMenuControlsOffset(140);
+      scheduleUpdate();
+    };
+
     updateActiveGroup();
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("resize", refreshMeasurements);
+    window.addEventListener("pageshow", refreshMeasurements);
 
     return () => {
       if (frame) {
         window.cancelAnimationFrame(frame);
       }
       window.removeEventListener("scroll", scheduleUpdate);
-      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("resize", refreshMeasurements);
+      window.removeEventListener("pageshow", refreshMeasurements);
     };
   }, [displayGroups]);
 

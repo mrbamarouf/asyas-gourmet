@@ -588,12 +588,24 @@ function useScrollChromeVisibility() {
     const desktopShowIntent = -10;
     const mobileShowIntent = -18;
     const topThreshold = 12;
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    let isMobile = mobileQuery.matches;
     let previousY = Math.max(0, window.scrollY);
     let scrollIntent = 0;
     let frame = 0;
+    let isHidden = document.body.classList.contains(hiddenClass);
+    let isAtTopState = document.body.classList.contains(topClass);
 
     const setHidden = (hidden: boolean) => {
+      if (isHidden === hidden) return;
+      isHidden = hidden;
       document.body.classList.toggle(hiddenClass, hidden);
+    };
+
+    const setAtTop = (isAtTop: boolean) => {
+      if (isAtTopState === isAtTop) return;
+      isAtTopState = isAtTop;
+      document.body.classList.toggle(topClass, isAtTop);
     };
 
     const update = () => {
@@ -602,7 +614,7 @@ function useScrollChromeVisibility() {
       const delta = currentY - previousY;
       const isAtTop = currentY <= topThreshold;
 
-      document.body.classList.toggle(topClass, isAtTop);
+      setAtTop(isAtTop);
 
       if (isAtTop) {
         scrollIntent = 0;
@@ -613,9 +625,7 @@ function useScrollChromeVisibility() {
           setHidden(true);
         }
       } else if (delta < -minDelta) {
-        const showIntent = window.matchMedia("(max-width: 767px)").matches
-          ? mobileShowIntent
-          : desktopShowIntent;
+        const showIntent = isMobile ? mobileShowIntent : desktopShowIntent;
         scrollIntent = scrollIntent > 0 ? delta : scrollIntent + delta;
         if (scrollIntent < showIntent) {
           setHidden(false);
@@ -630,7 +640,12 @@ function useScrollChromeVisibility() {
       frame = window.requestAnimationFrame(update);
     };
 
+    const handleMediaChange = (event: MediaQueryListEvent) => {
+      isMobile = event.matches;
+    };
+
     update();
+    mobileQuery.addEventListener("change", handleMediaChange);
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
     window.addEventListener("resize", scheduleUpdate);
     window.addEventListener("pageshow", scheduleUpdate);
@@ -638,6 +653,7 @@ function useScrollChromeVisibility() {
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
       document.body.classList.remove(hiddenClass, topClass);
+      mobileQuery.removeEventListener("change", handleMediaChange);
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
       window.removeEventListener("pageshow", scheduleUpdate);
@@ -864,8 +880,12 @@ function TopNav({ current }: { current: "home" | "menu" }) {
             <Utensils className="nav-icon" />
             <span>{t("nav_menu")}</span>
           </a>
-          <a href="/#about">{t("nav_about")}</a>
-          <a href="/#visit">{t("nav_visit")}</a>
+          <a href="/#about">
+            <span>{t("nav_about")}</span>
+          </a>
+          <a href="/#visit">
+            <span>{t("nav_visit")}</span>
+          </a>
           <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
             <MessageCircle className="nav-icon" />
             <span>{t("nav_contact")}</span>
