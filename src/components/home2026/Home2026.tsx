@@ -14,7 +14,7 @@ import {
 } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
 
-import interiorImg from "@/assets/interior.jpg";
+import visitInteriorImg from "@/assets/visit-interior.jpg";
 
 import { BakeryFeature2026 } from "./BakeryFeature2026";
 import { BreakfastFeature2026 } from "./BreakfastFeature2026";
@@ -171,7 +171,7 @@ function Home2026Content() {
         call={copy.visitCall}
         mapLabel={copy.visitMap}
         address={tx(RESTAURANT.address)}
-        image={interiorImg}
+        image={visitInteriorImg}
         imageAlt={copy.visitAlt}
       />
     </main>
