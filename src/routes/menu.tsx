@@ -158,15 +158,19 @@ function MenuExplorer() {
 
     let frame = 0;
     let stickyOffset = getMenuControlsOffset(140);
+    let sectionTops = sections.map((section) => ({
+      id: section.id,
+      top: section.node.offsetTop,
+    }));
 
     const updateActiveGroup = () => {
       frame = 0;
       const threshold = window.scrollY + stickyOffset;
-      const firstGroup = sections[0]?.id;
+      const firstGroup = sectionTops[0]?.id;
       let nextGroup = firstGroup;
 
-      for (const section of sections) {
-        if (section.node.offsetTop <= threshold) {
+      for (const section of sectionTops) {
+        if (section.top <= threshold) {
           nextGroup = section.id;
         } else {
           break;
@@ -185,8 +189,36 @@ function MenuExplorer() {
 
     const refreshMeasurements = () => {
       stickyOffset = getMenuControlsOffset(140);
+      sectionTops = sections.map((section) => ({
+        id: section.id,
+        top: section.node.offsetTop,
+      }));
       scheduleUpdate();
     };
+
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+
+    if (desktopQuery.matches && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(() => scheduleUpdate(), {
+        root: null,
+        rootMargin: `-${Math.max(0, Math.round(stickyOffset))}px 0px -65% 0px`,
+        threshold: 0,
+      });
+
+      sections.forEach((section) => observer.observe(section.node));
+      updateActiveGroup();
+      window.addEventListener("resize", refreshMeasurements);
+      window.addEventListener("pageshow", refreshMeasurements);
+
+      return () => {
+        if (frame) {
+          window.cancelAnimationFrame(frame);
+        }
+        observer.disconnect();
+        window.removeEventListener("resize", refreshMeasurements);
+        window.removeEventListener("pageshow", refreshMeasurements);
+      };
+    }
 
     updateActiveGroup();
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
