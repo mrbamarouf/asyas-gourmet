@@ -167,17 +167,37 @@ function InternalLinkNavigationGuard() {
       if (anchor.target && anchor.target !== "_self") return;
 
       const rawHref = anchor.getAttribute("href");
-      if (!rawHref || rawHref.startsWith("#")) return;
+      if (!rawHref) return;
 
       const url = new URL(anchor.href, window.location.href);
       if (url.origin !== window.location.origin) return;
       if (url.pathname !== "/" && url.pathname !== "/menu") return;
 
       event.preventDefault();
-      void router.navigate({
-        to: url.pathname as "/" | "/menu",
-        hash: url.hash ? url.hash.slice(1) : undefined,
-      });
+      const hash = url.hash ? decodeURIComponent(url.hash.slice(1)) : undefined;
+
+      void router
+        .navigate({
+          to: url.pathname as "/" | "/menu",
+          hash,
+        })
+        .then(() => {
+          if (!hash) return;
+
+          let attempts = 0;
+          const scrollToTarget = () => {
+            const element = document.getElementById(hash);
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth", block: "start" });
+              return;
+            }
+
+            attempts += 1;
+            if (attempts < 12) window.setTimeout(scrollToTarget, 50);
+          };
+
+          window.requestAnimationFrame(scrollToTarget);
+        });
     };
 
     document.addEventListener("click", handleClick);

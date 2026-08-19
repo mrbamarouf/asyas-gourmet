@@ -1,4 +1,13 @@
-import { Home, Instagram, Languages, MapPin, MessageCircle, Phone, Utensils } from "lucide-react";
+import {
+  Home,
+  Info,
+  Instagram,
+  Languages,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Utensils,
+} from "lucide-react";
 
 import { RESTAURANT } from "@/data/menu";
 import { useI18n } from "@/lib/i18n";
@@ -20,6 +29,10 @@ export function MobileHeader35({ current }: { current: "home" | "menu" }) {
         </span>
       </a>
       <nav aria-label={locale === "ar" ? "التنقل السريع" : "Quick navigation"}>
+        <a href="/#about-asya" className="mobile35-about-link" aria-label={t("nav_about")}>
+          <Info aria-hidden="true" />
+          <span>{t("nav_about")}</span>
+        </a>
         <a
           href="/menu"
           className={current === "menu" ? "is-current" : ""}
@@ -57,6 +70,10 @@ export function MobileFooter35() {
         <a href="/menu">
           <Utensils aria-hidden="true" />
           <span>{t("nav_menu")}</span>
+        </a>
+        <a href="/#about-asya">
+          <Info aria-hidden="true" />
+          <span>{t("nav_about")}</span>
         </a>
         <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
           <Instagram aria-hidden="true" />

@@ -7,7 +7,6 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  Play,
   Star,
   Utensils,
 } from "lucide-react";
@@ -57,6 +56,12 @@ const HOME_COPY = {
     whatsapp: "واتساب",
     reviews: "التقييمات",
     quickLabel: "اختر وجهتك",
+    aboutEyebrow: "عن آسيا",
+    aboutTitle: "مائدة تركية بروح آسيا",
+    aboutBody:
+      "آسيا جورميه تقدم تجربة مستوحاة من المطبخ التركي، تجمع الفطور التركي، المخبوزات الطازجة، الأطباق الدافئة وأجواء المطعم.",
+    aboutAction: "اكتشف المنيو",
+    aboutAlt: "أجواء المطعم في آسيا جورميه",
     signatureEyebrow: "من مطبخ آسيا",
     signatureTitle: "أطباق تبدأ بها الحكاية",
     dishAction: "عرض الطبق",
@@ -75,6 +80,11 @@ const HOME_COPY = {
     categoryAction: "عرض القسم",
     momentsTitle: "لحظات من آسيا",
     momentsBody: "من المطبخ إلى الطاولة، مشاهد تحكي أجواء آسيا.",
+    momentDining: "أجواء المطعم",
+    momentChef: "الشيف في المطبخ",
+    momentCraft: "الفرن التقليدي",
+    momentTeam: "فريق آسيا",
+    momentLounge: "تحضير اللاونج",
     visitTitle: "وجهتكم لمذاق تركي في جدة",
     visitBody: "تفضلوا بزيارتنا، واحصلوا على الاتجاهات أو تواصلوا معنا مباشرة.",
     call: "اتصال",
@@ -104,6 +114,12 @@ const HOME_COPY = {
     whatsapp: "WhatsApp",
     reviews: "Reviews",
     quickLabel: "Choose Your Next Step",
+    aboutEyebrow: "About Asya",
+    aboutTitle: "A Turkish Table, the Asya Way",
+    aboutBody:
+      "Asya’s Gourmet offers a Turkish-inspired dining experience bringing together Turkish breakfast, fresh bakery, warm dishes, and the restaurant atmosphere.",
+    aboutAction: "Explore the Menu",
+    aboutAlt: "The restaurant atmosphere at Asya's Gourmet",
     signatureEyebrow: "From Asya’s Kitchen",
     signatureTitle: "Dishes That Start the Story",
     dishAction: "View Dish",
@@ -122,6 +138,11 @@ const HOME_COPY = {
     categoryAction: "View Category",
     momentsTitle: "Moments at Asya’s",
     momentsBody: "From the kitchen to the table, a closer look at the atmosphere of Asya’s.",
+    momentDining: "Restaurant Atmosphere",
+    momentChef: "Chef at Work",
+    momentCraft: "The Traditional Oven",
+    momentTeam: "The Asya Team",
+    momentLounge: "Lounge Preparation",
     visitTitle: "Your Turkish Table in Jeddah",
     visitBody: "Plan your visit, open directions, or call us directly.",
     call: "Call",
@@ -195,11 +216,11 @@ function DesktopHomePhase3Content() {
   const breakfast = mediaAsset("asya-breakfast.mp4", "asya-breakfast.png", copy.breakfastAlt);
   const bakery = mediaAsset("asya-bakery-pide.mp4", "asya-bakery-pide.png", copy.bakeryAlt);
   const moments = [
-    mediaAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", copy.momentAlt),
-    mediaAsset("asya-moment-chef.mp4", "asya-moment-chef.png", copy.momentAlt),
-    mediaAsset("asya-moment-craft.mp4", "asya-moment-craft.png", copy.momentAlt),
-    mediaAsset("asya-moment-team.mp4", "asya-moment-team.png", copy.momentAlt),
-    mediaAsset("asya-moment-lounge.mp4", "asya-moment-lounge.png", copy.momentAlt),
+    mediaAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", copy.momentDining),
+    mediaAsset("asya-moment-chef.mp4", "asya-moment-chef.png", copy.momentChef),
+    mediaAsset("asya-moment-craft.mp4", "asya-moment-craft.png", copy.momentCraft),
+    mediaAsset("asya-moment-team.mp4", "asya-moment-team.png", copy.momentTeam),
+    mediaAsset("asya-moment-lounge.mp4", "asya-moment-lounge.png", copy.momentLounge),
   ];
 
   return (
@@ -233,6 +254,7 @@ function DesktopHomePhase3Content() {
       </section>
 
       <QuickActions copy={copy} />
+      <AboutStory copy={copy} />
 
       <section
         className="phase3-signatures phase3-section"
@@ -324,11 +346,11 @@ function DesktopHomePhase3Content() {
         <div className="phase3-moments-rail">
           {moments.map((asset, index) => (
             <article key={asset.src} className="phase3-moment-card">
-              <Phase3Media asset={asset} />
-              <span className="phase3-moment-play" aria-hidden="true">
-                <Play />
-              </span>
-              <small>{String(index + 1).padStart(2, "0")}</small>
+              <Phase3Media asset={asset} playback="visible" />
+              <div className="phase3-moment-caption">
+                <strong>{asset.label}</strong>
+                <small aria-hidden="true">{String(index + 1).padStart(2, "0")}</small>
+              </div>
             </article>
           ))}
         </div>
@@ -349,6 +371,36 @@ function DesktopHomePhase3Content() {
         </a>
       </section>
     </main>
+  );
+}
+
+function AboutStory({ copy }: { copy: (typeof HOME_COPY)["ar"] | (typeof HOME_COPY)["en"] }) {
+  return (
+    <section
+      id="about-asya"
+      className="phase3-about phase3-section"
+      aria-labelledby="about-asya-title"
+    >
+      <figure>
+        <img
+          src={posterPath("asya-moment-interior-lights.png")}
+          alt={copy.aboutAlt}
+          width={720}
+          height={1280}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <div>
+        <p>{copy.aboutEyebrow}</p>
+        <h2 id="about-asya-title">{copy.aboutTitle}</h2>
+        <span>{copy.aboutBody}</span>
+        <a href="/menu" className="phase3-button phase3-button-olive">
+          {copy.aboutAction}
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      </div>
+    </section>
   );
 }
 

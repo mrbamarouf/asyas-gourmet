@@ -4,7 +4,7 @@ import type { Locale } from "@/data/menu";
 export const UI = {
   nav_home: { ar: "الرئيسية", en: "Home" },
   nav_menu: { ar: "المنيو", en: "Menu" },
-  nav_about: { ar: "عن أسيا", en: "About Asya" },
+  nav_about: { ar: "عن آسيا", en: "About Asya" },
   nav_visit: { ar: "الزيارة", en: "Visit" },
   nav_contact: { ar: "تواصل", en: "Contact" },
 

@@ -7,6 +7,8 @@ export interface Phase3MediaAsset {
   label: string;
 }
 
+type Phase3PlaybackMode = "leader" | "visible";
+
 interface RegisteredVideo {
   ratio: number;
   requestPlay: () => void;
@@ -36,14 +38,17 @@ export function Phase3Media({
   asset,
   className = "",
   eager = false,
+  playback = "leader",
 }: {
   asset: Phase3MediaAsset;
   className?: string;
   eager?: boolean;
+  playback?: Phase3PlaybackMode;
 }) {
   const shellRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const shouldPlayRef = useRef(false);
+  const visibilityRatioRef = useRef(eager ? 1 : 0);
   const retryRef = useRef<number | null>(null);
   const [shouldLoad, setShouldLoad] = useState(eager);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -85,30 +90,52 @@ export function Phase3Media({
       video.pause();
     };
 
+    const scheduleRetry = (delay = 350) => {
+      clearRetry();
+      retryRef.current = window.setTimeout(() => {
+        if (!shouldPlayRef.current || disposed || document.hidden || hasError) return;
+        video.muted = true;
+        video.defaultMuted = true;
+        void video.play().catch(() => undefined);
+      }, delay);
+    };
+
     const requestPlay = () => {
-      if (disposed || reducedMotion || document.hidden || hasError) return;
+      if (disposed || (reducedMotion && playback === "leader") || document.hidden || hasError) {
+        return;
+      }
       shouldPlayRef.current = true;
       video.muted = true;
+      video.defaultMuted = true;
       const playPromise = video.play();
 
       playPromise?.catch(() => {
-        clearRetry();
-        retryRef.current = window.setTimeout(() => {
-          if (shouldPlayRef.current && !disposed) void video.play().catch(() => undefined);
-        }, 500);
+        scheduleRetry(450);
       });
     };
 
-    registeredVideos.set(video, { ratio: eager ? 1 : 0, requestPlay, pause });
+    if (playback === "leader") {
+      registeredVideos.set(video, { ratio: eager ? 1 : 0, requestPlay, pause });
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        const ratio = entry?.isIntersecting ? (entry.intersectionRatio ?? 0) : 0;
+        visibilityRatioRef.current = ratio;
+
+        if (playback === "visible") {
+          if (ratio >= 0.28) requestPlay();
+          else if (!entry?.isIntersecting || ratio <= 0.08) pause();
+          return;
+        }
+
         const registered = registeredVideos.get(video);
-        if (!registered) return;
-        registered.ratio = entry?.isIntersecting ? (entry.intersectionRatio ?? 0) : 0;
-        updatePlaybackLeader();
+        if (registered) {
+          registered.ratio = ratio;
+          updatePlaybackLeader();
+        }
       },
-      { rootMargin: "80px 0px", threshold: [0, 0.2, 0.35, 0.5, 0.7, 0.9] },
+      { rootMargin: "100px 0px", threshold: [0, 0.08, 0.28, 0.5, 0.75] },
     );
 
     const handlePlaying = () => {
@@ -116,34 +143,55 @@ export function Phase3Media({
       setHasError(false);
       setIsPlaying(true);
     };
-    const handlePause = () => setIsPlaying(false);
+    const handlePause = () => {
+      setIsPlaying(false);
+      if (shouldPlayRef.current) scheduleRetry();
+    };
+    const handleCanPlay = () => {
+      if (shouldPlayRef.current) requestPlay();
+    };
+    const handleStall = () => {
+      if (shouldPlayRef.current) scheduleRetry(700);
+    };
     const handleError = () => {
       setHasError(true);
       setIsPlaying(false);
       pause();
     };
-    const handleVisibility = () => updatePlaybackLeader();
+    const handleVisibility = () => {
+      if (document.hidden) {
+        pause();
+      } else if (playback === "visible") {
+        if (visibilityRatioRef.current >= 0.28) requestPlay();
+      } else {
+        updatePlaybackLeader();
+      }
+    };
 
     observer.observe(shell);
     video.addEventListener("playing", handlePlaying);
     video.addEventListener("pause", handlePause);
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("stalled", handleStall);
     video.addEventListener("error", handleError);
     document.addEventListener("visibilitychange", handleVisibility);
-    updatePlaybackLeader();
+    if (playback === "leader") updatePlaybackLeader();
 
     return () => {
       disposed = true;
       clearRetry();
       observer.disconnect();
-      registeredVideos.delete(video);
+      if (playback === "leader") registeredVideos.delete(video);
       video.removeEventListener("playing", handlePlaying);
       video.removeEventListener("pause", handlePause);
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("stalled", handleStall);
       video.removeEventListener("error", handleError);
       document.removeEventListener("visibilitychange", handleVisibility);
       video.pause();
-      updatePlaybackLeader();
+      if (playback === "leader") updatePlaybackLeader();
     };
-  }, [eager, hasError, shouldLoad]);
+  }, [eager, hasError, playback, shouldLoad]);
 
   return (
     <figure

@@ -478,6 +478,75 @@
   color: var(--p3-gold);
 }
 
+.phase3-about {
+  display: grid;
+  scroll-margin-top: 7rem;
+  gap: 0.8rem;
+}
+
+.phase3-about figure {
+  min-height: 360px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--p3-beige);
+}
+
+.phase3-about figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.phase3-about > div {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0.75rem;
+  padding: 1.6rem 1.2rem;
+  border: 1px solid rgba(52, 65, 47, 0.1);
+  border-radius: 16px;
+  background: #efe5d7;
+}
+
+.phase3-about > div > p,
+.phase3-about > div > h2,
+.phase3-about > div > span {
+  margin: 0;
+}
+
+.phase3-about > div > p {
+  color: var(--p3-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.phase3-about h2 {
+  max-width: 14ch;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.phase3-site[data-locale="ar"] .phase3-about h2 {
+  line-height: 1.5;
+}
+
+.phase3-about > div > span {
+  max-width: 42rem;
+  color: var(--p3-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.phase3-about .phase3-button {
+  margin-top: 0.35rem;
+}
+
 .phase3-signature-rail {
   display: flex;
   gap: 0.78rem;
@@ -813,39 +882,47 @@
   background: #222b22;
 }
 
-.phase3-moment-card > small {
+.phase3-moment-card::after {
+  position: absolute;
+  z-index: 2;
+  inset: 48% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(14, 19, 14, 0.82));
+  content: "";
+  pointer-events: none;
+}
+
+.phase3-moment-caption {
   position: absolute;
   z-index: 3;
-  top: 0.85rem;
-  inset-inline-start: 0.85rem;
-  color: rgba(255, 250, 242, 0.75);
-  font-size: 0.68rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 1rem 0.9rem;
+  color: #fffaf2;
+}
+
+.phase3-moment-caption strong {
+  max-width: 15ch;
+  font-family: var(--p3-display);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.phase3-site[data-locale="ar"] .phase3-moment-caption strong {
+  font-family: var(--p3-body);
+  line-height: 1.6;
+}
+
+.phase3-moment-caption small {
+  color: rgba(255, 250, 242, 0.68);
+  font-size: 0.62rem;
   font-weight: 800;
-}
-
-.phase3-moment-play {
-  position: absolute;
-  z-index: 3;
-  right: 0.85rem;
-  bottom: 0.85rem;
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(251, 248, 242, 0.92);
-  color: var(--p3-olive);
-}
-
-.phase3-site[data-locale="ar"] .phase3-moment-play {
-  right: auto;
-  left: 0.85rem;
-}
-
-.phase3-moment-play svg {
-  width: 1rem;
-  height: 1rem;
-  transform: translateX(1px);
+  font-variant-numeric: tabular-nums;
 }
 
 .phase3-engagement {
@@ -2235,8 +2312,7 @@ body:has(.phase3-site[data-locale="ar"]) .mobile-bottom-nav a {
     color: var(--p3-olive) !important;
   }
 
-  .phase3-site .nav-links a:last-child,
-  .phase3-site .nav-links a:nth-child(3) {
+  .phase3-site .nav-links a:last-child {
     display: none !important;
   }
 
@@ -2279,6 +2355,27 @@ body:has(.phase3-site[data-locale="ar"]) .mobile-bottom-nav a {
 
   .phase3-quick-actions a {
     min-height: 88px;
+  }
+
+  .phase3-about {
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+    align-items: stretch;
+    gap: 1rem;
+    direction: ltr;
+  }
+
+  .phase3-about figure,
+  .phase3-about figure img {
+    min-height: 480px;
+  }
+
+  .phase3-about > div {
+    padding: 2.2rem;
+  }
+
+  .phase3-site[data-locale="ar"] .phase3-about > div {
+    direction: rtl;
+    text-align: right;
   }
 
   .phase3-section {
@@ -2585,6 +2682,15 @@ body:has(.phase3-site[data-locale="ar"]) .mobile-bottom-nav a {
   .phase3-site .nav-links a:last-child,
   .phase3-site .nav-links a:nth-child(3) {
     display: inline-flex !important;
+  }
+
+  .phase3-about figure,
+  .phase3-about figure img {
+    min-height: 560px;
+  }
+
+  .phase3-about > div {
+    padding: 3rem;
   }
 
   .phase3-hero {

@@ -6,7 +6,6 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  Play,
   Star,
   Utensils,
 } from "lucide-react";
@@ -49,6 +48,12 @@ const COPY = {
     whatsapp: "واتساب",
     reviews: "قيّمنا",
     quick: "وصول سريع",
+    aboutEyebrow: "عن آسيا",
+    aboutTitle: "مائدة تركية بروح آسيا",
+    aboutBody:
+      "آسيا جورميه تقدم تجربة مستوحاة من المطبخ التركي، تجمع الفطور التركي، المخبوزات الطازجة، الأطباق الدافئة وأجواء المطعم.",
+    aboutAction: "اكتشف المنيو",
+    aboutAlt: "أجواء المطعم في آسيا جورميه",
     signatureEyebrow: "مختارات آسيا",
     signatureTitle: "أطباق تستحق الاكتشاف",
     experienceTitle: "تجارب من آسيا",
@@ -67,6 +72,11 @@ const COPY = {
     browse: "تصفح المنيو الكامل",
     momentsTitle: "لحظات من آسيا",
     momentsBody: "مشاهد من المطبخ والصالة والمائدة.",
+    momentDining: "أجواء المطعم",
+    momentChef: "الشيف في المطبخ",
+    momentCraft: "الفرن التقليدي",
+    momentTeam: "فريق آسيا",
+    momentLounge: "تحضير اللاونج",
     visitTitle: "زيارتكم تبدأ من هنا",
     visitBody: "افتح الاتجاهات أو اتصل بنا قبل الوصول.",
     call: "اتصال",
@@ -97,6 +107,12 @@ const COPY = {
     whatsapp: "WhatsApp",
     reviews: "Review Us",
     quick: "Quick Actions",
+    aboutEyebrow: "About Asya",
+    aboutTitle: "A Turkish Table, the Asya Way",
+    aboutBody:
+      "Asya’s Gourmet offers a Turkish-inspired dining experience bringing together Turkish breakfast, fresh bakery, warm dishes, and the restaurant atmosphere.",
+    aboutAction: "Explore the Menu",
+    aboutAlt: "The restaurant atmosphere at Asya's Gourmet",
     signatureEyebrow: "Asya’s Selection",
     signatureTitle: "Dishes Worth Discovering",
     experienceTitle: "Experiences at Asya’s",
@@ -115,6 +131,11 @@ const COPY = {
     browse: "Browse the Full Menu",
     momentsTitle: "Moments at Asya’s",
     momentsBody: "Scenes from the kitchen, dining room, and table.",
+    momentDining: "Restaurant Atmosphere",
+    momentChef: "Chef at Work",
+    momentCraft: "The Traditional Oven",
+    momentTeam: "The Asya Team",
+    momentLounge: "Lounge Preparation",
     visitTitle: "Your Visit Starts Here",
     visitBody: "Open directions or call us before you arrive.",
     call: "Call",
@@ -175,10 +196,11 @@ export function MobileHome35() {
   const breakfast = mediaAsset("asya-breakfast.mp4", "asya-breakfast.png", copy.breakfastAlt);
   const bakery = mediaAsset("asya-bakery-pide.mp4", "asya-bakery-pide.png", copy.bakeryAlt);
   const moments = [
-    mediaAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", copy.momentAlt),
-    mediaAsset("asya-moment-chef.mp4", "asya-moment-chef.png", copy.momentAlt),
-    mediaAsset("asya-moment-craft.mp4", "asya-moment-craft.png", copy.momentAlt),
-    mediaAsset("asya-moment-team.mp4", "asya-moment-team.png", copy.momentAlt),
+    mediaAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", copy.momentDining),
+    mediaAsset("asya-moment-chef.mp4", "asya-moment-chef.png", copy.momentChef),
+    mediaAsset("asya-moment-craft.mp4", "asya-moment-craft.png", copy.momentCraft),
+    mediaAsset("asya-moment-team.mp4", "asya-moment-team.png", copy.momentTeam),
+    mediaAsset("asya-moment-lounge.mp4", "asya-moment-lounge.png", copy.momentLounge),
   ];
 
   return (
@@ -209,6 +231,7 @@ export function MobileHome35() {
       </section>
 
       <MobileQuickActions copy={copy} />
+      <MobileAbout copy={copy} />
 
       <section
         className="mobile35-section mobile35-signatures"
@@ -297,11 +320,11 @@ export function MobileHome35() {
         <div className="mobile35-moments-rail">
           {moments.map((asset, index) => (
             <article key={asset.src} className="mobile35-moment-card">
-              <Phase3Media asset={asset} />
-              <span aria-hidden="true">
-                <Play />
-              </span>
-              <small>{String(index + 1).padStart(2, "0")}</small>
+              <Phase3Media asset={asset} playback="visible" />
+              <div className="mobile35-moment-caption">
+                <strong>{asset.label}</strong>
+                <small aria-hidden="true">{String(index + 1).padStart(2, "0")}</small>
+              </div>
             </article>
           ))}
         </div>
@@ -318,6 +341,36 @@ export function MobileHome35() {
         </a>
       </section>
     </main>
+  );
+}
+
+function MobileAbout({ copy }: { copy: (typeof COPY)["ar"] | (typeof COPY)["en"] }) {
+  return (
+    <section
+      id="about-asya"
+      className="mobile35-section mobile35-about"
+      aria-labelledby="mobile35-about-title"
+    >
+      <figure>
+        <img
+          src={posterPath("asya-moment-interior-lights.png")}
+          alt={copy.aboutAlt}
+          width={720}
+          height={1280}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <div>
+        <p>{copy.aboutEyebrow}</p>
+        <h2 id="mobile35-about-title">{copy.aboutTitle}</h2>
+        <span>{copy.aboutBody}</span>
+        <a href="/menu" className="mobile35-primary-button">
+          {copy.aboutAction}
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      </div>
+    </section>
   );
 }
 

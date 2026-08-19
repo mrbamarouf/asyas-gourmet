@@ -9,6 +9,7 @@ import {
   ExternalLink,
   Flame,
   Home,
+  Info,
   Instagram,
   Languages,
   Leaf,
@@ -1560,7 +1561,7 @@ function TopNav({ current }: { current: "home" | "menu" }) {
             <Utensils className="nav-icon" />
             <span>{t("nav_menu")}</span>
           </a>
-          <a href="/#about">
+          <a href="/#about-asya">
             <span>{t("nav_about")}</span>
           </a>
           <a href="/#visit">
@@ -2423,6 +2424,10 @@ function Footer() {
           <a href="/menu">
             <Utensils className="h-4 w-4" />
             <span>{t("nav_menu")}</span>
+          </a>
+          <a href="/#about-asya">
+            <Info className="h-4 w-4" />
+            <span>{t("nav_about")}</span>
           </a>
           <a href={`tel:${RESTAURANT.phone}`}>
             <Phone className="h-4 w-4" />

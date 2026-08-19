@@ -107,6 +107,19 @@
     color: #fffaf2;
   }
 
+  .mobile35-header nav a.mobile35-about-link {
+    min-width: auto;
+    padding-inline: 0.45rem;
+  }
+
+  .mobile35-about-link span {
+    max-width: 5.5rem;
+    overflow: hidden;
+    font-size: 0.54rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .mobile35-header nav svg {
     width: 1.05rem;
     height: 1.05rem;
@@ -285,6 +298,77 @@
     width: min(100% - 1rem, 440px);
     margin-inline: auto;
     padding-top: 3.8rem;
+  }
+
+  .mobile35-about {
+    display: grid;
+    scroll-margin-top: 1rem;
+    overflow: hidden;
+    padding-top: 0;
+    border: 1px solid rgba(52, 65, 47, 0.1);
+    border-radius: 18px;
+    background: #efe5d7;
+    box-shadow: 0 8px 20px rgba(29, 40, 32, 0.08);
+  }
+
+  .mobile35-about figure {
+    height: 330px;
+    margin: 0;
+    overflow: hidden;
+    background: var(--p3-beige);
+  }
+
+  .mobile35-about figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .mobile35-about > div {
+    display: grid;
+    justify-items: center;
+    gap: 0.65rem;
+    padding: 1.35rem 1rem 1.5rem;
+    text-align: center;
+  }
+
+  .mobile35-about > div > p,
+  .mobile35-about > div > h2,
+  .mobile35-about > div > span {
+    margin: 0;
+  }
+
+  .mobile35-about > div > p {
+    color: var(--p3-gold);
+    font-size: 0.64rem;
+    font-weight: 800;
+  }
+
+  .mobile35-about h2 {
+    max-width: 15ch;
+    font-size: 1.8rem;
+    line-height: 1.28;
+    text-wrap: balance;
+  }
+
+  .phase3-site[data-locale="ar"] .mobile35-about h2 {
+    line-height: 1.55;
+  }
+
+  .mobile35-about > div > span {
+    max-width: 34ch;
+    color: var(--p3-ink-soft);
+    font-size: 0.74rem;
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  .mobile35-about .mobile35-primary-button {
+    margin-top: 0.2rem;
+    background: var(--p3-olive);
+    color: #fffaf2;
   }
 
   .mobile35-section-heading {
@@ -609,33 +693,47 @@
     background: #202a20;
   }
 
-  .mobile35-moment-card > span {
+  .mobile35-moment-card::after {
     position: absolute;
-    z-index: 3;
-    right: 0.8rem;
-    bottom: 0.8rem;
-    display: grid;
-    width: 42px;
-    height: 42px;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(251, 248, 242, 0.94);
-    color: var(--p3-olive);
+    z-index: 2;
+    inset: 48% 0 0;
+    background: linear-gradient(180deg, transparent, rgba(14, 19, 14, 0.84));
+    content: "";
+    pointer-events: none;
   }
 
-  .mobile35-moment-card > span svg {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .mobile35-moment-card > small {
+  .mobile35-moment-caption {
     position: absolute;
     z-index: 3;
-    top: 0.8rem;
-    left: 0.8rem;
-    color: rgba(255, 250, 242, 0.8);
-    font-size: 0.64rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 0.65rem;
+    padding: 1rem 0.85rem;
+    color: #fffaf2;
+  }
+
+  .mobile35-moment-caption strong {
+    max-width: 14ch;
+    font-family: var(--p3-display);
+    font-size: 0.92rem;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+
+  .phase3-site[data-locale="ar"] .mobile35-moment-caption strong {
+    font-family: var(--p3-body);
+    line-height: 1.6;
+  }
+
+  .mobile35-moment-caption small {
+    color: rgba(255, 250, 242, 0.68);
+    font-size: 0.58rem;
     font-weight: 800;
+    font-variant-numeric: tabular-nums;
   }
 
   .mobile35-visit {
