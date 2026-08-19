@@ -15347,6 +15347,150 @@ body.asya-scroll-chrome-hidden .full-menu-page .full-menu-controls {
   }
 }
 
+/* Verified official social and contact destinations. */
+.home2026-connect {
+  padding-bottom: clamp(2.8rem, 5vw, 4.6rem);
+}
+
+.home2026-connect-head {
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+  width: min(100%, 620px);
+  margin: 0 auto clamp(1.25rem, 2.6vw, 1.9rem);
+  text-align: center;
+}
+
+.home2026-connect-head h2 {
+  margin: 0;
+  color: #1f261c;
+  font-size: clamp(1.8rem, 4.2vw, 3rem);
+  font-weight: 700;
+  line-height: 1.16;
+  text-wrap: balance;
+}
+
+.home2026-connect-head p {
+  width: min(100%, 460px);
+  margin: 0;
+  color: #625f56;
+  font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.home2026-connect-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+  direction: ltr;
+}
+
+.home2026-connect-action {
+  display: grid;
+  min-width: 0;
+  min-height: 84px;
+  grid-template-columns: 2.35rem minmax(0, 1fr) 1rem;
+  align-items: center;
+  gap: 0.62rem;
+  padding: 0.82rem;
+  border: 1px solid rgba(47, 58, 40, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 251, 243, 0.84);
+  color: #2f3a28;
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.home2026-connect-action:last-child {
+  grid-column: 1 / -1;
+}
+
+.home2026-connect-action:hover {
+  border-color: rgba(138, 100, 43, 0.38);
+  background: #fffaf1;
+  transform: translateY(-1px);
+}
+
+.home2026-connect-action:focus-visible {
+  outline: 3px solid rgba(138, 100, 43, 0.28);
+  outline-offset: 3px;
+}
+
+.home2026-connect-icon {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(138, 100, 43, 0.1);
+  color: #765522;
+}
+
+.home2026-connect-action strong {
+  min-width: 0;
+  color: #263120;
+  font-size: 0.83rem;
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.home2026-connect-arrow {
+  color: #8a642b;
+}
+
+[data-locale="ar"] .home2026-connect-arrow {
+  transform: scaleX(-1);
+}
+
+@media (min-width: 600px) {
+  .home2026-connect-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home2026-connect-action:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .home2026-connect-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .home2026-connect-action {
+    min-height: 94px;
+    grid-template-columns: 2.5rem minmax(0, 1fr) 1rem;
+    padding: 0.95rem;
+  }
+
+  .home2026-connect-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home2026-connect {
+    padding-top: 2.25rem;
+    padding-bottom: 2.35rem;
+  }
+
+  .home2026-connect-head {
+    width: min(100%, 340px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home2026-connect-action {
+    transition: none;
+  }
+}
+
 /* Premium menu category intro cards. */
 .full-menu-page .menu-display-group > .menu-group-heading {
   position: relative !important;

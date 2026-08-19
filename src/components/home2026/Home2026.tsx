@@ -19,6 +19,7 @@ import visitInteriorImg from "@/assets/visit-interior.jpg";
 import { BakeryFeature2026 } from "./BakeryFeature2026";
 import { BreakfastFeature2026 } from "./BreakfastFeature2026";
 import type { CinematicVideoAsset2026 } from "./CinematicVideo2026";
+import { ConnectSection2026 } from "./ConnectSection2026";
 import { Hero2026 } from "./Hero2026";
 import { MomentsGallery2026 } from "./MomentsGallery2026";
 import { SignatureDishes2026 } from "./SignatureDishes2026";
@@ -60,6 +61,13 @@ const HOME2026_COPY = {
     visitCall: "اتصال",
     visitMap: "موقع آسيا جورميه",
     visitAlt: "صالة أسيا جورميه",
+    connectTitle: "ابقَ قريبًا من آسيا",
+    connectBody: "تابع جديدنا، تواصل معنا، أو شاركنا رأيك.",
+    connectInstagram: "إنستغرام",
+    connectTiktok: "تيك توك",
+    connectWhatsapp: "تواصل عبر واتساب",
+    connectReview: "قيّم تجربتك",
+    connectDirections: "الاتجاهات",
     finalTitle: "المنيو الكامل",
     finalBody: "اختر طبقك من الفطور التركي، المخبوزات، المشويات، الحلويات والمشروبات.",
     finalCta: "اكتشف المنيو الكامل",
@@ -95,6 +103,13 @@ const HOME2026_COPY = {
     visitCall: "Call",
     visitMap: "Asya’s Gourmet Location",
     visitAlt: "Asya's Gourmet dining room",
+    connectTitle: "Stay Connected with Asya’s",
+    connectBody: "Follow our latest moments, message us, or share your experience.",
+    connectInstagram: "Instagram",
+    connectTiktok: "TikTok",
+    connectWhatsapp: "WhatsApp",
+    connectReview: "Rate Your Experience",
+    connectDirections: "Directions",
     finalTitle: "Full Menu",
     finalBody: "Choose from Turkish breakfast, bakery, grills, desserts, and drinks.",
     finalCta: "Explore the Full Menu",
@@ -173,6 +188,18 @@ function Home2026Content() {
         address={tx(RESTAURANT.address)}
         image={visitInteriorImg}
         imageAlt={copy.visitAlt}
+      />
+      <ConnectSection2026
+        locale={locale}
+        title={copy.connectTitle}
+        body={copy.connectBody}
+        labels={{
+          instagram: copy.connectInstagram,
+          tiktok: copy.connectTiktok,
+          whatsapp: copy.connectWhatsapp,
+          review: copy.connectReview,
+          directions: copy.connectDirections,
+        }}
       />
     </main>
   );

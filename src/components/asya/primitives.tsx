@@ -9,6 +9,7 @@ import {
   ExternalLink,
   Flame,
   Home,
+  Info,
   Instagram,
   Languages,
   Leaf,
@@ -46,11 +47,13 @@ import {
   type MenuTag,
 } from "@/data/menu";
 import { formatVisibleText, I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
+import { MobileItemDetail35 } from "@/components/mobile35/MobileItemDetail35";
+import { MobileFooter35, MobileHeader35 } from "@/components/mobile35/MobileShell35";
+import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
 import mobileIntroVideo from "@/assets/asya-mobile-intro.mp4";
 import logoImg from "@/assets/asyas-logo-transparent.png";
-import placeholderImg from "@/assets/dish-placeholder.jpg";
 
 export const softEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const LOCALE_STORAGE_KEY = "asyas-locale";
@@ -610,7 +613,7 @@ export function useItemDetail(): ItemDetailContextValue {
 }
 
 export function localizeMenuText(text: LocalizedText, locale: Locale) {
-  return cleanLocalizedMenuText(text[locale], locale);
+  return text[locale] ?? "";
 }
 
 export function localizeMenuItemName(item: MenuItem, locale: Locale) {
@@ -618,11 +621,8 @@ export function localizeMenuItemName(item: MenuItem, locale: Locale) {
 }
 
 export function localizeMenuDescription(item: MenuItem, category: MenuCategory, locale: Locale) {
-  const rawDescription = cleanDescriptionCopy(
-    cleanLocalizedMenuText(item.description[locale], locale),
-    locale,
-  );
-  return polishMenuDescription(rawDescription, item, category, locale);
+  void category;
+  return item.description[locale] ?? "";
 }
 
 function cleanLocalizedMenuText(value: string | undefined, locale: Locale) {
@@ -706,7 +706,7 @@ function polishMenuDescription(
 }
 
 function stripMenuFiller(value: string, locale: Locale) {
-  let text = formatVisibleText(value.replace(/\s+/g, " ").trim(), locale);
+  const text = formatVisibleText(value.replace(/\s+/g, " ").trim(), locale);
   if (!text) return "";
 
   if (locale === "ar") {
@@ -879,20 +879,34 @@ function fallbackMenuDescription(
     if (/shisha/i.test(englishCategory)) {
       return shishaDescription(itemName, locale);
     }
-    if (/rice/i.test(englishName)) return "أرز أبيض مطهو بالبخار، يُقدّم ساخنًا بجانب المشويات والطواجن.";
-    if (/bulgur/i.test(englishName)) return "برغل مطهو بصلصة طماطم خفيفة، يُقدّم دافئًا بجانب المشويات.";
-    if (/beyti/i.test(englishName)) return "لحم مفروم متبل يُشوى على الفحم، يلف بخبز رقيق ويُقدّم مع صلصة الطماطم واللبن.";
-    if (/katikli/i.test(englishName)) return "خبز هاتاي رقيق يُخبز مع معجون الفلفل والأعشاب، ويُقدّم ساخنًا.";
-    if (/tandir/i.test(englishName)) return "خبز تندور تركي بقوام طري وأطراف خفيفة القرمشة، يُقدّم مع الفطور والمقبلات.";
-    if (/sparkling water/i.test(englishName)) return "مياه فوارة باردة بفقاعات ناعمة، تُقدّم لإنعاش المذاق بين الأطباق.";
+    if (/rice/i.test(englishName))
+      return "أرز أبيض مطهو بالبخار، يُقدّم ساخنًا بجانب المشويات والطواجن.";
+    if (/bulgur/i.test(englishName))
+      return "برغل مطهو بصلصة طماطم خفيفة، يُقدّم دافئًا بجانب المشويات.";
+    if (/beyti/i.test(englishName))
+      return "لحم مفروم متبل يُشوى على الفحم، يلف بخبز رقيق ويُقدّم مع صلصة الطماطم واللبن.";
+    if (/katikli/i.test(englishName))
+      return "خبز هاتاي رقيق يُخبز مع معجون الفلفل والأعشاب، ويُقدّم ساخنًا.";
+    if (/tandir/i.test(englishName))
+      return "خبز تندور تركي بقوام طري وأطراف خفيفة القرمشة، يُقدّم مع الفطور والمقبلات.";
+    if (/sparkling water/i.test(englishName))
+      return "مياه فوارة باردة بفقاعات ناعمة، تُقدّم لإنعاش المذاق بين الأطباق.";
     if (/water/i.test(englishName)) return "مياه باردة تُقدّم مع الوجبة.";
-    if (/coffee|espresso|latte|mocha|cortado|americano|cappuccino/i.test(englishCategory + englishName)) {
+    if (
+      /coffee|espresso|latte|mocha|cortado|americano|cappuccino/i.test(
+        englishCategory + englishName,
+      )
+    ) {
       return `${itemName} تُحضّر من القهوة والحليب أو الماء حسب الصنف، وتُقدّم بنكهة متوازنة.`;
     }
     if (/tea/i.test(englishCategory + englishName)) {
       return `${itemName} يُحضّر من أوراق الشاي ويُقدّم ساخنًا أو باردًا حسب الصنف.`;
     }
-    if (/drink|juice|mojito|lemonade|ayran|soft|signature|garden|milkshake|matcha/i.test(englishCategory + englishName)) {
+    if (
+      /drink|juice|mojito|lemonade|ayran|soft|signature|garden|milkshake|matcha/i.test(
+        englishCategory + englishName,
+      )
+    ) {
       return `${itemName} مشروب بارد بنكهة متوازنة، يُقدّم منعشًا مع الوجبة.`;
     }
     return `${itemName} من قسم ${categoryName}، يُحضّر في مطبخ أسيا ويُقدّم على المائدة.`;
@@ -901,20 +915,32 @@ function fallbackMenuDescription(
   if (/shisha/i.test(englishCategory)) {
     return shishaDescription(itemName, locale);
   }
-  if (/rice/i.test(englishName)) return "Steamed white rice served hot as a side for grills and casseroles.";
-  if (/bulgur/i.test(englishName)) return "Bulgur cooked with light tomato sauce and served warm beside the grills.";
-  if (/beyti/i.test(englishName)) return "Seasoned minced meat grilled over charcoal, wrapped in thin bread, and served with tomato sauce and yogurt.";
-  if (/katikli/i.test(englishName)) return "Thin Hatay bread baked with pepper paste and herbs, served hot from the oven.";
-  if (/tandir/i.test(englishName)) return "Turkish tandoor bread with a soft center and lightly crisp edges, served with breakfast and meze.";
-  if (/sparkling water/i.test(englishName)) return "Chilled sparkling water with fine bubbles, served to refresh the palate between dishes.";
+  if (/rice/i.test(englishName))
+    return "Steamed white rice served hot as a side for grills and casseroles.";
+  if (/bulgur/i.test(englishName))
+    return "Bulgur cooked with light tomato sauce and served warm beside the grills.";
+  if (/beyti/i.test(englishName))
+    return "Seasoned minced meat grilled over charcoal, wrapped in thin bread, and served with tomato sauce and yogurt.";
+  if (/katikli/i.test(englishName))
+    return "Thin Hatay bread baked with pepper paste and herbs, served hot from the oven.";
+  if (/tandir/i.test(englishName))
+    return "Turkish tandoor bread with a soft center and lightly crisp edges, served with breakfast and meze.";
+  if (/sparkling water/i.test(englishName))
+    return "Chilled sparkling water with fine bubbles, served to refresh the palate between dishes.";
   if (/water/i.test(englishName)) return "Chilled water served with the meal.";
-  if (/coffee|espresso|latte|mocha|cortado|americano|cappuccino/i.test(englishCategory + englishName)) {
+  if (
+    /coffee|espresso|latte|mocha|cortado|americano|cappuccino/i.test(englishCategory + englishName)
+  ) {
     return `${itemName} prepared with coffee and milk or water, served with a balanced flavor.`;
   }
   if (/tea/i.test(englishCategory + englishName)) {
     return `${itemName} brewed with tea leaves and served hot or chilled according to the recipe.`;
   }
-  if (/drink|juice|mojito|lemonade|ayran|soft|signature|garden|milkshake|matcha/i.test(englishCategory + englishName)) {
+  if (
+    /drink|juice|mojito|lemonade|ayran|soft|signature|garden|milkshake|matcha/i.test(
+      englishCategory + englishName,
+    )
+  ) {
     return `${itemName} served chilled with a balanced, refreshing flavor.`;
   }
   return `${itemName} from the ${categoryName} selection, prepared in Asya's kitchen and served at the table.`;
@@ -924,38 +950,67 @@ function shishaDescription(itemName: string, locale: Locale) {
   const label = itemName.toLowerCase();
 
   if (locale === "ar") {
-    if (/تفاحتين|التفاحتين/.test(itemName)) return `${itemName} بنكهة التفاح واليانسون، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/عنب/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} يمزج حلاوة العنب مع برودة النعناع، ويُقدّم بدخان ناعم.`;
-    if (/عنب/.test(itemName) && /توت/.test(itemName)) return `${itemName} بنكهة العنب والتوت، يُحضّر للطلب ويُقدّم على الطاولة.`;
-    if (/عنب/.test(itemName)) return `${itemName} بنكهة عنب واضحة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/ليمون/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} بنكهة ليمون ونعناع باردة، يُحضّر للطلب ويُقدّم على الطاولة.`;
-    if (/برتقال/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} بنكهة برتقال ونعناع، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/علكة/.test(itemName) && /قرفة/.test(itemName)) return `${itemName} يجمع نكهة العلكة مع دفء القرفة، ويُحضّر للطلب.`;
-    if (/علكة/.test(itemName) && /نعناع/.test(itemName)) return `${itemName} بنكهة العلكة والنعناع، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/علكة/.test(itemName)) return `${itemName} بنكهة العلكة الناعمة، يُحضّر للطلب ويُقدّم على الطاولة.`;
-    if (/نعناع/.test(itemName)) return `${itemName} بنكهة نعناع باردة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/توت|روبي|بلو|الأزرق/.test(itemName)) return `${itemName} بنكهة توت واضحة، يُحضّر للطلب ويُقدّم على الطاولة.`;
-    if (/بطيخ/.test(itemName)) return `${itemName} بنكهة بطيخ خفيفة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/خوخ/.test(itemName)) return `${itemName} بنكهة خوخ ناعمة، يُحضّر للطلب ويُقدّم على الطاولة.`;
-    if (/مستكة/.test(itemName)) return `${itemName} بنكهة مستكة عطرية، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
-    if (/دبي|ماربيا|هاتريك|لاست|كوكايا|أنيما|نول|باي/.test(itemName)) return `${itemName} خلطة خاصة من تشارمينج، تُحضّر للطلب وتُقدّم بدخان ناعم.`;
+    if (/تفاحتين|التفاحتين/.test(itemName))
+      return `${itemName} بنكهة التفاح واليانسون، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/عنب/.test(itemName) && /نعناع/.test(itemName))
+      return `${itemName} يمزج حلاوة العنب مع برودة النعناع، ويُقدّم بدخان ناعم.`;
+    if (/عنب/.test(itemName) && /توت/.test(itemName))
+      return `${itemName} بنكهة العنب والتوت، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/عنب/.test(itemName))
+      return `${itemName} بنكهة عنب واضحة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/ليمون/.test(itemName) && /نعناع/.test(itemName))
+      return `${itemName} بنكهة ليمون ونعناع باردة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/برتقال/.test(itemName) && /نعناع/.test(itemName))
+      return `${itemName} بنكهة برتقال ونعناع، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/علكة/.test(itemName) && /قرفة/.test(itemName))
+      return `${itemName} يجمع نكهة العلكة مع دفء القرفة، ويُحضّر للطلب.`;
+    if (/علكة/.test(itemName) && /نعناع/.test(itemName))
+      return `${itemName} بنكهة العلكة والنعناع، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/علكة/.test(itemName))
+      return `${itemName} بنكهة العلكة الناعمة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/نعناع/.test(itemName))
+      return `${itemName} بنكهة نعناع باردة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/توت|روبي|بلو|الأزرق/.test(itemName))
+      return `${itemName} بنكهة توت واضحة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/بطيخ/.test(itemName))
+      return `${itemName} بنكهة بطيخ خفيفة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/خوخ/.test(itemName))
+      return `${itemName} بنكهة خوخ ناعمة، يُحضّر للطلب ويُقدّم على الطاولة.`;
+    if (/مستكة/.test(itemName))
+      return `${itemName} بنكهة مستكة عطرية، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
+    if (/دبي|ماربيا|هاتريك|لاست|كوكايا|أنيما|نول|باي/.test(itemName))
+      return `${itemName} خلطة خاصة من تشارمينج، تُحضّر للطلب وتُقدّم بدخان ناعم.`;
     return `${itemName} بنكهة مختارة، يُحضّر للطلب ويُقدّم بدخان ناعم.`;
   }
 
-  if (/double apple/.test(label)) return `${itemName} shisha with apple and anise notes, prepared to order with a smooth draw.`;
-  if (/grape mint/.test(label)) return `${itemName} shisha pairs sweet grape with cooling mint, prepared to order.`;
-  if (/grape berry/.test(label)) return `${itemName} shisha blends grape and berry notes, prepared to order and served at the table.`;
-  if (/grape/.test(label)) return `${itemName} shisha with a clear grape flavor, prepared to order with a smooth draw.`;
-  if (/lemon mint/.test(label)) return `${itemName} shisha with lemon and mint notes, prepared to order and served at the table.`;
-  if (/orange mint/.test(label)) return `${itemName} shisha pairs orange with mint, prepared to order with a smooth draw.`;
-  if (/gum cinnamon/.test(label)) return `${itemName} shisha blends soft gum flavor with warm cinnamon, prepared to order.`;
-  if (/gum mint/.test(label)) return `${itemName} shisha pairs gum flavor with mint, prepared to order with a smooth draw.`;
-  if (/gum/.test(label)) return `${itemName} shisha with a soft gum flavor, prepared to order and served at the table.`;
-  if (/mint/.test(label)) return `${itemName} shisha with a cooling mint flavor, prepared to order with a smooth draw.`;
-  if (/blueberry|berry|ruby/.test(label)) return `${itemName} shisha with berry notes, prepared to order and served at the table.`;
-  if (/watermelon/.test(label)) return `${itemName} shisha with a light watermelon flavor, prepared to order with a smooth draw.`;
-  if (/peach/.test(label)) return `${itemName} shisha with a soft peach flavor, prepared to order and served at the table.`;
-  if (/mastic/.test(label)) return `${itemName} shisha with aromatic mastic notes, prepared to order with a smooth draw.`;
+  if (/double apple/.test(label))
+    return `${itemName} shisha with apple and anise notes, prepared to order with a smooth draw.`;
+  if (/grape mint/.test(label))
+    return `${itemName} shisha pairs sweet grape with cooling mint, prepared to order.`;
+  if (/grape berry/.test(label))
+    return `${itemName} shisha blends grape and berry notes, prepared to order and served at the table.`;
+  if (/grape/.test(label))
+    return `${itemName} shisha with a clear grape flavor, prepared to order with a smooth draw.`;
+  if (/lemon mint/.test(label))
+    return `${itemName} shisha with lemon and mint notes, prepared to order and served at the table.`;
+  if (/orange mint/.test(label))
+    return `${itemName} shisha pairs orange with mint, prepared to order with a smooth draw.`;
+  if (/gum cinnamon/.test(label))
+    return `${itemName} shisha blends soft gum flavor with warm cinnamon, prepared to order.`;
+  if (/gum mint/.test(label))
+    return `${itemName} shisha pairs gum flavor with mint, prepared to order with a smooth draw.`;
+  if (/gum/.test(label))
+    return `${itemName} shisha with a soft gum flavor, prepared to order and served at the table.`;
+  if (/mint/.test(label))
+    return `${itemName} shisha with a cooling mint flavor, prepared to order with a smooth draw.`;
+  if (/blueberry|berry|ruby/.test(label))
+    return `${itemName} shisha with berry notes, prepared to order and served at the table.`;
+  if (/watermelon/.test(label))
+    return `${itemName} shisha with a light watermelon flavor, prepared to order with a smooth draw.`;
+  if (/peach/.test(label))
+    return `${itemName} shisha with a soft peach flavor, prepared to order and served at the table.`;
+  if (/mastic/.test(label))
+    return `${itemName} shisha with aromatic mastic notes, prepared to order with a smooth draw.`;
   if (/dubai|marbella|hattrick|last puff|kokaya|anima|nol gradus|charming/.test(label)) {
     return `${itemName} is a Charming house blend, prepared to order and served with a smooth draw.`;
   }
@@ -1045,9 +1100,13 @@ export function compactOfficialDescription(value: string, locale: Locale) {
 }
 
 function clipDescription(value: string, locale: Locale, limit: number) {
-  const normalized = formatVisibleText(value, locale).replace(/\.{2,}/g, ".").replace(/\s+/g, " ").trim();
+  const normalized = formatVisibleText(value, locale)
+    .replace(/\.{2,}/g, ".")
+    .replace(/\s+/g, " ")
+    .trim();
   if (!normalized) return "";
-  if (normalized.length <= limit) return normalized.replace(/[،,;:]$/g, "") + ending(locale, normalized);
+  if (normalized.length <= limit)
+    return normalized.replace(/[،,;:]$/g, "") + ending(locale, normalized);
 
   const firstSentence = normalized.match(/^.*?[.!؟](?:\s|$)/u)?.[0]?.trim();
   if (firstSentence && firstSentence.length <= limit) {
@@ -1068,7 +1127,9 @@ function clipDescription(value: string, locale: Locale, limit: number) {
     excerpt = (lastSpace > 70 ? clipped.slice(0, lastSpace) : clipped).trim();
   }
 
-  const tidy = tidyExcerptEnd(excerpt, locale).replace(/[،,;:.]$/g, "").trim();
+  const tidy = tidyExcerptEnd(excerpt, locale)
+    .replace(/[،,;:.]$/g, "")
+    .trim();
   return tidy + ending(locale, tidy);
 }
 
@@ -1076,7 +1137,10 @@ function tidyExcerptEnd(value: string, locale: Locale) {
   if (locale === "ar") {
     return value
       .replace(/\s*\([^)]*[\p{Script=Latin}][^)]*\)/gu, "")
-      .replace(/\s+(بينما|حيث|مما|والتي|والذي|التي|الذي|مع|ثم|كما|لإضافة|لإضفاء|لتقديم|لنكهة|ليمنحك|ليمنحكم|على الجانب)$/u, "")
+      .replace(
+        /\s+(بينما|حيث|مما|والتي|والذي|التي|الذي|مع|ثم|كما|لإضافة|لإضفاء|لتقديم|لنكهة|ليمنحك|ليمنحكم|على الجانب)$/u,
+        "",
+      )
       .replace(/\s+و$/u, "")
       .trim();
   }
@@ -1099,7 +1163,7 @@ function localizeOptionName(name: string, locale: Locale) {
 export function AsyaShell({ children, current }: AsyaShellProps) {
   const [locale, setLocale] = useState<Locale>("ar");
   const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
-  useScrollChromeVisibility();
+  const isMobilePresentation = useMobilePresentation();
 
   useEffect(() => {
     const storedLocale = readStoredLocale();
@@ -1134,11 +1198,14 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   return (
     <I18nContext.Provider value={value}>
       <ItemDetailContext.Provider value={detailValue}>
-        <div data-locale={locale} className="asya-site site-shell">
-          <TopNav current={current} />
+        <div data-locale={locale} className="asya-site site-shell phase3-site">
+          {isMobilePresentation ? (
+            <MobileHeader35 current={current} />
+          ) : (
+            <TopNav current={current} />
+          )}
           {children}
-          <Footer />
-          <FloatingContact current={current} />
+          {isMobilePresentation ? <MobileFooter35 /> : <Footer />}
           <MobileBottomNav current={current} />
           <AnimatePresence>
             {detailSelection ? (
@@ -1494,7 +1561,7 @@ function TopNav({ current }: { current: "home" | "menu" }) {
             <Utensils className="nav-icon" />
             <span>{t("nav_menu")}</span>
           </a>
-          <a href="/#about">
+          <a href="/#about-asya">
             <span>{t("nav_about")}</span>
           </a>
           <a href="/#visit">
@@ -1565,13 +1632,10 @@ export const DishImage = memo(function DishImage({
   eager?: boolean;
   className?: string;
 }) {
-  const { locale } = useI18n();
   const shellRef = useRef<HTMLSpanElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const sourceSrc = getDishImage(item);
-  const [src, setSrc] = useState(sourceSrc);
-  const isPlaceholder = src === placeholderImg;
-  const placeholderText = locale === "ar" ? "من مطبخ أسيا" : "From Asya's Kitchen";
+  const [src, setSrc] = useState<string | undefined>(sourceSrc);
 
   useEffect(() => {
     setSrc(sourceSrc);
@@ -1582,7 +1646,7 @@ export const DishImage = memo(function DishImage({
     const shell = shellRef.current;
     if (!shell) return;
 
-    if (isPlaceholder || (image?.complete && image.naturalWidth > 0)) {
+    if (!src || (image?.complete && image.naturalWidth > 0)) {
       shell.dataset.loaded = "true";
     } else {
       delete shell.dataset.loaded;
@@ -1594,39 +1658,37 @@ export const DishImage = memo(function DishImage({
   }, []);
 
   const handleImageError = useCallback(() => {
-    setSrc(placeholderImg);
+    setSrc(undefined);
     markLoaded();
   }, [markLoaded]);
 
   return (
     <span
       ref={shellRef}
-      className={`dish-image-shell ${isPlaceholder ? "is-placeholder" : ""} ${className}`}
-      data-loaded={isPlaceholder ? "true" : undefined}
+      className={`dish-image-shell ${!src ? "is-empty" : ""} ${className}`}
+      data-loaded={!src ? "true" : undefined}
     >
-      {!isPlaceholder ? <span className="image-skeleton" aria-hidden="true" /> : null}
-      {isPlaceholder ? (
-        <span className="placeholder-mark" aria-hidden="true">
-          <img src={logoImg} alt="" width={78} height={78} />
-          <small>{placeholderText}</small>
-        </span>
+      {src ? (
+        <>
+          <span className="image-skeleton" aria-hidden="true" />
+          <img
+            ref={imageRef}
+            src={src}
+            alt={alt}
+            loading={eager ? "eager" : "lazy"}
+            decoding="async"
+            width={640}
+            height={640}
+            sizes={
+              eager
+                ? "(max-width: 767px) 100vw, 42vw"
+                : "(max-width: 767px) 7rem, (max-width: 1120px) 33vw, 24vw"
+            }
+            onLoad={markLoaded}
+            onError={handleImageError}
+          />
+        </>
       ) : null}
-      <img
-        ref={imageRef}
-        src={src}
-        alt={isPlaceholder ? "" : alt}
-        loading={eager ? "eager" : "lazy"}
-        decoding="async"
-        width={640}
-        height={640}
-        sizes={
-          eager
-            ? "(max-width: 767px) 100vw, 42vw"
-            : "(max-width: 767px) 7rem, (max-width: 1120px) 33vw, 24vw"
-        }
-        onLoad={markLoaded}
-        onError={handleImageError}
-      />
     </span>
   );
 });
@@ -1648,10 +1710,7 @@ export const MenuCard = memo(function MenuCard({
   const { openItemDetail } = useItemDetail();
   const itemName = localizeMenuItemName(item, locale);
   const categoryName = localizeMenuText(category.name, locale);
-  const description = compactOfficialDescription(
-    localizeMenuDescription(item, category, locale),
-    locale,
-  );
+  const description = localizeMenuDescription(item, category, locale);
   const className = `menu-card menu-card-${variant}`;
   const handleOpen = useCallback(
     () => openItemDetail({ item, category }),
@@ -1716,7 +1775,11 @@ export const MenuCard = memo(function MenuCard({
   );
 });
 
-function formatOfficialFact(value: string | undefined, kind: "prep" | "calories" | "weight", locale: Locale) {
+function formatOfficialFact(
+  value: string | undefined,
+  kind: "prep" | "calories" | "weight",
+  locale: Locale,
+) {
   const trimmed = value?.trim();
   if (!trimmed) return "";
 
@@ -1850,8 +1913,8 @@ function ItemDetailView({
   if (!item || !category) return null;
 
   const imageSrc = getDishImage(item);
-  const isPlaceholder = imageSrc === placeholderImg;
   const itemName = localizeMenuItemName(item, locale);
+  const categoryName = localizeMenuText(category.name, locale);
   const description = localizeMenuDescription(item, category, locale);
   const quickFacts = [
     { label: labels.prepTime, value: formatOfficialFact(item.prepTime, "prep", locale) },
@@ -1864,15 +1927,48 @@ function ItemDetailView({
       const recommendedCategory = recommendedItem
         ? MENU_CATEGORY_BY_ID.get(recommendedItem.category)
         : undefined;
-      const reason = recommendation.reason
-        ? cleanLocalizedMenuText(recommendation.reason[locale], locale)
-        : "";
+      const reason = recommendation.reason?.[locale] ?? "";
 
       return recommendedItem && recommendedCategory && recommendedItem.id !== item.id
         ? { item: recommendedItem, category: recommendedCategory, reason }
         : null;
     })
     .filter(Boolean) as Array<{ item: MenuItem; category: MenuCategory; reason: string }>;
+
+  if (isMobileSheet) {
+    return (
+      <MobileItemDetail35
+        locale={locale}
+        current={current}
+        name={itemName}
+        categoryName={categoryName}
+        description={description}
+        imageSrc={imageSrc}
+        price={<PriceTag item={item} />}
+        facts={quickFacts}
+        allergens={(item.allergens ?? [])
+          .map((tag) => localizeTagLabel(tag, locale))
+          .filter(Boolean)}
+        dietaryLabels={(item.dietaryLabels ?? [])
+          .map((tag) => localizeTagLabel(tag, locale))
+          .filter(Boolean)}
+        recommendations={recommendationEntries.map((recommendation) => ({
+          id: recommendation.item.id,
+          name: localizeMenuItemName(recommendation.item, locale),
+          imageSrc: getDishImage(recommendation.item),
+          price: <PriceTag item={recommendation.item} />,
+          reason: recommendation.reason,
+          onSelect: () =>
+            openItemDetail({ item: recommendation.item, category: recommendation.category }),
+        }))}
+        labels={labels}
+        dialogRef={dialogRef}
+        closeButtonRef={closeButtonRef}
+        onClose={onClose}
+      />
+    );
+  }
+
   const dialogMotion = prefersReducedMotion
     ? {
         initial: { opacity: 0 },
@@ -1920,34 +2016,41 @@ function ItemDetailView({
         dir="ltr"
         {...dialogMotion}
       >
-        <div
-          className={`item-detail-media mobile-item-detail-media ${isPlaceholder ? "is-placeholder" : ""}`}
-        >
-          {isPlaceholder ? (
-            <span className="item-detail-placeholder" aria-hidden="true">
-              <img src={logoImg} alt="" width={92} height={92} />
-              <small>{labels.imageComing}</small>
-            </span>
-          ) : null}
-          <img
-            className="mobile-item-detail-image"
-            src={imageSrc}
-            alt={isPlaceholder ? "" : itemName}
-            width={920}
-            height={920}
-            loading="lazy"
-            decoding="async"
-            onError={(event) => {
-              event.currentTarget.src = placeholderImg;
-            }}
-          />
+        <div className="item-detail-toolbar">
+          <span>
+            {labels.category}: {categoryName}
+          </span>
+          <button ref={closeButtonRef} type="button" onClick={onClose} aria-label={labels.close}>
+            <X className="h-5 w-5" aria-hidden="true" />
+            <span>{labels.close}</span>
+          </button>
         </div>
+        {imageSrc ? (
+          <div className="item-detail-media mobile-item-detail-media">
+            <img
+              className="mobile-item-detail-image"
+              src={imageSrc}
+              alt={itemName}
+              width={920}
+              height={920}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              onError={(event) => {
+                event.currentTarget.hidden = true;
+              }}
+            />
+          </div>
+        ) : null}
 
         <div className="item-detail-copy mobile-item-detail-content">
-          <h2>{itemName}</h2>
-          <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
-            <PriceTag item={item} />
-          </div>
+          <header className="item-detail-heading">
+            <p>{categoryName}</p>
+            <h2>{itemName}</h2>
+            <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
+              <PriceTag item={item} />
+            </div>
+          </header>
           <div className="item-detail-flow">
             {description ? (
               <div className="item-detail-description">
@@ -2124,7 +2227,7 @@ export function categoryById(id: string) {
 }
 
 export function getDishImage(item: MenuItem) {
-  return item.image ?? item.sourceImageUrl ?? placeholderImg;
+  return item.image ?? item.sourceImageUrl;
 }
 
 export function isOfficialImage(item: MenuItem) {
@@ -2136,8 +2239,7 @@ export function isUsableImageUrl(url?: string) {
 }
 
 export function whatsappHref() {
-  const digits = RESTAURANT.whatsapp.replace(/[^\d]/g, "");
-  return `https://wa.me/${digits}`;
+  return RESTAURANT.whatsappUrl;
 }
 
 function formatPrice(price: string, locale: Locale) {
@@ -2287,13 +2389,13 @@ function MobileBottomNav({ current }: { current: "home" | "menu" }) {
         <Utensils className="h-5 w-5" />
         <span>{t("nav_menu")}</span>
       </a>
+      <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+        <MessageCircle className="h-5 w-5" />
+        <span>{t("whatsapp")}</span>
+      </a>
       <a href={RESTAURANT.mapsUrl} target="_blank" rel="noopener noreferrer">
         <MapPin className="h-5 w-5" />
         <span>{t("directions")}</span>
-      </a>
-      <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
-        <Instagram className="h-5 w-5" />
-        <span>{t("instagram")}</span>
       </a>
     </nav>
   );
@@ -2315,14 +2417,21 @@ function Footer() {
           <h2>{tx(RESTAURANT.name)}</h2>
         </div>
 
-        <nav className="footer-links" aria-label={locale === "ar" ? "روابط أسيا جورميه" : "Asya's Gourmet links"}>
-          <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
-            <Instagram className="h-4 w-4" />
-            <span>{t("instagram")}</span>
+        <nav
+          className="footer-links"
+          aria-label={locale === "ar" ? "روابط أسيا جورميه" : "Asya's Gourmet links"}
+        >
+          <a href="/menu">
+            <Utensils className="h-4 w-4" />
+            <span>{t("nav_menu")}</span>
           </a>
-          <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-            <MessageCircle className="h-4 w-4" />
-            <span>{t("whatsapp")}</span>
+          <a href="/#about-asya">
+            <Info className="h-4 w-4" />
+            <span>{t("nav_about")}</span>
+          </a>
+          <a href={`tel:${RESTAURANT.phone}`}>
+            <Phone className="h-4 w-4" />
+            <span>{t("call")}</span>
           </a>
           <a href={RESTAURANT.mapsUrl} target="_blank" rel="noopener noreferrer">
             <MapPin className="h-4 w-4" />
