@@ -13,6 +13,7 @@ import { AsyaIntroOverlay } from "@/components/asya/primitives";
 import faviconUrl from "@/assets/asyas-logo-transparent.png?url";
 import appCss from "../styles.css?url";
 import phase3Css from "../phase3.css?url";
+import mobile35Css from "../mobile35.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -99,6 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: faviconUrl },
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: phase3Css },
+      { rel: "stylesheet", href: mobile35Css },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

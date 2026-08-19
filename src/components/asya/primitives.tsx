@@ -46,6 +46,9 @@ import {
   type MenuTag,
 } from "@/data/menu";
 import { formatVisibleText, I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
+import { MobileItemDetail35 } from "@/components/mobile35/MobileItemDetail35";
+import { MobileFooter35, MobileHeader35 } from "@/components/mobile35/MobileShell35";
+import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
 import mobileIntroVideo from "@/assets/asya-mobile-intro.mp4";
@@ -1159,6 +1162,7 @@ function localizeOptionName(name: string, locale: Locale) {
 export function AsyaShell({ children, current }: AsyaShellProps) {
   const [locale, setLocale] = useState<Locale>("ar");
   const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
+  const isMobilePresentation = useMobilePresentation();
 
   useEffect(() => {
     const storedLocale = readStoredLocale();
@@ -1194,9 +1198,13 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     <I18nContext.Provider value={value}>
       <ItemDetailContext.Provider value={detailValue}>
         <div data-locale={locale} className="asya-site site-shell phase3-site">
-          <TopNav current={current} />
+          {isMobilePresentation ? (
+            <MobileHeader35 current={current} />
+          ) : (
+            <TopNav current={current} />
+          )}
           {children}
-          <Footer />
+          {isMobilePresentation ? <MobileFooter35 /> : <Footer />}
           <MobileBottomNav current={current} />
           <AnimatePresence>
             {detailSelection ? (
@@ -1925,6 +1933,41 @@ function ItemDetailView({
         : null;
     })
     .filter(Boolean) as Array<{ item: MenuItem; category: MenuCategory; reason: string }>;
+
+  if (isMobileSheet) {
+    return (
+      <MobileItemDetail35
+        locale={locale}
+        current={current}
+        name={itemName}
+        categoryName={categoryName}
+        description={description}
+        imageSrc={imageSrc}
+        price={<PriceTag item={item} />}
+        facts={quickFacts}
+        allergens={(item.allergens ?? [])
+          .map((tag) => localizeTagLabel(tag, locale))
+          .filter(Boolean)}
+        dietaryLabels={(item.dietaryLabels ?? [])
+          .map((tag) => localizeTagLabel(tag, locale))
+          .filter(Boolean)}
+        recommendations={recommendationEntries.map((recommendation) => ({
+          id: recommendation.item.id,
+          name: localizeMenuItemName(recommendation.item, locale),
+          imageSrc: getDishImage(recommendation.item),
+          price: <PriceTag item={recommendation.item} />,
+          reason: recommendation.reason,
+          onSelect: () =>
+            openItemDetail({ item: recommendation.item, category: recommendation.category }),
+        }))}
+        labels={labels}
+        dialogRef={dialogRef}
+        closeButtonRef={closeButtonRef}
+        onClose={onClose}
+      />
+    );
+  }
+
   const dialogMotion = prefersReducedMotion
     ? {
         initial: { opacity: 0 },

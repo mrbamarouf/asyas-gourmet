@@ -24,9 +24,11 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import { memo, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { memo, useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { AsyaShell, MenuCard, localizeMenuText } from "@/components/asya/primitives";
+import { MobileMenu35 } from "@/components/mobile35/MobileMenu35";
+import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 import { CATEGORIES, ITEMS, type MenuCategoryGroup, type MenuItem } from "@/data/menu";
 import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
 import { useI18n } from "@/lib/i18n";
@@ -67,6 +69,21 @@ const itemCategoryIds = new Set(
 const MENU_DISPLAY_GROUPS = REFERENCE_MENU_GROUPS.filter((group) =>
   group.categoryIds.some((categoryId) => itemCategoryIds.has(categoryId)),
 );
+const MENU_DISPLAY_DATA: MenuDisplayGroupData[] = MENU_DISPLAY_GROUPS.map((definition) => {
+  const items = uniqueItems(
+    ITEMS.filter((item) =>
+      item.categoryAssignments.some((assignment) =>
+        definition.categoryIds.includes(assignment.categoryId),
+      ),
+    ),
+  ).sort(
+    (left, right) =>
+      getGroupItemOrder(left, definition) - getGroupItemOrder(right, definition) ||
+      left.id.localeCompare(right.id),
+  );
+
+  return { definition, items };
+}).filter((group) => group.items.length > 0);
 
 const MENU_GROUP_ICONS: Partial<Record<string, LucideIcon>> = {
   "19e11b5f-abcd-4fa6-aa29-e937ffe65d00": Sparkles,
@@ -93,12 +110,18 @@ const MENU_GROUP_ICONS: Partial<Record<string, LucideIcon>> = {
 };
 
 function FullMenuPage() {
+  const isMobile = useMobilePresentation();
+
   return (
     <AsyaShell current="menu">
-      <main id="menu-top" className="phase3-menu-page">
-        <MenuHero />
-        <MenuExplorer />
-      </main>
+      {isMobile ? (
+        <MobileMenu35 groups={MENU_DISPLAY_DATA} categoryMap={categoryMap} />
+      ) : (
+        <main id="menu-top" className="phase3-menu-page">
+          <MenuHero />
+          <MenuExplorer />
+        </main>
+      )}
     </AsyaShell>
   );
 }
@@ -186,23 +209,7 @@ function MenuExplorer() {
           chapter: "Chapter",
           item: "Items",
         };
-  const displayGroups = useMemo<MenuDisplayGroupData[]>(() => {
-    return MENU_DISPLAY_GROUPS.map((definition) => {
-      const items = uniqueItems(
-        ITEMS.filter((item) =>
-          item.categoryAssignments.some((assignment) =>
-            definition.categoryIds.includes(assignment.categoryId),
-          ),
-        ),
-      ).sort(
-        (left, right) =>
-          getGroupItemOrder(left, definition) - getGroupItemOrder(right, definition) ||
-          left.id.localeCompare(right.id),
-      );
-
-      return { definition, items };
-    }).filter((group) => group.items.length > 0);
-  }, []);
+  const displayGroups = MENU_DISPLAY_DATA;
 
   const setActiveIfChanged = useCallback((groupId: string) => {
     if (!groupId || activeGroupRef.current === groupId) return;
