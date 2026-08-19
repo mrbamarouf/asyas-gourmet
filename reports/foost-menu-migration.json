@@ -1,0 +1,4242 @@
+{
+  "generatedAt": "2026-08-19T16:56:33.177Z",
+  "before": {
+    "categoryCount": 29,
+    "productCount": 215
+  },
+  "after": {
+    "categoryCount": 24,
+    "productCount": 229
+  },
+  "categoriesAdded": [
+    {
+      "id": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+      "parentCategoryId": null,
+      "subcategoryIds": [],
+      "order": 1,
+      "name": {
+        "en": "⭐ NEW ITEMS ⭐",
+        "ar": "⭐ أصناف جديدة ⭐"
+      },
+      "description": {
+        "en": "Innovative new recipes created by our chef.",
+        "ar": "وصفات مبتكرة وجديدة من إبداع شيف مطعمنا."
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VQNtYH6HR6yUm7l4D.webp"
+    },
+    {
+      "id": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+      "parentCategoryId": null,
+      "subcategoryIds": [],
+      "order": 3,
+      "name": {
+        "en": "Asyas Little Gourments",
+        "ar": "صغار آسيا المتذوقون"
+      },
+      "description": {
+        "en": "Delicious and fun meals for young guests.",
+        "ar": "وجبات لذيذة وممتعة لضيوفنا الصغار."
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VP6f8KOhOPEj0lUIy.webp"
+    },
+    {
+      "id": "7abd9b4c-6ed3-4261-a386-d1ebe1038268",
+      "parentCategoryId": null,
+      "subcategoryIds": ["bfba8529-b75b-4027-a6d0-1c1f42ce734a"],
+      "order": 14,
+      "name": {
+        "en": "MR SİLVER SPECIAL",
+        "ar": "مستر سيلفر سبيشيال"
+      },
+      "description": {
+        "en": "",
+        "ar": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VQNaffcPSyA1nMysG.webp"
+    },
+    {
+      "id": "bfba8529-b75b-4027-a6d0-1c1f42ce734a",
+      "parentCategoryId": "7abd9b4c-6ed3-4261-a386-d1ebe1038268",
+      "subcategoryIds": [],
+      "order": 9999,
+      "name": {
+        "en": "D-TOX",
+        "ar": "دي-توكس"
+      },
+      "description": {
+        "en": "",
+        "ar": ""
+      },
+      "sourceImageUrl": null
+    }
+  ],
+  "categoriesRemoved": [
+    {
+      "id": "9ab5f294-68cb-470c-a860-d520f5d09f22",
+      "name": {
+        "en": "A Sweet Memory",
+        "ar": "ذكريات حلوة"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzlJDHf4DfQ4HrdF.webp",
+      "order": 5
+    },
+    {
+      "id": "02eb0962-be35-4701-8641-872802ee6fc7",
+      "name": {
+        "en": "Flavours of the Table",
+        "ar": "نكهات المائدة"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzm8pP5JPShpldVq.webp",
+      "order": 10
+    },
+    {
+      "id": "f3eb9103-7c6f-42d9-8305-bf75c336de6c",
+      "name": {
+        "en": "Warm & Delicious Starts",
+        "ar": "لنبدأ بدفء"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmDR8OPcXNTf7K3.webp",
+      "order": 11
+    },
+    {
+      "id": "ab88f484-c88f-49fb-905f-d13cbb35dc76",
+      "name": {
+        "en": "Pizza",
+        "ar": "بيتزا"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH52RRfNdX15XOjS9/playlist.m3u8",
+      "order": 13
+    },
+    {
+      "id": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+      "name": {
+        "en": "MR.TORO STEAKHOUSE",
+        "ar": "مستر تورو ستيك هاوس"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/videos/content-0VH3fxd63D5HTsn1B6/playlist.m3u8",
+      "order": 15
+    },
+    {
+      "id": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+      "name": {
+        "en": "Special Iced Matchas",
+        "ar": "ماتشا باردة خاصة"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGzmkXfm6fQwhK7M7.webp",
+      "order": 20
+    },
+    {
+      "id": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+      "name": {
+        "en": "Turkish Traditional Drinks",
+        "ar": "مشروبات تركية تقليدية"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/mr-hakans/images/general-0VGznIXXZKLXVbfXy0.webp",
+      "order": 24
+    },
+    {
+      "id": "7d087dc8-d4fa-4eb3-a017-f8a203431d2c",
+      "name": {
+        "en": "SIGNATURE SHISHA",
+        "ar": "سيجنتشر شيشة"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4Sau0jbHE6csJ4B.webp",
+      "order": 28
+    },
+    {
+      "id": "73e6943f-6fc2-4cf1-9dbc-e84c1aabd41b",
+      "name": {
+        "en": "VIP SHISHA",
+        "ar": "شيشة في آي بي"
+      },
+      "blurb": {
+        "ar": "",
+        "en": ""
+      },
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/category-0VH4V9NOSR44DyE7KF.webp",
+      "order": 29
+    }
+  ],
+  "categoriesRenamed": [
+    "61e69fe8-3255-49c0-ad94-517a04184cd5",
+    "e74e388c-048d-47e4-afec-acf25fac4650",
+    "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+    "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+    "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+    "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+    "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+    "884b790b-3b65-46a2-9be5-2ef78ce53146",
+    "a6c1ce59-bed8-4049-b4c5-c1713025ce88"
+  ],
+  "productsAdded": [
+    {
+      "id": "01e12fb9-21a3-4725-86c1-4493c20e700b",
+      "name": {
+        "en": "KIDS ARABİATA",
+        "ar": "أرابيتا للأطفال"
+      },
+      "description": {
+        "en": "Perfectly cooked penne pasta tossed in our rich homemade tomato sauce, finished with Parmesan cheese and served with freshly squeezed orange juice.",
+        "ar": "باستا بيني مطهوة بإتقان وممزوجة بصلصة الطماطم الغنية والمحضرة منزلياً، تعلوها جبنة البارميزان وتقدم مع عصير البرتقال الطازج."
+      },
+      "price": "42",
+      "priceValue": 42,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VP6m5OihXrbTi9Xka.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+          "order": 5
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "06ca727d-c2d4-4efd-b936-ba88b7891219",
+      "name": {
+        "en": "PATATESLI KOFTA",
+        "ar": "كفتة بالبطاطس"
+      },
+      "description": {
+        "en": "Golden-fried and wonderfully crisp, these savory potato patties are crafted to perfection for a delightful bite.",
+        "ar": "أقراص بطاطس مقلية بلون ذهبي وقوام مقرمش رائع، محضرة بعناية فائقة لتقدم لك مذاقاً شهياً في كل قضمة."
+      },
+      "price": "30",
+      "priceValue": 30,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPZtqatYqYj2oQx3f.webp",
+      "categoryAssignments": [],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "24ae16f3-bfc6-4f06-84d0-190ff949a7cf",
+      "name": {
+        "en": "Grilled Chicken Chops",
+        "ar": "قطع دجاج مشوية"
+      },
+      "description": {
+        "en": "Golden-fried to crispy perfection, these juicy chicken chops are a satisfying new favorite.",
+        "ar": "مقلية بلون ذهبي وقرمشة مثالية، قطع دجاج جوسي مشبعة تعتبر الإضافة الجديدة المفضلة."
+      },
+      "price": "65",
+      "priceValue": 65,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQTy3GFEjCZrWmKdv.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 6
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 27
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "287a187a-0465-4806-bf93-38b56c7ca881",
+      "name": {
+        "en": "Tepsi Kebap (for 2 person)",
+        "ar": "تبسي كباب (لشخصين)"
+      },
+      "description": {
+        "en": "Minced meat hand-chopped with a traditional Antakya recipe is kneaded with fresh garlic, red capia pepper, and special Hatay spices, then baked on a tray. Served with roasted tomatoes, peppers, and warm tirnak flatbread.",
+        "ar": "يُحضر اللحم المفروم يدوياً على طريقة أنطاكيا التقليدية ويُعجن مع الثوم الطازج، وفلفل الكابيا الأحمر، وتوابل هاتاي المميزة، ثم يُخبز في الصينية. يُقدم مع الطماطم والفلفل المشوي وخبز \"تيرناك\" الساخن."
+      },
+      "price": "105",
+      "priceValue": 105,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQTxil8JsUw5C8xPK.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 2
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 23
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "600",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "2e0d2317-e4ac-4783-9f2e-4cce3125c0e0",
+      "name": {
+        "en": "Pumpkin Milkshake",
+        "ar": "ميلك شيك اليقطين"
+      },
+      "description": {
+        "en": "Pumkin, Milk, İce Cream.",
+        "ar": "مزيج رائع من اليقطين، الحليب، والآيس كريم."
+      },
+      "price": "30",
+      "priceValue": 30,
+      "sourceImageUrl": null,
+      "categoryAssignments": [
+        {
+          "categoryId": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+          "order": 5
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "30fc591c-9730-4b11-88df-3370e5a3775d",
+      "name": {
+        "en": "Çiğ Kofta",
+        "ar": "كفتة نيئة"
+      },
+      "description": {
+        "en": "A traditional Turkish delicacy made with fine bulgur, rich tomato and pepper paste, aromatic herbs, and a carefully balanced blend of authentic spices. Served with crisp lettuce, fresh parsley, cucumber, tomatoes, and lemon wedges for a refreshing finish.",
+        "ar": "طبق تركي تقليدي شهير يُحضر من البرغل الناعم، ومعجون الطماطم والفلفل الغني، مع الأعشاب العطرية ومزيج متوازن بعناية من التوابل الأصيلة. يُقدم مع الخس المقرمش، البقدونس الطازج، الخيار، الطماطم، وشرائح الليمون لإضفاء لمسة نهائية منعشة."
+      },
+      "price": "28",
+      "priceValue": 28,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPExeEna1iteg6XjJ.webp",
+      "categoryAssignments": [],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "38e21783-d4f3-4934-b8cc-828cb308c494",
+      "name": {
+        "en": "Lamb Shish",
+        "ar": "شيش غنم"
+      },
+      "description": {
+        "en": "Marinated lamb cubes grilled over charcoal to preserve their natural flavour and tenderness. Served with bulgur pilaf, grilled vegetables and warm lavash.\n",
+        "ar": "اوصال لحم الضأن المتبلة والمشوية على الفحم للحفاظ على نكهتها الطبيعية وطراوتها. تُقدم مع برغل بيلأف، خضروات مشوية وخبز اللواش الدافئ."
+      },
+      "price": "78",
+      "priceValue": 78,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQquMYSNp8rC2nKaq.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 15
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 29
+        }
+      ],
+      "options": [],
+      "prepTime": "15",
+      "calories": "820",
+      "weight": "300",
+      "allergens": [
+        {
+          "key": "ingredients.containsGluten",
+          "label": {
+            "ar": "يحتوي على غلوتين",
+            "en": "Contains Gluten"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.highProtein",
+          "label": {
+            "ar": "عالي البروتين",
+            "en": "High Protein"
+          }
+        }
+      ],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "391d9b86-2e11-4694-8baa-34611f35a5af",
+      "name": {
+        "en": "Ayran Aşı Çorba (cold soup)",
+        "ar": "شوربة أيران آشي (شوربة باردة)"
+      },
+      "description": {
+        "en": "A refreshing traditional Turkish cold soup made with creamy yogurt, chickpeas, cracked wheat (dövme bulgur), fresh garlic, and a pinch of salt. Served chilled for a light, wholesome, and authentic Mediterranean taste.",
+        "ar": "شوربة تركية تقليدية منعشة محضرة من الزبادي الكريمي، الحمص، البرغل (دوفمة)، الثوم الطازج، ورشة ملح. تُقدم باردة لتمنحكم مذاقاً متوسطياً أصيلاً، خفيفاً، وصحياً."
+      },
+      "price": "28",
+      "priceValue": 28,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPF2lLgO7bub1NTWO.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "c0a5b81c-a849-43c6-994d-e4a41c842182",
+          "order": 4
+        },
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 7
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "4311f588-44bf-49b4-bcb7-59f51a8e2c15",
+      "name": {
+        "en": "ÇİĞ KOFTA",
+        "ar": "كفتة نية"
+      },
+      "description": {
+        "en": "",
+        "ar": "⭐ أصناف جديدة ⭐ قمة البهجة! أقراص برغل وطماطم متبلة غنية بالنكهات، معجونة ببراعة لتصل إلى طراوة مثالية تذوب في الفم وتأسر الحواس."
+      },
+      "price": "28",
+      "priceValue": 28,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQO1nqqzz6GZE9WwY.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 9
+        },
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 20
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "46f20937-5ab1-47f8-a944-89acade59fe6",
+      "name": {
+        "en": "MINI PEPERONI",
+        "ar": "بيبروني ميني"
+      },
+      "description": {
+        "en": "Freshly baked pizza topped with premium mozzarella, rich tomato sauce, and sliced pepperoni, served with a glass of freshly squeezed orange juice for a delicious and balanced meal.",
+        "ar": "بيتزا مخبوزة طازجة مغطاة بجبنة الموزاريلا الفاخرة، صلصة الطماطم الغنية، وشرائح الببروني، تُقدم مع كوب من عصير البرتقال الطازج لوجبة شهية ومتوازنة."
+      },
+      "price": "54",
+      "priceValue": 54,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VP6hpBdAS0q9DqJHg.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+          "order": 1
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "4bf218fa-cc16-412c-b638-02a249985814",
+      "name": {
+        "en": "STRIPS AND FRIES",
+        "ar": "ستريبس مع البطاطس المقلية"
+      },
+      "description": {
+        "en": "Premium chicken breast nuggets, perfectly coated and cooked until golden crisp, served with crispy French fries, ketchup, and a refreshing glass of Orange Juıce",
+        "ar": "قطع من صدر الدجاج الفاخر، مغطاة بطبقة مقرمشة ومطهوة بعناية حتى تكتسب لوناً ذهبياً، تُقدم مع أصابع البطاطس المقلية المقرمشة، الكاتشب، وكوب منعش من عصير البرتقال."
+      },
+      "price": "38",
+      "priceValue": 38,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VP6l8yotAqZLfeLLI.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+          "order": 4
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "55fa02cc-4394-4240-b983-d5b58ebecf12",
+      "name": {
+        "en": "Chef Salad",
+        "ar": "سلطة الشيف"
+      },
+      "description": {
+        "en": "Fresh greens tossed with tomatoes, walnuts, raisins, and  lor cheese for a light yet flavorful salad experience.",
+        "ar": "خضروات طازجة ممزوجة مع الطماطم، الجوز، الزبيب، وجبن اللور، لتجربة سلطة خفيفة وغنية بالنكهات."
+      },
+      "price": "52",
+      "priceValue": 52,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VJfxS7ETxSyAsCiZ8.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 6
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [
+        {
+          "id": "dcb162af-c270-493d-88f2-0fe126f4ea78",
+          "itemId": "6e5d42ab-cdfc-45c8-968c-e0c660f048ae",
+          "reason": {
+            "en": "The rich, velvety chicken soup offers a warm, comforting contrast to the crisp, fresh greens and walnuts.",
+            "ar": "يقدم حساء الدجاج الغني والقوام المخملي تبايناً دافئاً ومريحاً مع الخضروات الطازجة المقرمشة والجوز."
+          }
+        },
+        {
+          "id": "bcb5b290-92a8-4286-8e98-23dd80398e96",
+          "itemId": "b436140c-47e7-4ec4-9695-c1e821d4723f",
+          "reason": {
+            "en": "The earthy sweetness of fresh carrot juice complements the raisins and lor cheese in the salad.",
+            "ar": "تضفي الحلاوة الطبيعية لعصير الجزر الطازج نكهة متناغمة مع الزبيب وجبن اللور في هذه السلطة."
+          }
+        }
+      ],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "786dd37d-dd35-4bcf-81e6-b216e8dee7bd",
+      "name": {
+        "en": "PATATO KOFTA",
+        "ar": "كفتة البطاطس"
+      },
+      "description": {
+        "en": "​Tender, hand-kneaded, and packed with authentic flavor, these delightful potato kofta are crafted to perfection and ideal for sharing.",
+        "ar": "كرات كفتة البطاطس الشهية، محضرة يدوياً بعجينة طرية غنية بالنكهات الأصيلة، ومعدة بعناية فائقة لتكون الخيار الأمثل للمشاركة."
+      },
+      "price": "30",
+      "priceValue": 30,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQO2QN7hCzajIMdL1.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 10
+        },
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 21
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "8d552b9c-b1f1-4894-ad2e-c5e1d0de195b",
+      "name": {
+        "en": "Grilled Chicken Wings",
+        "ar": "أجنحة دجاج مشوية"
+      },
+      "description": {
+        "en": "Crispy, juicy grilled wings, hot off the flames and bursting with savory flavor.",
+        "ar": "أجنحة دجاج مشوية مقرمشة وعصارية، تأتيكم مباشرة من اللهب وغنية بالنكهات الشهية."
+      },
+      "price": "65",
+      "priceValue": 65,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQTxyBT72QiYl4h8W.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 4
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 26
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "90cc6304-3fb2-490b-bcd1-b79c841849db",
+      "name": {
+        "en": "Pistachio Milkshake",
+        "ar": "ميلك شيك الفستق"
+      },
+      "description": {
+        "en": "Pistachio, Milk, Banana, Honey, Almond.",
+        "ar": "مزيج غني من الفستق الحلبي الفاخر والحليب الطازج مع قطع الموز والعسل الطبيعي وحبات اللوز المقرمشة."
+      },
+      "price": "42",
+      "priceValue": 42,
+      "sourceImageUrl": null,
+      "categoryAssignments": [],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "948e6576-a61e-451f-84d2-98ffbf6eed38",
+      "name": {
+        "en": "Kuru Fasulyee",
+        "ar": "فاصوليا بيضاء"
+      },
+      "description": {
+        "en": "A comforting Turkish classic made with slow-cooked white beans simmered in a rich tomato sauce with onions, peppers, and a blend of traditional spices. Served with fluffy Turkish rice and creamy strained yogurt for a truly authentic dining experience.\n\nTraditional • Hearty • Homemade • Authentic",
+        "ar": "طبق تركي كلاسيكي دافئ، يتكون من الفاصوليا البيضاء المطهوة ببطء في صلصة طماطم غنية مع البصل، الفلفل، ومزيج من التوابل التقليدية. يُقدم مع الأرز التركي الهش واللبن المصفى الكريمي لتجربة طعام أصلية تماماً. تقليدي • مشبع • منزلي • أصيل"
+      },
+      "price": "48",
+      "priceValue": 48,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPEz7d4ps3apbWlyg.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 11
+        },
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 23
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "99f1362b-fb2d-41e7-8be5-1d27004888e6",
+      "name": {
+        "en": "KIDS MINI BURGER",
+        "ar": "ميني برجر للأطفال"
+      },
+      "description": {
+        "en": "Made with 100% premium beef, melted cheddar cheese, fresh lettuce and tomato, served in a soft burger bun with crispy golden fries and a refreshing glass of Orange Juıce",
+        "ar": "مُحضر من لحم البقر الصافي 100%، مع جبنة الشيدر الذائبة، الخس الطازج والطماطم، يُقدم في خبز البرجر الهش مع البطاطس المقلية الذهبية المقرمشة وكوب منعش من عصير البرتقال."
+      },
+      "price": "45",
+      "priceValue": 45,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VP6jDkyhviRCx8zqH.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+          "order": 2
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "b16a3578-e0fa-4f86-9f94-e6788fcb3feb",
+      "name": {
+        "en": "Grilled Chıcken Breast",
+        "ar": "صدر دجاج مشوي"
+      },
+      "description": {
+        "en": "دجاج طري متبل بالتوابل الطازج يقدم مع البرغل والطماطم والفلفل المشوي وسلطة ",
+        "ar": "قطع دجاج طرية متبلة بمزيج من التوابل الطازجة، تُقدم مع البرغل والطماطم والفلفل المشوي وسلطة طازجة."
+      },
+      "price": "65",
+      "priceValue": 65,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQU538psMkqyRCHSe.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 5
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 25
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "200",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "b52812e4-982f-4166-ac2d-b9deb09236ac",
+      "name": {
+        "en": "Kuru Cacık",
+        "ar": "جاجيك على طريقة التركية"
+      },
+      "description": {
+        "en": "Creamy strained yogurt with cucumber, garlic, fresh herbs, and extra virgin olive oil. A refreshing traditional Turkish appetizer.",
+        "ar": "لبنة كريمية مع الخيار، الثوم، الأعشاب الطازجة، وزيت الزيتون البكر الممتاز. مقبلات تركية تقليدية ومنعشة."
+      },
+      "price": "30",
+      "priceValue": 30,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPEwetYsRnxcuo1vz.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 8
+        },
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 19
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "ba1fc57c-6f58-4edd-b8ae-384b7b7e70dd",
+      "name": {
+        "en": "Ezme Salad",
+        "ar": "سلطة إزمي"
+      },
+      "description": {
+        "en": "Our signature Turkish Ezme is made fresh every day using ripe tomatoes, crisp vegetables, aromatic herbs, extra virgin olive oil, and authentic Turkish spices. A perfect appetizer that brings the vibrant flavors of Turkey to your table.",
+        "ar": "يُحضّر طبق الإزمي التركي الشهير يومياً من الطماطم الناضجة، والخضروات الطازجة، والأعشاب العطرية، مع زيت الزيتون البكر الممتاز والتوابل التركية الأصيلة. مقبلات مثالية تنقل نكهات تركيا النابضة بالحياة إلى مائدتكم."
+      },
+      "price": "35",
+      "priceValue": 35,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPEv1lsf1C7GT8dEK.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 12
+        },
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 22
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "c3c3b7e5-acfe-4523-9c3e-b5c2067aed83",
+      "name": {
+        "en": "BABY KOFTA",
+        "ar": "كفتة صغيرة"
+      },
+      "description": {
+        "en": "Tender grilled premium beef meatballs served with fluffy buttery rice and a refreshing glass of traditional Ayran, specially prepared for our little guests.",
+        "ar": "كرات لحم بقري فاخرة مشوية وطرية، تُقدم مع أرز بالزبدة وهش، بالإضافة إلى كوب منعش من شراب العيران التقليدي، مُعدة خصيصاً لضيوفنا الصغار."
+      },
+      "price": "52",
+      "priceValue": 52,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VP6k3qpEyxBnNH4yz.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+          "order": 3
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "c940a7d8-b3fb-47ad-a1b4-6f446b931182",
+      "name": {
+        "en": "Smoky Negro",
+        "ar": "نيجرو المدخن"
+      },
+      "description": {
+        "en": "Cranberry, Hibiscus, Lemon, Orange, Cinnamon.",
+        "ar": "كرانبيري، كركديه، ليمون، برتقال، قرفة."
+      },
+      "price": "48",
+      "priceValue": 48,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPZyGMElazOjvKnmv.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "7abd9b4c-6ed3-4261-a386-d1ebe1038268",
+          "order": 3
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "cab4e907-3f65-46c7-b350-a0125905e339",
+      "name": {
+        "en": "Coco Bowl",
+        "ar": "كوكو بول"
+      },
+      "description": {
+        "en": "Fresh Coconut, Milk and Coconut Cream.",
+        "ar": "جوز هند طازج، حليب وكريمة جوز الهند."
+      },
+      "price": "48",
+      "priceValue": 48,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPZxvOexRNZIYSWtL.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "7abd9b4c-6ed3-4261-a386-d1ebe1038268",
+          "order": 2
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "cf2b4b21-be64-443e-afc5-9545679f9645",
+      "name": {
+        "en": "Grilled Chicken Burger",
+        "ar": "برجر دجاج مشوي"
+      },
+      "description": {
+        "en": "Juicy chicken marinated with fresh spices, paired with melted cheddar and onion. Served with french fries.",
+        "ar": "دجاج طري متبل بالتوابل الطازجة، يقدم مع جبنة الشيدر الذائبة والبصل. يقدم مع البطاطس المقلية."
+      },
+      "price": "59",
+      "priceValue": 59,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VQTxu63AjK1vFS7jd.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 3
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 24
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "d872e2ee-68ca-440f-89f4-52a0c4ae9519",
+      "name": {
+        "en": "Avocado Milkshake",
+        "ar": "ميلك شيك أفوكادو"
+      },
+      "description": {
+        "en": "Fresh Avocado, Pistachio, Milk, Honey, Almond.",
+        "ar": "أفوكادو طازج، فستق حلبي، حليب، عسل، لوز."
+      },
+      "price": "32",
+      "priceValue": 32,
+      "sourceImageUrl": null,
+      "categoryAssignments": [
+        {
+          "categoryId": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+          "order": 4
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "dd12295a-2066-4302-8761-5b1da12b8ef2",
+      "name": {
+        "en": "TURKISH DOLMA",
+        "ar": "دولمة تركية"
+      },
+      "description": {
+        "en": "Tender, flavorful Turkish dolma, warmed to perfection for a delicious start to your meal.",
+        "ar": "دولما تركية طرية وغنية بالنكهات، تُقدم دافئة ومحضرة بعناية لتكون بداية شهية لوجبتكم."
+      },
+      "price": "38",
+      "priceValue": 38,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPZuwHoljmmXE0mH6.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 13
+        },
+        {
+          "categoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+          "order": 24
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "ec435df4-2dff-4ba5-bba7-4cbd72745a23",
+      "name": {
+        "en": "Spicy Paprika",
+        "ar": "بابريكا حارة"
+      },
+      "description": {
+        "en": "Fresh Pomegranate, Fresh Lemon Juice, Chill Marmelade.",
+        "ar": "رمان طازج، عصير ليمون طازج، ومربى الفلفل الحار."
+      },
+      "price": "48",
+      "priceValue": 48,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPZxWiDP4eI4mZaBA.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "7abd9b4c-6ed3-4261-a386-d1ebe1038268",
+          "order": 1
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    },
+    {
+      "id": "f0c9eb7b-5648-4298-b180-029dd99c776c",
+      "name": {
+        "en": "Kuzu İncik",
+        "ar": "موزات غنم"
+      },
+      "description": {
+        "en": "A slow-braised lamb shank, cooked to perfection until irresistibly tender and served over creamy Turkish-style risotto. Accompanied by roasted vegetables, caramelized onions, crispy fried onions, and finished with a rich, savory demi-glace for an unforgettable dining experience.",
+        "ar": "موزة لحم ضأن مطهوة ببطء حتى تذوب في الفم، تُقدم فوق ريزوتو كريمي على الطريقة التركية. يرافقها خضروات مشوية، بصل مكرمل، وبصل مقرمش، مع لمسة نهائية من صوص الديمي جلاس الغني لتجربة عشاء لا تُنسى."
+      },
+      "price": "98",
+      "priceValue": 98,
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VPF0SmnytTTvsTYVX.webp",
+      "categoryAssignments": [
+        {
+          "categoryId": "19e11b5f-abcd-4fa6-aa29-e937ffe65d00",
+          "order": 14
+        },
+        {
+          "categoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+          "order": 28
+        }
+      ],
+      "options": [],
+      "prepTime": "",
+      "calories": "",
+      "weight": "",
+      "allergens": [],
+      "dietaryLabels": [],
+      "recommendations": [],
+      "officialFlags": {
+        "isHighlight": true,
+        "newItemTag": true
+      }
+    }
+  ],
+  "productsRemoved": [
+    {
+      "id": "2e68a5de-d7cc-4572-a661-2d967173ca8a",
+      "category": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+      "name": {
+        "ar": "سلطة الزيتون المتوسطية",
+        "en": "Mediterranean Olive Salad"
+      },
+      "description": {
+        "ar": "طبق نابض بالحياة مستوحى من المطبخ المتوسطي، حيث يلتقي الزيتون الأخضر والأسود مع الخضراوات الطازجة والفلفل الملوّن. تضيف حبّات الرمان لمسة من الحلاوة الرقيقة، بينما يمنح الليمون وزيت الزيتون إشراقة ونضارة مميزة للطبق. طازج، نابض بالحياة وغني بطابع البحر الأبيض المتوسط.",
+        "en": "A vibrant Mediterranean-inspired dish where green and black olives meet fresh greens and colorful peppers. Pomegranate seeds add a subtle sweetness while lemon and olive oil bring brightness and freshness to the plate. Fresh, vibrant and full of Mediterranean character."
+      },
+      "price": "36",
+      "priceValue": 36,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3DZWggBpOtGmcAk.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 9,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3DZWggBpOtGmcAk.webp",
+      "prepTime": "20",
+      "calories": "260",
+      "weight": "180",
+      "dietaryLabels": [
+        {
+          "key": "ingredients.glutenFree",
+          "label": {
+            "ar": "خالٍ من الغلوتين",
+            "en": "Gluten-Free"
+          }
+        },
+        {
+          "key": "ingredients.dairyFree",
+          "label": {
+            "ar": "خالٍ من الألبان",
+            "en": "Dairy-Free"
+          }
+        },
+        {
+          "key": "ingredients.vegan",
+          "label": {
+            "ar": "نباتي بالكامل",
+            "en": "Vegan"
+          }
+        }
+      ],
+      "recommendations": [
+        {
+          "itemId": "21abfb80-c2e5-413d-9019-5cc3de9121ae",
+          "reason": {
+            "ar": "",
+            "en": "Warm, salty grilled halloumi elevates the fresh greens and bright lemon dressing of the salad."
+          }
+        },
+        {
+          "itemId": "61fc7728-4ccf-4745-a8af-9bc19f408038",
+          "reason": {
+            "ar": "",
+            "en": "Tart, vibrant fruit juice echoes and enhances the subtle sweetness of the pomegranate seeds in the dish."
+          }
+        }
+      ]
+    },
+    {
+      "id": "6fde2138-e768-45e9-a3f0-86db68dc66bb",
+      "category": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+      "name": {
+        "ar": "سلطة البطاطس",
+        "en": "Potato Salad"
+      },
+      "description": {
+        "ar": "تشكيلة طازجة ومتوازنة من البطاطس المسلوقة والبيض، ممزوجة مع الطماطم والبصل والأعشاب الطازجة.\nتُعزَّز بالنعناع ورقائق الفلفل الحار والكمون، وتُختتم بدبس الرمان وزيت الزيتون لنكهة غنية ولمسة حامضية خفيفة.",
+        "en": "A fresh and well-balanced combination of boiled potatoes and eggs, mixed with tomatoes, onions and fresh herbs. Enhanced with mint, chili flakes and cumin, then finished with pomegranate molasses and olive oil for a rich and slightly tangy flavor. Refreshing, aromatic and full of character."
+      },
+      "price": "38",
+      "priceValue": 38,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3E5Fa1Q2fns06Mf.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 6,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3E5Fa1Q2fns06Mf.webp",
+      "prepTime": "22",
+      "calories": "350",
+      "weight": "240",
+      "allergens": [
+        {
+          "key": "ingredients.containsEggs",
+          "label": {
+            "ar": "يحتوي على بيض",
+            "en": "Contains Eggs"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.vegetarian",
+          "label": {
+            "ar": "نباتي",
+            "en": "Vegetarian"
+          }
+        },
+        {
+          "key": "spicinessLevels.mild",
+          "label": {
+            "ar": "خفيف الحرارة",
+            "en": "Mild"
+          }
+        }
+      ],
+      "recommendations": [
+        {
+          "itemId": "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
+          "reason": {
+            "ar": "",
+            "en": "The tangy, cumin-spiced potato salad perfectly complements the smoky, rich flavors of the grilled meat."
+          }
+        },
+        {
+          "itemId": "37eceeb2-a6ef-475e-b5a2-1024ae622a41",
+          "reason": {
+            "ar": "",
+            "en": "A crisp, citrusy lemonade lifts the heavy, starchy, and egg-rich texture of the salad."
+          }
+        }
+      ]
+    },
+    {
+      "id": "8801bdf8-aa38-4221-830b-e7f004ebd117",
+      "category": "4f5c2778-d74e-424a-bedb-81f78f3c68a3",
+      "name": {
+        "ar": "نيويورك ستيك",
+        "en": "New York Steak"
+      },
+      "description": {
+        "ar": "300 جم من ستيك نيويورك الفاخر، يُشوى بإتقان لإبراز نكهته اللحمية الجريئة وقوامه المتماسك والعصاري…\nيُقدَّم مع بطاطس مهروسة ناعمة وخضار سوتيه موسمية، ويُختَم بلمسة خفيفة من ملح البحر لتعزيز نكهاته الطبيعية.\nقوي، عصاري… ومليء بالطابع التقليدي",
+        "en": "300g of premium New York steak, expertly grilled to bring out its bold, beefy flavor and firm, juicy texture. Served with silky mashed potatoes and seasonal sautéed vegetables, finished with a delicate touch of sea salt to enhance its natural flavors."
+      },
+      "price": "209",
+      "priceValue": 209,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOHUuq5XQoxBCO9q.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 3,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VIOHUuq5XQoxBCO9q.webp",
+      "prepTime": "34",
+      "calories": "740",
+      "weight": "300",
+      "allergens": [
+        {
+          "key": "ingredients.containsDairy",
+          "label": {
+            "ar": "يحتوي على ألبان",
+            "en": "Contains Dairy"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.highProtein",
+          "label": {
+            "ar": "عالي البروتين",
+            "en": "High Protein"
+          }
+        }
+      ],
+      "recommendations": [
+        {
+          "itemId": "44ee2cb1-0808-4e9e-982d-66f24c1d45e9",
+          "reason": {
+            "ar": "",
+            "en": "Crisp lettuce and creamy parmesan dressing provide a refreshing textural contrast to the firm, juicy steak."
+          }
+        },
+        {
+          "itemId": "f445e501-a9f9-411f-a223-371b0daeb695",
+          "reason": {
+            "ar": "",
+            "en": "The zesty citrus and cool mint cut right through the bold, beefy flavor of the steak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "66cb2cd2-cb25-4a93-a532-0cf338f7d9d5",
+      "category": "503260fe-058c-4b7a-9dac-6035eb79d781",
+      "name": {
+        "ar": "شاي الشتاء",
+        "en": "Winter Tea"
+      },
+      "description": {
+        "ar": "مزيج عشبي دافئ بلمسات من النعناع والحمضيات… مهدّئ، عطري ويمنح إحساسًا بالراحة.",
+        "en": "A warming herbal blend with mint and citrus notes, soothing, aromatic and comforting."
+      },
+      "price": "20",
+      "priceValue": 20,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PISqOy5FttGzve.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 3,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3PISqOy5FttGzve.webp",
+      "prepTime": "15",
+      "calories": "150",
+      "weight": "250",
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.dairyFree",
+          "label": {
+            "ar": "خالٍ من الألبان",
+            "en": "Dairy-Free"
+          }
+        },
+        {
+          "key": "ingredients.vegan",
+          "label": {
+            "ar": "نباتي بالكامل",
+            "en": "Vegan"
+          }
+        },
+        {
+          "key": "nutritionalInfo.lowCalorie",
+          "label": {
+            "ar": "منخفض السعرات",
+            "en": "Low Calorie"
+          }
+        }
+      ]
+    },
+    {
+      "id": "371e252f-2196-441e-b21c-f46c97ae2f6c",
+      "category": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+      "name": {
+        "ar": "ماتشا كلاسيك",
+        "en": "Classic Matcha"
+      },
+      "description": {
+        "ar": "ماتشا يابانية فاخرة بدرجة احتفالية، مطحونة على الحجر ومخلوطة بعناية، تُقدَّم مع حليب بارد لتجربة ناعمة ومتوازنة.",
+        "en": "Ceremonial grade Japanese matcha, stone-ground and carefully whisked, blended with chilled milk for a smooth, refined and naturally energizing experience."
+      },
+      "price": "30",
+      "priceValue": 30,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzmw18Sjw5pG3WeR.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 1,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VGzmw18Sjw5pG3WeR.webp",
+      "prepTime": "16",
+      "calories": "190",
+      "weight": "300",
+      "allergens": [
+        {
+          "key": "ingredients.containsDairy",
+          "label": {
+            "ar": "يحتوي على ألبان",
+            "en": "Contains Dairy"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.vegetarian",
+          "label": {
+            "ar": "نباتي",
+            "en": "Vegetarian"
+          }
+        }
+      ],
+      "recommendations": [
+        {
+          "itemId": "92180575-7126-4df5-b347-0e2a2adab25f",
+          "reason": {
+            "ar": "",
+            "en": "The sweet crunch of the cake balances the earthy, grassy notes of the matcha."
+          }
+        },
+        {
+          "itemId": "0e418830-7764-4a44-8ba1-06b596506892",
+          "reason": {
+            "ar": "",
+            "en": "The creamy cheesecake texture complements the smooth, refined stone-ground matcha."
+          }
+        }
+      ]
+    },
+    {
+      "id": "e4270077-07cf-457f-af05-0a84fd75a929",
+      "category": "f5fe6ad8-b5ee-44cc-914e-e2f79927f2b8",
+      "name": {
+        "ar": "ماتشا سبانيش",
+        "en": "Spanish Matchia"
+      },
+      "description": {
+        "ar": "ماتشا يابانية ممزوجة بالحليب وحليب مُحلى بلمسة كراميل، ناعمة وكريمية بتجربة فاخرة.",
+        "en": "Japanese matcha blended with milk and caramelized sweetened milk, smooth, creamy and delicately indulgent."
+      },
+      "price": "32",
+      "priceValue": 32,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SmMuGzM9NktMof.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 4,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3SmMuGzM9NktMof.webp",
+      "prepTime": "18",
+      "calories": "260",
+      "weight": "320",
+      "allergens": [
+        {
+          "key": "ingredients.containsDairy",
+          "label": {
+            "ar": "يحتوي على ألبان",
+            "en": "Contains Dairy"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.vegetarian",
+          "label": {
+            "ar": "نباتي",
+            "en": "Vegetarian"
+          }
+        }
+      ],
+      "recommendations": [
+        {
+          "itemId": "0e418830-7764-4a44-8ba1-06b596506892",
+          "reason": {
+            "ar": "",
+            "en": "The creamy, caramelized notes of the cheesecake beautifully echo the sweet milk and earthy matcha flavors."
+          }
+        },
+        {
+          "itemId": "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
+          "reason": {
+            "ar": "",
+            "en": "The rich, flaky sweetness of the baklava contrasts gracefully with the delicate, slightly bitter undertones of Japanese matcha."
+          }
+        }
+      ]
+    },
+    {
+      "id": "5a793827-e29d-4e79-9ed9-1db35563c95a",
+      "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+      "name": {
+        "ar": "موهيتو الخوخ",
+        "en": "Mojito Peach"
+      },
+      "description": {
+        "ar": "خوخ عصيري مع النعناع والليمون، خفيف ومنعش بحلاوة ناعمة.",
+        "en": "Juicy peach with fresh mint and lime, light, refreshing and delicately sweet."
+      },
+      "price": "35",
+      "priceValue": 35,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3TAvkG6N7eyGidi.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 5,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3TAvkG6N7eyGidi.webp",
+      "prepTime": "15",
+      "calories": "225",
+      "weight": "320",
+      "recommendations": [
+        {
+          "itemId": "fb3c796f-b84e-469b-96ec-01b9b6f01018",
+          "reason": {
+            "ar": "",
+            "en": "The delicate sweetness of the peach mojito perfectly complements the savory, fried cheese rolls."
+          }
+        },
+        {
+          "itemId": "21abfb80-c2e5-413d-9019-5cc3de9121ae",
+          "reason": {
+            "ar": "",
+            "en": "The light, fruity drink provides a refreshing contrast to the salty, grilled halloumi and olives."
+          }
+        }
+      ]
+    },
+    {
+      "id": "68863cd6-578d-4aeb-ad70-21c0c7933f59",
+      "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+      "name": {
+        "ar": "بينا كولادا",
+        "en": "Pina Colada"
+      },
+      "description": {
+        "ar": "جوز الهند الناعم مع الأناناس الناضج، كريمي ومنعش بلمسة استوائية فاخرة.",
+        "en": "Silky coconut and ripe pineapple, smooth, creamy and beautifully tropical."
+      },
+      "price": "42",
+      "priceValue": 42,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3UEocXmt5TXX93T.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 9,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3UEocXmt5TXX93T.webp",
+      "prepTime": "17",
+      "calories": "320",
+      "weight": "340",
+      "recommendations": [
+        {
+          "itemId": "a1cf8693-8514-4542-a2b9-e3fd13f86f95",
+          "reason": {
+            "ar": "",
+            "en": "The creamy coconut and tropical pineapple offer a sweet, cooling contrast to the spiced falafel."
+          }
+        },
+        {
+          "itemId": "6377546c-aff4-488d-ac30-ad27245054db",
+          "reason": {
+            "ar": "",
+            "en": "The rich, silky tropical drink pairs wonderfully with the salty, cajun-spiced crunch of the fries."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ccab3e35-9daa-4895-bfb8-083b852d37da",
+      "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+      "name": {
+        "ar": "مزيج الأبطال",
+        "en": "Champions Blend"
+      },
+      "description": {
+        "ar": "مزيج غني ومغذي من الأفوكادو، والموز، والحليب، واللوز، والتمور، صُنع بعناية لتقديم طعم سلس وممتع.",
+        "en": "A rich and nourishing blend of avocado, banana, milk, almonds, and dates, crafted for a smooth and satisfying taste."
+      },
+      "price": "45",
+      "priceValue": 45,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBR16aLwwkBr7DOn.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 13,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBR16aLwwkBr7DOn.webp",
+      "recommendations": [
+        {
+          "itemId": "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
+          "reason": {
+            "ar": "",
+            "en": "A light, savory vegetarian pizza balances the rich, sweet, and nutty profile of this nourishing avocado blend."
+          }
+        },
+        {
+          "itemId": "55fa02cc-4394-4240-b983-d5b58ebecf12",
+          "reason": {
+            "ar": "",
+            "en": "Fresh greens and tomatoes from the chef salad provide a crisp counterpoint to the heavy, creamy shake."
+          }
+        }
+      ]
+    },
+    {
+      "id": "e1f43ab0-a152-4e61-af64-53a67f92eae7",
+      "category": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+      "name": {
+        "ar": "أوفسايد ميلون",
+        "en": "Offside Melon"
+      },
+      "description": {
+        "ar": "مزيج منعش من الكنتالوب، والعنب الأسود، والمانجو، والفراولة، والخوخ، والرمان، ينبض بنكهات حيوية وحلوة طبيعياً.",
+        "en": "A refreshing mix of cantaloupe, black grapes, mango, strawberry, peach, and pomegranate, bursting with vibrant and naturally sweet flavors."
+      },
+      "price": "45",
+      "priceValue": 45,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBQkn9NfQBIs2UWF.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 14,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VKBQkn9NfQBIs2UWF.webp",
+      "recommendations": [
+        {
+          "itemId": "0e418830-7764-4a44-8ba1-06b596506892",
+          "reason": {
+            "ar": "",
+            "en": "The creamy, caramelized cheesecake contrasts beautifully with the bright, vibrant fruit flavors of the melon mix."
+          }
+        },
+        {
+          "itemId": "fb3c796f-b84e-469b-96ec-01b9b6f01018",
+          "reason": {
+            "ar": "",
+            "en": "A warm, savory, and crispy bite that flawlessly balances the naturally sweet and refreshing melon beverage."
+          }
+        }
+      ]
+    },
+    {
+      "id": "4898647d-c2c9-4dd0-866a-6b44a619e786",
+      "category": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+      "name": {
+        "ar": "إنرجايزر",
+        "en": "Energizer"
+      },
+      "description": {
+        "ar": "مزيج غني من الموز الكريمي، الفراولة وعصير البرتقال الطازج…\nطاقة طبيعية بطعم ناعم ومنعش.",
+        "en": "Creamy banana, ripe strawberries and fresh orange juice, smooth, vibrant and bursting with energy."
+      },
+      "price": "40",
+      "priceValue": 40,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3W76LyiHTCe0fHr.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": false,
+      "order": 5,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3W76LyiHTCe0fHr.webp",
+      "prepTime": "15",
+      "calories": "210",
+      "weight": "300",
+      "recommendations": [
+        {
+          "itemId": "daf67786-46b5-445d-973f-cf8748d7e16f",
+          "reason": {
+            "ar": "",
+            "en": "The creamy banana and sweet strawberry blend harmonizes with the salty, rich variety of Anatolian cheeses and crunchy walnuts."
+          }
+        },
+        {
+          "itemId": "3a13ab9e-66b3-45db-9442-606f00cb5a54",
+          "reason": {
+            "ar": "",
+            "en": "The smoothie's rich fruit profile pairs seamlessly with the homemade jams and tahini, creating an indulgent, sweet breakfast ensemble."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dddaadc3-9bae-40fb-b7fd-54adcaa41017",
+      "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+      "name": {
+        "ar": "عيران بالريحان",
+        "en": "Ayran W Basil"
+      },
+      "description": {
+        "ar": "لمسة مختلفة من العيران مع ريحان طازج…\nخفيف، عشبي، وانسيابي بنعومة فريدة.",
+        "en": "A refreshing twist of ayran with fresh basil, light, herbal and uniquely smooth."
+      },
+      "price": "23",
+      "priceValue": 23,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YJNZXK1Dpooas6.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 3,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YJNZXK1Dpooas6.webp",
+      "prepTime": "15",
+      "calories": "125",
+      "weight": "250",
+      "allergens": [
+        {
+          "key": "ingredients.containsDairy",
+          "label": {
+            "ar": "يحتوي على ألبان",
+            "en": "Contains Dairy"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.vegetarian",
+          "label": {
+            "ar": "نباتي",
+            "en": "Vegetarian"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a1f1dab3-f336-4ab4-ad82-8122687ec772",
+      "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+      "name": {
+        "ar": "عيران بالصودا",
+        "en": "Ayran W Soda"
+      },
+      "description": {
+        "ar": "عيران بنكهة متجددة مع مياه فوّارة…\nخفيف، هوائي، وانتعاش يدوم.",
+        "en": "Ayran lifted with sparkling mineral water, light, airy and ultra refreshing."
+      },
+      "price": "24",
+      "priceValue": 24,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YN6xeevuohKYcP.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 4,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YN6xeevuohKYcP.webp",
+      "prepTime": "15",
+      "calories": "115",
+      "weight": "250",
+      "allergens": [
+        {
+          "key": "ingredients.containsDairy",
+          "label": {
+            "ar": "يحتوي على ألبان",
+            "en": "Contains Dairy"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.vegetarian",
+          "label": {
+            "ar": "نباتي",
+            "en": "Vegetarian"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3139c3c3-4c00-4286-b4f1-01dab882d635",
+      "category": "11a2b45c-14b6-4e1c-a9ed-1b9093cf37aa",
+      "name": {
+        "ar": "عيران بالخيار",
+        "en": "Ayran With Cucumber"
+      },
+      "description": {
+        "ar": "عيران مع خيار طازج…\nمنعش، بارد، ومثالي لأيام الصيف.",
+        "en": "Ayran with fresh cucumber, crisp, cooling and perfectly refreshing."
+      },
+      "price": "24",
+      "priceValue": 24,
+      "currency": "SAR",
+      "sourceImageUrl": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YQckSqRvD2mFT1.webp",
+      "popular": true,
+      "chef": true,
+      "bakery": false,
+      "turkishDrink": true,
+      "order": 5,
+      "image": "https://cdn.thefoost.com/tenants/asyas/images/product-0VH3YQckSqRvD2mFT1.webp",
+      "prepTime": "15",
+      "calories": "120",
+      "weight": "250",
+      "allergens": [
+        {
+          "key": "ingredients.containsDairy",
+          "label": {
+            "ar": "يحتوي على ألبان",
+            "en": "Contains Dairy"
+          }
+        }
+      ],
+      "dietaryLabels": [
+        {
+          "key": "ingredients.halal",
+          "label": {
+            "ar": "حلال",
+            "en": "Halal"
+          }
+        },
+        {
+          "key": "ingredients.vegetarian",
+          "label": {
+            "ar": "نباتي",
+            "en": "Vegetarian"
+          }
+        }
+      ]
+    }
+  ],
+  "productsRenamed": [
+    "004e2b9d-6aef-476a-bed8-e854eeaba257",
+    "00eeda4e-667c-45ac-8eea-dc5d2b5341a0",
+    "04e64d7b-d691-48ee-9b7a-a2f978c3e09e",
+    "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11",
+    "07de0c88-200d-4732-929e-e8c98a0faedd",
+    "0991b4d5-5f1b-44e6-8e91-e91959db281b",
+    "0a20ce3f-736d-4b27-bdcc-5aa86dcafad6",
+    "0ad35147-8d8d-49c5-a25c-f574b7e07145",
+    "0ca1bcce-95a9-49bc-aa58-d862993d421e",
+    "0d0da313-976b-4f5b-97ae-ac4c151f55df",
+    "0e31b410-7a4f-44cc-be7c-6da715660d4f",
+    "0e418830-7764-4a44-8ba1-06b596506892",
+    "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc",
+    "10669c1f-596c-4f5f-80a5-d05811ffd71a",
+    "11128019-e4f1-4d2d-9665-4a8731a68b77",
+    "12cefb17-9ba3-44b6-b531-a8d296246b86",
+    "138f5af0-856f-440b-87d8-e1408d9e39c1",
+    "15420618-d1b3-4364-aff0-dd2102f944e3",
+    "1ae0277d-4110-4b2b-ad0f-ebf2c6bbeaeb",
+    "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
+    "1bd4f7c9-64d0-4de3-99b3-beeac63155c7",
+    "1bdacdb7-3add-4dad-bc1e-1bcc8b60a715",
+    "1cb9d1b5-6d8f-493f-be1b-e57d084f065d",
+    "1e52139d-46ca-4414-a1f6-88a288dfe687",
+    "1e6a71bd-c035-4e38-a510-413af41596e3",
+    "1f431c8a-b272-4a9f-8377-758fd9a0781d",
+    "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac",
+    "21abfb80-c2e5-413d-9019-5cc3de9121ae",
+    "223a7d36-eb74-4e6b-a01c-b7ff0b0c696b",
+    "25fedaab-c4ad-4005-9ce9-c5f5c6eb51a5",
+    "29ac4114-6af6-441f-b56b-d0ac4d34d758",
+    "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7",
+    "2b92aa34-e5aa-4a63-971f-a18a610c746c",
+    "3178ac05-fef6-43ce-a897-ea01df50a79f",
+    "3262e454-3663-494e-8101-84075fd63442",
+    "32fe0693-6fa1-4b2e-b5bf-4d86d4286ebc",
+    "33c12c3e-1de8-4d9a-833c-9770603f05aa",
+    "345500b8-328d-4a72-9269-93c25bf75c1e",
+    "34cf0c11-521a-4390-b42a-48b070e22cc2",
+    "35a25c13-d0b9-46e7-a712-630cf9928e0d",
+    "37eceeb2-a6ef-475e-b5a2-1024ae622a41",
+    "38ec170c-750b-4fe4-a167-4cd1778648bc",
+    "38f4ff6d-c5df-4fb3-be4a-59aa8bf74d58",
+    "3a13ab9e-66b3-45db-9442-606f00cb5a54",
+    "3a44684c-967f-47b5-a501-92d7ada96863",
+    "3b1c0c76-0809-4459-92cf-adff4d03dff8",
+    "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa",
+    "3de8bda3-66f6-47d8-805f-22eaa5f5564d",
+    "3e08c664-b982-41e3-b325-ab68a12f01b5",
+    "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2",
+    "408eba99-a9c8-4630-9c76-c17c552941a7",
+    "44ee2cb1-0808-4e9e-982d-66f24c1d45e9",
+    "47dbca7a-682e-443c-99bc-01dd2bb4adfc",
+    "49bcee08-afe0-4bb9-8220-b3d9088cd35b",
+    "4bc33733-c8cf-48a5-8ff7-f2ccdfd7cadf",
+    "4e6ad732-3641-436b-803f-2a957c2416a8",
+    "502b7bd2-2ad7-4a03-9d96-30fb92d74098",
+    "528fb6cd-81b9-4b9d-b9da-30edcdb77afd",
+    "5303aeee-379d-423a-b655-7a2ce5a53340",
+    "54633c97-9b3d-44ce-a902-01f1430c260e",
+    "59bc51ab-231e-44bc-8588-5bfc00ac5eb0",
+    "5e586ecb-4451-4e10-852d-96ec5a32f46e",
+    "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9",
+    "61fc7728-4ccf-4745-a8af-9bc19f408038",
+    "6377546c-aff4-488d-ac30-ad27245054db",
+    "6565c206-6158-4af0-a778-591bafdef0b0",
+    "66543356-1b79-497f-ab11-9fe41362d9c3",
+    "67056900-8679-442d-8181-6e283fad3fa1",
+    "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8",
+    "6969f27d-684c-4725-9257-5e69733bc382",
+    "69d587e8-6014-44f4-9fa2-2de58deff91b",
+    "6a4e2138-f0c4-4256-9cea-15d934a870d4",
+    "6bc0f672-b25d-41cb-9bc3-a64e65307cda",
+    "6d6b0894-1f35-4df2-a180-d4b563db3102",
+    "6e4faf94-cfa4-438e-986b-05fd8f06d265",
+    "6e5d42ab-cdfc-45c8-968c-e0c660f048ae",
+    "6fe7bb5f-5342-49cb-9bbb-6d4a746ccd37",
+    "7244ddca-2718-40e0-90bf-287718182154",
+    "726653ff-c498-403e-bc48-8c4100ed7efd",
+    "728a1cd6-4c57-4509-ab09-aafc279d3947",
+    "72cd40c5-5475-4d48-9e56-4d0ea5510c60",
+    "7375d7eb-72c4-40cc-99b5-b8ae81403424",
+    "73af14bc-7343-4743-bcb1-776629f14d1b",
+    "744474c5-cf88-4c22-bf13-6e05e38ff5c6",
+    "755a894d-bcec-4035-9aac-a5a4575a4670",
+    "7704310c-87e1-4d73-a503-a9f32854973c",
+    "770b1ff2-0aef-4f23-8378-ebe37681a842",
+    "774cacb7-7b1b-4fe8-9389-caa3444926f9",
+    "77a04025-581e-410b-b70b-bb2c4de5a648",
+    "7920a33a-ab56-49af-8a0b-1528186ae540",
+    "7b6de15e-fa0e-4c9e-909d-f7432a09fdf4",
+    "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
+    "7bef4760-3f1f-45d1-bae6-a2a2b844c61f",
+    "7c20069b-3e20-4edb-b3bf-75bf82b44cdd",
+    "7c604238-7a07-4168-b234-9bb1b536d202",
+    "7df74560-803f-4170-9d26-8d254be2e1ac",
+    "7e0f5506-f996-4586-a42a-b1b522dfbc43",
+    "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef",
+    "7f1899d8-36b3-4250-9d32-7a1d0bd6f6d6",
+    "7f21d1d1-00f8-4273-8fc0-beff636a2ddb",
+    "7f479cdd-149f-4726-a80b-c2da5ee42b84",
+    "7f704c10-78c1-4697-90d0-162cd7ce1cdb",
+    "82ffd6fb-2f07-4e5e-896c-e9d915c85c46",
+    "833c826b-ce1d-40aa-b7c5-e93e52f5b21f",
+    "83979ed6-5b12-4aca-8a70-3f44ed9c61f5",
+    "8507dfb1-80d8-4294-a8a6-0efa00e89e86",
+    "863eb485-f580-4975-81ac-bf2467106519",
+    "8654a6b2-3bcf-436f-8342-9f2cc02ce739",
+    "86820d79-cb6d-4bca-8e52-c539bd47d7a9",
+    "8712070b-6f24-4f60-bbc4-50d45db96a8f",
+    "896932b6-dc0c-4ab5-913e-6ba142bfc030",
+    "8987cc38-505b-48e4-a821-c534ab5fbaac",
+    "8d7b9a9c-9f0f-44d2-bd06-3b5a69272490",
+    "8dc252c0-789f-4024-9414-67faa20f33d8",
+    "8e16cdbe-12a4-466c-bd64-74cad966ea0f",
+    "8f0dd89f-a75a-4c8b-a000-c96060303d3e",
+    "8fb5c495-bced-405e-8abe-40938f6a2be0",
+    "92180575-7126-4df5-b347-0e2a2adab25f",
+    "93db7fe1-0187-437c-9b85-f9704ec58e20",
+    "94cec6c5-0caa-43c1-a8fb-653b82a88309",
+    "975f95ee-5971-4e1b-9c0b-f0c4d484aa1a",
+    "97c60f8a-309e-46fb-b100-da93a603410d",
+    "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
+    "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
+    "9e35bb29-5813-4308-888b-ac84fe4eadc4",
+    "9f623f75-c40d-47fd-8c3f-eebdab56fa9a",
+    "9feba6b0-1a71-49f8-a312-7740b923b8f1",
+    "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb",
+    "a103a19f-8c77-4c08-a9bf-e89a175412f3",
+    "a1ada07c-b494-4161-88bb-014150f8aa3e",
+    "a1cf8693-8514-4542-a2b9-e3fd13f86f95",
+    "a55cdfa6-fee8-46c1-a474-c5ab8922066c",
+    "a65088c9-ee60-43df-be57-1e77c7380923",
+    "a71b8968-9fff-47e1-8c1d-f74f500aa3c1",
+    "a8328686-ad57-4c46-87d2-8ff5da769a72",
+    "a96110ce-a0a7-4bac-8db4-4047e2184a61",
+    "a968deb8-026a-48b3-adba-240b92980d01",
+    "aa0cfbca-91ae-4fb7-97ef-4fc420523a51",
+    "aa2525eb-504a-4257-abbc-60a182e8e790",
+    "aac2d932-f051-472d-8951-d9f400dc4f07",
+    "ab194150-c362-49bc-8e2e-505915940ea4",
+    "ab4ff496-559f-4c8d-8052-a20b900ffeb0",
+    "adcb8284-7343-44da-a287-e1582946148f",
+    "ade9d7d4-01d5-4d52-9d1d-89e189d3fc70",
+    "b0a22f0e-f19c-4985-8311-0badb4f2a692",
+    "b1268bb2-150f-4ca7-afb5-f2fa21507da5",
+    "b2c06ac0-7dca-4369-9e91-db4e960db825",
+    "b436140c-47e7-4ec4-9695-c1e821d4723f",
+    "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a",
+    "b9b94ca2-d99d-4891-baeb-85b708e7ce08",
+    "b9f7a814-3f1c-4396-955d-26175d652889",
+    "bc3a5e92-6036-4c1f-9e7b-2bc06d5d2143",
+    "bd920d50-f921-46e5-844f-84d6eb6dcf74",
+    "bdc9b239-c9dc-4a89-a739-895007f8133e",
+    "bde937b8-d111-42b3-89e6-7822ee0c18b7",
+    "be6b7932-2712-42e0-8f48-a6b4a7528b80",
+    "bef4cfaf-a1da-4d59-a2e0-f53a99d3cf2f",
+    "bf59e9ab-86f6-4478-8732-79acec15bcbc",
+    "bff7822d-ed45-48d6-bdee-524040ba5ee5",
+    "c1747927-94a7-4ed1-8fcb-6017955a0acf",
+    "c1983103-608f-418e-a037-d79387429663",
+    "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63",
+    "c3d5aaa1-b279-47a7-b745-dbf27c322d41",
+    "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5",
+    "c5a25fe4-fdc1-4848-be25-91d0141999b2",
+    "c6e8da58-5274-42e3-9cfd-b2dda9ec1b57",
+    "c8c42df3-a6cf-4e2d-b900-0005fc67e07a",
+    "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3",
+    "ca861007-b4dc-49d1-8dc8-15d28a283f4e",
+    "cbefd6a5-095a-4a11-88fa-3a647822c28e",
+    "cf8b74da-b6fe-40f1-9a00-639a4de60168",
+    "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a",
+    "d318e053-27c9-4e44-bf49-e8ad6cd7e4b1",
+    "d44063ac-c32b-457a-b474-ced546d36818",
+    "d6451bec-6280-4ed1-b438-53d41f63b4f1",
+    "daf67786-46b5-445d-973f-cf8748d7e16f",
+    "db22797e-d091-466c-9684-128d3f23dec1",
+    "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86",
+    "dd30a93f-661c-4099-90c4-74dc9f31a3a3",
+    "dda18a8d-c5a7-4211-bbda-1992f6154416",
+    "dddfd6aa-96f8-4067-b566-8509c8c74636",
+    "de24fecc-4ce3-484f-a34e-3a7d41b29137",
+    "defa0901-7a2a-467e-ba6a-af3e38979e22",
+    "e26bbf68-0d59-44de-b1b2-c447761acf20",
+    "e2e1b3c0-e51f-4cba-a60f-91f017976eb5",
+    "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d",
+    "e3c89499-bf61-4a1e-9191-3445228a9ee2",
+    "e406d9c9-0993-4a1c-875a-dfda98e2fadb",
+    "e59d9cc5-d30d-4254-b4d5-8b499eec2af8",
+    "e6cde5c2-a54d-444d-9bad-996ec74bcbc1",
+    "e8b45db5-b42f-4122-8dfc-59d19bc88045",
+    "ead80465-de52-4268-ad38-30e2db704684",
+    "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c",
+    "f3370cb5-676e-4238-b7c8-c56cdce9d257",
+    "f445e501-a9f9-411f-a223-371b0daeb695",
+    "f5811822-3742-48c0-98f6-fb27bdcf2c49",
+    "f683bf36-cbc3-4c46-9c45-cfb6e32a13af",
+    "fb3c796f-b84e-469b-96ec-01b9b6f01018",
+    "fca2bd66-4d04-4631-8636-0186f5040191",
+    "fe2a23e7-beae-402a-a6b7-93a5c2c8983d",
+    "fea3edb5-2fb2-4898-973e-79dffee34090"
+  ],
+  "descriptionsChanged": [
+    "004e2b9d-6aef-476a-bed8-e854eeaba257",
+    "00eeda4e-667c-45ac-8eea-dc5d2b5341a0",
+    "04e64d7b-d691-48ee-9b7a-a2f978c3e09e",
+    "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11",
+    "07de0c88-200d-4732-929e-e8c98a0faedd",
+    "0991b4d5-5f1b-44e6-8e91-e91959db281b",
+    "0a20ce3f-736d-4b27-bdcc-5aa86dcafad6",
+    "0ad35147-8d8d-49c5-a25c-f574b7e07145",
+    "0ca1bcce-95a9-49bc-aa58-d862993d421e",
+    "0d0da313-976b-4f5b-97ae-ac4c151f55df",
+    "0e31b410-7a4f-44cc-be7c-6da715660d4f",
+    "0e418830-7764-4a44-8ba1-06b596506892",
+    "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc",
+    "10669c1f-596c-4f5f-80a5-d05811ffd71a",
+    "11128019-e4f1-4d2d-9665-4a8731a68b77",
+    "12cefb17-9ba3-44b6-b531-a8d296246b86",
+    "138f5af0-856f-440b-87d8-e1408d9e39c1",
+    "15420618-d1b3-4364-aff0-dd2102f944e3",
+    "1ae0277d-4110-4b2b-ad0f-ebf2c6bbeaeb",
+    "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
+    "1bd4f7c9-64d0-4de3-99b3-beeac63155c7",
+    "1bdacdb7-3add-4dad-bc1e-1bcc8b60a715",
+    "1cb9d1b5-6d8f-493f-be1b-e57d084f065d",
+    "1e52139d-46ca-4414-a1f6-88a288dfe687",
+    "1e6a71bd-c035-4e38-a510-413af41596e3",
+    "1f431c8a-b272-4a9f-8377-758fd9a0781d",
+    "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac",
+    "21abfb80-c2e5-413d-9019-5cc3de9121ae",
+    "223a7d36-eb74-4e6b-a01c-b7ff0b0c696b",
+    "25fedaab-c4ad-4005-9ce9-c5f5c6eb51a5",
+    "29ac4114-6af6-441f-b56b-d0ac4d34d758",
+    "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7",
+    "2b92aa34-e5aa-4a63-971f-a18a610c746c",
+    "3178ac05-fef6-43ce-a897-ea01df50a79f",
+    "3262e454-3663-494e-8101-84075fd63442",
+    "32fe0693-6fa1-4b2e-b5bf-4d86d4286ebc",
+    "33c12c3e-1de8-4d9a-833c-9770603f05aa",
+    "345500b8-328d-4a72-9269-93c25bf75c1e",
+    "34cf0c11-521a-4390-b42a-48b070e22cc2",
+    "35a25c13-d0b9-46e7-a712-630cf9928e0d",
+    "37eceeb2-a6ef-475e-b5a2-1024ae622a41",
+    "38ec170c-750b-4fe4-a167-4cd1778648bc",
+    "38f4ff6d-c5df-4fb3-be4a-59aa8bf74d58",
+    "3a13ab9e-66b3-45db-9442-606f00cb5a54",
+    "3a44684c-967f-47b5-a501-92d7ada96863",
+    "3b1c0c76-0809-4459-92cf-adff4d03dff8",
+    "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa",
+    "3de8bda3-66f6-47d8-805f-22eaa5f5564d",
+    "3e08c664-b982-41e3-b325-ab68a12f01b5",
+    "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2",
+    "408eba99-a9c8-4630-9c76-c17c552941a7",
+    "44ee2cb1-0808-4e9e-982d-66f24c1d45e9",
+    "47dbca7a-682e-443c-99bc-01dd2bb4adfc",
+    "49bcee08-afe0-4bb9-8220-b3d9088cd35b",
+    "4bc33733-c8cf-48a5-8ff7-f2ccdfd7cadf",
+    "4e6ad732-3641-436b-803f-2a957c2416a8",
+    "502b7bd2-2ad7-4a03-9d96-30fb92d74098",
+    "528fb6cd-81b9-4b9d-b9da-30edcdb77afd",
+    "5303aeee-379d-423a-b655-7a2ce5a53340",
+    "54633c97-9b3d-44ce-a902-01f1430c260e",
+    "59bc51ab-231e-44bc-8588-5bfc00ac5eb0",
+    "5e586ecb-4451-4e10-852d-96ec5a32f46e",
+    "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9",
+    "61fc7728-4ccf-4745-a8af-9bc19f408038",
+    "6377546c-aff4-488d-ac30-ad27245054db",
+    "6565c206-6158-4af0-a778-591bafdef0b0",
+    "66543356-1b79-497f-ab11-9fe41362d9c3",
+    "67056900-8679-442d-8181-6e283fad3fa1",
+    "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8",
+    "6969f27d-684c-4725-9257-5e69733bc382",
+    "69d587e8-6014-44f4-9fa2-2de58deff91b",
+    "6a4e2138-f0c4-4256-9cea-15d934a870d4",
+    "6bc0f672-b25d-41cb-9bc3-a64e65307cda",
+    "6d6b0894-1f35-4df2-a180-d4b563db3102",
+    "6e4faf94-cfa4-438e-986b-05fd8f06d265",
+    "6e5d42ab-cdfc-45c8-968c-e0c660f048ae",
+    "6fe7bb5f-5342-49cb-9bbb-6d4a746ccd37",
+    "7244ddca-2718-40e0-90bf-287718182154",
+    "726653ff-c498-403e-bc48-8c4100ed7efd",
+    "728a1cd6-4c57-4509-ab09-aafc279d3947",
+    "72cd40c5-5475-4d48-9e56-4d0ea5510c60",
+    "7375d7eb-72c4-40cc-99b5-b8ae81403424",
+    "73af14bc-7343-4743-bcb1-776629f14d1b",
+    "744474c5-cf88-4c22-bf13-6e05e38ff5c6",
+    "755a894d-bcec-4035-9aac-a5a4575a4670",
+    "7704310c-87e1-4d73-a503-a9f32854973c",
+    "770b1ff2-0aef-4f23-8378-ebe37681a842",
+    "774cacb7-7b1b-4fe8-9389-caa3444926f9",
+    "77a04025-581e-410b-b70b-bb2c4de5a648",
+    "7920a33a-ab56-49af-8a0b-1528186ae540",
+    "7b6de15e-fa0e-4c9e-909d-f7432a09fdf4",
+    "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
+    "7bef4760-3f1f-45d1-bae6-a2a2b844c61f",
+    "7c20069b-3e20-4edb-b3bf-75bf82b44cdd",
+    "7c604238-7a07-4168-b234-9bb1b536d202",
+    "7df74560-803f-4170-9d26-8d254be2e1ac",
+    "7e0f5506-f996-4586-a42a-b1b522dfbc43",
+    "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef",
+    "7f1899d8-36b3-4250-9d32-7a1d0bd6f6d6",
+    "7f21d1d1-00f8-4273-8fc0-beff636a2ddb",
+    "7f479cdd-149f-4726-a80b-c2da5ee42b84",
+    "7f704c10-78c1-4697-90d0-162cd7ce1cdb",
+    "82ffd6fb-2f07-4e5e-896c-e9d915c85c46",
+    "833c826b-ce1d-40aa-b7c5-e93e52f5b21f",
+    "83979ed6-5b12-4aca-8a70-3f44ed9c61f5",
+    "8507dfb1-80d8-4294-a8a6-0efa00e89e86",
+    "863eb485-f580-4975-81ac-bf2467106519",
+    "8654a6b2-3bcf-436f-8342-9f2cc02ce739",
+    "86820d79-cb6d-4bca-8e52-c539bd47d7a9",
+    "8712070b-6f24-4f60-bbc4-50d45db96a8f",
+    "896932b6-dc0c-4ab5-913e-6ba142bfc030",
+    "8987cc38-505b-48e4-a821-c534ab5fbaac",
+    "8d7b9a9c-9f0f-44d2-bd06-3b5a69272490",
+    "8dc252c0-789f-4024-9414-67faa20f33d8",
+    "8e16cdbe-12a4-466c-bd64-74cad966ea0f",
+    "8f0dd89f-a75a-4c8b-a000-c96060303d3e",
+    "8fb5c495-bced-405e-8abe-40938f6a2be0",
+    "92180575-7126-4df5-b347-0e2a2adab25f",
+    "93db7fe1-0187-437c-9b85-f9704ec58e20",
+    "94cec6c5-0caa-43c1-a8fb-653b82a88309",
+    "975f95ee-5971-4e1b-9c0b-f0c4d484aa1a",
+    "97c60f8a-309e-46fb-b100-da93a603410d",
+    "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
+    "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
+    "9e35bb29-5813-4308-888b-ac84fe4eadc4",
+    "9f623f75-c40d-47fd-8c3f-eebdab56fa9a",
+    "9feba6b0-1a71-49f8-a312-7740b923b8f1",
+    "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb",
+    "a103a19f-8c77-4c08-a9bf-e89a175412f3",
+    "a1ada07c-b494-4161-88bb-014150f8aa3e",
+    "a1cf8693-8514-4542-a2b9-e3fd13f86f95",
+    "a55cdfa6-fee8-46c1-a474-c5ab8922066c",
+    "a65088c9-ee60-43df-be57-1e77c7380923",
+    "a71b8968-9fff-47e1-8c1d-f74f500aa3c1",
+    "a8328686-ad57-4c46-87d2-8ff5da769a72",
+    "a96110ce-a0a7-4bac-8db4-4047e2184a61",
+    "a968deb8-026a-48b3-adba-240b92980d01",
+    "aa0cfbca-91ae-4fb7-97ef-4fc420523a51",
+    "aa2525eb-504a-4257-abbc-60a182e8e790",
+    "aac2d932-f051-472d-8951-d9f400dc4f07",
+    "ab194150-c362-49bc-8e2e-505915940ea4",
+    "ab4ff496-559f-4c8d-8052-a20b900ffeb0",
+    "adcb8284-7343-44da-a287-e1582946148f",
+    "ade9d7d4-01d5-4d52-9d1d-89e189d3fc70",
+    "b0a22f0e-f19c-4985-8311-0badb4f2a692",
+    "b1268bb2-150f-4ca7-afb5-f2fa21507da5",
+    "b2c06ac0-7dca-4369-9e91-db4e960db825",
+    "b436140c-47e7-4ec4-9695-c1e821d4723f",
+    "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a",
+    "b9b94ca2-d99d-4891-baeb-85b708e7ce08",
+    "b9f7a814-3f1c-4396-955d-26175d652889",
+    "bc3a5e92-6036-4c1f-9e7b-2bc06d5d2143",
+    "bd920d50-f921-46e5-844f-84d6eb6dcf74",
+    "bdc9b239-c9dc-4a89-a739-895007f8133e",
+    "bde937b8-d111-42b3-89e6-7822ee0c18b7",
+    "be6b7932-2712-42e0-8f48-a6b4a7528b80",
+    "bef4cfaf-a1da-4d59-a2e0-f53a99d3cf2f",
+    "bf59e9ab-86f6-4478-8732-79acec15bcbc",
+    "bff7822d-ed45-48d6-bdee-524040ba5ee5",
+    "c1747927-94a7-4ed1-8fcb-6017955a0acf",
+    "c1983103-608f-418e-a037-d79387429663",
+    "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63",
+    "c3d5aaa1-b279-47a7-b745-dbf27c322d41",
+    "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5",
+    "c5a25fe4-fdc1-4848-be25-91d0141999b2",
+    "c6e8da58-5274-42e3-9cfd-b2dda9ec1b57",
+    "c8c42df3-a6cf-4e2d-b900-0005fc67e07a",
+    "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3",
+    "ca861007-b4dc-49d1-8dc8-15d28a283f4e",
+    "cbefd6a5-095a-4a11-88fa-3a647822c28e",
+    "cf8b74da-b6fe-40f1-9a00-639a4de60168",
+    "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a",
+    "d318e053-27c9-4e44-bf49-e8ad6cd7e4b1",
+    "d44063ac-c32b-457a-b474-ced546d36818",
+    "d6451bec-6280-4ed1-b438-53d41f63b4f1",
+    "daf67786-46b5-445d-973f-cf8748d7e16f",
+    "db22797e-d091-466c-9684-128d3f23dec1",
+    "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86",
+    "dd30a93f-661c-4099-90c4-74dc9f31a3a3",
+    "dda18a8d-c5a7-4211-bbda-1992f6154416",
+    "dddfd6aa-96f8-4067-b566-8509c8c74636",
+    "de24fecc-4ce3-484f-a34e-3a7d41b29137",
+    "defa0901-7a2a-467e-ba6a-af3e38979e22",
+    "e26bbf68-0d59-44de-b1b2-c447761acf20",
+    "e2e1b3c0-e51f-4cba-a60f-91f017976eb5",
+    "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d",
+    "e3c89499-bf61-4a1e-9191-3445228a9ee2",
+    "e406d9c9-0993-4a1c-875a-dfda98e2fadb",
+    "e59d9cc5-d30d-4254-b4d5-8b499eec2af8",
+    "e6cde5c2-a54d-444d-9bad-996ec74bcbc1",
+    "e8b45db5-b42f-4122-8dfc-59d19bc88045",
+    "ead80465-de52-4268-ad38-30e2db704684",
+    "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c",
+    "f3370cb5-676e-4238-b7c8-c56cdce9d257",
+    "f445e501-a9f9-411f-a223-371b0daeb695",
+    "f5811822-3742-48c0-98f6-fb27bdcf2c49",
+    "f683bf36-cbc3-4c46-9c45-cfb6e32a13af",
+    "fb3c796f-b84e-469b-96ec-01b9b6f01018",
+    "fca2bd66-4d04-4631-8636-0186f5040191",
+    "fe2a23e7-beae-402a-a6b7-93a5c2c8983d",
+    "fea3edb5-2fb2-4898-973e-79dffee34090"
+  ],
+  "pricesChanged": [
+    "004e2b9d-6aef-476a-bed8-e854eeaba257",
+    "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11",
+    "07de0c88-200d-4732-929e-e8c98a0faedd",
+    "0991b4d5-5f1b-44e6-8e91-e91959db281b",
+    "0ad35147-8d8d-49c5-a25c-f574b7e07145",
+    "0ca1bcce-95a9-49bc-aa58-d862993d421e",
+    "0d0da313-976b-4f5b-97ae-ac4c151f55df",
+    "0e31b410-7a4f-44cc-be7c-6da715660d4f",
+    "0e418830-7764-4a44-8ba1-06b596506892",
+    "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc",
+    "11128019-e4f1-4d2d-9665-4a8731a68b77",
+    "12cefb17-9ba3-44b6-b531-a8d296246b86",
+    "15420618-d1b3-4364-aff0-dd2102f944e3",
+    "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
+    "1bd4f7c9-64d0-4de3-99b3-beeac63155c7",
+    "1bdacdb7-3add-4dad-bc1e-1bcc8b60a715",
+    "1cb9d1b5-6d8f-493f-be1b-e57d084f065d",
+    "1e52139d-46ca-4414-a1f6-88a288dfe687",
+    "1f431c8a-b272-4a9f-8377-758fd9a0781d",
+    "21abfb80-c2e5-413d-9019-5cc3de9121ae",
+    "223a7d36-eb74-4e6b-a01c-b7ff0b0c696b",
+    "29ac4114-6af6-441f-b56b-d0ac4d34d758",
+    "3178ac05-fef6-43ce-a897-ea01df50a79f",
+    "3262e454-3663-494e-8101-84075fd63442",
+    "33c12c3e-1de8-4d9a-833c-9770603f05aa",
+    "345500b8-328d-4a72-9269-93c25bf75c1e",
+    "34cf0c11-521a-4390-b42a-48b070e22cc2",
+    "38ec170c-750b-4fe4-a167-4cd1778648bc",
+    "3a13ab9e-66b3-45db-9442-606f00cb5a54",
+    "3a44684c-967f-47b5-a501-92d7ada96863",
+    "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa",
+    "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2",
+    "47dbca7a-682e-443c-99bc-01dd2bb4adfc",
+    "49bcee08-afe0-4bb9-8220-b3d9088cd35b",
+    "502b7bd2-2ad7-4a03-9d96-30fb92d74098",
+    "528fb6cd-81b9-4b9d-b9da-30edcdb77afd",
+    "5303aeee-379d-423a-b655-7a2ce5a53340",
+    "54633c97-9b3d-44ce-a902-01f1430c260e",
+    "59bc51ab-231e-44bc-8588-5bfc00ac5eb0",
+    "5e586ecb-4451-4e10-852d-96ec5a32f46e",
+    "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9",
+    "6377546c-aff4-488d-ac30-ad27245054db",
+    "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8",
+    "69d587e8-6014-44f4-9fa2-2de58deff91b",
+    "6bc0f672-b25d-41cb-9bc3-a64e65307cda",
+    "6d6b0894-1f35-4df2-a180-d4b563db3102",
+    "6e4faf94-cfa4-438e-986b-05fd8f06d265",
+    "6e5d42ab-cdfc-45c8-968c-e0c660f048ae",
+    "7244ddca-2718-40e0-90bf-287718182154",
+    "728a1cd6-4c57-4509-ab09-aafc279d3947",
+    "73af14bc-7343-4743-bcb1-776629f14d1b",
+    "7704310c-87e1-4d73-a503-a9f32854973c",
+    "770b1ff2-0aef-4f23-8378-ebe37681a842",
+    "774cacb7-7b1b-4fe8-9389-caa3444926f9",
+    "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
+    "7bef4760-3f1f-45d1-bae6-a2a2b844c61f",
+    "7c20069b-3e20-4edb-b3bf-75bf82b44cdd",
+    "7df74560-803f-4170-9d26-8d254be2e1ac",
+    "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef",
+    "7f21d1d1-00f8-4273-8fc0-beff636a2ddb",
+    "7f479cdd-149f-4726-a80b-c2da5ee42b84",
+    "82ffd6fb-2f07-4e5e-896c-e9d915c85c46",
+    "833c826b-ce1d-40aa-b7c5-e93e52f5b21f",
+    "8507dfb1-80d8-4294-a8a6-0efa00e89e86",
+    "863eb485-f580-4975-81ac-bf2467106519",
+    "8654a6b2-3bcf-436f-8342-9f2cc02ce739",
+    "8712070b-6f24-4f60-bbc4-50d45db96a8f",
+    "896932b6-dc0c-4ab5-913e-6ba142bfc030",
+    "8987cc38-505b-48e4-a821-c534ab5fbaac",
+    "8d7b9a9c-9f0f-44d2-bd06-3b5a69272490",
+    "8dc252c0-789f-4024-9414-67faa20f33d8",
+    "8e16cdbe-12a4-466c-bd64-74cad966ea0f",
+    "8fb5c495-bced-405e-8abe-40938f6a2be0",
+    "92180575-7126-4df5-b347-0e2a2adab25f",
+    "93db7fe1-0187-437c-9b85-f9704ec58e20",
+    "94cec6c5-0caa-43c1-a8fb-653b82a88309",
+    "97c60f8a-309e-46fb-b100-da93a603410d",
+    "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
+    "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
+    "9e35bb29-5813-4308-888b-ac84fe4eadc4",
+    "9f623f75-c40d-47fd-8c3f-eebdab56fa9a",
+    "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb",
+    "a1ada07c-b494-4161-88bb-014150f8aa3e",
+    "a1cf8693-8514-4542-a2b9-e3fd13f86f95",
+    "a55cdfa6-fee8-46c1-a474-c5ab8922066c",
+    "a65088c9-ee60-43df-be57-1e77c7380923",
+    "a71b8968-9fff-47e1-8c1d-f74f500aa3c1",
+    "a8328686-ad57-4c46-87d2-8ff5da769a72",
+    "a96110ce-a0a7-4bac-8db4-4047e2184a61",
+    "a968deb8-026a-48b3-adba-240b92980d01",
+    "aac2d932-f051-472d-8951-d9f400dc4f07",
+    "ab194150-c362-49bc-8e2e-505915940ea4",
+    "ab4ff496-559f-4c8d-8052-a20b900ffeb0",
+    "adcb8284-7343-44da-a287-e1582946148f",
+    "b0a22f0e-f19c-4985-8311-0badb4f2a692",
+    "b1268bb2-150f-4ca7-afb5-f2fa21507da5",
+    "b2c06ac0-7dca-4369-9e91-db4e960db825",
+    "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a",
+    "b9b94ca2-d99d-4891-baeb-85b708e7ce08",
+    "bc3a5e92-6036-4c1f-9e7b-2bc06d5d2143",
+    "bdc9b239-c9dc-4a89-a739-895007f8133e",
+    "bef4cfaf-a1da-4d59-a2e0-f53a99d3cf2f",
+    "bff7822d-ed45-48d6-bdee-524040ba5ee5",
+    "c1983103-608f-418e-a037-d79387429663",
+    "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63",
+    "c5a25fe4-fdc1-4848-be25-91d0141999b2",
+    "c6e8da58-5274-42e3-9cfd-b2dda9ec1b57",
+    "c8c42df3-a6cf-4e2d-b900-0005fc67e07a",
+    "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3",
+    "ca861007-b4dc-49d1-8dc8-15d28a283f4e",
+    "cbefd6a5-095a-4a11-88fa-3a647822c28e",
+    "cf8b74da-b6fe-40f1-9a00-639a4de60168",
+    "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a",
+    "d318e053-27c9-4e44-bf49-e8ad6cd7e4b1",
+    "d6451bec-6280-4ed1-b438-53d41f63b4f1",
+    "daf67786-46b5-445d-973f-cf8748d7e16f",
+    "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86",
+    "dd30a93f-661c-4099-90c4-74dc9f31a3a3",
+    "dda18a8d-c5a7-4211-bbda-1992f6154416",
+    "dddfd6aa-96f8-4067-b566-8509c8c74636",
+    "de24fecc-4ce3-484f-a34e-3a7d41b29137",
+    "e2e1b3c0-e51f-4cba-a60f-91f017976eb5",
+    "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d",
+    "e3c89499-bf61-4a1e-9191-3445228a9ee2",
+    "e406d9c9-0993-4a1c-875a-dfda98e2fadb",
+    "e59d9cc5-d30d-4254-b4d5-8b499eec2af8",
+    "e8b45db5-b42f-4122-8dfc-59d19bc88045",
+    "f3370cb5-676e-4238-b7c8-c56cdce9d257",
+    "f445e501-a9f9-411f-a223-371b0daeb695",
+    "f5811822-3742-48c0-98f6-fb27bdcf2c49",
+    "fb3c796f-b84e-469b-96ec-01b9b6f01018",
+    "fca2bd66-4d04-4631-8636-0186f5040191",
+    "fe2a23e7-beae-402a-a6b7-93a5c2c8983d"
+  ],
+  "imagesChanged": [
+    "1b35ff21-f2fc-4e93-acf1-bc1827a452af",
+    "7920a33a-ab56-49af-8a0b-1528186ae540",
+    "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
+    "e3c89499-bf61-4a1e-9191-3445228a9ee2"
+  ],
+  "categoryAssignmentsChanged": [
+    "04e64d7b-d691-48ee-9b7a-a2f978c3e09e",
+    "0d0da313-976b-4f5b-97ae-ac4c151f55df",
+    "10669c1f-596c-4f5f-80a5-d05811ffd71a",
+    "11128019-e4f1-4d2d-9665-4a8731a68b77",
+    "1bd4f7c9-64d0-4de3-99b3-beeac63155c7",
+    "1e52139d-46ca-4414-a1f6-88a288dfe687",
+    "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7",
+    "3262e454-3663-494e-8101-84075fd63442",
+    "3a13ab9e-66b3-45db-9442-606f00cb5a54",
+    "3e08c664-b982-41e3-b325-ab68a12f01b5",
+    "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2",
+    "408eba99-a9c8-4630-9c76-c17c552941a7",
+    "49bcee08-afe0-4bb9-8220-b3d9088cd35b",
+    "528fb6cd-81b9-4b9d-b9da-30edcdb77afd",
+    "54633c97-9b3d-44ce-a902-01f1430c260e",
+    "6a4e2138-f0c4-4256-9cea-15d934a870d4",
+    "6e4faf94-cfa4-438e-986b-05fd8f06d265",
+    "7920a33a-ab56-49af-8a0b-1528186ae540",
+    "7b7c1ef3-04bd-4968-b1eb-2aad83376751",
+    "7bef4760-3f1f-45d1-bae6-a2a2b844c61f",
+    "7c20069b-3e20-4edb-b3bf-75bf82b44cdd",
+    "7c604238-7a07-4168-b234-9bb1b536d202",
+    "7f21d1d1-00f8-4273-8fc0-beff636a2ddb",
+    "833c826b-ce1d-40aa-b7c5-e93e52f5b21f",
+    "83979ed6-5b12-4aca-8a70-3f44ed9c61f5",
+    "863eb485-f580-4975-81ac-bf2467106519",
+    "8654a6b2-3bcf-436f-8342-9f2cc02ce739",
+    "8712070b-6f24-4f60-bbc4-50d45db96a8f",
+    "896932b6-dc0c-4ab5-913e-6ba142bfc030",
+    "8e16cdbe-12a4-466c-bd64-74cad966ea0f",
+    "94cec6c5-0caa-43c1-a8fb-653b82a88309",
+    "9bdb2b3e-9591-4fd4-8860-a67c47440f04",
+    "9e2677e4-b7fa-476a-8a1b-8996bce6c734",
+    "a103a19f-8c77-4c08-a9bf-e89a175412f3",
+    "a1ada07c-b494-4161-88bb-014150f8aa3e",
+    "a968deb8-026a-48b3-adba-240b92980d01",
+    "aa2525eb-504a-4257-abbc-60a182e8e790",
+    "ab4ff496-559f-4c8d-8052-a20b900ffeb0",
+    "adcb8284-7343-44da-a287-e1582946148f",
+    "b830f64c-a3fb-4fb1-81ff-74f18f79ab0a",
+    "b9f7a814-3f1c-4396-955d-26175d652889",
+    "bc3a5e92-6036-4c1f-9e7b-2bc06d5d2143",
+    "bdc9b239-c9dc-4a89-a739-895007f8133e",
+    "be6b7932-2712-42e0-8f48-a6b4a7528b80",
+    "bff7822d-ed45-48d6-bdee-524040ba5ee5",
+    "c19b4ad7-9dd2-495c-9fcf-9ca0a81fba63",
+    "c3d5aaa1-b279-47a7-b745-dbf27c322d41",
+    "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5",
+    "c6e8da58-5274-42e3-9cfd-b2dda9ec1b57",
+    "ca861007-b4dc-49d1-8dc8-15d28a283f4e",
+    "db22797e-d091-466c-9684-128d3f23dec1",
+    "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86",
+    "dda18a8d-c5a7-4211-bbda-1992f6154416",
+    "defa0901-7a2a-467e-ba6a-af3e38979e22",
+    "e6cde5c2-a54d-444d-9bad-996ec74bcbc1",
+    "e8b45db5-b42f-4122-8dfc-59d19bc88045",
+    "f3370cb5-676e-4238-b7c8-c56cdce9d257",
+    "f683bf36-cbc3-4c46-9c45-cfb6e32a13af",
+    "fea3edb5-2fb2-4898-973e-79dffee34090"
+  ],
+  "missingOfficialFields": [
+    {
+      "entityType": "product",
+      "id": "06ca727d-c2d4-4efd-b936-ba88b7891219",
+      "name": "PATATESLI KOFTA",
+      "field": "categoryAssignment",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "2e0d2317-e4ac-4783-9f2e-4cce3125c0e0",
+      "name": "Pumpkin Milkshake",
+      "field": "image",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "30fc591c-9730-4b11-88df-3370e5a3775d",
+      "name": "Çiğ Kofta",
+      "field": "categoryAssignment",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "7920a33a-ab56-49af-8a0b-1528186ae540",
+      "name": "ANIMA",
+      "field": "image",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "90cc6304-3fb2-490b-bcd1-b79c841849db",
+      "name": "Pistachio Milkshake",
+      "field": "categoryAssignment",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "90cc6304-3fb2-490b-bcd1-b79c841849db",
+      "name": "Pistachio Milkshake",
+      "field": "image",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "d872e2ee-68ca-440f-89f4-52a0c4ae9519",
+      "name": "Avocado Milkshake",
+      "field": "image",
+      "locale": null
+    },
+    {
+      "entityType": "product",
+      "id": "e6cde5c2-a54d-444d-9bad-996ec74bcbc1",
+      "name": "Mango Matcha",
+      "field": "categoryAssignment",
+      "locale": null
+    },
+    {
+      "entityType": "recommendation",
+      "id": "00eafea2-dc5d-4509-9321-159704d80d89",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "fea3edb5-2fb2-4898-973e-79dffee34090"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0540bd94-acb7-41c9-804c-696bdf3eb799",
+      "name": "Ceaser Chicken Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "138f5af0-856f-440b-87d8-e1408d9e39c1"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0764bad4-5682-4de1-accc-61ed74025b13",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "35a25c13-d0b9-46e7-a712-630cf9928e0d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "07dbb336-cf84-447a-9e33-2742aa316e6b",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "11128019-e4f1-4d2d-9665-4a8731a68b77"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "07df8615-5dd6-46c6-8172-fe8419ee2473",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a103a19f-8c77-4c08-a9bf-e89a175412f3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "08a6b15a-8370-4d61-9eec-b38194482436",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "8e16cdbe-12a4-466c-bd64-74cad966ea0f"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "09cdd11a-c554-4560-99f4-e6e19fde68a2",
+      "name": "Green Tea",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b0a22f0e-f19c-4985-8311-0badb4f2a692"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0a69fde9-3142-4ad0-a1fa-c24a22019305",
+      "name": "Falafel Bites",
+      "field": "description",
+      "locale": "ar",
+      "productId": "bde937b8-d111-42b3-89e6-7822ee0c18b7"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0b7ce349-8a45-4924-9a14-bd04c640c224",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0c97277d-87ec-46d8-9338-5ba6aa5a6ab5",
+      "name": "Turkish Baklava",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6d6b0894-1f35-4df2-a180-d4b563db3102"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0e642a4b-d926-41a3-88de-59d00a518ae4",
+      "name": "Turkish Lemonade",
+      "field": "description",
+      "locale": "ar",
+      "productId": "44ee2cb1-0808-4e9e-982d-66f24c1d45e9"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0e77d9b9-4fb5-4834-90c7-4c5462db6a73",
+      "name": "Mixberry Lemonade",
+      "field": "description",
+      "locale": "ar",
+      "productId": "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "0f31bf08-1751-433e-8930-8b4ced02fdce",
+      "name": "Turkish Künefe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "82ffd6fb-2f07-4e5e-896c-e9d915c85c46"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "12cb3711-36ff-4221-a9a7-83fb186e33c5",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "cf8b74da-b6fe-40f1-9a00-639a4de60168"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "14abf3dd-df61-49ae-844b-365e5c2e4854",
+      "name": "Traliçe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "29ac4114-6af6-441f-b56b-d0ac4d34d758"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "162c7a35-aabe-412e-8424-5d21aa5bc131",
+      "name": "Handmade Cheese Gozleme",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b436140c-47e7-4ec4-9695-c1e821d4723f"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "18b241f1-94f6-468b-a275-952834b3034e",
+      "name": "Falafel Bites",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f5811822-3742-48c0-98f6-fb27bdcf2c49"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "18daea96-8317-4835-93ba-bf5a3edc63b4",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "adcb8284-7343-44da-a287-e1582946148f"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1954ecbf-0041-4954-b8d5-37c0309ce1de",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b9b94ca2-d99d-4891-baeb-85b708e7ce08"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1c85842e-9e6a-4d10-a99e-9c1a805b06d0",
+      "name": "Traliçe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7f479cdd-149f-4726-a80b-c2da5ee42b84"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1e455a91-2e5d-4c8b-87e4-28cffd556927",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1ed90e20-0db9-4cef-873c-6bd9b19690db",
+      "name": "White Cheese Plate",
+      "field": "description",
+      "locale": "ar",
+      "productId": "69d587e8-6014-44f4-9fa2-2de58deff91b"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1efebf28-9adf-4413-8d88-96fba6eb1a3e",
+      "name": "Turkish Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "93db7fe1-0187-437c-9b85-f9704ec58e20"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1f215e0c-5c7d-456d-8f56-1e30ce927d99",
+      "name": "Beer",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a968deb8-026a-48b3-adba-240b92980d01"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1f64ce75-c40e-4555-b9cc-6debf2e5953e",
+      "name": "Chicken Shish",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1f9e29a1-64ae-42f0-8aa8-0aea2a8acc1b",
+      "name": "Gavurdagi Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7704310c-87e1-4d73-a503-a9f32854973c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "1fbe5a4a-6738-45c9-9786-de8b77afb8fa",
+      "name": "Passion Fruit Mojito",
+      "field": "description",
+      "locale": "ar",
+      "productId": "cbefd6a5-095a-4a11-88fa-3a647822c28e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "200e3f15-ab81-4693-b243-4724775329e5",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "12cefb17-9ba3-44b6-b531-a8d296246b86"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "22d1d216-f42f-4e09-8621-13d5c4f66b23",
+      "name": "Dallas Steak",
+      "field": "description",
+      "locale": "ar",
+      "productId": "61fc7728-4ccf-4745-a8af-9bc19f408038"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "22e63e1e-aa64-40dd-9ae7-c92875f66940",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a65088c9-ee60-43df-be57-1e77c7380923"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "231a225f-9ecd-4820-bfde-e6f57f5645b2",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f683bf36-cbc3-4c46-9c45-cfb6e32a13af"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "269eb5a3-0a8f-42be-b100-8f38dbef2278",
+      "name": "Potato Croquettes",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "280cd5f6-4fb3-4812-846a-ca06a5fba89d",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "8507dfb1-80d8-4294-a8a6-0efa00e89e86"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "284fcea1-bb2c-4b5b-83ee-c0e6e67bce55",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "0ca1bcce-95a9-49bc-aa58-d862993d421e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2869ba64-92b8-40b5-a5c7-b83dbc2fe67d",
+      "name": "Lemon Mint Juice",
+      "field": "description",
+      "locale": "ar",
+      "productId": "bdc9b239-c9dc-4a89-a739-895007f8133e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "29ebfac0-4252-4c28-be2b-415512f8f08b",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "25fedaab-c4ad-4005-9ce9-c5f5c6eb51a5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2a16f891-a421-47f1-9293-75468d444ce4",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2a46250d-ceec-4368-a584-3136017ff3f4",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "975f95ee-5971-4e1b-9c0b-f0c4d484aa1a"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2b995560-68e4-4a77-89c7-a2f678b36d05",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2ba43e8d-54e8-4baa-8ed6-79dcecff7b89",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "975f95ee-5971-4e1b-9c0b-f0c4d484aa1a"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2c79d5d4-d9ad-4d71-b587-c5d213690bb5",
+      "name": "Adana Kebab",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a1ada07c-b494-4161-88bb-014150f8aa3e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2d1c47e4-3276-4a0a-a039-639f7a4a9ece",
+      "name": "Turkish Baklava",
+      "field": "description",
+      "locale": "ar",
+      "productId": "0ca1bcce-95a9-49bc-aa58-d862993d421e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "2f3ed948-b157-465f-b47e-99ebfab34c3b",
+      "name": "Lamb Chops",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f683bf36-cbc3-4c46-9c45-cfb6e32a13af"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3162bac3-2706-483e-99af-a953d70461a8",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "47dbca7a-682e-443c-99bc-01dd2bb4adfc"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "31a44377-d805-4486-a869-5b7a1285bbc2",
+      "name": "Mutabbal",
+      "field": "description",
+      "locale": "ar",
+      "productId": "ca861007-b4dc-49d1-8dc8-15d28a283f4e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "31ea895e-76e6-49b9-89e4-0f71c088fc2f",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7920a33a-ab56-49af-8a0b-1528186ae540"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "33c5acd9-411d-4ca9-9549-be190f623fae",
+      "name": "Gavurdagi Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7244ddca-2718-40e0-90bf-287718182154"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3584ee37-ed36-4a0a-ad61-7d57a0bf17d4",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "66543356-1b79-497f-ab11-9fe41362d9c3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3661c3ff-0cde-4b36-a873-cf23808723b0",
+      "name": "Ceaser Chicken Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e59d9cc5-d30d-4254-b4d5-8b499eec2af8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "38090473-df60-4e85-b4c4-bf20ec389a4d",
+      "name": "Lahmacun",
+      "field": "description",
+      "locale": "ar",
+      "productId": "770b1ff2-0aef-4f23-8378-ebe37681a842"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3852d5a1-00fd-469f-b477-562c7197b6e0",
+      "name": "Golden Hummus",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f3370cb5-676e-4238-b7c8-c56cdce9d257"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "38f6c76a-b0b9-45a1-ad00-1c3158882ccb",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6d6b0894-1f35-4df2-a180-d4b563db3102"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3903cff2-08cf-4c69-9b72-d47bdadd2af8",
+      "name": "Ege Breeze Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "896932b6-dc0c-4ab5-913e-6ba142bfc030"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3a9d3ae9-8762-4476-836d-15a352bc86bd",
+      "name": "Gavurdagi Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a968deb8-026a-48b3-adba-240b92980d01"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3af805c8-af4b-427a-9432-5c913065d72b",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "77a04025-581e-410b-b70b-bb2c4de5a648"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3c4701bf-9014-44f7-b78d-0bfbcaeb1c8c",
+      "name": "Margarita",
+      "field": "description",
+      "locale": "ar",
+      "productId": "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "3edb1d05-f6a1-485c-9484-5e7d3040e95a",
+      "name": "Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "77a04025-581e-410b-b70b-bb2c4de5a648"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "411394d1-ae79-4c6f-9c22-8d8f830fd1ec",
+      "name": "Traliçe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3de8bda3-66f6-47d8-805f-22eaa5f5564d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "44385ab9-fbaa-4ece-9ac9-6956c96fa99c",
+      "name": "Babaghannoush",
+      "field": "description",
+      "locale": "ar",
+      "productId": "1e52139d-46ca-4414-a1f6-88a288dfe687"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "4486bf95-2f2d-4216-98de-c954936a8b4a",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "44976732-ec4f-46be-bb75-7aa8afd86763",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "345500b8-328d-4a72-9269-93c25bf75c1e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "4540909a-89c1-4ea4-838a-de08909bee86",
+      "name": "Hibiscus Raspberry Ice Tea",
+      "field": "description",
+      "locale": "ar",
+      "productId": "726653ff-c498-403e-bc48-8c4100ed7efd"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "4614340b-186d-47a5-8c9c-ccd19c3506d1",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7df74560-803f-4170-9d26-8d254be2e1ac"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "46b6f494-8118-439e-9aec-053216028446",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c5a25fe4-fdc1-4848-be25-91d0141999b2"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "4a61472c-e377-483f-b5c7-e8755bee1a71",
+      "name": "Mixberry Lemonade",
+      "field": "description",
+      "locale": "ar",
+      "productId": "896932b6-dc0c-4ab5-913e-6ba142bfc030"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "4b2224fe-6b61-4c30-8198-29f69247383a",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e6cde5c2-a54d-444d-9bad-996ec74bcbc1"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "4d380c11-ff21-40ac-88eb-044eccec310d",
+      "name": "Turkish Künefe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b2c06ac0-7dca-4369-9e91-db4e960db825"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "5118933c-e052-427d-949c-14be62449564",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "fe2a23e7-beae-402a-a6b7-93a5c2c8983d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "530d1747-e0a2-4159-b75d-6b604b504ce7",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "ead80465-de52-4268-ad38-30e2db704684"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "55f35ef1-1a5a-40bf-8cbe-e6e03b163e47",
+      "name": "Crispy Cheese Rolls",
+      "field": "description",
+      "locale": "ar",
+      "productId": "dd30a93f-661c-4099-90c4-74dc9f31a3a3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "561112ea-4c6c-4c8f-ae70-01f2d6093a8d",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a55cdfa6-fee8-46c1-a474-c5ab8922066c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "564d2915-0bff-420f-a4c8-6c71cf5e14b4",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "5303aeee-379d-423a-b655-7a2ce5a53340"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "57e5f9c0-38cd-4ce3-a86d-81b926f659b2",
+      "name": "Ice Spanish Latte",
+      "field": "description",
+      "locale": "ar",
+      "productId": "86820d79-cb6d-4bca-8e52-c539bd47d7a9"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "5a022b66-c24d-4db3-8924-e6be52509af1",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "29ac4114-6af6-441f-b56b-d0ac4d34d758"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "5bacf1e7-18e2-4c35-9523-49d5a4d116e9",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3e08c664-b982-41e3-b325-ab68a12f01b5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "5c4071d6-6bec-4923-8d75-cd02ad601c07",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7375d7eb-72c4-40cc-99b5-b8ae81403424"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "5e38a65f-052b-46e3-aa59-bfc6e4f5c792",
+      "name": "Ege Breeze Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "d023c723-73dc-4074-9dc7-9e3fb3ff1b7a"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "60114a0e-09da-4db5-a3da-c9af0a8e65b9",
+      "name": "Turkish Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "ade9d7d4-01d5-4d52-9d1d-89e189d3fc70"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "611cd92c-b9f0-4051-9c95-f58d9ee46292",
+      "name": "Ceaser Chicken Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "0e7f4325-c3a2-4f4d-bb92-0d2a98cc53fc"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "612df343-d84a-4075-958d-810c9b523a1d",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "bf59e9ab-86f6-4478-8732-79acec15bcbc"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "62cab54d-a410-433b-b3a1-9676aa678784",
+      "name": "Su Böreği",
+      "field": "description",
+      "locale": "ar",
+      "productId": "38f4ff6d-c5df-4fb3-be4a-59aa8bf74d58"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "63115138-b739-4cf3-953f-7ff8df643967",
+      "name": "Traliçe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a65088c9-ee60-43df-be57-1e77c7380923"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6311aa1c-ada2-4898-9c39-709db61f1ad3",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "5303aeee-379d-423a-b655-7a2ce5a53340"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "632a0082-0e03-4775-bf6f-45a563035661",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a0e62f70-910c-4ebb-a6af-566d7b1a6cbb"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "64766e80-95c1-4e40-b5f5-fb1f8a2b60b9",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "ade9d7d4-01d5-4d52-9d1d-89e189d3fc70"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "65871f18-7ff4-4ecf-b414-3d369086e154",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "de24fecc-4ce3-484f-a34e-3a7d41b29137"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "66750bd1-c522-4612-a5f2-f215c3b9188b",
+      "name": "Lentil Soup",
+      "field": "description",
+      "locale": "ar",
+      "productId": "44ee2cb1-0808-4e9e-982d-66f24c1d45e9"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "67535b6f-6a0d-46be-b5e0-1e7939c73a43",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7df74560-803f-4170-9d26-8d254be2e1ac"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6917c898-1c41-4bce-8680-d9e7fb79a64b",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7b6de15e-fa0e-4c9e-909d-f7432a09fdf4"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6a6f25bf-08a5-4c3c-96f7-8e9779d75ee9",
+      "name": "Butcher Meatball",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b0a22f0e-f19c-4985-8311-0badb4f2a692"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6b81a9d1-8b3f-4d98-976b-72bb1d078604",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a96110ce-a0a7-4bac-8db4-4047e2184a61"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6cb25216-b85e-4d08-8875-8e954bc1c779",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3a44684c-967f-47b5-a501-92d7ada96863"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6d83baf5-e1c2-4fe4-a2fc-7f41215ce05f",
+      "name": "Traliçe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b9b94ca2-d99d-4891-baeb-85b708e7ce08"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6f133595-cebc-43ce-9dac-1a9e06c84bfe",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b2c06ac0-7dca-4369-9e91-db4e960db825"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "6f8b9173-8deb-4726-bf99-f2ec5f3b5690",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3b1c0c76-0809-4459-92cf-adff4d03dff8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "718cc66a-974d-4622-a5bd-70a0002a09db",
+      "name": "Ayran",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7244ddca-2718-40e0-90bf-287718182154"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "71d2cdca-82f6-4dca-962f-248041f66ce0",
+      "name": "Olive Plate",
+      "field": "description",
+      "locale": "ar",
+      "productId": "d44063ac-c32b-457a-b474-ced546d36818"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "762a810c-09dc-4e7f-b036-9c31b8ba0f3c",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "06a05c4f-d8a5-4aab-9a36-e6d66fba8a11"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "764349bf-1768-4029-876f-7bd70791f4b4",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3c53bbb9-94b4-4d72-9fde-9e912d73ecfa"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "78f6118d-190a-4cef-a9ad-12507d26b109",
+      "name": "Labneh",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6969f27d-684c-4725-9257-5e69733bc382"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "7a08a355-d8b5-411f-946c-4bb80c9db0ec",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "ead80465-de52-4268-ad38-30e2db704684"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "7b38dff7-e1ad-4447-a42e-05d406b5b39d",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "dd30a93f-661c-4099-90c4-74dc9f31a3a3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "7b6f83c2-577b-4bbe-8d01-69d1fffff301",
+      "name": "Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "1e6a71bd-c035-4e38-a510-413af41596e3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "7bd05bc7-acc3-440b-ae8f-fe4f76ab45ce",
+      "name": "Golden Hummus",
+      "field": "description",
+      "locale": "ar",
+      "productId": "adcb8284-7343-44da-a287-e1582946148f"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "7e21a0d8-cd05-4ff4-b8bb-5ed09b009a50",
+      "name": "Moroccan Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "35a25c13-d0b9-46e7-a712-630cf9928e0d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "805e85ba-034a-4e29-8ef0-7448d46589b3",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "defa0901-7a2a-467e-ba6a-af3e38979e22"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8106aa9e-a6d8-4234-aa8f-be5e46090881",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "816ea7ae-caa8-4007-adc5-00cf46fe35da",
+      "name": "Falafel Bites",
+      "field": "description",
+      "locale": "ar",
+      "productId": "4e6ad732-3641-436b-803f-2a957c2416a8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "82e6a248-995f-4e1b-b61b-349585b0f954",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "aa2525eb-504a-4257-abbc-60a182e8e790"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8567851b-d941-4033-83f7-cec76e44c455",
+      "name": "Ege Breeze Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "1e6a71bd-c035-4e38-a510-413af41596e3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "85a94da7-02e4-4820-b1be-55929c633cfe",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "db22797e-d091-466c-9684-128d3f23dec1"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8752570d-7bab-492f-b8af-c479ba3afecc",
+      "name": "Ayran W Mint",
+      "field": "description",
+      "locale": "ar",
+      "productId": "34cf0c11-521a-4390-b42a-48b070e22cc2"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8a9eb277-c3ca-41eb-93fc-7148302b633c",
+      "name": "Mixberry Lemonade",
+      "field": "description",
+      "locale": "ar",
+      "productId": "770b1ff2-0aef-4f23-8378-ebe37681a842"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8c14da59-e449-4e61-82f3-5b69c3b186ed",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8e2deb50-1355-48ea-8715-b60215208618",
+      "name": "Su Böreği",
+      "field": "description",
+      "locale": "ar",
+      "productId": "fca2bd66-4d04-4631-8636-0186f5040191"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "8fefb285-ecb4-4a21-9d76-d6634e9a89d8",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "86820d79-cb6d-4bca-8e52-c539bd47d7a9"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9185e73b-2cc5-4a97-98a2-3410adc4d154",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "83979ed6-5b12-4aca-8a70-3f44ed9c61f5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "942de6a4-f5a6-49d1-b6f9-a645a7fdbb06",
+      "name": "Enterecote",
+      "field": "description",
+      "locale": "ar",
+      "productId": "0d0da313-976b-4f5b-97ae-ac4c151f55df"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "951ab91d-63c4-4a7e-a9b9-e0e2b2bce192",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e26bbf68-0d59-44de-b1b2-c447761acf20"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "95bc82ac-d05d-48d8-a957-515b55067afc",
+      "name": "Golden Hummus",
+      "field": "description",
+      "locale": "ar",
+      "productId": "bdc9b239-c9dc-4a89-a739-895007f8133e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "977fb7c1-d29e-4893-bc80-222a6184a0f5",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "83979ed6-5b12-4aca-8a70-3f44ed9c61f5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "97c52909-0c74-42e6-849e-5a5c3f70ab0d",
+      "name": "Simit With Cheese",
+      "field": "description",
+      "locale": "ar",
+      "productId": "9e35bb29-5813-4308-888b-ac84fe4eadc4"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "99e251a2-1146-44ca-b650-2afb67edab41",
+      "name": "Cold Baklava With milk",
+      "field": "description",
+      "locale": "ar",
+      "productId": "fca2bd66-4d04-4631-8636-0186f5040191"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9bc91a4f-5912-4845-8ed0-d1b34d4f0812",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a55cdfa6-fee8-46c1-a474-c5ab8922066c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9c58f632-a541-40a8-9237-74d6583c2ff7",
+      "name": "Vegetable Omelette",
+      "field": "description",
+      "locale": "ar",
+      "productId": "b436140c-47e7-4ec4-9695-c1e821d4723f"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9e0dbfa3-c9e8-4168-a3bc-bac614e14a70",
+      "name": "Mojito Classic",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7f1899d8-36b3-4250-9d32-7a1d0bd6f6d6"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9e48471b-5a25-4a85-9bdf-40ff628f800c",
+      "name": "Farm Style Scrambel",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9ee3c9f5-eeee-4976-a9b6-adc4dba64e94",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c57fd7db-3ee3-4061-a470-dc6c19f9e2f5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9f1e33ae-969b-4a49-8bb6-bd4fa9cf59b6",
+      "name": "Traliçe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e6cde5c2-a54d-444d-9bad-996ec74bcbc1"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9f813a4a-3d61-4496-bfba-7b7fffd9ed14",
+      "name": "Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "66543356-1b79-497f-ab11-9fe41362d9c3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "9f8a29f3-def0-4733-901b-1fdb59003dba",
+      "name": "Simit With Cheese",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a96110ce-a0a7-4bac-8db4-4047e2184a61"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "a049821a-ae8c-4bf2-8b92-b503c90456dd",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "38f4ff6d-c5df-4fb3-be4a-59aa8bf74d58"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "a1059f6c-2626-48b9-aaa9-62a0b5f15170",
+      "name": "Simit With Cheese",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f20f8e47-3b86-45cd-bacb-5dc560bb9e6c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "a45ca945-0175-41f0-8053-25df28d364d9",
+      "name": "Turkish Baklava",
+      "field": "description",
+      "locale": "ar",
+      "productId": "9e35bb29-5813-4308-888b-ac84fe4eadc4"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "a782efc1-4c9b-48fa-b289-92847fe94e4d",
+      "name": "Ayran W Mint",
+      "field": "description",
+      "locale": "ar",
+      "productId": "8507dfb1-80d8-4294-a8a6-0efa00e89e86"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "a926f12f-19a1-4948-8389-10fd363958db",
+      "name": "Orange Juice",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7b6de15e-fa0e-4c9e-909d-f7432a09fdf4"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "a9cfc344-8d19-4785-b40c-35d7fcde4cf5",
+      "name": "Turkish Lemonade",
+      "field": "description",
+      "locale": "ar",
+      "productId": "2b92aa34-e5aa-4a63-971f-a18a610c746c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "aa9b273b-b3e3-4bf0-88e8-8bc46ea25154",
+      "name": "Classic Hummus With Meat",
+      "field": "description",
+      "locale": "ar",
+      "productId": "bf59e9ab-86f6-4478-8732-79acec15bcbc"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ac803dc9-1692-4d91-ba99-c8b1c93665f1",
+      "name": "Farm Style Scrambel",
+      "field": "description",
+      "locale": "ar",
+      "productId": "20fa5e31-1a88-4e58-b9d5-ed4f4d32e3ac"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ae108db3-f583-4f10-95a8-4cb4af2eb556",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a103a19f-8c77-4c08-a9bf-e89a175412f3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b164fa70-d26e-4f52-bc33-732b52969d3b",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "69d587e8-6014-44f4-9fa2-2de58deff91b"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b1942845-eec9-44b3-ba90-96c1b3d66299",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6565c206-6158-4af0-a778-591bafdef0b0"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b1ff7a10-a80c-41c8-a1ec-a1b01fe2c91e",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "1e52139d-46ca-4414-a1f6-88a288dfe687"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b2b934da-54e9-4e0a-afd2-0d1302419b3e",
+      "name": "Honey",
+      "field": "description",
+      "locale": "ar",
+      "productId": "47dbca7a-682e-443c-99bc-01dd2bb4adfc"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b303e8fc-4e14-48fc-82c0-343a98f74a33",
+      "name": "Turkish Lemonade",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6e5d42ab-cdfc-45c8-968c-e0c660f048ae"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b3487a72-31f7-4fd6-a0f7-f1e5f9e6b7b2",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f3370cb5-676e-4238-b7c8-c56cdce9d257"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b4221c63-15ad-4891-9eb6-01e30992d9d5",
+      "name": "Potato Croquettes",
+      "field": "description",
+      "locale": "ar",
+      "productId": "f5811822-3742-48c0-98f6-fb27bdcf2c49"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b47ef431-d432-4b0e-912c-3336a52b28bd",
+      "name": "Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "db22797e-d091-466c-9684-128d3f23dec1"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b4ef19ef-7be6-4936-be40-51873891f78b",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3a44684c-967f-47b5-a501-92d7ada96863"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b63a7d87-2553-4fc7-9ce6-03d49f79552a",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "d44063ac-c32b-457a-b474-ced546d36818"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b6ce52d7-ba83-445c-bb53-9c87b470a187",
+      "name": "Ceaser Chicken Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "cbefd6a5-095a-4a11-88fa-3a647822c28e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "b82b439e-ac05-46eb-b1a9-b7011d404548",
+      "name": "Possion-Mango Frozen",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3b1c0c76-0809-4459-92cf-adff4d03dff8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "baf9bf03-6849-4034-916d-c3e62e9376a9",
+      "name": "Lahmacun",
+      "field": "description",
+      "locale": "ar",
+      "productId": "a1ada07c-b494-4161-88bb-014150f8aa3e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "bc0b2040-3da3-4758-8510-f45a7d84eb84",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "72cd40c5-5475-4d48-9e56-4d0ea5510c60"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "bd399292-987f-4ec0-adcb-dec1668f99cc",
+      "name": "Lemon Mint Juice",
+      "field": "description",
+      "locale": "ar",
+      "productId": "11128019-e4f1-4d2d-9665-4a8731a68b77"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "bf48eee8-b2eb-41cb-a634-f1b7888e45aa",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3de8bda3-66f6-47d8-805f-22eaa5f5564d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c177a2e2-3adb-450a-b3b7-f489b078744a",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "00eeda4e-667c-45ac-8eea-dc5d2b5341a0"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c20cdd04-2f89-4792-bf41-21f5926f1829",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "68021e6f-dc73-4bfa-a8d2-0b95381c3ec8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c24bab83-3a29-4b78-875d-ec376213e3ee",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "8e16cdbe-12a4-466c-bd64-74cad966ea0f"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c36d3912-cda1-448a-a872-e62e4086f57b",
+      "name": "Cheese Omelette",
+      "field": "description",
+      "locale": "ar",
+      "productId": "138f5af0-856f-440b-87d8-e1408d9e39c1"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c68f7793-d124-40fd-8bc2-49a52335f48d",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e3b8b4f5-d415-4ff7-bd2d-ee666c77193d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c6b6b209-0406-4bce-839f-110cc9b7026c",
+      "name": "Turkish Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "defa0901-7a2a-467e-ba6a-af3e38979e22"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c7156f61-9fc4-45c7-b707-cb5293728ad6",
+      "name": "Crispy Cheese Rolls",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c97ed7b7-c24c-4bf8-af71-6378bcbe56e3"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c85b5338-0e68-4b24-9c3f-45c6f310bafe",
+      "name": "Gavurdagi Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "61fc7728-4ccf-4745-a8af-9bc19f408038"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "c8ba2f28-fd1d-4973-8f73-bbc5cee8e869",
+      "name": "Greek Halloumi",
+      "field": "description",
+      "locale": "ar",
+      "productId": "8dc252c0-789f-4024-9414-67faa20f33d8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "cd00ecc6-1f1a-4c82-b523-efeffaac9ce8",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "cfc6fdee-a6e7-40c9-99bf-d0123a3ade74",
+      "name": "Mr. French Fries",
+      "field": "description",
+      "locale": "ar",
+      "productId": "8dc252c0-789f-4024-9414-67faa20f33d8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d2501f61-c132-4163-9729-e8f46194cea3",
+      "name": "Olive Plate",
+      "field": "description",
+      "locale": "ar",
+      "productId": "cf8b74da-b6fe-40f1-9a00-639a4de60168"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d31be68e-b57b-449c-818c-f96e92f757bc",
+      "name": "Mastica Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "00eeda4e-667c-45ac-8eea-dc5d2b5341a0"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d6f52d59-1905-467c-a946-ea29f3327ed6",
+      "name": "Crunch Cake",
+      "field": "description",
+      "locale": "ar",
+      "productId": "12cefb17-9ba3-44b6-b531-a8d296246b86"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d80d7f01-9602-45fc-91cc-7aef0bbaac72",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "82ffd6fb-2f07-4e5e-896c-e9d915c85c46"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d97a3fad-8a76-49ee-9119-b2854f50dd9b",
+      "name": "Falafel Bites",
+      "field": "description",
+      "locale": "ar",
+      "productId": "07de0c88-200d-4732-929e-e8c98a0faedd"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d9c60a35-fc4c-4429-8acd-5025da0f3ea6",
+      "name": "Turkish Künefe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "4034fed6-3ad9-4bdf-9540-0bf6b1c9e9b2"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "d9c9770b-b75a-4497-a50c-f039da892845",
+      "name": "Turkish Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "3e08c664-b982-41e3-b325-ab68a12f01b5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "db177311-ad62-453d-8647-50aa5cce15a7",
+      "name": "Passion Fruit Mojito",
+      "field": "description",
+      "locale": "ar",
+      "productId": "aa2525eb-504a-4257-abbc-60a182e8e790"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "dc8d409a-1b87-4042-8272-a9d4cc3a980c",
+      "name": "Green Tea",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7f1899d8-36b3-4250-9d32-7a1d0bd6f6d6"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "dc9aa524-9218-4d87-bf5c-249fd74868aa",
+      "name": "Zahtar Pide",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7ebbea3f-cc18-4eb1-ab8d-0e9c1dd6feef"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "dcafa499-10d6-446b-b02a-c73e9811b5d8",
+      "name": "Tabbouleh Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "54633c97-9b3d-44ce-a902-01f1430c260e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "dedf07a1-4e1b-4d78-b3b0-0b4acf5ad4b4",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6969f27d-684c-4725-9257-5e69733bc382"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e0a7d2ef-332e-43c9-aa6e-0f336b333648",
+      "name": "San Sebastian",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7f479cdd-149f-4726-a80b-c2da5ee42b84"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e117d22a-dc8d-4ecd-840a-92b7c903f686",
+      "name": "FRUIT PLATE",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7920a33a-ab56-49af-8a0b-1528186ae540"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e22a6421-2e83-4240-a408-af73430036d6",
+      "name": "Crispy Cheese Rolls",
+      "field": "description",
+      "locale": "ar",
+      "productId": "07de0c88-200d-4732-929e-e8c98a0faedd"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e23b310b-2259-4cca-9df1-755e602b496e",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e3245126-4dea-4c82-a0eb-643e87df7446",
+      "name": "Mixberry Mojito",
+      "field": "description",
+      "locale": "ar",
+      "productId": "25fedaab-c4ad-4005-9ce9-c5f5c6eb51a5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e32b9384-9908-4b2b-953c-684219a60c5b",
+      "name": "Mastica Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "4bc33733-c8cf-48a5-8ff7-f2ccdfd7cadf"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e4c5cb8d-069f-46d6-ac26-0de0a33e2cd1",
+      "name": "Adana Kebab",
+      "field": "description",
+      "locale": "ar",
+      "productId": "2b2ae56f-a3cf-4b9e-a197-5e29707e04c7"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e57db539-60a6-481f-a1c3-bcfffd926272",
+      "name": "Olive Plate",
+      "field": "description",
+      "locale": "ar",
+      "productId": "fe2a23e7-beae-402a-a6b7-93a5c2c8983d"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e5872f7b-03ea-4a5f-8bb6-ceb7005b0f3f",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "ca861007-b4dc-49d1-8dc8-15d28a283f4e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e74d0f38-e776-4eda-a558-a15e8a12822b",
+      "name": "Moroccan Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "fea3edb5-2fb2-4898-973e-79dffee34090"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e82f138d-ad2c-43b5-a7f2-ecca926167b9",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "4bc33733-c8cf-48a5-8ff7-f2ccdfd7cadf"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "e86e85d4-c5da-4e15-b61a-19d859ed5162",
+      "name": "Turkish Kaymak",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c5a25fe4-fdc1-4848-be25-91d0141999b2"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "eaea130b-ad95-40e9-a0fc-434fb421b585",
+      "name": "Turkish Baklava",
+      "field": "description",
+      "locale": "ar",
+      "productId": "de24fecc-4ce3-484f-a34e-3a7d41b29137"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ecb3bf51-47fe-488a-97e2-1b658e2ab5d7",
+      "name": "Gavurdagi Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "34cf0c11-521a-4390-b42a-48b070e22cc2"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "edb41fcf-b934-4aa5-8015-1828bfe577c1",
+      "name": "Turkish Tea (Small Pot)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7704310c-87e1-4d73-a503-a9f32854973c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f14e18dc-2860-4453-8779-7e9c6a2c17bf",
+      "name": "Mixberry Mojito",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e26bbf68-0d59-44de-b1b2-c447761acf20"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f4577af7-d943-456c-b345-a47044d84441",
+      "name": "White Cheese Plate",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e2e1b3c0-e51f-4cba-a60f-91f017976eb5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f45f1197-e6c1-4af5-a317-56da14aefed1",
+      "name": "Mojito Classic",
+      "field": "description",
+      "locale": "ar",
+      "productId": "72cd40c5-5475-4d48-9e56-4d0ea5510c60"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f478deae-6e57-4422-abe8-89bc97e76931",
+      "name": "Green Tea",
+      "field": "description",
+      "locale": "ar",
+      "productId": "2b92aa34-e5aa-4a63-971f-a18a610c746c"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f509bb1d-4878-48ff-a460-82beb305be49",
+      "name": "Turkish Künefe",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c1747927-94a7-4ed1-8fcb-6017955a0acf"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f55fef3f-a989-42c6-ad77-a2d83bd4f6e1",
+      "name": "Sunny Sideup",
+      "field": "description",
+      "locale": "ar",
+      "productId": "004e2b9d-6aef-476a-bed8-e854eeaba257"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f5c2413c-5b2e-407a-8a90-c212a0bc5045",
+      "name": "Mastica Turkish Coffee",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6565c206-6158-4af0-a778-591bafdef0b0"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f7022f2a-d446-43ff-9dde-52736af1565f",
+      "name": "Potato Croquettes",
+      "field": "description",
+      "locale": "ar",
+      "productId": "4e6ad732-3641-436b-803f-2a957c2416a8"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f96d3a91-2faa-4c29-9a22-3a4d57c776e3",
+      "name": "Turkish Baklava",
+      "field": "description",
+      "locale": "ar",
+      "productId": "e2e1b3c0-e51f-4cba-a60f-91f017976eb5"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "f98cf1b0-910b-45f5-9e5a-a005bfc3404d",
+      "name": "Fattoush Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "6e5d42ab-cdfc-45c8-968c-e0c660f048ae"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "fad785c6-70f8-44a6-87db-d2e8c0763b78",
+      "name": "Chicken Shish",
+      "field": "description",
+      "locale": "ar",
+      "productId": "bde937b8-d111-42b3-89e6-7822ee0c18b7"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "fcfa18cb-8ff0-41d9-8024-a81f46967a8f",
+      "name": "Gavurdagi Salad",
+      "field": "description",
+      "locale": "ar",
+      "productId": "dccf7dca-ded8-4ddf-8169-dcfd2a22ec86"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "fd29a565-bf7c-4404-b6c9-e2ea422beb97",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "726653ff-c498-403e-bc48-8c4100ed7efd"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ff5bc202-ce48-44a6-b439-051845cf373d",
+      "name": "Simit",
+      "field": "description",
+      "locale": "ar",
+      "productId": "5eaee17f-39b8-4b04-8b1e-35a30a4f3ce9"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ff67fcd1-227e-4ede-bdea-4508afe2ffe4",
+      "name": "Ayran",
+      "field": "description",
+      "locale": "ar",
+      "productId": "54633c97-9b3d-44ce-a902-01f1430c260e"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ff7fbfb0-2d36-4b68-8917-2ad464162f4c",
+      "name": "Turkish Baklava",
+      "field": "description",
+      "locale": "ar",
+      "productId": "c1747927-94a7-4ed1-8fcb-6017955a0acf"
+    },
+    {
+      "entityType": "recommendation",
+      "id": "ff9f3a75-997e-4736-9fca-ad19a97b74f8",
+      "name": "Turkish Tea (Glass)",
+      "field": "description",
+      "locale": "ar",
+      "productId": "7375d7eb-72c4-40cc-99b5-b8ae81403424"
+    }
+  ]
+}

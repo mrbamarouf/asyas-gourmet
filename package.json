@@ -8,6 +8,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
+    "sync:foost": "node scripts/sync-foost-menu.mjs",
+    "validate:foost": "node scripts/validate-foost-menu.mjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

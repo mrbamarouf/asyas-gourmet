@@ -30,10 +30,7 @@ import {
   type MenuItem,
 } from "@/data/menu";
 import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
-import {
-  AsyaShell,
-  MenuCard,
-} from "@/components/asya/primitives";
+import { AsyaShell, MenuCard, localizeMenuText } from "@/components/asya/primitives";
 import { useI18n } from "@/lib/i18n";
 
 import heroImg from "@/assets/hero-turkish-table.jpg";
@@ -49,7 +46,10 @@ export const Route = createFileRoute("/menu")({
           "Browse Asya's Gourmet Turkish breakfast, pide, meze, grills, sweets, coffee, tea, and fresh drinks.",
       },
       { property: "og:title", content: "Asya's Gourmet | Turkish Menu" },
-      { property: "og:description", content: "Turkish breakfast, bakery, grills, desserts, coffee, tea, and cold drinks." },
+      {
+        property: "og:description",
+        content: "Turkish breakfast, bakery, grills, desserts, coffee, tea, and cold drinks.",
+      },
       { property: "og:image", content: logoImg },
     ],
     links: [{ rel: "canonical", href: "/menu" }],
@@ -63,7 +63,9 @@ interface MenuDisplayGroupData {
 }
 
 const categoryMap = new Map(CATEGORIES.map((category) => [category.id, category]));
-const itemCategoryIds = new Set(ITEMS.map((item) => item.category));
+const itemCategoryIds = new Set(
+  ITEMS.flatMap((item) => item.categoryAssignments.map((assignment) => assignment.categoryId)),
+);
 const MENU_DISPLAY_GROUPS = REFERENCE_MENU_GROUPS.filter((group) =>
   group.categoryIds.some((categoryId) => itemCategoryIds.has(categoryId)),
 );
@@ -79,32 +81,28 @@ const TOP_LEVEL_MENU_NAV_GROUPS: TopLevelMenuNavEntry[] = MENU_DISPLAY_GROUPS.ma
 }));
 
 const MENU_GROUP_ICONS: Partial<Record<string, LucideIcon>> = {
-  happySpreads: HandPlatter,
-  eggs: Egg,
-  flavoursOfAsyaS: UtensilsCrossed,
-  mrPotatoes: CookingPot,
-  aSweetMemory: CakeSlice,
-  ablaSHandmadeGozlemeAndBorek: Croissant,
-  asyaSPremiumPideS: Wheat,
-  deliciousSoups: Soup,
-  greensAndFriends: Salad,
-  flavoursOfTheTable: HandPlatter,
-  warmAndDeliciousStarts: CookingPot,
-  pasta: UtensilsCrossed,
-  pizza: Pizza,
-  grillAndCasserole: Flame,
-  mrToroSteakhouse: Beef,
-  turkishDessert: CakeSlice,
-  worldSCoffees: Coffee,
-  tea: GlassWater,
-  coldCoffees: Coffee,
-  specialIcedMatchas: Milk,
-  ourSignatures: CupSoda,
-  fromOurGarden: Leaf,
-  homemadeIceTeasAndLemonades: CupSoda,
-  turkishTraditionalDrinks: Milk,
-  softDrinks: CupSoda,
-  milkshake: Milk,
+  "19e11b5f-abcd-4fa6-aa29-e937ffe65d00": CookingPot,
+  "61e69fe8-3255-49c0-ad94-517a04184cd5": HandPlatter,
+  "3b01083f-53db-4932-9716-4e4d8c6265a6": UtensilsCrossed,
+  "e74e388c-048d-47e4-afec-acf25fac4650": Egg,
+  "cf0cfebf-b9de-4221-85e6-9513ddd57809": UtensilsCrossed,
+  "1290e96c-f491-4a64-8e9e-61f0df6a85c7": CookingPot,
+  "59ee4ca2-bb09-4a86-981b-fd40460331ea": Croissant,
+  "641057a2-0237-4c4b-ab55-bf923ae06cc8": Wheat,
+  "c0a5b81c-a849-43c6-994d-e4a41c842182": Soup,
+  "81d3c1d4-b82c-4ea3-8a9d-881977f47761": Salad,
+  "884b790b-3b65-46a2-9be5-2ef78ce53146": Pizza,
+  "a6c1ce59-bed8-4049-b4c5-c1713025ce88": Flame,
+  "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d": CakeSlice,
+  "7abd9b4c-6ed3-4261-a386-d1ebe1038268": GlassWater,
+  "8fc09a90-b4db-4681-8506-f430b7c1360d": Coffee,
+  "503260fe-058c-4b7a-9dac-6035eb79d781": GlassWater,
+  "05d02beb-e1f6-4908-9b12-e2b69b1fafc1": Coffee,
+  "927fc8d2-117e-44b9-8ab5-08522f536d0f": CupSoda,
+  "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a": Leaf,
+  "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9": CupSoda,
+  "cafb1cd7-1c37-430f-80a6-48cd5f213c4a": CupSoda,
+  "634c84dd-5cf6-4e20-8270-3e2fbd61e850": Milk,
 };
 
 function getMenuControlsOffset(extra = 16) {
@@ -114,7 +112,8 @@ function getMenuControlsOffset(extra = 16) {
   const topValue = Number.parseFloat(window.getComputedStyle(controls).top);
   const stickyTop = Number.isFinite(topValue) ? topValue : 0;
   const rect = controls.getBoundingClientRect();
-  const controlsBottom = rect.top <= stickyTop + 1 ? rect.bottom : stickyTop + controls.offsetHeight;
+  const controlsBottom =
+    rect.top <= stickyTop + 1 ? rect.bottom : stickyTop + controls.offsetHeight;
 
   return controlsBottom + extra;
 }
@@ -151,7 +150,10 @@ function MenuHero() {
 
   return (
     <section className="full-menu-hero menu-editorial-hero" aria-labelledby="menu-hero-title">
-      <div className="full-menu-hero-content menu-editorial-hero-copy" dir={locale === "ar" ? "rtl" : "ltr"}>
+      <div
+        className="full-menu-hero-content menu-editorial-hero-copy"
+        dir={locale === "ar" ? "rtl" : "ltr"}
+      >
         <p className="section-kicker">
           <span>{copy.eyebrow}</span>
         </p>
@@ -177,7 +179,7 @@ function MenuHero() {
 }
 
 function MenuExplorer() {
-  const { locale, t, tx } = useI18n();
+  const { locale, t } = useI18n();
   const categoryStripRef = useRef<HTMLElement | null>(null);
   const revealActivePillRef = useRef(false);
   const [activeGroup, setActiveGroup] = useState<string>(
@@ -187,7 +189,15 @@ function MenuExplorer() {
   const displayGroups = useMemo<MenuDisplayGroupData[]>(() => {
     return MENU_DISPLAY_GROUPS.map((definition) => {
       const items = uniqueItems(
-        ITEMS.filter((item) => definition.categoryIds.includes(item.category)),
+        ITEMS.filter((item) =>
+          item.categoryAssignments.some((assignment) =>
+            definition.categoryIds.includes(assignment.categoryId),
+          ),
+        ),
+      ).sort(
+        (left, right) =>
+          getGroupItemOrder(left, definition) - getGroupItemOrder(right, definition) ||
+          left.id.localeCompare(right.id),
       );
 
       return { definition, items };
@@ -200,16 +210,19 @@ function MenuExplorer() {
     setActiveGroup(groupId);
   }, []);
 
-  const scrollToGroup = useCallback((groupId: string) => {
-    revealActivePillRef.current = true;
-    setActiveGroupIfChanged(groupId);
-    const group = document.getElementById(`group-${groupId}`);
-    if (!group) return;
+  const scrollToGroup = useCallback(
+    (groupId: string) => {
+      revealActivePillRef.current = true;
+      setActiveGroupIfChanged(groupId);
+      const group = document.getElementById(`group-${groupId}`);
+      if (!group) return;
 
-    const stickyOffset = getMenuControlsOffset(14);
-    const top = group.getBoundingClientRect().top + window.scrollY - stickyOffset;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }, [setActiveGroupIfChanged]);
+      const stickyOffset = getMenuControlsOffset(14);
+      const top = group.getBoundingClientRect().top + window.scrollY - stickyOffset;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    },
+    [setActiveGroupIfChanged],
+  );
 
   useEffect(() => {
     const sections = displayGroups
@@ -368,7 +381,7 @@ function MenuExplorer() {
                 data-group-pill={group.id}
               >
                 <QuickJumpIcon group={group} />
-                <span>{tx(label)}</span>
+                <span>{localizeMenuText(label, locale)}</span>
               </a>
             ))}
           </nav>
@@ -396,7 +409,7 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
 }: {
   group: MenuDisplayGroupData;
 }) {
-  const { t, tx } = useI18n();
+  const { locale, t } = useI18n();
   const Icon = MENU_GROUP_ICONS[group.definition.id];
 
   return (
@@ -412,21 +425,24 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
           </span>
         ) : null}
         <p className="section-kicker">
-          <span>{tx(group.definition.shortName)}</span>
+          <span>{localizeMenuText(group.definition.shortName, locale)}</span>
         </p>
         <div className="menu-group-meta">
           <span>
             {group.items.length} {t("menuCount")}
           </span>
         </div>
-        <h2>{tx(group.definition.name)}</h2>
-        <p>{tx(group.definition.blurb)}</p>
+        <h2>{localizeMenuText(group.definition.name, locale)}</h2>
+        <p>{localizeMenuText(group.definition.blurb, locale)}</p>
         <span className="menu-group-divider" aria-hidden="true" />
       </div>
 
       <div className="full-menu-grid">
         {group.items.map((item) => {
-          const category = categoryMap.get(item.category);
+          const assignment = item.categoryAssignments.find((entry) =>
+            group.definition.categoryIds.includes(entry.categoryId),
+          );
+          const category = categoryMap.get(assignment?.categoryId ?? item.category);
           return category ? (
             <MenuCard key={item.id} item={item} category={category} motionEnabled={false} />
           ) : null;
@@ -435,6 +451,13 @@ const MenuDisplayGroup = memo(function MenuDisplayGroup({
     </section>
   );
 });
+
+function getGroupItemOrder(item: MenuItem, group: MenuCategoryGroup) {
+  return (
+    item.categoryAssignments.find((assignment) => group.categoryIds.includes(assignment.categoryId))
+      ?.order ?? Number.MAX_SAFE_INTEGER
+  );
+}
 
 function uniqueItems(items: MenuItem[]) {
   const seen = new Set<string>();
