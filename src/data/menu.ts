@@ -125,8 +125,13 @@ export const RESTAURANT = {
   kicker: { ar: "مطعم ومخبز تركي", en: "Turkish Restaurant & Bakery" },
   tagline: { ar: "فطور تركي ومخبوزات ومشويات", en: "Turkish Breakfast, Bakery, and Grills" },
   phone: "+966536251814",
-  whatsapp: "+966536251814",
-  instagramUrl: "https://www.instagram.com/asyas.gourmet",
+  whatsapp: "+966553173311",
+  whatsappUrl: "https://wa.me/966553173311",
+  instagramUrl:
+    "https://www.instagram.com/asyas.gourmet?igsh=MWNmOWM3aDVjN255bw%3D%3D&utm_source=qr",
+  tiktokUrl: "https://www.tiktok.com/@asyas.gourmet?_r=1&_t=ZS-97j1eS9zcz1",
+  googleReviewUrl:
+    "https://www.google.com.sa/search?sca_esv=d8df4427cda4b17e&sxsrf=APpeQnvLFzQ4fxL1s1ILK-3queXDWmlCww:1783084699051&q=asya+gourmet+turkish+restaurant&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_8UNmg9XLXQ34KHjp9Nk0ncnJE_PT8fzgjwVYICyqEjDisIO9red1W9GE9BY5IMQp9s64YD-8Q0XddB2aFZHbBS2Y0thKoNFZ0Uy8djEqi_-xwu-MBFQrqikingsyQm8VqE-CzoYVWMd3MPvwloT7_HVZkZl1wp5_FnrY17OuqICk2pKGcdiXgCMIVTxX_yhmvULZoc%3D&sa=X&ved=2ahUKEwiTkN2QzLaVAxU22wIHHZJ1Ag8QrrQLegQIIBAA&biw=1528&bih=732&dpr=1.25",
   menuSourceUrl: "https://qr.thefoost.com/asyas/?qr_source=qr_code",
   mapsUrl: "https://maps.app.goo.gl/QUcPv2DQpb89Wr4fA?g_st=ic",
   address: { ar: "الموقع على الخريطة", en: "Location on Maps" },

@@ -2183,8 +2183,7 @@ export function isUsableImageUrl(url?: string) {
 }
 
 export function whatsappHref() {
-  const digits = RESTAURANT.whatsapp.replace(/[^\d]/g, "");
-  return `https://wa.me/${digits}`;
+  return RESTAURANT.whatsappUrl;
 }
 
 function formatPrice(price: string, locale: Locale) {
