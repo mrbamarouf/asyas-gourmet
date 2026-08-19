@@ -1159,7 +1159,6 @@ function localizeOptionName(name: string, locale: Locale) {
 export function AsyaShell({ children, current }: AsyaShellProps) {
   const [locale, setLocale] = useState<Locale>("ar");
   const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
-  useScrollChromeVisibility();
 
   useEffect(() => {
     const storedLocale = readStoredLocale();
@@ -1194,11 +1193,10 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   return (
     <I18nContext.Provider value={value}>
       <ItemDetailContext.Provider value={detailValue}>
-        <div data-locale={locale} className="asya-site site-shell">
+        <div data-locale={locale} className="asya-site site-shell phase3-site">
           <TopNav current={current} />
           {children}
           <Footer />
-          <FloatingContact current={current} />
           <MobileBottomNav current={current} />
           <AnimatePresence>
             {detailSelection ? (
@@ -1907,6 +1905,7 @@ function ItemDetailView({
 
   const imageSrc = getDishImage(item);
   const itemName = localizeMenuItemName(item, locale);
+  const categoryName = localizeMenuText(category.name, locale);
   const description = localizeMenuDescription(item, category, locale);
   const quickFacts = [
     { label: labels.prepTime, value: formatOfficialFact(item.prepTime, "prep", locale) },
@@ -1973,6 +1972,15 @@ function ItemDetailView({
         dir="ltr"
         {...dialogMotion}
       >
+        <div className="item-detail-toolbar">
+          <span>
+            {labels.category}: {categoryName}
+          </span>
+          <button ref={closeButtonRef} type="button" onClick={onClose} aria-label={labels.close}>
+            <X className="h-5 w-5" aria-hidden="true" />
+            <span>{labels.close}</span>
+          </button>
+        </div>
         {imageSrc ? (
           <div className="item-detail-media mobile-item-detail-media">
             <img
@@ -1981,8 +1989,9 @@ function ItemDetailView({
               alt={itemName}
               width={920}
               height={920}
-              loading="lazy"
+              loading="eager"
               decoding="async"
+              fetchPriority="high"
               onError={(event) => {
                 event.currentTarget.hidden = true;
               }}
@@ -1991,10 +2000,13 @@ function ItemDetailView({
         ) : null}
 
         <div className="item-detail-copy mobile-item-detail-content">
-          <h2>{itemName}</h2>
-          <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
-            <PriceTag item={item} />
-          </div>
+          <header className="item-detail-heading">
+            <p>{categoryName}</p>
+            <h2>{itemName}</h2>
+            <div className="item-detail-price-row" aria-label={locale === "ar" ? "السعر" : "Price"}>
+              <PriceTag item={item} />
+            </div>
+          </header>
           <div className="item-detail-flow">
             {description ? (
               <div className="item-detail-description">
@@ -2333,13 +2345,13 @@ function MobileBottomNav({ current }: { current: "home" | "menu" }) {
         <Utensils className="h-5 w-5" />
         <span>{t("nav_menu")}</span>
       </a>
+      <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+        <MessageCircle className="h-5 w-5" />
+        <span>{t("whatsapp")}</span>
+      </a>
       <a href={RESTAURANT.mapsUrl} target="_blank" rel="noopener noreferrer">
         <MapPin className="h-5 w-5" />
         <span>{t("directions")}</span>
-      </a>
-      <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
-        <Instagram className="h-5 w-5" />
-        <span>{t("instagram")}</span>
       </a>
     </nav>
   );
@@ -2365,13 +2377,13 @@ function Footer() {
           className="footer-links"
           aria-label={locale === "ar" ? "روابط أسيا جورميه" : "Asya's Gourmet links"}
         >
-          <a href={RESTAURANT.instagramUrl} target="_blank" rel="noopener noreferrer">
-            <Instagram className="h-4 w-4" />
-            <span>{t("instagram")}</span>
+          <a href="/menu">
+            <Utensils className="h-4 w-4" />
+            <span>{t("nav_menu")}</span>
           </a>
-          <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-            <MessageCircle className="h-4 w-4" />
-            <span>{t("whatsapp")}</span>
+          <a href={`tel:${RESTAURANT.phone}`}>
+            <Phone className="h-4 w-4" />
+            <span>{t("call")}</span>
           </a>
           <a href={RESTAURANT.mapsUrl} target="_blank" rel="noopener noreferrer">
             <MapPin className="h-4 w-4" />

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Home2026 } from "@/components/home2026/Home2026";
+import { HomePhase3 } from "@/components/phase3/HomePhase3";
 
 import logoImg from "@/assets/asyas-logo-transparent.png";
 
@@ -26,5 +26,5 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  return <Home2026 />;
+  return <HomePhase3 />;
 }

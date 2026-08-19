@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import { AsyaIntroOverlay } from "@/components/asya/primitives";
 import faviconUrl from "@/assets/asyas-logo-transparent.png?url";
 import appCss from "../styles.css?url";
+import phase3Css from "../phase3.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -79,17 +80,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#18243b" },
+      { name: "theme-color", content: "#34412f" },
       { title: "Asya's Gourmet | Turkish Restaurant Menu" },
-      { name: "description", content: "Asya's Gourmet menu with Turkish breakfast, fresh bakery, meze, charcoal grills, desserts, coffee, tea, and cold drinks." },
+      {
+        name: "description",
+        content:
+          "Asya's Gourmet menu with Turkish breakfast, fresh bakery, meze, charcoal grills, desserts, coffee, tea, and cold drinks.",
+      },
       { property: "og:title", content: "Asya's Gourmet | Turkish Restaurant Menu" },
-      { property: "og:description", content: "Turkish breakfast, bakery, meze, grills, sweets, coffee, tea, and fresh drinks." },
+      {
+        property: "og:description",
+        content: "Turkish breakfast, bakery, meze, grills, sweets, coffee, tea, and fresh drinks.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: faviconUrl },
       { rel: "stylesheet", href: appCss },
+      { rel: "stylesheet", href: phase3Css },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
