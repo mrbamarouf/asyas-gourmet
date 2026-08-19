@@ -35,6 +35,7 @@ import {
 } from "@/components/asya/primitives";
 import { ITEMS, type MenuCategory, type MenuCategoryGroup, type MenuItem } from "@/data/menu";
 import { useI18n } from "@/lib/i18n";
+import { localizeMenuSectionHeading } from "@/lib/menu-presentation";
 
 import heroImg from "@/assets/hero-turkish-table.jpg";
 
@@ -282,7 +283,7 @@ const MobileMenuChapter = memo(function MobileMenuChapter({
           <small>
             {chapterLabel} {String(index + 1).padStart(2, "0")}
           </small>
-          <h2>{localizeMenuText(group.definition.name, locale)}</h2>
+          <h2>{localizeMenuSectionHeading(group.definition.name, locale)}</h2>
           <p>{localizeMenuText(group.definition.blurb, locale)}</p>
         </div>
         <span className="mobile35-item-count">
