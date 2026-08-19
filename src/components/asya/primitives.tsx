@@ -1344,6 +1344,12 @@ function useScrollChromeVisibility() {
 
 export function AsyaIntroOverlay() {
   const [hasPlayedIntroInThisPageLoad, setHasPlayedIntroInThisPageLoad] = useState(false);
+  const [introLocale, setIntroLocale] = useState<Locale>("ar");
+
+  useEffect(() => {
+    const storedLocale = readStoredLocale();
+    if (storedLocale) setIntroLocale(storedLocale);
+  }, []);
 
   const handleComplete = useCallback(() => {
     setHasPlayedIntroInThisPageLoad(true);
@@ -1353,13 +1359,28 @@ export function AsyaIntroOverlay() {
 
   return (
     <>
-      <MobileIntroOverlay onComplete={handleComplete} />
-      <DesktopIntroOverlay onComplete={handleComplete} />
+      <MobileIntroOverlay locale={introLocale} onComplete={handleComplete} />
+      <DesktopIntroOverlay locale={introLocale} onComplete={handleComplete} />
     </>
   );
 }
 
-function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
+function IntroSkipButton({ locale, onSkip }: { locale: Locale; onSkip: () => void }) {
+  const label = locale === "ar" ? "تخطّي المقدمة" : "Skip Intro";
+
+  return (
+    <button
+      type="button"
+      className="intro-skip-button"
+      aria-label={label}
+      onClick={onSkip}
+    >
+      {label}
+    </button>
+  );
+}
+
+function DesktopIntroOverlay({ locale, onComplete }: { locale: Locale; onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const fadeTimerRef = useRef<number | null>(null);
   const finishedRef = useRef(false);
@@ -1390,6 +1411,14 @@ function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
 
     const preventDefault = (event: Event) => event.preventDefault();
     const preventScrollKeys = (event: KeyboardEvent) => {
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        target.closest("button, a, input, textarea, select, [contenteditable='true']")
+      ) {
+        return;
+      }
+
       if ([" ", "ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End"].includes(event.key)) {
         event.preventDefault();
       }
@@ -1420,16 +1449,36 @@ function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
     }, 500);
   }, [onComplete]);
 
+  const skipIntro = useCallback(() => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    if (fadeTimerRef.current) window.clearTimeout(fadeTimerRef.current);
+    const video = videoRef.current;
+    if (video) {
+      video.pause();
+      try {
+        video.currentTime = 0;
+      } catch {
+        // Some browsers reject seeking before metadata is ready.
+      }
+    }
+    setIsFading(false);
+    setShouldRender(false);
+    setLockPage(false);
+    onComplete();
+  }, [onComplete]);
+
   if (!shouldRender) return null;
 
   return (
     <div
       className={`desktop-intro-overlay ${isReady ? "is-ready" : ""} ${isFading ? "is-fading" : ""}`}
-      aria-hidden="true"
+      data-intro-locale={locale}
     >
       <video
         ref={videoRef}
         className="desktop-intro-video"
+        aria-hidden="true"
         autoPlay
         muted
         playsInline
@@ -1443,11 +1492,12 @@ function DesktopIntroOverlay({ onComplete }: { onComplete: () => void }) {
       >
         <source src={desktopIntroVideo} type="video/mp4" media="(min-width: 768px)" />
       </video>
+      <IntroSkipButton locale={locale} onSkip={skipIntro} />
     </div>
   );
 }
 
-function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
+function MobileIntroOverlay({ locale, onComplete }: { locale: Locale; onComplete: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const fadeTimerRef = useRef<number | null>(null);
   const finishedRef = useRef(false);
@@ -1501,16 +1551,36 @@ function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
     }, 500);
   }, [onComplete]);
 
+  const skipIntro = useCallback(() => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    if (fadeTimerRef.current) window.clearTimeout(fadeTimerRef.current);
+    const video = videoRef.current;
+    if (video) {
+      video.pause();
+      try {
+        video.currentTime = 0;
+      } catch {
+        // Some browsers reject seeking before metadata is ready.
+      }
+    }
+    setIsFading(false);
+    setShouldRender(false);
+    setLockPage(false);
+    onComplete();
+  }, [onComplete]);
+
   if (!shouldRender) return null;
 
   return (
     <div
       className={`mobile-intro-overlay ${isReady ? "is-ready" : ""} ${isFading ? "is-fading" : ""}`}
-      aria-hidden="true"
+      data-intro-locale={locale}
     >
       <video
         ref={videoRef}
         className="mobile-intro-video"
+        aria-hidden="true"
         autoPlay
         muted
         playsInline
@@ -1524,6 +1594,7 @@ function MobileIntroOverlay({ onComplete }: { onComplete: () => void }) {
       >
         <source src={mobileIntroVideo} type="video/mp4" media="(max-width: 767px)" />
       </video>
+      <IntroSkipButton locale={locale} onSkip={skipIntro} />
     </div>
   );
 }

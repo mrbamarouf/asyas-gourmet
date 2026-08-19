@@ -1810,6 +1810,53 @@ body.asya-item-detail-lock {
   display: none;
 }
 
+.intro-skip-button {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.75rem;
+  min-height: 2.75rem;
+  border: 1px solid rgba(255, 248, 236, 0.24);
+  border-radius: 999px;
+  background: rgba(18, 24, 17, 0.46);
+  box-shadow: 0 8px 18px rgba(6, 10, 6, 0.2);
+  color: #fff8ec;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  padding: 0.74rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(8px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.intro-skip-button:hover {
+  background: rgba(18, 24, 17, 0.58);
+  border-color: rgba(255, 248, 236, 0.38);
+  transform: translateY(-1px);
+}
+
+.intro-skip-button:focus-visible {
+  outline: 2px solid rgba(214, 177, 104, 0.9);
+  outline-offset: 4px;
+}
+
+[data-intro-locale="ar"] .intro-skip-button {
+  direction: rtl;
+  font-family: var(--font-arabic);
+}
+
 html.asya-mobile-intro-lock,
 body.asya-mobile-intro-lock,
 html.asya-desktop-intro-lock,
@@ -1855,6 +1902,16 @@ body.asya-desktop-intro-lock {
   .desktop-intro-overlay.is-ready .desktop-intro-video {
     opacity: 1;
   }
+
+  .desktop-intro-overlay .intro-skip-button {
+    right: calc(1.25rem + env(safe-area-inset-right, 0px));
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .desktop-intro-overlay[data-intro-locale="ar"] .intro-skip-button {
+    right: auto;
+    left: calc(1.25rem + env(safe-area-inset-left, 0px));
+  }
 }
 
 @media (max-width: 767px) {
@@ -1892,6 +1949,25 @@ body.asya-desktop-intro-lock {
 
   .mobile-intro-overlay.is-ready .mobile-intro-video {
     opacity: 1;
+  }
+
+  .mobile-intro-overlay .intro-skip-button {
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    min-width: min(12rem, calc(100vw - 2rem));
+    min-height: 2.85rem;
+    padding: 0.78rem 1.08rem;
+    transform: translateX(-50%);
+  }
+
+  .mobile-intro-overlay .intro-skip-button:hover {
+    transform: translateX(-50%) translateY(-1px);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px))) {
+  .intro-skip-button {
+    background: rgba(18, 24, 17, 0.72);
   }
 }
 
