@@ -164,6 +164,7 @@ export function MobileHomeV2() {
   const hero = mediaAsset("asya-hero-grill.mp4", "asya-hero-grill.png", copy.heroAlt);
   const breakfast = mediaAsset("asya-breakfast.mp4", "asya-breakfast.png", copy.breakfastAlt);
   const bakery = mediaAsset("asya-bakery-pide.mp4", "asya-bakery-pide.png", copy.bakeryAlt);
+  const grills = mediaAsset("asya-hero-grill.mp4", "asya-hero-grill.png", copy.grills);
   const moments = [
     mediaAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", copy.momentDining),
     mediaAsset("asya-moment-chef.mp4", "asya-moment-chef.png", copy.momentChef),
@@ -298,13 +299,11 @@ export function MobileHomeV2() {
             </div>
           </article>
           <article>
-            {menuEntrances[2]?.item ? (
-              <DishImage
-                item={menuEntrances[2].item}
-                alt={copy.grills}
-                className="mobilev2-experience-small-media"
-              />
-            ) : null}
+            <Phase3Media
+              asset={grills}
+              className="mobilev2-experience-small-media mobilev2-experience-grills-media"
+              playback="visible"
+            />
             <div>
               <h3>{copy.grills}</h3>
               <p>{copy.grillsBody}</p>

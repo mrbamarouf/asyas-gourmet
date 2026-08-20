@@ -742,6 +742,15 @@
     overflow: hidden;
   }
 
+  .mobilev2-experience-grills-media {
+    height: auto;
+  }
+
+  .mobilev2-experience-grills-media video,
+  .mobilev2-experience-grills-media img {
+    object-position: center 48%;
+  }
+
   .mobilev2-experience-small-media video,
   .mobilev2-experience-small-media img {
     width: 100%;
