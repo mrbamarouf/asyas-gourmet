@@ -88,7 +88,7 @@ const COPY = {
     connectBody: "تابع جديدنا، راسلنا، أو شاركنا رأيك.",
     instagram: "إنستغرام",
     tiktok: "تيك توك",
-    googleReview: "تقييم Google",
+    googleReview: "تقييم جوجل",
     finalTitle: "ماذا ستختار لمائدتك؟",
     finalBody: "اكتشف جميع الأصناف والأسعار في المنيو الرسمي.",
     finalAction: "استعرض المنيو الكامل",
@@ -291,7 +291,7 @@ export function MobileHomeV2() {
             <Phase3Media
               asset={bakery}
               className="mobilev2-experience-small-media"
-              playback="leader"
+              playback="visible"
             />
             <div>
               <h3>{copy.bakery}</h3>

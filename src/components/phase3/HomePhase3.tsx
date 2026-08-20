@@ -82,9 +82,9 @@ const HOME_COPY = {
     momentsBody: "من المطبخ إلى الطاولة، مشاهد تحكي أجواء آسيا.",
     momentDining: "أجواء المطعم",
     momentChef: "الشيف في المطبخ",
-    momentCraft: "الفرن التقليدي",
+    momentCraft: "من المطبخ التركي",
     momentTeam: "فريق آسيا",
-    momentLounge: "تحضير اللاونج",
+    momentLounge: "لاونج آسيا",
     visitTitle: "وجهتكم لمذاق تركي في جدة",
     visitBody: "تفضلوا بزيارتنا، واحصلوا على الاتجاهات أو تواصلوا معنا مباشرة.",
     call: "اتصال",
@@ -140,9 +140,9 @@ const HOME_COPY = {
     momentsBody: "From the kitchen to the table, a closer look at the atmosphere of Asya’s.",
     momentDining: "Restaurant Atmosphere",
     momentChef: "Chef at Work",
-    momentCraft: "The Traditional Oven",
+    momentCraft: "From the Turkish Kitchen",
     momentTeam: "The Asya Team",
-    momentLounge: "Lounge Preparation",
+    momentLounge: "Asya Lounge",
     visitTitle: "Your Turkish Table in Jeddah",
     visitBody: "Plan your visit, open directions, or call us directly.",
     call: "Call",
@@ -215,6 +215,7 @@ function DesktopHomePhase3Content() {
   const hero = mediaAsset("asya-hero-grill.mp4", "asya-hero-grill.png", copy.heroAlt);
   const breakfast = mediaAsset("asya-breakfast.mp4", "asya-breakfast.png", copy.breakfastAlt);
   const bakery = mediaAsset("asya-bakery-pide.mp4", "asya-bakery-pide.png", copy.bakeryAlt);
+  const grills = mediaAsset("asya-hero-grill.mp4", "asya-hero-grill.png", copy.grills);
   const moments = [
     mediaAsset("asya-moment-dining-room.mp4", "asya-moment-dining-room.png", copy.momentDining),
     mediaAsset("asya-moment-chef.mp4", "asya-moment-chef.png", copy.momentChef),
@@ -286,6 +287,7 @@ function DesktopHomePhase3Content() {
             title={copy.breakfast}
             body={copy.breakfastBody}
             href={`/menu#group-${CATEGORY_FEATURE_IDS[0]}`}
+            playback="visible"
           />
           <ExperienceVideoCard
             className="phase3-experience-bakery"
@@ -293,15 +295,15 @@ function DesktopHomePhase3Content() {
             title={copy.bakery}
             body={copy.bakeryBody}
             href={`/menu#group-${CATEGORY_FEATURE_IDS[2]}`}
+            playback="visible"
           />
-          <ExperienceImageCard
+          <ExperienceVideoCard
             className="phase3-experience-grills"
-            item={
-              categoryFeatures.find((entry) => entry.group.id === CATEGORY_FEATURE_IDS[4])?.item
-            }
+            asset={grills}
             title={copy.grills}
             body={copy.grillsBody}
             href={`/menu#group-${CATEGORY_FEATURE_IDS[4]}`}
+            playback="visible"
           />
           <ExperienceImageCard
             className="phase3-experience-desserts"
@@ -493,16 +495,18 @@ function ExperienceVideoCard({
   title,
   body,
   href,
+  playback = "leader",
 }: {
   className: string;
   asset: Phase3MediaAsset;
   title: string;
   body: string;
   href: string;
+  playback?: "leader" | "visible";
 }) {
   return (
     <article className={`phase3-experience-card ${className}`}>
-      <Phase3Media asset={asset} />
+      <Phase3Media asset={asset} playback={playback} />
       <div className="phase3-experience-shade" aria-hidden="true" />
       <div className="phase3-experience-copy">
         <h3>{title}</h3>
@@ -602,7 +606,7 @@ function VisitStory({
       </figure>
       <div className="phase3-visit-copy">
         <span className="phase3-section-number" aria-hidden="true">
-          VISIT
+          {locale === "ar" ? "الزيارة" : "VISIT"}
         </span>
         <h2 id="phase3-visit-title">{copy.visitTitle}</h2>
         <p>{copy.visitBody}</p>
@@ -636,7 +640,7 @@ function VisitStory({
           <MapPin aria-hidden="true" />
         </span>
         <strong>{copy.mapLabel}</strong>
-        <small>{locale === "ar" ? "افتح في خرائط Google" : "Open in Google Maps"}</small>
+        <small>{locale === "ar" ? "افتح في خرائط جوجل" : "Open in Google Maps"}</small>
       </a>
     </section>
   );
