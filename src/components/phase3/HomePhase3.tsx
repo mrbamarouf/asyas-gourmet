@@ -27,7 +27,7 @@ import {
 import { ITEMS, POPULAR_ITEMS, RESTAURANT, type MenuCategory, type MenuItem } from "@/data/menu";
 import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
 import { useI18n } from "@/lib/i18n";
-import { MobileHome35 } from "@/components/mobile35/MobileHome35";
+import { MobileHomeV2 } from "@/components/mobilev2/MobileHomeV2";
 import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 
 import visitInteriorImg from "@/assets/visit-interior.jpg";
@@ -179,7 +179,7 @@ export function HomePhase3() {
 function HomePhase3Content() {
   const isMobile = useMobilePresentation();
 
-  return isMobile ? <MobileHome35 /> : <DesktopHomePhase3Content />;
+  return isMobile ? <MobileHomeV2 /> : <DesktopHomePhase3Content />;
 }
 
 function DesktopHomePhase3Content() {

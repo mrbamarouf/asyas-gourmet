@@ -47,8 +47,14 @@ import {
   type MenuTag,
 } from "@/data/menu";
 import { formatVisibleText, I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
-import { MobileItemDetail35 } from "@/components/mobile35/MobileItemDetail35";
-import { MobileFooter35, MobileHeader35 } from "@/components/mobile35/MobileShell35";
+import { localizeMenuSectionHeading, presentMenuTextForLocale } from "@/lib/menu-presentation";
+import { MobileItemDetailV2 } from "@/components/mobilev2/MobileItemDetailV2";
+import {
+  MobileBottomDockV2,
+  MobileFooterV2,
+  MobileHeaderV2,
+  MobileTraySheetV2,
+} from "@/components/mobilev2/MobileShellV2";
 import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
@@ -1200,13 +1206,20 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
       <ItemDetailContext.Provider value={detailValue}>
         <div data-locale={locale} className="asya-site site-shell phase3-site">
           {isMobilePresentation ? (
-            <MobileHeader35 current={current} />
+            <MobileHeaderV2 current={current} />
           ) : (
             <TopNav current={current} />
           )}
           {children}
-          {isMobilePresentation ? <MobileFooter35 /> : <Footer />}
-          <MobileBottomNav current={current} />
+          {isMobilePresentation ? <MobileFooterV2 /> : <Footer />}
+          {isMobilePresentation ? (
+            <>
+              <MobileBottomDockV2 current={current} />
+              <MobileTraySheetV2 />
+            </>
+          ) : (
+            <MobileBottomNav current={current} />
+          )}
           <AnimatePresence>
             {detailSelection ? (
               <ItemDetailView
@@ -1369,12 +1382,7 @@ function IntroSkipButton({ locale, onSkip }: { locale: Locale; onSkip: () => voi
   const label = locale === "ar" ? "تخطّي المقدمة" : "Skip Intro";
 
   return (
-    <button
-      type="button"
-      className="intro-skip-button"
-      aria-label={label}
-      onClick={onSkip}
-    >
+    <button type="button" className="intro-skip-button" aria-label={label} onClick={onSkip}>
       {label}
     </button>
   );
@@ -2008,12 +2016,13 @@ function ItemDetailView({
 
   if (isMobileSheet) {
     return (
-      <MobileItemDetail35
+      <MobileItemDetailV2
         locale={locale}
         current={current}
+        itemId={item.id}
         name={itemName}
-        categoryName={categoryName}
-        description={description}
+        categoryName={localizeMenuSectionHeading(category.name, locale)}
+        description={presentMenuTextForLocale(description, locale)}
         imageSrc={imageSrc}
         price={<PriceTag item={item} />}
         facts={quickFacts}
@@ -2028,7 +2037,7 @@ function ItemDetailView({
           name: localizeMenuItemName(recommendation.item, locale),
           imageSrc: getDishImage(recommendation.item),
           price: <PriceTag item={recommendation.item} />,
-          reason: recommendation.reason,
+          reason: presentMenuTextForLocale(recommendation.reason, locale),
           onSelect: () =>
             openItemDetail({ item: recommendation.item, category: recommendation.category }),
         }))}

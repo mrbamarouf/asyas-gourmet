@@ -9,3 +9,8 @@ export function localizeMenuSectionHeading(text: LocalizedText, locale: Locale) 
 
   return localized;
 }
+
+export function presentMenuTextForLocale(value: string, locale: Locale) {
+  if (locale === "en" && /\p{Script=Arabic}/u.test(value)) return "";
+  return value;
+}

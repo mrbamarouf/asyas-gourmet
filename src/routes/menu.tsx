@@ -27,7 +27,7 @@ import {
 import { memo, useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { AsyaShell, MenuCard, localizeMenuText } from "@/components/asya/primitives";
-import { MobileMenu35 } from "@/components/mobile35/MobileMenu35";
+import { MobileMenuV2 } from "@/components/mobilev2/MobileMenuV2";
 import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 import { CATEGORIES, ITEMS, type MenuCategoryGroup, type MenuItem } from "@/data/menu";
 import { REFERENCE_MENU_GROUPS } from "@/data/reference-menu-groups";
@@ -116,7 +116,7 @@ function FullMenuPage() {
   return (
     <AsyaShell current="menu">
       {isMobile ? (
-        <MobileMenu35 groups={MENU_DISPLAY_DATA} categoryMap={categoryMap} />
+        <MobileMenuV2 groups={MENU_DISPLAY_DATA} categoryMap={categoryMap} />
       ) : (
         <main id="menu-top" className="phase3-menu-page">
           <MenuHero />
