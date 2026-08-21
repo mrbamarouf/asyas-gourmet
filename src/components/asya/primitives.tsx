@@ -59,6 +59,7 @@ import {
 } from "@/components/mobilev2/MobileShellV2";
 import { useTrayV2 } from "@/components/mobilev2/TrayContextV2";
 import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
+import { SiteCredit } from "@/components/asya/SiteCredit";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
 import mobileIntroVideo from "@/assets/asya-mobile-intro.mp4";
@@ -2543,6 +2544,8 @@ function Footer() {
         <small className="footer-copy">
           © {currentYear} {tx(RESTAURANT.name)}. {t("footer_rights")}
         </small>
+
+        <SiteCredit />
       </div>
     </footer>
   );

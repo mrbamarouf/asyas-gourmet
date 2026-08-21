@@ -1712,3 +1712,97 @@
     transform: translateY(-2px);
   }
 }
+
+/* Tarik Bamarouf creator signature */
+.phase3-site .footer-premium .site-credit,
+.mobilev2-footer .site-credit {
+  display: inline-flex;
+  width: min(100%, 21rem);
+  min-height: 44px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.35rem auto 0;
+  padding: 1rem 1rem 0;
+  border-top: 1px solid rgba(214, 183, 128, 0.28);
+  color: rgba(251, 247, 238, 0.7);
+  opacity: 0.84;
+  text-align: center;
+  text-decoration: none;
+  transition: color 180ms ease-out, opacity 180ms ease-out;
+}
+
+.phase3-site .footer-premium .site-credit img,
+.mobilev2-footer .site-credit img {
+  display: block;
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.phase3-site .footer-premium .site-credit span,
+.mobilev2-footer .site-credit span {
+  color: inherit;
+  font-size: 0.66rem;
+  font-weight: 600;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.phase3-site .footer-premium .site-credit[lang="ar"],
+.mobilev2-footer .site-credit[lang="ar"] {
+  direction: rtl;
+}
+
+.phase3-site .footer-premium .site-credit[lang="en"],
+.mobilev2-footer .site-credit[lang="en"] {
+  direction: ltr;
+}
+
+.phase3-site .footer-premium .site-credit:hover,
+.mobilev2-footer .site-credit:hover {
+  color: var(--asya-reference-gold);
+  opacity: 1;
+}
+
+.phase3-site .footer-premium .site-credit:focus-visible,
+.mobilev2-footer .site-credit:focus-visible {
+  border-radius: 8px;
+  outline: 2px solid var(--asya-reference-gold);
+  outline-offset: 4px;
+  color: var(--asya-reference-gold);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .mobilev2-footer .site-credit {
+    width: min(100%, 18.5rem);
+    margin-top: 0.55rem;
+    padding-top: 0.9rem;
+  }
+
+  .mobilev2-footer .site-credit img {
+    width: 108px;
+  }
+
+  .mobilev2-footer .site-credit span {
+    max-width: 17rem;
+    font-size: 0.62rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .phase3-site .footer-premium .site-credit img {
+    width: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phase3-site .footer-premium .site-credit,
+  .mobilev2-footer .site-credit {
+    transition: none;
+  }
+}

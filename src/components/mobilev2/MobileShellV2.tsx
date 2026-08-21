@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import logoImg from "@/assets/asyas-logo-transparent.png";
+import { SiteCredit } from "@/components/asya/SiteCredit";
 import { RESTAURANT } from "@/data/menu";
 import { useI18n } from "@/lib/i18n";
 
@@ -428,6 +429,7 @@ export function MobileFooterV2() {
       <p>
         © {year} {tx(RESTAURANT.name)}. {copy.rights}
       </p>
+      <SiteCredit />
     </footer>
   );
 }
