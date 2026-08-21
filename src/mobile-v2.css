@@ -1330,11 +1330,76 @@
     padding: 0 0.75rem;
   }
 
+  .mobilev2-menu-main-group {
+    scroll-margin-top: 0;
+    padding-top: 2.6rem;
+  }
+
+  .mobilev2-menu-main-group-header {
+    display: grid;
+    justify-items: center;
+    gap: 0.45rem;
+    padding: 0 0.75rem 0.6rem;
+    text-align: center;
+  }
+
+  .mobilev2-menu-main-group-header > span {
+    color: var(--m2-gold);
+    font-size: 0.58rem;
+    font-weight: 900;
+  }
+
+  .mobilev2-menu-main-group-icon,
+  .mobilev2-menu-section-icon {
+    display: grid;
+    place-items: center;
+    color: var(--m2-olive);
+    font-style: normal;
+  }
+
+  .mobilev2-menu-main-group-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background: rgba(52, 65, 47, 0.08);
+  }
+
+  .mobilev2-menu-main-group-icon svg,
+  .mobilev2-menu-section-icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .mobilev2-menu-main-group-header h2 {
+    max-width: 20rem;
+    margin: 0;
+    color: var(--m2-olive-deep);
+    font-family: "Marcellus", var(--m2-font);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  [data-locale="ar"] .mobilev2-menu-main-group-header h2 {
+    font-family: var(--m2-font-ar);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.65;
+  }
+
+  .mobilev2-menu-main-group-header p {
+    max-width: 20rem;
+    margin: 0;
+    color: var(--m2-muted);
+    font-size: 0.68rem;
+    line-height: 1.8;
+    text-wrap: pretty;
+  }
+
   .mobilev2-menu-section {
-    scroll-margin-top: 5.1rem;
-    padding-top: 2.5rem;
-    content-visibility: auto;
-    contain-intrinsic-block-size: auto var(--mobilev2-section-block-size, 1200px);
+    scroll-margin-top: 0;
+    padding-top: 1.25rem;
   }
 
   .mobilev2-menu-section-header {
@@ -1353,7 +1418,7 @@
     font-weight: 800;
   }
 
-  .mobilev2-menu-section-header h2 {
+  .mobilev2-menu-section-header h3 {
     max-width: 20rem;
     margin: 0.25rem auto 0;
     color: var(--m2-olive-deep);
@@ -1364,7 +1429,7 @@
     text-wrap: balance;
   }
 
-  [data-locale="ar"] .mobilev2-menu-section-header h2 {
+  [data-locale="ar"] .mobilev2-menu-section-header h3 {
     font-family: var(--m2-font-ar);
     font-size: 1.3rem;
     font-weight: 800;
@@ -1396,6 +1461,15 @@
     color: var(--m2-olive);
     font-size: 0.6rem;
     font-weight: 800;
+  }
+
+  .mobilev2-menu-section-header > .mobilev2-menu-section-icon {
+    width: 2rem;
+    height: 1.5rem;
+    margin-top: 0.35rem;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
   .mobilev2-menu-section-header > i {
@@ -1619,9 +1693,17 @@
     height: 1.1rem;
   }
 
-  .mobilev2-category-drawer > div {
+  .mobilev2-category-drawer-actions {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.35rem;
+  }
+
+  .mobilev2-category-main-groups,
+  .mobilev2-category-subcategories {
     display: grid;
     min-height: 0;
+    align-content: start;
     overflow-y: auto;
     overscroll-behavior-y: contain;
     gap: 0.45rem;
@@ -1637,10 +1719,51 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .mobilev2-category-drawer > div > button {
+  .mobilev2-category-detail {
+    display: grid;
+    min-height: 0;
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .mobilev2-category-group-switcher {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.4rem;
+    padding: 0.7rem 0.75rem;
+    border-bottom: 1px solid var(--m2-line);
+    scroll-padding-inline: 0.75rem;
+    scrollbar-width: none;
+  }
+
+  .mobilev2-category-group-switcher::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobilev2-category-group-switcher button {
+    min-height: 2.35rem;
+    flex: 0 0 auto;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--m2-line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--m2-muted);
+    font-size: 0.62rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .mobilev2-category-group-switcher button.is-active {
+    border-color: var(--m2-olive);
+    background: var(--m2-olive);
+    color: #fffaf2;
+  }
+
+  .mobilev2-category-main-groups > button,
+  .mobilev2-category-subcategories > button {
     display: grid;
     min-height: 3.8rem;
-    grid-template-columns: 2rem minmax(0, 1fr);
+    grid-template-columns: 2.25rem minmax(0, 1fr) auto;
     gap: 0.65rem;
     align-items: center;
     padding: 0.65rem 0.75rem;
@@ -1651,35 +1774,58 @@
     text-align: start;
   }
 
-  .mobilev2-category-drawer > div > button.is-active {
+  .mobilev2-category-subcategories > button {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+  }
+
+  .mobilev2-category-main-groups > button.is-active,
+  .mobilev2-category-subcategories > button.is-active {
     background: var(--m2-olive);
     color: #fffaf2;
   }
 
-  .mobilev2-category-drawer > div > button > small {
-    color: var(--m2-gold);
-    font-size: 0.62rem;
-    font-weight: 800;
+  .mobilev2-category-drawer-icon {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    border-radius: 999px;
+    background: rgba(255, 250, 242, 0.7);
+    color: var(--m2-olive);
   }
 
-  .mobilev2-category-drawer > div > button > span {
+  .is-active > .mobilev2-category-drawer-icon {
+    color: #fffaf2;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .mobilev2-category-drawer-icon svg,
+  .mobilev2-category-main-groups > button > svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .mobilev2-category-main-groups > button > span:nth-child(2),
+  .mobilev2-category-subcategories > button > span:nth-child(2) {
     min-width: 0;
     display: grid;
     gap: 0.2rem;
   }
 
-  .mobilev2-category-drawer > div strong {
+  .mobilev2-category-main-groups strong,
+  .mobilev2-category-subcategories strong {
     overflow: hidden;
     font-size: 0.72rem;
-    line-height: 1.45;
+    line-height: 1.55;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .mobilev2-category-drawer > div em {
+  .mobilev2-category-main-groups em,
+  .mobilev2-category-subcategories em {
     font-size: 0.56rem;
     font-style: normal;
-    opacity: 0.7;
+    opacity: 0.72;
   }
 
   .mobilev2-tray-layer {

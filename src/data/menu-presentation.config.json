@@ -1,0 +1,358 @@
+{
+  "version": 2,
+  "ignoredSourceCategoryIds": ["19e11b5f-abcd-4fa6-aa29-e937ffe65d00"],
+  "groups": [
+    {
+      "id": "breakfast",
+      "name": { "ar": "الفطور", "en": "Breakfast" },
+      "allLabel": { "ar": "كل الفطور", "en": "All Breakfast" },
+      "description": {
+        "ar": "مختارات الفطور التركي، وأطباق البيض، والأصناف الصباحية الأساسية.",
+        "en": "Turkish breakfast selections, egg dishes, and morning essentials."
+      },
+      "categoryIds": ["breakfast-selections", "eggs", "breakfast-essentials", "potatoes"]
+    },
+    {
+      "id": "starters-sides",
+      "name": { "ar": "المقبلات والأطباق الجانبية", "en": "Starters & Sides" },
+      "allLabel": { "ar": "كل المقبلات والأطباق الجانبية", "en": "All Starters & Sides" },
+      "description": {
+        "ar": "مقبلات تركية باردة وساخنة، وسلطات، وأطباق جانبية للمشاركة.",
+        "en": "Hot and cold Turkish starters, salads, and sides for the table."
+      },
+      "categoryIds": ["starters"]
+    },
+    {
+      "id": "soups-hot-dishes",
+      "name": { "ar": "الشوربات والأطباق الساخنة", "en": "Soups & Hot Dishes" },
+      "allLabel": { "ar": "كل الشوربات والأطباق الساخنة", "en": "All Soups & Hot Dishes" },
+      "description": {
+        "ar": "شوربات يومية، وباستا، وبيتزا تقدم ساخنة.",
+        "en": "Daily soups, pasta, and pizza served hot."
+      },
+      "categoryIds": ["soups", "pasta-pizza"]
+    },
+    {
+      "id": "grills-mains",
+      "name": { "ar": "المشاوي والأطباق الرئيسية", "en": "Grills & Mains" },
+      "allLabel": { "ar": "كل المشاوي والأطباق الرئيسية", "en": "All Grills & Mains" },
+      "description": {
+        "ar": "مشاوي تركية، وستيك، وبرجر، وأطباق مخصصة للصغار.",
+        "en": "Turkish grills, steaks, burgers, and dishes for younger guests."
+      },
+      "categoryIds": ["grills", "kids"]
+    },
+    {
+      "id": "bakery",
+      "name": { "ar": "المخبوزات", "en": "Bakery" },
+      "allLabel": { "ar": "كل المخبوزات", "en": "All Bakery" },
+      "description": {
+        "ar": "جوزلمة، وبوريك، وبيدا تركية مخبوزة وتقدم ساخنة.",
+        "en": "Handmade gözleme, börek, and Turkish pide served warm."
+      },
+      "categoryIds": ["gozleme-borek", "pide"]
+    },
+    {
+      "id": "desserts",
+      "name": { "ar": "الحلويات", "en": "Desserts" },
+      "allLabel": { "ar": "كل الحلويات", "en": "All Desserts" },
+      "description": {
+        "ar": "حلويات تركية تقدم بعد الوجبة أو مع القهوة والشاي.",
+        "en": "Turkish desserts served after the meal or alongside coffee and tea."
+      },
+      "categoryIds": ["desserts"]
+    },
+    {
+      "id": "hot-drinks",
+      "name": { "ar": "المشروبات الساخنة", "en": "Hot Drinks" },
+      "allLabel": { "ar": "كل المشروبات الساخنة", "en": "All Hot Drinks" },
+      "description": {
+        "ar": "قهوة محضرة بطرق متنوعة، وشاي تركي، ومشروبات ساخنة.",
+        "en": "Coffee prepared in several styles, Turkish tea, and hot drinks."
+      },
+      "categoryIds": ["coffee", "tea"]
+    },
+    {
+      "id": "cold-drinks",
+      "name": { "ar": "المشروبات الباردة", "en": "Cold Drinks" },
+      "allLabel": { "ar": "كل المشروبات الباردة", "en": "All Cold Drinks" },
+      "description": {
+        "ar": "قهوة باردة، وعصائر، وليمونادة، ومشروبات مميزة ومخفوقة.",
+        "en": "Cold coffee, juices, lemonades, signature drinks, and milkshakes."
+      },
+      "categoryIds": [
+        "mr-silver",
+        "cold-coffee",
+        "signature-drinks",
+        "fresh-juices",
+        "iced-tea-lemonade",
+        "soft-drinks",
+        "milkshakes"
+      ]
+    },
+    {
+      "id": "ayran-yogurt",
+      "name": { "ar": "اللبن والعيران", "en": "Ayran & Yogurt Drinks" },
+      "allLabel": { "ar": "كل اللبن والعيران", "en": "All Ayran & Yogurt Drinks" },
+      "description": {
+        "ar": "عيران تركي كلاسيكي أو بالنعناع، يقدم باردًا.",
+        "en": "Classic Turkish ayran, served chilled plain or with mint."
+      },
+      "categoryIds": ["ayran"]
+    },
+    {
+      "id": "shisha",
+      "name": { "ar": "المعسلات", "en": "Shisha" },
+      "allLabel": { "ar": "كل المعسلات", "en": "All Shisha" },
+      "description": {
+        "ar": "خيارات المعسل المتاحة في لاونج آسيا.",
+        "en": "The shisha selection available in Asya Lounge."
+      },
+      "categoryIds": ["shisha"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "breakfast-selections",
+      "groupId": "breakfast",
+      "sourceCategoryId": "61e69fe8-3255-49c0-ad94-517a04184cd5",
+      "name": { "ar": "مختارات آسيا للفطور", "en": "Asya Breakfast Selections" },
+      "description": {
+        "ar": "سفرات فطور تركية متكاملة معدة للمشاركة.",
+        "en": "Complete Turkish breakfast tables prepared for sharing."
+      }
+    },
+    {
+      "id": "eggs",
+      "groupId": "breakfast",
+      "sourceCategoryId": "e74e388c-048d-47e4-afec-acf25fac4650",
+      "name": { "ar": "أطباق البيض", "en": "Eggs" },
+      "description": {
+        "ar": "أطباق بيض تركية محضرة بوصفات متنوعة.",
+        "en": "Turkish egg dishes prepared in a range of traditional styles."
+      }
+    },
+    {
+      "id": "breakfast-essentials",
+      "groupId": "breakfast",
+      "sourceCategoryId": "cf0cfebf-b9de-4221-85e6-9513ddd57809",
+      "name": { "ar": "أصناف الفطور الأساسية", "en": "Breakfast Essentials" },
+      "description": {
+        "ar": "أجبان، وزيتون، وأطباق تركية تكمل سفرة الفطور.",
+        "en": "Cheeses, olives, and Turkish dishes that complete the breakfast table."
+      }
+    },
+    {
+      "id": "potatoes",
+      "groupId": "breakfast",
+      "sourceCategoryId": "1290e96c-f491-4a64-8e9e-61f0df6a85c7",
+      "name": { "ar": "البطاطس", "en": "Potatoes" },
+      "description": {
+        "ar": "أطباق بطاطس محضرة للتقديم مع الفطور أو كطبق جانبي.",
+        "en": "Potato dishes served with breakfast or as a side."
+      }
+    },
+    {
+      "id": "starters",
+      "groupId": "starters-sides",
+      "sourceCategoryId": "81d3c1d4-b82c-4ea3-8a9d-881977f47761",
+      "name": { "ar": "المقبلات والسلطات", "en": "Mezze, Salads & Starters" },
+      "description": {
+        "ar": "مقبلات باردة وساخنة، وسلطات، وأطباق جانبية تركية.",
+        "en": "Cold and hot mezze, salads, and Turkish side dishes."
+      }
+    },
+    {
+      "id": "soups",
+      "groupId": "soups-hot-dishes",
+      "sourceCategoryId": "c0a5b81c-a849-43c6-994d-e4a41c842182",
+      "name": { "ar": "الشوربات", "en": "Soups" },
+      "description": {
+        "ar": "شوربات تركية تقدم ساخنة.",
+        "en": "Turkish soups served hot."
+      }
+    },
+    {
+      "id": "pasta-pizza",
+      "groupId": "soups-hot-dishes",
+      "sourceCategoryId": "884b790b-3b65-46a2-9be5-2ef78ce53146",
+      "name": { "ar": "الباستا والبيتزا", "en": "Pasta & Pizza" },
+      "description": {
+        "ar": "أطباق باستا وبيتزا بصلصات وحشوات متنوعة.",
+        "en": "Pasta and pizza with a selection of sauces and toppings."
+      }
+    },
+    {
+      "id": "grills",
+      "groupId": "grills-mains",
+      "sourceCategoryId": "a6c1ce59-bed8-4049-b4c5-c1713025ce88",
+      "name": { "ar": "المشاوي والأطباق الرئيسية", "en": "Turkish Grills & Mains" },
+      "description": {
+        "ar": "كباب، ولحوم، ودجاج، وستيك وبرجر مطهوة حسب كل طبق.",
+        "en": "Kebabs, meat, chicken, steaks, and burgers cooked to suit each dish."
+      }
+    },
+    {
+      "id": "kids",
+      "groupId": "grills-mains",
+      "sourceCategoryId": "3b01083f-53db-4932-9716-4e4d8c6265a6",
+      "name": { "ar": "قائمة الصغار", "en": "Kids' Menu" },
+      "description": {
+        "ar": "وجبات صغيرة من البرجر، والبيتزا، والباستا، والدجاج.",
+        "en": "Smaller portions of burgers, pizza, pasta, and chicken."
+      }
+    },
+    {
+      "id": "gozleme-borek",
+      "groupId": "bakery",
+      "sourceCategoryId": "59ee4ca2-bb09-4a86-981b-fd40460331ea",
+      "name": { "ar": "الجوزلمة والبوريك", "en": "Gözleme & Börek" },
+      "description": {
+        "ar": "عجائن تركية يدوية بحشوات مالحة، تقدم ساخنة.",
+        "en": "Handmade Turkish pastries with savory fillings, served warm."
+      }
+    },
+    {
+      "id": "pide",
+      "groupId": "bakery",
+      "sourceCategoryId": "641057a2-0237-4c4b-ab55-bf923ae06cc8",
+      "name": { "ar": "البيدا التركية", "en": "Turkish Pide" },
+      "description": {
+        "ar": "بيدا تركية مخبوزة بحشوات متنوعة.",
+        "en": "Oven-baked Turkish pide with a selection of fillings."
+      }
+    },
+    {
+      "id": "desserts",
+      "groupId": "desserts",
+      "sourceCategoryId": "8c4ad6c8-a1ea-446d-9f0e-3900fd39609d",
+      "name": { "ar": "الحلويات التركية", "en": "Turkish Desserts" },
+      "description": {
+        "ar": "حلويات تركية تقليدية تقدم بعد الوجبة أو مع المشروبات الساخنة.",
+        "en": "Traditional Turkish sweets served after the meal or with hot drinks."
+      }
+    },
+    {
+      "id": "coffee",
+      "groupId": "hot-drinks",
+      "sourceCategoryId": "8fc09a90-b4db-4681-8506-f430b7c1360d",
+      "name": { "ar": "عالم القهوة", "en": "Coffee" },
+      "description": {
+        "ar": "قهوة تركية، وإسبريسو، ووصفات قهوة ساخنة متنوعة.",
+        "en": "Turkish coffee, espresso, and a range of hot coffee preparations."
+      }
+    },
+    {
+      "id": "tea",
+      "groupId": "hot-drinks",
+      "sourceCategoryId": "503260fe-058c-4b7a-9dac-6035eb79d781",
+      "name": { "ar": "الشاي", "en": "Tea" },
+      "description": {
+        "ar": "شاي تركي وخيارات شاي ساخنة.",
+        "en": "Turkish tea and a selection of hot teas."
+      }
+    },
+    {
+      "id": "mr-silver",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "7abd9b4c-6ed3-4261-a386-d1ebe1038268",
+      "name": { "ar": "مشروبات مستر سيلفر", "en": "Mr Silver Specials" },
+      "description": {
+        "ar": "مشروبات باردة خاصة بالفواكه والتوابل والكريمة.",
+        "en": "House cold drinks blended with fruit, spice, and cream."
+      }
+    },
+    {
+      "id": "cold-coffee",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "05d02beb-e1f6-4908-9b12-e2b69b1fafc1",
+      "name": { "ar": "القهوة الباردة", "en": "Cold Coffee" },
+      "description": {
+        "ar": "قهوة باردة ومثلجة بوصفات متنوعة.",
+        "en": "Chilled and iced coffee in a range of preparations."
+      }
+    },
+    {
+      "id": "signature-drinks",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "927fc8d2-117e-44b9-8ab5-08522f536d0f",
+      "name": { "ar": "مشروباتنا المميزة", "en": "Signature Drinks" },
+      "description": {
+        "ar": "خلطات باردة خاصة بآسيا جورميه.",
+        "en": "Cold drinks blended to Asya's house recipes."
+      }
+    },
+    {
+      "id": "fresh-juices",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "5c90c4d7-8c7b-4c07-86c0-531eea82ef0a",
+      "name": { "ar": "العصائر الطازجة", "en": "Fresh Juices" },
+      "description": {
+        "ar": "عصائر فاكهة طازجة تقدم باردة.",
+        "en": "Fresh fruit juices served chilled."
+      }
+    },
+    {
+      "id": "iced-tea-lemonade",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "99cd0bc2-d9cc-4ae5-be3a-ff6316b646b9",
+      "name": { "ar": "الشاي المثلج والليمونادة", "en": "Iced Tea & Lemonade" },
+      "description": {
+        "ar": "شاي مثلج وليمونادة محضرة يوميًا.",
+        "en": "Iced tea and lemonade prepared daily."
+      }
+    },
+    {
+      "id": "soft-drinks",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+      "name": { "ar": "المشروبات الغازية والمياه", "en": "Soft Drinks & Water" },
+      "description": {
+        "ar": "مشروبات غازية ومياه تقدم باردة.",
+        "en": "Soft drinks and water served chilled."
+      }
+    },
+    {
+      "id": "milkshakes",
+      "groupId": "cold-drinks",
+      "sourceCategoryId": "634c84dd-5cf6-4e20-8270-3e2fbd61e850",
+      "name": { "ar": "الميلك شيك", "en": "Milkshakes" },
+      "description": {
+        "ar": "مشروبات حليب باردة ومخفوقة بنكهات متنوعة.",
+        "en": "Chilled milkshakes blended in a range of flavors."
+      }
+    },
+    {
+      "id": "ayran",
+      "groupId": "ayran-yogurt",
+      "sourceCategoryId": "cafb1cd7-1c37-430f-80a6-48cd5f213c4a",
+      "name": { "ar": "العيران", "en": "Ayran" },
+      "description": {
+        "ar": "عيران تركي بارد، كلاسيكي أو بالنعناع.",
+        "en": "Chilled Turkish ayran, classic or with mint."
+      },
+      "includeProductIds": [
+        "408eba99-a9c8-4630-9c76-c17c552941a7",
+        "c3d5aaa1-b279-47a7-b745-dbf27c322d41"
+      ]
+    },
+    {
+      "id": "shisha",
+      "groupId": "shisha",
+      "sourceCategoryId": "2fa8427f-a3a4-4c67-a566-4a97f3764092",
+      "name": { "ar": "معسلات آسيا", "en": "Asya Shisha" },
+      "description": {
+        "ar": "نكهات المعسل المتاحة في لاونج آسيا.",
+        "en": "Shisha flavors available in Asya Lounge."
+      }
+    }
+  ],
+  "productOverrides": {
+    "06ca727d-c2d4-4efd-b936-ba88b7891219": "starters",
+    "30fc591c-9730-4b11-88df-3370e5a3775d": "starters",
+    "408eba99-a9c8-4630-9c76-c17c552941a7": "ayran",
+    "90cc6304-3fb2-490b-bcd1-b79c841849db": "milkshakes",
+    "c3d5aaa1-b279-47a7-b745-dbf27c322d41": "ayran",
+    "e6cde5c2-a54d-444d-9bad-996ec74bcbc1": "signature-drinks"
+  }
+}

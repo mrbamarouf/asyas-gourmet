@@ -1,5 +1,13 @@
-import { ChevronDown, Clock3, HandPlatter, ListFilter, Plus, X } from "lucide-react";
-import type { CSSProperties } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ChevronDown,
+  Clock3,
+  HandPlatter,
+  ListFilter,
+  Plus,
+  X,
+} from "lucide-react";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
@@ -10,25 +18,35 @@ import {
   localizeMenuText,
   useItemDetail,
 } from "@/components/asya/primitives";
-import type { MenuCategory, MenuCategoryGroup, MenuItem } from "@/data/menu";
+import { PresentationMenuIcon } from "@/components/menu/PresentationMenuIcon";
+import type { MenuCategory, MenuItem } from "@/data/menu";
 import { useI18n } from "@/lib/i18n";
-import { localizeMenuSectionHeading, presentMenuTextForLocale } from "@/lib/menu-presentation";
+import {
+  formatPresentationCategoryCount,
+  formatPresentationItemCount,
+  presentMenuTextForLocale,
+} from "@/lib/menu-presentation";
+import {
+  presentationCategoryTargetId,
+  presentationGroupTargetId,
+  resolveLegacyMenuTarget,
+  type PresentationMenuCategory,
+  type PresentationMenuGroup,
+} from "@/lib/menu-taxonomy";
+import { centerMenuRailItem, runWhenMenuScrollUnlocked } from "@/lib/menu-scroll";
 
 import { useTrayActionsV2, useTrayV2 } from "./TrayContextV2";
-
-export interface MobileMenuGroupV2 {
-  definition: MenuCategoryGroup;
-  items: MenuItem[];
-}
 
 const COPY = {
   ar: {
     title: "المنيو",
-    body: "تصفح جميع الأصناف بالترتيب الرسمي، وأضف اختياراتك إلى سلّتك.",
+    body: "تصفح جميع الأصناف، وأضف اختياراتك إلى سلّتك.",
     categories: "الأقسام",
     categoryAccess: "اختر قسمًا",
     close: "إغلاق الأقسام",
+    back: "العودة إلى الأقسام الرئيسية",
     items: "أصناف",
+    sections: "أقسام فرعية",
     viewDish: "عرض الطبق",
     quickAdd: "أضف إلى السلة",
     added: "تمت الإضافة",
@@ -36,15 +54,16 @@ const COPY = {
     calories: "سعرة",
     weight: "جم",
     tray: "سلتي",
-    emptyDescription: "تعرّف على أصناف هذا القسم واختر ما يناسب مائدتك.",
   },
   en: {
     title: "Menu",
-    body: "Browse every dish in the official order and keep your selections in My Tray.",
-    categories: "Categories",
-    categoryAccess: "Choose a Category",
-    close: "Close Categories",
+    body: "Browse every dish and keep your selections in My Tray.",
+    categories: "Sections",
+    categoryAccess: "Choose a Section",
+    close: "Close Sections",
+    back: "Back to Main Sections",
     items: "Items",
+    sections: "Subcategories",
     viewDish: "View Dish",
     quickAdd: "Add to Tray",
     added: "Added",
@@ -52,35 +71,89 @@ const COPY = {
     calories: "kcal",
     weight: "g",
     tray: "My Tray",
-    emptyDescription: "Explore this section and choose what belongs at your table.",
   },
 } as const;
 
-export function MobileMenuV2({
-  groups,
-  categoryMap,
-}: {
-  groups: MobileMenuGroupV2[];
-  categoryMap: Map<string, MenuCategory>;
-}) {
+export function MobileMenuV2({ groups }: { groups: PresentationMenuGroup[] }) {
   const { locale } = useI18n();
   const { totalQuantity, openTray } = useTrayV2();
   const copy = COPY[locale];
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [activeGroupId, setActiveGroupId] = useState(groups[0]?.definition.id ?? "");
+  const [drawerGroupId, setDrawerGroupId] = useState<string | null>(null);
+  const [activeGroupId, setActiveGroupId] = useState(groups[0]?.id ?? "");
+  const [activeCategoryId, setActiveCategoryId] = useState(groups[0]?.categories[0]?.id ?? "");
   const activeGroupRef = useRef(activeGroupId);
+  const activeCategoryRef = useRef(activeCategoryId);
   const chipRailRef = useRef<HTMLDivElement>(null);
+  const pendingTargetRef = useRef<string | null>(null);
+  const scrollCleanupRef = useRef<(() => void) | null>(null);
 
-  const setActiveGroup = useCallback((groupId: string) => {
-    if (!groupId || activeGroupRef.current === groupId) return;
-    activeGroupRef.current = groupId;
-    setActiveGroupId(groupId);
+  const setActiveIfChanged = useCallback((groupId: string, categoryId?: string | null) => {
+    if (groupId && activeGroupRef.current !== groupId) {
+      activeGroupRef.current = groupId;
+      setActiveGroupId(groupId);
+    }
+    if (categoryId !== undefined && activeCategoryRef.current !== (categoryId ?? "")) {
+      activeCategoryRef.current = categoryId ?? "";
+      setActiveCategoryId(categoryId ?? "");
+    }
   }, []);
 
+  const scrollTargetIntoView = useCallback(
+    (targetId: string, groupId: string, requestedBehavior?: ScrollBehavior) => {
+      scrollCleanupRef.current?.();
+      scrollCleanupRef.current = runWhenMenuScrollUnlocked(() => {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        target.scrollIntoView({
+          behavior:
+            requestedBehavior ??
+            (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"),
+          block: "start",
+        });
+        window.history.replaceState(null, "", `#${targetId}`);
+
+        const chip = chipRailRef.current?.querySelector<HTMLElement>(
+          `[data-group-id="${groupId}"]`,
+        );
+        centerMenuRailItem(chipRailRef.current, chip);
+      });
+    },
+    [],
+  );
+
+  const jumpToTarget = useCallback(
+    (targetId: string, groupId: string, categoryId?: string | null) => {
+      setActiveIfChanged(groupId, categoryId);
+      if (drawerOpen) {
+        pendingTargetRef.current = targetId;
+        setDrawerOpen(false);
+        return;
+      }
+      scrollTargetIntoView(targetId, groupId);
+    },
+    [drawerOpen, scrollTargetIntoView, setActiveIfChanged],
+  );
+
   useEffect(() => {
-    const sections = groups
-      .map((group) => document.getElementById(`group-${group.definition.id}`))
-      .filter((section): section is HTMLElement => Boolean(section));
+    if (drawerOpen || !pendingTargetRef.current) return;
+    const targetId = pendingTargetRef.current;
+    pendingTargetRef.current = null;
+    const group = groups.find(
+      (entry) =>
+        presentationGroupTargetId(entry.id) === targetId ||
+        entry.categories.some((category) => presentationCategoryTargetId(category.id) === targetId),
+    );
+    if (!group) return;
+    scrollTargetIntoView(targetId, group.id);
+  }, [drawerOpen, groups, scrollTargetIntoView]);
+
+  useEffect(() => {
+    const sections = groups.flatMap((group) =>
+      group.categories
+        .map((category) => document.getElementById(presentationCategoryTargetId(category.id)))
+        .filter((section): section is HTMLElement => Boolean(section)),
+    );
     if (!sections.length) return;
 
     const observer = new IntersectionObserver(
@@ -88,16 +161,48 @@ export function MobileMenuV2({
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top)[0];
-        if (visible?.target instanceof HTMLElement) {
-          setActiveGroup(visible.target.dataset.groupId ?? "");
-        }
+        if (!(visible?.target instanceof HTMLElement)) return;
+        setActiveIfChanged(
+          visible.target.dataset.presentationGroup ?? "",
+          visible.target.dataset.presentationCategory,
+        );
       },
       { rootMargin: "-18% 0px -68%", threshold: 0.01 },
     );
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, [groups, setActiveGroup]);
+  }, [groups, setActiveIfChanged]);
+
+  useEffect(() => {
+    const targetId = resolveLegacyMenuTarget(window.location.hash);
+    const alignHashTarget = (behavior: ScrollBehavior) => {
+      const resolvedTargetId = resolveLegacyMenuTarget(window.location.hash);
+      if (!resolvedTargetId) return;
+      const group = groups.find(
+        (entry) =>
+          presentationGroupTargetId(entry.id) === resolvedTargetId ||
+          entry.categories.some(
+            (category) => presentationCategoryTargetId(category.id) === resolvedTargetId,
+          ),
+      );
+      const category = group?.categories.find(
+        (entry) => presentationCategoryTargetId(entry.id) === resolvedTargetId,
+      );
+      if (!group) return;
+      setActiveIfChanged(group.id, category?.id ?? null);
+      scrollTargetIntoView(resolvedTargetId, group.id, behavior);
+    };
+    const handleHashTarget = () => alignHashTarget("smooth");
+
+    if (targetId) alignHashTarget("auto");
+    window.addEventListener("hashchange", handleHashTarget);
+    return () => {
+      window.removeEventListener("hashchange", handleHashTarget);
+    };
+  }, [groups, scrollTargetIntoView, setActiveIfChanged]);
+
+  useEffect(() => () => scrollCleanupRef.current?.(), []);
 
   useEffect(() => {
     if (!drawerOpen) return;
@@ -112,31 +217,7 @@ export function MobileMenuV2({
     };
   }, [drawerOpen]);
 
-  const jumpToGroup = useCallback(
-    (groupId: string) => {
-      setDrawerOpen(false);
-      setActiveGroup(groupId);
-      window.requestAnimationFrame(() => {
-        const rail = chipRailRef.current;
-        const chip = rail?.querySelector<HTMLElement>(`[data-group-id="${groupId}"]`);
-        if (rail && chip) {
-          const railRect = rail.getBoundingClientRect();
-          const chipRect = chip.getBoundingClientRect();
-          rail.scrollBy({
-            left: chipRect.left + chipRect.width / 2 - (railRect.left + railRect.width / 2),
-            behavior: "smooth",
-          });
-        }
-        document.getElementById(`group-${groupId}`)?.scrollIntoView({
-          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-            ? "auto"
-            : "smooth",
-          block: "start",
-        });
-      });
-    },
-    [setActiveGroup],
-  );
+  const selectedDrawerGroup = groups.find((group) => group.id === drawerGroupId);
 
   return (
     <main className="mobilev2-menu" dir={locale === "ar" ? "rtl" : "ltr"}>
@@ -153,21 +234,27 @@ export function MobileMenuV2({
       </section>
 
       <section className="mobilev2-category-access" aria-label={copy.categories}>
-        <button type="button" onClick={() => setDrawerOpen(true)}>
+        <button
+          type="button"
+          onClick={() => {
+            setDrawerGroupId(null);
+            setDrawerOpen(true);
+          }}
+        >
           <ListFilter aria-hidden="true" />
           <span>{copy.categoryAccess}</span>
           <ChevronDown aria-hidden="true" />
         </button>
         <div ref={chipRailRef} className="mobilev2-category-rail">
-          {groups.map(({ definition }) => (
+          {groups.map((group) => (
             <button
               type="button"
-              key={definition.id}
-              data-group-id={definition.id}
-              className={activeGroupId === definition.id ? "is-active" : ""}
-              onClick={() => jumpToGroup(definition.id)}
+              key={group.id}
+              data-group-id={group.id}
+              className={activeGroupId === group.id ? "is-active" : ""}
+              onClick={() => jumpToTarget(presentationGroupTargetId(group.id), group.id, null)}
             >
-              {localizeMenuSectionHeading(definition.shortName, locale)}
+              {localizeMenuText(group.name, locale)}
             </button>
           ))}
         </div>
@@ -175,12 +262,7 @@ export function MobileMenuV2({
 
       <div className="mobilev2-menu-groups">
         {groups.map((group, index) => (
-          <MobileMenuSectionV2
-            key={group.definition.id}
-            group={group}
-            groupIndex={index}
-            categoryMap={categoryMap}
-          />
+          <MobileMenuGroupV2 key={group.id} group={group} groupIndex={index} />
         ))}
       </div>
 
@@ -200,35 +282,124 @@ export function MobileMenuV2({
             <header>
               <div>
                 <small>{copy.categories}</small>
-                <h2 id="mobilev2-category-title">{copy.categoryAccess}</h2>
+                <h2 id="mobilev2-category-title">
+                  {selectedDrawerGroup
+                    ? localizeMenuText(selectedDrawerGroup.name, locale)
+                    : copy.categoryAccess}
+                </h2>
               </div>
-              <button
-                type="button"
-                onClick={() => setDrawerOpen(false)}
-                aria-label={copy.close}
-                autoFocus
-              >
-                <X aria-hidden="true" />
-              </button>
-            </header>
-            <div>
-              {groups.map(({ definition, items }, index) => (
+              <span className="mobilev2-category-drawer-actions">
+                {selectedDrawerGroup ? (
+                  <button
+                    type="button"
+                    onClick={() => setDrawerGroupId(null)}
+                    aria-label={copy.back}
+                  >
+                    {locale === "ar" ? (
+                      <ArrowRight aria-hidden="true" />
+                    ) : (
+                      <ArrowLeft aria-hidden="true" />
+                    )}
+                  </button>
+                ) : null}
                 <button
                   type="button"
-                  key={definition.id}
-                  className={activeGroupId === definition.id ? "is-active" : ""}
-                  onClick={() => jumpToGroup(definition.id)}
+                  onClick={() => setDrawerOpen(false)}
+                  aria-label={copy.close}
+                  autoFocus
                 >
-                  <small>{String(index + 1).padStart(2, "0")}</small>
-                  <span>
-                    <strong>{localizeMenuSectionHeading(definition.name, locale)}</strong>
-                    <em>
-                      {items.length} {copy.items}
-                    </em>
-                  </span>
+                  <X aria-hidden="true" />
                 </button>
-              ))}
-            </div>
+              </span>
+            </header>
+
+            {selectedDrawerGroup ? (
+              <div className="mobilev2-category-detail">
+                <nav className="mobilev2-category-group-switcher" aria-label={copy.categories}>
+                  {groups.map((group) => (
+                    <button
+                      type="button"
+                      key={group.id}
+                      className={selectedDrawerGroup.id === group.id ? "is-active" : ""}
+                      onClick={() => setDrawerGroupId(group.id)}
+                    >
+                      {localizeMenuText(group.name, locale)}
+                    </button>
+                  ))}
+                </nav>
+                <div className="mobilev2-category-subcategories">
+                  <button
+                    type="button"
+                    className={
+                      activeGroupId === selectedDrawerGroup.id && !activeCategoryId
+                        ? "is-active"
+                        : ""
+                    }
+                    onClick={() =>
+                      jumpToTarget(
+                        presentationGroupTargetId(selectedDrawerGroup.id),
+                        selectedDrawerGroup.id,
+                        null,
+                      )
+                    }
+                  >
+                    <span className="mobilev2-category-drawer-icon">
+                      <PresentationMenuIcon id={selectedDrawerGroup.id} />
+                    </span>
+                    <span>
+                      <strong>{localizeMenuText(selectedDrawerGroup.allLabel, locale)}</strong>
+                      <em>{formatPresentationItemCount(selectedDrawerGroup.itemCount, locale)}</em>
+                    </span>
+                  </button>
+                  {selectedDrawerGroup.categories.map((category) => (
+                    <button
+                      type="button"
+                      key={category.id}
+                      className={activeCategoryId === category.id ? "is-active" : ""}
+                      onClick={() =>
+                        jumpToTarget(
+                          presentationCategoryTargetId(category.id),
+                          selectedDrawerGroup.id,
+                          category.id,
+                        )
+                      }
+                    >
+                      <span className="mobilev2-category-drawer-icon">
+                        <PresentationMenuIcon id={category.id} />
+                      </span>
+                      <span>
+                        <strong>{localizeMenuText(category.name, locale)}</strong>
+                        <em>{formatPresentationItemCount(category.items.length, locale)}</em>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="mobilev2-category-main-groups">
+                {groups.map((group) => (
+                  <button
+                    type="button"
+                    key={group.id}
+                    className={activeGroupId === group.id ? "is-active" : ""}
+                    onClick={() => setDrawerGroupId(group.id)}
+                  >
+                    <span className="mobilev2-category-drawer-icon">
+                      <PresentationMenuIcon id={group.id} />
+                    </span>
+                    <span>
+                      <strong>{localizeMenuText(group.name, locale)}</strong>
+                      <em>{formatPresentationCategoryCount(group.categories.length, locale)}</em>
+                    </span>
+                    {locale === "ar" ? (
+                      <ArrowLeft aria-hidden="true" />
+                    ) : (
+                      <ArrowRight aria-hidden="true" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </section>
         </div>
       ) : null}
@@ -236,50 +407,78 @@ export function MobileMenuV2({
   );
 }
 
-const MobileMenuSectionV2 = memo(function MobileMenuSectionV2({
+const MobileMenuGroupV2 = memo(function MobileMenuGroupV2({
   group,
   groupIndex,
-  categoryMap,
 }: {
-  group: MobileMenuGroupV2;
+  group: PresentationMenuGroup;
   groupIndex: number;
-  categoryMap: Map<string, MenuCategory>;
 }) {
   const { locale } = useI18n();
-  const copy = COPY[locale];
-  const description = localizeMenuText(group.definition.blurb, locale) || copy.emptyDescription;
 
   return (
     <section
-      id={`group-${group.definition.id}`}
-      data-group-id={group.definition.id}
+      id={presentationGroupTargetId(group.id)}
+      data-presentation-group={group.id}
+      className="mobilev2-menu-main-group"
+      aria-labelledby={`mobilev2-main-group-title-${group.id}`}
+    >
+      <header className="mobilev2-menu-main-group-header">
+        <span>{String(groupIndex + 1).padStart(2, "0")}</span>
+        <i className="mobilev2-menu-main-group-icon">
+          <PresentationMenuIcon id={group.id} />
+        </i>
+        <h2 id={`mobilev2-main-group-title-${group.id}`}>{localizeMenuText(group.name, locale)}</h2>
+        <p>{localizeMenuText(group.description, locale)}</p>
+      </header>
+      {group.categories.map((category, index) => (
+        <MobileMenuSectionV2
+          key={category.id}
+          category={category}
+          categoryIndex={index}
+          groupId={group.id}
+        />
+      ))}
+    </section>
+  );
+});
+
+const MobileMenuSectionV2 = memo(function MobileMenuSectionV2({
+  category,
+  categoryIndex,
+  groupId,
+}: {
+  category: PresentationMenuCategory;
+  categoryIndex: number;
+  groupId: string;
+}) {
+  const { locale } = useI18n();
+  const copy = COPY[locale];
+
+  return (
+    <section
+      id={presentationCategoryTargetId(category.id)}
+      data-presentation-group={groupId}
+      data-presentation-category={category.id}
       className="mobilev2-menu-section"
-      aria-labelledby={`mobilev2-group-title-${group.definition.id}`}
-      style={
-        {
-          "--mobilev2-section-block-size": `${Math.max(720, group.items.length * 175 + 320)}px`,
-        } as CSSProperties
-      }
+      aria-labelledby={`mobilev2-category-title-${category.id}`}
     >
       <header className="mobilev2-menu-section-header">
-        <small>{String(groupIndex + 1).padStart(2, "0")}</small>
-        <h2 id={`mobilev2-group-title-${group.definition.id}`}>
-          {localizeMenuSectionHeading(group.definition.name, locale)}
-        </h2>
-        <p>{description}</p>
-        <span>
-          {group.items.length} {copy.items}
+        <small>{String(categoryIndex + 1).padStart(2, "0")}</small>
+        <span className="mobilev2-menu-section-icon">
+          <PresentationMenuIcon id={category.id} />
         </span>
+        <h3 id={`mobilev2-category-title-${category.id}`}>
+          {localizeMenuText(category.name, locale)}
+        </h3>
+        <p>{localizeMenuText(category.description, locale)}</p>
+        <span>{formatPresentationItemCount(category.items.length, locale)}</span>
         <i aria-hidden="true" />
       </header>
       <div className="mobilev2-product-list">
-        {group.items.map((item) => {
-          const category =
-            categoryMap.get(item.category) ?? categoryMap.get(group.definition.categoryIds[0]);
-          return category ? (
-            <MobileProductCardV2 key={item.id} item={item} category={category} />
-          ) : null;
-        })}
+        {category.items.map(({ item, sourceCategory }) => (
+          <MobileProductCardV2 key={item.id} item={item} category={sourceCategory} />
+        ))}
       </div>
     </section>
   );
