@@ -15,6 +15,7 @@ import { useMemo, useState } from "react";
 
 import logoImg from "@/assets/asyas-logo-transparent.png";
 import visitInteriorImg from "@/assets/visit-interior.jpg";
+import { AboutAsyaSection } from "@/components/about/AboutAsyaSection";
 import {
   DishImage,
   PriceTag,
@@ -58,11 +59,6 @@ const COPY = {
     viewDish: "عرض الطبق",
     quickAdd: "أضف إلى السلة",
     added: "تمت الإضافة",
-    aboutTitle: "عن آسيا",
-    aboutHeading: "ضيافة تركية على مائدة جدة",
-    aboutBody:
-      "يجمع آسيا جورميه بين الفطور التركي، المخبوزات، الأطباق الساخنة وأجواء المطعم في تجربة واحدة.",
-    aboutAction: "اكتشف أطباق آسيا",
     experienceTitle: "تجربة آسيا",
     experienceBody: "من أول فنجان شاي إلى آخر قطعة بقلاوة.",
     breakfast: "الفطور التركي",
@@ -113,11 +109,6 @@ const COPY = {
     viewDish: "View Dish",
     quickAdd: "Add to Tray",
     added: "Added",
-    aboutTitle: "About Asya",
-    aboutHeading: "Turkish Hospitality at a Jeddah Table",
-    aboutBody:
-      "Asya’s Gourmet brings Turkish breakfast, bakery, warm dishes, and the restaurant atmosphere together in one dining experience.",
-    aboutAction: "Discover Asya’s Dishes",
     experienceTitle: "The Asya Experience",
     experienceBody: "From the first glass of tea to the final piece of baklava.",
     breakfast: "Turkish Breakfast",
@@ -248,27 +239,7 @@ export function MobileHomeV2() {
         </div>
       </section>
 
-      <section id="about-asya" className="mobilev2-about" aria-labelledby="mobilev2-about-title">
-        <figure>
-          <img
-            src={visitInteriorImg}
-            alt={copy.aboutAlt}
-            width={900}
-            height={900}
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div>
-          <small>{copy.aboutTitle}</small>
-          <h2 id="mobilev2-about-title">{copy.aboutHeading}</h2>
-          <p>{copy.aboutBody}</p>
-          <a href="/menu" className="mobilev2-text-link">
-            {copy.aboutAction}
-            <ArrowUpRight aria-hidden="true" />
-          </a>
-        </div>
-      </section>
+      <AboutAsyaSection />
 
       <section
         className="mobilev2-section mobilev2-experience"

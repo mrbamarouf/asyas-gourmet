@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useMemo } from "react";
 
+import { AboutAsyaSection } from "@/components/about/AboutAsyaSection";
 import {
   AsyaShell,
   DishImage,
@@ -56,12 +57,6 @@ const HOME_COPY = {
     whatsapp: "واتساب",
     reviews: "التقييمات",
     quickLabel: "اختر وجهتك",
-    aboutEyebrow: "عن آسيا",
-    aboutTitle: "مائدة تركية بروح آسيا",
-    aboutBody:
-      "آسيا جورميه تقدم تجربة مستوحاة من المطبخ التركي، تجمع الفطور التركي، المخبوزات الطازجة، الأطباق الدافئة وأجواء المطعم.",
-    aboutAction: "اكتشف المنيو",
-    aboutAlt: "أجواء المطعم في آسيا جورميه",
     signatureEyebrow: "من مطبخ آسيا",
     signatureTitle: "أطباق تبدأ بها الحكاية",
     dishAction: "عرض الطبق",
@@ -114,12 +109,6 @@ const HOME_COPY = {
     whatsapp: "WhatsApp",
     reviews: "Reviews",
     quickLabel: "Choose Your Next Step",
-    aboutEyebrow: "About Asya",
-    aboutTitle: "A Turkish Table, the Asya Way",
-    aboutBody:
-      "Asya’s Gourmet offers a Turkish-inspired dining experience bringing together Turkish breakfast, fresh bakery, warm dishes, and the restaurant atmosphere.",
-    aboutAction: "Explore the Menu",
-    aboutAlt: "The restaurant atmosphere at Asya's Gourmet",
     signatureEyebrow: "From Asya’s Kitchen",
     signatureTitle: "Dishes That Start the Story",
     dishAction: "View Dish",
@@ -255,7 +244,7 @@ function DesktopHomePhase3Content() {
       </section>
 
       <QuickActions copy={copy} />
-      <AboutStory copy={copy} />
+      <AboutAsyaSection />
 
       <section
         className="phase3-signatures phase3-section"
@@ -373,36 +362,6 @@ function DesktopHomePhase3Content() {
         </a>
       </section>
     </main>
-  );
-}
-
-function AboutStory({ copy }: { copy: (typeof HOME_COPY)["ar"] | (typeof HOME_COPY)["en"] }) {
-  return (
-    <section
-      id="about-asya"
-      className="phase3-about phase3-section"
-      aria-labelledby="about-asya-title"
-    >
-      <figure>
-        <img
-          src={posterPath("asya-moment-interior-lights.png")}
-          alt={copy.aboutAlt}
-          width={720}
-          height={1280}
-          loading="lazy"
-          decoding="async"
-        />
-      </figure>
-      <div>
-        <p>{copy.aboutEyebrow}</p>
-        <h2 id="about-asya-title">{copy.aboutTitle}</h2>
-        <span>{copy.aboutBody}</span>
-        <a href="/menu" className="phase3-button phase3-button-olive">
-          {copy.aboutAction}
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-      </div>
-    </section>
   );
 }
 

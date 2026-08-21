@@ -582,68 +582,6 @@
     left: auto;
   }
 
-  .mobilev2-about {
-    display: grid;
-    margin: 3.25rem 0.75rem 0;
-    overflow: hidden;
-    border-radius: 16px;
-    background: var(--m2-olive-deep);
-    color: #fffaf2;
-  }
-
-  .mobilev2-about figure {
-    aspect-ratio: 1.24;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  .mobilev2-about figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .mobilev2-about > div {
-    padding: 1.35rem 1.1rem 1.45rem;
-    text-align: center;
-  }
-
-  .mobilev2-about small {
-    color: #d9bd88;
-    font-size: 0.64rem;
-    font-weight: 800;
-  }
-
-  .mobilev2-about h2 {
-    max-width: 19rem;
-    margin: 0.45rem auto 0;
-    color: #fffaf2;
-    font-family: "Marcellus", var(--m2-font);
-    font-size: 1.7rem;
-    font-weight: 500;
-    line-height: 1.18;
-    text-wrap: balance;
-  }
-
-  [data-locale="ar"] .mobilev2-about h2 {
-    font-family: var(--m2-font-ar);
-    font-size: 1.45rem;
-    font-weight: 800;
-    line-height: 1.65;
-  }
-
-  .mobilev2-about p {
-    max-width: 20rem;
-    margin: 0.65rem auto 0;
-    color: rgba(255, 250, 242, 0.78);
-    font-size: 0.76rem;
-    line-height: 1.75;
-  }
-
-  [data-locale="ar"] .mobilev2-about p {
-    line-height: 2;
-  }
-
   .mobilev2-text-link {
     display: inline-flex;
     min-height: 2.75rem;
