@@ -18,6 +18,7 @@ import phase3Css from "../phase3.css?url";
 import mobile35Css from "../mobile35.css?url";
 import mobileV2Css from "../mobile-v2.css?url";
 import experienceCompletionCss from "../experience-completion.css?url";
+import referenceVisualSystemCss from "../reference-visual-system.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -107,6 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: mobile35Css },
       { rel: "stylesheet", href: mobileV2Css },
       { rel: "stylesheet", href: experienceCompletionCss },
+      { rel: "stylesheet", href: referenceVisualSystemCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
