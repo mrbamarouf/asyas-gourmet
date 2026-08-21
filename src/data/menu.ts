@@ -135,7 +135,7 @@ export const RESTAURANT = {
   menuSourceUrl: "https://qr.thefoost.com/asyas/?qr_source=qr_code",
   mapsUrl: "https://maps.app.goo.gl/QUcPv2DQpb89Wr4fA?g_st=ic",
   address: { ar: "الموقع على الخريطة", en: "Location on Maps" },
-  hours: { ar: "تواصل معنا لمعرفة ساعات اليوم", en: "Contact us for today's hours" },
+  hours: { ar: "مفتوح 24 ساعة طوال أيام الأسبوع", en: "Open 24 Hours — 7 Days a Week" },
   currency: { ar: "ر.س", en: "SAR" },
 };
 

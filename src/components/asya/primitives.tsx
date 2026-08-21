@@ -8,6 +8,7 @@ import {
   CupSoda,
   ExternalLink,
   Flame,
+  HandPlatter,
   Home,
   Info,
   Instagram,
@@ -49,12 +50,14 @@ import {
 import { formatVisibleText, I18nContext, UI, useI18n, type UIKey } from "@/lib/i18n";
 import { localizeMenuSectionHeading, presentMenuTextForLocale } from "@/lib/menu-presentation";
 import { MobileItemDetailV2 } from "@/components/mobilev2/MobileItemDetailV2";
+import { useRecentlyViewedActions } from "@/components/menu/RecentlyViewedContext";
 import {
   MobileBottomDockV2,
   MobileFooterV2,
   MobileHeaderV2,
   MobileTraySheetV2,
 } from "@/components/mobilev2/MobileShellV2";
+import { useTrayV2 } from "@/components/mobilev2/TrayContextV2";
 import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 
 import desktopIntroVideo from "@/assets/asya-desktop-intro.mp4";
@@ -1170,6 +1173,7 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
   const [locale, setLocale] = useState<Locale>("ar");
   const [detailSelection, setDetailSelection] = useState<ItemDetailSelection | null>(null);
   const isMobilePresentation = useMobilePresentation();
+  const { recordViewed } = useRecentlyViewedActions();
 
   useEffect(() => {
     const storedLocale = readStoredLocale();
@@ -1190,8 +1194,11 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
     [locale],
   );
   const openItemDetail = useCallback(
-    (selection: ItemDetailSelection) => setDetailSelection(selection),
-    [],
+    (selection: ItemDetailSelection) => {
+      recordViewed(selection.item.id);
+      setDetailSelection(selection);
+    },
+    [recordViewed],
   );
   const detailValue = useMemo(() => ({ openItemDetail }), [openItemDetail]);
   const closeItemDetail = useCallback(() => setDetailSelection(null), []);
@@ -1213,13 +1220,11 @@ export function AsyaShell({ children, current }: AsyaShellProps) {
           {children}
           {isMobilePresentation ? <MobileFooterV2 /> : <Footer />}
           {isMobilePresentation ? (
-            <>
-              <MobileBottomDockV2 current={current} />
-              <MobileTraySheetV2 />
-            </>
+            <MobileBottomDockV2 current={current} />
           ) : (
             <MobileBottomNav current={current} />
           )}
+          <MobileTraySheetV2 />
           <AnimatePresence>
             {detailSelection ? (
               <ItemDetailView
@@ -1609,6 +1614,7 @@ function MobileIntroOverlay({ locale, onComplete }: { locale: Locale; onComplete
 
 function TopNav({ current }: { current: "home" | "menu" }) {
   const { locale, setLocale, t, tx } = useI18n();
+  const { totalQuantity, openTray } = useTrayV2();
 
   return (
     <header className="site-nav site-nav-solid">
@@ -1653,6 +1659,16 @@ function TopNav({ current }: { current: "home" | "menu" }) {
         </nav>
 
         <div className="nav-actions">
+          <button
+            type="button"
+            className="experience-desktop-tray-button"
+            onClick={openTray}
+            aria-label={locale === "ar" ? "فتح سلتي" : "Open My Tray"}
+          >
+            <HandPlatter aria-hidden="true" />
+            <span>{locale === "ar" ? "سلتي" : "My Tray"}</span>
+            {totalQuantity ? <strong>{totalQuantity}</strong> : null}
+          </button>
           <a
             className={current === "menu" ? "mobile-menu-button is-current" : "mobile-menu-button"}
             href="/menu"
@@ -2054,7 +2070,7 @@ function ItemDetailView({
         initial: { opacity: 0 },
         animate: { opacity: 1 },
         exit: { opacity: 0 },
-        transition: { duration: 0.16, ease: "easeOut" },
+        transition: { duration: 0.16, ease: softEase },
       }
     : isMobileSheet
       ? {
@@ -2518,6 +2534,11 @@ function Footer() {
             <span>{t("directions")}</span>
           </a>
         </nav>
+
+        <span className="footer-hours-compact">
+          <Clock className="h-4 w-4" aria-hidden="true" />
+          <span>{tx(RESTAURANT.hours)}</span>
+        </span>
 
         <small className="footer-copy">
           © {currentYear} {tx(RESTAURANT.name)}. {t("footer_rights")}

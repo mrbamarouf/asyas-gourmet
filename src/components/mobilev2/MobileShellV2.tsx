@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  Clock3,
   HandPlatter,
   Home,
   Instagram,
@@ -46,6 +47,11 @@ const COPY = {
     note: "هذه السلة لمساعدتك في اختيار طلبك. اعرضها على موظف المطعم عند الطلب.",
     continue: "متابعة التصفح",
     clear: "إفراغ السلة",
+    waiterAction: "اعرض سلتي للموظف",
+    waiterTitle: "سلتي للموظف",
+    waiterMessage: "يرجى تأكيد الأصناف والكميات مع موظف المطعم قبل تسجيل الطلب.",
+    backToTray: "العودة إلى سلتي",
+    quantity: "الكمية",
     whatsapp: "واتساب",
     location: "الموقع",
     instagram: "إنستغرام",
@@ -76,6 +82,12 @@ const COPY = {
     note: "Use My Tray to keep track of your selections, then show it to your waiter when you’re ready to order.",
     continue: "Continue Browsing",
     clear: "Clear Tray",
+    waiterAction: "Show My Tray to Waiter",
+    waiterTitle: "My Tray for the Waiter",
+    waiterMessage:
+      "Please confirm the items and quantities with your waiter before the order is entered.",
+    backToTray: "Back to My Tray",
+    quantity: "Quantity",
     whatsapp: "WhatsApp",
     location: "Location",
     instagram: "Instagram",
@@ -169,11 +181,14 @@ export function MobileTraySheetV2() {
     totalPrice,
     hasUnavailablePrice,
     isOpen,
+    isWaiterViewOpen,
     incrementItem,
     decrementItem,
     removeItem,
     clearTray,
     closeTray,
+    openWaiterView,
+    closeWaiterView,
   } = useTrayV2();
   const copy = COPY[locale];
 
@@ -183,7 +198,9 @@ export function MobileTraySheetV2() {
     document.body.classList.add("mobilev2-tray-lock");
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeTray();
+      if (event.key !== "Escape") return;
+      if (isWaiterViewOpen) closeWaiterView();
+      else closeTray();
     };
     window.addEventListener("keydown", onKeyDown);
 
@@ -192,119 +209,183 @@ export function MobileTraySheetV2() {
       document.body.classList.remove("mobilev2-tray-lock");
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [closeTray, isOpen]);
+  }, [closeTray, closeWaiterView, isOpen, isWaiterViewOpen]);
 
   if (!isOpen || typeof document === "undefined") return null;
 
   return createPortal(
-    <div className="mobilev2-tray-layer" role="presentation" onMouseDown={closeTray}>
-      <section
-        className="mobilev2-tray-sheet"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="mobilev2-tray-title"
-        dir={locale === "ar" ? "rtl" : "ltr"}
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <header>
-          <div>
-            <small>{totalQuantity ? `${totalQuantity}` : "0"}</small>
-            <h2 id="mobilev2-tray-title">{copy.tray}</h2>
-          </div>
-          <button type="button" onClick={closeTray} aria-label={copy.closeTray} autoFocus>
-            <X aria-hidden="true" />
-          </button>
-        </header>
-
-        {!lines.length ? (
-          <div className="mobilev2-tray-empty">
-            <span aria-hidden="true">
-              <HandPlatter />
-            </span>
-            <h3>{copy.emptyTitle}</h3>
-            <p>{copy.emptyBody}</p>
-            <a href="/menu" onClick={closeTray}>
-              {copy.explore}
-            </a>
-          </div>
-        ) : (
-          <>
-            <div className="mobilev2-tray-lines">
-              {lines.map(({ item, quantity, lineTotal }) => (
-                <article key={item.id} className="mobilev2-tray-line">
-                  {item.image ? (
-                    <img
-                      src={item.image}
-                      alt={item.name[locale]}
-                      width={160}
-                      height={160}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <span className="mobilev2-tray-image-fallback" aria-hidden="true" />
-                  )}
-                  <div className="mobilev2-tray-line-copy">
-                    <strong>{item.name[locale]}</strong>
-                    <small>
-                      {copy.itemPrice}: {formatMoney(item.priceValue, item.price, locale)}
-                    </small>
-                    <span>
-                      {copy.itemTotal}:{" "}
-                      {formatMoney(lineTotal ?? undefined, copy.unavailableValue, locale)}
-                    </span>
-                  </div>
-                  <div className="mobilev2-quantity-control" dir="ltr">
-                    <button
-                      type="button"
-                      onClick={() => decrementItem(item.id)}
-                      aria-label={copy.decrease}
-                    >
-                      <Minus aria-hidden="true" />
-                    </button>
-                    <strong aria-live="polite">{quantity}</strong>
-                    <button
-                      type="button"
-                      onClick={() => incrementItem(item.id)}
-                      aria-label={copy.increase}
-                    >
-                      <Plus aria-hidden="true" />
-                    </button>
-                  </div>
-                  <button
-                    type="button"
-                    className="mobilev2-remove-line"
-                    onClick={() => removeItem(item.id)}
-                    aria-label={`${copy.remove}: ${item.name[locale]}`}
-                  >
-                    <Trash2 aria-hidden="true" />
-                  </button>
-                </article>
-              ))}
+    <div
+      className="mobilev2-tray-layer"
+      role="presentation"
+      onMouseDown={isWaiterViewOpen ? closeWaiterView : closeTray}
+    >
+      {isWaiterViewOpen ? (
+        <section
+          className="mobilev2-waiter-view"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mobilev2-waiter-title"
+          dir={locale === "ar" ? "rtl" : "ltr"}
+          onMouseDown={(event) => event.stopPropagation()}
+        >
+          <header>
+            <img src={logoImg} alt="Asya's Gourmet" width={72} height={72} />
+            <div>
+              <small>{copy.tray}</small>
+              <h2 id="mobilev2-waiter-title">{copy.waiterTitle}</h2>
             </div>
+          </header>
+          <div className="mobilev2-waiter-lines">
+            {lines.map(({ item, quantity, lineTotal }) => (
+              <article key={item.id}>
+                <div>
+                  <strong>{item.name[locale]}</strong>
+                  <small>
+                    {copy.itemPrice}: {formatMoney(item.priceValue, item.price, locale)}
+                  </small>
+                </div>
+                <span>
+                  <small>{copy.quantity}</small>
+                  <strong>{quantity}</strong>
+                </span>
+                <span>
+                  <small>{copy.itemTotal}</small>
+                  <strong>
+                    {formatMoney(lineTotal ?? undefined, copy.unavailableValue, locale)}
+                  </strong>
+                </span>
+              </article>
+            ))}
+          </div>
+          <footer>
+            <div>
+              <span>{copy.total}</span>
+              <strong>
+                {hasUnavailablePrice
+                  ? copy.unavailableValue
+                  : formatMoney(totalPrice, String(totalPrice), locale)}
+              </strong>
+            </div>
+            <p>{copy.waiterMessage}</p>
+            <button type="button" onClick={closeWaiterView} autoFocus>
+              <ArrowLeft aria-hidden="true" />
+              {copy.backToTray}
+            </button>
+          </footer>
+        </section>
+      ) : (
+        <section
+          className="mobilev2-tray-sheet"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mobilev2-tray-title"
+          dir={locale === "ar" ? "rtl" : "ltr"}
+          onMouseDown={(event) => event.stopPropagation()}
+        >
+          <header>
+            <div>
+              <small>{totalQuantity ? `${totalQuantity}` : "0"}</small>
+              <h2 id="mobilev2-tray-title">{copy.tray}</h2>
+            </div>
+            <button type="button" onClick={closeTray} aria-label={copy.closeTray} autoFocus>
+              <X aria-hidden="true" />
+            </button>
+          </header>
 
-            <div className="mobilev2-tray-summary">
-              <p>{copy.note}</p>
-              <div>
-                <span>{copy.total}</span>
-                <strong>
-                  {hasUnavailablePrice
-                    ? copy.unavailableValue
-                    : formatMoney(totalPrice, String(totalPrice), locale)}
-                </strong>
+          {!lines.length ? (
+            <div className="mobilev2-tray-empty">
+              <span aria-hidden="true">
+                <HandPlatter />
+              </span>
+              <h3>{copy.emptyTitle}</h3>
+              <p>{copy.emptyBody}</p>
+              <a href="/menu" onClick={closeTray}>
+                {copy.explore}
+              </a>
+            </div>
+          ) : (
+            <>
+              <div className="mobilev2-tray-lines">
+                {lines.map(({ item, quantity, lineTotal }) => (
+                  <article key={item.id} className="mobilev2-tray-line">
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.name[locale]}
+                        width={160}
+                        height={160}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <span className="mobilev2-tray-image-fallback" aria-hidden="true" />
+                    )}
+                    <div className="mobilev2-tray-line-copy">
+                      <strong>{item.name[locale]}</strong>
+                      <small>
+                        {copy.itemPrice}: {formatMoney(item.priceValue, item.price, locale)}
+                      </small>
+                      <span>
+                        {copy.itemTotal}:{" "}
+                        {formatMoney(lineTotal ?? undefined, copy.unavailableValue, locale)}
+                      </span>
+                    </div>
+                    <div className="mobilev2-quantity-control" dir="ltr">
+                      <button
+                        type="button"
+                        onClick={() => decrementItem(item.id)}
+                        aria-label={copy.decrease}
+                      >
+                        <Minus aria-hidden="true" />
+                      </button>
+                      <strong aria-live="polite">{quantity}</strong>
+                      <button
+                        type="button"
+                        onClick={() => incrementItem(item.id)}
+                        aria-label={copy.increase}
+                      >
+                        <Plus aria-hidden="true" />
+                      </button>
+                    </div>
+                    <button
+                      type="button"
+                      className="mobilev2-remove-line"
+                      onClick={() => removeItem(item.id)}
+                      aria-label={`${copy.remove}: ${item.name[locale]}`}
+                    >
+                      <Trash2 aria-hidden="true" />
+                    </button>
+                  </article>
+                ))}
               </div>
-              {hasUnavailablePrice ? <small>{copy.unavailable}</small> : null}
-              <button type="button" className="mobilev2-tray-continue" onClick={closeTray}>
-                {copy.continue}
-              </button>
-              <button type="button" className="mobilev2-tray-clear" onClick={clearTray}>
-                <Trash2 aria-hidden="true" />
-                {copy.clear}
-              </button>
-            </div>
-          </>
-        )}
-      </section>
+
+              <div className="mobilev2-tray-summary">
+                <p>{copy.note}</p>
+                <div>
+                  <span>{copy.total}</span>
+                  <strong>
+                    {hasUnavailablePrice
+                      ? copy.unavailableValue
+                      : formatMoney(totalPrice, String(totalPrice), locale)}
+                  </strong>
+                </div>
+                {hasUnavailablePrice ? <small>{copy.unavailable}</small> : null}
+                <button type="button" className="mobilev2-tray-waiter" onClick={openWaiterView}>
+                  <HandPlatter aria-hidden="true" />
+                  {copy.waiterAction}
+                </button>
+                <button type="button" className="mobilev2-tray-continue" onClick={closeTray}>
+                  {copy.continue}
+                </button>
+                <button type="button" className="mobilev2-tray-clear" onClick={clearTray}>
+                  <Trash2 aria-hidden="true" />
+                  {copy.clear}
+                </button>
+              </div>
+            </>
+          )}
+        </section>
+      )}
     </div>,
     document.body,
   );
@@ -327,6 +408,10 @@ export function MobileFooterV2() {
       <img src={logoImg} alt="Asya's Gourmet" width={72} height={72} loading="lazy" />
       <strong>{tx(RESTAURANT.name)}</strong>
       <small>{tx(RESTAURANT.kicker)}</small>
+      <span className="mobilev2-footer-hours">
+        <Clock3 aria-hidden="true" />
+        <span>{tx(RESTAURANT.hours)}</span>
+      </span>
       <nav aria-label={locale === "ar" ? "روابط التواصل" : "Contact links"}>
         {links.map(({ label, href, Icon }) => (
           <a

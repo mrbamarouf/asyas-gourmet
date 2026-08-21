@@ -1,7 +1,6 @@
 import { ArrowUpRight, Instagram, MapPin, MessageCircle, Star } from "lucide-react";
 
-import { RESTAURANT } from "@/data/menu";
-import type { Locale } from "@/lib/i18n";
+import { RESTAURANT, type Locale } from "@/data/menu";
 
 interface ConnectSection2026Props {
   locale: Locale;

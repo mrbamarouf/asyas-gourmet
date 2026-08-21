@@ -21,15 +21,18 @@ export function centerMenuRailItem(
   rail.scrollBy({ left: horizontalOffset, behavior });
 }
 
-export function runWhenMenuScrollUnlocked(callback: () => void) {
+export function runWhenMenuScrollUnlocked(callback: () => void | (() => void)) {
   let frame: number | undefined;
   let observer: MutationObserver | undefined;
+  let callbackCleanup: (() => void) | undefined;
 
   const cleanup = () => {
     observer?.disconnect();
     observer = undefined;
     if (frame !== undefined) window.cancelAnimationFrame(frame);
     frame = undefined;
+    callbackCleanup?.();
+    callbackCleanup = undefined;
   };
 
   const watchForUnlock = () => {
@@ -54,7 +57,7 @@ export function runWhenMenuScrollUnlocked(callback: () => void) {
     observer = undefined;
     frame = window.requestAnimationFrame(() => {
       frame = undefined;
-      callback();
+      callbackCleanup = callback() ?? undefined;
     });
   };
 
@@ -64,6 +67,63 @@ export function runWhenMenuScrollUnlocked(callback: () => void) {
   };
 
   schedule();
+
+  return cleanup;
+}
+
+export function scrollClickedMenuTargetIntoView(target: HTMLElement, behavior: ScrollBehavior) {
+  target.scrollIntoView({ behavior, block: "start" });
+
+  let canRealign = false;
+  let cancelled = false;
+  let frame: number | undefined;
+  const timers: number[] = [];
+
+  const cleanup = () => {
+    cancelled = true;
+    observer.disconnect();
+    if (frame !== undefined) window.cancelAnimationFrame(frame);
+    timers.forEach((timer) => window.clearTimeout(timer));
+    window.removeEventListener("wheel", cancelForUserInput);
+    window.removeEventListener("touchstart", cancelForUserInput);
+    window.removeEventListener("pointerdown", cancelForUserInput);
+    window.removeEventListener("keydown", cancelForUserInput);
+  };
+
+  const align = () => {
+    frame = undefined;
+    if (!canRealign || cancelled) return;
+    const offset = target.getBoundingClientRect().top;
+    if (Math.abs(offset) > 4) window.scrollBy({ top: offset, behavior: "auto" });
+  };
+
+  const scheduleAlignment = () => {
+    if (!canRealign || cancelled || frame !== undefined) return;
+    frame = window.requestAnimationFrame(align);
+  };
+
+  function cancelForUserInput() {
+    cleanup();
+  }
+
+  const observer = new ResizeObserver(scheduleAlignment);
+  observer.observe(document.body);
+
+  window.addEventListener("wheel", cancelForUserInput, { passive: true });
+  window.addEventListener("touchstart", cancelForUserInput, { passive: true });
+  window.addEventListener("pointerdown", cancelForUserInput, { passive: true });
+  window.addEventListener("keydown", cancelForUserInput);
+
+  timers.push(
+    window.setTimeout(
+      () => {
+        canRealign = true;
+        scheduleAlignment();
+      },
+      behavior === "smooth" ? 650 : 0,
+    ),
+  );
+  timers.push(window.setTimeout(cleanup, 2600));
 
   return cleanup;
 }

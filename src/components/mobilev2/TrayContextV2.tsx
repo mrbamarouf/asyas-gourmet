@@ -31,6 +31,7 @@ interface TrayContextV2Value {
   totalPrice: number;
   hasUnavailablePrice: boolean;
   isOpen: boolean;
+  isWaiterViewOpen: boolean;
   addItem: (itemId: string, quantity?: number) => void;
   incrementItem: (itemId: string) => void;
   decrementItem: (itemId: string) => void;
@@ -38,6 +39,8 @@ interface TrayContextV2Value {
   clearTray: () => void;
   openTray: () => void;
   closeTray: () => void;
+  openWaiterView: () => void;
+  closeWaiterView: () => void;
 }
 
 const TrayContextV2 = createContext<TrayContextV2Value | null>(null);
@@ -50,6 +53,8 @@ type TrayActionsV2Value = Pick<
   | "clearTray"
   | "openTray"
   | "closeTray"
+  | "openWaiterView"
+  | "closeWaiterView"
 >;
 const TrayActionsV2 = createContext<TrayActionsV2Value | null>(null);
 
@@ -57,6 +62,7 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [hasHydrated, setHasHydrated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isWaiterViewOpen, setIsWaiterViewOpen] = useState(false);
 
   useEffect(() => {
     setQuantities(readStoredTray());
@@ -104,7 +110,12 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
 
   const clearTray = useCallback(() => setQuantities({}), []);
   const openTray = useCallback(() => setIsOpen(true), []);
-  const closeTray = useCallback(() => setIsOpen(false), []);
+  const closeTray = useCallback(() => {
+    setIsWaiterViewOpen(false);
+    setIsOpen(false);
+  }, []);
+  const openWaiterView = useCallback(() => setIsWaiterViewOpen(true), []);
+  const closeWaiterView = useCallback(() => setIsWaiterViewOpen(false), []);
 
   const lines = useMemo(
     () =>
@@ -134,6 +145,7 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
       totalPrice,
       hasUnavailablePrice,
       isOpen,
+      isWaiterViewOpen,
       addItem,
       incrementItem,
       decrementItem,
@@ -141,6 +153,8 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
       clearTray,
       openTray,
       closeTray,
+      openWaiterView,
+      closeWaiterView,
     }),
     [
       quantities,
@@ -149,6 +163,7 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
       totalPrice,
       hasUnavailablePrice,
       isOpen,
+      isWaiterViewOpen,
       addItem,
       incrementItem,
       decrementItem,
@@ -156,6 +171,8 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
       clearTray,
       openTray,
       closeTray,
+      openWaiterView,
+      closeWaiterView,
     ],
   );
 
@@ -168,8 +185,20 @@ export function TrayProviderV2({ children }: { children: ReactNode }) {
       clearTray,
       openTray,
       closeTray,
+      openWaiterView,
+      closeWaiterView,
     }),
-    [addItem, incrementItem, decrementItem, removeItem, clearTray, openTray, closeTray],
+    [
+      addItem,
+      incrementItem,
+      decrementItem,
+      removeItem,
+      clearTray,
+      openTray,
+      closeTray,
+      openWaiterView,
+      closeWaiterView,
+    ],
   );
 
   return (

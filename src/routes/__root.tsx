@@ -10,12 +10,14 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { AsyaIntroOverlay } from "@/components/asya/primitives";
+import { RecentlyViewedProvider } from "@/components/menu/RecentlyViewedContext";
 import { TrayProviderV2 } from "@/components/mobilev2/TrayContextV2";
 import faviconUrl from "@/assets/asyas-logo-transparent.png?url";
 import appCss from "../styles.css?url";
 import phase3Css from "../phase3.css?url";
 import mobile35Css from "../mobile35.css?url";
 import mobileV2Css from "../mobile-v2.css?url";
+import experienceCompletionCss from "../experience-completion.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -104,6 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: phase3Css },
       { rel: "stylesheet", href: mobile35Css },
       { rel: "stylesheet", href: mobileV2Css },
+      { rel: "stylesheet", href: experienceCompletionCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -139,10 +142,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <TrayProviderV2>
-        <AsyaIntroOverlay />
-        <InternalLinkNavigationGuard />
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+        <RecentlyViewedProvider>
+          <AsyaIntroOverlay />
+          <InternalLinkNavigationGuard />
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </RecentlyViewedProvider>
       </TrayProviderV2>
     </QueryClientProvider>
   );

@@ -610,6 +610,10 @@ function VisitStory({
         </span>
         <h2 id="phase3-visit-title">{copy.visitTitle}</h2>
         <p>{copy.visitBody}</p>
+        <small className="phase3-visit-hours">
+          <Clock3 aria-hidden="true" />
+          {RESTAURANT.hours[locale]}
+        </small>
         <div>
           <a
             href={RESTAURANT.mapsUrl}

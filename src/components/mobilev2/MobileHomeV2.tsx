@@ -1,5 +1,6 @@
 import {
   ArrowUpRight,
+  Clock3,
   Compass,
   Instagram,
   MapPin,
@@ -363,6 +364,10 @@ export function MobileHomeV2() {
         <div>
           <h2 id="mobilev2-visit-title">{copy.visitTitle}</h2>
           <p>{copy.visitBody}</p>
+          <small className="mobilev2-visit-hours">
+            <Clock3 aria-hidden="true" />
+            {RESTAURANT.hours[locale]}
+          </small>
           <span>
             <a href={RESTAURANT.mapsUrl} target="_blank" rel="noopener noreferrer">
               <MapPin aria-hidden="true" />

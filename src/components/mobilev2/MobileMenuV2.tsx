@@ -19,6 +19,7 @@ import {
   useItemDetail,
 } from "@/components/asya/primitives";
 import { PresentationMenuIcon } from "@/components/menu/PresentationMenuIcon";
+import { RecentlyViewedRail, SmartMenuSearch } from "@/components/menu/SmartMenuTools";
 import type { MenuCategory, MenuItem } from "@/data/menu";
 import { useI18n } from "@/lib/i18n";
 import {
@@ -33,7 +34,11 @@ import {
   type PresentationMenuCategory,
   type PresentationMenuGroup,
 } from "@/lib/menu-taxonomy";
-import { centerMenuRailItem, runWhenMenuScrollUnlocked } from "@/lib/menu-scroll";
+import {
+  centerMenuRailItem,
+  runWhenMenuScrollUnlocked,
+  scrollClickedMenuTargetIntoView,
+} from "@/lib/menu-scroll";
 
 import { useTrayActionsV2, useTrayV2 } from "./TrayContextV2";
 
@@ -105,18 +110,17 @@ export function MobileMenuV2({ groups }: { groups: PresentationMenuGroup[] }) {
       scrollCleanupRef.current = runWhenMenuScrollUnlocked(() => {
         const target = document.getElementById(targetId);
         if (!target) return;
-        target.scrollIntoView({
-          behavior:
-            requestedBehavior ??
-            (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"),
-          block: "start",
-        });
+        const behavior =
+          requestedBehavior ??
+          (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+        const stopStabilizing = scrollClickedMenuTargetIntoView(target, behavior);
         window.history.replaceState(null, "", `#${targetId}`);
 
         const chip = chipRailRef.current?.querySelector<HTMLElement>(
           `[data-group-id="${groupId}"]`,
         );
-        centerMenuRailItem(chipRailRef.current, chip);
+        centerMenuRailItem(chipRailRef.current, chip ?? null);
+        return stopStabilizing;
       });
     },
     [],
@@ -232,6 +236,11 @@ export function MobileMenuV2({ groups }: { groups: PresentationMenuGroup[] }) {
           {totalQuantity ? <strong>{totalQuantity}</strong> : null}
         </button>
       </section>
+
+      <div className="experience-menu-discovery">
+        <SmartMenuSearch />
+        <RecentlyViewedRail />
+      </div>
 
       <section className="mobilev2-category-access" aria-label={copy.categories}>
         <button

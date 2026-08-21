@@ -4,6 +4,7 @@ import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import { AsyaShell, MenuCard, localizeMenuText } from "@/components/asya/primitives";
 import { PresentationMenuIcon } from "@/components/menu/PresentationMenuIcon";
+import { RecentlyViewedRail, SmartMenuSearch } from "@/components/menu/SmartMenuTools";
 import { MobileMenuV2 } from "@/components/mobilev2/MobileMenuV2";
 import { useMobilePresentation } from "@/components/mobile35/useMobilePresentation";
 import { ITEMS } from "@/data/menu";
@@ -20,7 +21,11 @@ import {
   type PresentationMenuCategory,
   type PresentationMenuGroup,
 } from "@/lib/menu-taxonomy";
-import { centerMenuRailItem, runWhenMenuScrollUnlocked } from "@/lib/menu-scroll";
+import {
+  centerMenuRailItem,
+  runWhenMenuScrollUnlocked,
+  scrollClickedMenuTargetIntoView,
+} from "@/lib/menu-scroll";
 
 import heroImg from "@/assets/hero-turkish-table.jpg";
 import logoImg from "@/assets/asyas-logo-transparent.png";
@@ -174,18 +179,17 @@ function MenuExplorer() {
       scrollCleanupRef.current = runWhenMenuScrollUnlocked(() => {
         const target = document.getElementById(targetId);
         if (!target) return;
-        target.scrollIntoView({
-          behavior:
-            requestedBehavior ??
-            (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"),
-          block: "start",
-        });
+        const behavior =
+          requestedBehavior ??
+          (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+        const stopStabilizing = scrollClickedMenuTargetIntoView(target, behavior);
         window.history.replaceState(null, "", `#${targetId}`);
         const strip = stripRef.current;
         centerMenuRailItem(
           strip,
           strip?.querySelector<HTMLElement>(`[data-group-pill="${groupId}"]`) ?? null,
         );
+        return stopStabilizing;
       });
     },
     [],
@@ -289,6 +293,10 @@ function MenuExplorer() {
 
   return (
     <section className="phase3-menu-explorer" dir={locale === "ar" ? "rtl" : "ltr"}>
+      <div className="experience-menu-discovery">
+        <SmartMenuSearch />
+        <RecentlyViewedRail />
+      </div>
       <div id="menu-index" className="phase3-menu-index">
         <header>
           <div>
