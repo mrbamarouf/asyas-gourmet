@@ -2,10 +2,10 @@
   position: relative;
   isolation: isolate;
   width: 100%;
-  margin-top: clamp(4.5rem, 8vw, 7rem);
+  margin-top: clamp(4.5rem, 7vw, 6.5rem);
   scroll-margin-top: 7rem;
   overflow: hidden;
-  background: #fbf8f2;
+  background: #fcf8ef;
   color: #1d2820;
 }
 
@@ -15,15 +15,15 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 46%;
-  background: #2f3a28;
+  height: 48%;
+  background: #293524;
   content: "";
 }
 
 .about-asya-final-inner {
-  width: min(calc(100% - 2rem), 1200px);
+  width: min(calc(100% - 2.5rem), 1220px);
   margin-inline: auto;
-  padding: clamp(4rem, 7vw, 6rem) 0 clamp(4.25rem, 7vw, 6.5rem);
+  padding: clamp(4.5rem, 7vw, 6.5rem) 0 clamp(4.5rem, 7vw, 6.75rem);
 }
 
 .about-asya-final-intro {
@@ -42,36 +42,47 @@
 }
 
 .about-asya-final-label {
-  color: #a6783f;
-  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: #9f753d;
+  font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
+.about-asya-final-label::before,
+.about-asya-final-label::after {
+  width: 2.25rem;
+  height: 1px;
+  background: rgba(166, 120, 63, 0.62);
+  content: "";
+}
+
 .about-asya-final-intro h2 {
-  max-width: 18ch;
-  margin-top: 0.75rem;
-  color: #263124;
+  max-width: 16ch;
+  margin-top: 1.1rem;
+  color: #273524;
   font-family: var(--p3-display, Georgia, serif);
-  font-size: clamp(2.15rem, 4.6vw, 4.35rem);
+  font-size: clamp(2.4rem, 4.5vw, 4.4rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.15;
   text-wrap: balance;
 }
 
 .about-asya-final[dir="rtl"] .about-asya-final-intro h2 {
-  max-width: 20ch;
+  max-width: 15ch;
   font-weight: 800;
-  line-height: 1.55;
+  line-height: 1.48;
 }
 
 .about-asya-final-intro > p:last-child {
-  max-width: 760px;
-  margin-top: 1rem;
-  color: #596057;
-  font-size: clamp(0.9rem, 1.25vw, 1.02rem);
-  line-height: 1.85;
+  max-width: 790px;
+  margin-top: 1.35rem;
+  color: #4e574d;
+  font-size: clamp(0.92rem, 1.2vw, 1.04rem);
+  line-height: 1.9;
   text-wrap: pretty;
 }
 
@@ -82,44 +93,70 @@
 .about-asya-final-cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: clamp(2.25rem, 4vw, 3.5rem);
+  gap: 1.15rem;
+  margin-top: clamp(3rem, 5vw, 4.5rem);
 }
 
 .about-asya-final-card {
+  position: relative;
   display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
   align-content: start;
   justify-items: center;
   min-width: 0;
-  padding: clamp(1.65rem, 3vw, 2.6rem);
-  border: 1px solid rgba(178, 135, 74, 0.34);
+  overflow: hidden;
+  padding: clamp(2rem, 3.5vw, 3.25rem) clamp(1.65rem, 3.5vw, 3.5rem) clamp(1.8rem, 3vw, 2.75rem);
+  border: 1px solid rgba(178, 135, 74, 0.42);
   border-radius: 16px;
-  background: #fffaf1;
-  box-shadow: 0 5px 8px rgba(29, 40, 32, 0.1);
+  background: #fffaf0;
+  box-shadow: 0 6px 8px rgba(22, 31, 23, 0.12);
   text-align: center;
+}
+
+.about-asya-final-card::after {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-right: 1px solid rgba(178, 135, 74, 0.2);
+  border-bottom: 1px solid rgba(178, 135, 74, 0.2);
+  border-bottom-right-radius: 12px;
+  content: "";
+}
+
+.about-asya-final[dir="rtl"] .about-asya-final-card::after {
+  right: auto;
+  left: 1rem;
+  border-right: 0;
+  border-left: 1px solid rgba(178, 135, 74, 0.2);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 12px;
 }
 
 .about-asya-final-icon {
   display: grid;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 4.35rem;
+  height: 4.35rem;
   place-items: center;
+  border: 1px solid rgba(203, 166, 99, 0.55);
   border-radius: 50%;
-  background: #2f3a28;
-  color: #c7a56a;
+  background: #293524;
+  color: #c9a45f;
+  box-shadow: 0 5px 8px rgba(28, 38, 28, 0.16);
 }
 
 .about-asya-final-icon svg {
-  width: 1.45rem;
-  height: 1.45rem;
-  stroke-width: 1.55;
+  width: 1.9rem;
+  height: 1.9rem;
+  stroke-width: 1.4;
 }
 
 .about-asya-final-card h3 {
-  margin-top: 1.15rem;
-  color: #2f3a28;
+  margin-top: 1.35rem;
+  color: #293524;
   font-family: var(--p3-display, Georgia, serif);
-  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-size: clamp(1.55rem, 2.25vw, 2.15rem);
   font-weight: 600;
   line-height: 1.35;
 }
@@ -129,12 +166,32 @@
   line-height: 1.65;
 }
 
+.about-asya-final-card-rule {
+  position: relative;
+  display: block;
+  width: 4.6rem;
+  height: 1px;
+  margin-top: 0.75rem;
+  background: rgba(178, 135, 74, 0.58);
+}
+
+.about-asya-final-card-rule::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  background: #b2874a;
+  content: "";
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
 .about-asya-final-card p {
-  max-width: 58ch;
-  margin-top: 0.8rem;
-  color: #535a51;
-  font-size: clamp(0.83rem, 1.1vw, 0.96rem);
-  line-height: 1.85;
+  max-width: 54ch;
+  margin-top: 1.2rem;
+  color: #424b40;
+  font-size: clamp(0.86rem, 1.05vw, 0.98rem);
+  line-height: 1.9;
   text-wrap: pretty;
 }
 
@@ -142,51 +199,91 @@
   line-height: 2;
 }
 
+.about-asya-final-card-detail {
+  position: relative;
+  display: block;
+  width: min(9rem, 46%);
+  height: calc(clamp(1.4rem, 2.5vw, 2.2rem) + 1px);
+  margin-top: auto;
+}
+
+.about-asya-final-card-detail::before,
+.about-asya-final-card-detail::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: "";
+}
+
+.about-asya-final-card-detail::before {
+  width: 100%;
+  height: 1px;
+  background: rgba(178, 135, 74, 0.34);
+  transform: translateX(-50%);
+}
+
+.about-asya-final-card-detail::after {
+  width: 0.32rem;
+  height: 0.32rem;
+  background: #b2874a;
+  transform: translate(-50%, 0.13rem) rotate(45deg);
+}
+
 @media (min-width: 900px) {
   .about-asya-final-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-    gap: clamp(1rem, 2vw, 1.5rem);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .about-asya-final-card {
+    min-height: 420px;
   }
 }
 
 @media (max-width: 767px) {
   .about-asya-final {
-    margin-top: 3.25rem;
+    margin-top: 3rem;
     scroll-margin-top: 5.5rem;
   }
 
   .about-asya-final::after {
-    height: 58%;
+    height: 62%;
   }
 
   .about-asya-final-inner {
-    width: min(calc(100% - 1.5rem), 430px);
-    padding: 3.25rem 0 calc(4rem + env(safe-area-inset-bottom));
+    width: min(calc(100% - 1.25rem), 430px);
+    padding: 3rem 0 calc(4.25rem + env(safe-area-inset-bottom));
   }
 
   .about-asya-final-label {
     font-size: 0.65rem;
+    gap: 0.65rem;
+  }
+
+  .about-asya-final-label::before,
+  .about-asya-final-label::after {
+    width: 1.65rem;
   }
 
   .about-asya-final-intro h2 {
-    max-width: 18ch;
-    margin-top: 0.6rem;
-    font-size: 1.9rem;
-    line-height: 1.2;
+    max-width: 15ch;
+    margin-top: 0.85rem;
+    font-size: 2rem;
+    line-height: 1.22;
   }
 
   .about-asya-final[dir="rtl"] .about-asya-final-intro h2 {
-    max-width: 19rem;
-    font-size: 1.55rem;
-    line-height: 1.65;
+    max-width: 12ch;
+    font-size: 1.72rem;
+    line-height: 1.68;
   }
 
   .about-asya-final-intro > p:last-child {
     max-width: 340px;
-    margin-top: 0.8rem;
-    font-size: 0.78rem;
-    line-height: 1.8;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.85;
   }
 
   .about-asya-final[dir="rtl"] .about-asya-final-intro > p:last-child {
@@ -194,31 +291,63 @@
   }
 
   .about-asya-final-cards {
-    gap: 0.85rem;
-    margin-top: 1.8rem;
+    gap: 0.9rem;
+    margin-top: 2rem;
   }
 
   .about-asya-final-card {
-    padding: 1.45rem 1.1rem 1.6rem;
+    padding: 1.55rem 1.1rem 1.45rem;
+  }
+
+  .about-asya-final-card::after {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .about-asya-final[dir="rtl"] .about-asya-final-card::after {
+    right: auto;
+    left: 0.75rem;
+  }
+
+  .about-asya-final-icon {
+    width: 3.65rem;
+    height: 3.65rem;
+  }
+
+  .about-asya-final-icon svg {
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .about-asya-final-card h3 {
-    margin-top: 0.9rem;
-    font-size: 1.35rem;
+    margin-top: 1rem;
+    font-size: 1.45rem;
   }
 
   .about-asya-final[dir="rtl"] .about-asya-final-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .about-asya-final-card-rule {
+    width: 4rem;
+    margin-top: 0.6rem;
   }
 
   .about-asya-final-card p {
     max-width: 340px;
-    margin-top: 0.65rem;
-    font-size: 0.76rem;
-    line-height: 1.78;
+    margin-top: 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.82;
   }
 
   .about-asya-final[dir="rtl"] .about-asya-final-card p {
     line-height: 1.95;
+  }
+
+  .about-asya-final-card-detail {
+    width: 6.5rem;
+    height: 1.25rem;
   }
 }

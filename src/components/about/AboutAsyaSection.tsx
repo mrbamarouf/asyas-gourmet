@@ -55,7 +55,9 @@ export function AboutAsyaSection() {
               <Eye />
             </span>
             <h3>{copy.visionHeading}</h3>
+            <span className="about-asya-final-card-rule" aria-hidden="true" />
             <p>{copy.vision}</p>
+            <span className="about-asya-final-card-detail" aria-hidden="true" />
           </article>
 
           <article className="about-asya-final-card">
@@ -63,7 +65,9 @@ export function AboutAsyaSection() {
               <HandHeart />
             </span>
             <h3>{copy.missionHeading}</h3>
+            <span className="about-asya-final-card-rule" aria-hidden="true" />
             <p>{copy.mission}</p>
+            <span className="about-asya-final-card-detail" aria-hidden="true" />
           </article>
         </div>
       </div>
